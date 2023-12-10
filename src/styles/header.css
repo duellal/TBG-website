@@ -1,0 +1,90 @@
+header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ad0005;
+}
+
+div .logo{
+    width: 100%;
+}
+
+.logo-png{
+    display: block;
+    margin: 1% auto .5%;
+    width: 10%;
+
+}
+
+header .navbar{
+    width: 50%;
+    margin: 1% 0;
+    /* border: 1px solid hotpink; */
+}
+
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid blue;  */
+}
+
+header .nav-item {
+    padding: 1% 2%;
+    cursor: pointer;
+    text-align: center;
+    /* border: 1px solid orange;  */
+    color: #0d324d;
+    background-color: #06aed5;
+}
+
+.home{
+    transition: 0.3s;
+}
+.home:hover{
+    transform: scale(1.1)
+}
+
+.about{
+    transition: 0.3s;
+}
+.about:hover{
+    transform: scale(1.1)
+}
+
+.boarding{
+    transition: 0.3s;
+}
+.boarding:hover{
+    transform: scale(1.1)
+}
+
+.daycare{
+    transition: 0.3s;
+}
+.daycare:hover{
+    transform: scale(1.1)
+}
+
+.grooming{
+    transition: 0.3s;
+}
+.grooming:hover{
+    transform: scale(1.1)
+}
+
+.forms{
+    transition: 0.3s;
+}
+.forms:hover{
+    transform: scale(1.1)
+}
+
+.faq{
+    transition: 0.3s;
+}
+.faq:hover{
+    transform: scale(1.1)
+}
+

@@ -10,9 +10,10 @@ import { useNavigate } from "react-router";
 import logo from "../images/logo192.png"
 
 // //Header Styles:
-// import "../styles/css/header.css"
+import "../styles/header.css"
 
 export default function Header(){
+    let navigate = useNavigate();
 
     return (
         <header>
@@ -21,25 +22,25 @@ export default function Header(){
             </div>
             <Navbar>
                 <Nav>
-                    <NavItem className="home">
+                    <NavItem className="home" onClick={() => navigate('/')}>
                             Home
                     </NavItem>
-                    <NavItem className="about">
+                    <NavItem className="about" onClick={() => navigate('/about')}>
                             About
                     </NavItem>
-                    <NavItem className="boarding">
+                    <NavItem className="boarding" onClick={() => navigate('/boarding')}>
                             Boarding
                     </NavItem>
-                    <NavItem className="daycare">
+                    <NavItem className="daycare" onClick={() => navigate('/daycare')}>
                             Daycare
                     </NavItem>
-                    <NavItem className="grooming">
+                    <NavItem className="grooming" onClick={() => navigate('/grooming')}>
                             Grooming
                     </NavItem>
-                    <NavItem className="forms">
+                    <NavItem className="forms" onClick={() => navigate('/forms')}>
                             Forms
                     </NavItem>
-                    <NavItem className="faq">
+                    <NavItem className="faq" onClick={() => navigate('/faq')}>
                             FAQs
                     </NavItem>
                 </Nav>

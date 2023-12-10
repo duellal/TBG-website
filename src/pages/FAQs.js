@@ -5,5 +5,5 @@ import React from "react";
 // import "../styles/css/about.css"
 
 export default function FAQs(){
-
+//will have drop down menus for 3 sections: boarding, daycare + grooming
 }

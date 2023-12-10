@@ -5,5 +5,5 @@ import React from "react";
 // import "../styles/css/about.css"
 
 export default function Daycare(){
-
+    //will have prices, check in/out + info about what it is
 }
