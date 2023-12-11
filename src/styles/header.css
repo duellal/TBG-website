@@ -7,11 +7,11 @@ header{
     background-color: #ad0005;
 }
 
-div .logo{
+header .logo{
     width: 100%;
 }
 
-.logo-png{
+header .logo-png{
     display: block;
     margin: 1% auto .5%;
     width: 10%;
@@ -39,52 +39,52 @@ header .nav-item {
     background-color: #06aed5;
 }
 
-.home{
+header .home{
     transition: 0.3s;
 }
-.home:hover{
+header .home:hover{
     transform: scale(1.1)
 }
 
-.about{
+header .about{
     transition: 0.3s;
 }
-.about:hover{
+header .about:hover{
     transform: scale(1.1)
 }
 
-.boarding{
+header .boarding{
     transition: 0.3s;
 }
-.boarding:hover{
+header .boarding:hover{
     transform: scale(1.1)
 }
 
-.daycare{
+header .daycare{
     transition: 0.3s;
 }
-.daycare:hover{
+header .daycare:hover{
     transform: scale(1.1)
 }
 
-.grooming{
+header .grooming{
     transition: 0.3s;
 }
-.grooming:hover{
+header .grooming:hover{
     transform: scale(1.1)
 }
 
-.forms{
+header .forms{
     transition: 0.3s;
 }
-.forms:hover{
+header .forms:hover{
     transform: scale(1.1)
 }
 
-.faq{
+header .faq{
     transition: 0.3s;
 }
-.faq:hover{
+header .faq:hover{
     transform: scale(1.1)
 }
 

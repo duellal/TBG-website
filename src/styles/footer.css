@@ -4,6 +4,9 @@ footer {
     padding: 1% 0 2% 0;
     margin-top: 1%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer p, footer a{
@@ -11,23 +14,75 @@ footer p, footer a{
 }
 
 footer .navbar{
-    width: 50%;
+    text-align: center;
 }
-
-/* footer .nav{
-
-} */
 
 footer .nav-item{
     padding: .25% 0;
-    width: 20%;
     cursor: pointer;
+    /* border: 2px solid green */
+}
+
+#info{
+    width: 78%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#first-col{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 25%;
+}
+
+#second-col{
+    width: 40%;
+}
+
+#third-col{
+    width: 12%;
+}
+
+.hours{
+    width: 100%;
+}
+
+.contact{
+    /* width: 50%; */
+}
+
+.holiday-hours{
+    width: 100%;
+}
+
+footer .navbar p{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+footer .title{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+footer .logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    /* border: 2px solid palegreen */
+}
+
+footer .logo-png{
+    /* border: 2px solid salmon; */
+    width: 80%;
 }
 
 .copyright{
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 .copyright .name{
