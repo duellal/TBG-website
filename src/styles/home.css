@@ -1,0 +1,36 @@
+#home-div {
+    padding: 20% 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#home-div .image {
+    padding-bottom: 5%;
+    width: 100%;
+}
+
+#home-div .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#home-div .boarding,
+#home-div .daycare,
+#home-div .grooming {
+    width: 25%;
+    text-align: justify;
+}
+
+#home-div p {
+    margin-top: 5%;
+}
+
+#home-div button {
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#home-div h2 {
+    text-align: center;
+}
