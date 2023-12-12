@@ -9,8 +9,9 @@ footer {
     justify-content: center;
 }
 
-footer p, footer a{
-    font-size: 1.3rem;
+footer p, 
+footer a {
+    font-size: 1.5rem;
 }
 
 footer .navbar{
@@ -20,40 +21,95 @@ footer .navbar{
 footer .nav-item{
     padding: .25% 0;
     cursor: pointer;
-    /* border: 2px solid green */
 }
 
-#info{
+footer #info{
     width: 78%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-#first-col{
+footer #first-col{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 25%;
+    width: 15%;
+    height: 55%;
 }
 
-#second-col{
+footer #second-col{
+    display:flex;
     width: 40%;
+    align-items: flex-start;
 }
 
-#third-col{
-    width: 12%;
+footer #third-col{
+    width: 13%;
 }
 
-.hours{
+footer .hours{
     width: 100%;
 }
 
-.contact{
-    /* width: 50%; */
+footer .break-div {
+    margin: 1%;
 }
 
-.holiday-hours{
+footer .contact{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .contact .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .contact .phone,
+footer .contact .email {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1%;
+    align-items: center;
+}
+
+footer .socials #facebook,
+footer .socials #instagram,
+footer .socials #tiktok {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3% 0 ;
+    align-items: center;
+}
+
+footer .socials img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer .contact img {
+    margin: 1% 2%;
+}
+
+footer iframe {
+    margin-top: 3%;
+}
+
+footer .holiday-hours{
     width: 100%;
 }
 
@@ -71,11 +127,10 @@ footer .logo{
     display: flex;
     justify-content: center;
     margin-top: 15%;
-    /* border: 2px solid palegreen */
+    margin-bottom: 3%;
 }
 
 footer .logo-png{
-    /* border: 2px solid salmon; */
     width: 80%;
 }
 

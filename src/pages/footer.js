@@ -11,6 +11,12 @@ import "../styles/footer.css"
 
 //Logo
 import logo from "../images/logo192.png"
+import phoneIcon from '../images/phone-call.png'
+import emailIcon from '../images/email.png'
+import fbIcon from '../images/facebook.png'
+import instaIcon from '../images/instagram.png'
+import tiktokIcon from '../images/tik-tok.png'
+// import addressIcon from '../images/location-pin.png'
 
 export default function Footer(){ 
     let navigate = useNavigate();
@@ -55,22 +61,56 @@ export default function Footer(){
                         <p className="title">
                             Contact Us!
                         </p>
-                        <a className='address' href="https://maps.app.goo.gl/xP4CiNAGKqzPhW138" target="_blank" rel="noreferrer">
+                        <div className="phone">
+                            <img src={phoneIcon} width='30' height='30' alt="Mobile phone with flat screen showing a landline phone with signals"></img>
+                            <p className="number">
+                                (919) 355 - 2820
+                            </p>
+                        </div>
+                        <div className="email">
+                            <img src={emailIcon} width='30' height='30' alt="paper with an at symbol inside an unsealed envelope"></img>
+                            <a className="e-address" href="mailto:thebiscuitgarden@gmail.com">
+                                thebiscuitgarden@gmail.com
+                            </a>
+                        </div>
+                        <div className="break-div"></div>
+                        {/* <a className='address' href="https://maps.app.goo.gl/xP4CiNAGKqzPhW138" target="_blank" rel="noreferrer">
+                            <img src={addressIcon} width='30' height='30' alt='a map with a pinpoint on it to indicate a place'></img>
                             2112 E Williams St, Apex, NC 27539
-                        </a>
-                        <p className="phone">
-                            (919) 355 - 2820
-                        </p>
-                        <a className="email" href="mailto:thebiscuitgarden@gmail.com">
-                            thebiscuitgarden@gmail.com
-                        </a>
-                        <a className="facebook" href="https://www.facebook.com/Apex2112EWilliamsSt" target="_blank" rel="noreferrer">
-                            /thebiscuitgarden
-                        </a>
+                        </a> */}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.537584269854!2d-78.83697175900978!3d35.688386472699044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac8dd864f751b7%3A0xe2824cd11188d5f3!2sThe%20Biscuit%20Garden!5e0!3m2!1sen!2sus!4v1702322948903!5m2!1sen!2sus" width="410" height="350" style={{border: '1px solid black' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Biscuit Garden Address on a Map"></iframe>
                     </div>
                 </div>
                 
                 <div id="third-col">
+                <div className="socials">
+                        <p className="title">
+                            Our Socials
+                        </p>
+                        <div id="facebook">
+                            <a className="facebook" href="https://www.facebook.com/Apex2112EWilliamsSt" target="_blank" rel="noreferrer">
+                                <img src={fbIcon} width='30' height='30' alt='an f encircled in blue'></img>
+                                /Apex2112EWilliamsSt
+                            </a>
+                        </div>
+                        <div id="instagram">
+                            <a className="instagram" href="https://www.instagram.com/thebiscuitgarden/" target="_blank" rel="noreferrer">
+                                <img src={instaIcon} width='30' height='30' alt='a camera in a yellow to pink gradient'></img>
+                                @thebiscuitgarden
+                            </a>
+                        </div>
+                        <div id="tiktok">
+                            <a className="tiktok" href="https://www.tiktok.com/@biscuitgarden" target="_blank" rel="noreferrer">
+                                <img src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></img>
+                                @biscuitgarden
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div className="logo">
+                        <img className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
+                    </div>
+
                     <Navbar>
                         <p>
                             Quick Links
@@ -99,10 +139,6 @@ export default function Footer(){
                             </NavItem>
                         </Nav>
                     </Navbar>
-
-                    <div className="logo">
-                        <img className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
-                    </div>
                 </div>
 
 
