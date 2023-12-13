@@ -26,22 +26,25 @@ export default function Header(){
                             Home
                     </NavItem>
                     <NavItem className="about" onClick={() => navigate('/about')}>
+                        <button  className="dropbtn">
                             About
+                            {/* <i className='facility-btn'> Our Facility </i> */}
+                        </button>
+                        <div class="dropdown-content">
+                            <a href='/facility'>Our Facility</a>
+                            <a href='/team'>Our Team</a>
+                            <a href='/team#careers'>Our facility</a>
+                        </div>
                     </NavItem>
                     <NavItem className="boarding" onClick={() => navigate('/boarding')}>
-                            Boarding
                     </NavItem>
                     <NavItem className="daycare" onClick={() => navigate('/daycare')}>
-                            Daycare
                     </NavItem>
                     <NavItem className="grooming" onClick={() => navigate('/grooming')}>
-                            Grooming
                     </NavItem>
                     <NavItem className="forms" onClick={() => navigate('/forms')}>
-                            Forms
                     </NavItem>
                     <NavItem className="faq" onClick={() => navigate('/faq')}>
-                            FAQs
                     </NavItem>
                 </Nav>
             </Navbar>

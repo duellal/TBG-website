@@ -34,7 +34,6 @@ const router = createBrowserRouter([
             // {path: 'about/contact', element: <Contact />}
             // {path: '/sitemap', element: <Sitemap />}
         ]
-
     }
 ])
 
