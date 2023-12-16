@@ -7,7 +7,7 @@ import { About } from './pages/about';
 // import { Team } from './pages/about'
 // import { Careers } from './pages/about'
 import Boarding from './pages/boarding';
-import { Contact } from './pages/about'
+// import { Contact } from './pages/about'
 import Daycare from './pages/daycare';
 import FAQs from './pages/FAQs';
 import Forms from './pages/forms';
