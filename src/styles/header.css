@@ -113,7 +113,7 @@ header .dropdown-content {
     z-index: 1;
   }
 
-  header .navbar a:hover, .dropdown:hover .dropbtn {
+  header .navbar a:hover, .about:hover .dropbtn {
     background-color: red;
   }
   
@@ -143,6 +143,7 @@ header .dropdown-content {
   }
   
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
+  .about:hover .dropdown-content {
     display: block;
   }
+  
