@@ -5,7 +5,7 @@ import './styles/website.css';
 
 //components
 import Footer from './pages/footer';
-import Header from './pages/header';
+import Header from './pages/header/header';
 
 function Website() {
   return (
