@@ -5,14 +5,14 @@ import Website from './Website'
 //components/pages
 import About from './pages/about/about';
 import TeamCareers from './pages/about/team-careers'
-import Boarding from './pages/boarding/boarding';
-import Daycare from './pages/daycare/daycare';
-import FAQs from './pages/faq/FAQs';
+import Boarding from './pages/boarding';
+import Daycare from './pages/daycare';
+import FAQs from './pages/FAQs';
 import Forms from './pages/forms';
-import Grooming from './pages/grooming/grooming';
+import Grooming from './pages/grooming';
 import Home from './pages/home';
-// import Requirements from './pages/requirements'
-//import Sitemap from './pages/sitemap
+import Requirements from './pages/requirements'
+import Sitemap from './pages/sitemap'
 
 const router = createBrowserRouter([
     {
@@ -27,9 +27,8 @@ const router = createBrowserRouter([
             {path: 'grooming', element: <Grooming />},
             {path: '', element: <Home />},
             {path:'about/team', element: <TeamCareers />},
-            // {path:'requirements', element: <Requirements />},
-            // {path: 'about/contact', element: <Contact />}
-            // {path: '/sitemap', element: <Sitemap />}
+            {path:'requirements', element: <Requirements />},
+            {path: '/sitemap', element: <Sitemap />}
         ]
     }
 ])
