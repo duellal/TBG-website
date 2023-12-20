@@ -5,15 +5,15 @@ export const aboutOptions = [
     // },
     {
         title: 'Our Facility',
-        url: '/facility'
+        url: '/about#facility'
     },
     {
         title: 'Our Team',
-        url: '/team'
+        url: '/about/team'
     },
     {
         title: 'Careers',
-        url: '/team#careers'
+        url: '/about/team#careers'
     },
 ]
 

@@ -1,12 +1,13 @@
 #home-div {
-    padding: 20% 10% 5%;
+    padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #home-div .image {
     padding-bottom: 5%;
-    width: 100%;
+    width: 90%;
 }
 
 #home-div .info {

@@ -7,15 +7,15 @@ import {
 import { useNavigate } from "react-router";
 
 //Footer Styles:
-import "../styles/footer.css"
+import "../../styles/footer.css"
 
 //Logo
-import logo from "../images/logo192.png"
-import phoneIcon from '../images/phone-call.png'
-import emailIcon from '../images/email.png'
-import fbIcon from '../images/facebook.png'
-import instaIcon from '../images/instagram.png'
-import tiktokIcon from '../images/tik-tok.png'
+import logo from "../../images/logo192.png"
+import phoneIcon from '../../images/phone-call.png'
+import emailIcon from '../../images/email.png'
+import fbIcon from '../../images/facebook.png'
+import instaIcon from '../../images/instagram.png'
+import tiktokIcon from '../../images/tik-tok.png'
 // import addressIcon from '../images/location-pin.png'
 
 export default function Footer(){ 
@@ -74,11 +74,7 @@ export default function Footer(){
                             </a>
                         </div>
                         <div className="break-div"></div>
-                        {/* <a className='address' href="https://maps.app.goo.gl/xP4CiNAGKqzPhW138" target="_blank" rel="noreferrer">
-                            <img src={addressIcon} width='30' height='30' alt='a map with a pinpoint on it to indicate a place'></img>
-                            2112 E Williams St, Apex, NC 27539
-                        </a> */}
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.537584269854!2d-78.83697175900978!3d35.688386472699044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac8dd864f751b7%3A0xe2824cd11188d5f3!2sThe%20Biscuit%20Garden!5e0!3m2!1sen!2sus!4v1702322948903!5m2!1sen!2sus" width="410" height="350" style={{border: '1px solid black' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Biscuit Garden Address on a Map"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.537584269854!2d-78.83697175900978!3d35.688386472699044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac8dd864f751b7%3A0xe2824cd11188d5f3!2sThe%20Biscuit%20Garden!5e0!3m2!1sen!2sus!4v1702322948903!5m2!1sen!2sus" width="410" height="350" style={{border: '1px solid black' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="The Biscuit Garden Address on a Map"></iframe>
                     </div>
                 </div>
                 

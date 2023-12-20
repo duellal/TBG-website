@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
 import './styles/website.css';
 
 //components
-import Footer from './pages/footer';
-import Header from './pages/header/header';
+import Footer from './pages/header-footer/footer';
+import Header from './pages/header-footer/header';
 
 function Website() {
   return (

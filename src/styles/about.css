@@ -1,0 +1,27 @@
+#about-div {
+    padding: 12% 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about-div h1, 
+#about-div h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#about-div #facility {
+    width: 100%;
+    padding-top: 15%;
+}
+
+#about-div .image {
+    width: 100%;
+    padding-top: 15%;
+}
+
+#about-div img{
+    width: 100%;
+    height: 400px;
+}
+

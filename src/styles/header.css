@@ -8,19 +8,21 @@ header{
 }
 
 header .logo{
-    width: 100%;
+    width: 8%;
+    padding: 1% 0;
 }
 
 header .logo-png{
-    display: block;
-    margin: 1% auto .5%;
-    width: 10%;
-
+    display: inherit;
+    justify-content: flex-start;
+    margin: 2%;
+    width: 80%;
 }
 
 header .navbar{
     width: 50%;
     margin: 1% 0;
+    align-self: center;
 }
 
 header .nav{
@@ -98,17 +100,12 @@ header .dropbtn:hover {
       left: 0px;
     }
 
-.about .dropdown-content {
-    min-width: 110px;
-}
-
+.about .dropdown-content,
 .boarding .dropdown-content,
-.daycare .dropdown-content {
-    min-width: 125px;
-}
-
-.grooming .dropdown-content {
-    min-width: 130px;
+.daycare .dropdown-content,
+.grooming .dropdown-content,
+.faq .dropdown-content {
+  min-width: 100%;
 }
 
   /* Links inside the dropdown */

@@ -3,8 +3,10 @@ import React from "react";
 import {
     Nav, 
     NavItem, 
+    NavLink, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
+import { useLocation } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -31,17 +33,17 @@ export default function Header(){
             </div>
             <Navbar>
                 <Nav>
-                    <NavItem className="home" onClick={() => navigate('/')}>
+                    <NavItem className="home" onClick={() => {navigate('/')}}>
                             Home
                     </NavItem>
-                    <NavItem className="about" onClick={() => navigate('/about')}>
+                    <NavItem className="about" onClick={() => navigate(`/about`)}>
                         <button className="dropbtn">
                             About
                         </button>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                         {aboutOptions.map((option, i) => {
                             return (
-                                <a href={option.url}> {option.title} </a>
+                                <a href={option.url} key={i}> {option.title} </a>
                             )
                         })}
                         </div>
@@ -50,10 +52,10 @@ export default function Header(){
                         <button className="dropbtn">
                             Boarding
                         </button>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             {boardingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })} 
                         </div>
@@ -62,10 +64,10 @@ export default function Header(){
                         <button className="dropbtn">
                             Daycare
                         </button>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             {daycareOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })} 
                         </div>
@@ -74,10 +76,10 @@ export default function Header(){
                         <button className="dropbtn">
                             Grooming
                         </button>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             {groomingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })}
                         </div>
@@ -89,10 +91,10 @@ export default function Header(){
                         <button className="dropbtn">
                             FAQs
                         </button>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             {faqOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })}
                         </div>
