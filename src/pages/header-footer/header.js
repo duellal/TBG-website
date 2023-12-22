@@ -3,10 +3,10 @@ import React from "react";
 import {
     Nav, 
     NavItem, 
-    NavLink, 
+    // NavLink, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
