@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Website from './Website';
 //components/pages
@@ -19,19 +19,14 @@ const router = createBrowserRouter([
         path: '/',
         element: <Website />,
         children: [
-            {
-                path: 'about', 
-                element: <About><Outlet/></About>, 
-                children: [
-                    {path:'team', element: <TeamCareers />},
-                ]
-            },
+            {path: '', element: <Home />},
+            {path: 'about', element: <About />},
             {path: 'boarding', element: <Boarding />},
             {path: 'daycare', element: <Daycare />},
             {path: 'faq', element: <FAQs />},
             {path: 'forms', element: <Forms />},
             {path: 'grooming', element: <Grooming />},
-            {path: '', element: <Home />},
+            {path:'about/team', element: <TeamCareers />},
             {path:'requirements', element: <Requirements />},
             {path: 'sitemap', element: <Sitemap />}
         ]
