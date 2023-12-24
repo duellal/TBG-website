@@ -19,14 +19,16 @@ const router = createBrowserRouter([
         path: '/',
         element: <Website />,
         children: [
-            {path: 'about', element: <About />},
+            {path: 'about', element: <About />, 
+                children: [
+                    {path:'team', element: <TeamCareers />},
+                ]},
             {path: 'boarding', element: <Boarding />},
             {path: 'daycare', element: <Daycare />},
             {path: 'faq', element: <FAQs />},
             {path: 'forms', element: <Forms />},
             {path: 'grooming', element: <Grooming />},
             {path: '', element: <Home />},
-            {path:'about/team', element: <TeamCareers />},
             {path:'requirements', element: <Requirements />},
             {path: 'sitemap', element: <Sitemap />}
         ]
