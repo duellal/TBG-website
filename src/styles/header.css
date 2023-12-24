@@ -23,6 +23,7 @@ header .navbar{
     width: 50%;
     margin: 1% 0;
     align-self: center;
+    background-color: #06aed5; 
 }
 
 header .nav{
