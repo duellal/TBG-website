@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-// import React from "react";
+import React from "react";
 
 // //About Styles:
-// import '../styles/requirements.css';
+import '../styles/requirements.css';
 
 export default function Requirements(){
 
-    // return(
-    //     <div id='requirements-div'>
-
-    //     </div>
-    // )
+    return(
+        <div id='requirements-div'>
+            <h1> Requirements </h1>
+        </div>
+    )
 }
