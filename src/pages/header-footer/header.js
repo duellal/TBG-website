@@ -40,9 +40,9 @@ export default function Header(){
                             About
                         </button>
                         <div className="dropdown-content">
-                            <a href={`/about#facility`} key={1}> Our Facility </a>
-                            <a href={`/about/team`} key='3'> Our Team </a>
-                            <a href={`/about/team#careers`} key={3}> Careers </a>
+                            <a href={navigate(`/about#facility`)} key={1}> Our Facility </a>
+                            <a href={navigate(`/about/team`)} key='3'> Our Team </a>
+                            <a href={navigate(`/about/team#careers`)} key={3}> Careers </a>
                         {/* {aboutOptions.map((option, i) => {
                             return (
                                 <a href={option.url} key={i}> {option.title} </a>
