@@ -34,14 +34,14 @@ export default function Header(){
                     <NavItem className="home" onClick={() => {navigate('/')}}>
                             Home
                     </NavItem>
-                    <NavItem className="about" onClick={() => navigate(`/about`)}>
-                        <button className="dropbtn">
+                    <NavItem className="about">
+                        <button className="dropbtn"  onClick={() => navigate(`/about`)}>
                             About
                         </button>
                         <div className="dropdown-content">
                         {aboutOptions.map((option, i) => {
                             return (
-                                <a href={option.url} key={i}> {option.title} </a>
+                                <button onClick={() => {navigate(option.url)}} key={i}> {option.title} </button>
                             )
                         })}
                         </div>
