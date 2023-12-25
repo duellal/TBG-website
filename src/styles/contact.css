@@ -1,0 +1,5 @@
+#contact-div {
+    padding: 12% 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+}

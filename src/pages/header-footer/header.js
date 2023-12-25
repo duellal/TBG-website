@@ -5,7 +5,6 @@ import {
     NavItem, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
-// import { NavLink } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -15,7 +14,7 @@ import "../../styles/header.css";
 
 //Options for dropdown menu:
 import {
-    // aboutOptions,
+    aboutOptions,
     boardingOptions,
     daycareOptions,
     groomingOptions, 
@@ -40,14 +39,11 @@ export default function Header(){
                             About
                         </button>
                         <div className="dropdown-content">
-                            <a href={navigate(`/about#facility`)} key={1}> Our Facility </a>
-                            <a href={navigate(`/about/team`)} key='3'> Our Team </a>
-                            <a href={navigate(`/about/team#careers`)} key={3}> Careers </a>
-                        {/* {aboutOptions.map((option, i) => {
+                        {aboutOptions.map((option, i) => {
                             return (
                                 <a href={option.url} key={i}> {option.title} </a>
                             )
-                        })} */}
+                        })}
                         </div>
                     </NavItem>
                     <NavItem className="boarding" onClick={() => navigate('/boarding')}>
@@ -57,7 +53,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {boardingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} onClick={() => navigate(option.url)} key={i}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })} 
                         </div>
@@ -69,7 +65,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {daycareOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} onClick={() => navigate(option.url)} key={i}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })} 
                         </div>
@@ -81,7 +77,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {groomingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} onClick={() => navigate(option.url)} key={i}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })}
                         </div>
@@ -96,7 +92,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {faqOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} onClick={() => navigate(option.url)} key={i}> {option.title} </a>
+                                    <a href={option.url} key={i}> {option.title} </a>
                                 )
                             })}
                         </div>

@@ -11,6 +11,10 @@ export const aboutOptions = [
         title: 'Careers',
         url: '/about/team#careers'
     },
+    {
+        title: 'Contact Us',
+        url: '/about/contact'
+    }
 ]
 
 export const boardingOptions = [
