@@ -62,13 +62,13 @@ export default function Footer(){
                             Contact Us!
                         </p>
                         <div className="phone">
-                            <img src={phoneIcon} width='30' height='30' alt="Mobile phone with flat screen showing a landline phone with signals"></img>
+                            <img loading="lazy" src={phoneIcon} width='30' height='30' alt="Mobile phone with flat screen showing a landline phone with signals"></img>
                             <p className="number">
                                 (919) 355 - 2820
                             </p>
                         </div>
                         <div className="email">
-                            <img src={emailIcon} width='30' height='30' alt="paper with an at symbol inside an unsealed envelope"></img>
+                            <img loading="lazy" src={emailIcon} width='30' height='30' alt="paper with an at symbol inside an unsealed envelope"></img>
                             <a className="e-address" href="mailto:thebiscuitgarden@gmail.com">
                                 thebiscuitgarden@gmail.com
                             </a>
@@ -85,26 +85,26 @@ export default function Footer(){
                         </p>
                         <div id="facebook">
                             <a className="facebook" href="https://www.facebook.com/Apex2112EWilliamsSt" target="_blank" rel="noreferrer">
-                                <img src={fbIcon} width='30' height='30' alt='an f encircled in blue'></img>
+                                <img loading="lazy" src={fbIcon} width='30' height='30' alt='an f encircled in blue'></img>
                                 /Apex2112EWilliamsSt
                             </a>
                         </div>
                         <div id="instagram">
                             <a className="instagram" href="https://www.instagram.com/thebiscuitgarden/" target="_blank" rel="noreferrer">
-                                <img src={instaIcon} width='30' height='30' alt='a camera in a yellow to pink gradient'></img>
+                                <img loading="lazy" src={instaIcon} width='30' height='30' alt='a camera in a yellow to pink gradient'></img>
                                 @thebiscuitgarden
                             </a>
                         </div>
                         <div id="tiktok">
                             <a className="tiktok" href="https://www.tiktok.com/@biscuitgarden" target="_blank" rel="noreferrer">
-                                <img src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></img>
+                                <img loading="lazy" src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></img>
                                 @biscuitgarden
                             </a>
                         </div>
                     </div>
                     
                     <div className="logo">
-                        <img className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
+                        <img loading="lazy" className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
                     </div>
 
                     <Navbar>
