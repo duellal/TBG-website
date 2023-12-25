@@ -5,7 +5,7 @@ import {
     NavItem, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -15,7 +15,7 @@ import "../../styles/header.css";
 
 //Options for dropdown menu:
 import {
-    aboutOptions,
+    // aboutOptions,
     boardingOptions,
     daycareOptions,
     groomingOptions, 
