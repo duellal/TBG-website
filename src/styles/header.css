@@ -50,8 +50,6 @@ header .faq .dropbtn,
 header .home,
 header .forms {
     font-size: 16px;
-    border: none;
-    outline: none;
     color: white;
     padding: 14px 16px;
     background-color: inherit;
@@ -67,6 +65,7 @@ header .forms {
     align-items: center;
     color: white;
     background-color: #06aed5;
+    border: none;
 }
 
 header .home:hover,
@@ -85,7 +84,6 @@ header .dropbtn:hover {
   .dropdown-content {
     display: none;
     min-width: 100px;
-    /* padding: inherit; */
     background-color: inherit;
   }
 
@@ -101,16 +99,13 @@ header .dropbtn:hover {
       left: 0px;
     }
 
-.about .dropdown-content,
-.boarding .dropdown-content,
-.daycare .dropdown-content,
-.grooming .dropdown-content,
-.faq .dropdown-content {
-  min-width: 100%;
-}
+
+  .dropdown-content {
+    min-width: 100%;
+  }
 
   /* Links inside the dropdown */
-  .dropdown-content a {
+  .dropdown-content button {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -120,9 +115,10 @@ header .dropbtn:hover {
     text-decoration: none;
     text-align: left;
     font-size: inherit;
+    width: 100%;
   }
 
   /* Links on hover inside dropdown */
-  .dropdown-content a:hover {
+  .dropdown-content button:hover {
     color: black;
   }
