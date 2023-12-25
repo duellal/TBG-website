@@ -3,10 +3,9 @@ import React from "react";
 import {
     Nav, 
     NavItem, 
-    // NavLink, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
-// import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -41,11 +40,14 @@ export default function Header(){
                             About
                         </button>
                         <div className="dropdown-content">
-                        {aboutOptions.map((option, i) => {
+                            <a href={`/about#facility`} key={1}> Our Facility </a>
+                            <a href={`/about/team`} key='3'> Our Team </a>
+                            <a href={`/about/team#careers`} key={3}> Careers </a>
+                        {/* {aboutOptions.map((option, i) => {
                             return (
                                 <a href={option.url} key={i}> {option.title} </a>
                             )
-                        })}
+                        })} */}
                         </div>
                     </NavItem>
                     <NavItem className="boarding" onClick={() => navigate('/boarding')}>
