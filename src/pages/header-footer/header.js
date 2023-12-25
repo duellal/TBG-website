@@ -3,10 +3,8 @@ import React from "react";
 import {
     Nav, 
     NavItem, 
-    // NavLink, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
-// import { useLocation } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -23,8 +21,25 @@ import {
     faqOptions
 } from './menuOptions'
 
+
 export default function Header(){
     let navigate = useNavigate();
+
+    const scrollToElem = (section) => {
+        let elem = document.getElementById(section)
+        elem.scrollIntoView()
+    }
+
+    let url = async (urlOption) => {
+        if(urlOption.includes(`#`)){
+            let id = urlOption.split(`#`)[1];
+            await navigate(urlOption)
+            return scrollToElem(id)
+        }
+        else{
+            navigate(urlOption)
+        } 
+    }
 
     return (
         <header>
@@ -36,50 +51,50 @@ export default function Header(){
                     <NavItem className="home" onClick={() => {navigate('/')}}>
                             Home
                     </NavItem>
-                    <NavItem className="about" onClick={() => navigate(`/about`)}>
-                        <button className="dropbtn">
+                    <NavItem className="about">
+                        <button className="dropbtn"  onClick={() => navigate(`/about`)}>
                             About
                         </button>
                         <div className="dropdown-content">
-                        {aboutOptions.map((option, i) => {
-                            return (
-                                <a href={option.url} key={i}> {option.title} </a>
-                            )
-                        })}
+                            {aboutOptions.map((option, i) => {
+                                return (
+                                    <button onClick={() => url(option.url)} key={i}> {option.title} </button>
+                                )
+                            })}
                         </div>
                     </NavItem>
-                    <NavItem className="boarding" onClick={() => navigate('/boarding')}>
-                        <button className="dropbtn">
+                    <NavItem className="boarding">
+                        <button className="dropbtn" onClick={() => navigate('/boarding')}>
                             Boarding
                         </button>
                         <div className="dropdown-content">
                             {boardingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} key={i}> {option.title} </a>
+                                    <button onClick={() => url(option.url)} key={i}> {option.title} </button>
                                 )
                             })} 
                         </div>
                     </NavItem>
-                    <NavItem className="daycare" onClick={() => navigate('/daycare')}>
-                        <button className="dropbtn">
+                    <NavItem className="daycare">
+                        <button className="dropbtn" onClick={() => navigate('/daycare')}>
                             Daycare
                         </button>
                         <div className="dropdown-content">
                             {daycareOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} key={i}> {option.title} </a>
+                                    <button onClick={() => url(option.url)} key={i}> {option.title} </button>
                                 )
                             })} 
                         </div>
                     </NavItem>
-                    <NavItem className="grooming" onClick={() => navigate('/grooming')}>
-                        <button className="dropbtn">
+                    <NavItem className="grooming">
+                        <button className="dropbtn"  onClick={() => navigate('/grooming')}>
                             Grooming
                         </button>
                         <div className="dropdown-content">
                             {groomingOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} key={i}> {option.title} </a>
+                                    <button onClick={() => url(option.url)} key={i}> {option.title} </button>
                                 )
                             })}
                         </div>
@@ -87,14 +102,14 @@ export default function Header(){
                     <NavItem className="forms" onClick={() => navigate('/forms')}>
                         Forms
                     </NavItem>
-                    <NavItem className="faq" onClick={() => navigate('/faq')}>
-                        <button className="dropbtn">
+                    <NavItem className="faq">
+                        <button className="dropbtn"  onClick={() => navigate('/faq')}>
                             FAQs
                         </button>
                         <div className="dropdown-content">
                             {faqOptions.map((option, i) => {
                                 return (
-                                    <a href={option.url} key={i}> {option.title} </a>
+                                    <button onClick={() => url(option.url)} key={i}> {option.title} </button>
                                 )
                             })}
                         </div>

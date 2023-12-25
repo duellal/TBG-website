@@ -4,13 +4,13 @@
 // import React from "react";
 
 //About Styles:
-// import '../../styles/sitemap.css'
+// import '../styles/sitemap';
 
 export default function Sitemap(){
 
-    return(
-        <div id='sitemap-div'>
+    // return(
+    //     <div id='sitemap-div'>
 
-        </div>
-    )
+    //     </div>
+    // )
 }

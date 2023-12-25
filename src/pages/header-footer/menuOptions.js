@@ -1,8 +1,4 @@
 export const aboutOptions = [
-    // {
-    //     title: 'About',
-    //     url: '/about'
-    // },
     {
         title: 'Our Facility',
         url: '/about#facility'
@@ -15,13 +11,13 @@ export const aboutOptions = [
         title: 'Careers',
         url: '/about/team#careers'
     },
+    {
+        title: 'Contact Us',
+        url: '/about/contact'
+    }
 ]
 
 export const boardingOptions = [
-    // {
-    //     title: 'Boarding',
-    //     url: '/boarding'
-    // },
     {
         title: 'Prices',
         url: '/boarding#prices'
@@ -41,10 +37,6 @@ export const boardingOptions = [
 ]
 
 export const daycareOptions = [
-    // {
-    //     title: 'Daycare',
-    //     url: '/boarding'
-    // },
     {
         title: 'Prices',
         url: '/daycare#prices'
@@ -64,10 +56,6 @@ export const daycareOptions = [
 ]
 
 export const groomingOptions = [
-    // {
-    //     title: 'Grooming',
-    //     url: '/grooming'
-    // },
     {
         title: 'Prices',
         url: '/grooming#prices'
@@ -87,10 +75,6 @@ export const groomingOptions = [
 ]
 
 export const faqOptions = [
-    // {
-    //     title: 'FAQs',
-    //     url: '/faq'
-    // },
     {
         title: 'General',
         url: '/faq#general'
