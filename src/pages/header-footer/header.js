@@ -44,7 +44,7 @@ export default function Header(){
     return (
         <header>
             <div className="logo">
-                <img className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
+                <img loading="lazy" className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
             </div>
             <Navbar>
                 <Nav>

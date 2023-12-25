@@ -1,5 +1,49 @@
-#teamCareer-div {
+#teamCareers {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#teamCareers h1 {
+    margin-bottom: 3%;
+}
+#teamCareers h2 {
+    text-align: center;
+    width: 100%;
+    margin: 1.5%;
+}
+
+#teamCareers .info-div {
+    /* border: 1px solid salmon; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+#teamCareers .bio {
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+#teamCareers .pic {
+    width: 40%;
+}
+
+#teamCareers .text {
+    display: flex;
+    width: 55%;
+    align-items: center;
+
+}
+
+#teamCareers #careers {
+    margin-top: 2%;
+    text-align: center;
 }

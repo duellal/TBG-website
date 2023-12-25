@@ -27,7 +27,7 @@ export default function About(){
             </div>
 
             <div className="image">
-                <img src={stockFacility} alt='A black dog with tongue sticking out and wide eyes on a persons lap'></img>
+                <img loading="lazy" src={stockFacility} alt='A black dog with tongue sticking out and wide eyes on a persons lap'></img>
             </div>
 
             <div id="facility">
