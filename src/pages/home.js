@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import "../styles/home.css"
 
 //Images:
-import stockGolden from '../images/stock-golden.webp'
+import stockGolden from '../images/grafitti.jpeg'
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockGroom from '../images/stock-grooming.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
