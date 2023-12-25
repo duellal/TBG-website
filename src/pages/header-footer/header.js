@@ -21,8 +21,25 @@ import {
     faqOptions
 } from './menuOptions'
 
+
 export default function Header(){
     let navigate = useNavigate();
+
+    const scrollToElem = (section) => {
+        let elem = document.getElementById(section)
+        elem.scrollIntoView()
+    }
+
+    let url = async (option) => {
+        if(option.url.includes(`#`)){
+            let id = option.url.split(`#`)[1];
+            await navigate(option.url)
+            return scrollToElem(id)
+        }
+        else{
+            return navigate(option.url)
+        } 
+    }
 
     return (
         <header>
@@ -39,11 +56,11 @@ export default function Header(){
                             About
                         </button>
                         <div className="dropdown-content">
-                        {aboutOptions.map((option, i) => {
-                            return (
-                                <button onClick={() => {navigate(option.url)}} key={i}> {option.title} </button>
-                            )
-                        })}
+                            {aboutOptions.map((option, i) => {
+                                return (
+                                    <button onClick={() => url(option)} key={i}> {option.title} </button>
+                                )
+                            })}
                         </div>
                     </NavItem>
                     <NavItem className="boarding" onClick={() => navigate('/boarding')}>
@@ -53,7 +70,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {boardingOptions.map((option, i) => {
                                 return (
-                                    <button href={option.url} key={i}> {option.title} </button>
+                                    <button onClick={() => url(option)} key={i}> {option.title} </button>
                                 )
                             })} 
                         </div>
@@ -65,7 +82,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {daycareOptions.map((option, i) => {
                                 return (
-                                    <button href={option.url} key={i}> {option.title} </button>
+                                    <button onClick={() => url(option)} key={i}> {option.title} </button>
                                 )
                             })} 
                         </div>
@@ -77,7 +94,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {groomingOptions.map((option, i) => {
                                 return (
-                                    <button href={option.url} key={i}> {option.title} </button>
+                                    <button onClick={() => url(option)} key={i}> {option.title} </button>
                                 )
                             })}
                         </div>
@@ -92,7 +109,7 @@ export default function Header(){
                         <div className="dropdown-content">
                             {faqOptions.map((option, i) => {
                                 return (
-                                    <button href={option.url} key={i}> {option.title} </button>
+                                    <button onClick={() => url(option)} key={i}> {option.title} </button>
                                 )
                             })}
                         </div>
