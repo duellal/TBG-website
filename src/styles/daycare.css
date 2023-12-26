@@ -2,4 +2,119 @@
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#daycare-div h1,
+#daycare-div h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#daycare-div h2 {
+    margin: 3% 0;
+}
+
+#daycare-div h3{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+}
+
+#daycare-div h4 {
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+#daycare-div .list-items {
+    font-size: 1.5rem;
+
+}
+
+#daycare-div #info {
+    text-align: center;
+    margin: 2% 0;
+}
+
+#daycare-div #values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#daycare-div #values .images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#daycare-div #values img {
+    min-width: 100%;
+    max-height: 300px;
+}
+
+#daycare-div #values .value-text {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 25%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#daycare-div #values .value-text p,
+#daycare-div #values .value-text li {
+    width: 100%;
+}
+
+#daycare-div #prices {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-top: 12%;
+}
+
+#daycare-div #top {
+    padding-top: 3%;
+}
+
+#daycare-div #top,
+#daycare-div #bottom {
+    display: inherit;
+    justify-content: space-between;
+}
+
+#daycare-div #prices img {
+    min-width: 300px;
+    max-width: 300px;
+    height: 300px;
+}
+
+#daycare-div #prices .text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1%;
+    /* border: 1px solid orange; */
+}
+
+#daycare-div #prices .text .left,
+#daycare-div #prices .text .right {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid skyblue; */
+}
+
+#daycare-div #prices .text .right {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+#daycare-div #prices .text p {
+    width: 100%;
 }

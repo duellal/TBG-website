@@ -7,3 +7,9 @@ export let boardingValues = [
     `Water time (weather permitting)`,
 ]
 
+export let daycareValues = [
+    `Unlimited love + attention`,
+    `Frequent potty breaks`,
+    `Individualized play time`,
+    `Water time (weather permitting)`,
+]

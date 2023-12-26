@@ -2,4 +2,122 @@
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#grooming-div h1,
+#grooming-div h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#grooming-div h2 {
+    margin: 3% 0;
+}
+
+#grooming-div h3{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+}
+
+#grooming-div h4 {
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+#grooming-div img {
+    width: 70%;
+}
+
+#grooming-div #info {
+    text-align: center;
+    margin: 2% 0;
+}
+
+#grooming-div #info p {
+    padding-bottom: 2%;
+}
+
+#grooming-div #values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#grooming-div #values .images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#grooming-div #values img {
+    min-width: 100%;
+    max-height: 300px;
+}
+
+#grooming-div #values .value-text {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 25%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#grooming-div #values .value-text p,
+#grooming-div #values .value-text li {
+    width: 100%;
+}
+
+#grooming-div #prices {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-top: 12%;
+}
+
+#grooming-div #top {
+    padding-top: 3%;
+}
+
+#grooming-div #top,
+#grooming-div #bottom {
+    display: inherit;
+    justify-content: space-between;
+}
+
+#grooming-div #prices img {
+    min-width: 300px;
+    max-width: 300px;
+    height: 300px;
+}
+
+#grooming-div #prices .text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1%;
+    /* border: 1px solid orange; */
+}
+
+#grooming-div #prices .text .left,
+#grooming-div #prices .text .right {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid skyblue; */
+}
+
+#grooming-div #prices .text .right {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+#grooming-div #prices .text p {
+    width: 100%;
 }

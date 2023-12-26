@@ -117,7 +117,7 @@ body {
 
 ol,
 ul {
-  list-style: inside;
+  list-style: none;
 }
 
 blockquote,

@@ -14,7 +14,7 @@ import genBoarding2 from '../images/gen-boarding-2.jpeg'
 import genBoarding3 from '../images/gen-boarding-3.jpeg'
 
 // Variables:
-import { boardingValues } from "../constants/boarding-constants";
+import { boardingValues } from "../constants/values";
 
 export default function Boarding(){
     let listValues = boardingValues.map((statement) => {
@@ -52,9 +52,9 @@ export default function Boarding(){
                     <p>
                         All dogs will receive:
                     </p>
-                    <ul className="list-items">
+                    <div className="list-items">
                         {listValues}
-                    </ul>
+                    </div>
                 </div>                  
             </div>
 
