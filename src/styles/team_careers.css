@@ -15,7 +15,6 @@
 }
 
 #teamCareers .info-div {
-    /* border: 1px solid salmon; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,7 +24,6 @@
 }
 
 #teamCareers .bio {
-    /* border: 1px solid blueviolet; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

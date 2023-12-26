@@ -2,4 +2,127 @@
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
+#boarding-div h1,
+#boarding-div h2 {
+    width: 100%;
+    text-align: center;
+    margin: 3% 0;
+}
+
+#boarding-div h3{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+}
+
+#boarding-div h4 {
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+#boarding-div #info {
+    text-align: center;
+    margin: 2% 0;
+}
+
+#boarding-div #values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#boarding-div #values .images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#boarding-div #values img {
+    min-width: 100%;
+    max-height: 300px;
+}
+
+#boarding-div #values .value-text {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 25%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#boarding-div #values .value-text p,
+#boarding-div #values .value-text li {
+    width: 100%;
+}
+
+#boarding-div #prices {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-top: 12%;
+}
+
+#boarding-div #top {
+    padding-top: 3%;
+}
+
+#boarding-div #top,
+#boarding-div #bottom {
+    display: inherit;
+    justify-content: space-between;
+}
+
+#boarding-div #prices img {
+    width: 300px;
+    height: 300px;
+}
+
+#boarding-div #prices .text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1%;
+    /* border: 1px solid orange; */
+}
+
+#boarding-div #prices .text .left,
+#boarding-div #prices .text .right {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid skyblue; */
+}
+
+#boarding-div #prices .text .right {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+#boarding-div #prices .text p {
+    width: 100%;
+}
+
+#boarding-div #prices .pocket-ex {
+    font-size: 1.5rem;
+}
+
+#boarding-div #prices .pocket-instruction {
+    font-size: 1.3rem;
+    margin-bottom: 1.5%;
+}
+
+
+/* #boarding-div #prices .text.left {
+
+} */
+
+
+/* #boarding-div */

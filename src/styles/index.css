@@ -117,7 +117,7 @@ body {
 
 ol,
 ul {
-  list-style: none;
+  list-style: inside;
 }
 
 blockquote,
@@ -178,6 +178,10 @@ h3{
 p,
 a {
   font-size: 1.8rem;
+}
+
+ul {
+  font-size: 1.5rem;
 }
 
 .copyright p {
