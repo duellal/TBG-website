@@ -50,7 +50,7 @@ export default function Requirements(){
                     </p>
                     <br/>
                     <p>
-                        You can also bring your pet's own food if you'd prefer them to stay on their food, they have a sensitive stomach, or they are allergic to chicken. If you do bring your own food, we do prefer to have it seperated it individual bags per meal or day. This ensures that your dog will have enough food for their entire stay. If the stay is longer than 3-4 days, feel free to bring a container with more than enough food for their stay if you don't want to individually package their food. 
+                        You can also bring your pet's own food if you'd prefer them to stay on their food, they have a sensitive stomach, or they are allergic to chicken. If you do bring your own food, we do prefer to have it seperated it individual bags per meal or day. This insures that your dog will have enough food for their entire stay. If the stay is longer than 3-4 days, feel free to bring a container with more than enough food for their stay if you don't want to individually package their food. 
                     </p>
                 </div>
 

@@ -1,0 +1,58 @@
+#forms {
+    padding: 12% 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#forms h1{
+    width: 100%;
+}
+
+#forms #digital,
+#forms #pdf {
+    display: inherit;
+    justify-content: center;
+    width: 80%;
+    margin-top: 5%;
+}
+
+#forms #pdf {
+    flex-wrap: wrap;
+}
+
+#forms #digital #intake, 
+#forms #digital #medication {
+    display: inherit;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    width: 50%;
+    border: 2px solid black;
+    padding: 3%;
+}
+
+#forms #digital #intake {
+    margin-right: 0.5%;
+}
+
+#forms #digital #medication {
+    margin-left: 0.5%;
+}
+
+#forms button {
+    margin-top: 3%;
+}
+
+#forms #pdf p{
+    margin: 2% 0;
+}
+
+#forms .btns {
+    width: 100%;
+}
+#forms .btns button{
+    margin: 2%;
+}
+
