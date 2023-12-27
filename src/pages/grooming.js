@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 
 //Grooming Styles:
 import "../styles/grooming.css"
@@ -10,6 +10,8 @@ import grooming2 from '../images/grooming-2.jpeg';
 import grooming3 from '../images/grooming-3.jpeg';
 
 export default function Grooming(){
+    const [toggle, setToggle] = useState(true);
+
     return(
         <div id='grooming-div'>
             <h1> 
@@ -46,11 +48,72 @@ export default function Grooming(){
             </div>
 
             <div id="checkin-out">
-                <div id="checkin">
-
+                <h2>Grooming Checking In and Out</h2>
+                <div className="info">
+                    <p> General information about checking in and out at our facility. </p>
                 </div>
-                <div id="checkout">
+                <div className="toggle-box">
+                    <div className="buttons">
+                        <button className={`checkin ${toggle ? 'btn-toggle' : ''}`} onClick={() => {
+                            if(toggle === false){
+                                setToggle(!toggle)
+                            }
+                        }}>
+                            Check In
+                        </button>
+                        <button className={`checkout ${!toggle ? 'btn-toggle' : ''}`} onClick={() => {
+                            if(toggle === true){
+                                setToggle(!toggle)
+                            }
+                        }}>
+                            Check Out
+                        </button>
+                    </div>
 
+                    {/* Toggling between the two buttons for check in / out */}
+                    {toggle ?   
+                    <div id="checkin" className="toggle">
+                        <div id="times">
+                            <h3> Typical Times to Check In</h3>
+                            <div className="days">
+                                <p>
+                                    Please arrive about 5 minutes before your appointment. 
+                                </p>
+                            </div>
+                        </div>
+                        <div id="checklist">
+                            <h3>What to Expect</h3>
+                            <div className="text">
+                                <p className="first">Paragraph on what to expect when checking in.</p>
+                                <p>Check list of what the customer needs to do before their pet visits us:
+                                    <div className="list">
+                                        <li>One</li>
+                                        <li>Two</li>
+                                        <li>Three</li>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    :
+                    <div id="checkout" className="toggle">
+                        <div id="times">
+                            <h3> Typical Times to Check Out</h3>
+                            <div className="days">
+                                <h4> Monday - Saturday </h4>
+                                <p>8am - 6pm</p>
+                                <h4>Sunday</h4>
+                                <p>4pm - 6pm</p>
+                            </div>
+                        </div>
+                        <div id="checklist">                      
+                            <h3>What to Expect</h3>
+                            <div className="text">
+                                <p>Paragraph on what to expect when checking out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
         </div>

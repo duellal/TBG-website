@@ -24,11 +24,11 @@ export const boardingOptions = [
     },
     {
         title: 'Checking In',
-        url: '/boarding#checkin'
+        url: '/boarding#checkin-out'
     },
     {
         title: 'Checking Out',
-        url: '/boarding#checkout'
+        url: '/boarding#checkin-out'
     },
     {
         title: 'Requirements',
@@ -43,11 +43,11 @@ export const daycareOptions = [
     },
     {
         title: 'Checking In',
-        url: '/daycare#checkin'
+        url: '/daycare#checkin-out'
     },
     {
         title: 'Checking Out',
-        url: '/daycare#checkout'
+        url: '/daycare#checkin-out'
     },
     {
         title: 'Requirements',
@@ -62,11 +62,11 @@ export const groomingOptions = [
     },
     {
         title: 'Checking In',
-        url: '/grooming#checkin'
+        url: '/grooming#checkin-out'
     },
     {
         title: 'Checking Out',
-        url: '/grooming#checkout'
+        url: '/grooming#checkin-out'
     },
     {
         title: 'Requirements',

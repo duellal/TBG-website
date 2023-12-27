@@ -101,7 +101,6 @@
     justify-content: space-between;
     width: 100%;
     padding: 1%;
-    /* border: 1px solid orange; */
 }
 
 #grooming-div #prices .text .left,
@@ -110,7 +109,6 @@
     flex-wrap: wrap;
     width: 100%;
     height: 60px;
-    /* border: 1px solid skyblue; */
 }
 
 #grooming-div #prices .text .right {
@@ -120,4 +118,90 @@
 
 #grooming-div #prices .text p {
     width: 100%;
+}
+
+#grooming-div #checkin-out {
+    padding-top: 12%; 
+}
+
+#grooming-div #checkin-out .info {
+    text-align: center;
+    padding: 2% 0;
+}
+
+#grooming-div #checkin-out .toggle-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 8%;
+    width: 80%;
+}
+
+#grooming-div #checkin-out .buttons {
+    width: 100%;
+}
+
+#grooming-div #checkin-out button {
+    width: 50%;
+    padding: 10px;
+    background-color: #35c6e7;
+    border: none;
+}
+
+#grooming-div #checkin-out button:hover {
+    background-color: #2DACC8;
+}
+
+#grooming-div #checkin-out .btn-toggle,
+#grooming-div #checkin-out .btn-toggle:hover {
+    background-color: #8197f9;
+}
+
+#grooming-div #checkin-out .toggle {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#grooming-div #checkin-out .toggle {
+    background-color: #8197f9;
+}
+
+#grooming-div #checkin-out #times,
+#grooming-div #checkin-out #checklist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 2% 0;
+}
+
+#grooming-div #checkin-out p {
+    width: 100%;
+}
+
+#grooming-div #checkin-out #times h3,
+#grooming-div #checkin-out #checklist h3 {
+    margin-bottom: 2%;
+    width: 80%;
+}
+
+#grooming-div #checkin-out #times .days,
+#grooming-div #checkin-out #checklist .text {
+    padding: 1% 0;
+    border: 2px solid black;
+    width: 80%;
+}
+
+#grooming-div #checkin-out #checklist p.first {
+    margin-bottom: 2%;
+}
+
+#grooming-div #checkin-out #checklist .list li {
+    text-align: left;
+    margin: 0 0 1% 10%;
+    list-style: square;
 }
