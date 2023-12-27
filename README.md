@@ -11,6 +11,7 @@ This website is designed to showcase Che Biscuit Garden's services, provide busi
 * CSS3
 * JavaScript
 * React
+* EmailJS (send form data to email)
 
 ## Features
 * Homepage: Introduction to The Biscuit Garden
