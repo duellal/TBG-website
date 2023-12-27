@@ -12,7 +12,6 @@ import stockGroom from '../images/stock-grooming.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
 
 export default function Home(){
-
     let navigate = useNavigate();
 
     return (
