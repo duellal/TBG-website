@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
 import '../styles/forms.css'
 
 export default function Forms(){
+    let navigate = useNavigate();
 
     return (
         <div id="forms">
@@ -22,7 +24,7 @@ export default function Forms(){
                         This form is required before you can schedule at our facility. 
                     </p>
 
-                    <button className="intake"> Digital Intake Form </button>
+                    <button className="intake" onClick={() => navigate('/')}> Digital Intake Form </button>
                 </div>
 
                 <div id="medication">
@@ -32,7 +34,7 @@ export default function Forms(){
                         We require all dogs who have medications to fill out a medication form.
                     </p>
 
-                    <button className="med"> Digital Medication Form </button>
+                    <button className="med" onClick={() => navigate('/')}> Digital Medication Form </button>
                 </div>
             </div>
 

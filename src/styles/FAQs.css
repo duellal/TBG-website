@@ -1,5 +1,14 @@
-#faq-div {
+#faqs {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#faqs #general,
+#faqs #boarding,
+#faqs #daycare,
+#faqs #grooming {
+    width: 100%;
 }
