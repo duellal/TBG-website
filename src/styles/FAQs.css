@@ -6,9 +6,51 @@
     text-align: center;
 }
 
-#faqs #general,
-#faqs #boarding,
-#faqs #daycare,
-#faqs #grooming {
+#faqs .all-faqs {
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: inherit;
+}
+
+#faqs #General,
+#faqs #Boarding,
+#faqs #Daycare,
+#faqs #Grooming {
     width: 100%;
+    margin: 3% 0;
+}
+
+#faqs #accordian-title .title {
+    display: flex;
+    flex-wrap: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+#faqs #General {
+    background-color: #f2429d;
+}
+
+#faqs #Boarding {
+    background-color: #1ABC9C;
+}
+
+#faqs #Daycare {
+    background-color: #06aed5;
+}
+
+#faqs #Grooming {
+    background-color: #F39C12;
+}
+
+#faqs #accordian-question .question {
+    display: flex;
+    flex-wrap: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+#faqs #accordian-question .answer {
+    padding: 2%;
+    text-align: left; 
 }

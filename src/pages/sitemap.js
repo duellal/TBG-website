@@ -1,16 +1,14 @@
-//Add a credits page to this
-
 /* eslint-disable react/prop-types */
-// import React from "react";
+import React from "react";
 
-//About Styles:
-// import '../styles/sitemap';
+//Sitemap Styles:
+import '../styles/sitemap.css';
 
 export default function Sitemap(){
-
-    // return(
-    //     <div id='sitemap-div'>
-
-    //     </div>
-    // )
+    //Add credits page to this page
+    return(
+        <div id='sitemap-div'>
+            
+        </div>
+    )
 }

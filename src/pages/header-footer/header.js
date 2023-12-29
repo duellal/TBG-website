@@ -103,7 +103,7 @@ export default function Header(){
                         Forms
                     </NavItem>
                     <NavItem className="faq">
-                        <button className="dropbtn"  onClick={() => navigate('/faq')}>
+                        <button className="dropbtn"  onClick={() => navigate('/faqs')}>
                             FAQs
                         </button>
                         <div className="dropdown-content">

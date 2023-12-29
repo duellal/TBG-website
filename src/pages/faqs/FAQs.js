@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-//Component
-import Accordian from "./accordian";
+//Other Component
+import AccordianTitle from './accordian-titles';
 
 //FAQ Arrays: 
 import {
+    titles,
     generalFaqs,
     boardingFaqs,
     daycareFaqs,
@@ -16,45 +17,62 @@ import {
 import '../../styles/FAQs.css'
 
 export default function FAQs(){
-return(
-    <div id='faqs'>
-        <h1> 
-            Frequently Asked Questions
-        </h1>
-        <div id="general">
-                <Accordian title={<h2>General</h2>} content={
-                    <div className="dropdown">
-                        {generalFaqs.map(({title, content}) => (
-                            <Accordian title={title} content={content} />
-                        ))}
-                    </div>
-                }/> 
-            
-        </div>
-        <div id="boarding">
-            <h2> Boarding </h2>
-            <div className="dropdown">
-                {boardingFaqs.map(({title, content}) => (
-                    <Accordian title={title} content={content} />
-                ))}
+    return(
+        <div id='faqs'>
+            <h1> 
+                Frequently Asked Questions
+            </h1>
+
+            <div className="all-faqs">
+            {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
+                {
+                    titles.map((title, index) => {
+                        if(title === 'General'){
+                            return (
+                                <div key={index} id={title}>
+                                    <AccordianTitle 
+                                        title={title} 
+                                        content={generalFaqs} 
+                                    />
+                                </div>
+                            )
+                        }
+                        else if(title === `Boarding`){
+                            return (
+                                <div key={index} id={title}>
+                                    <AccordianTitle 
+                                        title={title} 
+                                        content={boardingFaqs} 
+                                    />
+                                </div>
+                            )
+                        }
+                        else if(title === `Daycare`){
+                            return (
+                                <div key={index} id={title}>
+                                    <AccordianTitle 
+                                        title={title} 
+                                        content={daycareFaqs} 
+                                    />
+                                </div>
+                            )
+                        }
+                        else if(title === `Grooming`){
+                            return (
+                                <div key={index} id={title}>
+                                    <AccordianTitle 
+                                        title={title} 
+                                        content={groomingFaqs} 
+                                    />
+                                </div>
+                            )
+                        }
+                        else{
+                            return <div>Error</div>
+                        }
+                    })
+                }
             </div>
         </div>
-        <div id="daycare">
-            <h2> Daycare </h2>
-            <div className="dropdown">
-                {daycareFaqs.map(({title, content}) => (
-                    <Accordian title={title} content={content} />
-                ))}
-            </div>
-        </div>
-        <div id="grooming">
-            <h2> Grooming </h2>
-            <div className="dropdown">
-                {groomingFaqs.map(({title, content}) => (
-                    <Accordian title={title} content={content} />
-                ))}
-            </div>
-        </div>
-    </div>
-)
+    )
 }
