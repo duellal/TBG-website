@@ -4,3 +4,27 @@
     flex-wrap: wrap;
     text-align: center;
 }
+
+#credits h2 {
+    font-size: 3rem;
+}
+#credits a:hover {
+    cursor: pointer;
+    color: purple;
+}
+
+#credits h1,
+#credits .website,
+#credits .images,
+#credits .icons {
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+#credits .icons img {
+    margin-right: 1%;
+}
+
+#credits .icons p {
+    margin: 0.5% 0; 
+}
