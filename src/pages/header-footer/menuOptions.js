@@ -77,18 +77,18 @@ export const groomingOptions = [
 export const faqOptions = [
     {
         title: 'General',
-        url: '/faq#general'
+        url: '/faqs#General'
     },
     {
         title: 'Boarding',
-        url: '/faq#boarding'
+        url: '/faqs#Boarding'
     },
     {
         title: 'Daycare',
-        url: '/faq#daycare'
+        url: '/faqs#Daycare'
     },
     {
         title: 'Grooming',
-        url: '/faq#grooming'
+        url: '/faqs#Grooming'
     },
 ]
