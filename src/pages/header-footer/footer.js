@@ -9,14 +9,13 @@ import { useNavigate } from "react-router";
 //Footer Styles:
 import "../../styles/footer.css"
 
-//Logo
+//Logos
 import logo from "../../images/logo192.png"
 import phoneIcon from '../../images/phone-call.png'
 import emailIcon from '../../images/email.png'
 import fbIcon from '../../images/facebook.png'
 import instaIcon from '../../images/instagram.png'
 import tiktokIcon from '../../images/tik-tok.png'
-// import addressIcon from '../images/location-pin.png'
 
 export default function Footer(){ 
     let navigate = useNavigate();
@@ -127,7 +126,7 @@ export default function Footer(){
                             <NavItem onClick={() => navigate('/forms')}>
                                     Forms
                             </NavItem>
-                            <NavItem onClick={() => navigate('/faq')}>
+                            <NavItem onClick={() => navigate('/faqs')}>
                                     FAQs
                             </NavItem>
                             <NavItem onClick={() => navigate('/sitemap')}>

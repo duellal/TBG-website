@@ -112,10 +112,12 @@ header .dropbtn:hover {
     float: none;
     color: white;
     padding: 2%;
+    padding-bottom: 10px;
     text-decoration: none;
     text-align: left;
     font-size: inherit;
     width: 100%;
+    min-height: 25px;
   }
 
   /* Links on hover inside dropdown */
