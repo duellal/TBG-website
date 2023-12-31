@@ -7,7 +7,7 @@ import About from './pages/about/about';
 import Boarding from './pages/boarding';
 import Contact from './pages/about/contact';
 import Credits from './pages/credits';
-import Error404 from './pages/error-page';
+import Err404 from './pages/err404';
 import Daycare from './pages/daycare';
 import FAQs from './pages/faqs/FAQs';
 import Forms from './pages/forms';
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Website />,
-        errorElement: <Error404 />,
+        errorElement: <Err404 />,
         children: [
             {path: '', element: <Home />},
             {path: 'about', element: <About />},
