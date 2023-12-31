@@ -27,17 +27,6 @@ export default function Forms(){
                     {/* Need button to navigate to Intake Form Page */}
                     <button className="intake" onClick={() => navigate('/')}> Digital Intake Form </button>
                 </div>
-
-                <div id="medication">
-                    <h2> Medication Form </h2>
-
-                    <p> 
-                        We require all dogs who have medications to fill out a medication form.
-                    </p>
-
-                    {/* Need button to navigate to Medication Form Page */}
-                    <button className="med" onClick={() => navigate('/')}> Digital Medication Form </button>
-                </div>
             </div>
 
             <div id="pdf">
@@ -49,8 +38,6 @@ export default function Forms(){
                 <div className="btns">
                     {/* Need button to navigate to Intake Form PDF in a different window*/}
                     <button className="intake"> Intake Form </button>
-                    {/* Need button to navigate to Medication Form PDF in a different window*/}
-                    <button className="med"> Medication Form </button>
                 </div>
             </div>
         </div>
