@@ -1,55 +1,102 @@
 /* eslint-disable react/prop-types */
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //About Styles:
-import {ContactHeader, ContactForm, ContactSection} from '../../styles/contact'
+import { ContactHeader, ContactCard, ContactForm, ContactSection, ContactDivider, ErrorLink, ErrorText, Input, Label, MessageInput, FlexColDiv, Row, Rotate, SubmitInput } from '../../styles/contact'
 
-export default function Contact(){
+export default function Contact() {
     const [error, setError] = useState(null)
     const form = useRef();
-    
-    const submitHandler = event => {
+    const [loading, setLoading] = useState(false)
+
+    const submitHandler = async event => {
         event.preventDefault();
-        
+        setLoading(true)
+        //clears errors if there were any previously
+        setError(null)
+
         emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-        .then(() => {
-            
-        }, (error) => {
-            setError(error.text)
-        }).finally(()=> {
-            //resets the form after the email is sent 
-            form.current.reset()
-        })
+            .then(() => {
+                //resets the form after the email is sent 
+                form.current.reset()
+                setLoading(false)
+            }, (error) => {
+                setError(error.text)
+            }).finally(() => {
+                //resets the form after the email is sent 
+                form.current.reset()
+                setLoading(false)
+            })
     }
-    
-    return(
+
+    return (
         <ContactSection id='contact'>
-            <ContactHeader id='contact-header'>
-                <h1> 
-                    Contact Us!
-                </h1>
-            </ContactHeader>
-            {error && <p>There was a problem submitting the form. Please try submitting the form again. If the problem perissts, kindly reach out to use directly at (919) 355 - 2820 or <a className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</a>
-            .</p>}
-            <ContactForm ref={form} onSubmit={submitHandler}>
-                <label> 
-                    Name: <input type="text" name="user_name" />  
-                </label>
-                <label>
-                    Email: <input type="email" name="user_email" />
-                </label>
-                <label>
-                    Phone: <input type="phone" name="user_phone" />
-                </label>
-                <label>
-                    Pet's Name: <input type="text" name="pet_name" />
-                </label>
-                <label>
-                    Message: <textarea name="message" />
-                </label>
-                <input type="submit" value="Send" />
-            </ContactForm>
+            <ContactCard>
+                <ContactHeader id='contact-header'>
+                    <h2>
+                        Contact Us!
+                    </h2>
+
+                    <ContactDivider>
+                        <FontAwesomeIcon icon={faPaw} size="2xl" />
+                    </ContactDivider>
+                    <p>We would love to hear from you!</p>
+                    <p>Please complete the form below and our team will be in touch via email shortly!</p>
+                </ContactHeader>
+                {error && (
+                    <div>
+                        <ErrorText>There was a problem submitting the form.</ErrorText> <ErrorText>Please try submitting the form again.</ErrorText>
+                        <ErrorText> If the problem perissts, kindly reach out to use directly at (919) 355 - 2820 or <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.</ErrorText>
+                    </div>
+                )}
+                <ContactForm ref={form} onSubmit={submitHandler}>
+                    <Row>
+                        <FlexColDiv>
+                            <Label htmlFor="user_first_name">
+                                First Name
+                            </Label>
+                            <Input type="text" name="user_first_name" />
+                        </FlexColDiv>
+                        <FlexColDiv>
+                            <Label htmlFor="user_last_name">
+                                Last Name
+                            </Label>
+                            <Input type="text" name="user_last_name" />
+                        </FlexColDiv>
+                    </Row>
+                    <Row>
+                        <FlexColDiv>
+                            <Label htmlFor="user_email">
+                                Email
+                            </Label>
+                            <Input type="email" name="user_email" />
+                        </FlexColDiv>
+                        <FlexColDiv>
+                            <Label htmlFor="user_phone">
+                                Phone
+                            </Label>
+                            <Input type="phone" name="user_phone" />
+                        </FlexColDiv>
+                    </Row>
+                    <Row>
+                        <FlexColDiv>
+                            <Label>
+                                Message
+                            </Label>
+                            <MessageInput name="message" />
+                        </FlexColDiv>
+                    </Row>
+                    <Row>
+                        <SubmitInput type="submit" value="Send" />
+                        {loading && <Rotate>
+                            <FontAwesomeIcon icon={faSpinner} size="2xl" />
+                        </Rotate>}
+                    </Row>
+                </ContactForm>
+            </ContactCard>
         </ContactSection>
     )
 }
