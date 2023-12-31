@@ -13,7 +13,7 @@ export default function Grooming(){
     const [toggle, setToggle] = useState(true);
 
     return(
-        <div id='grooming-div'>
+        <div id='grooming'>
             <h1> 
                 Grooming At Our Facility
             </h1>

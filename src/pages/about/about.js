@@ -12,7 +12,7 @@ export default function About(){
 
 //client testimonials from google reviews
     return (
-        <div id="about-div">
+        <div id="about">
             <h1>
                 A Little About Us
             </h1>

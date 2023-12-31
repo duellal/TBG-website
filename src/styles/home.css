@@ -1,37 +1,37 @@
-#home-div {
+#home {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#home-div .image {
+#home .image {
     padding-bottom: 5%;
     width: 90%;
 }
 
-#home-div .info {
+#home .info {
     display: flex;
     justify-content: space-between;
 }
 
-#home-div .boarding,
-#home-div .daycare,
-#home-div .grooming {
+#home .boarding,
+#home .daycare,
+#home .grooming {
     width: 25%;
     text-align: justify;
 }
 
-#home-div p {
+#home p {
     margin-top: 5%;
 }
 
-#home-div button {
+#home button {
     display: block;
     margin: auto;
     margin-top: 10%;
 }
 
-#home-div h2 {
+#home h2 {
     text-align: center;
 }

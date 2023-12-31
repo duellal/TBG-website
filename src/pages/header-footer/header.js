@@ -5,6 +5,7 @@ import {
     NavItem, 
     Navbar } from "reactstrap";
 import { useNavigate } from "react-router";
+import { useLocation } from "react-router-dom";
 
 //Logo
 import logo from "../../images/logo192.png";
@@ -24,21 +25,50 @@ import {
 
 export default function Header(){
     let navigate = useNavigate();
+    let location = useLocation();
 
     const scrollToElem = (section) => {
         let elem = document.getElementById(section)
-        elem.scrollIntoView()
+        elem.scrollIntoView({behavior: 'smooth'})
     }
 
     let url = async (urlOption) => {
+        let splitUrlHash = urlOption.split(`#`)
+
         if(urlOption.includes(`#`)){
-            let id = urlOption.split(`#`)[1];
+            let id = splitUrlHash[1];
             await navigate(urlOption)
             return scrollToElem(id)
+        }
+        else if(urlOption.includes('team')){
+            let teamId = `teamCareers`
+            let prevLocation = window.location.href
+
+            if(prevLocation.includes(`#`)){
+                await navigate(urlOption)
+                return scrollToElem(teamId)
+            }
+            else{
+                navigate(`about/team`)
+            }   
         }
         else{
             navigate(urlOption)
         } 
+    }
+
+    let scrollOnClick = (section) => {
+        if(location.pathname === section){
+            let elem = section.split(`/`)[1]
+            let getId = document.getElementById(elem)
+            return getId.scrollIntoView({behavior: 'smooth'})
+        }
+        else if(section === `home`){
+            navigate(`/`)
+        }
+        else{
+            navigate(section)
+        }
     }
 
     return (
@@ -48,11 +78,11 @@ export default function Header(){
             </div>
             <Navbar>
                 <Nav>
-                    <NavItem className="home" onClick={() => {navigate('/')}}>
+                    <NavItem className="home" onClick={() => scrollOnClick(`home`)}>
                             Home
                     </NavItem>
                     <NavItem className="about">
-                        <button className="dropbtn"  onClick={() => navigate(`/about`)}>
+                        <button className="dropbtn"  onClick={() => scrollOnClick(`/about`)}>
                             About
                         </button>
                         <div className="dropdown-content">
@@ -64,7 +94,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="boarding">
-                        <button className="dropbtn" onClick={() => navigate('/boarding')}>
+                        <button className="dropbtn" onClick={() => scrollOnClick(`/boarding`)}>
                             Boarding
                         </button>
                         <div className="dropdown-content">
@@ -76,7 +106,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="daycare">
-                        <button className="dropbtn" onClick={() => navigate('/daycare')}>
+                        <button className="dropbtn" onClick={() => scrollOnClick(`/daycare`)}>
                             Daycare
                         </button>
                         <div className="dropdown-content">
@@ -88,7 +118,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="grooming">
-                        <button className="dropbtn"  onClick={() => navigate('/grooming')}>
+                        <button className="dropbtn"  onClick={() => scrollOnClick(`/grooming`)}>
                             Grooming
                         </button>
                         <div className="dropdown-content">
@@ -99,11 +129,11 @@ export default function Header(){
                             })}
                         </div>
                     </NavItem>
-                    <NavItem className="forms" onClick={() => navigate('/forms')}>
+                    <NavItem className="forms" onClick={() => scrollOnClick(`/forms`)}>
                         Forms
                     </NavItem>
                     <NavItem className="faq">
-                        <button className="dropbtn" onClick={() => navigate('/faqs')}>
+                        <button className="dropbtn" onClick={() => scrollOnClick(`/faqs`)}>
                             FAQs
                         </button>
                         <div className="dropdown-content">
