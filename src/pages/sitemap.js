@@ -67,10 +67,6 @@ export default function Sitemap(){
                             <h3>
                                 Intake Form
                             </h3>
-                            {/* Need to navigate to medication form page */}
-                            <h3>
-                                Medication Form
-                            </h3>
                         </div>
                     </div>
 
