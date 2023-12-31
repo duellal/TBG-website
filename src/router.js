@@ -4,9 +4,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Website from './Website';
 //components/pages
 import About from './pages/about/about';
-import Contact from './pages/about/contact';
-import TeamCareers from './pages/about/team-careers';
 import Boarding from './pages/boarding';
+import Contact from './pages/about/contact';
+import Credits from './pages/credits';
+import Error404 from './pages/error-page';
 import Daycare from './pages/daycare';
 import FAQs from './pages/faqs/FAQs';
 import Forms from './pages/forms';
@@ -14,12 +15,13 @@ import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/requirements';
 import Sitemap from './pages/sitemap';
-import Credits from './pages/credits';
+import TeamCareers from './pages/about/team-careers';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Website />,
+        errorElement: <Error404 />,
         children: [
             {path: '', element: <Home />},
             {path: 'about', element: <About />},
