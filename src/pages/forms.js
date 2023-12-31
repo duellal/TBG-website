@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 //Forms Styles:
 import '../styles/forms.css'
 
+//Import Form:
+import intakeForm from '../forms/TBG-Intake-Form-2024.pdf'
+
 export default function Forms(){
     let navigate = useNavigate();
 
@@ -24,7 +27,7 @@ export default function Forms(){
                         This form is required before you can schedule at our facility. 
                     </p>
 
-                    {/* Need button to navigate to Intake Form Page */}
+                    {/* Need button to navigate to Intake Form Page once in router */}
                     <button className="intake" onClick={() => navigate('/')}> Digital Intake Form </button>
                 </div>
             </div>
@@ -36,8 +39,7 @@ export default function Forms(){
                 </p>
 
                 <div className="btns">
-                    {/* Need button to navigate to Intake Form PDF in a different window*/}
-                    <button className="intake"> Intake Form </button>
+                    <button className="intake" onClick={() => window.open(intakeForm)}> Intake Form </button>
                 </div>
             </div>
         </div>
