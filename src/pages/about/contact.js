@@ -23,7 +23,7 @@ export default function Contact() {
                 //resets the form after the email is sent 
                 form.current.reset()
                 setLoading(false)
-            }, (error) => {
+            }).catch((error) => {
                 setError(error.text)
             }).finally(() => {
                 //resets the form after the email is sent 
@@ -49,7 +49,7 @@ export default function Contact() {
                 {error && (
                     <div>
                         <ErrorText>There was a problem submitting the form.</ErrorText> <ErrorText>Please try submitting the form again.</ErrorText>
-                        <ErrorText> If the problem perissts, kindly reach out to use directly at (919) 355 - 2820 or <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.</ErrorText>
+                        <ErrorText> If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.</ErrorText>
                     </div>
                 )}
                 <ContactForm ref={form} onSubmit={submitHandler}>
