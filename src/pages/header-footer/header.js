@@ -26,6 +26,7 @@ import {
 export default function Header(){
     let navigate = useNavigate();
     let location = useLocation();
+    let path = location.pathname;
 
     const scrollToElem = (section) => {
         let elem = document.getElementById(section)
@@ -35,7 +36,15 @@ export default function Header(){
     let url = async (urlOption) => {
         let splitUrlHash = urlOption.split(`#`)
 
-        if(urlOption.includes(`#`)){
+        if(urlOption === `home`){
+            if(path === '/'){
+                return scrollToElem(urlOption)
+            }
+            else{
+                return navigate('/')
+            }
+        }
+        else if(urlOption.includes(`#`)){
             let id = splitUrlHash[1];
             await navigate(urlOption)
             return scrollToElem(id)
@@ -52,23 +61,14 @@ export default function Header(){
                 navigate(`about/team`)
             }   
         }
-        else{
-            navigate(urlOption)
-        } 
-    }
-
-    let scrollOnClick = (section) => {
-        if(location.pathname === section){
-            let elem = section.split(`/`)[1]
+        else if(path === urlOption){
+            let elem = urlOption.split(`/`)[1]
             let getId = document.getElementById(elem)
             return getId.scrollIntoView({behavior: 'smooth'})
         }
-        else if(section === `home`){
-            navigate(`/`)
-        }
         else{
-            navigate(section)
-        }
+            navigate(urlOption)
+        } 
     }
 
     return (
@@ -78,11 +78,11 @@ export default function Header(){
             </div>
             <Navbar>
                 <Nav>
-                    <NavItem className="home" onClick={() => scrollOnClick(`home`)}>
+                    <NavItem className="home" onClick={() => url(`home`)}>
                             Home
                     </NavItem>
                     <NavItem className="about">
-                        <button className="dropbtn"  onClick={() => scrollOnClick(`/about`)}>
+                        <button className="dropbtn"  onClick={() => url(`/about`)}>
                             About
                         </button>
                         <div className="dropdown-content">
@@ -94,7 +94,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="boarding">
-                        <button className="dropbtn" onClick={() => scrollOnClick(`/boarding`)}>
+                        <button className="dropbtn" onClick={() => url(`/boarding`)}>
                             Boarding
                         </button>
                         <div className="dropdown-content">
@@ -106,7 +106,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="daycare">
-                        <button className="dropbtn" onClick={() => scrollOnClick(`/daycare`)}>
+                        <button className="dropbtn" onClick={() => url(`/daycare`)}>
                             Daycare
                         </button>
                         <div className="dropdown-content">
@@ -118,7 +118,7 @@ export default function Header(){
                         </div>
                     </NavItem>
                     <NavItem className="grooming">
-                        <button className="dropbtn"  onClick={() => scrollOnClick(`/grooming`)}>
+                        <button className="dropbtn"  onClick={() => url(`/grooming`)}>
                             Grooming
                         </button>
                         <div className="dropdown-content">
@@ -129,11 +129,11 @@ export default function Header(){
                             })}
                         </div>
                     </NavItem>
-                    <NavItem className="forms" onClick={() => scrollOnClick(`/forms`)}>
+                    <NavItem className="forms" onClick={() => url(`/forms`)}>
                         Forms
                     </NavItem>
                     <NavItem className="faq">
-                        <button className="dropbtn" onClick={() => scrollOnClick(`/faqs`)}>
+                        <button className="dropbtn" onClick={() => url(`/faqs`)}>
                             FAQs
                         </button>
                         <div className="dropdown-content">
