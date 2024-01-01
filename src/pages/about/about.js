@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import React from "react";
 
-// //About Styles:
+//About Styles:
 import "../../styles/about.css"
 
 //Images:

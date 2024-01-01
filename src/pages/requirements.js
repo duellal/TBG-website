@@ -2,7 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// //About Styles:
+//Requirements Styles:
 import '../styles/requirements.css';
 
 export default function Requirements(){
