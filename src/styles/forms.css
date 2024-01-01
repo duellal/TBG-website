@@ -27,13 +27,18 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
-    width: 50%;
+    width: 70%;
     border: 2px solid black;
     padding: 3%;
 }
 
 #forms #digital #intake {
     margin-right: 0.5%;
+}
+
+#forms #digital #intake p{
+    width: 100%;
+    margin: 1% 0;
 }
 
 #forms button {

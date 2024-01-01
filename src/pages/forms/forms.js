@@ -28,7 +28,7 @@ export default function Forms(){
                     </p>
 
                     {/* Need button to navigate to Intake Form Page once in router */}
-                    <button className="intake" onClick={() => navigate('/')}> Digital Intake Form </button>
+                    <button className="intake" onClick={() => navigate('/forms/intake')}> Digital Intake Form </button>
                 </div>
             </div>
 

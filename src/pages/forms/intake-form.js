@@ -1,12 +1,15 @@
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { ContactHeader, ContactCard, ContactForm, ContactSection, ContactDivider, ErrorLink, ErrorText, Input, Label, MessageInput, FlexColDiv, Row, Rotate, SubmitInput } from '../../styles/contact'
+import { IntakeCard, IntakeDivider, IntakeHeader, IntakeSection } from '../../styles/intake-form'
+import { Row, Label, Input, MessageInput, 
+    FlexColDiv, SubmitInput, Rotate, 
+    ErrorLink, ErrorText } from "../../styles/contact";
 
-export default function Contact() {
+export default function DigitalIntake() {
     const [error, setError] = useState(null)
     const form = useRef();
     const [loading, setLoading] = useState(false)
@@ -32,8 +35,18 @@ export default function Contact() {
     }
 
     return (
-        <div id="digital-intake">
+        <IntakeSection id="digital-intake">
+            <IntakeCard>
+                <IntakeHeader id='intake-header'>
+                    <h2>
+                        Intake Form
+                    </h2>
 
-        </div>
+                    <IntakeDivider>
+                        
+                    </IntakeDivider>
+                </IntakeHeader>
+            </IntakeCard>
+        </IntakeSection>
     )
 }
