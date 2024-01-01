@@ -22,8 +22,7 @@
     flex-wrap: wrap;
 }
 
-#forms #digital #intake, 
-#forms #digital #medication {
+#forms #digital #intake {
     display: inherit;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,10 +34,6 @@
 
 #forms #digital #intake {
     margin-right: 0.5%;
-}
-
-#forms #digital #medication {
-    margin-left: 0.5%;
 }
 
 #forms button {
