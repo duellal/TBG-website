@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 export const ContactSection = styled.section`
+    display: flex;
+    justify-content: center;
     text-align: center;
     width: 100%;
 `
