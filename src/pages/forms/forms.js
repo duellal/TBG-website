@@ -3,10 +3,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
-import '../styles/forms.css'
+import '../../styles/forms.css'
 
 //Import Form:
-import intakeForm from '../forms/TBG-Intake-Form-2024.pdf'
+import intakeForm from './TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
     let navigate = useNavigate();
