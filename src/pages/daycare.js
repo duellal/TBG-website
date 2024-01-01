@@ -24,7 +24,7 @@ export default function Daycare(){
     })
 
     return(
-        <div id='daycare-div'>
+        <div id='daycare'>
             <h1> 
                 Daycare At Our Facility
             </h1>

@@ -24,7 +24,7 @@ export default function Boarding(){
     })
 
     return(
-        <div id='boarding-div'>
+        <div id='boarding'>
             <h1> 
                 Boarding At Our Facility
             </h1>

@@ -1,75 +1,75 @@
-#daycare-div {
+#daycare {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#daycare-div h1,
-#daycare-div h2 {
+#daycare h1,
+#daycare h2 {
     width: 100%;
     text-align: center;
 }
 
-#daycare-div h2 {
+#daycare h2 {
     margin: 3% 0;
 }
 
-#daycare-div h3{
+#daycare h3{
     font-weight: bold;
     text-align: center;
     width: 100%;
     font-size: 3rem;
 }
 
-#daycare-div h4 {
+#daycare h4 {
     font-size: 2.2rem;
     font-weight: bolder;
 }
 
-#daycare-div h5 {
+#daycare h5 {
     font-size: 2rem;
     font-weight: bold;
 }
 
-#daycare-div #checkin-out .toggle p {
+#daycare #checkin-out .toggle p {
     font-size: 1.7rem;
 }
 
-#daycare-div #checkin-out h4 {
+#daycare #checkin-out h4 {
     border-bottom: 1px black solid;
     margin-bottom: 5%;
 }
 
-#daycare-div .list-items {
+#daycare .list-items {
     font-size: 1.5rem;
 
 }
 
-#daycare-div #info {
+#daycare #info {
     text-align: center;
     margin: 2% 0;
 }
 
-#daycare-div #values {
+#daycare #values {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-#daycare-div #values .images {
+#daycare #values .images {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
 }
 
-#daycare-div #values img {
+#daycare #values img {
     min-width: 100%;
     max-height: 300px;
 }
 
-#daycare-div #values .value-text {
+#daycare #values .value-text {
     display: flex;
     justify-content: center;
     width: 40%;
@@ -78,35 +78,35 @@
     flex-wrap: wrap;
 }
 
-#daycare-div #values .value-text p,
-#daycare-div #values .value-text li {
+#daycare #values .value-text p,
+#daycare #values .value-text li {
     width: 100%;
 }
 
-#daycare-div #prices {
+#daycare #prices {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     padding-top: 12%;
 }
 
-#daycare-div #top {
+#daycare #top {
     padding-top: 3%;
 }
 
-#daycare-div #top,
-#daycare-div #bottom {
+#daycare #top,
+#daycare #bottom {
     display: inherit;
     justify-content: space-between;
 }
 
-#daycare-div #prices img {
+#daycare #prices img {
     min-width: 300px;
     max-width: 300px;
     height: 300px;
 }
 
-#daycare-div #prices .text {
+#daycare #prices .text {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -114,33 +114,33 @@
     padding: 1%;
 }
 
-#daycare-div #prices .text .left,
-#daycare-div #prices .text .right {
+#daycare #prices .text .left,
+#daycare #prices .text .right {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 60px;
 }
 
-#daycare-div #prices .text .right {
+#daycare #prices .text .right {
     justify-content: flex-end;
     text-align: end;
 }
 
-#daycare-div #prices .text p {
+#daycare #prices .text p {
     width: 100%;
 }
 
-#daycare-div #checkin-out {
+#daycare #checkin-out {
     padding-top: 12%; 
 }
 
-#daycare-div #checkin-out .info {
+#daycare #checkin-out .info {
     text-align: center;
     padding: 2% 0;
 }
 
-#daycare-div #checkin-out .toggle-box {
+#daycare #checkin-out .toggle-box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -148,27 +148,27 @@
     width: 80%;
 }
 
-#daycare-div #checkin-out .buttons {
+#daycare #checkin-out .buttons {
     width: 100%;
 }
 
-#daycare-div #checkin-out button {
+#daycare #checkin-out button {
     width: 50%;
     padding: 10px;
     background-color: #35c6e7;
     border: none;
 }
 
-#daycare-div #checkin-out button:hover {
+#daycare #checkin-out button:hover {
     background-color: #2DACC8;
 }
 
-#daycare-div #checkin-out .btn-toggle,
-#daycare-div #checkin-out .btn-toggle:hover {
+#daycare #checkin-out .btn-toggle,
+#daycare #checkin-out .btn-toggle:hover {
     background-color: #8197f9;
 }
 
-#daycare-div #checkin-out .toggle {
+#daycare #checkin-out .toggle {
     display: flex;
     width: 100%;
     text-align: center;
@@ -177,12 +177,12 @@
     flex-wrap: wrap;
 }
 
-#daycare-div #checkin-out .toggle {
+#daycare #checkin-out .toggle {
     background-color: #8197f9;
 }
 
-#daycare-div #checkin-out #times,
-#daycare-div #checkin-out #checklist {
+#daycare #checkin-out #times,
+#daycare #checkin-out #checklist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -190,17 +190,17 @@
     margin: 2% 0;
 }
 
-#daycare-div #checkin-out p {
+#daycare #checkin-out p {
     width: 100%;
 }
 
-#daycare-div #checkin-out #times h3,
-#daycare-div #checkin-out #checklist h3 {
+#daycare #checkin-out #times h3,
+#daycare #checkin-out #checklist h3 {
     margin-bottom: 2%;
 }
 
-#daycare-div #checkin-out #times .days,
-#daycare-div #checkin-out #checklist .text {
+#daycare #checkin-out #times .days,
+#daycare #checkin-out #checklist .text {
     display: flex;
     flex-wrap: wrap;
     padding: 1% 0;
@@ -208,47 +208,47 @@
     width: 80%;
 }
 
-#daycare-div #checkin-out #times .days .full,
-#daycare-div #checkin-out #times .days .half {
+#daycare #checkin-out #times .days .full,
+#daycare #checkin-out #times .days .half {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 50%;
 }
 
-#daycare-div #checkin-out #times .days {
+#daycare #checkin-out #times .days {
     align-items: flex-start;
 }
 
-#daycare-div #checkin-out #times .days .full h4,
-#daycare-div #checkin-out #times .days .half h4 {
+#daycare #checkin-out #times .days .full h4,
+#daycare #checkin-out #times .days .half h4 {
     height: 32px;
 }
 
-#daycare-div #checkin-out #times .days .half .am-pm {
+#daycare #checkin-out #times .days .half .am-pm {
     display: inherit;
     flex-wrap: wrap;
     width: 100%;
 }
 
-#daycare-div #checkin-out #times .days .half .am-pm p {
+#daycare #checkin-out #times .days .half .am-pm p {
     width: 70%;
     text-align: left;
 }
 
-#daycare-div #checkin-out #times .days .half .am-pm .am,
-#daycare-div #checkin-out #times .days .half .am-pm .pm {
+#daycare #checkin-out #times .days .half .am-pm .am,
+#daycare #checkin-out #times .days .half .am-pm .pm {
     text-align: right;
     padding-right: 5%;
     width: 30%;
     
 }
 
-#daycare-div #checkin-out #checklist p.first {
+#daycare #checkin-out #checklist p.first {
     margin-bottom: 2%;
 }
 
-#daycare-div #checkin-out #checklist .list li {
+#daycare #checkin-out #checklist .list li {
     text-align: left;
     margin: 0 0 1% 10%;
     list-style: square;

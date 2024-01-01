@@ -1,60 +1,60 @@
-#boarding-div {
+#boarding {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#boarding-div h1,
-#boarding-div h2 {
+#boarding h1,
+#boarding h2 {
     width: 100%;
     text-align: center;
 }
 
-#boarding-div h2 {
+#boarding h2 {
     margin: 3% 0;
 }
 
-#boarding-div h3{
+#boarding h3{
     font-weight: bold;
     text-align: center;
     width: 100%;
     font-size: 3rem;
 }
 
-#boarding-div h4 {
+#boarding h4 {
     font-size: 2.2rem;
     font-weight: bolder;
 }
 
-#boarding-div .list-items {
+#boarding .list-items {
     font-size: 1.5rem;
 }
 
-#boarding-div #info {
+#boarding #info {
     text-align: center;
     margin: 2% 0;
 }
 
-#boarding-div #values {
+#boarding #values {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-#boarding-div #values .images {
+#boarding #values .images {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
 }
 
-#boarding-div #values img {
+#boarding #values img {
     min-width: 100%;
     max-height: 300px;
 }
 
-#boarding-div #values .value-text {
+#boarding #values .value-text {
     display: flex;
     justify-content: center;
     width: 40%;
@@ -63,34 +63,34 @@
     flex-wrap: wrap;
 }
 
-#boarding-div #values .value-text p,
-#boarding-div #values .value-text li {
+#boarding #values .value-text p,
+#boarding #values .value-text li {
     width: 100%;
 }
 
-#boarding-div #prices {
+#boarding #prices {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     padding-top: 12%;
 }
 
-#boarding-div #top {
+#boarding #top {
     padding-top: 3%;
 }
 
-#boarding-div #top,
-#boarding-div #bottom {
+#boarding #top,
+#boarding #bottom {
     display: inherit;
     justify-content: space-between;
 }
 
-#boarding-div #prices img {
+#boarding #prices img {
     width: 300px;
     height: 300px;
 }
 
-#boarding-div #prices .text {
+#boarding #prices .text {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -98,42 +98,42 @@
     padding: 1%;
 }
 
-#boarding-div #prices .text .left,
-#boarding-div #prices .text .right {
+#boarding #prices .text .left,
+#boarding #prices .text .right {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 60px;
 }
 
-#boarding-div #prices .text .right {
+#boarding #prices .text .right {
     justify-content: flex-end;
     text-align: end;
 }
 
-#boarding-div #prices .text p {
+#boarding #prices .text p {
     width: 100%;
 }
 
-#boarding-div #prices .pocket-ex {
+#boarding #prices .pocket-ex {
     font-size: 1.5rem;
 }
 
-#boarding-div #prices .pocket-instruction {
+#boarding #prices .pocket-instruction {
     font-size: 1.3rem;
     margin-bottom: 1.5%;
 }
 
-#boarding-div #checkin-out {
+#boarding #checkin-out {
     padding-top: 12%; 
 }
 
-#boarding-div #checkin-out .info {
+#boarding #checkin-out .info {
     text-align: center;
     padding: 2% 0;
 }
 
-#boarding-div #checkin-out .toggle-box {
+#boarding #checkin-out .toggle-box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -141,27 +141,27 @@
     width: 80%;
 }
 
-#boarding-div #checkin-out .buttons {
+#boarding #checkin-out .buttons {
     width: 100%;
 }
 
-#boarding-div #checkin-out button {
+#boarding #checkin-out button {
     width: 50%;
     padding: 10px;
     background-color: #35c6e7;
     border: none;
 }
 
-#boarding-div #checkin-out button:hover {
+#boarding #checkin-out button:hover {
     background-color: #2DACC8;
 }
 
-#boarding-div #checkin-out .btn-toggle,
-#boarding-div #checkin-out .btn-toggle:hover {
+#boarding #checkin-out .btn-toggle,
+#boarding #checkin-out .btn-toggle:hover {
     background-color: #8197f9;
 }
 
-#boarding-div #checkin-out .toggle {
+#boarding #checkin-out .toggle {
     display: flex;
     width: 100%;
     text-align: center;
@@ -170,12 +170,12 @@
     flex-wrap: wrap;
 }
 
-#boarding-div #checkin-out .toggle {
+#boarding #checkin-out .toggle {
     background-color: #8197f9;
 }
 
-#boarding-div #checkin-out #times,
-#boarding-div #checkin-out #checklist {
+#boarding #checkin-out #times,
+#boarding #checkin-out #checklist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -183,28 +183,28 @@
     margin: 2% 0;
 }
 
-#boarding-div #checkin-out p {
+#boarding #checkin-out p {
     width: 100%;
 }
 
-#boarding-div #checkin-out #times h3,
-#boarding-div #checkin-out #checklist h3 {
+#boarding #checkin-out #times h3,
+#boarding #checkin-out #checklist h3 {
     margin-bottom: 2%;
     width: 80%;
 }
 
-#boarding-div #checkin-out #times .days,
-#boarding-div #checkin-out #checklist .text {
+#boarding #checkin-out #times .days,
+#boarding #checkin-out #checklist .text {
     padding: 1% 0;
     border: 2px solid black;
     width: 80%;
 }
 
-#boarding-div #checkin-out #checklist p.first {
+#boarding #checkin-out #checklist p.first {
     margin-bottom: 2%;
 }
 
-#boarding-div #checkin-out #checklist .list li {
+#boarding #checkin-out #checklist .list li {
     text-align: left;
     margin: 0 0 1% 10%;
     list-style: square;

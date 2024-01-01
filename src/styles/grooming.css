@@ -1,64 +1,64 @@
-#grooming-div {
+#grooming {
     padding: 12% 10% 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#grooming-div h1,
-#grooming-div h2 {
+#grooming h1,
+#grooming h2 {
     width: 100%;
     text-align: center;
 }
 
-#grooming-div h2 {
+#grooming h2 {
     margin: 3% 0;
 }
 
-#grooming-div h3{
+#grooming h3{
     font-weight: bold;
     text-align: center;
     width: 100%;
     font-size: 3rem;
 }
 
-#grooming-div h4 {
+#grooming h4 {
     font-size: 2.2rem;
     font-weight: bolder;
 }
 
-#grooming-div img {
+#grooming img {
     width: 70%;
 }
 
-#grooming-div #info {
+#grooming #info {
     text-align: center;
     margin: 2% 0;
 }
 
-#grooming-div #info p {
+#grooming #info p {
     padding-bottom: 2%;
 }
 
-#grooming-div #values {
+#grooming #values {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-#grooming-div #values .images {
+#grooming #values .images {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
 }
 
-#grooming-div #values img {
+#grooming #values img {
     min-width: 100%;
     max-height: 300px;
 }
 
-#grooming-div #values .value-text {
+#grooming #values .value-text {
     display: flex;
     justify-content: center;
     width: 40%;
@@ -67,35 +67,35 @@
     flex-wrap: wrap;
 }
 
-#grooming-div #values .value-text p,
-#grooming-div #values .value-text li {
+#grooming #values .value-text p,
+#grooming #values .value-text li {
     width: 100%;
 }
 
-#grooming-div #prices {
+#grooming #prices {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     padding-top: 12%;
 }
 
-#grooming-div #top {
+#grooming #top {
     padding-top: 3%;
 }
 
-#grooming-div #top,
-#grooming-div #bottom {
+#grooming #top,
+#grooming #bottom {
     display: inherit;
     justify-content: space-between;
 }
 
-#grooming-div #prices img {
+#grooming #prices img {
     min-width: 300px;
     max-width: 300px;
     height: 300px;
 }
 
-#grooming-div #prices .text {
+#grooming #prices .text {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -103,33 +103,33 @@
     padding: 1%;
 }
 
-#grooming-div #prices .text .left,
-#grooming-div #prices .text .right {
+#grooming #prices .text .left,
+#grooming #prices .text .right {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 60px;
 }
 
-#grooming-div #prices .text .right {
+#grooming #prices .text .right {
     justify-content: flex-end;
     text-align: end;
 }
 
-#grooming-div #prices .text p {
+#grooming #prices .text p {
     width: 100%;
 }
 
-#grooming-div #checkin-out {
+#grooming #checkin-out {
     padding-top: 12%; 
 }
 
-#grooming-div #checkin-out .info {
+#grooming #checkin-out .info {
     text-align: center;
     padding: 2% 0;
 }
 
-#grooming-div #checkin-out .toggle-box {
+#grooming #checkin-out .toggle-box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -137,27 +137,27 @@
     width: 80%;
 }
 
-#grooming-div #checkin-out .buttons {
+#grooming #checkin-out .buttons {
     width: 100%;
 }
 
-#grooming-div #checkin-out button {
+#grooming #checkin-out button {
     width: 50%;
     padding: 10px;
     background-color: #35c6e7;
     border: none;
 }
 
-#grooming-div #checkin-out button:hover {
+#grooming #checkin-out button:hover {
     background-color: #2DACC8;
 }
 
-#grooming-div #checkin-out .btn-toggle,
-#grooming-div #checkin-out .btn-toggle:hover {
+#grooming #checkin-out .btn-toggle,
+#grooming #checkin-out .btn-toggle:hover {
     background-color: #8197f9;
 }
 
-#grooming-div #checkin-out .toggle {
+#grooming #checkin-out .toggle {
     display: flex;
     width: 100%;
     text-align: center;
@@ -166,12 +166,12 @@
     flex-wrap: wrap;
 }
 
-#grooming-div #checkin-out .toggle {
+#grooming #checkin-out .toggle {
     background-color: #8197f9;
 }
 
-#grooming-div #checkin-out #times,
-#grooming-div #checkin-out #checklist {
+#grooming #checkin-out #times,
+#grooming #checkin-out #checklist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -179,28 +179,28 @@
     margin: 2% 0;
 }
 
-#grooming-div #checkin-out p {
+#grooming #checkin-out p {
     width: 100%;
 }
 
-#grooming-div #checkin-out #times h3,
-#grooming-div #checkin-out #checklist h3 {
+#grooming #checkin-out #times h3,
+#grooming #checkin-out #checklist h3 {
     margin-bottom: 2%;
     width: 80%;
 }
 
-#grooming-div #checkin-out #times .days,
-#grooming-div #checkin-out #checklist .text {
+#grooming #checkin-out #times .days,
+#grooming #checkin-out #checklist .text {
     padding: 1% 0;
     border: 2px solid black;
     width: 80%;
 }
 
-#grooming-div #checkin-out #checklist p.first {
+#grooming #checkin-out #checklist p.first {
     margin-bottom: 2%;
 }
 
-#grooming-div #checkin-out #checklist .list li {
+#grooming #checkin-out #checklist .list li {
     text-align: left;
     margin: 0 0 1% 10%;
     list-style: square;

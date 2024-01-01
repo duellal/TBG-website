@@ -15,7 +15,7 @@ export default function Home(){
     let navigate = useNavigate();
 
     return (
-        <div id="home-div">
+        <div id="home">
             <div className="image">
                 <img loading="lazy" src={stockGolden} alt='Golden retriever smiling with black chairs in background' width='100%'></img>
             </div>
