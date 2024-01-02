@@ -48,6 +48,7 @@ export const IntakeRow = styled.div`
     grid-column-start: 1;
     grid-column-end: 5;
     align-items: center;
+    text-align: center;
 `
 
 export const IntakeLabelRow = styled.div`

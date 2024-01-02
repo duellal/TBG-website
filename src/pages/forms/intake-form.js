@@ -20,7 +20,10 @@ export default function DigitalIntake() {
     const [ownerBtn, setOwnerBtn] = useState(true)
     const [petKey, setPetKey] = useState(2)
     const [storedPets, setStoredPets] = useState([PetInfo(1)])
-    const [petBtn, setPetBtn] = useState(true)
+    const [emergencyKey, setEmergencyKey] = useState(2)
+    const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([EmergencyInfo(1)])
+    const [authorizedKey, setAuthorizedKey] = useState(2)
+    const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
 
     const ownerOnClick = async (event, ownerKey, storedOwners) => {
         let toggleOwnerBtn = () => {
@@ -33,13 +36,20 @@ export default function DigitalIntake() {
         await setStoredOwners([...storedOwners, OwnerInfo(ownerKey)])
     }
 
-    const petOnClick = async (event, petKey, storedPets) => {
-        let togglePetBtn = () => {
-            setPetBtn(!petBtn)
-        }
-        
+    const emergencyOnClick = async (event, emergencyKey, storedEmergencyContacts) => {
         event.preventDefault()
-        togglePetBtn();
+        await setEmergencyKey(emergencyKey + 1)
+        await setStoredEmergencyContacts([...storedEmergencyContacts, EmergencyInfo(emergencyKey)])
+    }
+
+    const authorizedOnClick = async (event, authorizedKey, storedAuthorized) => {
+        event.preventDefault()
+        await setAuthorizedKey(authorizedKey + 1)
+        await setStoredAuthorized([...storedAuthorized, AuthorizedPickup(authorizedKey)])
+    }
+
+    const petOnClick = async (event, petKey, storedPets) => {
+        event.preventDefault()
         await setPetKey(petKey + 1)
         await setStoredPets([...storedPets, PetInfo(petKey)])
     }
@@ -105,9 +115,9 @@ export default function DigitalIntake() {
                             Owner Information 
                         </IntakeH3>
 
-                        <IntakeH4> 
-                            Primary Owner Info - Required information will be starred (*)
-                        </IntakeH4>
+                        <IntakeH5> 
+                            Required information will be starred (*)
+                        </IntakeH5>
                     </IntakeHDiv>
                     
                     <IntakeCol>
@@ -126,9 +136,47 @@ export default function DigitalIntake() {
                         <IntakeH3> 
                             Emergency Contact Information
                         </IntakeH3>
-
-                        <IntakeButton onClick={() => document.getElementById(1)} />
+                        <IntakeH5>
+                            In case we can't reach you
+                        </IntakeH5>
                     </IntakeHDiv> 
+
+                    {/* Change to storedEmergencyContacts when done */}
+                    <IntakeCol>
+                        {EmergencyInfo(1)}
+                    </IntakeCol>
+
+                    <IntakeRow>
+                        <IntakeButton onClick={(event) => emergencyOnClick(event, emergencyKey, storedEmergencyContacts)}> 
+                            Add Emergency Contact 
+                        </IntakeButton>
+                    </IntakeRow>   
+
+                    <IntakeHDiv>
+                        <IntakeH3> 
+                            Authorized People to Pickup Your Pets
+                        </IntakeH3>
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeH5>
+                                    First + Last Name
+                                </IntakeH5>
+                            </FlexColDiv>
+                            <FlexColDiv>
+                                <IntakeH5>
+                                    Relationship
+                                </IntakeH5>
+                            </FlexColDiv>
+                        </IntakeRow>
+                        {/* Change to storedAuthorized when done */}
+                        {storedAuthorized}
+                    </IntakeHDiv> 
+
+                    <IntakeRow>
+                        <IntakeButton onClick={(event) => authorizedOnClick(event, authorizedKey, storedAuthorized)}> 
+                            Add Authorized Person
+                        </IntakeButton>
+                    </IntakeRow>   
 
                     <IntakeHDiv>
                         <IntakeH3> 
@@ -136,7 +184,9 @@ export default function DigitalIntake() {
                         </IntakeH3>
 
                         {/* Change to storedPets when done */}
-                        {PetInfo(1)}
+                        <IntakeCol>
+                            {PetInfo(1)}
+                        </IntakeCol>
 
                         <IntakeRow>
                             <IntakeButton onClick={event => petOnClick(event, petKey, storedPets)}>
@@ -180,6 +230,8 @@ function OwnerInfo(ownerKey){
                 <IntakeH4>
                     Owner {ownerKey}
                 </IntakeH4>
+            </IntakeDivider>
+            
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
@@ -214,7 +266,7 @@ function OwnerInfo(ownerKey){
                         <IntakeLabel>
                             *Address
                         </IntakeLabel>
-                        <Input type='address1' name={`owner${ownerKey}_address1`}/>
+                        <Input type='address' name={`owner${ownerKey}_address1`}/>
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -222,7 +274,7 @@ function OwnerInfo(ownerKey){
                         <IntakeLabel>
                             Apartment/Suite #
                         </IntakeLabel>
-                        <Input type='address2' name={`owner${ownerKey}_address2`}/>
+                        <Input type='address' name={`owner${ownerKey}_address2`}/>
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -245,11 +297,86 @@ function OwnerInfo(ownerKey){
                         <Input type="zipcode" name={`owner${ownerKey}_zipcode`} />
                     </FlexColDiv>
                 </IntakeRow>
-            </IntakeDivider>
         </div>
     )
 }
 
+function EmergencyInfo(emergencyKey){
+    return(
+        <div key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
+            <IntakeDivider>
+                <IntakeH4>
+                    Emergency Contact {emergencyKey}
+                </IntakeH4>
+            </IntakeDivider>
+            <IntakeRow>
+                <FlexColDiv>
+                    <IntakeLabel>
+                        *Emergenceny Contact First + Last Name
+                    </IntakeLabel>
+                    <Input type="text" name={`emergency${emergencyKey}_name`}/>
+                </FlexColDiv>
+            </IntakeRow>
+            <IntakeRow>
+            <FlexColDiv>
+                    <IntakeLabel>
+                        *Emergenceny Contact Phone Number
+                    </IntakeLabel>
+                    <Input type="phone" name={`emergency${emergencyKey}_phone`}/>
+                </FlexColDiv>
+
+                <FlexColDiv>
+                    <IntakeLabel>
+                        *Relationship
+                    </IntakeLabel>
+                    <Input type="text" name={`emergency${emergencyKey}_relation`} />
+                </FlexColDiv>
+            </IntakeRow>
+
+            <IntakeRow>
+                <FlexColDiv>
+                    <IntakeLabel>
+                        *Does this person have permission to make decisions regarding your pet(s)?
+                    </IntakeLabel>
+                    
+                    <IntakeLabelRow>
+                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_yes`}/>
+                            <IntakeLabel>
+                                Yes
+                            </IntakeLabel>
+  
+                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_no`}/>
+                            <IntakeLabel>
+                                No
+                            </IntakeLabel>
+                    </IntakeLabelRow>
+
+                    <IntakeLabel>
+                        If yes, type your intials
+                        <Input type="text" name={`emergency${emergencyKey}_initials`} />
+                    </IntakeLabel>
+                </FlexColDiv>
+            </IntakeRow>
+        </div>
+    )
+}
+
+function AuthorizedPickup(authorizedKey){
+    return (
+        <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
+            <IntakeRow>
+                <FlexColDiv>
+                    <Input type="text" name={`auth${authorizedKey}_name`} />
+                </FlexColDiv>
+                <FlexColDiv>
+                    <Input type="text" name={`auth${authorizedKey}_relation`} />
+                </FlexColDiv>
+            </IntakeRow>
+        </div>
+    )
+}
+
+// Not complete yet:
 function PetInfo(petKey){
     return(
         <div key={`pet${petKey}`} id={`pet${petKey}`}>
@@ -257,6 +384,7 @@ function PetInfo(petKey){
                 <IntakeH4>
                     Pet {petKey}
                 </IntakeH4>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_name`}>
@@ -272,6 +400,7 @@ function PetInfo(petKey){
                             <Input type="text" name={`pet${petKey}_species`} />
                         </FlexColDiv>
                 </IntakeRow>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_breed`}>
@@ -279,6 +408,7 @@ function PetInfo(petKey){
                         </IntakeLabel>
                         <Input type="text" name={`pet${petKey}_breed`} />
                     </FlexColDiv>
+
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_color`}>
                             Color
@@ -286,6 +416,7 @@ function PetInfo(petKey){
                         <Input type="text" name={`pet${petKey}_color`} />
                     </FlexColDiv>
                 </IntakeRow>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_sex`}>
@@ -321,6 +452,7 @@ function PetInfo(petKey){
                         </IntakeLabelRow>
                     </FlexColDiv>
                 </IntakeRow>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_weight`}>
@@ -335,9 +467,11 @@ function PetInfo(petKey){
                         <Input type="date" name={`pet${petKey}_dob`} />
                     </FlexColDiv>
                 </IntakeRow>
+
                 <IntakeH5>
                     Behavioral Information - if yes, please explain
                 </IntakeH5>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`pet${petKey}_weight`}>
