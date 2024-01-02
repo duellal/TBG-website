@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeHDiv, IntakeHeader, IntakeLink, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
-import { Label, Input, MessageInput, 
-    FlexColDiv, SubmitInput, Rotate, 
-    ErrorLink, ErrorText } from "../../styles/contact";
+import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeHDiv, IntakeHeader, IntakeLabel, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
+import { Input, FlexColDiv, SubmitInput, 
+    Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Import Form PDF:
 import intakeForm from './TBG-Intake-Form-2024.pdf'
@@ -16,6 +15,20 @@ export default function DigitalIntake() {
     const [error, setError] = useState(null)
     const form = useRef();
     const [loading, setLoading] = useState(false)
+    const [key, setKey] = useState(2)
+    const [storedElems, setStoredElems] = useState([OwnerInfo(1)])
+    const [ownerBtn, setOwnerBtn] = useState(true)
+
+    let ownerOnClick = async (event, key, storedElems) => {
+        let toggleOwnerBtn = () => {
+            setOwnerBtn(!ownerBtn)
+        }
+        
+        event.preventDefault()
+        toggleOwnerBtn();
+        await setKey(key + 1)
+        await setStoredElems([...storedElems, OwnerInfo(key)])
+    }
 
     const submitHandler = async event => {
         event.preventDefault();
@@ -49,92 +62,58 @@ export default function DigitalIntake() {
                         <FontAwesomeIcon icon={faPaw} size="2xl" />
                     </IntakeDivider>
 
-                    <p>
-                        Before you schedule your first visit or appointment, you will need to fill out the intake form below. 
-                    </p>
+
+                    <IntakeP>
+                         Before you schedule your first visit or appointment, you will need to fill out the intake form below. 
+                    </IntakeP>
+
                 </IntakeHeader>
 
                 {error && (
                     <div>
-                        <ErrorText>There was a problem submitting the form.</ErrorText> <ErrorText>Please try submitting the form again.</ErrorText>
-                        <ErrorText> If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.</ErrorText>
+                        <ErrorText>
+                            There was a problem submitting the form.
+                            </ErrorText> 
+                            <ErrorText>
+                                Please try submitting the form again.
+                                </ErrorText>
+                        <ErrorText> 
+                            If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or 
+                            <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.
+                        </ErrorText>
                     </div>
                 )}
                 <IntakeForm ref={form} onSubmit={submitHandler}>
                     <IntakeHDiv>
-                        <IntakeH3> Owner Information </IntakeH3>
+                        <IntakeH3> 
+                            Owner Information 
+                        </IntakeH3>
 
-                        <IntakeH4> Primary Owner Info - Required information will be starred (*) </IntakeH4>
+                        <IntakeH4> 
+                            Primary Owner Info - Required information will be starred (*)
+                        </IntakeH4>
                     </IntakeHDiv>
+                    
+                    <IntakeCol>
+                        {storedElems}
+                    </IntakeCol>
+
                     <IntakeRow>
-                        <FlexColDiv>
-                            <Label htmlFor="owner1_first_name">
-                                *First Name
-                            </Label>
-                            <Input type="text" name="owner1_first_name" />
-                        </FlexColDiv>
-                        <FlexColDiv>
-                            <Label htmlFor="owner1_last_name">
-                                *Last Name
-                            </Label>
-                            <Input type="text" name="owner1_last_name" />
-                        </FlexColDiv>
-                    </IntakeRow>
-                    <IntakeRow>
-                        <FlexColDiv>
-                            <Label htmlFor="owner1_email">
-                                *Email
-                            </Label>
-                            <Input type="email" name="owner1_email" />
-                        </FlexColDiv>
-                        <FlexColDiv>
-                            <Label htmlFor="owner1_phone">
-                                *Phone
-                            </Label>
-                            <Input type="phone" name="owner1-phone" />
-                        </FlexColDiv>
-                    </IntakeRow>
-                    <IntakeRow>
-                        <FlexColDiv>
-                            <Label>
-                                *Address
-                            </Label>
-                            <Input type='address1' name='owner1-address1'/>
-                        </FlexColDiv>
-                    </IntakeRow>
-                    <IntakeRow>
-                        <FlexColDiv>
-                            <Label>
-                                Apartment/Suite #
-                            </Label>
-                            <Input type='address2' name='owner1-address2'/>
-                        </FlexColDiv>
-                    </IntakeRow>
-                    <IntakeRow>
-                        <FlexColDiv>
-                            <Label>
-                                *City
-                            </Label>
-                            <Input type="city" name="owner1-city" />
-                        </FlexColDiv>
-                        <FlexColDiv>
-                            <Label>
-                                *State
-                            </Label>
-                            <Input type="state" name="owner1-state" />
-                        </FlexColDiv>
-                        <FlexColDiv>
-                            <Label>
-                                *Zip Code
-                            </Label>
-                            <Input type="zipcode" name="owner1-zipcode" />
-                        </FlexColDiv>
-                    </IntakeRow>
-                    <IntakeRow>
-                        <SubmitInput type="submit" value="Send" />
+                        {ownerBtn && 
+                            <IntakeButton onClick={(event) => ownerOnClick(event, key, storedElems)}> 
+                                Add Owner 
+                            </IntakeButton>
+                        }
                         {loading && <Rotate>
                             <FontAwesomeIcon icon={faSpinner} size="2xl" />
                         </Rotate>}
+                    </IntakeRow>    
+
+                    <IntakeRow>
+                        <SubmitInput type="submit" value="Send" />
+                            {loading && <Rotate>
+                                <FontAwesomeIcon icon={faSpinner} size="2xl" />
+                            </Rotate>}
                     </IntakeRow>
                 </IntakeForm>
             </IntakeCard>
@@ -151,5 +130,82 @@ export default function DigitalIntake() {
                 </IntakeButton>
             </IntakePDF>
         </IntakeSection>
+    )
+}
+
+function OwnerInfo(key){
+    return(
+        <div key={key} id={key}>
+            <IntakeDivider>
+                <IntakeH4>
+                    Owner {key}
+                </IntakeH4>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor="owner1_first_name">
+                            *First Name
+                        </IntakeLabel>
+                        <Input type="text" name="owner1_first_name" />
+                
+                    </FlexColDiv>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor="owner1_last_name">
+                                *Last Name
+                            </IntakeLabel>
+                            <Input type="text" name="owner1_last_name" />
+                        </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor="owner1_email">
+                            *Email
+                        </IntakeLabel>
+                        <Input type="email" name="owner1_email" />
+                    </FlexColDiv>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor="owner1_phone">
+                            *Phone
+                        </IntakeLabel>
+                        <Input type="phone" name="owner1-phone" />
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            *Address
+                        </IntakeLabel>
+                        <Input type='address1' name='owner1-address1'/>
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            Apartment/Suite #
+                        </IntakeLabel>
+                        <Input type='address2' name='owner1-address2'/>
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            *City
+                        </IntakeLabel>
+                        <Input type="city" name="owner1-city" />
+                    </FlexColDiv>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            *State
+                        </IntakeLabel>
+                        <Input type="state" name="owner1-state" />
+                    </FlexColDiv>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            *Zip Code
+                        </IntakeLabel>
+                        <Input type="zipcode" name="owner1-zipcode" />
+                    </FlexColDiv>
+                </IntakeRow>
+            </IntakeDivider>
+        </div>
     )
 }

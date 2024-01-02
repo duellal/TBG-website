@@ -5,11 +5,13 @@ export const IntakeSection = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    width: 100%;
 `
 
 export const IntakeHeader = styled.div`
-    margin: 48px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 0 0;
 `
 
 export const IntakeCard = styled.div`
@@ -31,6 +33,7 @@ export const IntakeForm = styled.form`
 
 export const IntakeDivider = styled.div`
     margin: 12px 0;
+    width: 100%;
 `
 
 export const IntakePDF = styled.div`
@@ -60,21 +63,36 @@ export const IntakeLink = styled.a`
 
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
     margin-bottom: 20px;
     font-weight: bold;
 `
 
 export const IntakeH4 = styled.h4`
     font-size: 2rem;
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
+    text-align: left;
 `
 
 export const IntakeHDiv = styled.div`
+    grid-template-columns: 1;
+    text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 5;
+`
+
+export const IntakeLabel = styled.label`
+    font-size: 15px;
+    text-align: left;
+`
+
+export const IntakeP = styled.p`
+    width: 500px;
+`
+
+export const IntakeCol = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-items: center;
 `
