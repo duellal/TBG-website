@@ -18,7 +18,7 @@ export const IntakeCard = styled.div`
     margin: 30px;
     padding: 12px;
     background-color: #dedede;
-    width: 50%;
+    width: 700px;
 `
 
 export const IntakeForm = styled.form`
@@ -50,6 +50,15 @@ export const IntakeRow = styled.div`
     align-items: center;
 `
 
+export const IntakeLabelRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-items: center;
+`
+
 export const IntakeButton = styled.button`
     margin: 2% 0;
 `
@@ -70,6 +79,10 @@ export const IntakeH3 = styled.h3`
 export const IntakeH4 = styled.h4`
     font-size: 2rem;
     text-align: left;
+`
+export const IntakeH5 = styled.h4`
+    font-size: 1.8rem;
+    margin-top: 15px;
 `
 
 export const IntakeHDiv = styled.div`

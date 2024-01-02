@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeHDiv, IntakeHeader, IntakeLabel, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
+import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
 import { Input, FlexColDiv, SubmitInput, 
     Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
@@ -15,39 +15,54 @@ export default function DigitalIntake() {
     const [error, setError] = useState(null)
     const form = useRef();
     const [loading, setLoading] = useState(false)
-    const [key, setKey] = useState(2)
-    const [storedElems, setStoredElems] = useState([OwnerInfo(1)])
+    const [ownerKey, setOwnerKey] = useState(2)
+    const [storedOwners, setStoredOwners] = useState([OwnerInfo(1)])
     const [ownerBtn, setOwnerBtn] = useState(true)
+    const [petKey, setPetKey] = useState(2)
+    const [storedPets, setStoredPets] = useState([PetInfo(1)])
+    const [petBtn, setPetBtn] = useState(true)
 
-    let ownerOnClick = async (event, key, storedElems) => {
+    const ownerOnClick = async (event, ownerKey, storedOwners) => {
         let toggleOwnerBtn = () => {
             setOwnerBtn(!ownerBtn)
         }
         
         event.preventDefault()
         toggleOwnerBtn();
-        await setKey(key + 1)
-        await setStoredElems([...storedElems, OwnerInfo(key)])
+        await setOwnerKey(ownerKey + 1)
+        await setStoredOwners([...storedOwners, OwnerInfo(ownerKey)])
     }
+
+    const petOnClick = async (event, petKey, storedPets) => {
+        let togglePetBtn = () => {
+            setPetBtn(!petBtn)
+        }
+        
+        event.preventDefault()
+        togglePetBtn();
+        await setPetKey(petKey + 1)
+        await setStoredPets([...storedPets, PetInfo(petKey)])
+    }
+
 
     const submitHandler = async event => {
         event.preventDefault();
-        setLoading(true)
-        //clears errors if there were any previously
-        setError(null)
+        // setLoading(true)
+        // //clears errors if there were any previously
+        // setError(null)
 
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-            .then(() => {
-                //resets the form after the email is sent 
-                form.current.reset()
-                setLoading(false)
-            }).catch((error) => {
-                setError(error.text)
-            }).finally(() => {
-                //resets the form after the email is sent 
-                form.current.reset()
-                setLoading(false)
-            })
+        // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+        //     .then(() => {
+        //         //resets the form after the email is sent 
+        //         form.current.reset()
+        //         setLoading(false)
+        //     }).catch((error) => {
+        //         setError(error.text)
+        //     }).finally(() => {
+        //         //resets the form after the email is sent 
+        //         form.current.reset()
+        //         setLoading(false)
+        //     })
     }
 
     return (
@@ -64,7 +79,7 @@ export default function DigitalIntake() {
 
 
                     <IntakeP>
-                         Before you schedule your first visit or appointment, you will need to fill out the intake form below. 
+                         Before you schedule your first visit or appointment, please fill out the intake form below. 
                     </IntakeP>
 
                 </IntakeHeader>
@@ -83,6 +98,7 @@ export default function DigitalIntake() {
                         </ErrorText>
                     </div>
                 )}
+
                 <IntakeForm ref={form} onSubmit={submitHandler}>
                     <IntakeHDiv>
                         <IntakeH3> 
@@ -95,19 +111,39 @@ export default function DigitalIntake() {
                     </IntakeHDiv>
                     
                     <IntakeCol>
-                        {storedElems}
+                        {storedOwners}
                     </IntakeCol>
 
                     <IntakeRow>
                         {ownerBtn && 
-                            <IntakeButton onClick={(event) => ownerOnClick(event, key, storedElems)}> 
+                            <IntakeButton onClick={(event) => ownerOnClick(event, ownerKey, storedOwners)}> 
                                 Add Owner 
                             </IntakeButton>
                         }
-                        {loading && <Rotate>
-                            <FontAwesomeIcon icon={faSpinner} size="2xl" />
-                        </Rotate>}
-                    </IntakeRow>    
+                    </IntakeRow>   
+
+                    <IntakeHDiv>
+                        <IntakeH3> 
+                            Emergency Contact Information
+                        </IntakeH3>
+
+                        <IntakeButton onClick={() => document.getElementById(1)} />
+                    </IntakeHDiv> 
+
+                    <IntakeHDiv>
+                        <IntakeH3> 
+                            Pet Information
+                        </IntakeH3>
+
+                        {/* Change to storedPets when done */}
+                        {PetInfo(1)}
+
+                        <IntakeRow>
+                            <IntakeButton onClick={event => petOnClick(event, petKey, storedPets)}>
+                                Add Pet
+                            </IntakeButton>
+                        </IntakeRow>
+                    </IntakeHDiv> 
 
                     <IntakeRow>
                         <SubmitInput type="submit" value="Send" />
@@ -133,40 +169,40 @@ export default function DigitalIntake() {
     )
 }
 
-function OwnerInfo(key){
+function OwnerInfo(ownerKey){
     return(
-        <div key={key} id={key}>
+        <div key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
             <IntakeDivider>
                 <IntakeH4>
-                    Owner {key}
+                    Owner {ownerKey}
                 </IntakeH4>
                 <IntakeRow>
                     <FlexColDiv>
-                        <IntakeLabel htmlFor="owner1_first_name">
+                        <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
                             *First Name
                         </IntakeLabel>
-                        <Input type="text" name="owner1_first_name" />
+                        <Input type="text" name={`owner${ownerKey}_first_name`} />
                 
                     </FlexColDiv>
                         <FlexColDiv>
-                            <IntakeLabel htmlFor="owner1_last_name">
+                            <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
                                 *Last Name
                             </IntakeLabel>
-                            <Input type="text" name="owner1_last_name" />
+                            <Input type="text" name={`owner${ownerKey}_last_name`} />
                         </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
                     <FlexColDiv>
-                        <IntakeLabel htmlFor="owner1_email">
+                        <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
                             *Email
                         </IntakeLabel>
-                        <Input type="email" name="owner1_email" />
+                        <Input type="email" name={`owner${ownerKey}_email`} />
                     </FlexColDiv>
                     <FlexColDiv>
-                        <IntakeLabel htmlFor="owner1_phone">
+                        <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
                             *Phone
                         </IntakeLabel>
-                        <Input type="phone" name="owner1-phone" />
+                        <Input type="phone" name={`owner${ownerKey}_phone`} />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -174,7 +210,7 @@ function OwnerInfo(key){
                         <IntakeLabel>
                             *Address
                         </IntakeLabel>
-                        <Input type='address1' name='owner1-address1'/>
+                        <Input type='address1' name={`owner${ownerKey}_address1`}/>
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -182,7 +218,7 @@ function OwnerInfo(key){
                         <IntakeLabel>
                             Apartment/Suite #
                         </IntakeLabel>
-                        <Input type='address2' name='owner1-address2'/>
+                        <Input type='address2' name={`owner${ownerKey}_address2`}/>
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -190,21 +226,126 @@ function OwnerInfo(key){
                         <IntakeLabel>
                             *City
                         </IntakeLabel>
-                        <Input type="city" name="owner1-city" />
+                        <Input type="city" name={`owner${ownerKey}_city`} />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
                             *State
                         </IntakeLabel>
-                        <Input type="state" name="owner1-state" />
+                        <Input type="state" name={`owner${ownerKey}_state`} />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
                             *Zip Code
                         </IntakeLabel>
-                        <Input type="zipcode" name="owner1-zipcode" />
+                        <Input type="zipcode" name={`owner${ownerKey}_zipcode`} />
                     </FlexColDiv>
                 </IntakeRow>
+            </IntakeDivider>
+        </div>
+    )
+}
+
+function PetInfo(petKey){
+    return(
+        <div key={`pet${petKey}`} id={`pet${petKey}`}>
+            <IntakeDivider>
+                <IntakeH4>
+                    Pet {petKey}
+                </IntakeH4>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_name`}>
+                            *First Name
+                        </IntakeLabel>
+                        <Input type="text" name={`pet${petKey}_name`} />
+                
+                    </FlexColDiv>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_species`}>
+                                *Species
+                            </IntakeLabel>
+                            <Input type="text" name={`pet${petKey}_species`} />
+                        </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_breed`}>
+                            *Breed
+                        </IntakeLabel>
+                        <Input type="text" name={`pet${petKey}_breed`} />
+                    </FlexColDiv>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_color`}>
+                            Color
+                        </IntakeLabel>
+                        <Input type="text" name={`pet${petKey}_color`} />
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_sex`}>
+                            *Sex
+                        </IntakeLabel>
+                        <IntakeLabelRow>
+                            <Input type='checkbox' name={`pet${petKey}_sex_female`} />
+                            <IntakeLabel>
+                                Female
+                            </IntakeLabel>
+                    
+                            <Input type="checkbox" name={`pet${petKey}_sex_male`} />
+                            <IntakeLabel>
+                                Male
+                            </IntakeLabel>
+                        </IntakeLabelRow>
+                    </FlexColDiv>
+
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_sterile`}>
+                            *Spayed or Neutered
+                        </IntakeLabel>
+                        <IntakeLabelRow>
+                            <Input type='checkbox' name={`pet${petKey}_sterile_yes`} />
+                            <IntakeLabel>
+                                Yes
+                            </IntakeLabel>
+                    
+                            <Input type="checkbox" name={`pet${petKey}_sterile_no`} />
+                            <IntakeLabel>
+                                No
+                            </IntakeLabel>
+                        </IntakeLabelRow>
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_weight`}>
+                            Weight (lbs)
+                        </IntakeLabel>
+                        <Input type="number" name={`pet${petKey}`} />
+                    </FlexColDiv>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_dob`}>
+                            Approx. Date of Birth (mm/dd/yy)
+                        </IntakeLabel>
+                        <Input type="date" name={`pet${petKey}_dob`} />
+                    </FlexColDiv>
+                </IntakeRow>
+                <IntakeH5>
+                    Behavioral Information - if yes, please explain
+                </IntakeH5>
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel htmlFor={`pet${petKey}_weight`}>
+                            Weight (lbs)
+                        </IntakeLabel>
+                        <Input type="number" name={`pet${petKey}`} />
+                    </FlexColDiv>
+                </IntakeRow>
+
+                <IntakeH5>
+                    Health Information
+                </IntakeH5>
             </IntakeDivider>
         </div>
     )
