@@ -145,6 +145,10 @@ export default function DigitalIntake() {
                         </IntakeRow>
                     </IntakeHDiv> 
 
+                    <IntakeH3>
+                        Liability Waiver
+                    </IntakeH3>
+
                     <IntakeRow>
                         <SubmitInput type="submit" value="Send" />
                             {loading && <Rotate>
