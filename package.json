@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
+    "react-signature-canvas": "^1.0.6",
     "reactstrap": "^9.2.1",
     "styled-components": "^6.1.6",
     "web-vitals": "^2.1.4"

@@ -4,6 +4,7 @@ export const IntakeSection = styled.section`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
     text-align: center;
 `
 
@@ -38,7 +39,7 @@ export const IntakeDivider = styled.div`
 
 export const IntakePDF = styled.div`
     flex-wrap: wrap;
-    width: 50%;
+    width: 60%;
 `
 
 export const IntakeRow = styled.div`
@@ -49,6 +50,7 @@ export const IntakeRow = styled.div`
     grid-column-end: 5;
     align-items: center;
     text-align: center;
+    margin: 10px 0;
 `
 
 export const IntakeLabelRow = styled.div`
@@ -61,14 +63,14 @@ export const IntakeLabelRow = styled.div`
 `
 
 export const IntakeHealthLabel = styled.label`
-        font-size: 15px;
+        font-size: 18px;
         text-align: left;
 `
 
 export const IntakeHealthInput = styled.input`
-    font-size: 15px;
+    font-size: 18px;
     text-align: left;
-    width: 50%;
+    width: 70%;
 `
 
 export const IntakeButton = styled.button`
@@ -84,7 +86,6 @@ export const IntakeLink = styled.a`
 
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
-    margin-bottom: 20px;
     font-weight: bold;
 `
 
@@ -94,7 +95,7 @@ export const IntakeH4 = styled.h4`
 `
 export const IntakeH5 = styled.h4`
     font-size: 1.8rem;
-    margin-top: 15px;
+    margin: 15px 0;
 `
 
 export const IntakeHDiv = styled.div`
@@ -105,8 +106,9 @@ export const IntakeHDiv = styled.div`
 `
 
 export const IntakeLabel = styled.label`
-    font-size: 15px;
+    font-size: 18px;
     text-align: left;
+    margin: 0 6px;
 `
 
 export const IntakeP = styled.p`
@@ -126,4 +128,44 @@ export const IntakeMessageInput = styled.textarea`
     overflow-y: scroll;
     resize: none;
     scrollbar-gutter: stable both-edges;
+`
+
+export const Bold = styled.div`
+    font-weight: bold;
+`
+
+export const IntakeWaiverDiv = styled.div`
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-items: center;
+    padding: 20px;
+    height: 200px;
+    overflow-y: scroll;
+    resize: none;
+    scrollbar-gutter: stable both-edges;
+    background-color: white;
+    border: 1px solid black;
+`
+
+export const IntakeWaiverP = styled.p`
+    font-size: 18px;
+    margin-top: 20px;
+`
+export const SignatureDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+`
+export const SignatureClear = styled.button`
+    margin-top: 20px;
+    background-color: white;
+    border: none;
+`
+
+export const CanvasDiv = styled.div`
+    border-bottom: 1px solid black
 `

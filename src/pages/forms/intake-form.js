@@ -2,16 +2,19 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import SignatureCanvas from "react-signature-canvas"
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
-import { Input, FlexColDiv, SubmitInput, 
-    Rotate, ErrorLink, ErrorText } from "../../styles/contact";
+import { Bold, CanvasDiv, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeWaiverDiv, IntakeWaiverP, SignatureClear, SignatureDiv } from '../../styles/intake-form'
+import { Input, FlexColDiv, SubmitInput, Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Import Form PDF:
 import intakeForm from './TBG-Intake-Form-2024.pdf'
+import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
+import waiverPDF from './TBG-Liability-Waiver-2024.pdf'
 
 export default function DigitalIntake() {
+    //State:
     const [error, setError] = useState(null)
     const form = useRef();
     const [loading, setLoading] = useState(false)
@@ -24,6 +27,9 @@ export default function DigitalIntake() {
     const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([EmergencyInfo(1)])
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
+
+    //References:
+    const sigCanvas = useRef()
 
     const ownerOnClick = async (event, ownerKey, storedOwners) => {
         let toggleOwnerBtn = () => {
@@ -110,6 +116,7 @@ export default function DigitalIntake() {
                 )}
 
                 <IntakeForm ref={form} onSubmit={submitHandler}>
+                    {/* Owners */}
                     <IntakeHDiv>
                         <IntakeH3> 
                             Owner Information 
@@ -118,20 +125,21 @@ export default function DigitalIntake() {
                         <IntakeH5> 
                             Required information will be starred (*)
                         </IntakeH5>
-                    </IntakeHDiv>
                     
-                    <IntakeCol>
-                        {storedOwners}
-                    </IntakeCol>
+                        <IntakeCol>
+                            {storedOwners}
+                        </IntakeCol>
 
-                    <IntakeRow>
-                        {ownerBtn && 
-                            <IntakeButton onClick={(event) => ownerOnClick(event, ownerKey, storedOwners)}> 
-                                Add Owner 
-                            </IntakeButton>
-                        }
-                    </IntakeRow>   
+                        <IntakeRow>
+                            {ownerBtn && 
+                                <IntakeButton onClick={(event) => ownerOnClick(event, ownerKey, storedOwners)}> 
+                                    Add Owner 
+                                </IntakeButton>
+                            }
+                        </IntakeRow>  
+                    </IntakeHDiv> 
 
+                    {/* Emergency Contact */}
                     <IntakeHDiv>
                         <IntakeH3> 
                             Emergency Contact Information
@@ -139,19 +147,19 @@ export default function DigitalIntake() {
                         <IntakeH5>
                             In case we can't reach you
                         </IntakeH5>
-                    </IntakeHDiv> 
+                    
+                        <IntakeCol>
+                            {storedEmergencyContacts}
+                        </IntakeCol>
 
-                    {/* Change to storedEmergencyContacts when done */}
-                    <IntakeCol>
-                        {EmergencyInfo(1)}
-                    </IntakeCol>
+                        <IntakeRow>
+                            <IntakeButton onClick={(event) => emergencyOnClick(event, emergencyKey, storedEmergencyContacts)}> 
+                                Add Emergency Contact 
+                            </IntakeButton>
+                        </IntakeRow>
+                    </IntakeHDiv>    
 
-                    <IntakeRow>
-                        <IntakeButton onClick={(event) => emergencyOnClick(event, emergencyKey, storedEmergencyContacts)}> 
-                            Add Emergency Contact 
-                        </IntakeButton>
-                    </IntakeRow>   
-
+                    {/* Authorized Pick Up */}
                     <IntakeHDiv>
                         <IntakeH3> 
                             Authorized People to Pickup Your Pets
@@ -168,16 +176,18 @@ export default function DigitalIntake() {
                                 </IntakeH5>
                             </FlexColDiv>
                         </IntakeRow>
-                        {/* Change to storedAuthorized when done */}
+                        
                         {storedAuthorized}
-                    </IntakeHDiv> 
+                    
 
-                    <IntakeRow>
-                        <IntakeButton onClick={(event) => authorizedOnClick(event, authorizedKey, storedAuthorized)}> 
-                            Add Authorized Person
-                        </IntakeButton>
-                    </IntakeRow>   
+                        <IntakeRow>
+                            <IntakeButton onClick={(event) => authorizedOnClick(event, authorizedKey, storedAuthorized)}> 
+                                Add Authorized Person
+                            </IntakeButton>
+                        </IntakeRow>
+                    </IntakeHDiv>    
 
+                    {/* Pet Info */}
                     <IntakeHDiv>
                         <IntakeH3> 
                             Pet Information
@@ -194,10 +204,91 @@ export default function DigitalIntake() {
                             </IntakeButton>
                         </IntakeRow>
                     </IntakeHDiv> 
+                    
+                    {/* Liability Waiver */}
+                    <IntakeHDiv>
+                        <IntakeH3>
+                            Liability Waiver
+                        </IntakeH3>
 
-                    <IntakeH3>
-                        Liability Waiver
-                    </IntakeH3>
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeWaiverDiv>
+                                    <IntakeH3>
+                                        {waiverHeader}
+                                    </IntakeH3>
+                                    <IntakeWaiverP>
+                                        {waiverP1}
+                                    </IntakeWaiverP>
+                                    <IntakeWaiverP>
+                                        {waiverP2}
+                                    </IntakeWaiverP>
+                                </IntakeWaiverDiv>
+                            </FlexColDiv>
+                        </IntakeRow>
+
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeH3>
+                                    {waiverAcknowledgeHeader}
+                                </IntakeH3>
+                                <IntakeWaiverP>
+                                    {waiverAcknowledgeStatement}
+                                </IntakeWaiverP>
+                            </FlexColDiv>
+                        </IntakeRow>
+
+                        {/* Owner Signature */}
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeLabel htmlFor="waiver-owner-signature">
+                                    *Owner's Signature
+                                </IntakeLabel>
+                                <SignatureDiv>
+                                    <CanvasDiv>
+                                        <SignatureCanvas 
+                                            canvasProps={{width: '500px', height: '200px', borderBottom: '1px solid black'}}
+                                            ref={sigCanvas}
+                                        />
+                                    </CanvasDiv>        
+                                <SignatureClear onClick={() => sigCanvas.current.clear()}>
+                                    Clear
+                                </SignatureClear>
+                                </SignatureDiv>
+                            </FlexColDiv>
+                        </IntakeRow>
+
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeLabel htmlFor={`owner_printed_name`}>
+                                    *Owner's Printed Name
+                                </IntakeLabel>
+                                <Input type="text" name="owner_printed_name"/>
+                            </FlexColDiv>
+                        </IntakeRow>
+
+                        <IntakeRow>
+                            <FlexColDiv>
+                                <IntakeLabel htmlFor={`pets_name`}>
+                                    *Pet(s) Name(s)
+                                </IntakeLabel>
+                                <Input type="text" name="pets_name"/>
+                            </FlexColDiv>
+                        </IntakeRow>
+
+                        <IntakeRow>
+                            <FlexColDiv>
+                            <p>
+                                You can download the Liability Waiver below.
+                            </p>
+                            </FlexColDiv>
+                        </IntakeRow>
+                        <IntakeRow>
+                            <IntakeButton onClick={() => window.open(waiverPDF)}>
+                                Download Waiver
+                            </IntakeButton>
+                        </IntakeRow>
+                    </IntakeHDiv>
 
                     <IntakeRow>
                         <SubmitInput type="submit" value="Send" />
@@ -305,9 +396,11 @@ function EmergencyInfo(emergencyKey){
     return(
         <div key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
             <IntakeDivider>
-                <IntakeH4>
-                    Emergency Contact {emergencyKey}
-                </IntakeH4>
+                <Bold>
+                    <IntakeH4>
+                        Emergency Contact {emergencyKey}
+                    </IntakeH4>
+                </Bold>
             </IntakeDivider>
             <IntakeRow>
                 <FlexColDiv>
@@ -376,15 +469,16 @@ function AuthorizedPickup(authorizedKey){
     )
 }
 
-// Not complete yet:
 function PetInfo(petKey){
     return(
         <div key={`pet${petKey}`} id={`pet${petKey}`}>
             <IntakeDivider>
-                <IntakeH4>
-                    Pet {petKey}
+                <Bold>
+                    <IntakeH4>
+                        Pet {petKey}
+                    </IntakeH4>
+                </Bold>
 
-                </IntakeH4>
             {/* Pet Info Section */}
             <IntakeDivider>
                 <IntakeCol>
@@ -476,9 +570,11 @@ function PetInfo(petKey){
             {/* Behavior Section */}
             <IntakeDivider>
                 <IntakeCol>
-                    <IntakeH5>
-                        Behavioral Information - if yes, please explain
-                    </IntakeH5>
+                    <Bold>
+                        <IntakeH5>
+                            Behavioral Information - if yes, please explain
+                        </IntakeH5>
+                    </Bold>
 
                     <IntakeRow>
                         <FlexColDiv>
@@ -499,7 +595,10 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_destructive_explaination`}/>
+                                    <IntakeLabel htmlFor={`pet${petKey}_explain_destructive`}>
+                                    If yes, please explain
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_destructive_explaination`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -524,7 +623,10 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_fence_explaination`}/>
+                                    <IntakeLabel htmlFor={`pet${petKey}_explain_fence`}>
+                                        If yes, please explain
+                                    </IntakeLabel>
+                                <IntakeMessageInput type="text" name={`pet${petKey}_explain_fence`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -549,7 +651,10 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_guard_explaination`}/>
+                                    <IntakeLabel htmlFor={`pet${petKey}_explain_guard`}>
+                                        If yes, please explain
+                                    </IntakeLabel>
+                                <IntakeMessageInput type="text" name={`pet${petKey}_explain_guard`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -574,7 +679,10 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_socialized_explaination`}/>
+                                    <IntakeLabel htmlFor={`pet${petKey}_explain_social`}>
+                                        If yes, please explain
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_explain_social`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -599,7 +707,10 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_kennel_explaination`}/>
+                                    <IntakeLabel htmlFor={`pet${petKey}_explain_kennel`}>
+                                        If yes, please explain
+                                    </IntakeLabel>
+                                <IntakeMessageInput type="text" name={`pet${petKey}_explain_kennel`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -613,7 +724,7 @@ function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                <Input type="text" name={`pet${petKey}_extra_info_explaination`}/>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_info_explaination`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -624,10 +735,11 @@ function PetInfo(petKey){
             {/* Vet History Section */}
             <IntakeDivider>
                 <IntakeCol>
-                    <IntakeH5>
-                        Health Information
-                    </IntakeH5>
-
+                    <Bold>
+                        <IntakeH5>
+                            Health Information
+                        </IntakeH5>
+                    </Bold>
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_vet`}>
