@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
+import { IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
 import { Input, FlexColDiv, SubmitInput, 
     Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
@@ -185,7 +185,7 @@ export default function DigitalIntake() {
 
                         {/* Change to storedPets when done */}
                         <IntakeCol>
-                            {PetInfo(1)}
+                            {storedPets}
                         </IntakeCol>
 
                         <IntakeRow>
@@ -383,107 +383,374 @@ function PetInfo(petKey){
             <IntakeDivider>
                 <IntakeH4>
                     Pet {petKey}
+
                 </IntakeH4>
-
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_name`}>
-                            *First Name
-                        </IntakeLabel>
-                        <Input type="text" name={`pet${petKey}_name`} />
-                
-                    </FlexColDiv>
+            {/* Pet Info Section */}
+            <IntakeDivider>
+                <IntakeCol>
+                    <IntakeRow>
                         <FlexColDiv>
-                            <IntakeLabel htmlFor={`pet${petKey}_species`}>
-                                *Species
+                            <IntakeLabel htmlFor={`pet${petKey}_name`}>
+                                *First Name
                             </IntakeLabel>
-                            <Input type="text" name={`pet${petKey}_species`} />
+                            <Input type="text" name={`pet${petKey}_name`} />
+                    
                         </FlexColDiv>
-                </IntakeRow>
+                            <FlexColDiv>
+                                <IntakeLabel htmlFor={`pet${petKey}_species`}>
+                                    *Species
+                                </IntakeLabel>
+                                <Input type="text" name={`pet${petKey}_species`} />
+                            </FlexColDiv>
+                    </IntakeRow>
 
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_breed`}>
-                            *Breed
-                        </IntakeLabel>
-                        <Input type="text" name={`pet${petKey}_breed`} />
-                    </FlexColDiv>
-
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_color`}>
-                            Color
-                        </IntakeLabel>
-                        <Input type="text" name={`pet${petKey}_color`} />
-                    </FlexColDiv>
-                </IntakeRow>
-
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_sex`}>
-                            *Sex
-                        </IntakeLabel>
-                        <IntakeLabelRow>
-                            <Input type='checkbox' name={`pet${petKey}_sex_female`} />
-                            <IntakeLabel>
-                                Female
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_breed`}>
+                                *Breed
                             </IntakeLabel>
-                    
-                            <Input type="checkbox" name={`pet${petKey}_sex_male`} />
-                            <IntakeLabel>
-                                Male
+                            <Input type="text" name={`pet${petKey}_breed`} />
+                        </FlexColDiv>
+
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_color`}>
+                                Color
                             </IntakeLabel>
-                        </IntakeLabelRow>
-                    </FlexColDiv>
+                            <Input type="text" name={`pet${petKey}_color`} />
+                        </FlexColDiv>
+                    </IntakeRow>
 
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_sterile`}>
-                            *Spayed or Neutered
-                        </IntakeLabel>
-                        <IntakeLabelRow>
-                            <Input type='checkbox' name={`pet${petKey}_sterile_yes`} />
-                            <IntakeLabel>
-                                Yes
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_sex`}>
+                                *Sex
                             </IntakeLabel>
-                    
-                            <Input type="checkbox" name={`pet${petKey}_sterile_no`} />
-                            <IntakeLabel>
-                                No
+                            <IntakeLabelRow>
+                                <Input type='checkbox' name={`pet${petKey}_sex_female`} />
+                                <IntakeLabel>
+                                    Female
+                                </IntakeLabel>
+                        
+                                <Input type="checkbox" name={`pet${petKey}_sex_male`} />
+                                <IntakeLabel>
+                                    Male
+                                </IntakeLabel>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_sterile`}>
+                                *Spayed or Neutered
                             </IntakeLabel>
-                        </IntakeLabelRow>
-                    </FlexColDiv>
-                </IntakeRow>
+                            <IntakeLabelRow>
+                                <Input type='checkbox' name={`pet${petKey}_sterile_yes`} />
+                                <IntakeLabel>
+                                    Yes
+                                </IntakeLabel>
+                        
+                                <Input type="checkbox" name={`pet${petKey}_sterile_no`} />
+                                <IntakeLabel>
+                                    No
+                                </IntakeLabel>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
 
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                            Weight (lbs)
-                        </IntakeLabel>
-                        <Input type="number" name={`pet${petKey}`} />
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_dob`}>
-                            Approx. Date of Birth (mm/dd/yy)
-                        </IntakeLabel>
-                        <Input type="date" name={`pet${petKey}_dob`} />
-                    </FlexColDiv>
-                </IntakeRow>
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_weight`}>
+                                Weight (lbs)
+                            </IntakeLabel>
+                            <Input type="number" name={`pet${petKey}_weight`} />
+                        </FlexColDiv>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_dob`}>
+                                Approx. Date of Birth (mm/dd/yy)
+                            </IntakeLabel>
+                            <Input type="date" name={`pet${petKey}_dob`} />
+                        </FlexColDiv>
+                    </IntakeRow>
+                </IntakeCol>
+            </IntakeDivider>
 
-                <IntakeH5>
-                    Behavioral Information - if yes, please explain
-                </IntakeH5>
+            {/* Behavior Section */}
+            <IntakeDivider>
+                <IntakeCol>
+                    <IntakeH5>
+                        Behavioral Information - if yes, please explain
+                    </IntakeH5>
 
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                            Weight (lbs)
-                        </IntakeLabel>
-                        <Input type="number" name={`pet${petKey}`} />
-                    </FlexColDiv>
-                </IntakeRow>
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_destructive`}>
+                                Does your pet have any destructive habits when left alone?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type='checkbox' name={`{pet${petKey}_destructive_yes}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_desstructive_yes}`}>
+                                        Yes
+                                    </IntakeLabel>
 
-                <IntakeH5>
-                    Health Information
-                </IntakeH5>
+                                    <Input type='checkbox' name={`{pet${petKey}_destructive_no}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_desstructive_no}`}>
+                                        No
+                                    </IntakeLabel>
+                            </IntakeRow>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_destructive_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_fence`}>
+                                Had your pet ever jumped, climbed, or dug out of a fence?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type='checkbox' name={`{pet${petKey}_fence_yes}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_fence_yes}`}>
+                                        Yes
+                                    </IntakeLabel>
+
+                                    <Input type='checkbox' name={`{pet${petKey}_fence_no}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_fence_no}`}>
+                                        No
+                                    </IntakeLabel>
+                            </IntakeRow>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_fence_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_guard`}>
+                                Does your pet ever guard toys, food, water, or people?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type='checkbox' name={`{pet${petKey}_guard_yes}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_guard_yes}`}>
+                                        Yes
+                                    </IntakeLabel>
+
+                                    <Input type='checkbox' name={`{pet${petKey}_guard_no}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_guard_no}`}>
+                                        No
+                                    </IntakeLabel>
+                            </IntakeRow>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_guard_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_socialized`}>
+                                Has your pet ever socialized in a group of 6 or more pets?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type='checkbox' name={`{pet${petKey}_socialized_yes}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_socialized_yes}`}>
+                                        Yes
+                                    </IntakeLabel>
+
+                                    <Input type='checkbox' name={`{pet${petKey}_socialized_no}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_socialized_no}`}>
+                                        No
+                                    </IntakeLabel>
+                            </IntakeRow>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_socialized_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_kennel`}>
+                                Does your pet have experience in a kennel environment?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type='checkbox' name={`{pet${petKey}_kennel_yes}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_kennel_yes}`}>
+                                        Yes
+                                    </IntakeLabel>
+
+                                    <Input type='checkbox' name={`{pet${petKey}_kennel_no}`} />
+                                    <IntakeLabel htmlFor={`{pet${petKey}_kennel_no}`}>
+                                        No
+                                    </IntakeLabel>
+                            </IntakeRow>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_kennel_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_extra_info`}>
+                                Is there anything else we should know about their behavior?
+                            </IntakeLabel>
+                            
+                            <IntakeLabelRow>
+                                <FlexColDiv>
+                                <Input type="text" name={`pet${petKey}_extra_info_explaination`}/>
+                                </FlexColDiv>
+                            </IntakeLabelRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+                </IntakeCol>
+            </IntakeDivider>
+
+            {/* Vet History Section */}
+            <IntakeDivider>
+                <IntakeCol>
+                    <IntakeH5>
+                        Health Information
+                    </IntakeH5>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_vet`}>
+                                Vetinary Hospital
+                            </IntakeLabel>
+                            <Input type="text" name={`{pet${petKey}_vet`}/>
+                        </FlexColDiv>
+
+                        <FlexColDiv>
+                            <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
+                                Vet Phone Number
+                            </IntakeHealthLabel>
+                            <IntakeHealthInput type="number" name={`{pet${petKey}_vet_phone`}/>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_food_allergy`}>
+                                Does your pet have any food allergies?
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type="checkbox" name={`pet${petKey}_food_allergy_yes`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_food_allergy_yes`}>
+                                    Yes
+                                </IntakeLabel>
+
+                                <Input type="checkbox" name={`pet${petKey}_food_allergy_no`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_food_allergy_no`}>
+                                    No
+                                </IntakeLabel>
+                            </IntakeRow>
+
+                            <IntakeRow>
+                                <FlexColDiv>
+                                    <IntakeLabel htmlFor={`pet${petKey}_food_allergy_list`}>
+                                        If yes, please list them
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_food_allergy_list`}/>
+                                </FlexColDiv>
+                            </IntakeRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_medical_condition`}>
+                                Does your pet have any medical conditions or disabilities that we should know about? 
+                            </IntakeLabel>
+                            <IntakeLabel htmlFor={`pet${petKey}_medical_condition_examples`}>
+                                (ex: seizures, tumors, hot spots, etc)
+                            </IntakeLabel>
+                            <IntakeRow>
+                                <Input type="checkbox" name={`pet${petKey}_medical_condition_yes`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_medical_condition_yes`}>
+                                    Yes
+                                </IntakeLabel>
+
+                                <Input type="checkbox" name={`pet${petKey}_medical_condition_no`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_medical_condition_no`}>
+                                    No
+                                </IntakeLabel>
+                            </IntakeRow>
+
+                            <IntakeRow>
+                                <FlexColDiv>
+                                    <IntakeLabel htmlFor={`pet${petKey}_medical_condition_list`}>
+                                        If yes, please list them
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_medical_condition_list`}/>
+                                </FlexColDiv>
+                            </IntakeRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_medical_injury`}>
+                                Does your pet have any past injuries that we should know about? 
+                            </IntakeLabel>
+
+                            <IntakeRow>
+                                <Input type="checkbox" name={`pet${petKey}_medical_injury_yes`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_medical_injury_yes`}>
+                                    Yes
+                                </IntakeLabel>
+
+                                <Input type="checkbox" name={`pet${petKey}_medical_injury_no`}/>
+                                <IntakeLabel htmlFor={`pet${petKey}_medical_injury_no`}>
+                                    No
+                                </IntakeLabel>
+                            </IntakeRow>
+
+                            <IntakeRow>
+                                <FlexColDiv>
+                                    <IntakeLabel htmlFor={`pet${petKey}_medical_injury_list`}>
+                                        If yes, please list them
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_medical_injury_list`}/>
+                                </FlexColDiv>
+                            </IntakeRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <IntakeLabel htmlFor={`pet${petKey}_extra_medical`}>
+                                Is there anything else we should know about your pet's health or medical history?
+                            </IntakeLabel>
+                            
+                            <IntakeRow>
+                                <FlexColDiv>
+                                    <IntakeLabel htmlFor={`pet${petKey}_extra_medical_list`}>
+                                        If yes, please list them
+                                    </IntakeLabel>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_medical_list`}/>
+                                </FlexColDiv>
+                            </IntakeRow>
+                        </FlexColDiv>
+                    </IntakeRow>
+                </IntakeCol>
+            </IntakeDivider>
+
             </IntakeDivider>
         </div>
     )

@@ -60,6 +60,17 @@ export const IntakeLabelRow = styled.div`
     align-items: center;
 `
 
+export const IntakeHealthLabel = styled.label`
+        font-size: 15px;
+        text-align: left;
+`
+
+export const IntakeHealthInput = styled.input`
+    font-size: 15px;
+    text-align: left;
+    width: 50%;
+`
+
 export const IntakeButton = styled.button`
     margin: 2% 0;
 `
@@ -103,10 +114,16 @@ export const IntakeP = styled.p`
 `
 
 export const IntakeCol = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     grid-column-start: 1;
     grid-column-end: 5;
     align-items: center;
+`
+
+export const IntakeMessageInput = styled.textarea`
+    font-size: 15px;
+    padding: 10px;
+    height: 40px;
+    overflow-y: scroll;
+    resize: none;
+    scrollbar-gutter: stable both-edges;
 `
