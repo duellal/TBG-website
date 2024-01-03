@@ -289,7 +289,7 @@ export default function PetInfo(petKey){
                             <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
                                 Vet Phone Number
                             </IntakeHealthLabel>
-                            <IntakeHealthInput type="number" name={`{pet${petKey}_vet_phone`}/>
+                            <IntakeHealthInput type="tel" name={`{pet${petKey}_vet_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required/>
                         </FlexColDiv>
                     </IntakeRow>
 

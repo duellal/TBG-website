@@ -42,6 +42,7 @@ export default function LiabilityWaiver(){
                             {waiverAcknowledgeHeader}
                         </IntakeH3>
                         <IntakeWaiverP>
+                            <Input type="checkbox" name="liability-waiver-owner-acknowledgement" required />
                             {waiverAcknowledgeStatement}
                         </IntakeWaiverP>
                     </FlexColDiv>
@@ -58,6 +59,7 @@ export default function LiabilityWaiver(){
                                 <SignatureCanvas 
                                     canvasProps={{width: '500px', height: '200px', borderBottom: '1px solid black'}}
                                     ref={sigCanvas}
+                                    required 
                                 />
                             </CanvasDiv>        
                         <SignatureClear onClick={() => sigCanvas.current.clear()}>

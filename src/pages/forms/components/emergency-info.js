@@ -26,7 +26,7 @@ export default function EmergencyInfo(emergencyKey){
                     <IntakeLabel>
                         *Emergency Contact Phone Number
                     </IntakeLabel>
-                    <Input type="phone" name={`emergency${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
+                    <Input type="tel" name={`emergency${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                 </FlexColDiv>
 
                 <FlexColDiv>
