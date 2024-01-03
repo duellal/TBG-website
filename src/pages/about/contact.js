@@ -58,13 +58,13 @@ export default function Contact() {
                             <Label htmlFor="user_first_name">
                                 First Name
                             </Label>
-                            <Input type="text" name="user_first_name" />
+                            <Input type="text" name="user_first_name" required/>
                         </FlexColDiv>
                         <FlexColDiv>
                             <Label htmlFor="user_last_name">
                                 Last Name
                             </Label>
-                            <Input type="text" name="user_last_name" />
+                            <Input type="text" name="user_last_name" required/>
                         </FlexColDiv>
                     </Row>
                     <Row>
@@ -72,7 +72,7 @@ export default function Contact() {
                             <Label htmlFor="user_email">
                                 Email
                             </Label>
-                            <Input type="email" name="user_email" />
+                            <Input type="email" name="user_email" required />
                         </FlexColDiv>
                         <FlexColDiv>
                             <Label htmlFor="user_phone">
@@ -86,7 +86,7 @@ export default function Contact() {
                             <Label>
                                 Message
                             </Label>
-                            <MessageInput name="message" />
+                            <MessageInput name="message" required/>
                         </FlexColDiv>
                     </Row>
                     <Row>
