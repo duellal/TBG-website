@@ -14,6 +14,7 @@ import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 import OwnerInfo from './components/owner-info.js'
 import LiabilityWaiver from './components/liability-waiver.js'
 import EmergencyInfo from "./components/emergency-info.js";
+import AuthorizedPickup from "./components/auth-pickup.js";
 
 export default function DigitalIntake() {
     //State:
@@ -230,21 +231,6 @@ export default function DigitalIntake() {
                 </IntakeButton>
             </IntakePDF>
         </IntakeSection>
-    )
-}
-
-function AuthorizedPickup(authorizedKey){
-    return (
-        <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
-            <IntakeRow>
-                <FlexColDiv>
-                    <Input type="text" name={`auth${authorizedKey}_name`} />
-                </FlexColDiv>
-                <FlexColDiv>
-                    <Input type="text" name={`auth${authorizedKey}_relation`} />
-                </FlexColDiv>
-            </IntakeRow>
-        </div>
     )
 }
 
