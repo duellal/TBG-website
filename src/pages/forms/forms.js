@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import '../../styles/forms.css'
 
 //Import Form PDF:
-import intakeForm from './TBG-Intake-Form-2024.pdf'
+import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
     let navigate = useNavigate();

@@ -63,7 +63,7 @@ export const IntakeLabelRow = styled.div`
 `
 
 export const IntakeHealthLabel = styled.label`
-        font-size: 18px;
+        font-size: 16px;
         text-align: left;
 `
 
@@ -95,9 +95,13 @@ export const IntakeH4 = styled.h4`
 `
 export const IntakeH5 = styled.h4`
     font-size: 1.8rem;
-    margin: 15px 0;
+    margin: 5px 0 20px 0;
 `
 
+export const AuthPickupH5 = styled.h4`
+    font-size: 1.8rem;
+    margin: 5px 0 0 0;
+`
 export const IntakeHDiv = styled.div`
     grid-template-columns: 1;
     text-align: left;
@@ -106,7 +110,7 @@ export const IntakeHDiv = styled.div`
 `
 
 export const IntakeLabel = styled.label`
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     margin: 0 6px;
 `
@@ -122,7 +126,7 @@ export const IntakeCol = styled.div`
 `
 
 export const IntakeMessageInput = styled.textarea`
-    font-size: 15px;
+    font-size: 16px;
     padding: 10px;
     height: 40px;
     overflow-y: scroll;
@@ -148,7 +152,7 @@ export const IntakeWaiverDiv = styled.div`
 `
 
 export const IntakeWaiverP = styled.p`
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
 `
 export const SignatureDiv = styled.div`

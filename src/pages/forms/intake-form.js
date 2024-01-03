@@ -2,16 +2,17 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import SignatureCanvas from "react-signature-canvas"
 
 //Intake Form Styles:
-import { Bold, CanvasDiv, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeWaiverDiv, IntakeWaiverP, SignatureClear, SignatureDiv } from '../../styles/intake-form'
+import { AuthPickupH5, Bold, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
 import { Input, FlexColDiv, SubmitInput, Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
-//Import Form PDF:
-import intakeForm from './TBG-Intake-Form-2024.pdf'
-import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
-import waiverPDF from './TBG-Liability-Waiver-2024.pdf'
+//Form PDF:
+import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
+
+//Children Components/Functions:
+import OwnerInfo from './components/owner-info.js'
+import LiabilityWaiver from './components/liability-waiver.js'
 
 export default function DigitalIntake() {
     //State:
@@ -27,9 +28,6 @@ export default function DigitalIntake() {
     const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([EmergencyInfo(1)])
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
-
-    //References:
-    const sigCanvas = useRef()
 
     const ownerOnClick = async (event, ownerKey, storedOwners) => {
         let toggleOwnerBtn = () => {
@@ -166,14 +164,14 @@ export default function DigitalIntake() {
                         </IntakeH3>
                         <IntakeRow>
                             <FlexColDiv>
-                                <IntakeH5>
+                                <AuthPickupH5>
                                     First + Last Name
-                                </IntakeH5>
+                                </AuthPickupH5>
                             </FlexColDiv>
                             <FlexColDiv>
-                                <IntakeH5>
+                                <AuthPickupH5>
                                     Relationship
-                                </IntakeH5>
+                                </AuthPickupH5>
                             </FlexColDiv>
                         </IntakeRow>
                         
@@ -206,90 +204,9 @@ export default function DigitalIntake() {
                     </IntakeHDiv> 
                     
                     {/* Liability Waiver */}
-                    <IntakeHDiv>
-                        <IntakeH3>
-                            Liability Waiver
-                        </IntakeH3>
+                    <LiabilityWaiver />
 
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeWaiverDiv>
-                                    <IntakeH3>
-                                        {waiverHeader}
-                                    </IntakeH3>
-                                    <IntakeWaiverP>
-                                        {waiverP1}
-                                    </IntakeWaiverP>
-                                    <IntakeWaiverP>
-                                        {waiverP2}
-                                    </IntakeWaiverP>
-                                </IntakeWaiverDiv>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeH3>
-                                    {waiverAcknowledgeHeader}
-                                </IntakeH3>
-                                <IntakeWaiverP>
-                                    {waiverAcknowledgeStatement}
-                                </IntakeWaiverP>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        {/* Owner Signature */}
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor="waiver-owner-signature">
-                                    *Owner's Signature
-                                </IntakeLabel>
-                                <SignatureDiv>
-                                    <CanvasDiv>
-                                        <SignatureCanvas 
-                                            canvasProps={{width: '500px', height: '200px', borderBottom: '1px solid black'}}
-                                            ref={sigCanvas}
-                                        />
-                                    </CanvasDiv>        
-                                <SignatureClear onClick={() => sigCanvas.current.clear()}>
-                                    Clear
-                                </SignatureClear>
-                                </SignatureDiv>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor={`owner_printed_name`}>
-                                    *Owner's Printed Name
-                                </IntakeLabel>
-                                <Input type="text" name="owner_printed_name"/>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor={`pets_name`}>
-                                    *Pet(s) Name(s)
-                                </IntakeLabel>
-                                <Input type="text" name="pets_name"/>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                            <p>
-                                You can download the Liability Waiver below.
-                            </p>
-                            </FlexColDiv>
-                        </IntakeRow>
-                        <IntakeRow>
-                            <IntakeButton onClick={() => window.open(waiverPDF)}>
-                                Download Waiver
-                            </IntakeButton>
-                        </IntakeRow>
-                    </IntakeHDiv>
-
+                    {/* Form Submit Button */}
                     <IntakeRow>
                         <SubmitInput type="submit" value="Send" />
                             {loading && <Rotate>
@@ -299,6 +216,7 @@ export default function DigitalIntake() {
                 </IntakeForm>
             </IntakeCard>
 
+            {/* Intake Form PDF Section */}
             <IntakePDF>
                 <p>
                     If you cannot fill out the digitial intake form, feel free to download and complete the pdf version.
@@ -311,84 +229,6 @@ export default function DigitalIntake() {
                 </IntakeButton>
             </IntakePDF>
         </IntakeSection>
-    )
-}
-
-function OwnerInfo(ownerKey){
-    return(
-        <div key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
-            <IntakeDivider>
-                <IntakeH4>
-                    Owner {ownerKey}
-                </IntakeH4>
-            </IntakeDivider>
-            
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
-                            *First Name
-                        </IntakeLabel>
-                        <Input type="text" name={`owner${ownerKey}_first_name`} />
-                
-                    </FlexColDiv>
-                        <FlexColDiv>
-                            <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
-                                *Last Name
-                            </IntakeLabel>
-                            <Input type="text" name={`owner${ownerKey}_last_name`} />
-                        </FlexColDiv>
-                </IntakeRow>
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
-                            *Email
-                        </IntakeLabel>
-                        <Input type="email" name={`owner${ownerKey}_email`} />
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                            *Phone
-                        </IntakeLabel>
-                        <Input type="phone" name={`owner${ownerKey}_phone`} />
-                    </FlexColDiv>
-                </IntakeRow>
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel>
-                            *Address
-                        </IntakeLabel>
-                        <Input type='address' name={`owner${ownerKey}_address1`}/>
-                    </FlexColDiv>
-                </IntakeRow>
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel>
-                            Apartment/Suite #
-                        </IntakeLabel>
-                        <Input type='address' name={`owner${ownerKey}_address2`}/>
-                    </FlexColDiv>
-                </IntakeRow>
-                <IntakeRow>
-                    <FlexColDiv>
-                        <IntakeLabel>
-                            *City
-                        </IntakeLabel>
-                        <Input type="city" name={`owner${ownerKey}_city`} />
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <IntakeLabel>
-                            *State
-                        </IntakeLabel>
-                        <Input type="state" name={`owner${ownerKey}_state`} />
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <IntakeLabel>
-                            *Zip Code
-                        </IntakeLabel>
-                        <Input type="zipcode" name={`owner${ownerKey}_zipcode`} />
-                    </FlexColDiv>
-                </IntakeRow>
-        </div>
     )
 }
 
@@ -405,7 +245,7 @@ function EmergencyInfo(emergencyKey){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        *Emergenceny Contact First + Last Name
+                        *Emergency Contact First + Last Name
                     </IntakeLabel>
                     <Input type="text" name={`emergency${emergencyKey}_name`}/>
                 </FlexColDiv>
@@ -413,7 +253,7 @@ function EmergencyInfo(emergencyKey){
             <IntakeRow>
             <FlexColDiv>
                     <IntakeLabel>
-                        *Emergenceny Contact Phone Number
+                        *Emergency Contact Phone Number
                     </IntakeLabel>
                     <Input type="phone" name={`emergency${emergencyKey}_phone`}/>
                 </FlexColDiv>
