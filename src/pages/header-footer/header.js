@@ -8,7 +8,7 @@ import { Squash as Hamburger } from 'hamburger-react'
 import logo from "../../images/logo192.png";
 
 //Header Styles:
-import "../../styles/header.css";
+// import "../../styles/header.css";
 import { LogoContainer, Logo, HamburgerDiv, MobileNav, MobileNavBar, Nav, Navbar, StyledHeader } from '../../styles/header'
 
 //Components
@@ -36,16 +36,16 @@ export default function Header() {
 
         if (urlOption === `home`) {
             if (path === '/') {
-                return scrollToElem(urlOption)
+                scrollToElem(urlOption)
             }
             else {
-                return navigate('/')
+                navigate('/')
             }
         }
         else if (urlOption.includes(`#`)) {
             let id = splitUrlHash[1];
             await navigate(urlOption)
-            return scrollToElem(id)
+            scrollToElem(id)
         }
         else if (urlOption.includes('team')) {
             let teamId = `teamCareers`
@@ -53,7 +53,7 @@ export default function Header() {
 
             if (prevLocation.includes(`#`)) {
                 await navigate(urlOption)
-                return scrollToElem(teamId)
+                scrollToElem(teamId)
             }
             else {
                 navigate(`about/team`)
@@ -62,26 +62,27 @@ export default function Header() {
         else if (path === urlOption) {
             let elem = urlOption.split(`/`)[1]
             let getId = document.getElementById(elem)
-            return getId.scrollIntoView({ behavior: 'smooth' })
+            getId.scrollIntoView({ behavior: 'smooth' })
         }
         else {
             navigate(urlOption)
         }
+
+        setOpen(false)
     }
-    console.log(isOpen)
 
     return (
         <StyledHeader>
             <LogoContainer className="logo">
                 <Logo loading="lazy" className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
             </LogoContainer>
-            {/* <Navbar>
+            <Navbar>
                 <Nav>
                     {Object.keys(options).map(key => {
                         return <NavItem options={options[key]} url={url} title={key} />
                     })}
                 </Nav>
-            </Navbar> */}
+            </Navbar>
             <HamburgerDiv>
                 <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
             </HamburgerDiv>
@@ -89,7 +90,7 @@ export default function Header() {
                 <MobileNavBar>
                     <MobileNav>
                         {Object.keys(options).map(key => {
-                            return <NavItem options={options[key]} url={url} title={key} />
+                            return <NavItem options={options[key]} url={url} title={key} isMobile={true} />
                         })}
                     </MobileNav>
                 </MobileNavBar>
