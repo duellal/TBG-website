@@ -51,6 +51,7 @@ export const IntakeRow = styled.div`
     align-items: center;
     text-align: center;
     margin: 10px 0;
+    width: 100%;
 `
 
 export const IntakeLabelRow = styled.div`
@@ -63,8 +64,8 @@ export const IntakeLabelRow = styled.div`
 `
 
 export const IntakeHealthLabel = styled.label`
-        font-size: 16px;
-        text-align: left;
+    font-size: 16px;
+    text-align: left;
 `
 
 export const IntakeHealthInput = styled.input`
@@ -75,6 +76,7 @@ export const IntakeHealthInput = styled.input`
 
 export const IntakeButton = styled.button`
     margin: 2% 0;
+    padding: 5px 10px;
 `
 
 export const IntakeLink = styled.a`
@@ -172,4 +174,22 @@ export const SignatureClear = styled.button`
 
 export const CanvasDiv = styled.div`
     border-bottom: 1px solid black
+`
+
+// Used for below submit styling:
+export const Input = styled.input`
+    font-size: 15px;
+    margin: 6px;
+`
+
+export const IntakeSubmitInput = styled(Input)`
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #06aed5;
+    color: white;
+    border: 1px solid black;
+
+    &:hover {
+        background-color: #37bedd;
+    }
 `

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { AuthPickupH5, Bold, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection } from '../../styles/intake-form'
+import { AuthPickupH5, Bold, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeH3, IntakeH4, IntakeH5, IntakeHDiv, IntakeHeader, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeLink, IntakeMessageInput, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
 import { Input, FlexColDiv, SubmitInput, Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Form PDF:
@@ -99,21 +99,6 @@ export default function DigitalIntake() {
                     </IntakeP>
 
                 </IntakeHeader>
-
-                {error && (
-                    <div>
-                        <ErrorText>
-                            There was a problem submitting the form.
-                            </ErrorText> 
-                            <ErrorText>
-                                Please try submitting the form again.
-                                </ErrorText>
-                        <ErrorText> 
-                            If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or 
-                            <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.
-                        </ErrorText>
-                    </div>
-                )}
 
                 <IntakeForm ref={form} onSubmit={submitHandler}>
                     {/* Owners */}
@@ -210,12 +195,28 @@ export default function DigitalIntake() {
 
                     {/* Form Submit Button */}
                     <IntakeRow>
-                        <SubmitInput type="submit" value="Send" />
+                        <IntakeSubmitInput type="submit" value="Send" />
                             {loading && <Rotate>
                                 <FontAwesomeIcon icon={faSpinner} size="2xl" />
                             </Rotate>}
                     </IntakeRow>
                 </IntakeForm>
+
+                {/* Form Error on Submit */}
+                {error && (
+                    <div>
+                        <ErrorText>
+                            There was a problem submitting the form.
+                            </ErrorText> 
+                            <ErrorText>
+                                Please try submitting the form again.
+                                </ErrorText>
+                        <ErrorText> 
+                            If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or 
+                            <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.
+                        </ErrorText>
+                    </div>
+                )}
             </IntakeCard>
 
             {/* Intake Form PDF Section */}
