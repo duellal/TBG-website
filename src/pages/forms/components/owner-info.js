@@ -18,14 +18,14 @@ export default function OwnerInfo(ownerKey){
                         <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
                             *First Name
                         </IntakeLabel>
-                        <Input type="text" name={`owner${ownerKey}_first_name`} />
+                        <Input type="text" name={`owner${ownerKey}_first_name`} required />
                 
                     </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
                                 *Last Name
                             </IntakeLabel>
-                            <Input type="text" name={`owner${ownerKey}_last_name`} />
+                            <Input type="text" name={`owner${ownerKey}_last_name`} required />
                         </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -33,7 +33,7 @@ export default function OwnerInfo(ownerKey){
                         <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
                             *Email
                         </IntakeLabel>
-                        <Input type="email" name={`owner${ownerKey}_email`} />
+                        <Input type="email" name={`owner${ownerKey}_email`} required />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
@@ -47,7 +47,7 @@ export default function OwnerInfo(ownerKey){
                         <IntakeLabel>
                             *Address
                         </IntakeLabel>
-                        <Input type='address' name={`owner${ownerKey}_address1`}/>
+                        <Input type='address' name={`owner${ownerKey}_address1`} required />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -63,19 +63,19 @@ export default function OwnerInfo(ownerKey){
                         <IntakeLabel>
                             *City
                         </IntakeLabel>
-                        <Input type="city" name={`owner${ownerKey}_city`} />
+                        <Input type="city" name={`owner${ownerKey}_city`} required />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
                             *State
                         </IntakeLabel>
-                        <Input type="state" name={`owner${ownerKey}_state`} />
+                        <Input type="state" name={`owner${ownerKey}_state`} required />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
                             *Zip Code
                         </IntakeLabel>
-                        <Input type="zipcode" name={`owner${ownerKey}_zipcode`} />
+                        <Input type="zipcode" name={`owner${ownerKey}_zipcode`} required />
                     </FlexColDiv>
                 </IntakeRow>
         </div>

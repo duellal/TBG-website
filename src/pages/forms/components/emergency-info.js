@@ -24,7 +24,7 @@ export default function EmergencyInfo(emergencyKey){
             <IntakeRow>
             <FlexColDiv>
                     <IntakeLabel>
-                        *Emergency Contact Phone Number
+                        *Emergency Contact Phone Number (ex: (###) ###-####)
                     </IntakeLabel>
                     <Input type="tel" name={`emergency${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                 </FlexColDiv>
@@ -57,8 +57,8 @@ export default function EmergencyInfo(emergencyKey){
 
 
                     <IntakeLabel id="yes-show">
-                        If yes, type your intials
-                        <Input type="text" name={`emergency${emergencyKey}_initials`} />
+                        *If yes, type your intials (ex: HJ or HEJ) 
+                        <Input type="text" name={`emergency${emergencyKey}_initials`} pattern="^[A-Z]{2}$|^[A-Z]{3}$" required />
                     </IntakeLabel>
                 
                 </FlexColDiv>

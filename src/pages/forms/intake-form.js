@@ -19,8 +19,9 @@ import PetInfo from "./components/pet-info.js";
 
 export default function DigitalIntake() {
     //State:
+    const [form, editForm] = useState({})
     const [error, setError] = useState(null)
-    const form = useRef();
+    // const emailForm = useRef();
     const [loading, setLoading] = useState(false)
     const [ownerKey, setOwnerKey] = useState(2)
     const [storedOwners, setStoredOwners] = useState([OwnerInfo(1)])
@@ -102,9 +103,9 @@ export default function DigitalIntake() {
 
                 </IntakeHeader>
 
-                <IntakeForm ref={form} onSubmit={submitHandler}>
+                <IntakeForm onSubmit={submitHandler}>
                     {/* Owners */}
-                    <IntakeHDiv>
+                    {/* <IntakeHDiv>
                         <IntakeH3> 
                             Owner Information 
                         </IntakeH3>
@@ -124,7 +125,7 @@ export default function DigitalIntake() {
                                 </IntakeButton>
                             }
                         </IntakeRow>  
-                    </IntakeHDiv> 
+                    </IntakeHDiv>  */}
 
                     {/* Emergency Contact */}
                     <IntakeHDiv>
@@ -147,7 +148,7 @@ export default function DigitalIntake() {
                     </IntakeHDiv>    
 
                     {/* Authorized Pick Up */}
-                    <IntakeHDiv>
+                    {/* <IntakeHDiv>
                         <IntakeH3> 
                             Authorized People to Pickup Your Pets
                         </IntakeH3>
@@ -172,16 +173,16 @@ export default function DigitalIntake() {
                                 Add Authorized Person
                             </IntakeButton>
                         </IntakeRow>
-                    </IntakeHDiv>    
+                    </IntakeHDiv>     */}
 
                     {/* Pet Info */}
-                    <IntakeHDiv>
+                    {/* <IntakeHDiv>
                         <IntakeH3> 
                             Pet Information
                         </IntakeH3>
 
                         {/* Change to storedPets when done */}
-                        <IntakeCol>
+                        {/* <IntakeCol>
                             {storedPets}
                         </IntakeCol>
 
@@ -190,10 +191,10 @@ export default function DigitalIntake() {
                                 Add Pet
                             </IntakeButton>
                         </IntakeRow>
-                    </IntakeHDiv> 
+                    </IntakeHDiv>  */}
                     
                     {/* Liability Waiver */}
-                    <LiabilityWaiver />
+                    {/* <LiabilityWaiver /> */}
 
                     {/* Form Submit Button */}
                     <IntakeRow>

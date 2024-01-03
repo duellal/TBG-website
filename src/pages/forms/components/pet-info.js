@@ -24,14 +24,14 @@ export default function PetInfo(petKey){
                             <IntakeLabel htmlFor={`pet${petKey}_name`}>
                                 *First Name
                             </IntakeLabel>
-                            <Input type="text" name={`pet${petKey}_name`} />
+                            <Input type="text" name={`pet${petKey}_name`} required />
                     
                         </FlexColDiv>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_species`}>
                                     *Species
                                 </IntakeLabel>
-                                <Input type="text" name={`pet${petKey}_species`} />
+                                <Input type="text" name={`pet${petKey}_species`} required />
                             </FlexColDiv>
                     </IntakeRow>
 
@@ -40,7 +40,7 @@ export default function PetInfo(petKey){
                             <IntakeLabel htmlFor={`pet${petKey}_breed`}>
                                 *Breed
                             </IntakeLabel>
-                            <Input type="text" name={`pet${petKey}_breed`} />
+                            <Input type="text" name={`pet${petKey}_breed`} required />
                         </FlexColDiv>
 
                         <FlexColDiv>
@@ -90,9 +90,9 @@ export default function PetInfo(petKey){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                                Weight (lbs)
+                                *Weight (lbs)
                             </IntakeLabel>
-                            <Input type="number" name={`pet${petKey}_weight`} />
+                            <Input type="number" name={`pet${petKey}_weight`} required />
                         </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_dob`}>
@@ -280,16 +280,16 @@ export default function PetInfo(petKey){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_vet`}>
-                                Vetinary Hospital
+                                *Vetinary Hospital
                             </IntakeLabel>
-                            <Input type="text" name={`{pet${petKey}_vet`}/>
+                            <Input type="text" name={`{pet${petKey}_vet`} required />
                         </FlexColDiv>
 
                         <FlexColDiv>
                             <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
                                 Vet Phone Number
                             </IntakeHealthLabel>
-                            <IntakeHealthInput type="tel" name={`{pet${petKey}_vet_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required/>
+                            <IntakeHealthInput type="tel" name={`{pet${petKey}_vet_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}|(NA)" required/>
                         </FlexColDiv>
                     </IntakeRow>
 
