@@ -48,7 +48,7 @@ export const IntakeRow = styled.div`
     justify-content: center;
     grid-column-start: 1;
     grid-column-end: 5;
-    align-items: center;
+    align-items: flex-end;
     text-align: center;
     margin: 10px 0;
     width: 100%;
@@ -66,12 +66,14 @@ export const IntakeLabelRow = styled.div`
 export const IntakeHealthLabel = styled.label`
     font-size: 16px;
     text-align: left;
+    margin: 0 6px;
 `
 
 export const IntakeHealthInput = styled.input`
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     width: 70%;
+    margin: 6px;
 `
 
 export const IntakeButton = styled.button`
@@ -147,8 +149,6 @@ export const IntakeWaiverDiv = styled.div`
     padding: 20px;
     height: 200px;
     overflow-y: scroll;
-    resize: none;
-    scrollbar-gutter: stable both-edges;
     background-color: white;
     border: 1px solid black;
 `

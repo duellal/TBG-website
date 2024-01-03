@@ -10,10 +10,13 @@ export default function AuthorizedPickup(authorizedKey){
         <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
             <IntakeRow>
                 <FlexColDiv>
-                    <Input type="text" name={`auth${authorizedKey}_name`} />
+                    <Input type="text" name={`auth_name`} />
                 </FlexColDiv>
                 <FlexColDiv>
-                    <Input type="text" name={`auth${authorizedKey}_relation`} />
+                    <Input type="text" name={`auth_relation`} />
+                </FlexColDiv>
+                <FlexColDiv>
+                    <Input type="tel" name={`auth_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}"/>
                 </FlexColDiv>
             </IntakeRow>
         </div>

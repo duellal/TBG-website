@@ -22,7 +22,7 @@ export default function PetInfo(petKey){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_name`}>
-                                *First Name
+                                *Name
                             </IntakeLabel>
                             <Input type="text" name={`pet${petKey}_name`} required />
                     
@@ -135,7 +135,7 @@ export default function PetInfo(petKey){
                                     <IntakeLabel htmlFor={`pet${petKey}_explain_destructive`}>
                                     If yes, please explain
                                     </IntakeLabel>
-                                    <IntakeMessageInput type="text" name={`pet${petKey}_destructive_explaination`}/>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_explain_destructive`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -204,11 +204,11 @@ export default function PetInfo(petKey){
                             </IntakeLabel>
                             <IntakeRow>
                                 <Input type='checkbox' name={`{pet${petKey}_socialized_yes}`} />
-                                    <IntakeLabel htmlFor={`{pet${petKey}_socialized_yes}`}>
+                                    <IntakeLabel htmlFor={`{pet${petKey}_social_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_socialized_no}`} />
+                                    <Input type='checkbox' name={`{pet${petKey}_social_no}`} />
                                     <IntakeLabel htmlFor={`{pet${petKey}_socialized_no}`}>
                                         No
                                     </IntakeLabel>
@@ -261,7 +261,7 @@ export default function PetInfo(petKey){
                             
                             <IntakeLabelRow>
                                 <FlexColDiv>
-                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_info_explaination`}/>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_behavior`}/>
                                 </FlexColDiv>
                             </IntakeLabelRow>
                         </FlexColDiv>
@@ -287,8 +287,9 @@ export default function PetInfo(petKey){
 
                         <FlexColDiv>
                             <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                Vet Phone Number
+                                *Vet Phone Number <br/> ex: (###) ###-####
                             </IntakeHealthLabel>
+
                             <IntakeHealthInput type="tel" name={`{pet${petKey}_vet_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}|(NA)" required/>
                         </FlexColDiv>
                     </IntakeRow>
@@ -389,9 +390,6 @@ export default function PetInfo(petKey){
                             
                             <IntakeRow>
                                 <FlexColDiv>
-                                    <IntakeLabel htmlFor={`pet${petKey}_extra_medical_list`}>
-                                        If yes, please list them
-                                    </IntakeLabel>
                                     <IntakeMessageInput type="text" name={`pet${petKey}_extra_medical_list`}/>
                                 </FlexColDiv>
                             </IntakeRow>

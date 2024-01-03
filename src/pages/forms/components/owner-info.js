@@ -31,13 +31,13 @@ export default function OwnerInfo(ownerKey){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
-                            *Email
+                            *Email <br/> ex: someemail@server.com
                         </IntakeLabel>
                         <Input type="email" name={`owner${ownerKey}_email`} required />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                            *Phone
+                            *Phone <br/> ex: (###) ###-####
                         </IntakeLabel>
                         <Input type="tel" name={`owner${ownerKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                     </FlexColDiv>
