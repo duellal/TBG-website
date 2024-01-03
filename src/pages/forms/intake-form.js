@@ -13,6 +13,7 @@ import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 //Children Components/Functions:
 import OwnerInfo from './components/owner-info.js'
 import LiabilityWaiver from './components/liability-waiver.js'
+import EmergencyInfo from "./components/emergency-info.js";
 
 export default function DigitalIntake() {
     //State:
@@ -229,68 +230,6 @@ export default function DigitalIntake() {
                 </IntakeButton>
             </IntakePDF>
         </IntakeSection>
-    )
-}
-
-function EmergencyInfo(emergencyKey){
-    return(
-        <div key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
-            <IntakeDivider>
-                <Bold>
-                    <IntakeH4>
-                        Emergency Contact {emergencyKey}
-                    </IntakeH4>
-                </Bold>
-            </IntakeDivider>
-            <IntakeRow>
-                <FlexColDiv>
-                    <IntakeLabel>
-                        *Emergency Contact First + Last Name
-                    </IntakeLabel>
-                    <Input type="text" name={`emergency${emergencyKey}_name`}/>
-                </FlexColDiv>
-            </IntakeRow>
-            <IntakeRow>
-            <FlexColDiv>
-                    <IntakeLabel>
-                        *Emergency Contact Phone Number
-                    </IntakeLabel>
-                    <Input type="phone" name={`emergency${emergencyKey}_phone`}/>
-                </FlexColDiv>
-
-                <FlexColDiv>
-                    <IntakeLabel>
-                        *Relationship
-                    </IntakeLabel>
-                    <Input type="text" name={`emergency${emergencyKey}_relation`} />
-                </FlexColDiv>
-            </IntakeRow>
-
-            <IntakeRow>
-                <FlexColDiv>
-                    <IntakeLabel>
-                        *Does this person have permission to make decisions regarding your pet(s)?
-                    </IntakeLabel>
-                    
-                    <IntakeLabelRow>
-                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_yes`}/>
-                            <IntakeLabel>
-                                Yes
-                            </IntakeLabel>
-  
-                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_no`}/>
-                            <IntakeLabel>
-                                No
-                            </IntakeLabel>
-                    </IntakeLabelRow>
-
-                    <IntakeLabel>
-                        If yes, type your intials
-                        <Input type="text" name={`emergency${emergencyKey}_initials`} />
-                    </IntakeLabel>
-                </FlexColDiv>
-            </IntakeRow>
-        </div>
     )
 }
 
