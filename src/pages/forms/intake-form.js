@@ -31,6 +31,7 @@ export default function DigitalIntake() {
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
 
+    //Functions to allow a user to add more sections with a button:
     const ownerOnClick = async (event, ownerKey, storedOwners) => {
         let toggleOwnerBtn = () => {
             setOwnerBtn(!ownerBtn)
@@ -60,7 +61,7 @@ export default function DigitalIntake() {
         await setStoredPets([...storedPets, PetInfo(petKey)])
     }
 
-
+    //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
         // setLoading(true)
