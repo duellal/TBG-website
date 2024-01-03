@@ -39,7 +39,7 @@ export default function OwnerInfo(ownerKey){
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
                             *Phone
                         </IntakeLabel>
-                        <Input type="phone" name={`owner${ownerKey}_phone`} />
+                        <Input type="phone" name={`owner${ownerKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>

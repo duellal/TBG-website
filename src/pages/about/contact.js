@@ -78,7 +78,7 @@ export default function Contact() {
                             <Label htmlFor="user_phone">
                                 Phone
                             </Label>
-                            <Input type="phone" name="user_phone" />
+                            <Input type="tel" name="user_phone" pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                         </FlexColDiv>
                     </Row>
                     <Row>

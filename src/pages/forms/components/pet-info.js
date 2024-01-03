@@ -144,7 +144,7 @@ export default function PetInfo(petKey){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_fence`}>
-                                Had your pet ever jumped, climbed, or dug out of a fence?
+                                Has your pet ever jumped, climbed, or dug out of a fence?
                             </IntakeLabel>
                             <IntakeRow>
                                 <Input type='checkbox' name={`{pet${petKey}_fence_yes}`} />
