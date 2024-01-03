@@ -42,7 +42,7 @@ export default function LiabilityWaiver(){
                             {waiverAcknowledgeHeader}
                         </IntakeH3>
                         <IntakeWaiverP>
-                            <Input type="checkbox" name="liability-waiver-owner-acknowledgement" required />
+                            <Input type="checkbox" name="waiver_owner_acknowledgement" required />
                             {waiverAcknowledgeStatement}
                         </IntakeWaiverP>
                     </FlexColDiv>
@@ -57,7 +57,7 @@ export default function LiabilityWaiver(){
                         <SignatureDiv>
                             <CanvasDiv>
                                 <SignatureCanvas 
-                                    canvasProps={{width: '500px', height: '200px', borderBottom: '1px solid black'}}
+                                    canvasProps={{width: '500px', height: '200px'}}
                                     ref={sigCanvas}
                                     required 
                                 />
@@ -74,7 +74,7 @@ export default function LiabilityWaiver(){
                         <IntakeLabel htmlFor={`owner_printed_name`}>
                             *Owner's Printed Name
                         </IntakeLabel>
-                        <Input type="text" name="owner_printed_name"/>
+                        <Input type="text" name="waiver_owner_name" required />
                     </FlexColDiv>
                 </IntakeRow>
 
@@ -83,7 +83,7 @@ export default function LiabilityWaiver(){
                         <IntakeLabel htmlFor={`pets_name`}>
                             *Pet(s) Name(s)
                         </IntakeLabel>
-                        <Input type="text" name="pets_name"/>
+                        <Input type="text" name="waiver_pets_name" required />
                     </FlexColDiv>
                 </IntakeRow>
 

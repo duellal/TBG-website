@@ -254,5 +254,8 @@ export const formTemplate = [{
     pet5_past_injury_yes: false,
     pet5_past_injury_no: false,
     pet5_past_inury_list: '',
-    pet5_extra_medical: ''
+    pet5_extra_medical: '',
+    waiver_owner_acknowledgement: false,
+    waiver_owner_name: '',
+    waiver_pets_name: ''
 }]
