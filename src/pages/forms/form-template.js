@@ -1,22 +1,4 @@
-export const formTemplate = [{
-    owner1_first_name: '',
-    owner1_last_name: '',
-    owner1_email: '',
-    owner1_phone: '',
-    owner1_address1: '',
-    owner1_address2: '',
-    owner1_city: '',
-    owner1_state: '',
-    owner1_zip: '',
-    owner2_first_name: '',
-    owner2_last_name: '',
-    owner2_email: '',
-    owner2_phone: '',
-    owner2_address1: '',
-    owner2_address2: '',
-    owner2_city: '',
-    owner2_state: '',
-    owner2_zip: '',
+export const formTemplate = {
     emergency1_name: '',
     emergency1_phone: '',
     emergency1_relation: '',
@@ -258,4 +240,25 @@ export const formTemplate = [{
     waiver_owner_acknowledgement: false,
     waiver_owner_name: '',
     waiver_pets_name: ''
-}]
+}
+
+export const ownerForm = {
+    owner1_first_name: '',
+    owner1_last_name: '',
+    owner1_email: '',
+    owner1_phone: '',
+    owner1_address1: '',
+    owner1_address2: '',
+    owner1_city: '',
+    owner1_state: '',
+    owner1_zip: '',
+    owner2_first_name: '',
+    owner2_last_name: '',
+    owner2_email: '',
+    owner2_phone: '',
+    owner2_address1: '',
+    owner2_address2: '',
+    owner2_city: '',
+    owner2_state: '',
+    owner2_zip: '',
+}
