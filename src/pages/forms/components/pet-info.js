@@ -355,28 +355,28 @@ export default function PetInfo(petKey){
 
                     <IntakeRow>
                         <FlexColDiv>
-                            <IntakeLabel htmlFor={`pet${petKey}_medical_injury`}>
+                            <IntakeLabel htmlFor={`pet${petKey}_past_injury`}>
                                 Does your pet have any past injuries that we should know about? 
                             </IntakeLabel>
 
                             <IntakeRow>
                                 <Input type="checkbox" name={`pet${petKey}_medical_injury_yes`}/>
-                                <IntakeLabel htmlFor={`pet${petKey}_medical_injury_yes`}>
+                                <IntakeLabel htmlFor={`pet${petKey}_past_injury_yes`}>
                                     Yes
                                 </IntakeLabel>
 
                                 <Input type="checkbox" name={`pet${petKey}_medical_injury_no`}/>
-                                <IntakeLabel htmlFor={`pet${petKey}_medical_injury_no`}>
+                                <IntakeLabel htmlFor={`pet${petKey}_past_injury_no`}>
                                     No
                                 </IntakeLabel>
                             </IntakeRow>
 
                             <IntakeRow>
                                 <FlexColDiv>
-                                    <IntakeLabel htmlFor={`pet${petKey}_medical_injury_list`}>
+                                    <IntakeLabel htmlFor={`pet${petKey}_past_injury_list`}>
                                         If yes, please list them
                                     </IntakeLabel>
-                                    <IntakeMessageInput type="text" name={`pet${petKey}_medical_injury_list`}/>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_past_injury_list`}/>
                                 </FlexColDiv>
                             </IntakeRow>
                         </FlexColDiv>
@@ -390,7 +390,7 @@ export default function PetInfo(petKey){
                             
                             <IntakeRow>
                                 <FlexColDiv>
-                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_medical_list`}/>
+                                    <IntakeMessageInput type="text" name={`pet${petKey}_extra_medical`}/>
                                 </FlexColDiv>
                             </IntakeRow>
                         </FlexColDiv>
