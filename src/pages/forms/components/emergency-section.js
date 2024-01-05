@@ -33,26 +33,24 @@ export default function EmergencySection(props){
     
         return(
             <IntakeHDiv id={`emergency_section${emergencyKey}`}>
-                <IntakeHDiv>
-                    <IntakeH3> 
-                        Emergency Contact Information
-                    </IntakeH3>
-                    <IntakeH5>
-                        In case we can't reach you
-                    </IntakeH5>
-                
-                    <IntakeCol>
-                        {storedEmergencyContacts}
-                    </IntakeCol>
+                <IntakeH3> 
+                    Emergency Contact Information
+                </IntakeH3>
+                <IntakeH5>
+                    In case we can't reach you
+                </IntakeH5>
+            
+                <IntakeCol>
+                    {storedEmergencyContacts}
+                </IntakeCol> 
 
-                    <IntakeRow>
-                        {emergencyBtn &&
-                            <IntakeButton onClick={(event) => emergencyOnClick(event)}> 
-                            Add Emergency Contact 
-                            </IntakeButton>
-                        }
-                    </IntakeRow>
-                </IntakeHDiv>
+                <IntakeRow>
+                    {emergencyBtn &&
+                        <IntakeButton onClick={(event) => emergencyOnClick(event)}> 
+                        Add Emergency Contact 
+                        </IntakeButton>
+                    }
+                </IntakeRow>
             </IntakeHDiv>
         )
 }

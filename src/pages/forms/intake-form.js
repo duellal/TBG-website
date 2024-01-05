@@ -20,6 +20,7 @@ import AuthorizedPickup from "./components/auth-pickup-info.js";
 import PetInfo from "./components/pet-info.js";
 import { formTemplate } from "./form-template.js";
 import AuthPickupSection from "./components/auth-pickup-section.js";
+import PetSection from "./components/pet-section.js";
 
 export default function DigitalIntake() {
     //State:
@@ -51,27 +52,12 @@ export default function DigitalIntake() {
        const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
 
        //Authorized Pickup: 
-       const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={authorizedKey}/>])
+       const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
        //Emergency Contacts:
         const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
         // Pets:
-        const [storedPets, setStoredPets] = useState([PetInfo(1)])
+        const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])
 
-    const petOnClick = async (event, petKey, storedPets) => {
-        event.preventDefault()
-
-        let togglePetBtn = () => {
-            setPetBtn(!petBtn)
-        }
-
-        setPetNum(petNum + 1)
-
-        if(petNum === 4){
-            togglePetBtn()
-        }
-        await setPetKey(petKey + 1)
-        await setStoredPets([...storedPets, PetInfo(petKey)])
-    }
 
     //Form Submit:
     const submitHandler = async event => {
@@ -149,24 +135,16 @@ export default function DigitalIntake() {
                     />
 
                     {/* Pet Info */}
-                    <IntakeHDiv>
-                        <IntakeH3> 
-                            Pet Information
-                        </IntakeH3>
-
-
-                        <IntakeCol>
-                            {storedPets}
-                        </IntakeCol>
-
-                        <IntakeRow>
-                            {petBtn && 
-                                <IntakeButton onClick={() => petOnClick(petKey)}>
-                                Add Pet
-                                </IntakeButton>
-                            }
-                        </IntakeRow>
-                    </IntakeHDiv> 
+                    <PetSection
+                        petBtn={petBtn} 
+                        setPetBtn={setPetBtn} 
+                        petKey={petKey}
+                        setPetKey={setPetKey} 
+                        storedPets={storedPets}
+                        setStoredPets={setStoredPets}
+                        petNum={petNum}
+                        setPetNum={setPetNum}
+                    />
                     
                     {/* Liability Waiver */}
                     <LiabilityWaiver />

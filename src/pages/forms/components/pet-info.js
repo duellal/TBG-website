@@ -5,8 +5,8 @@ import { Bold, IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, 
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 
-
-export default function PetInfo(petKey){
+export default function PetInfo(props){
+    const { petKey } = props
     return(
         <div key={`pet${petKey}`} id={`pet${petKey}`}>
             <IntakeDivider>
