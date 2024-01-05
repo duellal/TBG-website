@@ -19,6 +19,7 @@ import EmergencySection from "./components/emergency-section.js";
 import AuthorizedPickup from "./components/auth-pickup-info.js";
 import PetInfo from "./components/pet-info.js";
 import { formTemplate } from "./form-template.js";
+import AuthPickupSection from "./components/auth-pickup-section.js";
 
 export default function DigitalIntake() {
     //State:
@@ -50,27 +51,11 @@ export default function DigitalIntake() {
        const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
 
        //Authorized Pickup: 
-       const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
+       const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={authorizedKey}/>])
        //Emergency Contacts:
         const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
         // Pets:
         const [storedPets, setStoredPets] = useState([PetInfo(1)])
-
-    const authorizedOnClick = async (event, authorizedKey, storedAuthorized) => {
-        event.preventDefault()
-
-        let toggleAuthBtn = () => {
-            setAuthBtn(!authBtn)
-        }
-
-        setAuthNum(authNum + 1)
-
-        if(authNum === 4){
-            toggleAuthBtn()
-        }
-        await setAuthorizedKey(authorizedKey + 1)
-        await setStoredAuthorized([...storedAuthorized, AuthorizedPickup(authorizedKey)])
-    }
 
     const petOnClick = async (event, petKey, storedPets) => {
         event.preventDefault()
@@ -152,39 +137,16 @@ export default function DigitalIntake() {
                     />
 
                     {/* Authorized Pick Up */}
-                    <IntakeHDiv>
-                        <IntakeH3> 
-                            Authorized People to Pickup Your Pets
-                        </IntakeH3>
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <AuthPickupH5>
-                                    First + Last Name
-                                </AuthPickupH5>
-                            </FlexColDiv>
-                            <FlexColDiv>
-                                <AuthPickupH5>
-                                    Relationship
-                                </AuthPickupH5>
-                            </FlexColDiv>
-                            <FlexColDiv>
-                                <AuthPickupH5>
-                                    Phone Number <br/> ex: (###) ### - ####
-                                </AuthPickupH5>
-                            </FlexColDiv>
-                        </IntakeRow>
-                        
-                        {storedAuthorized}
-                    
-
-                        <IntakeRow>
-                            {authBtn &&
-                                <IntakeButton onClick={() => authorizedOnClick(authorizedKey)}> 
-                                Add Authorized Person
-                                </IntakeButton>
-                            }   
-                        </IntakeRow>
-                    </IntakeHDiv>    
+                    <AuthPickupSection 
+                        authBtn={authBtn}
+                        setAuthBtn={setAuthBtn}
+                        authorizedKey={authorizedKey}
+                        setAuthorizedKey={setAuthorizedKey}
+                        storedAuthorized={storedAuthorized}
+                        setStoredAuthorized={setStoredAuthorized}
+                        authNum={authNum}
+                        setAuthNum={setAuthNum}
+                    />
 
                     {/* Pet Info */}
                     <IntakeHDiv>

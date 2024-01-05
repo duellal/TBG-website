@@ -5,7 +5,8 @@ import { IntakeRow } from '../../../styles/intake-form'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 
-export default function AuthorizedPickup(authorizedKey){
+export default function AuthorizedPickup(props){
+    const { authorizedKey } = props
     return (
         <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
             <IntakeRow>
