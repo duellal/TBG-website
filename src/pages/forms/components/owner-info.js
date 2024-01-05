@@ -1,17 +1,20 @@
 import React from "react"
 
 //I ntake Form - Owner Styles:
-import { IntakeDivider, IntakeH4, IntakeLabel, IntakeRow } from '../../../styles/intake-form'
+import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../styles/intake-form'
 import { FlexColDiv, Input } from "../../../styles/contact";
 
-export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
-    console.log(`Owner Info?`, ownerInfo)
+export default function OwnerInfo(props){
+    const { ownerKey } = props
+
     return(
-        <div key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
+        <IntakeHDiv key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
             <IntakeDivider>
-                <IntakeH4>
-                    Owner {ownerKey}
-                </IntakeH4>
+                <Bold>
+                    <IntakeH4>
+                        Owner {ownerKey}
+                    </IntakeH4>
+                </Bold>
             </IntakeDivider>
             
                 <IntakeRow>
@@ -22,10 +25,8 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type="text" 
                             name={`owner${ownerKey}_first_name`}
-                            onChange={changeInput} 
-                            // value={ownerInfo[`owner${ownerKey}_first_name`]}
-                            required />
-                
+                            required 
+                        />
                     </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
@@ -34,8 +35,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                             <Input 
                                 type="text" 
                                 name={`owner${ownerKey}_last_name`} 
-                                value={ownerInfo[`owner${ownerKey}_last_name`]}
-                                onChange={changeInput} 
                                 required />
                         </FlexColDiv>
                 </IntakeRow>
@@ -47,7 +46,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type="email" 
                             name={`owner${ownerKey}_email`} 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -58,7 +56,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                             type="tel" 
                             name={`owner${ownerKey}_phone`} 
                             pattern="^\(\d{3}\)\s\d{3}-\d{4}" 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                 </IntakeRow>
@@ -70,7 +67,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type='address' 
                             name={`owner${ownerKey}_address1`} 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                 </IntakeRow>
@@ -82,7 +78,7 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type='address' 
                             name={`owner${ownerKey}_address2`}
-                            onChange={changeInput} />
+                        />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -93,7 +89,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type="city" 
                             name={`owner${ownerKey}_city`} 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -103,7 +98,6 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type="state" 
                             name={`owner${ownerKey}_state`} 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -113,10 +107,9 @@ export default function OwnerInfo(ownerKey, changeInput, ownerInfo){
                         <Input 
                             type="zipcode" 
                             name={`owner${ownerKey}_zipcode`} 
-                            onChange={changeInput} 
                             required />
                     </FlexColDiv>
                 </IntakeRow>
-        </div>
+        </IntakeHDiv>
     )
 }

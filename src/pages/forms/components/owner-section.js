@@ -6,24 +6,11 @@ import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } fr
 //Child Component:
 import OwnerInfo from './owner-info.js'
 
-//Variables:
-import { ownerForm } from "../form-template.js";
-
-export default function OwnerSection(){
-        //state:
-        const [ownerBtn, setOwnerBtn] = useState(true)
-        const [ownerKey, setOwnerKey] = useState(1)
-        const [ownerInfo, editOwner] = useState(ownerForm)
-        const [storedOwners, setStoredOwners] = useState([OwnerInfo(ownerKey, changeInput, ownerInfo)])
-
-        //OnChange Function:
-        function changeInput(event){
-            event.preventDefault()
-            let { name, value } = event
-            // console.log(`changeInput Name:`, name)
-            // console.log(`changeInput Value:`, value)
-            editOwner({ ...OwnerInfo, [name]: value })
-         }
+export default function OwnerSection(props){
+        const { ownerBtn,
+                setOwnerBtn, ownerKey, setOwnerKey,
+                storedOwners, setStoredOwners        
+        } = props
 
         //Function to allow user to add 1 more owner:
         const ownerOnClick = async (event) => {
@@ -35,11 +22,11 @@ export default function OwnerSection(){
             
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
-            await setStoredOwners([...storedOwners, OwnerInfo(ownerKey)])
+            await setStoredOwners([...storedOwners, <OwnerInfo ownerKey={ownerKey} />])
         }
     
         return(
-            <div id='owner_section'>
+            <div id={`owner_section${ownerKey}`}>
                 <IntakeHDiv>
                     <IntakeH3> 
                         Owner Information 

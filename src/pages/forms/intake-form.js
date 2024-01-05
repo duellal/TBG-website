@@ -12,9 +12,11 @@ import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
 //Children Components/Functions:
 import OwnerSection from './components/owner-section.js'
+import OwnerInfo from '../forms/components/owner-info.js'
 import LiabilityWaiver from './components/liability-waiver.js'
 import EmergencyInfo from "./components/emergency-info.js";
-import AuthorizedPickup from "./components/auth-pickup.js";
+import EmergencySection from "./components/emergency-section.js";
+import AuthorizedPickup from "./components/auth-pickup-info.js";
 import PetInfo from "./components/pet-info.js";
 import { formTemplate } from "./form-template.js";
 
@@ -23,8 +25,8 @@ export default function DigitalIntake() {
     const [form, editForm] = useState(formTemplate)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
-    // const [ownerKey, setOwnerKey] = useState(2)
-    // const [ownerBtn, setOwnerBtn] = useState(true)
+    const [ownerKey, setOwnerKey] = useState(2)
+    const [ownerBtn, setOwnerBtn] = useState(true)
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
@@ -34,50 +36,25 @@ export default function DigitalIntake() {
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [authBtn, setAuthBtn] = useState(true)
     const [authNum, setAuthNum] = useState(1)
+ 
+    function changeInput(event){
+        let { name, value } = event.target
+        // console.log(`changeInput Name:`, name)
+        // console.log(`changeInput Value:`, value)
+        editForm({ ...form, [name]: value })
+        // console.log(`Form changed?`, form)
+     }
 
-    // function changeInput(event){
-    //     let { name, value } = event
-    //     console.log(`changeInput Name:`, name)
-    //     console.log(`changeInput Value:`, value)
-    //     editForm({ ...form, [name]: value })
-    //  }
+    //State based changeInput:
+       //Owner State:
+       const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
 
-    // console.log(`Form Chaning Input?`, form)
-    //State based onChange:
-    const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
-    const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([EmergencyInfo(1)])
-    const [storedPets, setStoredPets] = useState([PetInfo(1)])
-    // const [storedOwners, setStoredOwners] = useState([OwnerInfo(1)])
-
-    //Functions to allow a user to add more sections with a button:
-    // const ownerOnClick = async (event, ownerKey, storedOwners) => {
-    //     event.preventDefault()
-
-    //     let toggleOwnerBtn = () => {
-    //         setOwnerBtn(!ownerBtn)
-    //     }
-        
-    //     toggleOwnerBtn();
-    //     await setOwnerKey(ownerKey + 1)
-    //     await setStoredOwners([...storedOwners, OwnerInfo(ownerKey)])
-    // }
-
-    const emergencyOnClick = async (event) => {
-        event.preventDefault()
-
-        let toggleEmergencyBtn = () => {
-            setEmergencyBtn(!emergencyBtn)
-        }
-
-        setEmergencyNum(emergencyNum + 1)
-
-        if(emergencyNum === 2){
-            toggleEmergencyBtn()
-        }
-
-        await setEmergencyKey(emergencyKey + 1)
-        await setStoredEmergencyContacts([...storedEmergencyContacts, EmergencyInfo(emergencyKey)])
-    }
+       //Authorized Pickup: 
+       const [storedAuthorized, setStoredAuthorized] = useState([AuthorizedPickup(1)])
+       //Emergency Contacts:
+        const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
+        // Pets:
+        const [storedPets, setStoredPets] = useState([PetInfo(1)])
 
     const authorizedOnClick = async (event, authorizedKey, storedAuthorized) => {
         event.preventDefault()
@@ -151,52 +128,28 @@ export default function DigitalIntake() {
 
                 </IntakeHeader>
 
-                <IntakeForm onSubmit={submitHandler}>
+                <IntakeForm onSubmit={submitHandler} onChange={changeInput}>
                     {/* Owners */}
-                    <OwnerSection />
-                    {/* <IntakeHDiv>
-                        <IntakeH3> 
-                            Owner Information 
-                        </IntakeH3>
-
-                        <IntakeH5> 
-                            Required information will be starred (*)
-                        </IntakeH5>
-                    
-                        <IntakeCol>
-                            {storedOwners}
-                        </IntakeCol>
-
-                        <IntakeRow>
-                            {ownerBtn && 
-                                <IntakeButton onClick={() => ownerOnClick(ownerKey)}> 
-                                    Add Owner 
-                                </IntakeButton>
-                            }
-                        </IntakeRow>  
-                    </IntakeHDiv>  */}
+                    <OwnerSection 
+                        ownerBtn={ownerBtn}
+                        setOwnerBtn={setOwnerBtn}
+                        ownerKey={ownerKey}
+                        setOwnerKey={setOwnerKey}
+                        storedOwners={storedOwners}
+                        setStoredOwners={setStoredOwners}
+                    />
 
                     {/* Emergency Contact */}
-                    <IntakeHDiv>
-                        <IntakeH3> 
-                            Emergency Contact Information
-                        </IntakeH3>
-                        <IntakeH5>
-                            In case we can't reach you
-                        </IntakeH5>
-                    
-                        <IntakeCol>
-                            {storedEmergencyContacts}
-                        </IntakeCol>
-
-                        <IntakeRow>
-                            {emergencyBtn &&
-                                <IntakeButton onClick={(event) => emergencyOnClick(event)}> 
-                                Add Emergency Contact 
-                                </IntakeButton>
-                            }
-                        </IntakeRow>
-                    </IntakeHDiv>    
+                    <EmergencySection
+                        emergencyBtn={emergencyBtn}
+                        setEmergencyBtn={setEmergencyBtn}
+                        emergencyKey={emergencyKey}
+                        setEmergencyKey={setEmergencyKey}
+                        storedEmergencyContacts={storedEmergencyContacts}
+                        setStoredEmergencyContacts={setStoredEmergencyContacts}
+                        emergencyNum={emergencyNum}
+                        setEmergencyNum={setEmergencyNum}
+                    />
 
                     {/* Authorized Pick Up */}
                     <IntakeHDiv>
