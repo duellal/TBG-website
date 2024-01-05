@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 
 //I ntake Form - Owner Styles:
-import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow, IntakeSection } from '../../../styles/intake-form'
+import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/intake-form'
 
 //Child Component:
 import EmergencyInfo from "./emergency-info"
 
 export default function EmergencySection(props){
-        const { form, emergencyBtn,
+        const { emergencyBtn,
                 setEmergencyBtn, emergencyKey, setEmergencyKey,
                 storedEmergencyContacts, setStoredEmergencyContacts,
                 emergencyNum, setEmergencyNum        
