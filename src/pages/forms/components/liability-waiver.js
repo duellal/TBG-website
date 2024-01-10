@@ -2,16 +2,46 @@ import React, { useRef } from "react";
 import SignatureCanvas from "react-signature-canvas"
 
 //Liability Waiver Styles:
-import {CanvasDiv, IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, SignatureClear, SignatureDiv } from '../../../styles/intake-form'
+import { IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, SignatureBtns, SignatureDiv } from '../../../styles/intake-form'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 //Form PDF:
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../waiver/waiver-text.js'
 import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
 
-export default function LiabilityWaiver(){
+export default function LiabilityWaiver(props){
+    const { changeInput } = props
+
     //Reference:
     let sigCanvas = useRef()
+
+    const saveSignature = async (event) => {
+        event.preventDefault()
+        let isEmpty = await sigCanvas.current.isEmpty();
+
+        if(!isEmpty){
+            let signatureUrl = await sigCanvas.current.getTrimmedCanvas().toDataURL()
+
+            event.target.name = 'waiver_signature'
+            event.target.value = signatureUrl
+            await changeInput(event)
+        }else{
+            event.target.name = 'waiver_signature'
+            event.target.value = ''
+            changeInput(event)
+        }
+    }
+
+    // Clearing Signature Pad:
+    const onClear = async (event) => {
+        event.preventDefault()
+        sigCanvas.current.clear()
+
+        event.target.name = "waiver_signature"
+        event.target.value = ''
+
+        await changeInput(event)
+    }
 
     return (
         <>
@@ -42,7 +72,10 @@ export default function LiabilityWaiver(){
                             {waiverAcknowledgeHeader}
                         </IntakeH3>
                         <IntakeWaiverP>
-                            <Input type="checkbox" name="waiver_owner_acknowledgement" required />
+                            <Input 
+                            type="checkbox" name="waiver_owner_acknowledgement" 
+                            value={true}
+                            required />
                             {waiverAcknowledgeStatement}
                         </IntakeWaiverP>
                     </FlexColDiv>
@@ -55,16 +88,19 @@ export default function LiabilityWaiver(){
                             *Owner's Signature
                         </IntakeLabel>
                         <SignatureDiv>
-                            <CanvasDiv>
-                                <SignatureCanvas 
-                                    canvasProps={{width: '500px', height: '200px'}}
-                                    ref={sigCanvas}
-                                    required 
-                                />
-                            </CanvasDiv>        
-                        <SignatureClear onClick={() => sigCanvas.current.clear()}>
+                            <SignatureCanvas 
+                                canvasProps={{
+                                    width: '500px',
+                                    height: '200px',
+                                    name: 'waiver_signature',
+                                }}
+                                ref={sigCanvas}
+                                onEnd={(event) => saveSignature(event)}
+                                required 
+                            />   
+                        <SignatureBtns onClick={(event) => {onClear(event)}}>
                             Clear
-                        </SignatureClear>
+                        </SignatureBtns>
                         </SignatureDiv>
                     </FlexColDiv>
                 </IntakeRow>

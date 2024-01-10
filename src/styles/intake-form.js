@@ -166,7 +166,7 @@ export const SignatureDiv = styled.div`
     margin: 20px 0;
     background-color: white;
 `
-export const SignatureClear = styled.button`
+export const SignatureBtns = styled.button`
     margin-top: 20px;
     background-color: white;
     border: none;
@@ -174,6 +174,9 @@ export const SignatureClear = styled.button`
 
 export const CanvasDiv = styled.div`
     border-bottom: 1px solid black
+`
+
+export const Controller = styled(CanvasDiv)`
 `
 
 // Used for below submit styling:

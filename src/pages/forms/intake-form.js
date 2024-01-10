@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Intake Form Styles:
-import { AuthPickupH5, IntakeButton, IntakeCard, IntakeCol, IntakeDivider, IntakeForm, IntakeHeader, IntakeH3, IntakeH5, IntakeHDiv, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
-import { FlexColDiv, Rotate, ErrorLink, ErrorText } from "../../styles/contact";
+import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
+import { Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -23,42 +23,40 @@ import AuthPickupSection from "./components/auth-pickup-section.js";
 import PetSection from "./components/pet-section.js";
 
 export default function DigitalIntake() {
-    //State:
-    const [form, editForm] = useState(formTemplate)
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [ownerKey, setOwnerKey] = useState(2)
-    const [ownerBtn, setOwnerBtn] = useState(true)
-    const [petKey, setPetKey] = useState(2)
-    const [petBtn, setPetBtn] = useState(true)
-    const [petNum, setPetNum] = useState(1)
+    //onChange function changeInput:
+    function changeInput(event){
+        let { name, value } = event.target
+        editForm({ ...form, [name]: value })
+     }
+
+    //Authorized Pickup States:
+    const [authBtn, setAuthBtn] = useState(true)
+    const [authNum, setAuthNum] = useState(1)
+    const [authorizedKey, setAuthorizedKey] = useState(2)
+    const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
+
+    //Emergency Contact States:
     const [emergencyKey, setEmergencyKey] = useState(2)
     const [emergencyBtn, setEmergencyBtn] = useState(true)
     const [emergencyNum, setEmergencyNum] = useState(1)
-    const [authorizedKey, setAuthorizedKey] = useState(2)
-    const [authBtn, setAuthBtn] = useState(true)
-    const [authNum, setAuthNum] = useState(1)
- 
-    function changeInput(event){
-        let { name, value } = event.target
-        // console.log(`changeInput Name:`, name)
-        // console.log(`changeInput Value:`, value)
-        editForm({ ...form, [name]: value })
-        // console.log(`Form changed?`, form)
-     }
+    const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
 
-    //State based changeInput:
-       //Owner State:
-       const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
+    //Form States:
+    const [form, editForm] = useState(formTemplate)
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-       //Authorized Pickup: 
-       const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
-       //Emergency Contacts:
-        const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
-        // Pets:
-        const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])
+    //Owner Info States:
+    const [ownerKey, setOwnerKey] = useState(2)
+    const [ownerBtn, setOwnerBtn] = useState(true)
+    const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
 
-
+    //Pet Info States:
+    const [petKey, setPetKey] = useState(2)
+    const [petBtn, setPetBtn] = useState(true)
+    const [petNum, setPetNum] = useState(1)
+    const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])   
+    
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
@@ -79,6 +77,8 @@ export default function DigitalIntake() {
         //         setLoading(false)
         //     })
     }
+
+    console.log(`Form Change:`, form)
 
     return (
         <IntakeSection id="digital-intake">
@@ -147,7 +147,9 @@ export default function DigitalIntake() {
                     />
                     
                     {/* Liability Waiver */}
-                    <LiabilityWaiver />
+                    <LiabilityWaiver 
+                        changeInput={changeInput}
+                    />
 
                     {/* Form Submit Button */}
                     <IntakeRow>
