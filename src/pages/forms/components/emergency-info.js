@@ -28,14 +28,14 @@ export default function EmergencyInfo(props){
                     <IntakeLabel>
                         *Emergency Contact Phone Number <br/> ex: (###) ###-####
                     </IntakeLabel>
-                    <Input type="tel" name={`${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
+                    <Input type="tel" name={`emergency${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
                 </FlexColDiv>
 
                 <FlexColDiv>
                     <IntakeLabel>
                         *Relationship
                     </IntakeLabel>
-                    <Input type="text" name={`${emergencyKey}_relation`} required />
+                    <Input type="text" name={`emergency${emergencyKey}_relation`} required />
                 </FlexColDiv>
             </IntakeRow>
 
@@ -46,17 +46,16 @@ export default function EmergencyInfo(props){
                     </IntakeLabel>
                     
                     <IntakeLabelRow>
-                        <Input type="checkbox" name={`${emergencyKey}_permission_yes`} />
+                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_yes`} />
                             <IntakeLabel>
                                 Yes
                             </IntakeLabel>
   
-                        <Input type="checkbox" name={`${emergencyKey}_permission_no`}  />
+                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_no`}  />
                             <IntakeLabel>
                                 No
                             </IntakeLabel>
                     </IntakeLabelRow>
-
 
                     <IntakeLabel id="yes-show">
                         *If yes, type your intials (ex: HJ or HEJ) 
