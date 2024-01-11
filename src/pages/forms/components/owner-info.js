@@ -1,7 +1,7 @@
 import React from "react"
 
 //I ntake Form - Owner Styles:
-import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../styles/intake-form'
+import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/intake-form'
 import { FlexColDiv, Input } from "../../../styles/contact";
 
 export default function OwnerInfo(props){
@@ -50,12 +50,14 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                            *Phone <br/> ex: (###) ###-####
+                            *Phone <br/> ex: (xxx) xxx-xxxx
                         </IntakeLabel>
-                        <Input 
+                        <PhoneInput
                             type="tel" 
                             name={`owner${ownerKey}_phone`} 
-                            pattern="^\(\d{3}\)\s\d{3}-\d{4}" 
+                            placeholder="(___) ___-____"
+                            format="(###) ###-####" 
+                            mask="_" 
                             required />
                     </FlexColDiv>
                 </IntakeRow>

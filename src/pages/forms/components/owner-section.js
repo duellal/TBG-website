@@ -7,9 +7,8 @@ import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } fr
 import OwnerInfo from './owner-info.js'
 
 export default function OwnerSection(props){
-        const { ownerBtn,
-                setOwnerBtn, ownerKey, setOwnerKey,
-                storedOwners, setStoredOwners        
+        const { ownerBtn, setOwnerBtn, ownerKey, 
+                setOwnerKey, storedOwners, setStoredOwners        
         } = props
 
         //Function to allow user to add 1 more owner:

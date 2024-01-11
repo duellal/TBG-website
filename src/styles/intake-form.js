@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { PatternFormat } from "react-number-format";
+
 
 export const IntakeSection = styled.section`
     display: flex;
@@ -69,7 +71,7 @@ export const IntakeHealthLabel = styled.label`
     margin: 0 6px;
 `
 
-export const IntakeHealthInput = styled.input`
+export const IntakeHealthInput = styled(PatternFormat)`
     font-size: 15px;
     text-align: left;
     width: 70%;
@@ -180,7 +182,7 @@ export const Controller = styled(CanvasDiv)`
 `
 
 // Used for below submit styling:
-export const Input = styled.input`
+const Input = styled.input`
     font-size: 15px;
     margin: 6px;
 `
@@ -195,4 +197,9 @@ export const IntakeSubmitInput = styled(Input)`
     &:hover {
         background-color: #37bedd;
     }
+`
+
+export const PhoneInput = styled(PatternFormat)`
+    font-size: 15px;
+    margin: 6px;
 `

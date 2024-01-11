@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { PatternFormat } from "react-number-format";
 
 //Contact Form Styles:
 import { ContactHeader, ContactCard, ContactForm, ContactSection, ContactDivider, ErrorLink, ErrorText, Input, Label, MessageInput, FlexColDiv, Row, Rotate, SubmitInput } from '../../styles/contact'
@@ -78,7 +79,13 @@ export default function Contact() {
                             <Label htmlFor="user_phone">
                                 Phone
                             </Label>
-                            <Input type="tel" name="user_phone" pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
+                            <PatternFormat 
+                                type="tel" 
+                                name={`user_phone`} 
+                                placeholder="(___) ___-____"
+                                format="(###) ###-####" 
+                                mask="_" 
+                                required />
                         </FlexColDiv>
                     </Row>
                     <Row>

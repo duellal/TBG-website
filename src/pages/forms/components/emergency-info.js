@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow } from '../../../styles/intake-form'
+import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../styles/intake-form'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 export default function EmergencyInfo(props){
@@ -28,7 +28,13 @@ export default function EmergencyInfo(props){
                     <IntakeLabel>
                         *Emergency Contact Phone Number <br/> ex: (###) ###-####
                     </IntakeLabel>
-                    <Input type="tel" name={`emergency${emergencyKey}_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}" required />
+                    <PhoneInput 
+                        type="tel" 
+                        name={`emergency${emergencyKey}_phone`} 
+                        placeholder="(___) ___-____"
+                        format="(###) ###-####" 
+                        mask="_"  
+                        required />
                 </FlexColDiv>
 
                 <FlexColDiv>

@@ -287,10 +287,17 @@ export default function PetInfo(props){
 
                         <FlexColDiv>
                             <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                *Vet Phone Number <br/> ex: (###) ###-####
+                                *Vet Phone Number <br/> ex: (xxx) xxx-xxxx
                             </IntakeHealthLabel>
 
-                            <IntakeHealthInput type="tel" name={`{pet${petKey}_vet_phone`} pattern="^\(\d{3}\)\s\d{3}-\d{4}|(NA)" required/>
+                            <IntakeHealthInput 
+                                type="tel" 
+                                name={`{pet${petKey}_vet_phone`} 
+                                placeholder="(___) ___-____"
+                                format="(###) ###-####" 
+                                mask="_"  
+                                required
+                            />
                         </FlexColDiv>
                     </IntakeRow>
 

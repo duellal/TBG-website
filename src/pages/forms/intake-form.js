@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
@@ -60,22 +60,22 @@ export default function DigitalIntake() {
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
-        // setLoading(true)
-        // //clears errors if there were any previously
-        // setError(null)
+        setLoading(true)
+        //clears errors if there were any previously
+        setError(null)
 
-        // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-        //     .then(() => {
-        //         //resets the form after the email is sent 
-        //         form.current.reset()
-        //         setLoading(false)
-        //     }).catch((error) => {
-        //         setError(error.text)
-        //     }).finally(() => {
-        //         //resets the form after the email is sent 
-        //         form.current.reset()
-        //         setLoading(false)
-        //     })
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_INTAKE_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+            .then(() => {
+                //resets the form after the email is sent 
+                form.current.reset()
+                setLoading(false)
+            }).catch((error) => {
+                setError(error.text)
+            }).finally(() => {
+                //resets the form after the email is sent 
+                form.current.reset()
+                setLoading(false)
+            })
     }
 
     console.log(`Form Change:`, form)
