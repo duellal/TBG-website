@@ -11,8 +11,6 @@ import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
     const { changeInput } = props
-
-    //Reference:
     let sigCanvas = useRef()
 
     const saveSignature = async (event) => {

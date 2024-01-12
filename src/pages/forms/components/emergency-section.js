@@ -7,9 +7,8 @@ import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } fr
 import EmergencyInfo from "./emergency-info"
 
 export default function EmergencySection(props){
-        const { emergencyBtn,
-                setEmergencyBtn, emergencyKey, setEmergencyKey,
-                storedEmergencyContacts, setStoredEmergencyContacts,
+        const { emergencyBtn, setEmergencyBtn, emergencyKey, 
+                setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,
                 emergencyNum, setEmergencyNum        
         } = props
 
@@ -32,7 +31,7 @@ export default function EmergencySection(props){
         }    
     
         return(
-            <IntakeHDiv id={`emergency_section${emergencyKey}`}>
+            <IntakeHDiv id={`emergency_section`}>
                 <IntakeH3> 
                     Emergency Contact Information
                 </IntakeH3>

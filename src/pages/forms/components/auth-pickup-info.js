@@ -7,6 +7,17 @@ import { Input, FlexColDiv } from "../../../styles/contact";
 
 export default function AuthorizedPickup(props){
     const { authorizedKey } = props
+
+    const requiredBool = () => {
+        let authName = document.getElementsByName(`auth${authorizedKey}_name`)
+
+        if(authName){
+            return true
+        }
+
+        return false
+    }
+
     return (
         <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
             <IntakeRow>
@@ -23,7 +34,7 @@ export default function AuthorizedPickup(props){
                         placeholder="(___) ___-____"
                         format="(###) ###-####" 
                         mask="_" 
-                        required />
+                        required={requiredBool}/>
                 </FlexColDiv>
             </IntakeRow>
         </div>

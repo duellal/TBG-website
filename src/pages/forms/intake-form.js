@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import {parse, stringify, toJSON, fromJSON} from 'flatted';
 
 //Intake Form Styles:
 import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
@@ -23,10 +24,12 @@ import AuthPickupSection from "./components/auth-pickup-section.js";
 import PetSection from "./components/pet-section.js";
 
 export default function DigitalIntake() {
+    const form = useRef();
+    
     //onChange function changeInput:
     function changeInput(event){
         let { name, value } = event.target
-        editForm({ ...form, [name]: value })
+        editFormData({ ...formData, [name]: value })
      }
 
     //Authorized Pickup States:
@@ -42,21 +45,21 @@ export default function DigitalIntake() {
     const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
 
     //Form States:
-    const [form, editForm] = useState(formTemplate)
+    const [formData, editFormData] = useState(formTemplate)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
     //Owner Info States:
     const [ownerKey, setOwnerKey] = useState(2)
     const [ownerBtn, setOwnerBtn] = useState(true)
-    const [storedOwners, setStoredOwners] = useState([<OwnerInfo changeInput={changeInput} ownerKey={1} ownerInfo={form}/>])
+    const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1}/>])
 
     //Pet Info States:
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
     const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])   
-    
+
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
@@ -64,7 +67,7 @@ export default function DigitalIntake() {
         //clears errors if there were any previously
         setError(null)
 
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_INTAKE_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID_INTAKE, process.env.REACT_APP_TEMPLATE_ID_INTAKE, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
             .then(() => {
                 //resets the form after the email is sent 
                 form.current.reset()
@@ -77,8 +80,6 @@ export default function DigitalIntake() {
                 setLoading(false)
             })
     }
-
-    console.log(`Form Change:`, form)
 
     return (
         <IntakeSection id="digital-intake">
@@ -99,7 +100,14 @@ export default function DigitalIntake() {
 
                 </IntakeHeader>
 
-                <IntakeForm onSubmit={submitHandler} onChange={changeInput}>
+                <IntakeForm 
+                    ref={form}
+                    autoComplete="on"
+                    onSubmit={submitHandler} 
+                    onChange={changeInput} 
+                    id="intake-form"
+                    name="intake_form"
+                >
                     {/* Owners */}
                     <OwnerSection 
                         ownerBtn={ownerBtn}
@@ -108,6 +116,7 @@ export default function DigitalIntake() {
                         setOwnerKey={setOwnerKey}
                         storedOwners={storedOwners}
                         setStoredOwners={setStoredOwners}
+                        // form={form}
                     />
 
                     {/* Emergency Contact */}
@@ -120,6 +129,7 @@ export default function DigitalIntake() {
                         setStoredEmergencyContacts={setStoredEmergencyContacts}
                         emergencyNum={emergencyNum}
                         setEmergencyNum={setEmergencyNum}
+                        // form={form}
                     />
 
                     {/* Authorized Pick Up */}
@@ -132,6 +142,7 @@ export default function DigitalIntake() {
                         setStoredAuthorized={setStoredAuthorized}
                         authNum={authNum}
                         setAuthNum={setAuthNum}
+                        // form={form}
                     />
 
                     {/* Pet Info */}
@@ -144,6 +155,7 @@ export default function DigitalIntake() {
                         setStoredPets={setStoredPets}
                         petNum={petNum}
                         setPetNum={setPetNum}
+                        // form={form}
                     />
                     
                     {/* Liability Waiver */}

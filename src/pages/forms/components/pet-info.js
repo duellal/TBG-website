@@ -92,7 +92,7 @@ export default function PetInfo(props){
                             <IntakeLabel htmlFor={`pet${petKey}_weight`}>
                                 *Weight (lbs)
                             </IntakeLabel>
-                            <Input type="number" name={`pet${petKey}_weight`} required />
+                            <Input type="float" name={`pet${petKey}_weight`} required />
                         </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_dob`}>

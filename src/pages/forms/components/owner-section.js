@@ -25,7 +25,7 @@ export default function OwnerSection(props){
         }
     
         return(
-            <div id={`owner_section${ownerKey}`}>
+            <div id={`owner_section`}>
                 <IntakeHDiv>
                     <IntakeH3> 
                         Owner Information 
