@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-// import React from "react";
+import React from "react";
 
 //About Styles:
 import "../../styles/about.css"
@@ -17,7 +17,7 @@ export default function About(){
                 A Little About Us
             </h1>
             <div className="info-div">
-                `<p className="p1-info">
+                <p className="p1-info">
                     Bag stretch behind the couch  claw drapes destroy couch chase imaginary bugs  intrigued by the shower give attitude hide when guests come over hopped up on goofballs, flop over leave dead animals as gifts chew ipad power cord  shake treat  hunt anything that moves  intently sniff hand  make muffins, need to chase tail  rub face on everything  sweet beast under the bed attack feet flop over need to chase tail. Give attitude chew ipad power cord  flop over  rub face on everything hopped up on goofballs sweet beast under the bed  intrigued by the shower chase imaginary bugs make muffins  bag stretch,  claw drapes attack feet hunt anything that moves  intently sniff hand  hide when guests come over flop over destroy couch behind the couch. Make muffins chew ipad power cord  sweet beast under the bed attack feet flop over chase imaginary bugs shake treat  bag stretch, hopped up on goofballs  intrigued by the shower need to chase tail destroy couch behind the couch hunt anything that moves  intently sniff hand ,  rub face on everything  hide when guests come over  claw drapes give attitude flop over.
                 </p>
                 <br/>
