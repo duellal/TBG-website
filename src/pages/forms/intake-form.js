@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import {parse, stringify, toJSON, fromJSON} from 'flatted';
+import jsPDF from "jspdf";
 
 //Intake Form Styles:
 import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
@@ -52,7 +52,7 @@ export default function DigitalIntake() {
     //Owner Info States:
     const [ownerKey, setOwnerKey] = useState(2)
     const [ownerBtn, setOwnerBtn] = useState(true)
-    const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1}/>])
+    const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1} formData={formData} changeInput={changeInput}/>])
 
     //Pet Info States:
     const [petKey, setPetKey] = useState(2)
@@ -63,23 +63,80 @@ export default function DigitalIntake() {
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
-        setLoading(true)
+        // setLoading(true)
         //clears errors if there were any previously
-        setError(null)
+        // setError(null)
 
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID_INTAKE, process.env.REACT_APP_TEMPLATE_ID_INTAKE, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-            .then(() => {
-                //resets the form after the email is sent 
-                form.current.reset()
-                setLoading(false)
-            }).catch((error) => {
-                setError(error.text)
-            }).finally(() => {
-                //resets the form after the email is sent 
-                form.current.reset()
-                setLoading(false)
-            })
-    }
+        // let buttonTag = form.current.getElementsByTagName('button')
+        // Array.from(buttonTag).forEach(element => {
+        //     if(element.parentNode){
+        //         element.parentNode.removeChild(element)
+        //     }
+        // });
+
+        // let pdf = new jsPDF({
+        //     orientation: 'p',
+        //     unit: 'px',
+        //     format: 'letter',
+        //     hotfixes: ["px_scaling"],
+        //    })
+        
+        // let margin = [20, 50]
+
+        // const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s_intake_form`
+
+        // pdf.setDocumentProperties({
+        //     title: pdfName
+        // })
+
+        // return pdf.html(form.current, {
+        //     margin,
+        //     autoPaging: "text",
+        //     filename: pdfName,
+        //     callback: (doc) => {
+        //         const pdfUrl = doc.output('bloburl')
+
+        //         window.open(pdfUrl)
+        //         // console.log(form.current.removeChild('button'))
+        //         let params = {
+        //             intake_form: `${pdfUrl}`,
+        //             owner1_first_name: formData.owner1_first_name,
+        //             owner1_last_name: formData.owner1_last_name,
+        //             owner1_email: formData.owner1_email,
+        //             intake_html: form.current
+        //         }
+        
+                // const data = {
+                //     service_id: process.env.REACT_APP_SERVICE_ID_INTAKE,
+                //     template_id: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                //     user_id: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+                //     template_params: formData
+                // };
+            
+                // emailjs.send(process.env.REACT_APP_SERVICE_ID_INTAKE,
+                //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                //     params,
+                //     process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+                // await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //         'Accept': 'application/json',
+                //     },
+                //     body: JSON.stringify(data)
+                // })
+                //     .then((res) => {
+                //         //resets the form after the email is sent 
+                //         form.current.reset()
+                //         setLoading(false)
+                //     }).catch((error) => {
+                //         setError(error.text)
+                //     }).finally(() => {
+                //         //resets the form after the email is sent 
+                //         form.current.reset()
+                //         setLoading(false)
+                //     })
+            }
 
     return (
         <IntakeSection id="digital-intake">
@@ -105,8 +162,8 @@ export default function DigitalIntake() {
                     autoComplete="on"
                     onSubmit={submitHandler} 
                     onChange={changeInput} 
-                    id="intake-form"
                     name="intake_form"
+                    id="intake_form"
                 >
                     {/* Owners */}
                     <OwnerSection 
@@ -116,7 +173,6 @@ export default function DigitalIntake() {
                         setOwnerKey={setOwnerKey}
                         storedOwners={storedOwners}
                         setStoredOwners={setStoredOwners}
-                        // form={form}
                     />
 
                     {/* Emergency Contact */}
@@ -129,7 +185,6 @@ export default function DigitalIntake() {
                         setStoredEmergencyContacts={setStoredEmergencyContacts}
                         emergencyNum={emergencyNum}
                         setEmergencyNum={setEmergencyNum}
-                        // form={form}
                     />
 
                     {/* Authorized Pick Up */}
@@ -142,7 +197,6 @@ export default function DigitalIntake() {
                         setStoredAuthorized={setStoredAuthorized}
                         authNum={authNum}
                         setAuthNum={setAuthNum}
-                        // form={form}
                     />
 
                     {/* Pet Info */}
@@ -155,7 +209,6 @@ export default function DigitalIntake() {
                         setStoredPets={setStoredPets}
                         petNum={petNum}
                         setPetNum={setPetNum}
-                        // form={form}
                     />
                     
                     {/* Liability Waiver */}

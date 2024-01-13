@@ -57,12 +57,12 @@ export default function PetInfo(props){
                                 *Sex
                             </IntakeLabel>
                             <IntakeLabelRow>
-                                <Input type='checkbox' name={`pet${petKey}_sex_female`} />
+                                <Input type='radio' name={`pet${petKey}_sex_female`} />
                                 <IntakeLabel>
                                     Female
                                 </IntakeLabel>
                         
-                                <Input type="checkbox" name={`pet${petKey}_sex_male`} />
+                                <Input type="radio" name={`pet${petKey}_sex_male`} />
                                 <IntakeLabel>
                                     Male
                                 </IntakeLabel>
@@ -74,12 +74,12 @@ export default function PetInfo(props){
                                 *Spayed or Neutered
                             </IntakeLabel>
                             <IntakeLabelRow>
-                                <Input type='checkbox' name={`pet${petKey}_sterile_yes`} />
+                                <Input type='radio' id={`pet${petKey}_sterile_yes`} name={`pet${petKey}_sterile`}/>
                                 <IntakeLabel>
                                     Yes
                                 </IntakeLabel>
                         
-                                <Input type="checkbox" name={`pet${petKey}_sterile_no`} />
+                                <Input type="radio" id={`pet${petKey}_sterile_no`} name={`pet${petKey}_sterile`} />
                                 <IntakeLabel>
                                     No
                                 </IntakeLabel>
@@ -119,12 +119,12 @@ export default function PetInfo(props){
                                 Does your pet have any destructive habits when left alone?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type='checkbox' name={`{pet${petKey}_destructive_yes}`} />
+                                <Input type='radio' id={`{pet${petKey}_destructive_yes}`} name={`{pet${petKey}_destructive`} />
                                     <IntakeLabel htmlFor={`{pet${petKey}_desstructive_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_destructive_no}`} />
+                                    <Input type='radio' id={`{pet${petKey}_destructive_no}`} name={`{pet${petKey}_destructive`} />
                                     <IntakeLabel htmlFor={`{pet${petKey}_desstructive_no}`}>
                                         No
                                     </IntakeLabel>
@@ -147,12 +147,12 @@ export default function PetInfo(props){
                                 Has your pet ever jumped, climbed, or dug out of a fence?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type='checkbox' name={`{pet${petKey}_fence_yes}`} />
+                                <Input type='radio' id={`{pet${petKey}_fence_yes}`} name={`{pet${petKey}_fence`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_fence_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_fence_no}`} />
+                                    <Input type='radio' id={`{pet${petKey}_fence_no}`} name={`{pet${petKey}_fence`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_fence_no}`}>
                                         No
                                     </IntakeLabel>
@@ -175,12 +175,12 @@ export default function PetInfo(props){
                                 Does your pet ever guard toys, food, water, or people?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type='checkbox' name={`{pet${petKey}_guard_yes}`} />
+                                <Input type='radio' id={`{pet${petKey}_guard_yes}`} name={`{pet${petKey}_guard`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_guard_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_guard_no}`} />
+                                    <Input type='radio' id={`{pet${petKey}_guard_no}`} name={`{pet${petKey}_guard`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_guard_no}`}>
                                         No
                                     </IntakeLabel>
@@ -203,12 +203,12 @@ export default function PetInfo(props){
                                 Has your pet ever socialized in a group of 6 or more pets?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type='checkbox' name={`{pet${petKey}_socialized_yes}`} />
+                                <Input type='radio' id={`{pet${petKey}_socialized_yes}`} name={`{pet${petKey}_socialized`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_social_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_social_no}`} />
+                                    <Input type='radio' id={`{pet${petKey}_social_no}`} name={`{pet${petKey}_socialized`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_socialized_no}`}>
                                         No
                                     </IntakeLabel>
@@ -231,12 +231,12 @@ export default function PetInfo(props){
                                 Does your pet have experience in a kennel environment?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type='checkbox' name={`{pet${petKey}_kennel_yes}`} />
+                                <Input type='radio' id={`{pet${petKey}_kennel_yes}`} name={`{pet${petKey}_kennel`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_kennel_yes}`}>
                                         Yes
                                     </IntakeLabel>
 
-                                    <Input type='checkbox' name={`{pet${petKey}_kennel_no}`} />
+                                    <Input type='radio' id={`{pet${petKey}_kennel_no}`} name={`{pet${petKey}_kennel`}/>
                                     <IntakeLabel htmlFor={`{pet${petKey}_kennel_no}`}>
                                         No
                                     </IntakeLabel>
@@ -307,12 +307,12 @@ export default function PetInfo(props){
                                 Does your pet have any food allergies?
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type="checkbox" name={`pet${petKey}_food_allergy_yes`}/>
+                                <Input type="radio" id={`pet${petKey}_food_allergy_yes`} name={`pet${petKey}_food_allergy`} />
                                 <IntakeLabel htmlFor={`pet${petKey}_food_allergy_yes`}>
                                     Yes
                                 </IntakeLabel>
 
-                                <Input type="checkbox" name={`pet${petKey}_food_allergy_no`}/>
+                                <Input type="radio" id={`pet${petKey}_food_allergy_no`} name={`pet${petKey}_food_allergy`} />
                                 <IntakeLabel htmlFor={`pet${petKey}_food_allergy_no`}>
                                     No
                                 </IntakeLabel>
@@ -338,12 +338,12 @@ export default function PetInfo(props){
                                 (ex: seizures, tumors, hot spots, etc)
                             </IntakeLabel>
                             <IntakeRow>
-                                <Input type="checkbox" name={`pet${petKey}_medical_condition_yes`}/>
+                                <Input type="radio" id={`pet${petKey}_medical_condition_yes`} name={`pet${petKey}_medical_condition`}/>
                                 <IntakeLabel htmlFor={`pet${petKey}_medical_condition_yes`}>
                                     Yes
                                 </IntakeLabel>
 
-                                <Input type="checkbox" name={`pet${petKey}_medical_condition_no`}/>
+                                <Input type="radio" id={`pet${petKey}_medical_condition_no`} name={`pet${petKey}_medical_condition`}/>
                                 <IntakeLabel htmlFor={`pet${petKey}_medical_condition_no`}>
                                     No
                                 </IntakeLabel>
@@ -367,12 +367,12 @@ export default function PetInfo(props){
                             </IntakeLabel>
 
                             <IntakeRow>
-                                <Input type="checkbox" name={`pet${petKey}_medical_injury_yes`}/>
+                                <Input type="radio" id={`pet${petKey}_medical_injury_yes`} namename={`pet${petKey}_medical_injury`}/>
                                 <IntakeLabel htmlFor={`pet${petKey}_past_injury_yes`}>
                                     Yes
                                 </IntakeLabel>
 
-                                <Input type="checkbox" name={`pet${petKey}_medical_injury_no`}/>
+                                <Input type="radio" id={`pet${petKey}_medical_injury_no`} name={`pet${petKey}_medical_injury`}/>
                                 <IntakeLabel htmlFor={`pet${petKey}_past_injury_no`}>
                                     No
                                 </IntakeLabel>

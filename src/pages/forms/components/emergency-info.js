@@ -52,19 +52,19 @@ export default function EmergencyInfo(props){
                     </IntakeLabel>
                     
                     <IntakeLabelRow>
-                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_yes`} />
+                        <Input type="radio" id={`emergency${emergencyKey}_permission_yes`} name={`emergency${emergencyKey}_permission`} value='yes' />
                             <IntakeLabel>
                                 Yes
                             </IntakeLabel>
   
-                        <Input type="checkbox" name={`emergency${emergencyKey}_permission_no`}  />
+                        <Input type="radio" name={`emergency${emergencyKey}_permission`} id={`emergency${emergencyKey}_permission_no`} value='no'/>
                             <IntakeLabel>
                                 No
                             </IntakeLabel>
                     </IntakeLabelRow>
 
                     <IntakeLabel id="yes-show">
-                        *If yes, type your intials (ex: HJ or HEJ) 
+                        *Owner's intials (ex: HJ or HEJ) 
                         <Input type="text" name={`emergency${emergencyKey}_initials`} pattern="^[A-Z]{2}$|^[A-Z]{3}$" required />
                     </IntakeLabel>
                 
