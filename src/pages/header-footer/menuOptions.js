@@ -92,7 +92,3 @@ export const faqOptions = [
         url: '/faqs#Grooming'
     },
 ]
-
-const formOptions = [{ title: 'Intake Form', url: '/forms/intake' }, { title: 'Liability Waiver', url: '/forms/liability' }, { title: 'Email Records', url: '/requirements' }]
-
-export const options = { Home: [], About: aboutOptions, Boarding: boardingOptions, Daycare: daycareOptions, Grooming: groomingOptions, Forms: formOptions, FAQ: faqOptions }
