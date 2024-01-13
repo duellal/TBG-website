@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-//About Styles:
+//TeamCareers Styles:
 import '../../styles/team_careers.css'
 
 //Images:

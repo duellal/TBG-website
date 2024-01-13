@@ -3,10 +3,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
-import '../styles/forms.css'
+import '../../styles/forms.css'
 
-//Import Form:
-import intakeForm from '../forms/TBG-Intake-Form-2024.pdf'
+//Import Form PDF:
+import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
     let navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function Forms(){
                     </p>
 
                     {/* Need button to navigate to Intake Form Page once in router */}
-                    <button className="intake" onClick={() => navigate('/')}> Digital Intake Form </button>
+                    <button className="intake" onClick={() => navigate('/forms/intake')}> Digital Intake Form </button>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-//About Styles:
+//Home Styles:
 import "../styles/home.css"
 
 //Images:

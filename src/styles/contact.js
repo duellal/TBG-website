@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 export const ContactSection = styled.section`
+    display: flex;
+    justify-content: center;
     text-align: center;
     width: 100%;
 `
@@ -45,15 +47,18 @@ export const Input = styled.input`
 `
 
 export const MessageInput = styled.textarea`
-    width: 350px;
     font-size: 15px;
     padding: 10px;
-    height: 48px;
+    height: 200px;
+    overflow-y: scroll;
+    resize: none;
+    scrollbar-gutter: stable both-edges;
 `;
 
 export const FlexColDiv = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 `
 
 export const SubmitInput = styled(Input)`

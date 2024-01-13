@@ -3,8 +3,9 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { PatternFormat } from "react-number-format";
 
-//About Styles:
+//Contact Form Styles:
 import { ContactHeader, ContactCard, ContactForm, ContactSection, ContactDivider, ErrorLink, ErrorText, Input, Label, MessageInput, FlexColDiv, Row, Rotate, SubmitInput } from '../../styles/contact'
 
 export default function Contact() {
@@ -58,13 +59,13 @@ export default function Contact() {
                             <Label htmlFor="user_first_name">
                                 First Name
                             </Label>
-                            <Input type="text" name="user_first_name" />
+                            <Input type="text" name="user_first_name" required/>
                         </FlexColDiv>
                         <FlexColDiv>
                             <Label htmlFor="user_last_name">
                                 Last Name
                             </Label>
-                            <Input type="text" name="user_last_name" />
+                            <Input type="text" name="user_last_name" required/>
                         </FlexColDiv>
                     </Row>
                     <Row>
@@ -72,13 +73,19 @@ export default function Contact() {
                             <Label htmlFor="user_email">
                                 Email
                             </Label>
-                            <Input type="email" name="user_email" />
+                            <Input type="email" name="user_email" required />
                         </FlexColDiv>
                         <FlexColDiv>
                             <Label htmlFor="user_phone">
                                 Phone
                             </Label>
-                            <Input type="phone" name="user_phone" />
+                            <PatternFormat 
+                                type="tel" 
+                                name={`user_phone`} 
+                                placeholder="(___) ___-____"
+                                format="(###) ###-####" 
+                                mask="_" 
+                                required />
                         </FlexColDiv>
                     </Row>
                     <Row>
@@ -86,7 +93,7 @@ export default function Contact() {
                             <Label>
                                 Message
                             </Label>
-                            <MessageInput name="message" />
+                            <MessageInput name="message" required/>
                         </FlexColDiv>
                     </Row>
                     <Row>
