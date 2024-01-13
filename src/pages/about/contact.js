@@ -1,3 +1,6 @@
+// get rid of contact form
+// commented it for now, BAY may change her mind in the future about it
+
 /* eslint-disable react/prop-types */
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser'

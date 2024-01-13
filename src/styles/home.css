@@ -1,3 +1,17 @@
+/* 
+    ALL pages have an expanded different photo - same like header below the nav bar
+    Make long text boxes shorter (less width)
+
+    Make picture long (screen edge to screen edge)
+        Possibly cut in half as well
+        Eventually will be a video or slideshow
+    3 boxes closer together
+        cute icon for the boxes
+        labeled for boarding, grooming, daycare
+        have small text div show on hover
+        click on box to go to page
+*/
+
 #home {
     padding: 2.5% 10% 5%;
     display: flex;

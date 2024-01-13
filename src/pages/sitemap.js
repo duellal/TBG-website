@@ -1,3 +1,8 @@
+/* 
+ALL pages have an expanded different photo - same like header below the nav bar
+    Make long text boxes shorter (less width)
+*/
+
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";
