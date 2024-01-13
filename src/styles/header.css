@@ -1,29 +1,6 @@
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #ad0005;
-}
-
-header .logo {
-  width: 100px;
-  padding: 12px 0;
-}
-
-header .logo-png {
-  display: inherit;
-  width: 90px;
-}
-
-header .navbar {
+.navbar {
   width: 50%;
-  margin: 1% 0;
-  align-self: center;
+  margin-left: 24px;
   background-color: #06aed5;
 }
 
