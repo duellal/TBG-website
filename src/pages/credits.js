@@ -1,3 +1,7 @@
+/* 
+    ALL pages have an expanded different photo - same like header below the nav bar
+*/
+
 /* eslint-disable react/prop-types */
 import React from "react";
 

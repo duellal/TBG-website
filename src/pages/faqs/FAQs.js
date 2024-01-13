@@ -1,3 +1,15 @@
+/*  
+    Have all boxes a red color
+        - see if BAY + Natalie like:
+            - no space between the boxes
+            - a gradient of color from initial box to question box to answer box
+
+    ALL pages have an expanded different photo - same like header below the nav bar
+        Make long text boxes shorter (less width)
+
+    Have all info on one page (no nav items)
+*/
+
 /* eslint-disable react/prop-types */
 import React from "react";
 

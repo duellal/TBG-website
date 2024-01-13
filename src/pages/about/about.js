@@ -1,3 +1,12 @@
+/* 
+    ALL pages have an expanded different photo - same like header below the nav bar
+        Make long text boxes shorter (less width)
+
+    Take out contact form
+
+    Have all info on one page (no nav items)
+ */
+
 /* eslint-disable react/prop-types */
 import React from "react";
 

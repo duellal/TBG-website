@@ -1,3 +1,19 @@
+/* 
+times with  minutes (7:00) 
+
+Holidays:
+Hours:
+New Years Day
+Easter Sunday
+Fourth of July
+Thanksgiving Day
+Christmas Day
+
+Adjusted Hours:
+Christmas Eve 7:00am - 12pm
+
+*/
+
 /* eslint-disable react/prop-types */
 import React from "react";
 import {

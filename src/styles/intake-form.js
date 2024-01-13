@@ -1,3 +1,21 @@
+/* Title: New Owner Form 
+Blurb: Intake forms and medication forms will be filled out at time of checkin
+
+Buttons on intake form: make them stand out
+    - red or blue button
+    - on hover change gradient of color
+    - add shadow behind it
+
+Intake Form: 
+Title and blurb outside of the form box (own div)
+Make it like the Green beagle lodge with a sections + next -> submit
+Intake Form 
+    - take out pets on liability waiver
+    -Emergency Contact: Take out initials
+    - Required info: (Required) in red italics
+
+*/
+
 import styled from "styled-components";
 import { PatternFormat } from "react-number-format";
 
