@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import emailjs from '@emailjs/browser'
+// import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import jsPDF from "jspdf";
+// import jsPDF from "jspdf";
 
 //Intake Form Styles:
 import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
@@ -63,9 +63,9 @@ export default function DigitalIntake() {
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
-        // setLoading(true)
+        setLoading(false)
         //clears errors if there were any previously
-        // setError(null)
+        setError(null)
 
         // let buttonTag = form.current.getElementsByTagName('button')
         // Array.from(buttonTag).forEach(element => {
