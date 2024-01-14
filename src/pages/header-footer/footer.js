@@ -44,17 +44,19 @@ export default function Footer(){
                         <p className="title">
                             Hours
                         </p>
-                        <p>
+                        <div id="br1"/>
+                        <p className="bold">
                             Monday - Saturday
                         </p>
                         <p>
-                            7am - 7pm
+                            7:00am - 7:00pm
                         </p>
-                        <p>
+                        <div id="br2"/>
+                        <p className="bold">
                             Sunday
                         </p>
                         <p>
-                            4pm - 7pm
+                            4:00pm - 7:00pm
                         </p>
                     </div>  
 
@@ -62,11 +64,36 @@ export default function Footer(){
                         <p className="title">
                             Holiday Hours
                         </p>
+                        <div id="br3"/>
+                        <p className="bold">
+                            Closed:
+                        </p>
+                        <div id="br4"/>
                         <p>
-                            Closed
+                            New Year's Day
                         </p>
                         <p>
-                            New Year's Day, Easter Day, Independence Day, Thanksgiving Day, Christmas Day
+                            Easter Sunday
+                        </p>
+                        <p>
+                            Fourth of July
+                        </p>
+                        <p>
+                            Thanksgiving Day
+                        </p>
+                        <p>
+                            Christmas Day
+                        </p>
+                        <div id="br5"/>
+                        <p className="bold">
+                            Adjusted Hours:
+                        </p>
+                        <div id="br6"/>
+                        <p>
+                            Christmas Eve 
+                        </p>
+                        <p>
+                            7:00am - 12:00pm
                         </p>
                     </div> 
                 </div>
