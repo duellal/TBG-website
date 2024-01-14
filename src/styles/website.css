@@ -18,7 +18,6 @@ button {
   font-size: 1.8rem;
 }
 
-/* Want to make first h2 color this light color (56e8fe) and then flicker + pulse to the darker color (0adefe) */
 h2 {
   font-size: 4rem;
 }
@@ -42,16 +41,10 @@ h6{
 p,
 a {
   font-size: 1.8rem;
-  /* color: #859aaf; */
-}
-
-a{
-  /* color: #69C913; */
 }
 
 .nav-item{
   font-size: 1.5rem;
-  /* color: #07cae8; */
 }
 
 .copyright p {

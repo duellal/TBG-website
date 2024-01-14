@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import AccordianQuestions from "./accordian-questions";
+import { FaqExpand, FaqTitleH2 } from "../../styles/FAQs";
 
 export default function AccordianTitle({title, content}){
     const [isActive, setIsActive] = useState(false);
 
     return(
         <div id="accordian-title">
-            <div className="title" onClick={() => setIsActive(!isActive)}>
-                <h2> {title} </h2>
-                <h2> {isActive ? '-' : '+'} </h2>
-            </div>
+            <FaqExpand className="title" onClick={() => setIsActive(!isActive)}>
+                <FaqTitleH2> {title} </FaqTitleH2>
+                <FaqTitleH2> {isActive ? '-' : '+'} </FaqTitleH2>
+            </FaqExpand>
             {isActive && 
                 <div className="title-content"> 
                     {
