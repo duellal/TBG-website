@@ -66,6 +66,8 @@ header .forms {
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 header .nav-item,

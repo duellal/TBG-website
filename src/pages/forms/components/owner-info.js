@@ -1,7 +1,7 @@
 import React from "react"
 
 //I ntake Form - Owner Styles:
-import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/intake-form'
+import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/intake-form'
 import { FlexColDiv, Input } from "../../../styles/contact";
 
 export default function OwnerInfo(props){
@@ -10,11 +10,9 @@ export default function OwnerInfo(props){
     return(
         <IntakeHDiv key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
             <IntakeDivider>
-                <Bold>
                     <IntakeH4>
                         Owner {ownerKey}
                     </IntakeH4>
-                </Bold>
             </IntakeDivider>
             
                 <IntakeRow>

@@ -110,7 +110,6 @@ export const IntakeLink = styled.a`
 
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
-    font-weight: bold;
 `
 
 export const IntakeH4 = styled.h4`
@@ -156,10 +155,6 @@ export const IntakeMessageInput = styled.textarea`
     overflow-y: scroll;
     resize: none;
     scrollbar-gutter: stable both-edges;
-`
-
-export const Bold = styled.div`
-    font-weight: bold;
 `
 
 export const IntakeWaiverDiv = styled.div`

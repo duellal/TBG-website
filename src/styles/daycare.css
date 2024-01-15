@@ -25,7 +25,6 @@
 }
 
 #daycare h3{
-    font-weight: bold;
     text-align: center;
     width: 100%;
     font-size: 3rem;
@@ -33,12 +32,10 @@
 
 #daycare h4 {
     font-size: 2.2rem;
-    font-weight: bolder;
 }
 
 #daycare h5 {
     font-size: 2rem;
-    font-weight: bold;
 }
 
 #daycare #checkin-out .toggle p {
