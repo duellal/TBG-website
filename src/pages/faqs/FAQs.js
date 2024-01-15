@@ -1,15 +1,3 @@
-/*  
-    Have all boxes a red color
-        - see if BAY + Natalie like:
-            - no space between the boxes
-            - a gradient of color from initial box to question box to answer box
-
-    ALL pages have an expanded different photo - same like header below the nav bar
-        Make long text boxes shorter (less width)
-
-    Have all info on one page (no nav items)
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 
@@ -26,57 +14,57 @@ import {
 } from './faq-arrays'
 
 //FAQs Styles:
-import '../../styles/FAQs.css'
+import { AllFaqs, FaqSection, FaqTitleDiv } from "../../styles/FAQs";
 
 export default function FAQs(){
     return(
-        <div id='faqs'>
+        <FaqSection id='faqs'>
             <h1> 
                 Frequently Asked Questions
             </h1>
 
-            <div className="all-faqs">
+            <AllFaqs className="all-faqs">
             {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
                 {
                     titles.map((title, index) => {
                         if(title === 'General'){
                             return (
-                                <div key={index} id={title}>
+                                <FaqTitleDiv key={index} id={title}>
                                     <AccordianTitle 
                                         title={title} 
                                         content={generalFaqs} 
                                     />
-                                </div>
+                                </FaqTitleDiv>
                             )
                         }
                         else if(title === `Boarding`){
                             return (
-                                <div key={index} id={title}>
+                                <FaqTitleDiv key={index} id={title}>
                                     <AccordianTitle 
                                         title={title} 
                                         content={boardingFaqs} 
                                     />
-                                </div>
+                                </FaqTitleDiv>
                             )
                         }
                         else if(title === `Daycare`){
                             return (
-                                <div key={index} id={title}>
+                                <FaqTitleDiv key={index} id={title}>
                                     <AccordianTitle 
                                         title={title} 
                                         content={daycareFaqs} 
                                     />
-                                </div>
+                                </FaqTitleDiv>
                             )
                         }
                         else if(title === `Grooming`){
                             return (
-                                <div key={index} id={title}>
+                                <FaqTitleDiv key={index} id={title}>
                                     <AccordianTitle 
                                         title={title} 
                                         content={groomingFaqs} 
                                     />
-                                </div>
+                                </FaqTitleDiv>
                             )
                         }
                         else{
@@ -84,7 +72,7 @@ export default function FAQs(){
                         }
                     })
                 }
-            </div>
-        </div>
+            </AllFaqs>
+        </FaqSection>
     )
 }
