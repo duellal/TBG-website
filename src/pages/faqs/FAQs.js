@@ -2,7 +2,7 @@
 import React from "react";
 
 //Other Component
-import AccordianTitle from './accordian-titles';
+import AccordianTitle from './components/accordian-titles';
 
 //FAQ Arrays: 
 import {

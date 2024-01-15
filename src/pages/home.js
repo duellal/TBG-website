@@ -16,10 +16,13 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-//Home Styles:
+// Components:
+import Banner from './general-components/banner-pic'
+
+// Home Styles:
 import "../styles/home.css"
 
-//Images:
+// Images:
 import stockGolden from '../images/grafitti.jpeg'
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockGroom from '../images/stock-grooming.jpeg'
@@ -30,9 +33,7 @@ export default function Home(){
 
     return (
         <div id="home">
-            <div className="image">
-                <img loading="lazy" src={stockGolden} alt='Golden retriever smiling with black chairs in background' width='100%'></img>
-            </div>
+            <Banner />
 
             <div className="info">
                 <div className="boarding">
