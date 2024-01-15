@@ -90,7 +90,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: Georgia;
   vertical-align: baseline;
   box-sizing: border-box;
   /* border: 1px solid grey;  */
@@ -144,7 +144,7 @@ html {
 }
 
 body {
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: Georgia;
   background-color: #f5f0f6;
   line-height: 1.3;
 }
