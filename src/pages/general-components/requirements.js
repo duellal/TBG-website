@@ -10,7 +10,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //Requirements Styles:
-import '../styles/requirements.css';
+import '../../styles/requirements.css';
 
 export default function Requirements(){
     let navigate = useNavigate();
