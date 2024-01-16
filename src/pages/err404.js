@@ -19,7 +19,7 @@ import Header from './header-footer/header.js';
 import Footer from './header-footer/footer.js';
 
 //Images:
-import bellyScratch from '../images/err404-belly-scratch.jpeg'
+import bellyScratch from '../images/error-page/err404-belly-scratch.jpeg'
 
 
 export default function Err404(){

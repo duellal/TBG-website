@@ -14,7 +14,7 @@ import FAQs from './pages/faqs/FAQs';
 import Forms from './pages/forms/forms';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
-import Requirements from './pages/requirements';
+import Requirements from './pages/general-components/requirements';
 import Sitemap from './pages/sitemap';
 import TeamCareers from './pages/about/team-careers';
 

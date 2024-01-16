@@ -19,7 +19,7 @@ import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 
 //Logo
-import logo from "../../images/logo192.png";
+import logo from "../../images/logo/logo192.png";
 
 //Header Styles:
 import "../../styles/header.css";

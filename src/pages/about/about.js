@@ -14,7 +14,7 @@ import React from "react";
 import "../../styles/about.css"
 
 //Images:
-import stockFacility from '../../images/facility-img.jpeg'
+import stockFacility from '../../images/facility/facility-img.jpeg'
 
 export default function About(){
 //This will have an about page for the history, owner, + facility

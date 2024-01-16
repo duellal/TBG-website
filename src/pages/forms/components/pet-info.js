@@ -1,7 +1,7 @@
 import React from "react";
 
 //Intake Form Styles:
-import { Bold, IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../styles/intake-form'
+import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../styles/intake-form'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 
@@ -10,12 +10,10 @@ export default function PetInfo(props){
     return(
         <div key={`pet${petKey}`} id={`pet${petKey}`}>
             <IntakeDivider>
-                <Bold>
-                    <IntakeH4>
-                        Pet {petKey}
-                    </IntakeH4>
-                </Bold>
-
+                <IntakeH4>
+                    Pet {petKey}
+                </IntakeH4>
+                
             {/* Pet Info Section */}
             <IntakeDivider>
                 <IntakeCol>
@@ -107,12 +105,10 @@ export default function PetInfo(props){
             {/* Behavior Section */}
             <IntakeDivider>
                 <IntakeCol>
-                    <Bold>
-                        <IntakeH5>
-                            Behavioral Information - if yes, please explain
-                        </IntakeH5>
-                    </Bold>
-
+                    <IntakeH5>
+                        Behavioral Information - if yes, please explain
+                    </IntakeH5>
+                    
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_destructive`}>
@@ -272,11 +268,9 @@ export default function PetInfo(props){
             {/* Vet History Section */}
             <IntakeDivider>
                 <IntakeCol>
-                    <Bold>
                         <IntakeH5>
                             Health Information
                         </IntakeH5>
-                    </Bold>
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_vet`}>
@@ -372,7 +366,7 @@ export default function PetInfo(props){
                                     Yes
                                 </IntakeLabel>
 
-                                <Input type="radio" id={`pet${petKey}_medical_injury_no`} name={`pet${petKey}_medical_injury`}/>
+                                <Input type="radio" id={`pet${petKey}_medical_injury_no`}/>
                                 <IntakeLabel htmlFor={`pet${petKey}_past_injury_no`}>
                                     No
                                 </IntakeLabel>

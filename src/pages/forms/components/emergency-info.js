@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Bold, IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../styles/intake-form'
+import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../styles/intake-form'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 export default function EmergencyInfo(props){
@@ -9,11 +9,9 @@ export default function EmergencyInfo(props){
     return(
         <IntakeHDiv key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
             <IntakeDivider>
-                <Bold>
                     <IntakeH4>
                         Emergency Contact {emergencyKey}
                     </IntakeH4>
-                </Bold>
             </IntakeDivider>
             <IntakeRow>
                 <FlexColDiv>
