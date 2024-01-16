@@ -60,3 +60,9 @@ a {
 .copyright p {
   font-size: 1.2rem;
 }
+
+.slideshowDot.active{
+  background-color: black;
+  /* z-index: 4;
+  position: relative; */
+}
