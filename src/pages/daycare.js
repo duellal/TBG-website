@@ -35,7 +35,7 @@ import { daycareValues } from "../constants/values";
 
 export default function Daycare(){
     const [toggle, setToggle] = useState(true);
-    const bannerImages = [daycareBanner1, daycareBanner2, daycareBanner3, daycareBanner4, daycareBanner5]
+    const bannerImages = [daycareBanner1, daycareBanner4, daycareBanner3, daycareBanner5, daycareBanner2]
 
     let listValues = daycareValues.map((statement) => {
         return <li>{statement}</li>

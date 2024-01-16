@@ -39,7 +39,7 @@ export default function Banner(props){
                             <>
                                 <BannerImg
                                     key={`img${index}`}
-                                    src={image}
+                                    style={{backgroundImage: `url(${image})`}}
                                 />
                                     {/* <BannerDots>
                                         {

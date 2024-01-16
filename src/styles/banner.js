@@ -7,7 +7,10 @@ export const BannerDiv = styled.div`
 
 export const BannerImg = styled.img`
     width: 100%;
-    height: 100%;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 export const BannerSlider = styled.div`
