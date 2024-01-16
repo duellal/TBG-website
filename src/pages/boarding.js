@@ -32,18 +32,18 @@ import catBoarding from '../images/boarding/cat-boarding.jpeg'
 import genBoarding1 from '../images/boarding/gen-boarding-1.jpeg'
 import genBoarding2 from '../images/boarding/gen-boarding-2.jpeg'
 import genBoarding3 from '../images/boarding/gen-boarding-3.jpeg'
-// import boardingBanner1 from '../images/boarding/boarding-slide-show-1.jpeg'
-// import boardingBanner2 from '../images/boarding/boarding-slide-show-2.jpeg'
-// import boardingBanner3 from '../images/boarding/boarding-slide-show-3.jpeg'
-// import boardingBanner4 from '../images/boarding/boarding-slide-show-4.jpeg'
-// import boardingBanner5 from '../images/boarding/boarding-slide-show-5.jpeg'
+import boardingBanner1 from '../images/boarding/boarding-slide-show-1.png'
+import boardingBanner2 from '../images/boarding/boarding-slide-show-2.png'
+import boardingBanner3 from '../images/boarding/boarding-slide-show-3.png'
+import boardingBanner4 from '../images/boarding/boarding-slide-show-4.png'
+import boardingBanner5 from '../images/boarding/boarding-slide-show-5.png'
 
 // Variables:
 import { boardingValues } from "../constants/values";
 
 export default function Boarding(){
     const [toggle, setToggle] = useState(true);
-    let boardingImages = []
+    let boardingImages = [boardingBanner1, boardingBanner2, boardingBanner3, boardingBanner4, boardingBanner5]
 
     let listValues = boardingValues.map((statement) => {
         return <li>{statement}</li>
