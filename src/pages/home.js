@@ -23,14 +23,15 @@ import Banner from './general-components/banner-pic'
 import "../styles/home.css"
 
 // Images:
-import stockGrafitti from '../images/facility/graffiti-wall.jpeg'
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockGroom from '../images/stock-grooming.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
 
+//Variables
+import { homeImages } from "../constants/banner-pics";
+
 export default function Home(){
     let navigate = useNavigate();
-    const homeImages = [stockGrafitti, stockBoard, stockDaycare, stockGroom]
 
     return (
         <>

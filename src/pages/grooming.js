@@ -20,17 +20,16 @@ import "../styles/grooming.css"
 import grooming1 from '../images/grooming/grooming-1.jpeg';
 import grooming2 from '../images/grooming/grooming-2.jpeg';
 import grooming3 from '../images/grooming/grooming-3.jpeg';
-import groomingBanner1 from '../images/grooming/grooming-slideshow-1.png'
-import groomingBanner2 from '../images/grooming/grooming-slideshow-2.png'
-import groomingBanner3 from '../images/grooming/grooming-slideshow-3.png'
+
+//Variables:
+import { groomingImages } from "../constants/banner-pics";
 
 export default function Grooming(){
     const [toggle, setToggle] = useState(true);
-    const bannerImages = [groomingBanner1, groomingBanner2, groomingBanner3]
 
     return(
         <>
-            <Banner allImages={bannerImages} />
+            <Banner allImages={groomingImages} />
             <div id='grooming'>
                 <h1> 
                     Grooming At Our Facility

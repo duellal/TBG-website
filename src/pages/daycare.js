@@ -24,18 +24,13 @@ import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
 import bigsDaycare2 from '../images/daycare/bigsDaycare4.jpeg'
 import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
 import littlesDaycare2 from '../images/daycare/littlesDaycare3.jpeg'
-import daycareBanner1 from '../images/daycare/daycare-slideshow-1.png'
-import daycareBanner2 from '../images/daycare/daycare-banner5.png'
-import daycareBanner3 from '../images/daycare/daycare-slideshow-3.png'
-import daycareBanner4 from '../images/daycare/daycare-slideshow-4.png'
-import daycareBanner5 from '../images/daycare/daycare-slideshow-5.png'
 
 //Variables:
 import { daycareValues } from "../constants/values";
+import { daycareImages } from "../constants/banner-pics";
 
 export default function Daycare(){
     const [toggle, setToggle] = useState(true);
-    const bannerImages = [daycareBanner1, daycareBanner4, daycareBanner3, daycareBanner5, daycareBanner2]
 
     let listValues = daycareValues.map((statement) => {
         return <li>{statement}</li>
@@ -43,7 +38,7 @@ export default function Daycare(){
 
     return(
         <>
-            <Banner allImages={bannerImages} />
+            <Banner allImages={daycareImages} />
             <div id='daycare'>
                 <h1> 
                     Daycare At Our Facility

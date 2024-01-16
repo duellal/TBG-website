@@ -5,7 +5,7 @@ import { BannerDiv, BannerDots, BannerIdvDot, BannerImg, BannerSlider } from "..
 export default function Banner(props){
     //images need to be an array of images
     //alt needs to be an array of alternative text for the images
-    let { allImages, alt } = props
+    let { allImages } = props
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null)
     //3 seconds:
@@ -37,11 +37,12 @@ export default function Banner(props){
                 style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
             >
                 {
-                    allImages.map((image, imageIndex) =>{
+                    allImages.map((data, imageIndex) => {
                         return(
                                 <BannerImg
                                     key={`img${imageIndex}`}
-                                    src={image}
+                                    src={data.image}
+                                    alt={data.alt}
                                 />
                         )
                     })
