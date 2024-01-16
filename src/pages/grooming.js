@@ -14,9 +14,9 @@ import React, { useState } from "react";
 import "../styles/grooming.css"
 
 //Images:
-import grooming1 from '../images/grooming-1.jpeg';
-import grooming2 from '../images/grooming-2.jpeg';
-import grooming3 from '../images/grooming-3.jpeg';
+import grooming1 from '../images/grooming/grooming-1.jpeg';
+import grooming2 from '../images/grooming/grooming-2.jpeg';
+import grooming3 from '../images/grooming/grooming-3.jpeg';
 
 export default function Grooming(){
     const [toggle, setToggle] = useState(true);

@@ -25,18 +25,18 @@ import "../styles/boarding.css"
 import Banner from "./general-components/banner-pic";
 
 //Images:
-import bigsBoarding from '../images/bigs-boarding.jpeg';
-import littlesBoarding from '../images/littles-boarding.jpeg'
-import pocketPets from '../images/pocket-pets.jpeg'
-import catBoarding from '../images/cat-boarding.jpeg'
-import genBoarding1 from '../images/gen-boarding-1.jpeg'
-import genBoarding2 from '../images/gen-boarding-2.jpeg'
-import genBoarding3 from '../images/gen-boarding-3.jpeg'
-import boardingBanner1 from '../images/boarding-slide-show-1.jpeg'
-import boardingBanner2 from '../images/boarding-slide-show-2.jpeg'
-import boardingBanner3 from '../images/boarding-slide-show-3.jpeg'
-import boardingBanner4 from '../images/boarding-slide-show-4.jpeg'
-import boardingBanner5 from '../images/boarding-slide-show-5.jpeg'
+import bigsBoarding from '../images/boarding/bigs-boarding.jpeg';
+import littlesBoarding from '../images/boarding/littles-boarding.jpeg'
+import pocketPets from '../images/boarding/pocket-pets.jpeg'
+import catBoarding from '../images/boarding/cat-boarding.jpeg'
+import genBoarding1 from '../images/boarding/gen-boarding-1.jpeg'
+import genBoarding2 from '../images/boarding/gen-boarding-2.jpeg'
+import genBoarding3 from '../images/boarding/gen-boarding-3.jpeg'
+// import boardingBanner1 from '../images/boarding/boarding-slide-show-1.jpeg'
+// import boardingBanner2 from '../images/boarding/boarding-slide-show-2.jpeg'
+// import boardingBanner3 from '../images/boarding/boarding-slide-show-3.jpeg'
+// import boardingBanner4 from '../images/boarding/boarding-slide-show-4.jpeg'
+// import boardingBanner5 from '../images/boarding/boarding-slide-show-5.jpeg'
 
 // Variables:
 import { boardingValues } from "../constants/values";

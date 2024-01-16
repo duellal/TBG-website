@@ -9,9 +9,9 @@ import React from "react";
 import '../../styles/team_careers.css'
 
 //Images:
-import owner from '../../images/owner.jpeg';
-import manager from '../../images/manager.jpeg';
-import team from '../../images/team.jpeg';
+import owner from '../../images/about/owner.jpeg';
+import manager from '../../images/about/manager.jpeg';
+import team from '../../images/about/team.jpeg';
 
 export default function TeamCareers(){
 

@@ -26,12 +26,12 @@ import { useNavigate } from "react-router";
 import "../../styles/footer.css"
 
 //Logos
-import logo from "../../images/logo192.png"
-import phoneIcon from '../../images/phone-call.png'
-import emailIcon from '../../images/email.png'
-import fbIcon from '../../images/facebook.png'
-import instaIcon from '../../images/instagram.png'
-import tiktokIcon from '../../images/tik-tok.png'
+import logo from "../../images/logo/logo192.png"
+import phoneIcon from '../../images/icons/phone-call.png'
+import emailIcon from '../../images/icons/email.png'
+import fbIcon from '../../images/icons/facebook.png'
+import instaIcon from '../../images/icons/instagram.png'
+import tiktokIcon from '../../images/icons/tik-tok.png'
 
 export default function Footer(){ 
     let navigate = useNavigate();

@@ -14,13 +14,13 @@ import React, { useState } from "react";
 import '../styles/daycare.css';
 
 //Images: 
-import genDaycare1 from '../images/bigs-daycare.jpeg'
-import genDaycare2 from '../images/littles-daycare.jpeg'
-import genDaycare3 from '../images/bigs-daycare-2.jpeg'
-import bigsDaycare1 from '../images/bigsDaycare3.jpeg'
-import bigsDaycare2 from '../images/bigsDaycare4.jpeg'
-import littlesDaycare1 from '../images/littlesDaycare1.jpeg'
-import littlesDaycare2 from '../images/littlesDaycare3.jpeg'
+import genDaycare1 from '../images/daycare/bigs-daycare.jpeg'
+import genDaycare2 from '../images/daycare/littles-daycare.jpeg'
+import genDaycare3 from '../images/daycare/bigs-daycare-2.jpeg'
+import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
+import bigsDaycare2 from '../images/daycare/bigsDaycare4.jpeg'
+import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
+import littlesDaycare2 from '../images/daycare/littlesDaycare3.jpeg'
 
 //Variables:
 import { daycareValues } from "../constants/values";

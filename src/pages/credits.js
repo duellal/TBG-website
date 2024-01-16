@@ -9,11 +9,11 @@ import React from "react";
 import '../styles/credits.css'
 
 //Logos
-import phoneIcon from '../images/phone-call.png'
-import emailIcon from '../images/email.png'
-import fbIcon from '../images/facebook.png'
-import instaIcon from '../images/instagram.png'
-import tiktokIcon from '../images/tik-tok.png'
+import phoneIcon from '../images/icons/phone-call.png'
+import emailIcon from '../images/icons/email.png'
+import fbIcon from '../images/icons/facebook.png'
+import instaIcon from '../images/icons/instagram.png'
+import tiktokIcon from '../images/icons/tik-tok.png'
 
 export default function Credits(){
     return(
