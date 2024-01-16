@@ -23,7 +23,7 @@ export default function Banner(props){
         return () => {
             resetTimeout()
         }
-    }, [index])
+    }, [index, allImages])
 
     let resetTimeout = () => {
         if(timeoutRef.current){
