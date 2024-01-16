@@ -8,9 +8,6 @@ export const BannerDiv = styled.div`
 export const BannerImg = styled.img`
     width: 100%;
     height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 `
 
 export const BannerSlider = styled.div`
@@ -29,7 +26,7 @@ export const BannerDots = styled.div`
 
 export const BannerIdvDot = styled.div`
     display: inline-block;
-    color: grey;
+    background-color: grey;
     height: 20px;
     width: 20px;
     border-radius: 50%;

@@ -8,25 +8,27 @@ export default function Banner(props){
     let { allImages, alt } = props
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null)
-    const delay = 2500;
+    const delay = 3000;
 
-    let resetTimeout = () => {
-        if(timeoutRef.current){
-            clearTimeout(timeoutRef.current);
-        }
-    }
-
+    //For the slideshow to automatically change:
     useEffect(() => {
-        // resetTimeout();
+        resetTimeout();
         timeoutRef.current = setTimeout(() => 
             setIndex(prevIndex => 
-                prevIndex === (allImages.length) - 1 ? 0 : prevIndex + 1
+                prevIndex === allImages.length - 1 ? 0 : prevIndex + 1
             ), delay
         )
 
-        return resetTimeout();
-    
-    }, [allImages])
+        return () => {
+            resetTimeout()
+        }
+    }, [index])
+
+    let resetTimeout = () => {
+        if(timeoutRef.current){
+            clearTimeout(timeoutRef.current)
+        }
+    }
 
     return (
         <BannerDiv>
@@ -39,7 +41,7 @@ export default function Banner(props){
                             <>
                                 <BannerImg
                                     key={`img${index}`}
-                                    style={{backgroundImage: `url(${image})`}}
+                                    src={image}
                                 />
                                     {/* <BannerDots>
                                         {
@@ -76,12 +78,12 @@ export default function Banner(props){
             </BannerSlider>
             <BannerDots>
                     {
-                        allImages.map((_, index) =>
+                        allImages.map((_, dotIndex) =>
                             <BannerIdvDot 
-                                key={`dot${index}`}
-                                className={`slideshowDot${index === index ? " active" : ""}`}
+                                key={`dot${dotIndex}`}
+                                className={`slideshowDot${dotIndex === index ? " active" : ""}`}
                                 onClick={() => {
-                                    setIndex(index)
+                                    setIndex(dotIndex)
                                 }}
                             />
                         )
