@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { FaqAnswer, FaqQuestionDiv, FaqQuestionH3 } from "../../styles/FAQs";
+import { FaqAnswer, FaqQuestionDiv, FaqQuestionH3 } from "../../../styles/FAQs";
 
 export default function AccordianQuestions({question, answer}){
     const [isActive, setIsActive] = useState(false);

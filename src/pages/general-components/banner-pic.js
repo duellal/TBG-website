@@ -8,6 +8,7 @@ export default function Banner(props){
     let { allImages, alt } = props
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null)
+    //3 seconds:
     const delay = 3000;
 
     //For the slideshow to automatically change:
@@ -36,45 +37,15 @@ export default function Banner(props){
                 style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
             >
                 {
-                    allImages.map((image, index) => {
+                    allImages.map((image, imageIndex) =>{
                         return(
-                            <>
                                 <BannerImg
-                                    key={`img${index}`}
+                                    key={`img${imageIndex}`}
                                     src={image}
                                 />
-                                    {/* <BannerDots>
-                                        {
-                                            allImages.map((_, index) =>
-                                                <BannerIdvDot 
-                                                    key={`dot${index}`}
-                                                    className={`slideshowDot${index === index ? " active" : ""}`}
-                                                    onClick={() => {
-                                                        setIndex(index)
-                                                    }}
-                                                />
-                                            )
-                                        }
-                                    </BannerDots> */}
-                                {/* </BannerImg> */}
-                            </>
                         )
                     })
                 }
-
-                {/* <BannerDots>
-                    {
-                        allImages.map((_, index) =>
-                            <BannerIdvDot 
-                                key={`dot${index}`}
-                                className={`slideshowDot${index ? " active" : ""}`}
-                                onClick={() => {
-                                    setIndex(index)
-                                }}
-                            />
-                        )
-                    }
-                </BannerDots> */}
             </BannerSlider>
             <BannerDots>
                     {

@@ -1,37 +1,40 @@
 import styled from "styled-components";
+import { bright_blue } from "./constants/colors";
 
 export const BannerDiv = styled.div`
     max-width: 100%;
     overflow: hidden;
+    height: 550px;
 `
 
 export const BannerImg = styled.img`
     width: 100%;
-    height: 500px;
+    height: 100%;
+    aspect-ratio: 43/25;
+    object-fit: cover;
+    object-position: center;
 `
 
 export const BannerSlider = styled.div`
     transition: ease 1000ms;
     white-space: nowrap;
     height: 500px;
-    // z-index: 0;
-    // position: relative;
 `
 
 export const BannerDots = styled.div`
+    padding-bottom: 10px;
+    position: absolute;
+    width: 100%;
     text-align: center;
-    // z-index: 2;
-    // position: relative;
+    top: 55%;
 `
 
 export const BannerIdvDot = styled.div`
     display: inline-block;
-    background-color: grey;
+    background-color: ${bright_blue};
     height: 20px;
     width: 20px;
     border-radius: 50%;
     cursor: pointer;
     margin: 15px 7px 0px;
-    // z-index: 3;
-    // position: relative;
 `

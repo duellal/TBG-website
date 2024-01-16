@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import AccordianQuestions from "./accordian-questions";
-import { FaqExpand, FaqTitleH2 } from "../../styles/FAQs";
+import { FaqExpand, FaqTitleH2 } from "../../../styles/FAQs";
 
 export default function AccordianTitle({title, content}){
     const [isActive, setIsActive] = useState(false);
