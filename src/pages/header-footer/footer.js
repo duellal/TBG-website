@@ -24,7 +24,7 @@ import { useNavigate } from "react-router";
 
 //Footer Styles:
 import "../../styles/footer.css"
-import { CopyrightDiv, CopyrightName, CopyrightYear, FooterInfo, FooterNavBar, FooterNavP, FooterStyle, FooterThirdCol, LogoDiv, LogoImg } from '../../styles/footer'
+import { CopyrightDiv, CopyrightName, CopyrightYear, FooterIndvSocials, FooterInfo, FooterNavBar, FooterNavP, FooterSocialImg, FooterSocials, FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
 
 //Logos
 import logo from "../../images/logo/logo192.png"
@@ -122,29 +122,29 @@ export default function Footer(){
                 </div>
                 
                 <FooterThirdCol id="third-col">
-                <div className="socials">
-                        <p className="title">
+                <FooterSocials>
+                        <FooterTitle>
                             Our Socials
-                        </p>
-                        <div id="facebook">
-                            <a className="facebook" href="https://www.facebook.com/Apex2112EWilliamsSt" target="_blank" rel="noreferrer">
-                                <img loading="lazy" src={fbIcon} width='30' height='30' alt='an f encircled in blue'></img>
+                        </FooterTitle>
+                        <FooterIndvSocials>
+                            <a href="https://www.facebook.com/Apex2112EWilliamsSt" target="_blank" rel="noreferrer">
+                                <FooterSocialImg loading="lazy" src={fbIcon} width='30' height='30' alt='an f encircled in blue'></FooterSocialImg>
                                 /Apex2112EWilliamsSt
                             </a>
-                        </div>
-                        <div id="instagram">
-                            <a className="instagram" href="https://www.instagram.com/thebiscuitgarden/" target="_blank" rel="noreferrer">
-                                <img loading="lazy" src={instaIcon} width='30' height='30' alt='a camera in a yellow to pink gradient'></img>
+                        </FooterIndvSocials>
+                        <FooterIndvSocials>
+                            <a href="https://www.instagram.com/thebiscuitgarden/" target="_blank" rel="noreferrer">
+                                <FooterSocialImg loading="lazy" src={instaIcon} width='30' height='30' alt='a camera in a yellow to pink gradient'></FooterSocialImg>
                                 @thebiscuitgarden
                             </a>
-                        </div>
-                        <div id="tiktok">
-                            <a className="tiktok" href="https://www.tiktok.com/@biscuitgarden" target="_blank" rel="noreferrer">
-                                <img loading="lazy" src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></img>
+                        </FooterIndvSocials>
+                        <FooterIndvSocials>
+                            <a href="https://www.tiktok.com/@biscuitgarden" target="_blank" rel="noreferrer">
+                                <FooterSocialImg loading="lazy" src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></FooterSocialImg>
                                 @biscuitgarden
                             </a>
-                        </div>
-                    </div>
+                        </FooterIndvSocials>
+                    </FooterSocials>
                     
                     <LogoDiv>
                         <LogoImg loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>

@@ -44,6 +44,30 @@ export const CopyrightYear = styled.p`
     padding-left: 0.5%;
 `
 
+export const FooterIndvSocials = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3% 0 ;
+    align-items: center;
+`
+
+export const FooterSocialImg = styled.img`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+`
+
+export const FooterSocials = styled.div`
+    width: 100%;
+    text-align: center;
+`
+
+export const FooterTitle = styled.p`
+    font-size: 2rem;
+    font-weight: bolder;
+`
 export const FooterThirdCol = styled.div`
     width: 13%;
     
