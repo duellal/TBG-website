@@ -93,7 +93,7 @@ video {
   font-family: Georgia, Times, "Times New Roman";
   vertical-align: baseline;
   box-sizing: border-box;
-  /* border: 1px solid grey;  */
+  border: 1px solid grey; 
 }
 
 /* HTML5 display-role reset for older browsers */

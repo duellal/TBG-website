@@ -24,6 +24,7 @@ import { useNavigate } from "react-router";
 
 //Footer Styles:
 import "../../styles/footer.css"
+import { CopyrightDiv, CopyrightName, CopyrightYear, FooterStyle, LogoDiv, LogoImg } from '../../styles/footer'
 
 //Logos
 import logo from "../../images/logo/logo192.png"
@@ -37,7 +38,7 @@ export default function Footer(){
     let navigate = useNavigate();
 
     return (
-        <footer>
+        <FooterStyle>
             <div id="info">
                 <div id="first-col">
                     <div className="hours">
@@ -145,9 +146,9 @@ export default function Footer(){
                         </div>
                     </div>
                     
-                    <div className="logo">
-                        <img loading="lazy" className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
-                    </div>
+                    <LogoDiv>
+                        <LogoImg loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo}/>
+                    </LogoDiv>
 
                     <Navbar>
                         <p>
@@ -177,15 +178,15 @@ export default function Footer(){
                 </div>
 
 
-                <div className="copyright">
-                    <p className="name">
+                <CopyrightDiv>
+                    <CopyrightName>
                         The Biscuit Garden
-                    </p>
-                    <p className="year">
-                        2024
-                    </p>
-                </div>
+                    </CopyrightName>
+                    <CopyrightYear>
+                       &copy; 2024
+                    </CopyrightYear>
+                </CopyrightDiv>
             </div>
-        </footer>
+        </FooterStyle>
     )
 }
