@@ -154,9 +154,6 @@ export default function Footer(){
                             Quick Links
                         </p>
                         <Nav tabs fill>
-                            <NavItem onClick={() => navigate('/about/contact')}>
-                                    Contact Us
-                            </NavItem>
                             <NavItem onClick={() => navigate('/boarding')}>
                                     Boarding
                             </NavItem>
@@ -173,7 +170,7 @@ export default function Footer(){
                                     FAQs
                             </NavItem>
                             <NavItem onClick={() => navigate('/sitemap')}>
-                                    Sitemap
+                                    Credits
                             </NavItem>
                         </Nav>
                     </Navbar>
