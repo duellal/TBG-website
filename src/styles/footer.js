@@ -9,6 +9,10 @@ export const FooterStyle = styled.footer`
     flex-wrap: wrap;
     justify-content: center;
     background-color: rgb(221, 219, 219);
+
+    p, a{
+        font-size: 1.5rem;
+    }
 `
 
 export const FooterInfo = styled.div`
@@ -44,6 +48,20 @@ export const CopyrightYear = styled.p`
     padding-left: 0.5%;
 `
 
+export const FooterContactDiv = styled.div`
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+`
+
+export const FooterFirstCol = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 15%;
+`
+
 export const FooterIndvSocials = styled.div`
     width: 100%;
     display: flex;
@@ -64,9 +82,10 @@ export const FooterSocials = styled.div`
     text-align: center;
 `
 
-export const FooterTitle = styled.p`
+export const FooterTitle = styled.div`
     font-size: 2rem;
     font-weight: bolder;
+    width: 100%;
 `
 export const FooterThirdCol = styled.div`
     width: 13%;

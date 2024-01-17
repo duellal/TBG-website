@@ -24,7 +24,7 @@ import { useNavigate } from "react-router";
 
 //Footer Styles:
 import "../../styles/footer.css"
-import { CopyrightDiv, CopyrightName, CopyrightYear, FooterIndvSocials, FooterInfo, FooterNavBar, FooterNavP, FooterSocialImg, FooterSocials, FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
+import { CopyrightDiv, CopyrightName, CopyrightYear, FooterContactDiv, FooterFirstCol, FooterIndvSocials, FooterInfo, FooterNavBar, FooterNavP, FooterSocialImg, FooterSocials, FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
 
 //Logos
 import logo from "../../images/logo/logo192.png"
@@ -33,6 +33,7 @@ import emailIcon from '../../images/icons/email.png'
 import fbIcon from '../../images/icons/facebook.png'
 import instaIcon from '../../images/icons/instagram.png'
 import tiktokIcon from '../../images/icons/tik-tok.png'
+import { BoldP, Break10pxDiv, Break5pxDiv } from "../../styles/common-styles";
 
 export default function Footer(){ 
     let navigate = useNavigate();
@@ -40,36 +41,36 @@ export default function Footer(){
     return (
         <FooterStyle>
             <FooterInfo>
-                <div id="first-col">
-                    <div className="hours">
-                        <p className="title">
+                <FooterFirstCol>
+                    <div>
+                        <FooterTitle>
                             Hours
-                        </p>
-                        <div id="br1"/>
-                        <p className="bold">
+                        </FooterTitle>
+                        <Break5pxDiv/>
+                        <BoldP>
                             Monday - Saturday
-                        </p>
+                        </BoldP>
                         <p>
                             7:00am - 7:00pm
                         </p>
-                        <div id="br2"/>
-                        <p className="bold">
+                        <Break10pxDiv/>
+                        <BoldP>
                             Sunday
-                        </p>
+                        </BoldP>
                         <p>
                             4:00pm - 7:00pm
                         </p>
                     </div>  
 
                     <div className="holiday-hours">
-                        <p className="title">
+                        <FooterTitle className="title">
                             Holiday Hours
-                        </p>
-                        <div id="br3"/>
-                        <p className="bold">
+                        </FooterTitle>
+                        <Break5pxDiv/>
+                        <BoldP>
                             Closed:
-                        </p>
-                        <div id="br4"/>
+                        </BoldP>
+                        <Break5pxDiv/>
                         <p>
                             New Year's Day
                         </p>
@@ -85,11 +86,11 @@ export default function Footer(){
                         <p>
                             Christmas Day
                         </p>
-                        <div id="br5"/>
-                        <p className="bold">
+                        <Break10pxDiv/>
+                        <BoldP>
                             Adjusted Hours:
-                        </p>
-                        <div id="br6"/>
+                        </BoldP>
+                        <Break5pxDiv/>
                         <p>
                             Christmas Eve 
                         </p>
@@ -97,13 +98,13 @@ export default function Footer(){
                             7:00am - 12:00pm
                         </p>
                     </div> 
-                </div>
+                </FooterFirstCol>
 
                 <div id="second-col">
-                    <div className="contact">
-                        <p className="title">
+                    <FooterContactDiv>
+                        <FooterTitle>
                             Contact Us!
-                        </p>
+                        </FooterTitle>
                         <div className="phone">
                             <img loading="lazy" src={phoneIcon} width='30' height='30' alt="Mobile phone with flat screen showing a landline phone with signals"></img>
                             <p className="number">
@@ -118,7 +119,7 @@ export default function Footer(){
                         </div>
                         <div className="break-div"></div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.537584269854!2d-78.83697175900978!3d35.688386472699044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac8dd864f751b7%3A0xe2824cd11188d5f3!2sThe%20Biscuit%20Garden!5e0!3m2!1sen!2sus!4v1702322948903!5m2!1sen!2sus" width="410" height="350" style={{border: '1px solid black' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="The Biscuit Garden Address on a Map"></iframe>
-                    </div>
+                    </FooterContactDiv>
                 </div>
                 
                 <FooterThirdCol id="third-col">

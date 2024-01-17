@@ -1,31 +1,4 @@
-footer p, 
-footer a {
-    font-size: 1.5rem;
-}
 
-footer .bold {
-    font-weight: bold;
-}
-
-footer #br1,
-footer #br3,
-footer #br4,
-footer #br6 {
-    height: 5px;
-}
-
-footer #br2, 
-footer #br5 {
-    height: 10px;
-}
-
-
-footer #first-col{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 15%;
-}
 
 footer #second-col{
     display:flex;
@@ -33,22 +6,8 @@ footer #second-col{
     align-items: flex-start;
 }
 
-/* footer #third-col{
-    width: 13%;
-} */
-
-footer .hours{
-    width: 100%;
-}
-
 footer .break-div {
     margin: 1%;
-}
-
-footer .contact{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 footer .contact .title {
@@ -73,10 +32,6 @@ footer .contact img {
 
 footer iframe {
     margin-top: 3%;
-    width: 100%;
-}
-
-footer .holiday-hours{
     width: 100%;
 }
 
