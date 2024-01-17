@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { devices } from "./constants/device-size";
+
+const { tablet, mobileXL } = devices
 
 export const StyledHeader = styled.header`
     position: sticky;
@@ -8,61 +11,85 @@ export const StyledHeader = styled.header`
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
+
     
-    .navbar {
-        width: 50%;
-        background-color: #06aed5;
-    }
-    
-    .nav {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .nav-item {
-        display: flex;
-        padding: 1% 2%;
-        cursor: pointer;
-        text-align: center;
-        align-items: center;
-        color: white;
-        background-color: #06aed5;
-        border: none;
-    }
-    
-    .about,
-    .home,
-    .boarding,
-    .daycare,
-    .grooming,
-    .forms,
-    .faq {
-        font-size: 16px;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit; /* Important for vertical align on mobile phones */
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: 0.3s;
-    }
-    
-    .about:hover,
-    .home:hover,
-    .boarding:hover,
-    .daycare:hover,
-    .grooming:hover,
-    .forms:hover,
-    .faq:hover {
-        transform: scale(1.1);
-        color: black;
+    @media ${tablet}{
+        justify-content: end;
+        height: ${props => props.open ? '200px' : '165px'};
     }
 `
-export const HeaderLogo = styled.div`
+export const LogoContainer = styled.div`
+    width: 135px;
+    
+    @media ${tablet}{
+        margin-right: 3%;
+    }
+`
+
+export const Logo = styled.img`
+    display: inherit;
     width: 135px;
 `
 
-export const LogoPNG = styled.img`
-    display: inherit;
-    width: 135px;
+export const Navbar = styled.nav`
+    width: 80%;
+    margin: 12px;
+    align-self: center;
+    background-color: #06aed5;
+    padding: 12px 15px;
+    
+    @media ${tablet}{
+        display: none;
+    }
+`
+
+export const Nav = styled.ul`
+    display: flex;
+    justify-content: space-around;
+    align-itmes: center;
+    
+    @media ${tablet}{
+        margin-bottom: 100px;
+    }
+`
+
+export const MobileNavBar = styled.nav`
+    display: none;
+    
+    @media ${tablet}{
+        display: block;
+        align-self: center;
+        position: absolute;
+        top: 40px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+`
+
+export const MobileNav = styled(Nav)`
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 50px;
+    
+    @media ${tablet}{
+        position: absolute;
+        left: 74px;
+        padding: 0;
+     }
+    
+    @media ${mobileXL}{
+        align-items: center;
+        padding: 0;
+    }
+`
+
+export const HamburgerDiv = styled.div`
+    position: absolute;
+    left: 0;
+    display: none;
+    
+    @media ${tablet}{
+       display: block;
+    }
 `

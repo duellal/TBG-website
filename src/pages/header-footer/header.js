@@ -1,21 +1,25 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import {
-    Nav,
-    NavItem,
-    Navbar
-} from "reactstrap";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
+import { Squash as Hamburger } from 'hamburger-react'
 
 //Logo
 import logo from "../../images/logo/logo192.png";
 
 //Header Styles:
-// import "../../styles/header.css";
-import { HeaderLogo, LogoPNG, StyledHeader } from '../../styles/header'
+import { LogoContainer, Logo, HamburgerDiv, MobileNav, MobileNavBar, Nav, Navbar, StyledHeader } from '../../styles/header'
+
+//Components
+import NavItem from "./NavItem";
+
+//Options for dropdown menu:
+import {
+    options
+} from './menuOptions'
 
 export default function Header() {
+    const [isOpen, setOpen] = useState(false)
     let navigate = useNavigate();
     let location = useLocation();
     let path = location.pathname;
@@ -26,6 +30,8 @@ export default function Header() {
     }
 
     let url = async (urlOption) => {
+        setOpen(false)
+
         let splitUrlHash = urlOption.split(`#`)
 
         if (urlOption === `home`) {
@@ -64,35 +70,29 @@ export default function Header() {
     }
 
     return (
-        <StyledHeader>
+        <StyledHeader open={isOpen}>
             <Navbar>
                 <Nav>
-                    <NavItem className="home" onClick={() => url(`home`)}>
-                        Home
-                    </NavItem>
-                    <NavItem className="about" onClick={() => url(`/about`)}>
-                        About
-                    </NavItem>
-                    <NavItem className="boarding" onClick={() => url(`/boarding`)}>
-                        Boarding
-                    </NavItem>
-                    <NavItem className="daycare" onClick={() => url(`/daycare`)}>
-                        Daycare
-                    </NavItem>
-                    <NavItem className="grooming" onClick={() => url(`/grooming`)}>
-                        Grooming
-                    </NavItem>
-                    <NavItem className="forms" onClick={() => url(`/forms`)}>
-                        Forms
-                    </NavItem>
-                    <NavItem className="faq" onClick={() => url(`/faqs`)}>
-                        FAQs
-                    </NavItem>
+                    {Object.keys(options).map((key, index) => {
+                        return <NavItem navigateToUrl={url} key={index} url={options[key].url} title={key} />
+                    })}
                 </Nav>
             </Navbar>
-            <HeaderLogo className="logo">
-                <LogoPNG loading="lazy" className="logo-png" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
-            </HeaderLogo>
+            <HamburgerDiv>
+                <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
+            </HamburgerDiv>
+            {isOpen &&
+                <MobileNavBar>
+                    <MobileNav>
+                        {Object.keys(options).map((key, index) => {
+                            return <NavItem navigateToUrl={url} key={index} url={options[key].url} title={key} />
+                        })}
+                    </MobileNav>
+                </MobileNavBar>
+            }
+            <LogoContainer>
+                <Logo loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
+            </LogoContainer>
         </StyledHeader>
     )
 }
