@@ -19,21 +19,10 @@ footer #br5 {
     height: 10px;
 }
 
-footer .navbar{
-    text-align: center;
-}
-
-footer .nav-item{
+/* footer .nav-item{
     padding: .25% 0;
     cursor: pointer;
-}
-
-footer #info{
-    width: 78%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+} */
 
 footer #first-col{
     display: flex;
@@ -48,9 +37,9 @@ footer #second-col{
     align-items: flex-start;
 }
 
-footer #third-col{
+/* footer #third-col{
     width: 13%;
-}
+} */
 
 footer .hours{
     width: 100%;
@@ -116,11 +105,6 @@ footer iframe {
 
 footer .holiday-hours{
     width: 100%;
-}
-
-footer .navbar p{
-    font-size: 2rem;
-    font-weight: bolder;
 }
 
 footer .title{

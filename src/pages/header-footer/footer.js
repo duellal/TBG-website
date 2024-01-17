@@ -24,7 +24,7 @@ import { useNavigate } from "react-router";
 
 //Footer Styles:
 import "../../styles/footer.css"
-import { CopyrightDiv, CopyrightName, CopyrightYear, FooterStyle, LogoDiv, LogoImg } from '../../styles/footer'
+import { CopyrightDiv, CopyrightName, CopyrightYear, FooterInfo, FooterNavBar, FooterNavP, FooterStyle, FooterThirdCol, LogoDiv, LogoImg } from '../../styles/footer'
 
 //Logos
 import logo from "../../images/logo/logo192.png"
@@ -39,7 +39,7 @@ export default function Footer(){
 
     return (
         <FooterStyle>
-            <div id="info">
+            <FooterInfo>
                 <div id="first-col">
                     <div className="hours">
                         <p className="title">
@@ -121,7 +121,7 @@ export default function Footer(){
                     </div>
                 </div>
                 
-                <div id="third-col">
+                <FooterThirdCol id="third-col">
                 <div className="socials">
                         <p className="title">
                             Our Socials
@@ -151,9 +151,9 @@ export default function Footer(){
                     </LogoDiv>
 
                     <Navbar>
-                        <p>
+                        <FooterNavP>
                             Quick Links
-                        </p>
+                        </FooterNavP>
                         <Nav tabs fill>
                             <NavItem onClick={() => navigate('/boarding')}>
                                     Boarding
@@ -175,7 +175,7 @@ export default function Footer(){
                             </NavItem>
                         </Nav>
                     </Navbar>
-                </div>
+                </FooterThirdCol>
 
 
                 <CopyrightDiv>
@@ -186,7 +186,7 @@ export default function Footer(){
                        &copy; 2024
                     </CopyrightYear>
                 </CopyrightDiv>
-            </div>
+            </FooterInfo>
         </FooterStyle>
     )
 }
