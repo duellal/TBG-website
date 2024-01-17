@@ -9,10 +9,11 @@ export const BannerDiv = styled.div`
 
 export const BannerImg = styled.img`
     width: 100%;
-    height: 100%;
-    aspect-ratio: 43/25;
+    height: 550px;
     object-fit: cover;
     object-position: center;
+    position: relative;
+    z-index: -100;
 `
 
 export const BannerSlider = styled.div`
@@ -23,10 +24,11 @@ export const BannerSlider = styled.div`
 
 export const BannerDots = styled.div`
     padding-bottom: 10px;
-    position: absolute;
+    position: relative;
     width: 100%;
     text-align: center;
-    top: 55%;
+    bottom: 2%;
+    z-index: 200;
 `
 
 export const BannerIdvDot = styled.div`
