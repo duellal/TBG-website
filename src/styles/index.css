@@ -156,7 +156,6 @@ a,
 button {
   text-decoration: none;
   color: #220c10;
-  font-family: Georgia, Times, "Times New Roman";
 }
 
 h1 {
@@ -164,6 +163,7 @@ h1 {
 }
 
 button {
+  font-family: Georgia, Times, "Times New Roman";
   font-size: 1.8rem;
 }
 
