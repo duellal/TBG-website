@@ -92,3 +92,5 @@ export const faqOptions = [
         url: '/faqs#Grooming'
     },
 ]
+
+export const options = { Home: { url: '/' }, About: { url: '/about' }, Boarding: { url: '/boarding' }, Daycare: { url: '/daycare' }, Grooming: { url: '/grooming' }, Forms: { url: '/forms' }, FAQ: { url: '/faqs' } }
