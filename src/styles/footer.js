@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { devices } from "./constants/device-size";
+
+const { tablet, mobileL } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
-    padding: 1% 0 2% 0;
+    padding: 2% 0;
     margin-top: 1%;
     width: 100%;
     display: flex;
@@ -13,6 +16,12 @@ export const FooterStyle = styled.footer`
     p, a{
         font-size: 1.5rem;
     }
+    
+    @media ${mobileL}{
+        padding: 10% 0;
+        width: 100%;
+        justify-content: center;
+    }
 `
 
 export const FooterInfo = styled.div`
@@ -22,30 +31,34 @@ export const FooterInfo = styled.div`
     justify-content: space-evenly;
 `
 
-export const LogoDiv = styled.div`
+export const FooterFirstCol = styled.div`
     display: flex;
-    justify-content: center;
-    margin-top: 15%;
-    margin-bottom: 3%;
+    align-content: stretch;
+    flex-wrap: wrap;
+    width: 10%;
+    min-width: 160px;
+
+    @media ${mobileL}{
+       width: 90%;
+       justify-content: center;
+    }
 `
 
-export const LogoImg = styled.img`
-    width: 80%;
+export const DivHours = styled.div`
+    max-height: 200px;
+    min-height: 150px;
+
+    @media ${mobileL}{
+        min-width: 150px;
+    }
 `
 
-export const CopyrightDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-`
+export const DivAdjustHours = styled.div`
+    min-height: 275px;
 
-export const CopyrightName = styled.p`
-    text-align: end;
-`
-
-export const CopyrightYear = styled.p`
-    text-align: left;
-    padding-left: 0.5%;
+    @media ${mobileL}{
+        min-width: 150px;
+     }
 `
 
 export const FooterContactDiv = styled.div`
@@ -66,7 +79,7 @@ export const DivContactIconSection = styled.section`
 `
 
 export const DivContactInfo = styled.div`
-    width: 40%;
+    width: 35%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,12 +93,9 @@ export const DivContactSection = styled.section`
     width: 100%;
 `
 
-export const FooterFirstCol = styled.div`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 15%;
-`
+
+
+
 
 export const FooterIframe = styled.iframe`
     margin-top: 25px;
@@ -140,4 +150,30 @@ export const FooterThirdCol = styled.div`
 export const FooterNavP = styled.p`
     font-size: 2rem;
     font-weight: bolder;
+`
+
+export const LogoDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 3%;
+`
+
+export const LogoImg = styled.img`
+    width: 80%;
+`
+
+export const CopyrightDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+`
+
+export const CopyrightName = styled.p`
+    text-align: end;
+`
+
+export const CopyrightYear = styled.p`
+    text-align: left;
+    padding-left: 0.5%;
 `

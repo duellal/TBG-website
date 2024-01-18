@@ -7,8 +7,8 @@ import {
 import { useNavigate } from "react-router";
 
 //Footer Styles:
-import { CopyrightDiv, CopyrightName, CopyrightYear, DivContactIcon, DivContactIconSection, 
-    DivContactInfo, DivContactSection, FooterContactDiv, FooterFirstCol, FooterIframe, 
+import { CopyrightDiv, CopyrightName, CopyrightYear, DivAdjustHours, DivContactIcon, DivContactIconSection, 
+    DivContactInfo, DivContactSection, DivHours, FooterContactDiv, FooterFirstCol, FooterIframe, 
     FooterIndvSocials, FooterInfo, FooterNavP, FooterSecondCol, FooterSocialImg, FooterSocials, 
     FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
 import { BoldP, Break10pxDiv, Break5pxDiv } from "../../styles/common-styles";
@@ -29,7 +29,7 @@ export default function Footer(){
         <FooterStyle>
             <FooterInfo>
                 <FooterFirstCol>
-                    <div>
+                    <DivHours>
                         <FooterTitle>
                             Hours
                         </FooterTitle>
@@ -47,9 +47,9 @@ export default function Footer(){
                         <p>
                             4:00pm - 7:00pm
                         </p>
-                    </div>  
+                    </DivHours>  
 
-                    <div>
+                    <DivAdjustHours>
                         <FooterTitle>
                             Holiday Hours
                         </FooterTitle>
@@ -84,7 +84,7 @@ export default function Footer(){
                         <p>
                             7:00am - 12:00pm
                         </p>
-                    </div> 
+                    </DivAdjustHours> 
                 </FooterFirstCol>
 
                 <FooterSecondCol>
