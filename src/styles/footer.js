@@ -54,12 +54,44 @@ export const FooterContactDiv = styled.div`
     justify-content: center;
     text-align: center;
 `
+export const DivContactIcon = styled.div`
+    width: 100%;
+`
+export const DivContactIconSection = styled.section`
+    width: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1%;
+    align-items: center;
+`
+
+export const DivContactInfo = styled.div`
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1%;
+    align-items: center;
+`
+
+export const DivContactSection = styled.section`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+`
 
 export const FooterFirstCol = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 15%;
+`
+
+export const FooterIframe = styled.iframe`
+    margin-top: 25px;
+    width: 100%;
+    height: 350px;
+    border: 1px solid black;
 `
 
 export const FooterIndvSocials = styled.div`
@@ -69,6 +101,12 @@ export const FooterIndvSocials = styled.div`
     justify-content: center;
     padding: 3% 0 ;
     align-items: center;
+`
+
+export const FooterSecondCol = styled.div`
+    display:flex;
+    width: 40%;
+    align-items: flex-start;
 `
 
 export const FooterSocialImg = styled.img`
