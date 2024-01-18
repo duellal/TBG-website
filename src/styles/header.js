@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
-
+    z-index: 300;
     
     @media ${tablet}{
         justify-content: end;
