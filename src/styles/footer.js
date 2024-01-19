@@ -99,10 +99,6 @@ export const DivContactIconSection = styled.section`
     flex-wrap: wrap;
     padding-top: 1%;
     align-items: center;
-
-    @media ${mobileL}{
-        width: 100%;
-    }
 `
 
 export const DivContactInfo = styled.div`
@@ -133,6 +129,11 @@ export const FooterIframe = styled.iframe`
     min-width: 402px;
     height: 350px;
     border: 1px solid black;
+
+    @media (max-width: 450px){
+        min-width: 350px;
+        max-height: 200px;
+    }
 `
 
 export const FooterIndvSocials = styled.div`
