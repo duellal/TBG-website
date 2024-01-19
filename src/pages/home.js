@@ -36,8 +36,8 @@ export default function Home(){
 
     return (
         <>
-            <Banner allImages={homeImages}/>
-            <div id="home">
+            {/* <Banner allImages={homeImages}/> */}
+            {/* <div id="home">
                 <div className="info">
                     <div className="boarding">
                         <h2> Boarding </h2>
@@ -60,7 +60,7 @@ export default function Home(){
                         <button onClick={() => navigate('/grooming')}> Learn more </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

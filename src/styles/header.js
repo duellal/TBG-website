@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { tablet, mobileXL } = devices
+const { tablet, mobileL, mobileM, mobileS, mobileXL } = devices
 
 export const StyledHeader = styled.header`
     position: sticky;
@@ -17,6 +17,12 @@ export const StyledHeader = styled.header`
         justify-content: end;
         height: ${props => props.open ? '200px' : '165px'};
     }
+
+    // @media ${mobileL}, 
+    // @media ${mobileM},
+    // @media ${mobileS}{
+    //     width: 10%;
+    // }
 `
 export const LogoContainer = styled.div`
     width: 135px;

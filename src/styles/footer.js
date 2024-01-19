@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { tablet, mobileL } = devices
+const { mobileM, mobileL, mobileXL } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
-    padding: 2% 0;
+    padding: 2% 0; 
     margin-top: 1%;
     width: 100%;
     display: flex;
@@ -17,10 +17,8 @@ export const FooterStyle = styled.footer`
         font-size: 1.5rem;
     }
     
-    @media ${mobileL}{
+    @media ${mobileXL}{
         padding: 10% 0;
-        width: 100%;
-        justify-content: center;
     }
 `
 
@@ -29,6 +27,10 @@ export const FooterInfo = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+    @media ${mobileM}{
+        width: 90%;
+    }
 `
 
 export const FooterFirstCol = styled.div`
@@ -38,9 +40,14 @@ export const FooterFirstCol = styled.div`
     width: 10%;
     min-width: 160px;
 
-    @media ${mobileL}{
-       width: 90%;
+    @media ${mobileXL}{
+       width: 70%;
        justify-content: center;
+       text-align: center;
+    }
+
+    @media ${mobileM}{
+        width: 80%;
     }
 `
 
@@ -48,16 +55,27 @@ export const DivHours = styled.div`
     max-height: 200px;
     min-height: 150px;
 
-    @media ${mobileL}{
+    @media ${mobileXL}{
         min-width: 150px;
     }
 `
 
 export const DivAdjustHours = styled.div`
-    min-height: 275px;
+    min-height: 260px;
 
-    @media ${mobileL}{
+    @media ${mobileXL}{
         min-width: 150px;
+     }
+`
+
+export const FooterSecondCol = styled.div`
+    display:flex;
+    width: 40%;
+    align-items: flex-start;
+
+    @media ${mobileXL}{
+        width: 90%;
+        justify-content: center;
      }
 `
 
@@ -67,8 +85,13 @@ export const FooterContactDiv = styled.div`
     justify-content: center;
     text-align: center;
 `
+
 export const DivContactIcon = styled.div`
     width: 100%;
+
+    @media ${mobileXL}{
+        width: 50px;
+    }
 `
 export const DivContactIconSection = styled.section`
     width: 12%;
@@ -76,6 +99,10 @@ export const DivContactIconSection = styled.section`
     flex-wrap: wrap;
     padding-top: 1%;
     align-items: center;
+
+    @media ${mobileL}{
+        width: 100%;
+    }
 `
 
 export const DivContactInfo = styled.div`
@@ -85,21 +112,25 @@ export const DivContactInfo = styled.div`
     flex-wrap: wrap;
     padding-top: 1%;
     align-items: center;
+
+    @media ${mobileXL}{
+        width: 200px;
+    }
 `
 
 export const DivContactSection = styled.section`
     display: flex;
     justify-content: center;
     width: 100%;
+
+    @media ${mobileXL}{
+        padding-top: 5px;
+    }
 `
-
-
-
-
 
 export const FooterIframe = styled.iframe`
     margin-top: 25px;
-    width: 100%;
+    min-width: 402px;
     height: 350px;
     border: 1px solid black;
 `
@@ -113,16 +144,14 @@ export const FooterIndvSocials = styled.div`
     align-items: center;
 `
 
-export const FooterSecondCol = styled.div`
-    display:flex;
-    width: 40%;
-    align-items: flex-start;
-`
-
 export const FooterSocialImg = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
+
+    @media ${mobileXL}{
+        margin-bottom: 5px;
+    }
 `
 
 export const FooterSocials = styled.div`
@@ -137,14 +166,25 @@ export const FooterTitle = styled.div`
 `
 export const FooterThirdCol = styled.div`
     width: 13%;
+
+    @media ${mobileXL}{
+        margin-top: 20px;
+        width: 50%;
+        // border: 1px solid purple;
+    }
     
     .navbar{
         text-align: center;
     }
 
+    @media ${mobileXL}{
+        margin-bottom: 20px;
+    }
+
     .nav-item{
         padding: .25% 0;
         cursor: pointer;
+    }
 `
 
 export const FooterNavP = styled.p`
@@ -157,6 +197,10 @@ export const LogoDiv = styled.div`
     justify-content: center;
     margin-top: 15%;
     margin-bottom: 3%;
+
+    @media ${mobileXL}{
+        margin: 15px 0;
+    }
 `
 
 export const LogoImg = styled.img`

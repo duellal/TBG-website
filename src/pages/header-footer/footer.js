@@ -123,7 +123,7 @@ export default function Footer(){
                     </FooterContactDiv>
                 </FooterSecondCol>
                 
-                <FooterThirdCol id="third-col">
+                <FooterThirdCol>
                 <FooterSocials>
                         <FooterTitle>
                             Our Socials
