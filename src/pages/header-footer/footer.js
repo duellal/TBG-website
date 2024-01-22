@@ -7,10 +7,7 @@ import {
 import { useNavigate } from "react-router";
 
 //Footer Styles:
-import { CopyrightDiv, CopyrightName, CopyrightYear, DivAdjustHours, DivContactIcon, DivContactIconSection, 
-    DivContactInfo, DivContactSection, DivHours, FooterContactDiv, FooterFirstCol, FooterIframe, 
-    FooterIndvSocials, FooterInfo, FooterNavP, FooterSecondCol, FooterSocialImg, FooterSocials, 
-    FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
+import { CopyrightDiv, CopyrightName, CopyrightYear, DivAdjustHours, DivContactIcon, DivContactIconSection, DivContactInfo, DivContactSection, DivHours, FooterContactDiv, FooterFirstCol, FooterIframe, FooterIndvSocials, FooterInfo, FooterSecondCol, FooterSocialImg, FooterSocials,FooterStyle, FooterThirdCol, FooterTitle, LogoDiv, LogoImg } from '../../styles/footer'
 import { BoldP, Break10pxDiv, Break5pxDiv } from "../../styles/common-styles";
 
 
@@ -88,7 +85,7 @@ export default function Footer(){
                 </FooterFirstCol>
 
                 <FooterSecondCol>
-                    <FooterContactDiv>
+                    {/* <FooterContactDiv> */}
                         <FooterTitle>
                             Contact Us!
                         </FooterTitle>
@@ -120,11 +117,11 @@ export default function Footer(){
                             loading="lazy" 
                             referrerPolicy="no-referrer-when-downgrade" 
                             title="The Biscuit Garden Address on a Map"></FooterIframe>
-                    </FooterContactDiv>
+                    {/* </FooterContactDiv> */}
                 </FooterSecondCol>
                 
                 <FooterThirdCol>
-                <FooterSocials>
+                    <FooterSocials>
                         <FooterTitle>
                             Our Socials
                         </FooterTitle>
@@ -153,9 +150,9 @@ export default function Footer(){
                     </LogoDiv>
 
                     <Navbar>
-                        <FooterNavP>
+                        <FooterTitle>
                             Quick Links
-                        </FooterNavP>
+                        </FooterTitle>
                         <Nav tabs fill>
                             <NavItem onClick={() => navigate('/boarding')}>
                                     Boarding

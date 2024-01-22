@@ -16,13 +16,7 @@ export const StyledHeader = styled.header`
     @media ${tablet}{
         justify-content: end;
         height: ${props => props.open ? '200px' : '165px'};
-    }
-
-    // @media ${mobileL}, 
-    // @media ${mobileM},
-    // @media ${mobileS}{
-    //     width: 10%;
-    // }
+    } d
 `
 export const LogoContainer = styled.div`
     width: 135px;
