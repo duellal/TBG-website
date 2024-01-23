@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { tablet, mobileL, mobileM, mobileS, mobileXL } = devices
+const { tablet, mobileXL } = devices
 
 export const StyledHeader = styled.header`
     position: sticky;

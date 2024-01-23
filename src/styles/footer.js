@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { laptopL, laptop, mobileL, mobileM, mobileS, mobileXL, tablet } = devices
+const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileM, mobileS, mobileXL, tablet } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
@@ -25,7 +25,13 @@ export const FooterStyle = styled.footer`
 
     @media ${laptop}{
         p, a, .nav-item{
-            font-size: 1.2rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    @media ${tablet}{
+        p, a, .nav-item{
+            font-size: 1.4rem;
         }
     }
     
@@ -56,7 +62,11 @@ export const FooterTitle = styled.div`
     }
 
     @media ${laptop}{
-        font-size: 2.1rem;
+        font-size: 2.2rem;
+    }
+
+    @media ${laptopS}{
+        font-size: 2rem;
     }
 `
 
@@ -67,15 +77,20 @@ export const FooterFirstCol = styled.div`
     width: 220px;
     min-width: 160px;
     height: 660px; 
-    border: 1px solid pink;
+    // border: 1px solid red;
 
     @media ${laptopL}{
         width: 185px;
+        height: 600px;
     }
 
     @media ${laptop}{
-        width: 170px;
-        max-height: 400px;
+        width: 175px;
+        height: 555px;
+    }
+
+    @media ${laptop}{
+        width: 160px;
     }
 
     @media ${tablet}{
@@ -97,6 +112,7 @@ export const FooterFirstCol = styled.div`
 export const DivHours = styled.div`
     max-height: 200px;
     min-height: 150px;
+    width: 100%;
 
     @media ${mobileXL}{
         min-width: 150px;
@@ -104,7 +120,7 @@ export const DivHours = styled.div`
 `
 
 export const DivAdjustHours = styled.div`
-    min-height: 260px;
+    width: 100%;
 
     @media ${mobileXL}{
         min-width: 130px;
@@ -122,7 +138,12 @@ export const FooterSecondCol = styled.div`
     // border: 1px solid purple;
 
     @media ${laptop}{
-        align-content: space-around;
+        width: 500px;
+        height: 555px;
+    }
+
+    @media ${laptopS}{
+        width: 350px;
     }
 
     @media ${tablet}{
@@ -152,6 +173,28 @@ export const FooterSecondCol = styled.div`
 //     }
 // `
 
+export const DivContactSection = styled.section`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    // border: 1px solid salmon;
+
+    @media ${laptop}{
+        min-height: 90px;
+    }
+
+    @media ${tablet}{
+        width: 40%;
+        align-items: center;
+        max-height: 200px;
+    }
+
+    @media ${mobileXL}{
+        padding-top: 5px;
+    }
+`
+
 export const DivContactIconSection = styled.section`
     width: 10%;
     display: flex;
@@ -167,28 +210,10 @@ export const DivContactIconSection = styled.section`
 `
 
 export const DivContactIcon = styled.div`
-    width: 100%%
+    width: 100%;
 
     @media ${mobileXL}{
         width: 50px
-    }
-`
-
-export const DivContactSection = styled.section`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: 100px;
-    // border: 1px solid salmon;
-
-    @media ${tablet}{
-        width: 40%;
-        align-items: center;
-        max-height: 200px;
-    }
-
-    @media ${mobileXL}{
-        padding-top: 5px;
     }
 `
 
@@ -218,6 +243,10 @@ export const FooterIframe = styled.iframe`
     height: 350px;
     border: 1px solid black;
 
+    @media ${laptop}{
+        width: 500px;
+    }
+
     @media ${tablet}{
         max-height: 305px;
     }
@@ -235,10 +264,31 @@ export const FooterThirdCol = styled.div`
     width: 200px;
     height: 660px;
     align-content: space-between;
-    // border: 1px solid purple;
+    // border: 1px solid blue;
+
+    .navbar{
+        text-align: center;
+        width: 100%;
+
+        @media ${tablet}{
+            min-height: 100%;
+            align-content: center;
+            // border: 1px solid red;
+        }
+    }
+
+    .nav-item{
+        padding: .25% 0;
+        cursor: pointer;
+    }
+
+    @media ${laptopL}{
+        height: 600px;
+    }
 
     @media ${laptop}{
-        width: 96%;
+        width: 170px;
+        height: 555px;
     }
 
     @media ${tablet}{
@@ -251,17 +301,6 @@ export const FooterThirdCol = styled.div`
         margin-top: 20px;
         width: 50%;
     }
-    
-    .navbar{
-        text-align: center;
-        width: 100%;
-
-        @media ${tablet}{
-            min-height: 100%;
-            align-content: center;
-            border: 1px solid red;
-        }
-    }
 
     @media ${mobileXL}{
         margin-bottom: 20px;
@@ -273,11 +312,6 @@ export const FooterThirdCol = styled.div`
             border: 1px solid purple;
         }
     }
-
-    .nav-item{
-        padding: .25% 0;
-        cursor: pointer;
-    }
 `
 
 export const FooterIndvSocials = styled.div`
@@ -286,7 +320,6 @@ export const FooterIndvSocials = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     padding: 8px 0;
-    // padding: 3% 0;
     align-items: center;
 `
 
@@ -305,7 +338,7 @@ export const FooterSocials = styled.div`
     text-align: center;
 
     @media ${laptop}{
-        width: 25%;
+        // width: 25%;
     }
 
     // @media ${tablet}{
@@ -318,9 +351,9 @@ export const LogoDiv = styled.div`
     justify-content: center;
     margin: 20px 0;
 
-    @media ${laptop}{
-        width: 25%;
-    }
+    // @media ${laptop}{
+    //     width: 25%;
+    // }
 
     @media ${tablet}{
         width: 30%;
