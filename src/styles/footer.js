@@ -114,10 +114,6 @@ export const FooterFirstCol = styled.div`
     @media ${mobileXL}{
        width: 100%;
     }
-
-    @media ${mobileM}{
-        // width: 80%;
-    }
 `
 
 export const DivHours = styled.div`
@@ -363,7 +359,6 @@ export const FooterThirdCol = styled.div`
     }
 
     .nav-item{
-        // height: 25px;
         cursor: pointer;
         padding: 4px 0;
     }
@@ -424,7 +419,6 @@ export const LogoDiv = styled.div`
     display: flex;
     justify-content: center;
     min-height: 130px;
-    
     // border: 1px solid black;
 
     @media ${laptopXS}{
