@@ -316,12 +316,12 @@ export const FooterThirdCol = styled.div`
     @media ${tabletXL}{
         width: 80%;
         justify-content: space-between;
-
+        height: 250px;
     }
 
     @media ${tablet}{
         width: 65%;
-        height: 570px;
+        height: 600px;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
@@ -344,7 +344,7 @@ export const FooterThirdCol = styled.div`
         }
 
         @media ${tabletXL}{
-            min-height: 100%;
+            min-height: 190px;
             align-content: center;
             text-align: right;
         }
@@ -352,6 +352,7 @@ export const FooterThirdCol = styled.div`
         @media ${tablet}{
             width: 100%;
             text-align: center;
+            height: 100px;
         }
     }
 
@@ -362,7 +363,7 @@ export const FooterThirdCol = styled.div`
     }
 
     .nav-item{
-        height: 25px;
+        // height: 25px;
         cursor: pointer;
         padding: 4px 0;
     }
@@ -410,7 +411,7 @@ export const FooterSocialImg = styled.img`
     margin-bottom: 5px;
 
     @media ${laptopXS}{
-        margin: 0;
+        margin: 0 0 5px 0;
     }
 
     @media ${tablet}{
@@ -423,9 +424,11 @@ export const LogoDiv = styled.div`
     display: flex;
     justify-content: center;
     min-height: 130px;
-    border: 1px solid black;
+    
+    // border: 1px solid black;
 
     @media ${laptopXS}{
+        aspect-ratio: 1;
         align-self: center;
         height: 150px;
     }
