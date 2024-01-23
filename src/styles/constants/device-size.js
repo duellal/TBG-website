@@ -14,6 +14,7 @@ const sizes = {
     desktop: '2560px',
 };
 
+
 export const devices = {
     mobileS: `(max-width: ${sizes.mobileS})`,
     mobileM: `(max-width: ${sizes.mobileM})`,

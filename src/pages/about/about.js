@@ -1,3 +1,9 @@
+/* 
+    Take out contact form
+
+    Have all info on one page (no nav items)
+ */
+
 /* eslint-disable react/prop-types */
 import React from "react";
 

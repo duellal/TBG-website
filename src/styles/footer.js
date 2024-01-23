@@ -453,6 +453,7 @@ export const CopyrightDiv = styled.div`
     justify-content: center;
     width: 100%;
     margin-top: 20px;
+    // border: 1px solid black;
 `
 
 export const CopyrightName = styled.p`
