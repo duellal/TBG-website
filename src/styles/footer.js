@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileM, mobileS, mobileXL, tablet } = devices
+const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileM, mobileS, mobileXL, mobileXLfooter, tablet,tabletL, tabletXL } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
@@ -31,7 +31,7 @@ export const FooterStyle = styled.footer`
 
     @media ${tablet}{
         p, a, .nav-item{
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
         }
     }
     
@@ -47,8 +47,18 @@ export const FooterInfo = styled.div`
     justify-content: space-evenly;
     // border: 1px solid red;
 
-    @media ${tablet}{
-        width: 100%;
+    @media ${laptopXS}{
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    @media ${tabletXL}{
+        width: 60%;
+        justify-content: center;
+    }
+
+    @media ${tabletL}{
+        width: 70%;
     }
 `
 
@@ -89,12 +99,19 @@ export const FooterFirstCol = styled.div`
         height: 555px;
     }
 
-    @media ${laptop}{
+    @media ${laptopXS}{
         width: 160px;
+        height: 490px;
+        align-content: flex-start;
+    }
+
+    @media ${tabletXL}{
+        width: 80%;
+        height: 250px;
     }
 
     @media ${tablet}{
-        width: 80%;
+        width: 90%;
         justify-content: space-evenly;
     }
 
@@ -113,6 +130,11 @@ export const DivHours = styled.div`
     max-height: 200px;
     min-height: 150px;
     width: 100%;
+    // border: 1px solid blue;
+
+    @media ${tabletXL}{
+        width: 50%;
+    }
 
     @media ${mobileXL}{
         min-width: 150px;
@@ -121,6 +143,16 @@ export const DivHours = styled.div`
 
 export const DivAdjustHours = styled.div`
     width: 100%;
+
+    @media ${laptopXS}{
+        margin-top: 50px;
+    }
+
+    @media ${tabletXL}{
+        text-align: right;
+        margin: 0;
+        width: 50%;
+    }
 
     @media ${mobileXL}{
         min-width: 130px;
@@ -146,10 +178,22 @@ export const FooterSecondCol = styled.div`
         width: 350px;
     }
 
-    @media ${tablet}{
+    @media ${laptopXS}{
+        height: 490px;
+        width: 500px;
+    }
+
+    @media ${tabletXL}{
         width: 80%;
+        height: 505px;
+        margin-top: 10px;
+    }
+
+    @media ${tablet}{
+        width: 90%;
         justify-content: space-around;
         align-items: center;
+        height: 430px;
     }
 
     @media ${mobileXL}{
@@ -184,10 +228,15 @@ export const DivContactSection = styled.section`
         min-height: 90px;
     }
 
+    @media ${tabletXL}{
+        margin-top: 10px;
+    }
+
     @media ${tablet}{
-        width: 40%;
+        // width: 40%;
         align-items: center;
         max-height: 200px;
+        margin: 0;
     }
 
     @media ${mobileXL}{
@@ -204,7 +253,7 @@ export const DivContactIconSection = styled.section`
     // border: 1px solid blue;
 
     @media ${tablet}{
-        min-height: 100px;
+        min-height: 80px;
         align-content: space-between;
     }
 `
@@ -226,10 +275,14 @@ export const DivContactInfo = styled.div`
     align-items: center;
     // border: 1px solid indigo;
 
+    @media ${tabletXL}{
+        width: 50%;
+    }
+
+
     @media ${tablet}{
         min-width: 250px;
-        min-height: 100px;
-        align-content: space-between;
+        min-height: 90px;
     }
 
     @media ${mobileXL}{
@@ -245,6 +298,10 @@ export const FooterIframe = styled.iframe`
 
     @media ${laptop}{
         width: 500px;
+    }
+
+    @media ${laptopXS}{
+        margin-top: 0;
     }
 
     @media ${tablet}{
@@ -269,17 +326,28 @@ export const FooterThirdCol = styled.div`
     .navbar{
         text-align: center;
         width: 100%;
+        min-width: 130px;
 
-        @media ${tablet}{
+        @media ${laptopXS}{
+            width: 130px;
+            border: 1px solid orange;
+        }
+
+        @media ${tabletXL}{
             min-height: 100%;
             align-content: center;
-            // border: 1px solid red;
+            text-align:right;
+        }
+
+        @media ${tablet}{
+            width: 30%;
         }
     }
 
     .nav-item{
-        padding: .25% 0;
+        height: 25px;
         cursor: pointer;
+        padding: 4px 0;
     }
 
     @media ${laptopL}{
@@ -291,10 +359,25 @@ export const FooterThirdCol = styled.div`
         height: 555px;
     }
 
-    @media ${tablet}{
+    @media ${laptopXS}{
+        flex-wrap: nowrap;
+        height: 220px;
+        width: 100%;
+        margin-top: 25px;
+        justify-content: space-between;
+    }
+
+    @media ${tabletXL}{
         width: 80%;
+        justify-content: space-between;
+
+    }
+
+    @media ${tablet}{
+        width: 90%;
         align-items: center;
         margin: 20px 0;
+        height: 230px;
     }
 
     @media ${mobileXL}{
@@ -309,8 +392,24 @@ export const FooterThirdCol = styled.div`
     .nav{
         @media ${tablet}{
             min-height: 100%;
-            border: 1px solid purple;
+            // border: 1px solid purple;
         }
+    }
+`
+
+export const FooterSocials = styled.div`
+    width: 100%;
+    min-width: 170px;
+    text-align: center;
+    border: 1px solid hotpink;
+
+    @media ${laptopXS}{
+        width: 170px;
+        text-align: left;
+    }
+
+    @media ${tablet}{
+        width: 30%;
     }
 `
 
@@ -321,6 +420,11 @@ export const FooterIndvSocials = styled.div`
     justify-content: center;
     padding: 8px 0;
     align-items: center;
+    // border: 1px solid red;
+
+    @media ${laptopXS}{
+        justify-content: flex-start;
+    }
 `
 
 export const FooterSocialImg = styled.img`
@@ -328,36 +432,33 @@ export const FooterSocialImg = styled.img`
     margin-left: auto;
     margin-right: auto;
 
+    @media ${laptopXS}{
+        margin: 0;
+    }
+
     @media ${mobileXL}{
         margin-bottom: 5px;
     }
 `
 
-export const FooterSocials = styled.div`
-    width: 100%;
-    text-align: center;
-
-    @media ${laptop}{
-        // width: 25%;
-    }
-
-    // @media ${tablet}{
-    //     width: 30%;
-    // }
-`
-
 export const LogoDiv = styled.div`
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    min-height: 130px;
+    border: 1px solid black;
 
-    // @media ${laptop}{
-    //     width: 25%;
-    // }
+    @media ${laptopXS}{
+        align-self: center;
+        height: 150px;
+    }
+
+    @media ${tabletXL}{
+        height: 130px;
+    }
 
     @media ${tablet}{
         width: 30%;
-        margin: 0;
+        height: auto;
     }
 
     @media ${mobileXL}{
@@ -367,10 +468,11 @@ export const LogoDiv = styled.div`
 
 export const LogoImg = styled.img`
     width: 75%;
+    // border: 1px solid yellow;
 
-    // @media ${laptop}{
-    //     width: 100%;
-    // }
+    @media ${laptopXS}{
+        width: 100%;
+    }
 `
 
 export const CopyrightDiv = styled.div`
