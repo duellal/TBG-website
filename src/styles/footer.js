@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileM, mobileS, mobileXL, mobileXLfooter, tablet,tabletL, tabletXL } = devices
+const { laptopL, laptop, laptopS, laptopXS, mobileM, mobileL, mobileS, mobileXL, tablet, tabletL, tabletXL } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
@@ -30,13 +30,7 @@ export const FooterStyle = styled.footer`
     }
 
     @media ${tablet}{
-        p, a, .nav-item{
-            // font-size: 1.4rem;
-        }
-    }
-    
-    @media ${mobileXL}{
-        padding: 10% 0;
+        text-align: center; 
     }
 `
 
@@ -111,24 +105,25 @@ export const FooterFirstCol = styled.div`
     }
 
     @media ${tablet}{
-        width: 90%;
+        width: 65%;
+        height: 400px;
+        margin-top: 5px;
         justify-content: space-evenly;
     }
 
     @media ${mobileXL}{
-       width: 70%;
-       justify-content: space-between;
-       text-align: center;
+       width: 100%;
     }
 
     @media ${mobileM}{
-        width: 80%;
+        // width: 80%;
     }
 `
 
 export const DivHours = styled.div`
     max-height: 200px;
     min-height: 150px;
+    min-width: 150px;
     width: 100%;
     // border: 1px solid blue;
 
@@ -136,12 +131,13 @@ export const DivHours = styled.div`
         width: 50%;
     }
 
-    @media ${mobileXL}{
-        min-width: 150px;
+    @media ${tablet}{
+        width: 100%;
     }
 `
 
 export const DivAdjustHours = styled.div`
+    min-width: 150px;
     width: 100%;
 
     @media ${laptopXS}{
@@ -154,9 +150,10 @@ export const DivAdjustHours = styled.div`
         width: 50%;
     }
 
-    @media ${mobileXL}{
-        min-width: 130px;
-     }
+    @media ${tablet}{
+        width: 100%; 
+        text-align: center;
+    }
 `
 
 export const FooterSecondCol = styled.div`
@@ -190,32 +187,17 @@ export const FooterSecondCol = styled.div`
     }
 
     @media ${tablet}{
-        width: 90%;
+        width: 100%;
         justify-content: space-around;
         align-items: center;
         height: 430px;
     }
 
     @media ${mobileXL}{
-        width: 90%;
+        height: 325px;
         justify-content: center;
      }
 `
-
-// export const FooterContactDiv = styled.div`
-//     display:flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     align-content: space-between;
-//     text-align: center;
-//     height: 550px;
-//     // border: 1px solid purple;
-
-//     @media ${tablet}{
-//         justify-content: space-around;
-//         align-items: center;
-//     }
-// `
 
 export const DivContactSection = styled.section`
     display: flex;
@@ -233,14 +215,8 @@ export const DivContactSection = styled.section`
     }
 
     @media ${tablet}{
-        // width: 40%;
         align-items: center;
-        max-height: 200px;
-        margin: 0;
-    }
-
-    @media ${mobileXL}{
-        padding-top: 5px;
+        margin-top: -10px;
     }
 `
 
@@ -260,10 +236,6 @@ export const DivContactIconSection = styled.section`
 
 export const DivContactIcon = styled.div`
     width: 100%;
-
-    @media ${mobileXL}{
-        width: 50px
-    }
 `
 
 export const DivContactInfo = styled.div`
@@ -279,21 +251,18 @@ export const DivContactInfo = styled.div`
         width: 50%;
     }
 
-
     @media ${tablet}{
         min-width: 250px;
         min-height: 90px;
-    }
-
-    @media ${mobileXL}{
-        width: 200px;
     }
 `
 
 export const FooterIframe = styled.iframe`
     margin-top: 25px;
     width: 500px;
+    min-width: 280px;
     height: 350px;
+    min-height: 200px;
     border: 1px solid black;
 
     @media ${laptop}{
@@ -305,12 +274,16 @@ export const FooterIframe = styled.iframe`
     }
 
     @media ${tablet}{
-        max-height: 305px;
+        height: 305px;
     }
 
-    @media (max-width: 450px){
-        min-width: 350px;
-        max-height: 200px;
+    @media ${mobileXL}{
+        width: 350px;
+        height: 200px;
+    }
+
+    @media ${mobileL}{
+        width: 300px;
     }
 `
 
@@ -321,34 +294,7 @@ export const FooterThirdCol = styled.div`
     width: 200px;
     height: 660px;
     align-content: space-between;
-    // border: 1px solid blue;
-
-    .navbar{
-        text-align: center;
-        width: 100%;
-        min-width: 130px;
-
-        @media ${laptopXS}{
-            width: 130px;
-            border: 1px solid orange;
-        }
-
-        @media ${tabletXL}{
-            min-height: 100%;
-            align-content: center;
-            text-align:right;
-        }
-
-        @media ${tablet}{
-            width: 30%;
-        }
-    }
-
-    .nav-item{
-        height: 25px;
-        cursor: pointer;
-        padding: 4px 0;
-    }
+    // border: 2px solid blue;
 
     @media ${laptopL}{
         height: 600px;
@@ -374,26 +320,51 @@ export const FooterThirdCol = styled.div`
     }
 
     @media ${tablet}{
-        width: 90%;
+        width: 65%;
+        height: 570px;
         align-items: center;
-        margin: 20px 0;
-        height: 230px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
     }
 
     @media ${mobileXL}{
-        margin-top: 20px;
-        width: 50%;
+        width: 100%;
+        height: 580px;
     }
 
-    @media ${mobileXL}{
-        margin-bottom: 20px;
+    .navbar{
+        text-align: center;
+        width: 100%;
+        min-width: 130px;
+        // border: 1px solid orange;
+
+        @media ${laptopXS}{
+            width: 130px;
+        }
+
+        @media ${tabletXL}{
+            min-height: 100%;
+            align-content: center;
+            text-align: right;
+        }
+
+        @media ${tablet}{
+            width: 100%;
+            text-align: center;
+        }
     }
 
     .nav{
         @media ${tablet}{
             min-height: 100%;
-            // border: 1px solid purple;
         }
+    }
+
+    .nav-item{
+        height: 25px;
+        cursor: pointer;
+        padding: 4px 0;
     }
 `
 
@@ -401,7 +372,7 @@ export const FooterSocials = styled.div`
     width: 100%;
     min-width: 170px;
     text-align: center;
-    border: 1px solid hotpink;
+    // border: 1px solid hotpink;
 
     @media ${laptopXS}{
         width: 170px;
@@ -409,7 +380,8 @@ export const FooterSocials = styled.div`
     }
 
     @media ${tablet}{
-        width: 30%;
+        width: 100%;
+        text-align: center;
     }
 `
 
@@ -425,18 +397,24 @@ export const FooterIndvSocials = styled.div`
     @media ${laptopXS}{
         justify-content: flex-start;
     }
+
+    @media ${tablet}{
+        justify-content: center;
+    }
 `
 
 export const FooterSocialImg = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
 
     @media ${laptopXS}{
         margin: 0;
     }
 
-    @media ${mobileXL}{
+    @media ${tablet}{
+        margin: 0 auto;
         margin-bottom: 5px;
     }
 `
@@ -457,18 +435,16 @@ export const LogoDiv = styled.div`
     }
 
     @media ${tablet}{
-        width: 30%;
-        height: auto;
+        margin: 15px 0;
     }
 
     @media ${mobileXL}{
-        margin: 15px 0;
+        width: 130px;
     }
 `
 
 export const LogoImg = styled.img`
     width: 75%;
-    // border: 1px solid yellow;
 
     @media ${laptopXS}{
         width: 100%;
