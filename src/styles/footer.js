@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { laptopL, laptop, laptopS, laptopXS, mobileM, mobileL, mobileS, mobileXL, tablet, tabletL, tabletXL } = devices
+const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileXL, tablet, tabletL, tabletXL } = devices
 
 export const FooterStyle = styled.footer`
     bottom: 0;
