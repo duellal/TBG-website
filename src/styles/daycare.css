@@ -1,12 +1,3 @@
-/* 
-    ALL pages have an expanded different photo - same like header below the nav bar
-        Make long text boxes shorter (less width)
-
-    Have all info on one page (no nav items)
-
-    No checkin/out boxes/area - take out
-*/
-
 #daycare {
     padding: 2.5% 10% 5%;
     display: flex;
