@@ -6,12 +6,9 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
-import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesTop, ValuesImg, ValuesImgSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesTop, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
 
 //Images: 
-import genDaycare1 from '../images/daycare/bigs-daycare.jpeg'
-import genDaycare2 from '../images/daycare/littles-daycare.jpeg'
-import genDaycare3 from '../images/daycare/bigs-daycare-2.jpeg'
 import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
 import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
 
@@ -40,12 +37,6 @@ export default function Daycare(){
                 </CommonInfoSection>
 
                 <ValuesSection>
-                    <ValuesImgSection>
-                        <ValuesImg src={genDaycare1} alt="" />
-                        <ValuesImg src={genDaycare2} alt="" />
-                        <ValuesImg src={genDaycare3} alt="" />
-                    </ValuesImgSection>
-
                     <ValuesText>
                         <ValuesP> 
                             No matter what, we believe that all dogs should be treated equally. 
