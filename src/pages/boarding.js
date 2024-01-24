@@ -96,11 +96,17 @@ export default function Boarding(){
                         </PricesTextSection>
                         <PricesImg src={littlesBoarding} alt=''/>
                     </PricesTop>
+                </PricesDiv>
 
+
+
+                <PricesDiv>
+                    <CommonH2>
+                        Cat and Pocket Pet Boarding
+                    </CommonH2>
                     <PricesBottom>
                         <PricesImg src={catBoarding} alt=''/>
                         <PricesTextSection>
-                            <CommonH3>Cat and Pocket Pet Boarding</CommonH3>
                             <PricesTextLR>
                                 <CommonH4>Cat Boarding</CommonH4>
                                 <br/>

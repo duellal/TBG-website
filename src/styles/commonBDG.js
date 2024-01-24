@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-export const CommonStartDiv = styled.div`
-    padding: 2.5% 10% 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-`
-
-export const CommonInfoSection = styled.div`
-    text-align: center;
-    margin: 2% 0;
-`
-
 export const CommonH1 = styled.h1`
 width: 100%;
 text-align: center;
@@ -33,6 +21,21 @@ export const CommonH4 = styled.h4`
 font-size: 2.2rem;
 `
 
+//Start of the Page:
+export const CommonStartDiv = styled.div`
+    padding: 2.5% 10% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+//Information Sections:
+export const CommonInfoSection = styled.div`
+    text-align: center;
+    margin: 2% 0;
+`
+
+//What we value section:
 export const ValuesSection = styled.div`
 display: flex;
 justify-content: space-between;
@@ -71,6 +74,7 @@ export const ValuesLi = styled.li`
 width: 100%;
 `
 
+//Prices Section:
 export const PricesDiv = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -116,4 +120,41 @@ justify-content: flex-end;
 
 export const PricesP = styled.p`
 width: 100%
+`
+
+//Requirements Section:
+export const RequirementSection = styled.div`
+padding: 2.5% 10% 5%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+`
+
+export const RequirementH2 = styled.h2`
+width: 90%;
+margin: 4% 0;
+font-weight: 500;
+`
+
+export const RequirementH3 = styled.h3`
+margin-bottom: 2%;
+`
+
+export const RequirementChecklistSection = styled.div`
+width: 80%;
+`
+
+export const RequireChecklistDivs = styled.div`
+margin: 2% 0 4%;
+`
+
+export const RequirementsList = styled.li`
+text-align: left;
+margin: 0 0 1% 20%;
+list-style: square;
+`
+
+export const RequirementBtn = styled.button`
+margin-top: 2%
 `
