@@ -15,7 +15,6 @@ import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/general-components/requirements';
 import Sitemap from './pages/sitemap';
-import TeamCareers from './pages/about/team-careers';
 
 const router = createBrowserRouter([
     {
@@ -25,7 +24,6 @@ const router = createBrowserRouter([
         children: [
             {path: '', element: <Home />},
             {path: 'about', element: <About />},
-            {path:'about/team', element: <TeamCareers />},
             {path: 'credits', element: <Credits />},
             {path: 'boarding', element: <Boarding />},
             {path: 'daycare', element: <Daycare />},
