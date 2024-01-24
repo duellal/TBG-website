@@ -74,7 +74,7 @@ export default function Daycare(){
                     </PricesTop>
                 </PricesDiv>
 
-                <Requirements/>
+                <Requirements daycare/>
             </CommonStartDiv>
         </>
     )
