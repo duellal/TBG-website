@@ -12,9 +12,6 @@ import manager from '../images/about/manager.jpeg';
 import team from '../images/about/team.jpeg';
 
 export default function About(){
-//This will have an about page for the history, owner, + facility
-
-//client testimonials from google reviews
     return (
         <div id="about">
             <h1>
