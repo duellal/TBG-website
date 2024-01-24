@@ -38,7 +38,7 @@ export const CommonInfoSection = styled.div`
 //What we value section:
 export const ValuesSection = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: space-evenly;
 align-items: center;
 width: 100%;
 `
@@ -50,7 +50,7 @@ width: 50%;
 `
 
 export const ValuesImg = styled.img`
-    min-width: 100%;
+    min-width: 70%;
     max-height: 300px;
 `
 
