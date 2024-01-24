@@ -79,7 +79,7 @@ export const PricesDiv = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 80%;
-padding-top: 12%;
+padding: 12% 0;
 `
 
 export const PricesTop = styled.div`

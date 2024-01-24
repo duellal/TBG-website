@@ -1,7 +1,4 @@
 /* 
-    ALL pages have an expanded different photo - same like header below the nav bar
-        Make long text boxes shorter (less width)
-
     Move to bottom of boarding/daycare/grooming pages
 */
 

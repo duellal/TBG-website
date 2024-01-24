@@ -17,6 +17,7 @@ import { ValuesImg, ValuesImgSection, ValuesItems, ValuesSection, ValuesText, Va
 
 //Components: 
 import Banner from "./general-components/banner-pic";
+import Requirements from "./general-components/requirements";
 
 //Images:
 import bigsBoarding from '../images/boarding/bigs-boarding.jpeg';
@@ -98,7 +99,7 @@ export default function Boarding(){
                     </PricesTop>
                 </PricesDiv>
 
-
+                <Requirements/>
 
                 <PricesDiv>
                     <CommonH2>
