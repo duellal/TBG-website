@@ -19,6 +19,8 @@
             - Liability waiver: take out pets on
             - Emergency Contact: Take out initials
             - Required info: (Required) in red italics (digital only)
+    
+        LEAVE THESE TWO COMMENTS TO ASK BAY LATER ABOUT:
         ** See if I can link form information to TBG Gingr's client form
         ** Possibly just forward clients to the client portal to create an account + do forms there
 */
