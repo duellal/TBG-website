@@ -49,11 +49,11 @@ export const boardingImages = [
 
 export const daycareImages = [
     {
-        image: daycareBanner1,
+        image: daycareBanner4,
         alt: ''
     },
     {
-        image: daycareBanner2,
+        image: daycareBanner1,
         alt: ''
     },
     {
@@ -61,7 +61,7 @@ export const daycareImages = [
         alt: ''
     },
     {
-        image: daycareBanner4,
+        image: daycareBanner2,
         alt: ''
     },
     {
