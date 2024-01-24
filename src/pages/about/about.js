@@ -10,11 +10,10 @@ import TeamCareers from "./team-careers";
 
 //Images:
 import stockFacility from '../../images/facility/facility-img.jpeg'
-import { CommonH1, CommonH2, CommonInfoSection, CommonStartDiv } from "../../styles/commonBDG";
-import { AboutImg } from "../../styles/about";
 
 //Styles:
-import "../../styles/about.css"
+import { CommonH1, CommonH2, CommonInfoSection, CommonStartDiv } from "../../styles/commonBDG";
+import { AboutImg } from "../../styles/about";
 
 export default function About(){
     return (
