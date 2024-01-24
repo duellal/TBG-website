@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { RequireChecklistDivs, RequirementBtn, RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList } from "../../styles/commonBDG";
 
 export default function Requirements(props){
-    let { daycare, grooming } = props;
+    let { daycare } = props;
     let navigate = useNavigate();
 
     if(daycare){
