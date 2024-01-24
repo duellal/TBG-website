@@ -43,24 +43,14 @@ align-items: center;
 width: 100%;
 `
 
-export const  ValuesImgSection = styled.div`
-display: flex;
-flex-wrap: wrap;
-width: 50%;
-`
-
-export const ValuesImg = styled.img`
-    min-width: 70%;
-    max-height: 300px;
-`
-
 export const ValuesText = styled.div`
 display: flex;
 justify-content: center;
 width: 40%;
-height: 25%;
 align-items: center;
 flex-wrap: wrap;
+// border: 1px solid black;
+margin-top: 25px;
 `
 export const ValuesP = styled.p`
 width: 100%;
@@ -93,7 +83,7 @@ justify-content: space-between;
 `
 
 export const PricesImg = styled.img`
-min-width: 300px;
+    min-width: 300px;
     max-width: 300px;
     height: 300px;
 `
@@ -124,7 +114,6 @@ width: 100%
 
 //Requirements Section:
 export const RequirementSection = styled.div`
-padding: 2.5% 10% 5%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

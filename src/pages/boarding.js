@@ -3,7 +3,7 @@ import React from "react";
 
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesImg, ValuesImgSection, ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonH3, CommonStartDiv, CommonInfoSection, PricesDiv, PricesTop, PricesBottom, PricesImg, PricesTextRight, PricesTextLR, PricesTextSection, CommonH4, PricesP } from "../styles/commonBDG";
+import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonH3, CommonStartDiv, CommonInfoSection, PricesDiv, PricesTop, PricesBottom, PricesImg, PricesTextRight, PricesTextLR, PricesTextSection, CommonH4, PricesP } from "../styles/commonBDG";
 
 //Components: 
 import Banner from "./general-components/banner-pic";
@@ -14,9 +14,6 @@ import bigsBoarding from '../images/boarding/bigs-boarding.jpeg';
 import littlesBoarding from '../images/boarding/littles-boarding.jpeg'
 import pocketPets from '../images/boarding/pocket-pets.jpeg'
 import catBoarding from '../images/boarding/cat-boarding.jpeg'
-import genBoarding1 from '../images/boarding/gen-boarding-1.jpeg'
-import genBoarding2 from '../images/boarding/gen-boarding-2.jpeg'
-import genBoarding3 from '../images/boarding/gen-boarding-3.jpeg'
 
 // Variables:
 import { boardingValues } from "../constants/values";
@@ -46,12 +43,6 @@ export default function Boarding(){
                 </CommonInfoSection>
 
                 <ValuesSection>
-                    <ValuesImgSection className="images">
-                        <ValuesImg src={genBoarding1} alt="" />
-                        <ValuesImg src={genBoarding2} alt="" />
-                        <ValuesImg src={genBoarding3} alt="" />
-                    </ValuesImgSection>
-
                     <ValuesText>
                         <ValuesP> 
                             No matter what, we believe that all dogs should be treated equally. 
