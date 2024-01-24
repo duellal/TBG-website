@@ -1,8 +1,3 @@
-/* 
-ALL pages have an expanded different photo - same like header below the nav bar
-    Make long text boxes shorter (less width)
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -22,20 +17,20 @@ import {
 export default function Sitemap(){
     let navigate = useNavigate();
 
-    const scrollToElem = (section) => {
-        let elem = document.getElementById(section)
-        elem.scrollIntoView()
-    }
+    // const scrollToElem = (section) => {
+    //     let elem = document.getElementById(section)
+    //     elem.scrollIntoView()
+    // }
 
     let url = async (urlOption) => {
-        if(urlOption.includes(`#`)){
-            let id = urlOption.split(`#`)[1];
-            await navigate(urlOption)
-            return scrollToElem(id)
-        }
-        else{
+        // if(urlOption.includes(`#`)){
+        //     let id = urlOption.split(`#`)[1];
+        //     await navigate(urlOption)
+        //     return scrollToElem(id)
+        // }
+        // else{
             navigate(urlOption)
-        } 
+        // } 
     }
 
     return(

@@ -24,10 +24,10 @@ export default function Header() {
     let location = useLocation();
     let path = location.pathname;
 
-    const scrollToElem = (section) => {
-        let elem = document.getElementById(section)
-        elem.scrollIntoView({ behavior: 'smooth' })
-    }
+    // const scrollToElem = (section) => {
+    //     let elem = document.getElementById(section)
+    //     elem.scrollIntoView({ behavior: 'smooth' })
+    // }
 
     let url = async (urlOption) => {
         setOpen(false)
@@ -35,38 +35,21 @@ export default function Header() {
         let splitUrlHash = urlOption.split(`#`)
 
         if (urlOption === `home`) {
-            if (path === '/') {
-                return scrollToElem(urlOption)
-            }
-            else {
+            // if (path === '/') {
+            //     return scrollToElem(urlOption)
+            // }
+            // else {
                 return navigate('/')
-            }
+            // }
         }
-        else if (urlOption.includes(`#`)) {
-            let id = splitUrlHash[1];
-            await navigate(urlOption)
-            return scrollToElem(id)
-        }
-        else if (urlOption.includes('team')) {
-            let teamId = `teamCareers`
-            let prevLocation = window.location.href
-
-            if (prevLocation.includes(`#`)) {
-                await navigate(urlOption)
-                return scrollToElem(teamId)
-            }
-            else {
-                navigate(`about/team`)
-            }
-        }
-        else if (path === urlOption) {
-            let elem = urlOption.split(`/`)[1]
-            let getId = document.getElementById(elem)
-            return getId.scrollIntoView({ behavior: 'smooth' })
-        }
-        else {
+        // else if (path === urlOption) {
+        //     let elem = urlOption.split(`/`)[1]
+        //     let getId = document.getElementById(elem)
+        //     return getId.scrollIntoView({ behavior: 'smooth' })
+        // }
+        // else {
             navigate(urlOption)
-        }
+        // }
     }
 
     return (
