@@ -29,6 +29,7 @@ import littlesDaycare2 from '../images/daycare/littlesDaycare3.jpeg'
 //Variables:
 import { daycareValues } from "../constants/values";
 import { daycareImages } from "../constants/banner-pics";
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesTop, ValuesImg, ValuesImgSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
 
 export default function Daycare(){
     let listValues = daycareValues.map((statement) => {
@@ -38,63 +39,63 @@ export default function Daycare(){
     return(
         <>
             <Banner allImages={daycareImages} />
-            <div id='daycare'>
-                <h1> 
+            <CommonStartDiv>
+                <CommonH1> 
                     Daycare At Our Facility
-                </h1>
+                </CommonH1>
 
-                <div id="info">
+                <CommonInfoSection>
                     <p>
                         Wheat in pig. Peacocks baa ostriches owls. Apples ducks straw, quail a ostriches donkey, hay hook cucumbers. In the straw rain barrels. Cauliflower a seeds quail. Haybine carrots soybeans, owls duck raising or, cheep in plows. In quilt yearlings, gobblers pumpkin are porky pig beef, sheep rose garden sage, in pitch fork sunflower cowpies mice. Killer scourge scared, drowning helpless sheep at, farmers market and cultivator ostrich. Ewes fox, hay hook hay manure, John.
                     </p>
-                </div>
+                </CommonInfoSection>
 
-                <div id="values">
-                    <div className="images">
-                        <img src={genDaycare1} alt="" />
-                        <img src={genDaycare2} alt="" />
-                        <img src={genDaycare3} alt="" />
-                    </div>
+                <ValuesSection>
+                    <ValuesImgSection>
+                        <ValuesImg src={genDaycare1} alt="" />
+                        <ValuesImg src={genDaycare2} alt="" />
+                        <ValuesImg src={genDaycare3} alt="" />
+                    </ValuesImgSection>
 
-                    <div className="value-text">
-                        <p> 
+                    <ValuesText>
+                        <ValuesP> 
                             No matter what, we believe that all dogs should be treated equally. 
-                        </p>
+                        </ValuesP>
                         <br/>
-                        <p>
+                        <ValuesP>
                             All dogs will receive:
-                        </p>
-                        <div className="list-items">
+                        </ValuesP>
+                        <ValuesItems>
                             {listValues}
-                        </div>
-                    </div>                  
-                </div>
+                        </ValuesItems>
+                    </ValuesText>                  
+                </ValuesSection>
 
-                <div id="prices">
-                    <h2>
+                <PricesDiv>
+                    <CommonH2>
                         Our Daycare Prices
-                    </h2>
-                    <div id="top">
-                        <img src={bigsDaycare1} alt='' className="pic left"/>
-                        <div className="text">
-                            <h3>Daily Daycare Rate</h3>
-                            <div className="left">
-                                <h4>Full Day</h4>
+                    </CommonH2>
+                    <PricesTop>
+                        <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
+                        <PricesTextSection>
+                            <CommonH3>Daily Daycare Rate</CommonH3>
+                            <PricesTextLR>
+                                <CommonH4>Full Day</CommonH4>
                                 <br/>
-                                <p>$28 per Visit</p>
-                            </div>
-                            <div className="right">
-                                <h4>Half Day</h4>
+                                <PricesP>$28 per Visit</PricesP>
+                            </PricesTextLR>
+                            <PricesTextRight>
+                                <CommonH4>Half Day</CommonH4>
                                 <br/>
-                                <p>$18 per Visit</p>
-                            </div>
-                        </div>
-                        <img src={littlesDaycare1} alt='' className="pic right"/>
-                    </div>
-                </div>
+                                <PricesP>$18 per Visit</PricesP>
+                            </PricesTextRight>
+                        </PricesTextSection>
+                        <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
+                    </PricesTop>
+                </PricesDiv>
 
                 <Requirements/>
-            </div>
+            </CommonStartDiv>
         </>
     )
 }
