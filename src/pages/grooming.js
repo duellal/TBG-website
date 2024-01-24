@@ -6,7 +6,7 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
-import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesTextRight, PricesTextSection, PricesTop, PricesTextLR } from "../styles/commonBDG";
+import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesTop, PricesTextLR } from "../styles/commonBDG";
 
 //Images:
 import grooming1 from '../images/grooming/grooming-1.jpeg';

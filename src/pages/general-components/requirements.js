@@ -11,50 +11,9 @@ import { useNavigate } from "react-router-dom";
 import { RequireChecklistDivs, RequirementBtn, RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList } from "../../styles/commonBDG";
 
 export default function Requirements(props){
-    let { daycare } = props;
+    let { daycare, grooming } = props;
     let navigate = useNavigate();
 
-    if(grooming){
-        return(
-            <RequirementSection>
-                <h1> Our Facility Requirements </h1>
-    
-                <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
-    
-                <RequirementChecklistSection>
-                    <RequirementH3> Vaccinations for Your Dog </RequirementH3>
-                    <RequireChecklistDivs>
-                        <p>
-                            Before we can invite your pet into our facility, we do require all pets to be safe and vaccinated. We do need a copy on file of all up to date vaccinations. Make sure to email us or bring in a copy with you. Make sure that your pet is up to date on:
-                                <RequireChecklistDivs>
-                                    <RequirementsList>
-                                        Bordetella
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Distemper (DAPP)
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Rabies
-                                    </RequirementsList>
-                                </RequireChecklistDivs>
-                        </p>
-                    </RequireChecklistDivs>
-    
-                    <RequirementH3> Intake Form </RequirementH3>
-                        <RequireChecklistDivs>
-                            <p> 
-                                Before your first visit, we do require all pet owners to have an Intake Form on file. 
-                            </p>
-                            <br/>
-                            <p>
-                                Please click the button below to fill out the form or head over to the Forms page. 
-                            </p>
-                            <RequirementBtn onClick={() => navigate('/forms')}> Intake Form </RequirementBtn>
-                        </RequireChecklistDivs>
-                    </RequirementChecklistSection>
-                </RequirementSection>
-    )}
-    
     if(daycare){
         return(
             <RequirementSection>
@@ -107,6 +66,47 @@ export default function Requirements(props){
             </RequirementSection>
         )
     }
+    else if(grooming){
+        return(
+            <RequirementSection>
+                <h1> Our Facility Requirements </h1>
+    
+                <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
+    
+                <RequirementChecklistSection>
+                    <RequirementH3> Vaccinations for Your Dog </RequirementH3>
+                    <RequireChecklistDivs>
+                        <p>
+                            Before we can invite your pet into our facility, we do require all pets to be safe and vaccinated. We do need a copy on file of all up to date vaccinations. Make sure to email us or bring in a copy with you. Make sure that your pet is up to date on:
+                                <RequireChecklistDivs>
+                                    <RequirementsList>
+                                        Bordetella
+                                    </RequirementsList>
+                                    <RequirementsList>
+                                        Distemper (DAPP)
+                                    </RequirementsList>
+                                    <RequirementsList>
+                                        Rabies
+                                    </RequirementsList>
+                                </RequireChecklistDivs>
+                        </p>
+                    </RequireChecklistDivs>
+    
+                    <RequirementH3> Intake Form </RequirementH3>
+                        <RequireChecklistDivs>
+                            <p> 
+                                Before your first visit, we do require all pet owners to have an Intake Form on file. 
+                            </p>
+                            <br/>
+                            <p>
+                                Please click the button below to fill out the form or head over to the Forms page. 
+                            </p>
+                            <RequirementBtn onClick={() => navigate('/forms')}> Intake Form </RequirementBtn>
+                        </RequireChecklistDivs>
+                    </RequirementChecklistSection>
+                </RequirementSection>
+    )}
+    
     return(
         <RequirementSection>
             <h1> Our Facility Requirements </h1>

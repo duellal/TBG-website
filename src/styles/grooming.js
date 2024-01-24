@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ValuesImg, PricesDiv } from "./commonBDG";
+import { PricesDiv } from "./commonBDG";
 
-export const GroomingImg = styled(ValuesImg)`
+export const GroomingImg = styled.img`
     aspect-ratio: 1;
     max-height: 478px;
     min-width: 500px;
