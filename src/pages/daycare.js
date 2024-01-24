@@ -1,35 +1,24 @@
-/* 
-    ALL pages have an expanded different photo - same like header below the nav bar
-        Make long text boxes shorter (less width)
-
-    Have all info on one page (no nav items)
-
-    No checkin/out boxes/area - take out
-*/
-
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 
 //Components:
 import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
-import '../styles/daycare.css';
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesTop, ValuesImg, ValuesImgSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
 
 //Images: 
 import genDaycare1 from '../images/daycare/bigs-daycare.jpeg'
 import genDaycare2 from '../images/daycare/littles-daycare.jpeg'
 import genDaycare3 from '../images/daycare/bigs-daycare-2.jpeg'
 import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
-import bigsDaycare2 from '../images/daycare/bigsDaycare4.jpeg'
 import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
-import littlesDaycare2 from '../images/daycare/littlesDaycare3.jpeg'
 
 //Variables:
 import { daycareValues } from "../constants/values";
 import { daycareImages } from "../constants/banner-pics";
-import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesTop, ValuesImg, ValuesImgSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
+
 
 export default function Daycare(){
     let listValues = daycareValues.map((statement) => {
