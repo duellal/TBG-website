@@ -1,7 +1,3 @@
-/*
-    Move to about page
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 

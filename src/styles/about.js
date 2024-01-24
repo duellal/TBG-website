@@ -6,7 +6,5 @@ height: 400px;
 margin-top: 5%;
 `
 
-export const AboutImgDiv = styled.div`
-width: 100%;
-`
+//Teams/Careers:
 
