@@ -1,13 +1,3 @@
-/* 
-    At the very very bottom:
-        - Title: Cat + Pocket Pet Boarding
-        - Sub Title: Limited Availability
-        - move pocket pet + cat boarding prices
-
-    Have all info on one page (no nav items)
-*/
-
-
 /* eslint-disable react/prop-types */
 import React from "react";
 
