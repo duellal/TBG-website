@@ -15,7 +15,7 @@ import grooming3 from '../images/grooming/grooming-3.jpeg';
 
 //Variables:
 import { groomingImages } from "../constants/banner-pics";
-import { GroomingImg } from "../styles/grooming";
+import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
 
 export default function Grooming(){
     return(
@@ -33,7 +33,7 @@ export default function Grooming(){
                     <GroomingImg src={grooming3} alt="" className="pic" />            
                     </CommonInfoSection>
 
-                <PricesDiv>
+                <GroomingPricesDiv>
                     <CommonH2>
                         Our Grooming Prices
                     </CommonH2>
@@ -53,7 +53,7 @@ export default function Grooming(){
                         </PricesTextSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/>
                     </PricesTop>
-                </PricesDiv>
+                </GroomingPricesDiv>
 
                 <Requirements grooming='grooming'/>
             </CommonStartDiv>
