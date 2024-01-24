@@ -1,6 +1,6 @@
 import React from "react"
 
-//I ntake Form - Owner Styles:
+//Intake Form - Owner Styles:
 import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/intake-form'
 
 //Child Component:

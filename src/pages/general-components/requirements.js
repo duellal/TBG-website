@@ -1,13 +1,8 @@
-/* 
-    Move to bottom of boarding/daycare/grooming pages
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //Requirements Styles:
-// import '../../styles/requirements.css';
 import { RequireChecklistDivs, RequirementBtn, RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList } from "../../styles/commonBDG";
 
 export default function Requirements(props){

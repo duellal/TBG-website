@@ -1,6 +1,6 @@
 import React from "react"
 
-//I ntake Form - Owner Styles:
+//Intake Form - Owner Styles:
 import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/intake-form'
 import { FlexColDiv, Input } from "../../../styles/contact";
 

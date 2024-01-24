@@ -23,16 +23,16 @@ font-size: 2.2rem;
 
 //Start of the Page:
 export const CommonStartDiv = styled.div`
-    padding: 2.5% 10% 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+padding: 2.5% 10% 5%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 `
 
 //Information Sections:
 export const CommonInfoSection = styled.div`
-    text-align: center;
-    margin: 2% 0;
+text-align: center;
+margin: 2% 0;
 `
 
 //What we value section:
@@ -49,7 +49,6 @@ justify-content: center;
 width: 40%;
 align-items: center;
 flex-wrap: wrap;
-// border: 1px solid black;
 margin-top: 25px;
 `
 export const ValuesP = styled.p`
@@ -57,7 +56,7 @@ width: 100%;
 `
 
 export const ValuesItems = styled.div`
-    font-size: 1.5rem;
+font-size: 1.5rem;
 `
 
 export const ValuesLi = styled.li`
@@ -83,9 +82,9 @@ justify-content: space-between;
 `
 
 export const PricesImg = styled.img`
-    min-width: 300px;
-    max-width: 300px;
-    height: 300px;
+min-width: 300px;    
+max-width: 300px;
+height: 300px;
 `
 
 export const PricesTextSection = styled.div`
@@ -105,7 +104,7 @@ height: 60px;
 
 export const PricesTextRight = styled(PricesTextLR)`
 justify-content: flex-end;
-    text-align: end;
+text-align: end;
 `
 
 export const PricesP = styled.p`

@@ -19,7 +19,6 @@ export const AllFaqs = styled.div`
 export const FaqTitleDiv = styled.div`
     width: 100%;
     background-color: ${bright_red};
-    // margin: 3% 0;
 `
 
 export const FaqTitleH2 = styled.h2`
