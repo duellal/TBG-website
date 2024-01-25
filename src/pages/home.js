@@ -1,6 +1,4 @@
 /* 
-    Make long text boxes shorter (less width)
-
     3 boxes closer together
         cute icon for the boxes
         labeled for boarding, grooming, daycare
@@ -17,8 +15,13 @@ import Banner from './general-components/banner-pic'
 
 // Home Styles:
 import "../styles/home.css"
+import { CommonInfoSection, CommonStartDiv } from '../styles/commonBDG'
+import {} from '../styles/home'
 
-// Images:
+
+// Icons:
+import { faCarSide, faDog, faBone, faPaw, faSchoolFlag, faScissors, faShieldDog, faShop, faShower} from '@fortawesome/free-solid-svg-icons'
+
 
 
 //Variables
@@ -28,24 +31,26 @@ import { homeImages } from "../constants/banner-pics";
 export default function Home(){
     let navigate = useNavigate();
 
+
+
     return (
         <>
             <Banner allImages={homeImages}/>
-            <div id="home">
-                <div className="info">
-                    <div className="boarding">
+            <CommonStartDiv>
+                <CommonInfoSection>
+                    <div id="boarding">
                         <h2> Boarding </h2>
                     </div>
 
-                    <div className="daycare">
+                    <div id="daycare">
                         <h2> Daycare </h2>
                     </div>
 
-                    <div className="grooming">
+                    <div id="grooming">
                         <h2> Grooming </h2>
                     </div>
-                </div>
-            </div>
+                </CommonInfoSection>
+            </CommonStartDiv>
         </>
     )
 }
