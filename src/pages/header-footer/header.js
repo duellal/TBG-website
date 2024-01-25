@@ -24,32 +24,17 @@ export default function Header() {
     let location = useLocation();
     let path = location.pathname;
 
-    // const scrollToElem = (section) => {
-    //     let elem = document.getElementById(section)
-    //     elem.scrollIntoView({ behavior: 'smooth' })
-    // }
-
     let url = async (urlOption) => {
         setOpen(false)
 
-        let splitUrlHash = urlOption.split(`#`)
-
-        if (urlOption === `home`) {
-            // if (path === '/') {
-            //     return scrollToElem(urlOption)
-            // }
-            // else {
-                return navigate('/')
-            // }
+        if(urlOption === path){
+            return window.scrollTo({top: 0,
+                left: 0,
+                behavior: "smooth"})
         }
-        // else if (path === urlOption) {
-        //     let elem = urlOption.split(`/`)[1]
-        //     let getId = document.getElementById(elem)
-        //     return getId.scrollIntoView({ behavior: 'smooth' })
-        // }
-        // else {
-            navigate(urlOption)
-        // }
+        else{
+            return navigate(urlOption)
+        }
     }
 
     return (

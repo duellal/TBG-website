@@ -30,6 +30,7 @@ import stockBoard from '../images/stock-littlebit.jpeg'
 //Variables
 import { homeImages } from "../constants/banner-pics";
 
+
 export default function Home(){
     let navigate = useNavigate();
 
