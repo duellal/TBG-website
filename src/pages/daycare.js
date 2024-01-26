@@ -14,7 +14,7 @@ import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
 import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
 
 //Variables:
-import { daycareValues } from "../constants/values";
+import { daycareValues } from "../constants/board-daycare-values";
 import { daycareImages } from "../constants/banner-pics";
 
 

@@ -12,17 +12,12 @@ import { useNavigate } from "react-router";
 
 // Components:
 import Banner from './general-components/banner-pic'
+import InfoButton from "./general-components/info-button";
 
 // Home Styles:
 import "../styles/home.css"
 import { CommonInfoSection, CommonStartDiv } from '../styles/commonBDG'
 import {} from '../styles/home'
-
-
-// Icons:
-import { faCarSide, faDog, faBone, faPaw, faSchoolFlag, faScissors, faShieldDog, faShop, faShower} from '@fortawesome/free-solid-svg-icons'
-
-
 
 //Variables
 import { homeImages } from "../constants/banner-pics";
@@ -37,7 +32,8 @@ export default function Home(){
         <>
             <Banner allImages={homeImages}/>
             <CommonStartDiv>
-                <CommonInfoSection>
+                <InfoButton/>
+                {/* <CommonInfoSection>
                     <div id="boarding">
                         <h2> Boarding </h2>
                     </div>
@@ -49,7 +45,7 @@ export default function Home(){
                     <div id="grooming">
                         <h2> Grooming </h2>
                     </div>
-                </CommonInfoSection>
+                </CommonInfoSection> */}
             </CommonStartDiv>
         </>
     )
