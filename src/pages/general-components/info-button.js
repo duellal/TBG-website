@@ -12,15 +12,35 @@ export default function InfoButton(){
     let [hover, setHover] = useState(false);
     let navigate = useNavigate();
 
-    let Buttons = (props) => {
+    let Button = (props) => {
         return home_btns.map((elem) => {
-            const { title, icon, info } = elem
+            const { title, icon } = elem
             return (
-                <IndvInfoBtn onClick={() => navigate(`/${title}`)}>
+                <IndvInfoBtn 
+                    onClick={() => navigate(`/${title}`)}
+                    onMouseOver={() => setHover(!hover)}
+                >
                     <InsideBtnDiv key={title} id={title}>
                         <BtnTitle>{title}</BtnTitle>
                         <BtnIcon>{icon}</BtnIcon>
-                        {/* <BtnInfo>{info}</BtnInfo> */}
+                    </InsideBtnDiv>
+                </IndvInfoBtn>
+            )
+        })
+    }
+
+    let ShowAll = (props) => {
+        return home_btns.map((elem) => {
+            const { title, icon, info } = elem
+            return (
+                <IndvInfoBtn 
+                    onClick={() => navigate(`/${title}`)}
+                    onMouseLeave={() => setHover(!hover)}    
+                >
+                    <InsideBtnDiv key={title} id={title}>
+                        <BtnTitle>{title}</BtnTitle>
+                        <BtnIcon>{icon}</BtnIcon>
+                        <BtnInfo>{info}</BtnInfo>
                     </InsideBtnDiv>
                 </IndvInfoBtn>
             )
@@ -29,7 +49,9 @@ export default function InfoButton(){
 
     return (
         <InfoBtnDiv>
-            <Buttons onHover={hover}/>
+            {
+                hover ? <Button /> : <ShowAll />
+            }
         </InfoBtnDiv>
     )
 }
