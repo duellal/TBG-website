@@ -14,7 +14,8 @@ align-items: center;
 height: 20rem;
 width: 30rem;
 background-color: ${bright_red};
-// border: 1px solid orange;
+cursor: pointer;
+border: 1px solid ${bright_red};
 `
 
 export const InsideBtnDiv = styled.div`
@@ -23,7 +24,37 @@ justify-content: center;
 flex-wrap: wrap;
 margin: 10px;
 width: 100%;
+transition: all ease-in-out;
 // border: 1px solid lime;
+
+@keyframes slidein {
+    from {
+      transform: translateY(25%);
+    //   transition: ease-in-out;
+    }
+  
+    to {
+      transform: translateY(0%);
+    //   transition: ease-in-out;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateY(25%);
+    //   transition: ease-in-out;
+    }
+  
+    to {
+      transform: translateY(0%);
+    //   transition: ease-in-out;
+    }
+  }
+
+${IndvInfoBtn}:hover & {
+animation-name: slidein;
+animation-duration: 1s;
+}
 `
 
 export const BtnTitle = styled.h1`

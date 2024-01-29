@@ -12,7 +12,7 @@ import { useNavigate } from "react-router";
 
 // Components:
 import Banner from './general-components/banner-pic'
-import InfoButton from "./general-components/info-button";
+import InfoButton from "./general-components/info-buttons.js/info-button";
 
 // Home Styles:
 import "../styles/home.css"
