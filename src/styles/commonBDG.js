@@ -42,7 +42,7 @@ justify-content: space-evenly;
 align-items: center;
 text-align: left;
 width: 100%;
-margin-top: 40px;
+margin-top: 15px;
 `
 
 export const ValuesText = styled.div`
