@@ -28,7 +28,7 @@ export default function Grooming(){
 
                 <CommonInfoSection>
                     <p>
-                        Quilt yearlings, gobblers pumpkin are porky pig beef, sheep rose garden sage, in pitch fork sunflower cowpies mice. Oranges cucumbers rhubarb gourds watermelon. Oranges cucumbers rhubarb gourds watermelon. Feed in a woof, a farmers market. Peacocks ba.
+                    Let us make your pet look and smell their best with a refreshing bath and fluff dry.  This service can be provided at the end of their boarding stay, during their daycare day or as a stand alone appointment.
                     </p>
                     <GroomingImg src={grooming3} alt="" className="pic" />            
                 </CommonInfoSection>
