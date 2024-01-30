@@ -134,13 +134,14 @@ margin-top: 100px;
 
 export const RequirementH2 = styled.h2`
 width: 50%;
-margin: 20px 0;
+margin-top: 20px;
 font-weight: 500;
 font-size: 2.5rem;
 `
 
 export const RequirementH3 = styled.h3`
-margin-bottom: 2%;
+// margin-top: 2%;
+margin: 40px 0 20px;
 `
 
 export const RequirementChecklistSection = styled.div`
@@ -149,12 +150,16 @@ margin-top: 20px;
 `
 
 export const RequireChecklistDivs = styled.div`
-margin: 2% 0 4%;
+margin: 15px 0;
+`
+
+export const RequirementsP = styled.p`
+margin: 20px 0;
 `
 
 export const RequirementsList = styled.li`
 text-align: left;
-margin: 0 0 1% 20%;
+margin: 0 0 1% 24%;
 list-style: square;
 `
 

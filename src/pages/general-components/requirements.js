@@ -3,131 +3,81 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //Requirements Styles:
-import { RequireChecklistDivs, RequirementBtn, RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList } from "../../styles/commonBDG";
+import { RequireChecklistDivs, RequirementBtn, RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList, RequirementsP } from "../../styles/commonBDG";
+import { CommonH4 } from "../../styles/commonBDG";
 
 export default function Requirements(props){
-    let { daycare, grooming } = props;
+    let { boarding, daycare, grooming } = props;
     let navigate = useNavigate();
 
-    if(daycare){
-        return(
-            <RequirementSection>
-                <h1> Our Facility Requirements </h1>
-    
-                <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
-    
-                <RequirementChecklistSection>
-                    <RequirementH3> Vaccinations for Your Dog </RequirementH3>
-                    <RequireChecklistDivs>
-                        <p>
-                            Before we can invite your pet into our facility, we do require all pets to be safe and vaccinated. We do need a copy on file of all up to date vaccinations. Make sure to email us or bring in a copy with you. Make sure that your pet is up to date on:
-                                <RequireChecklistDivs>
-                                    <RequirementsList>
-                                        Bordetella
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Distemper (DAPP)
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Rabies
-                                    </RequirementsList>
-                                </RequireChecklistDivs>
-                        </p>
-                    </RequireChecklistDivs>
-    
-                    <RequirementH3> Intake Form </RequirementH3>
-                        <RequireChecklistDivs>
-                            <p> 
-                                Before your first visit, we do require all pet owners to have an Intake Form on file. 
-                            </p>
-                            <br/>
-                            <p>
-                                Please click the button below to fill out the form or head over to the Forms page. 
-                            </p>
-                            <RequirementBtn onClick={() => navigate('/forms')}> Intake Form </RequirementBtn>
-                        </RequireChecklistDivs>
+    let vaccinationList = () => {
+        if(daycare){
+            return (
+                <RequireChecklistDivs>
+                    <RequirementsList>
+                        Bordetella
+                    </RequirementsList>
+                    <RequirementsList>
+                        Distemper (DAPP)
+                    </RequirementsList>
+                    <RequirementsList>
+                        Rabies
+                    </RequirementsList>
+                </RequireChecklistDivs>
+            )
+        }
 
-                    <RequirementH3> Other Belongings </RequirementH3>
-                    <div className="belongings">
-                        <p>
-                            We have bowls and toys for all the pets that play with us. All your pet's belongings can stay at home!
-                        </p>
-                        <br/>
-                        <p> 
-                            If you still want to bring any belongings for your pet, please call us at (919) 355 - 2820. 
-                        </p>
-                    </div>
-                </RequirementChecklistSection>
-            </RequirementSection>
+        return (
+            <RequireChecklistDivs>
+                <CommonH4 style={{textAlign: 'left', width: '80%', margin: '2% 0 1% 20%'}}>
+                    Dogs:
+                </CommonH4>
+
+                <RequirementsList>
+                    Bordetella
+                </RequirementsList>
+                <RequirementsList>
+                    Distemper (DAPP)
+                </RequirementsList>
+                <RequirementsList>
+                    Rabies
+                </RequirementsList>
+
+                <CommonH4 style={{textAlign: 'left', width: '80%', margin: '2% 0 1% 20%'}}>
+                    Cats:
+                </CommonH4>
+
+                <RequirementsList>
+                    FVRCP
+                </RequirementsList>
+                <RequirementsList>
+                    Rabies
+                </RequirementsList>
+
+                <RequirementsP>
+                    All dogs and cats over the age of 16 weeks must have current records on file.
+                </RequirementsP>
+            </RequireChecklistDivs>
         )
     }
-    else if(grooming){
-        return(
-            <RequirementSection>
-                <h1> Our Facility Requirements </h1>
-    
-                <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
-    
-                <RequirementChecklistSection>
-                    <RequirementH3> Vaccinations for Your Dog </RequirementH3>
-                    <RequireChecklistDivs>
-                        <p>
-                            Before we can invite your pet into our facility, we do require all pets to be safe and vaccinated. We do need a copy on file of all up to date vaccinations. Make sure to email us or bring in a copy with you. Make sure that your pet is up to date on:
-                                <RequireChecklistDivs>
-                                    <RequirementsList>
-                                        Bordetella
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Distemper (DAPP)
-                                    </RequirementsList>
-                                    <RequirementsList>
-                                        Rabies
-                                    </RequirementsList>
-                                </RequireChecklistDivs>
-                        </p>
-                    </RequireChecklistDivs>
-    
-                    <RequirementH3> Intake Form </RequirementH3>
-                        <RequireChecklistDivs>
-                            <p> 
-                                Before your first visit, we do require all pet owners to have an Intake Form on file. 
-                            </p>
-                            <br/>
-                            <p>
-                                Please click the button below to fill out the form or head over to the Forms page. 
-                            </p>
-                            <RequirementBtn onClick={() => navigate('/forms')}> Intake Form </RequirementBtn>
-                        </RequireChecklistDivs>
-                    </RequirementChecklistSection>
-                </RequirementSection>
-    )}
-    
-    return(
+
+    return (
         <RequirementSection>
             <h1> Our Facility Requirements </h1>
 
             <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
 
             <RequirementChecklistSection>
-                <RequirementH3> Vaccinations for Your Dog </RequirementH3>
+                <RequirementH3> Vaccinations for Your Pet </RequirementH3>
                 <RequireChecklistDivs>
                     <p>
                         Before we can invite your pet into our facility, we do require all pets to be safe and vaccinated. We do need a copy on file of all up to date vaccinations. Make sure to email us or bring in a copy with you. Make sure that your pet is up to date on:
-                            <RequireChecklistDivs>
-                                <RequirementsList>
-                                    Bordetella
-                                </RequirementsList>
-                                <RequirementsList>
-                                    Distemper (DAPP)
-                                </RequirementsList>
-                                <RequirementsList>
-                                    Rabies
-                                </RequirementsList>
-                            </RequireChecklistDivs>
+                        
+                        {vaccinationList()}
                     </p>
                 </RequireChecklistDivs>
 
-                <RequirementH3> Intake Form </RequirementH3>
+                {/* <RequirementH3> Intake Form </RequirementH3>
                     <RequireChecklistDivs>
                         <p> 
                             Before your first visit, we do require all pet owners to have an Intake Form on file. 
@@ -137,7 +87,7 @@ export default function Requirements(props){
                             Please click the button below to fill out the form or head over to the Forms page. 
                         </p>
                         <RequirementBtn onClick={() => navigate('/forms')}> Intake Form </RequirementBtn>
-                    </RequireChecklistDivs>
+                    </RequireChecklistDivs> */}
 
                 <RequirementH3> Food </RequirementH3>
                 <RequireChecklistDivs>
