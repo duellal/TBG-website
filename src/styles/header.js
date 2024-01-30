@@ -11,12 +11,12 @@ export const StyledHeader = styled.header`
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
-
+    z-index: 300;
     
     @media ${tablet}{
         justify-content: end;
         height: ${props => props.open ? '200px' : '165px'};
-    }
+    } d
 `
 export const LogoContainer = styled.div`
     width: 135px;

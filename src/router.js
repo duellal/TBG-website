@@ -14,7 +14,6 @@ import Forms from './pages/forms/forms';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/general-components/requirements';
-import Sitemap from './pages/sitemap';
 
 const router = createBrowserRouter([
     {
@@ -31,8 +30,7 @@ const router = createBrowserRouter([
             {path: 'forms', element: <Forms />},
             {path: '/forms/intake', element: <DigitalIntake />},
             {path: 'grooming', element: <Grooming />},
-            {path:'requirements', element: <Requirements />},
-            {path: 'sitemap', element: <Sitemap />}
+            {path:'requirements', element: <Requirements />}
         ]
     }
 ]);

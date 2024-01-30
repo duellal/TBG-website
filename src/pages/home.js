@@ -1,10 +1,6 @@
 /* 
-    ALL pages have an expanded different photo - same like header below the nav bar
     Make long text boxes shorter (less width)
 
-    Make picture long (screen edge to screen edge)
-        Possibly cut in half as well
-        Eventually will be a video or slideshow
     3 boxes closer together
         cute icon for the boxes
         labeled for boarding, grooming, daycare

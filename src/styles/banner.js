@@ -12,8 +12,6 @@ export const BannerImg = styled.img`
     height: 550px;
     object-fit: cover;
     object-position: center;
-    position: relative;
-    z-index: -100;
 `
 
 export const BannerSlider = styled.div`
