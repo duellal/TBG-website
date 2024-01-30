@@ -8,7 +8,7 @@ export const Item = styled.li`
     display: inline-block;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 22.4px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     font-weight: bold;
@@ -19,12 +19,14 @@ export const Item = styled.li`
     }
     
     @media ${tablet}{
+        font-size: 20px;
+
         &:hover{
             transform: none;
         }
     }
     
     @media ${mobileXL}{
-        width: 200px;
+        font-size: 15px;
     }
 `
