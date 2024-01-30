@@ -49,6 +49,14 @@ let boardingFaqs = [
         question: `Is Doggie Daycare included with boarding?`,
         answer: [`Yes! Play time is always included during your pet’s stay at no additional fee.`]
     },
+    {
+        question: `What is your Cancellation Policy for boarding?`,
+        answer: [
+            `NON-HOLIDAY Cancellation Policy - Cancellations made 48 hours or more prior to the reservation are allowed with no penalty.  Any cancellation made within 48 hours of the reservation, including no shows, will be charged the full amount of the reservation.`,
+            `HOLIDAY Cancellation Policy - Cancellations made 7 days or more prior to the reservation are allowed with no penalty.  Any cancellation made within 7 days and before 48 hours of the reservation will be charged 50% of the total reservation.  Any cancellations within 48 hours of the reservation, including no shows, will charged the amount of the total reservation.`,
+            `Holiday dates include: Easter week, Thanksgiving week, Christmas - New Years week, and Memorial Day Weekend - Labor Day Weekend ( this includes the entirety of summer)`
+        ]
+    },
 ]
 
 let daycareFaqs = [
