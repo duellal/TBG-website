@@ -3,13 +3,13 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 
 //Requirements Styles:
-import { PricesP, RequireChecklistDivs, 
+import { RequireChecklistDivs, 
     // RequirementBtn,
-     RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList, RequirementsP, ValuesP } from "../../styles/commonBDG";
+     RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList, RequirementsP } from "../../styles/commonBDG";
 import { CommonH4 } from "../../styles/commonBDG";
 
 export default function Requirements(props){
-    let { boarding, daycare, grooming } = props;
+    let { boarding, daycare } = props;
     // let navigate = useNavigate();
 
     let vaccinationList = () => {
