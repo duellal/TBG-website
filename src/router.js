@@ -14,7 +14,6 @@ import Forms from './pages/forms/forms';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/general-components/requirements';
-import TeamCareers from './pages/about/team-careers';
 
 const router = createBrowserRouter([
     {
