@@ -6,7 +6,7 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
-import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection,PricesDiv, PricesImg, PricesP, PricesTextLeft, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv, PricesImg, PricesP, PricesTextLeft, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
 import { DcPackageDiv, DcPackageP, DcPricesTextSection, } from "../styles/daycare";
 
 //Images: 
@@ -56,12 +56,14 @@ export default function Daycare(){
                     <CommonH2>
                         Our Daycare Prices
                     </CommonH2>
-                    <PricesSection>
+                    <PricesDiv>
                         <HeaderSection>
-                            <CommonH3>Daily Rate</CommonH3>
+                            <CommonH3>
+                                Daily Rate
+                            </CommonH3>
                         </HeaderSection>
                         
-                        <PricesDiv>
+                        <PricesSection>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
                             <DcPricesTextSection>
                                 <PricesTextLeft>
@@ -76,44 +78,64 @@ export default function Daycare(){
                                 </PricesTextRight>
                             </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
-                        </PricesDiv>
-                    </PricesSection>
+                        </PricesSection>
+                    </PricesDiv>
 
-                    <PricesSection>
+                    <PricesDiv>
                         <HeaderSection>
-                            <CommonH3>Daycare Packages</CommonH3>
+                            <CommonH3>
+                                Daycare Packages
+                            </CommonH3>
                             <DcPackageDiv>
-                                <DcPackageP>Full Day Only</DcPackageP>
+                                <DcPackageP>
+                                    Full Day Only
+                                </DcPackageP>
                             </DcPackageDiv>
                         </HeaderSection>
                         
-                        <PricesDiv>
+                        <PricesSection>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
                             <DcPricesTextSection>
                                 <PricesTextLeft>
-                                    <CommonH4>10 Day</CommonH4>
+                                    <CommonH4>
+                                        10 Day
+                                    </CommonH4>
                                     <br/>
-                                    <PricesP>$260</PricesP>
+                                    <PricesP>
+                                        $260
+                                    </PricesP>
                                 </PricesTextLeft>
                                 <PricesTextRight>
-                                    <CommonH4>20 Day</CommonH4>
+                                    <CommonH4>
+                                        20 Day
+                                    </CommonH4>
                                     <br/>
-                                    <PricesP>$480</PricesP>
+                                    <PricesP>
+                                        $480
+                                    </PricesP>
                                 </PricesTextRight>
                                 <PricesTextLeft>
-                                    <CommonH4>30 Day</CommonH4>
+                                    <CommonH4>
+                                        30 Day
+                                    </CommonH4>
                                     <br/>
-                                    <PricesP>$600</PricesP>
+                                    <PricesP>
+                                        $600
+                                    </PricesP>
                                 </PricesTextLeft>
                             </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
-                        </PricesDiv>
+                        </PricesSection>
 
                         <PricesAsteriskDiv>
-                            <PricesAsteriskP className="asterisk">*Packages never expire</PricesAsteriskP>
-                            <PricesAsteriskP className="asterisk">*Packages are non-refundable</PricesAsteriskP>
+                            <PricesAsteriskP className="asterisk">
+                                * Packages never expire
+                            </PricesAsteriskP>
+                            <PricesAsteriskP className="asterisk">
+                                * Packages are non-refundable
+                            </PricesAsteriskP>
                         </PricesAsteriskDiv>
-                    </PricesSection>
+                    </PricesDiv>
                 </PricesDiv>
 
                 <Requirements daycare/>

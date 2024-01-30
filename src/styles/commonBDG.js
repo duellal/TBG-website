@@ -71,17 +71,16 @@ export const PricesDiv = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 100%;
-jusitfy-content: space-between;
 align-items: center;
-// margin: 10px 0;
+justify-content: center;
 `
 
 export const PricesSection = styled.div`
 padding-top: 3%;
 display: inherit;
 flex-wrap: wrap;
-justify-content: space-between;
 align-items: center;
+width: 70%;
 `
 
 export const HeaderSection = styled.div`
@@ -101,7 +100,6 @@ height: 300px;
 export const PricesTextSection = styled.div`
 display: flex;
 flex-wrap: wrap;
-align-items: space-between;
 width: 50%;
 padding: 15px 65px;
 height: 300px;
@@ -153,7 +151,6 @@ font-size: 2.5rem;
 `
 
 export const RequirementH3 = styled.h3`
-// margin-top: 2%;
 margin: 40px 0 20px;
 `
 
@@ -168,6 +165,8 @@ margin: 15px 0;
 
 export const RequirementsP = styled.p`
 margin: 20px 0;
+font-size: 2rem;
+width: 100%;
 `
 
 export const RequirementsList = styled.li`

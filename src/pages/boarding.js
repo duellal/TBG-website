@@ -3,7 +3,7 @@ import React from "react";
 
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
+import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP, HeaderSection } from "../styles/commonBDG";
 
 //Components: 
 import Banner from "./general-components/banner-pic";
@@ -59,9 +59,11 @@ export default function Boarding(){
                 </CommonInfoSection>
 
                 <PricesDiv>
-                    <CommonH2>
-                        Dog Boarding Prices
-                    </CommonH2>
+                    <HeaderSection>
+                        <CommonH2>
+                            Dog Boarding Prices
+                        </CommonH2>
+                    </HeaderSection>
                     <PricesSection>
                         <PricesImg src={bigsBoarding} alt=''/>
                         <PricesTextSection>

@@ -145,11 +145,13 @@ export default function Requirements(props){
         <RequirementSection>
             <h1> Our Facility Requirements </h1>
 
-            <RequirementsP style={{fontSize: '2rem'}}>
+            <RequirementsP>
                 * All animals must be on a leash or in a carrier when entering the building. 
             </RequirementsP>
 
-            <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
+            <RequirementH2> 
+                Make sure you have done everything on the Checklist Below 
+            </RequirementH2>
 
             <RequirementChecklistSection>
                 <RequirementH3> Vaccinations for Your Pet </RequirementH3>
