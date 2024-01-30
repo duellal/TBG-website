@@ -6,7 +6,7 @@ const { tablet, mobileXL } = devices
 export const StyledHeader = styled.header`
     position: sticky;
     top: 0;
-    height: 206.25px;
+    height: 330px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
     
     @media ${tablet}{
         justify-content: end;
-        height: ${props => props.open ? '200px' : '165px'};
+        height: ${props => props.open ? '300px' : '300px'};
     } d
 `
 export const LogoContainer = styled.div`
@@ -27,6 +27,8 @@ export const LogoContainer = styled.div`
 `
 
 export const Logo = styled.img`
+    position: absolute;
+    left: 0;
     display: inherit;
     width: 135px;
 `
@@ -60,7 +62,7 @@ export const MobileNavBar = styled.nav`
         display: block;
         align-self: center;
         position: absolute;
-        top: 40px;
+        top: 50px;
         width: 100%;
         padding: 0;
         margin: 0;
@@ -69,12 +71,13 @@ export const MobileNavBar = styled.nav`
 
 export const MobileNav = styled(Nav)`
     flex-direction: column;
-    align-items: stretch;
+    align-content: stretch;
     padding-left: 50px;
+    height: 200px;
     
     @media ${tablet}{
         position: absolute;
-        left: 74px;
+        left: 75%;
         padding: 0;
      }
     
@@ -85,8 +88,6 @@ export const MobileNav = styled(Nav)`
 `
 
 export const HamburgerDiv = styled.div`
-    position: absolute;
-    left: 0;
     display: none;
     
     @media ${tablet}{

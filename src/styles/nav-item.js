@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
+import { bright_red } from "./constants/colors";
 
 const { mobileXL, tablet } = devices
 
@@ -16,13 +17,12 @@ export const Item = styled.li`
     
     &:hover{
         transform: scale(1.1);
-        color: black;
+        color: ${bright_red};
     }
     
     @media ${tablet}{
         &:hover{
             transform: none;
-            color: black;
         }
     }
     

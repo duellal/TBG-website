@@ -42,6 +42,7 @@ export default function Header() {
             <LogoContainer>
                 <Logo loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
             </LogoContainer>
+
             <Navbar>
                 <Nav>
                     {Object.keys(options).map((key, index) => {
@@ -49,6 +50,7 @@ export default function Header() {
                     })}
                 </Nav>
             </Navbar>
+
             <HamburgerDiv>
                 <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
             </HamburgerDiv>
