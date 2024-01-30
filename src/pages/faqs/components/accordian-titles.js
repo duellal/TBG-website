@@ -7,7 +7,7 @@ export default function AccordianTitle({title, content}){
     const [isActive, setIsActive] = useState(false);
 
     return(
-        <div id="accordian-title">
+        <div>
             <FaqExpand className="title" onClick={() => setIsActive(!isActive)}>
                 <FaqTitleH2> {title} </FaqTitleH2>
                 <FaqTitleH2> {isActive ? '-' : '+'} </FaqTitleH2>

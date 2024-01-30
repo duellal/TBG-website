@@ -14,6 +14,7 @@ export const AllFaqs = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+    width: 100%;
 `
 
 export const FaqTitleDiv = styled.div`
