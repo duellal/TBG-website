@@ -1,25 +1,29 @@
 import styled from "styled-components";
 import { devices } from "./constants/device-size";
 
-const { tablet, mobileXL } = devices
+const { tablet, tabletXL, mobileXL, mobileS, laptopS, laptopXS } = devices
 
 export const StyledHeader = styled.header`
     position: sticky;
     top: 0;
-    height: 165px;
+    height: 330px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
-    z-index: 300;
+    z-index: 500;
     
     @media ${tablet}{
         justify-content: end;
+        height: ${props => props.open ? '250px' : '200px'};
+    }
+
+    @media ${mobileXL}{
         height: ${props => props.open ? '200px' : '165px'};
-    } d
+    }
 `
 export const LogoContainer = styled.div`
-    width: 135px;
+    width: 270px;
     
     @media ${tablet}{
         margin-right: 3%;
@@ -27,18 +31,31 @@ export const LogoContainer = styled.div`
 `
 
 export const Logo = styled.img`
+    position: absolute;
+    left: 0;
     display: inherit;
-    width: 135px;
+    width: 270px;
+    bottom: -125px;
+
+    @media ${tablet}{
+        width: 200px;
+        bottom: -95px;
+    }
+    
+    @media ${mobileXL}{
+        width: 150px;
+        bottom: -70px;
+    }
 `
 
 export const Navbar = styled.nav`
-    width: 80%;
-    margin: 12px;
-    align-self: center;
+    width: 100%;
+    align-self: flex-start;
     background-color: #06aed5;
-    padding: 12px 15px;
-    
-    @media ${tablet}{
+    margin: 100px 20px 100px 0;
+    padding: 12px 0;
+
+    @media ${laptopXS}{
         display: none;
     }
 `
@@ -48,7 +65,7 @@ export const Nav = styled.ul`
     justify-content: space-around;
     align-itmes: center;
     
-    @media ${tablet}{
+    @media ${laptopS}{
         margin-bottom: 100px;
     }
 `
@@ -56,40 +73,61 @@ export const Nav = styled.ul`
 export const MobileNavBar = styled.nav`
     display: none;
     
-    @media ${tablet}{
+    @media ${laptopXS}{
         display: block;
         align-self: center;
         position: absolute;
-        top: 40px;
-        width: 100%;
+        top: 20%;
+        left: 78%;
         padding: 0;
         margin: 0;
+    }
+
+    @media ${tabletXL}{
+        left: 75%;
+    }
+
+    @media ${tablet}{
+        left: 70%;
+        top: 22%;
+    }
+
+    @media (max-width: 625px){
+        left: 65%;
+    }
+
+    @media ${mobileXL}{
+        left: 60%;
+        top: 10%;
+    }
+
+    @media ${mobileS}{
+        left: 56%;
     }
 `
 
 export const MobileNav = styled(Nav)`
     flex-direction: column;
-    align-items: stretch;
-    padding-left: 50px;
-    
-    @media ${tablet}{
-        position: absolute;
-        left: 74px;
-        padding: 0;
-     }
-    
+
     @media ${mobileXL}{
-        align-items: center;
-        padding: 0;
+        height: ${props => props.open ? '200px' : '165px'};
     }
 `
 
 export const HamburgerDiv = styled.div`
-    position: absolute;
-    left: 0;
     display: none;
     
-    @media ${tablet}{
+    @media ${laptopXS}{
        display: block;
+       position: absolute;
+       left: 93%;
+    }
+
+    @media ${tablet}{
+        left: 90%;
+    }
+
+    @media ${mobileXL}{
+        left: 85%;
     }
 `

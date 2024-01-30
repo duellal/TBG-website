@@ -39,6 +39,10 @@ export default function Header() {
 
     return (
         <StyledHeader open={isOpen}>
+            <LogoContainer>
+                <Logo loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
+            </LogoContainer>
+
             <Navbar>
                 <Nav>
                     {Object.keys(options).map((key, index) => {
@@ -46,6 +50,7 @@ export default function Header() {
                     })}
                 </Nav>
             </Navbar>
+
             <HamburgerDiv>
                 <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
             </HamburgerDiv>
@@ -58,9 +63,6 @@ export default function Header() {
                     </MobileNav>
                 </MobileNavBar>
             }
-            <LogoContainer>
-                <Logo loading="lazy" alt="The Biscuit Garden Logo - White dog with a bowtie encircled by the words, the biscuit garden" src={logo} />
-            </LogoContainer>
         </StyledHeader>
     )
 }
