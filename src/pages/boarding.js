@@ -18,6 +18,7 @@ import catBoarding from '../images/boarding/cat-boarding.jpeg'
 // Variables:
 import { boardingValues } from "../constants/values";
 import { boardingImages } from "../constants/banner-pics";
+import { DcAsteriskDiv, DcPackagePAsterisk } from "../styles/daycare";
 
 export default function Boarding(){
     let listValues = boardingValues.map((statement) => {
@@ -39,7 +40,7 @@ export default function Boarding(){
                     <br/>
                     <p>
                     Your pet will enjoy spacious accommodations, fluffy bedding, play time, potty
-                    breaks, meals, water play (weather permitting) and constant interaction with staff during their stay. All activities are included in the boarding rate.rmers market and cultivator ostrich. Ewes fox, hay hook hay manure, John.
+                    breaks, meals, water play (weather permitting) and constant interaction with staff during their stay. All activities are included in the boarding rate.
                     </p>
 
                     <ValuesSection>
@@ -88,7 +89,7 @@ export default function Boarding(){
                 <Requirements boarding='boarding'/>
 
                 <PricesDiv>
-                    <CommonH2>
+                    <CommonH2 style={{marginTop: '60px'}}>
                         Cat and Pocket Pet Boarding
                     </CommonH2>
                     <PricesSection>
@@ -115,6 +116,11 @@ export default function Boarding(){
                         </PricesTextSection>
                         <PricesImg src={pocketPets} alt=''/>
                     </PricesSection>
+                    <DcAsteriskDiv>
+                        <DcPackagePAsterisk>
+                            * Please bring your cats and pocket pets in a carrier when entering the building.
+                        </DcPackagePAsterisk>
+                    </DcAsteriskDiv>
                 </PricesDiv>
             </CommonStartDiv>
         </>

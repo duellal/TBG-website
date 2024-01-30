@@ -3,9 +3,9 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 
 //Requirements Styles:
-import { RequireChecklistDivs, 
+import { PricesP, RequireChecklistDivs, 
     // RequirementBtn,
-     RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList, RequirementsP } from "../../styles/commonBDG";
+     RequirementChecklistSection, RequirementH2, RequirementH3, RequirementSection, RequirementsList, RequirementsP, ValuesP } from "../../styles/commonBDG";
 import { CommonH4 } from "../../styles/commonBDG";
 
 export default function Requirements(props){
@@ -144,6 +144,10 @@ export default function Requirements(props){
     return (
         <RequirementSection>
             <h1> Our Facility Requirements </h1>
+
+            <RequirementsP style={{fontSize: '2rem'}}>
+                * All animals must be on a leash or in a carrier when entering the building. 
+            </RequirementsP>
 
             <RequirementH2> Make sure you have done everything on the Checklist Below </RequirementH2>
 

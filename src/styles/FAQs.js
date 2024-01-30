@@ -42,6 +42,7 @@ export const FaqQuestionDiv = styled.div`
 
 export const FaqQuestionH3 = styled.h3`
     color: white;
+    text-align: left;
 `
 
 export const FaqAnswer = styled.p`

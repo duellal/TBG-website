@@ -7,7 +7,7 @@ import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
 import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection,PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
-import { DcAsteriskDiv, DcPackageDiv, DcPackageP, DcPackagePAsterisk, DcPricesDiv, DcDcPr, DcPricesTextSection } from "../styles/daycare";
+import { DcAsteriskDiv, DcPackageDiv, DcPackageP, DcPackagePAsterisk, DcPricesDiv, DcPricesTextSection } from "../styles/daycare";
 
 //Images: 
 import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'

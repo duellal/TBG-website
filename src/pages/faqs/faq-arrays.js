@@ -22,23 +22,42 @@ let generalFaqs = [
 
 let boardingFaqs = [
     {
-        question: 'Question 1',
-        answer: ['Answer 1']
+        question: 'What time is drop off and pick up for boarding?',
+        answer: ['You may drop off and pick up anytime during our open hours. We are open Monday - Saturday from 7am - 7pm and on Sunday from 4pm - 7pm. We charge by the night so there are no half day charges.']
     },
     {
-        question: `Question 2`,
-        answer: [`Answer 2`]
+        question: `Should I bring food from home?`,
+        answer: [`We offer a Holistic chicken and rice as our house food and although most pets do quite well with the transition, we recommend and prefer that you bring food from home to help reduce gastric upset. We do ask that all meals from home be placed in individual ziplock bags; one for each meal. Failure to pre package individual meals will result in a $2.00 fee per meal. If your pet will be staying with us for a longer than average period of time, you may discuss pre packaging options with us prior to your stay.`]
     },
     {
-        question: `Question 3`,
-        answer: [`Answer 3`]
+        question: `What should I bring for my pet’s boarding?`,
+        answer: [
+            `You don’t need to bring anything! We provide all of the items that your pet will need during their stay. All bedding, toys and bowls of all shapes, sizes and materials are ready for them upon arrival.`, 
+            `We have found that some dogs become possessive over personal items when in a new environment and in an effort to keep a safe and happy space, we ask that you leave all of those items at home. Each and every item that we provide is thoroughly sanitized, cleaned, fluffed and shined before your pet’s arrival and throughout their time with us. So pack their food, treats and medications (if needed) and leave the rest to us!`
+        ]
+    },
+    {
+        question: `Do you administer medications?`,
+        answer: [`Absolutely! We are happy to administer any medication that your pet requires during their stay. We do ask that all medication be provided in its original bottle with a label that includes the pet’s name, medication name and dosage. Please let us know at time of drop off if your pet requires medication during their stay and we will fill out a medication form together to insure that all information is correct.`, 
+        `There is no fee for administering medications.`]
+    },
+    {
+        question: `Can I add a Spa appointment to my pet’s boarding reservation?`,
+        answer: [`You sure can! We can add a nail trim and/or bath to your pet’s stay. Please let us know at time of drop off what service you would like added and what time you would like to pick them up so that we can maximize their play time and have them ready for you at pick up.`]
+    },
+    {
+        question: `Is Doggie Daycare included with boarding?`,
+        answer: [`Yes! Play time is always included during your pet’s stay at no additional fee.`]
     },
 ]
 
 let daycareFaqs = [
     {
         question: 'What time is pick up and drop for daycare?',
-        answer: [`You may pick up and drop off anytime during our open hours. We are open from 7am- 7pm Monday - Saturday.`, `Half day daycare options are either for the morning play groups or the afternoonplay groups meaning that if you choose the half day morning play option, you can drop off and pick up anytime during 7am - 12pm. The half day afternoon play group drop off and pick up hours are anytime during 2pm - 7pm.`]
+        answer: [
+            `You may pick up and drop off anytime during our open hours. We are open from 7am- 7pm Monday - Saturday.`, 
+            `Half day daycare options are either for the morning play groups or the afternoonplay groups meaning that if you choose the half day morning play option, you can drop off and pick up anytime during 7am - 12pm. The half day afternoon play group drop off and pick up hours are anytime during 2pm - 7pm.`
+        ]
     },
     {
         question: `What is your Cancellation Policy for daycare?`,
