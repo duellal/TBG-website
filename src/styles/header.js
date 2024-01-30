@@ -6,12 +6,12 @@ const { tablet, mobileXL } = devices
 export const StyledHeader = styled.header`
     position: sticky;
     top: 0;
-    height: 165px;
+    height: 206.25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
-    z-index: 300;
+    z-index: 500;
     
     @media ${tablet}{
         justify-content: end;
