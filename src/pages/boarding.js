@@ -3,7 +3,7 @@ import React from "react";
 
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonH3, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLR, PricesTextSection, CommonH4, PricesP } from "../styles/commonBDG";
+import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
 
 //Components: 
 import Banner from "./general-components/banner-pic";
@@ -18,7 +18,6 @@ import catBoarding from '../images/boarding/cat-boarding.jpeg'
 // Variables:
 import { boardingValues } from "../constants/values";
 import { boardingImages } from "../constants/banner-pics";
-import { DcAsteriskDiv, DcPackagePAsterisk } from "../styles/daycare";
 
 export default function Boarding(){
     let listValues = boardingValues.map((statement) => {
@@ -66,21 +65,21 @@ export default function Boarding(){
                     <PricesSection>
                         <PricesImg src={bigsBoarding} alt=''/>
                         <PricesTextSection>
-                            <PricesTextLR>
+                            <PricesTextLeft>
                                 <CommonH4>40lbs+</CommonH4>
                                 <br/>
                                 <PricesP>$45 per night</PricesP>
-                            </PricesTextLR>
+                            </PricesTextLeft>
                             <PricesTextRight>
                                 <CommonH4>Under 40lbs</CommonH4>
                                 <br/>
                                 <PricesP>$40 per night</PricesP>
                             </PricesTextRight>
-                            <PricesTextLR>
+                            <PricesTextLeft>
                                 <CommonH4>Additional Dog(s)</CommonH4>
                                 <br/>
                                 <PricesP>$30 per night</PricesP>
-                            </PricesTextLR>
+                            </PricesTextLeft>
                         </PricesTextSection>
                         <PricesImg src={littlesBoarding} alt=''/>
                     </PricesSection>
@@ -95,32 +94,32 @@ export default function Boarding(){
                     <PricesSection>
                         <PricesImg src={catBoarding} alt=''/>
                         <PricesTextSection>
-                            <PricesTextLR>
+                            <PricesTextLeft>
                                 <CommonH4>Cat Boarding</CommonH4>
                                 <br/>
                                 <PricesP>$25 per night</PricesP>
-                            </PricesTextLR>
+                            </PricesTextLeft>
                             <PricesTextRight>
                                 <CommonH4>Additional Cat(s)</CommonH4>
                                 <br/>
                                 <PricesP>$15 per night</PricesP>
                             </PricesTextRight>
-                            <PricesTextLR>
+                            <PricesTextLeft>
                                 <CommonH4>Pocket Pets</CommonH4>
                                 <br/>
                                 <PricesPocketExP>Bunnies, Birds, Reptiles, etc. </PricesPocketExP>
                                 <PricesPocketInstructionP>* Please provide your own cage/carrier for your pocket pet</PricesPocketInstructionP>
                                 <br/>
                                 <PricesP>$20 per night</PricesP>
-                            </PricesTextLR>
+                            </PricesTextLeft>
                         </PricesTextSection>
                         <PricesImg src={pocketPets} alt=''/>
                     </PricesSection>
-                    <DcAsteriskDiv>
-                        <DcPackagePAsterisk>
+                    <PricesAsteriskDiv>
+                        <PricesAsteriskP>
                             * Please bring your cats and pocket pets in a carrier when entering the building.
-                        </DcPackagePAsterisk>
-                    </DcAsteriskDiv>
+                        </PricesAsteriskP>
+                    </PricesAsteriskDiv>
                 </PricesDiv>
             </CommonStartDiv>
         </>

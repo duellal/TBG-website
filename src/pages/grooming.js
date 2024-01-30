@@ -6,7 +6,7 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
-import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesSection, PricesTextLR } from "../styles/commonBDG";
+import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesSection, PricesTextLeft, PricesAsteriskDiv, PricesAsteriskP, PricesP } from "../styles/commonBDG";
 
 //Images:
 import grooming1 from '../images/grooming/grooming-1.jpeg';
@@ -31,7 +31,7 @@ export default function Grooming(){
                         Quilt yearlings, gobblers pumpkin are porky pig beef, sheep rose garden sage, in pitch fork sunflower cowpies mice. Oranges cucumbers rhubarb gourds watermelon. Oranges cucumbers rhubarb gourds watermelon. Feed in a woof, a farmers market. Peacocks ba.
                     </p>
                     <GroomingImg src={grooming3} alt="" className="pic" />            
-                    </CommonInfoSection>
+                </CommonInfoSection>
 
                 <GroomingPricesDiv>
                     <CommonH2>
@@ -40,19 +40,24 @@ export default function Grooming(){
                     <PricesSection>
                         <PricesImg src={grooming1} alt='' className="pic left"/>
                         <PricesTextSection>
-                            <PricesTextLR>
+                            <PricesTextLeft>
                                 <CommonH4>Bath (free nail trim included)</CommonH4>
                                 <br/>
-                                <p>$25 per animal</p>
-                            </PricesTextLR>
+                                <PricesP>$25 per animal</PricesP>
+                            </PricesTextLeft>
                             <PricesTextRight>
                                 <CommonH4>Nail trim</CommonH4>
                                 <br/>
-                                <p>$12 per animal</p>
+                                <PricesP>$12 per animal</PricesP>
                             </PricesTextRight>
                         </PricesTextSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/>
                     </PricesSection>
+                    <PricesAsteriskDiv>
+                        <PricesAsteriskP>
+                            * Extra Large dogs, Difficult dogs or Super Fluffy dogs may incur an additional fee
+                        </PricesAsteriskP>
+                    </PricesAsteriskDiv>
                 </GroomingPricesDiv>
 
                 <Requirements grooming='grooming'/>

@@ -6,8 +6,8 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
-import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection,PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
-import { DcAsteriskDiv, DcPackageDiv, DcPackageP, DcPackagePAsterisk, DcPricesDiv, DcPricesTextSection } from "../styles/daycare";
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection,PricesDiv, PricesImg, PricesP, PricesTextLeft, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
+import { DcPackageDiv, DcPackageP, DcPricesTextSection, } from "../styles/daycare";
 
 //Images: 
 import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
@@ -61,14 +61,14 @@ export default function Daycare(){
                             <CommonH3>Daily Rate</CommonH3>
                         </HeaderSection>
                         
-                        <DcPricesDiv>
+                        <PricesDiv>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
                             <DcPricesTextSection>
-                                <PricesTextLR>
+                                <PricesTextLeft>
                                     <CommonH4>Full Day</CommonH4>
                                     <br/>
                                     <PricesP>$28 per Visit</PricesP>
-                                </PricesTextLR>
+                                </PricesTextLeft>
                                 <PricesTextRight>
                                     <CommonH4>Half Day</CommonH4>
                                     <br/>
@@ -76,7 +76,7 @@ export default function Daycare(){
                                 </PricesTextRight>
                             </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
-                        </DcPricesDiv>
+                        </PricesDiv>
                     </PricesSection>
 
                     <PricesSection>
@@ -87,32 +87,32 @@ export default function Daycare(){
                             </DcPackageDiv>
                         </HeaderSection>
                         
-                        <DcPricesDiv>
+                        <PricesDiv>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
                             <DcPricesTextSection>
-                                <PricesTextLR>
+                                <PricesTextLeft>
                                     <CommonH4>10 Day</CommonH4>
                                     <br/>
                                     <PricesP>$260</PricesP>
-                                </PricesTextLR>
+                                </PricesTextLeft>
                                 <PricesTextRight>
                                     <CommonH4>20 Day</CommonH4>
                                     <br/>
                                     <PricesP>$480</PricesP>
                                 </PricesTextRight>
-                                <PricesTextLR>
+                                <PricesTextLeft>
                                     <CommonH4>30 Day</CommonH4>
                                     <br/>
                                     <PricesP>$600</PricesP>
-                                </PricesTextLR>
+                                </PricesTextLeft>
                             </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
-                        </DcPricesDiv>
+                        </PricesDiv>
 
-                        <DcAsteriskDiv>
-                            <DcPackagePAsterisk className="asterisk">*Packages never expire</DcPackagePAsterisk>
-                            <DcPackagePAsterisk className="asterisk">*Packages are non-refundable</DcPackagePAsterisk>
-                        </DcAsteriskDiv>
+                        <PricesAsteriskDiv>
+                            <PricesAsteriskP className="asterisk">*Packages never expire</PricesAsteriskP>
+                            <PricesAsteriskP className="asterisk">*Packages are non-refundable</PricesAsteriskP>
+                        </PricesAsteriskDiv>
                     </PricesSection>
                 </PricesDiv>
 

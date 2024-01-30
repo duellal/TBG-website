@@ -70,8 +70,12 @@ width: 100%;
 export const PricesDiv = styled.div`
 display: flex;
 flex-wrap: wrap;
-width: 80%;
+width: 100%;
+jusitfy-content: space-between;
+align-items: center;
+// margin: 10px 0;
 `
+
 export const PricesSection = styled.div`
 padding-top: 3%;
 display: inherit;
@@ -103,7 +107,7 @@ padding: 15px 65px;
 height: 300px;
 `
 
-export const PricesTextLR = styled.div`
+export const PricesTextLeft = styled.div`
 display: flex;
 flex-wrap: wrap;
 align-content: space-between;
@@ -111,13 +115,25 @@ width: 100%;
 height: 60px;
 `
 
-export const PricesTextRight = styled(PricesTextLR)`
+export const PricesTextRight = styled(PricesTextLeft)`
 justify-content: flex-end;
 text-align: end;
 `
 
 export const PricesP = styled.p`
 width: 100%
+`
+
+export const PricesAsteriskDiv = styled.div`
+width: 100%;
+margin-top: 15px;
+`
+
+export const PricesAsteriskP = styled.p`
+width: 100%;
+font-size: 1.6rem;
+margin: 5px 0;
+text-align: center;
 `
 
 //Requirements Section:

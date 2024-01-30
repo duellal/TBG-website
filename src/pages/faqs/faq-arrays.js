@@ -71,16 +71,21 @@ let daycareFaqs = [
 
 let groomingFaqs = [
     {
-        question: 'Question 1',
-        answer: ['Answer 1']
+        question: 'Do you offer full grooming services?',
+        answer: [
+            `At this time we only offer bath and nail trims for our guests. Your pet can receive a Fresh n’ Clean bath, oatmeal conditioner, fluff dry and cologne spritz.`, 
+            `A FREE nail trim is always included with the purchase of a bath!`
+    ]
     },
     {
-        question: `Question 2`,
-        answer: [`Answer 2`]
+        question: `How do you trim nails?`,
+        answer: [`We love doggies with short, smooth nails and know that you do too! Our expert pawdicurists use the grinding method to gently shorten the nails leaving them rounded and uniform with no sharp edges.`]
     },
     {
-        question: `Question 3`,
-        answer: [`Answer 3`]
+        question: `What is your Cancellation Policy for grooming?`,
+        answer: [`Failure to cancel or reschedule a grooming appointment prior to the appointment
+        will result in the full amount charged to the credit card of file. Cancellations or
+        rescheduling must be made no late than 9 AM the morning of the appointment.`]
     },
 ]
 
