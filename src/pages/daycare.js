@@ -6,8 +6,8 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Daycare Styles:
-import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesTextSection, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
-import { DcAsteriskDiv, DcPackageDiv, DcPackageP, DcPackagePAsterisk, DcPricesDiv, HeaderSection } from "../styles/daycare";
+import { CommonH1, CommonH2, CommonH3, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection,PricesDiv, PricesImg, PricesP, PricesTextLR, PricesTextRight, PricesSection, ValuesItems, ValuesP, ValuesSection, ValuesText } from "../styles/commonBDG";
+import { DcAsteriskDiv, DcPackageDiv, DcPackageP, DcPackagePAsterisk, DcPricesDiv, DcDcPr, DcPricesTextSection } from "../styles/daycare";
 
 //Images: 
 import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
@@ -63,7 +63,7 @@ export default function Daycare(){
                         
                         <DcPricesDiv>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
-                            <PricesTextSection>
+                            <DcPricesTextSection>
                                 <PricesTextLR>
                                     <CommonH4>Full Day</CommonH4>
                                     <br/>
@@ -74,7 +74,7 @@ export default function Daycare(){
                                     <br/>
                                     <PricesP>$18 per Visit</PricesP>
                                 </PricesTextRight>
-                            </PricesTextSection>
+                            </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
                         </DcPricesDiv>
                     </PricesSection>
@@ -89,7 +89,7 @@ export default function Daycare(){
                         
                         <DcPricesDiv>
                             <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
-                            <PricesTextSection>
+                            <DcPricesTextSection>
                                 <PricesTextLR>
                                     <CommonH4>10 Day</CommonH4>
                                     <br/>
@@ -105,7 +105,7 @@ export default function Daycare(){
                                     <br/>
                                     <PricesP>$600</PricesP>
                                 </PricesTextLR>
-                            </PricesTextSection>
+                            </DcPricesTextSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/>
                         </DcPricesDiv>
 

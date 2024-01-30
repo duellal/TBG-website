@@ -80,16 +80,12 @@ justify-content: space-between;
 align-items: center;
 `
 
-export const PricesTop = styled.div`
-padding-top: 3%;
+export const HeaderSection = styled.div`
+width: 100%;
 display: inherit;
 flex-wrap: wrap;
-justify-content: space-between;
-`
-
-export const PricesBottom = styled.div`
-display: inherit;
-justify-content: space-between;
+justify-content: center;
+margin-bottom: 10px;
 `
 
 export const PricesImg = styled.img`
@@ -101,15 +97,16 @@ height: 300px;
 export const PricesTextSection = styled.div`
 display: flex;
 flex-wrap: wrap;
+align-items: space-between;
 width: 50%;
 padding: 15px 65px;
-height: 200px;
-align-content: center;
+height: 300px;
 `
 
 export const PricesTextLR = styled.div`
 display: flex;
 flex-wrap: wrap;
+align-content: space-between;
 width: 100%;
 height: 60px;
 `

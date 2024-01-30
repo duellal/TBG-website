@@ -87,6 +87,7 @@ export default function Requirements(props){
                 </>
             )
         }
+        return 
     }
 
     let otherBelongings = () => {

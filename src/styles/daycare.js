@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PricesTextSection } from "./commonBDG";
 
 
 export const DcPackageDiv = styled.div`
@@ -36,10 +37,6 @@ align-items: center;
 // margin: 10px 0;
 `
 
-export const HeaderSection = styled.div`
-width: 100%;
-display: inherit;
-flex-wrap: wrap;
-justify-content: center;
-margin-bottom: 10px;
+export const DcPricesTextSection = styled(PricesTextSection)`
+height: 200px;
 `

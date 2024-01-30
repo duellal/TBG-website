@@ -3,7 +3,7 @@ import React from "react";
 
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonH3, CommonStartDiv, CommonInfoSection, PricesDiv, PricesTop, PricesBottom, PricesImg, PricesTextRight, PricesTextLR, PricesTextSection, CommonH4, PricesP } from "../styles/commonBDG";
+import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonH3, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLR, PricesTextSection, CommonH4, PricesP } from "../styles/commonBDG";
 
 //Components: 
 import Banner from "./general-components/banner-pic";
@@ -38,35 +38,35 @@ export default function Boarding(){
                     </p>
                     <br/>
                     <p>
-                        Wheat in pig. Peacocks baa ostriches owls. Apples ducks straw, quail a ostriches donkey, hay hook cucumbers. In the straw rain barrels. Cauliflower a seeds quail. Haybine carrots soybeans, owls duck raising or, cheep in plows. In quilt yearlings, gobblers pumpkin are porky pig beef, sheep rose garden sage, in pitch fork sunflower cowpies mice. Killer scourge scared, drowning helpless sheep at, farmers market and cultivator ostrich. Ewes fox, hay hook hay manure, John.
+                    Your pet will enjoy spacious accommodations, fluffy bedding, play time, potty
+                    breaks, meals, water play (weather permitting) and constant interaction with staff during their stay. All activities are included in the boarding rate.rmers market and cultivator ostrich. Ewes fox, hay hook hay manure, John.
                     </p>
-                </CommonInfoSection>
 
-                <ValuesSection>
-                    <ValuesText>
-                        <ValuesP> 
-                            No matter what, we believe that all dogs should be treated equally. 
-                        </ValuesP>
-                        <br/>
-                        <ValuesP>
-                            All dogs will receive:
-                        </ValuesP>
-                        <ValuesItems>
-                            {listValues}
-                        </ValuesItems>
-                    </ValuesText>                  
-                </ValuesSection>
+                    <ValuesSection>
+                        <ValuesText>
+                            <ValuesP> 
+                                No matter what, we believe that all dogs should be treated equally. 
+                            </ValuesP>
+                            <br/>
+                            <ValuesP>
+                                All dogs will receive:
+                            </ValuesP>
+                            <ValuesItems>
+                                {listValues}
+                            </ValuesItems>
+                        </ValuesText>                  
+                    </ValuesSection>
+                </CommonInfoSection>
 
                 <PricesDiv>
                     <CommonH2>
-                        Our Boarding Prices
+                        Dog Boarding Prices
                     </CommonH2>
-                    <PricesTop>
+                    <PricesSection>
                         <PricesImg src={bigsBoarding} alt=''/>
                         <PricesTextSection>
-                            <CommonH3>Dogs</CommonH3>
                             <PricesTextLR>
-                                <CommonH4>40lbs and Over</CommonH4>
+                                <CommonH4>40lbs+</CommonH4>
                                 <br/>
                                 <PricesP>$45 per night</PricesP>
                             </PricesTextLR>
@@ -75,18 +75,23 @@ export default function Boarding(){
                                 <br/>
                                 <PricesP>$40 per night</PricesP>
                             </PricesTextRight>
+                            <PricesTextLR>
+                                <CommonH4>Additional Dog(s)</CommonH4>
+                                <br/>
+                                <PricesP>$30 per night</PricesP>
+                            </PricesTextLR>
                         </PricesTextSection>
                         <PricesImg src={littlesBoarding} alt=''/>
-                    </PricesTop>
+                    </PricesSection>
                 </PricesDiv>
 
-                <Requirements/>
+                <Requirements boarding='boarding'/>
 
                 <PricesDiv>
                     <CommonH2>
                         Cat and Pocket Pet Boarding
                     </CommonH2>
-                    <PricesBottom>
+                    <PricesSection>
                         <PricesImg src={catBoarding} alt=''/>
                         <PricesTextSection>
                             <PricesTextLR>
@@ -95,16 +100,21 @@ export default function Boarding(){
                                 <PricesP>$25 per night</PricesP>
                             </PricesTextLR>
                             <PricesTextRight>
+                                <CommonH4>Additional Cat(s)</CommonH4>
+                                <br/>
+                                <PricesP>$15 per night</PricesP>
+                            </PricesTextRight>
+                            <PricesTextLR>
                                 <CommonH4>Pocket Pets</CommonH4>
                                 <br/>
                                 <PricesPocketExP>Bunnies, Birds, Reptiles, etc. </PricesPocketExP>
-                                <PricesPocketInstructionP>Please provide your own cage/carrier for your pocket pet</PricesPocketInstructionP>
+                                <PricesPocketInstructionP>* Please provide your own cage/carrier for your pocket pet</PricesPocketInstructionP>
                                 <br/>
                                 <PricesP>$20 per night</PricesP>
-                            </PricesTextRight>
+                            </PricesTextLR>
                         </PricesTextSection>
                         <PricesImg src={pocketPets} alt=''/>
-                    </PricesBottom>
+                    </PricesSection>
                 </PricesDiv>
             </CommonStartDiv>
         </>

@@ -6,7 +6,7 @@ import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
-import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesTop, PricesTextLR } from "../styles/commonBDG";
+import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesSection, PricesTextLR } from "../styles/commonBDG";
 
 //Images:
 import grooming1 from '../images/grooming/grooming-1.jpeg';
@@ -37,7 +37,7 @@ export default function Grooming(){
                     <CommonH2>
                         Our Grooming Prices
                     </CommonH2>
-                    <PricesTop>
+                    <PricesSection>
                         <PricesImg src={grooming1} alt='' className="pic left"/>
                         <PricesTextSection>
                             <PricesTextLR>
@@ -52,7 +52,7 @@ export default function Grooming(){
                             </PricesTextRight>
                         </PricesTextSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/>
-                    </PricesTop>
+                    </PricesSection>
                 </GroomingPricesDiv>
 
                 <Requirements grooming='grooming'/>
