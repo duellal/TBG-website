@@ -15,6 +15,7 @@ export const StyledHeader = styled.header`
     
     @media ${tablet}{
         justify-content: end;
+        height: ${props => props.open ? '250px' : '200px'};
     }
 
     @media ${mobileXL}{
@@ -34,11 +35,16 @@ export const Logo = styled.img`
     left: 0;
     display: inherit;
     width: 270px;
-    
+    bottom: -125px;
+
+    @media ${tablet}{
+        width: 200px;
+        bottom: -95px;
+    }
     
     @media ${mobileXL}{
         width: 150px;
-        bottom: -60px;
+        bottom: -70px;
     }
 `
 
