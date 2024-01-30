@@ -13,10 +13,8 @@ export const Item = styled.li`
     font-family: inherit; /* Important for vertical align on mobile phones */
     font-weight: bold;
     text-transform: uppercase;
-    transition: 0.3s;
     
     &:hover{
-        transform: scale(1.1);
         color: ${bright_red};
     }
     
