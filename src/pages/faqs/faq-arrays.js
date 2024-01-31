@@ -1,8 +1,14 @@
-let titles = [
+let faqPageTitles = [
     'General', 
     'Boarding', 
     'Daycare', 
     'Grooming'
+]
+
+let indvTitles = [
+    'Boarding FAQs',
+    'Daycare FAQs',
+    'Grooming FAQs'
 ]
 
 let generalFaqs = [
@@ -98,7 +104,8 @@ let groomingFaqs = [
 ]
 
 export {
-    titles,
+    faqPageTitles,
+    indvTitles,
     generalFaqs,
     boardingFaqs,
     daycareFaqs,

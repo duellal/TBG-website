@@ -2,11 +2,14 @@
 import React from "react";
 
 //Components:
+import AccordianTitle from "./faqs/components/accordian-titles";
 import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
 import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesSection, PricesTextLeft, PricesAsteriskDiv, PricesAsteriskP, PricesP, HeaderSection } from "../styles/commonBDG";
+import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
+import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 
 //Images:
 import grooming1 from '../images/grooming/grooming-1.jpeg';
@@ -15,7 +18,9 @@ import grooming3 from '../images/grooming/grooming-3.jpeg';
 
 //Variables:
 import { groomingImages } from "../constants/banner-pics";
-import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
+
+//FAQ Arrays:
+import { groomingFaqs, indvTitles } from "./faqs/faq-arrays";
 
 export default function Grooming(){
     return(
@@ -63,6 +68,25 @@ export default function Grooming(){
                 </GroomingPricesDiv>
 
                 <Requirements grooming='grooming'/>
+
+                <AllFaqs className="all-faqs">
+                {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
+                    {
+                        indvTitles.map((title, index) => {
+                            if(title === `Grooming FAQs`){
+                                return (
+                                    <FaqTitleDiv key={index} id={title}>
+                                        <AccordianTitle 
+                                            title={title} 
+                                            content={groomingFaqs} 
+                                        />
+                                    </FaqTitleDiv>
+                                )
+                            }
+                            return null
+                        })
+                    }
+                </AllFaqs>
             </CommonStartDiv>
         </>
     )

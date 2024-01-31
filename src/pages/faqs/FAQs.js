@@ -1,19 +1,19 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-//Other Component
+//Components:
 import AccordianTitle from './components/accordian-titles';
 
 //FAQ Arrays: 
 import {
-    titles,
+    faqPageTitles,
     generalFaqs,
     boardingFaqs,
     daycareFaqs,
     groomingFaqs
 } from './faq-arrays'
 
-//FAQs Styles:
+//Styles:
 import { AllFaqs, FaqSection, FaqTitleDiv } from "../../styles/FAQs";
 
 export default function FAQs(){
@@ -26,7 +26,7 @@ export default function FAQs(){
             <AllFaqs className="all-faqs">
             {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
                 {
-                    titles.map((title, index) => {
+                    faqPageTitles.map((title, index) => {
                         if(title === 'General'){
                             return (
                                 <FaqTitleDiv key={index} id={title}>
