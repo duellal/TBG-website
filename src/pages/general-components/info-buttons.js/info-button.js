@@ -18,14 +18,12 @@ export default function InfoButton(){
                     let { title, icon, info } = elem
                     return <IndvButton 
                             key={`${title}${index}`} 
-                            id={title}
                             icon={icon}
                             title={title}
                             info={info}
                         />
                 })
             }
-            
         </InfoBtnDiv>
     )
 }

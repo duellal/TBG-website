@@ -35,26 +35,29 @@ margin: 10px 0;
 export const BtnInfo = styled.p`
 width: 100%;
 color: white;
-opacity: 1;
 // border: 1px solid yellow;
 
 @keyframes slideinOpacity{
   0%{
     opacity: 0;
+    display: none;
   }
 
   100%{
     opacity: 1;
+    display: block;
   }
 }
 
 @keyframes slideoutOpacity{
   0%{
     opacity: 1;
+    display: block;
   }
 
   100%{
     opacity: 0;
+    display: none;
   }
 }
 
@@ -63,11 +66,13 @@ ${props => {
   {
     animationName: 'slideinOpacity',
     animationDuration: '1s', 
-    opacity: '1',      
+    opacity: '1', 
+    display: 'block',     
   } : {   
     animationName: 'slideoutOpacity',
     animationDuration: '1s',
     opacity: '0',
+    display: 'none'
   }
 }}
 `
@@ -78,7 +83,7 @@ justify-content: center;
 flex-wrap: wrap;
 width: 100%;
 transition: all ease-in-out;
-// border: 1px solid lime;
+border: 1px solid lime;
 
 @keyframes slidein {
     0% {
