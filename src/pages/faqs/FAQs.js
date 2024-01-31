@@ -14,14 +14,14 @@ import {
 } from './faq-arrays'
 
 //Styles:
-import { AllFaqs, FaqSection, FaqTitleDiv } from "../../styles/FAQs";
+import { AllFaqs, FaqH1, FaqSection, FaqTitleDiv } from "../../styles/FAQs";
 
 export default function FAQs(){
     return(
         <FaqSection id='faqs'>
-            <h1> 
+            <FaqH1> 
                 Frequently Asked Questions
-            </h1>
+            </FaqH1>
 
             <AllFaqs className="all-faqs">
             {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
