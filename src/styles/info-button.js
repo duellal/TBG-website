@@ -83,7 +83,7 @@ justify-content: center;
 flex-wrap: wrap;
 width: 100%;
 transition: all ease-in-out;
-border: 1px solid lime;
+// border: 1px solid lime;
 
 @keyframes slidein {
     0% {
