@@ -8,8 +8,12 @@ import InfoButton from "./general-components/info-buttons.js/info-button";
 // Home Styles:
 import { CommonStartDiv } from '../styles/commonBDG'
 
-//Variables
+//Variables:
 import { homeImages } from "../constants/banner-pics";
+
+//Images:
+import graffiti from '../images/facility/graffiti-wall.jpeg'
+import { GalleryPlaceholderDiv, GalleryPlaceholderImg } from "../styles/home";
 
 
 export default function Home(){
@@ -19,6 +23,10 @@ export default function Home(){
             <CommonStartDiv>
                 <InfoButton/>
             </CommonStartDiv>
+            
+            <GalleryPlaceholderDiv>
+                    <GalleryPlaceholderImg src={graffiti}/>
+                </GalleryPlaceholderDiv>
         </>
     )
 }

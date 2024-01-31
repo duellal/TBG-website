@@ -27,7 +27,7 @@ padding: 2.5% 10% 5%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
-border: 1px solid purple;
+// border: 1px solid purple;
 `
 
 //Information Sections:
