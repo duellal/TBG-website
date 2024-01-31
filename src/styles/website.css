@@ -64,3 +64,7 @@ a {
 .slideshowDot.active{
   background-color: #ad0005;
 }
+
+.btn-info{
+  opacity: 0;
+}

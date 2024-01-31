@@ -16,7 +16,6 @@ import groomingBanner1 from '../images/grooming/grooming-slideshow-1.png'
 import groomingBanner2 from '../images/grooming/grooming-slideshow-2.png'
 import groomingBanner3 from '../images/grooming/grooming-slideshow-3.png'
 //Home:
-import stockGrafitti from '../images/facility/graffiti-wall.jpeg'
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
 
@@ -57,10 +56,6 @@ export const daycareImages = [
         alt: ''
     },
     {
-        image: daycareBanner3,
-        alt: ''
-    },
-    {
         image: daycareBanner2,
         alt: ''
     },
@@ -87,8 +82,8 @@ export const groomingImages = [
 
 export const homeImages = [
     {
-        image: stockGrafitti,
-        alt: ""
+        image: daycareBanner3,
+        alt: ''
     },
     {
         image: stockBoard,

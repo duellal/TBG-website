@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
+
+//Styling
 import { BannerDiv, BannerDots, BannerIdvDot, BannerImg, BannerSlider } from "../../styles/banner";
 
 export default function Banner(props){

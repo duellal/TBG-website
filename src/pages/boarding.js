@@ -16,7 +16,7 @@ import pocketPets from '../images/boarding/pocket-pets.jpeg'
 import catBoarding from '../images/boarding/cat-boarding.jpeg'
 
 // Variables:
-import { boardingValues } from "../constants/values";
+import { boardingValues } from "../constants/board-daycare-values";
 import { boardingImages } from "../constants/banner-pics";
 
 export default function Boarding(){
