@@ -9,6 +9,10 @@ export const FaqSection = styled.div`
     text-align: center;
 `
 
+export const FaqH1 = styled.h1`
+width: 90%;
+`
+
 export const AllFaqs = styled.div`
     display: flex;
     flex-wrap: wrap;

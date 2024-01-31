@@ -4,8 +4,10 @@ import React from "react";
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
 import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP, HeaderSection } from "../styles/commonBDG";
+import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 
 //Components: 
+import AccordianTitle from './faqs/components/accordian-titles';
 import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
@@ -18,6 +20,12 @@ import catBoarding from '../images/boarding/cat-boarding.jpeg'
 // Variables:
 import { boardingValues } from "../constants/board-daycare-values";
 import { boardingImages } from "../constants/banner-pics";
+
+//FAQ Arrays: 
+import {
+    indvTitles,
+    boardingFaqs,
+} from './faqs/faq-arrays'
 
 export default function Boarding(){
     let listValues = boardingValues.map((statement) => {
@@ -123,6 +131,25 @@ export default function Boarding(){
                         </PricesAsteriskP>
                     </PricesAsteriskDiv>
                 </PricesDiv>
+
+                <AllFaqs className="all-faqs">
+                {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
+                    {
+                        indvTitles.map((title, index) => {
+                            if(title === `Boarding FAQs`){
+                                return (
+                                    <FaqTitleDiv key={index} id={title}>
+                                        <AccordianTitle 
+                                            title={title} 
+                                            content={boardingFaqs} 
+                                        />
+                                    </FaqTitleDiv>
+                                )
+                            }
+                            return null
+                        })
+                    }
+                </AllFaqs>
             </CommonStartDiv>
         </>
     )
