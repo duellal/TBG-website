@@ -57,10 +57,6 @@ export const daycareImages = [
         alt: ''
     },
     {
-        image: daycareBanner3,
-        alt: ''
-    },
-    {
         image: daycareBanner2,
         alt: ''
     },
@@ -87,8 +83,8 @@ export const groomingImages = [
 
 export const homeImages = [
     {
-        image: stockGrafitti,
-        alt: ""
+        image: daycareBanner3,
+        alt: ''
     },
     {
         image: stockBoard,

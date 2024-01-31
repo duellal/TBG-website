@@ -23,10 +23,10 @@ export default function Home(){
             <CommonStartDiv>
                 <InfoButton/>
             </CommonStartDiv>
-            
+
             <GalleryPlaceholderDiv>
-                    <GalleryPlaceholderImg src={graffiti}/>
-                </GalleryPlaceholderDiv>
+                <GalleryPlaceholderImg src={graffiti}/>
+            </GalleryPlaceholderDiv>
         </>
     )
 }
