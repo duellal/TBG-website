@@ -1,11 +1,3 @@
-/* 
-    3 boxes closer together
-        cute icon for the boxes
-        labeled for boarding, grooming, daycare
-        have small text div show on hover
-        click on box to go to page
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 
