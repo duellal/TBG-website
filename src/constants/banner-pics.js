@@ -16,7 +16,6 @@ import groomingBanner1 from '../images/grooming/grooming-slideshow-1.png'
 import groomingBanner2 from '../images/grooming/grooming-slideshow-2.png'
 import groomingBanner3 from '../images/grooming/grooming-slideshow-3.png'
 //Home:
-import stockGrafitti from '../images/facility/graffiti-wall.jpeg'
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
 
