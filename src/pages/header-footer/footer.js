@@ -136,9 +136,9 @@ export default function Footer(){
                             </a>
                         </FooterIndvSocials>
                         <FooterIndvSocials>
-                            <a href="https://www.tiktok.com/@biscuitgarden" target="_blank" rel="noreferrer">
+                            <a href="https://www.tiktok.com/@thebiscuitgarden" target="_blank" rel="noreferrer">
                                 <FooterSocialImg loading="lazy" src={tiktokIcon} width='30' height='30' alt='a t that looks like a quarter note in black with blue and red shadows'></FooterSocialImg>
-                                @biscuitgarden
+                                @thebiscuitgarden
                             </a>
                         </FooterIndvSocials>
                     </FooterSocials>
