@@ -18,45 +18,6 @@ cursor: pointer;
 border: 1px solid ${bright_red};
 `
 
-export const InsideBtnDiv = styled.div`
-display: inherit;
-justify-content: center;
-flex-wrap: wrap;
-margin: 10px;
-width: 100%;
-transition: all ease-in-out;
-// border: 1px solid lime;
-
-@keyframes slidein {
-    from {
-      transform: translateY(25%);
-    //   transition: ease-in-out;
-    }
-  
-    to {
-      transform: translateY(0%);
-    //   transition: ease-in-out;
-    }
-  }
-
-  @keyframes slidein {
-    from {
-      transform: translateY(25%);
-    //   transition: ease-in-out;
-    }
-  
-    to {
-      transform: translateY(0%);
-    //   transition: ease-in-out;
-    }
-  }
-
-${IndvInfoBtn}:hover & {
-animation-name: slidein;
-animation-duration: 1s;
-}
-`
-
 export const BtnTitle = styled.h1`
 width: 100%;
 font-size: 2rem;    
@@ -65,9 +26,7 @@ color: white;
 `
 
 export const BtnIcon = styled.div`
-// width: 100%;
 color: white;
-// aspect-ratio: 1;
 margin: 10px 0;
 // border: 1px solid green;
 `
@@ -75,5 +34,87 @@ margin: 10px 0;
 export const BtnInfo = styled.p`
 width: 100%;
 color: white;
+opacity: 1;
 // border: 1px solid yellow;
+
+@keyframes slideinOpacity{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes slideoutOpacity{
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+${props => {
+  return props.hover ?
+  {
+    animationName: 'slideinOpacity',
+    animationDuration: '1s', 
+    opacity: '1',      
+  } : {   
+    animationName: 'slideoutOpacity',
+    animationDuration: '1s',
+    opacity: '0',
+  }
+}}
+`
+
+export const InsideBtnDiv = styled.div`
+display: inherit;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
+transition: all ease-in-out;
+// border: 1px solid lime;
+
+@keyframes slidein {
+    0% {
+      margin-bottom: 10px;
+      height: 80px;
+    }
+
+    100% {
+      margin-bottom: 20px;
+      height: 140px;
+    }
+  }
+
+@keyframes slideout {
+    0% {
+      margin-bottom: 20px;
+      height: 140px;
+    }
+
+    100% {
+      margin-bottom: 10px;
+      height: 80px;
+    }
+  }
+
+${props => {
+  return props.hover ? 
+  {
+    margin: '10px 10px 20px',
+    animationName: 'slidein',
+    animationDuration: '1s',       
+    height: '140px',
+  } : {
+    margin: '10px',      
+    animationName: 'slideout',
+    animationDuration: '1s',
+    height: '80px',
+  }  
+}}
 `

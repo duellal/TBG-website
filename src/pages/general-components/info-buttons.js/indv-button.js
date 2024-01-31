@@ -22,12 +22,16 @@ export default function IndvButton(props){
                 onMouseEnter={hoverHandler}
                 onMouseLeave={hoverHandler}
             >
-                <InsideBtnDiv key={title} id={title}>
+                <InsideBtnDiv 
+                    key={title} 
+                    id={title}
+                    hover={hover}
+                >
                     <BtnTitle>{title}</BtnTitle>
                     <BtnIcon>{icon}</BtnIcon>
-                        {
-                            hover ? <BtnInfo>{info}</BtnInfo> : null
-                        }
+                    <BtnInfo hover={hover}>
+                        {info}
+                    </BtnInfo>
                 </InsideBtnDiv>
             </IndvInfoBtn>
         </>
