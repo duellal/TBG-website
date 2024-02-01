@@ -18,7 +18,7 @@ export const AllFaqs = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
-    width: 100%;
+    width: 80%;
 `
 
 export const FaqTitleDiv = styled.div`
@@ -52,7 +52,8 @@ export const FaqQuestionH3 = styled.h3`
 
 export const FaqAnswer = styled.p`
     padding: 2%;
-    text-align: left; 
-    color: white;
-    background-color: ${pastel_bright_red};
+    // text-align: left; 
+    text-align: justify;
+    color: black;
+    background-color: #f5f0f6;
 `
