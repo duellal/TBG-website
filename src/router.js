@@ -9,7 +9,7 @@ import Credits from './pages/credits';
 import Err404 from './pages/err404';
 import Daycare from './pages/daycare';
 // import DigitalIntake from './pages/forms/intake-form';
-import Forms from './pages/forms/forms';
+import Forms from './pages/forms/formPage';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/general-components/requirements';
