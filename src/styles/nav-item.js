@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { devices } from "./constants/device-size";
+import { devicesWidth } from "./constants/device-size";
 import { bright_red } from "./constants/colors";
 
-const { mobileXL, tablet } = devices
+const { mobileXL, tablet } = devicesWidth
 
 export const Item = styled.li`
     display: inline-block;

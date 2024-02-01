@@ -39,7 +39,7 @@ export default function Forms(){
     return (
         <div id="forms">
             {/* <h1> Forms  </h1> */}
-            <h2> new client form  </h2>
+            <h2> new client form </h2>
 
 
             <div id="digital">
