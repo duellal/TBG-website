@@ -28,6 +28,7 @@ import React from "react";
 
 //Forms Styles:
 import '../../styles/forms.css'
+import { FormPageRedBox } from "../../styles/formPage";
 
 //Import Form PDF:
 // import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -42,8 +43,7 @@ export default function Forms(){
 
 
             <div id="digital">
-                <div id="intake">
-
+                <FormPageRedBox>
                     <p> 
                         We require all owners to fill out an intake form to insure we have your contact information and all of your pets information. 
                     </p>
@@ -58,7 +58,7 @@ export default function Forms(){
 
                     {/* Need button to navigate to Intake Form Page once in router */}
                     {/* <button className="intake" onClick={() => navigate('/forms/intake')}> Digital Intake Form </button> */}
-                </div>
+                </FormPageRedBox>
             </div>
 
             {/* <div id="pdf">
