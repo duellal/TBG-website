@@ -1,18 +1,6 @@
 import styled from "styled-components";
 import { bright_red, muted_bright_red } from "./constants/colors";
 
-export const FaqSection = styled.div`
-    padding: 2.5% 10% 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-`
-
-export const FaqH1 = styled.h1`
-width: 90%;
-`
-
 export const AllFaqs = styled.div`
     display: flex;
     flex-wrap: wrap;
