@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bright_red, muted_bright_red, pastel_bright_red } from "./constants/colors";
+import { bright_red, muted_bright_red } from "./constants/colors";
 
 export const FaqSection = styled.div`
     padding: 2.5% 10% 5%;
