@@ -4,7 +4,6 @@ import React from "react";
 // Components:
 import AccordianTitle from "../faqs/components/accordian-titles";
 
-
 // Styles:
 import { AboutInfoSection, TeamImg, TeamBioSection, TeamStartDiv, TeamBioText } from '../../styles/about'
 import { CommonH1, CommonH2 } from '../../styles/commonBDG'
