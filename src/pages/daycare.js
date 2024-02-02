@@ -142,10 +142,10 @@ export default function Daycare(){
                                 10 Day .........$260
                             </PricesText>
                             <PricesText>
-                                20 Day.........$480
+                                20 Day .........$480
                             </PricesText>
                             <PricesText>
-                                30 Day..........$600
+                                30 Day ..........$600
                             </PricesText>
 
                             <PricesAsteriskDiv>

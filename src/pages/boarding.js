@@ -101,13 +101,13 @@ export default function Boarding(){
                         </PricesTextSection>
                         <PricesImg src={littlesBoarding} alt=''/> */}
                         <PricesText>
-                            Dogs under 40 lbs - $40.00/night
+                            Dogs under 40 lbs ..........$40/night
                         </PricesText>
                         <PricesText>
-                            Dogs 40 lbs and over - $45.00/night
+                            Dogs 40 lbs and over ..........$45/night
                         </PricesText>
                         <PricesText>
-                            Additional Dog(s) - $30.00/night
+                            Additional Dog(s) ..........$35/night
                         </PricesText>
                     </PricesSection>
                 </PricesDiv>
@@ -148,13 +148,13 @@ export default function Boarding(){
                         </PricesTextSection>
                         <PricesImg src={pocketPets} alt=''/> */}
                         <PricesText>
-                            Cat Boarding - $25/night
+                            Cat Boarding ..........$25/night
                         </PricesText>
                         <PricesText>
-                            Additional Cat(s) - $15/night
+                            Additional Cat(s) ..........$15/night
                         </PricesText>
                         <PricesText>
-                            Pocket Pets (Bunnies, Birds, Reptiles, etc.) - $20/night
+                            Pocket Pets (Bunnies, Birds, Reptiles, etc.) ..........$20/night
                         </PricesText>
                     </PricesSection>
                     {/* <PricesAsteriskDiv>

@@ -23,7 +23,7 @@ font-size: 2.2rem;
 
 //Start of the Page:
 export const CommonStartDiv = styled.div`
-padding: 2.5% 10% 5%;
+padding: 2.5% 12.5% 5%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -33,7 +33,7 @@ justify-content: center;
 //Information Sections:
 export const CommonInfoSection = styled.div`
 text-align: center;
-margin: 40px;
+margin: 40px 43px;
 `
 
 //What we value section:

@@ -40,7 +40,7 @@ export default function Grooming(){
                 </CommonH1>
 
                 <CommonInfoSection>
-                    <p>
+                    <p style={{margin: '40px 43px'}}>
                     Let us make your pet look and smell their best with a refreshing bath and fluff dry.  This service can be provided at the end of their boarding stay, during their daycare day or as a stand alone appointment.
                     </p>
                     {/* <GroomingImg src={grooming3} alt="" className="pic" />             */}
@@ -68,10 +68,10 @@ export default function Grooming(){
                         </PricesTextSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/> */}
                         <PricesText>
-                            Bath (FREE Nail Trim Included).......$25.00
+                            Bath (FREE Nail Trim Included) ..........$25
                         </PricesText>
                         <PricesText>
-                            Nail Trim.......$12.00
+                            Nail Trim ..........$12
                         </PricesText>
                     </PricesSection>
                     <PricesAsteriskDiv>

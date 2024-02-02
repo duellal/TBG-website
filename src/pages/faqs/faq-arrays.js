@@ -48,7 +48,7 @@ let daycareFaqs = [
         question: 'What time is pick up and drop for daycare?',
         answer: [
             `You may pick up and drop off anytime during our open hours. We are open from 7am- 7pm Monday - Saturday.`, 
-            `Half day daycare options are either for the morning play groups or the afternoonplay groups meaning that if you choose the half day morning play option, you can drop off and pick up anytime during 7am - 12pm. The half day afternoon play group drop off and pick up hours are anytime during 2pm - 7pm.`
+            `Half day daycare options are either for the morning play groups or the afternoon play groups meaning that if you choose the half day morning play option, you can drop off and pick up anytime during 7am - 12pm. The half day afternoon play group drop off and pick up hours are anytime during 2pm - 7pm.`
         ]
     },
     {
