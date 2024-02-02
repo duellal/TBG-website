@@ -11,12 +11,14 @@ import Banner from "./general-components/banner-pic";
 import { CommonH1, CommonH2, 
     // CommonH3, 
     CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv,
-    //  PricesImg, PricesP, PricesTextLeft, PricesTextRight, 
+    //  PricesImg, PricesP, CommonPLeft, CommonPRight, 
      PricesSection, 
     //  ValuesItems, ValuesP, ValuesSection, ValuesText, 
-     PricesAsteriskDiv, PricesAsteriskP, PricesText } from "../styles/commonBDG";
-// import { DcPackageDiv, DcPackageP, DcPricesTextSection, } from "../styles/daycare";
+     PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
+// import { DcPackageDiv, DcPackageP, DcCommonPSection, } from "../styles/daycare";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
+import { CommonP } from "../styles/common-styles";
+
 
 // //Images: 
 // import bigsDaycare1 from '../images/daycare/bigsDaycare3.jpeg'
@@ -72,25 +74,25 @@ export default function Daycare(){
                     <PricesDiv>
                         <PricesSection>
                             {/* <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
-                            <DcPricesTextSection>
-                                <PricesTextLeft>
+                            <DcCommonPSection>
+                                <CommonPLeft>
                                     <CommonH4>Full Day</CommonH4>
                                     <br/>
                                     <PricesP>$28 per Visit</PricesP>
-                                </PricesTextLeft>
-                                <PricesTextRight>
+                                </CommonPLeft>
+                                <CommonPRight>
                                     <CommonH4>Half Day</CommonH4>
                                     <br/>
                                     <PricesP>$18 per Visit</PricesP>
-                                </PricesTextRight>
-                            </DcPricesTextSection>
+                                </CommonPRight>
+                            </DcCommonPSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/> */}
-                            <PricesText>
+                            <CommonP>
                                 Full Day ..........$28
-                            </PricesText>
-                            <PricesText>
+                            </CommonP>
+                            <CommonP>
                                 Half Day .........$18
-                            </PricesText>
+                            </CommonP>
                         </PricesSection>
                     </PricesDiv>
 
@@ -108,8 +110,8 @@ export default function Daycare(){
                         
                         <PricesSection>
                             {/* <PricesImg src={bigsDaycare1} alt='' className="pic left"/>
-                            <DcPricesTextSection>
-                                <PricesTextLeft>
+                            <DcCommonPSection>
+                                <CommonPLeft>
                                     <CommonH4>
                                         10 Day
                                     </CommonH4>
@@ -117,8 +119,8 @@ export default function Daycare(){
                                     <PricesP>
                                         $260
                                     </PricesP>
-                                </PricesTextLeft>
-                                <PricesTextRight>
+                                </CommonPLeft>
+                                <CommonPRight>
                                     <CommonH4>
                                         20 Day
                                     </CommonH4>
@@ -126,8 +128,8 @@ export default function Daycare(){
                                     <PricesP>
                                         $480
                                     </PricesP>
-                                </PricesTextRight>
-                                <PricesTextLeft>
+                                </CommonPRight>
+                                <CommonPLeft>
                                     <CommonH4>
                                         30 Day
                                     </CommonH4>
@@ -135,18 +137,18 @@ export default function Daycare(){
                                     <PricesP>
                                         $600
                                     </PricesP>
-                                </PricesTextLeft>
-                            </DcPricesTextSection>
+                                </CommonPLeft>
+                            </DcCommonPSection>
                             <PricesImg src={littlesDaycare1} alt='' className="pic right"/> */}
-                            <PricesText>
+                            <CommonP>
                                 10 Day .........$260
-                            </PricesText>
-                            <PricesText>
+                            </CommonP>
+                            <CommonP>
                                 20 Day .........$480
-                            </PricesText>
-                            <PricesText>
+                            </CommonP>
+                            <CommonP>
                                 30 Day ..........$600
-                            </PricesText>
+                            </CommonP>
 
                             <PricesAsteriskDiv>
                                 <PricesAsteriskP>

@@ -10,14 +10,16 @@ import Banner from "./general-components/banner-pic";
 import { CommonH1, 
     // CommonH2, CommonH4,
     CommonInfoSection, CommonStartDiv, 
-    // PricesImg, PricesTextRight, PricesTextSection, 
+    // PricesImg, CommonPRight, CommonPSection, 
     PricesSection, 
-    // PricesTextLeft, 
+    // CommonPLeft, 
     PricesAsteriskDiv, PricesAsteriskP, 
     // PricesP, HeaderSection, 
-    PricesText } from "../styles/commonBDG";
+ } from "../styles/commonBDG";
 // import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
+import { CommonP } from "../styles/common-styles";
+
 
 // //Images:
 // import grooming1 from '../images/grooming/grooming-1.jpeg';
@@ -54,25 +56,25 @@ export default function Grooming(){
                     </HeaderSection> */}
                     <PricesSection>
                         {/* <PricesImg src={grooming1} alt='' className="pic left"/>
-                        <PricesTextSection>
-                            <PricesTextLeft>
+                        <CommonPSection>
+                            <CommonPLeft>
                                 <CommonH4>Bath (free nail trim included)</CommonH4>
                                 <br/>
                                 <PricesP>$25 per animal</PricesP>
-                            </PricesTextLeft>
-                            <PricesTextRight>
+                            </CommonPLeft>
+                            <CommonPRight>
                                 <CommonH4>Nail trim</CommonH4>
                                 <br/>
                                 <PricesP>$12 per animal</PricesP>
-                            </PricesTextRight>
-                        </PricesTextSection>
+                            </CommonPRight>
+                        </CommonPSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/> */}
-                        <PricesText>
+                        <CommonP>
                             Bath (FREE Nail Trim Included) ..........$25
-                        </PricesText>
-                        <PricesText>
+                        </CommonP>
+                        <CommonP>
                             Nail Trim ..........$12
-                        </PricesText>
+                        </CommonP>
                     </PricesSection>
                     <PricesAsteriskDiv>
                         <PricesAsteriskP style={{fontSize: '2.2rem'}}>

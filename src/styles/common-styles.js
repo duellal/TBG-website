@@ -19,6 +19,15 @@ text-decoration: underline;
 }
 `
 
+export const CommonP = styled.p`
+font-weight: normal;
+font-size: 2.2rem;
+text-transform: none;
+width: 100%;
+text-align: center;
+margin: 10px 0;
+`
+
 export const RedBoxWithShadow = styled.div`
 display: flex;
 align-items: center;

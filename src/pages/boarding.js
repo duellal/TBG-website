@@ -6,9 +6,10 @@ import React from "react";
 import { 
     // ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, 
     CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, 
-    // PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP
-     HeaderSection, CommonH3, PricesText } from "../styles/commonBDG";
+    // PricesImg, CommonPRight, CommonPLeft, CommonPSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP
+     HeaderSection, CommonH3 } from "../styles/commonBDG";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
+import { CommonP } from "../styles/common-styles";
 
 //Components: 
 import AccordianTitle from './faqs/components/accordian-titles';
@@ -82,33 +83,33 @@ export default function Boarding(){
                     </HeaderSection>
                     <PricesSection>
                         {/* <PricesImg src={bigsBoarding} alt=''/>
-                        <PricesTextSection>
-                            <PricesTextLeft>
+                        <CommonPSection>
+                            <CommonPLeft>
                                 <CommonH4>40lbs+</CommonH4>
                                 <br/>
                                 <PricesP>$45 per night</PricesP>
-                            </PricesTextLeft>
-                            <PricesTextRight>
+                            </CommonPLeft>
+                            <CommonPRight>
                                 <CommonH4>Under 40lbs</CommonH4>
                                 <br/>
                                 <PricesP>$40 per night</PricesP>
-                            </PricesTextRight>
-                            <PricesTextLeft>
+                            </CommonPRight>
+                            <CommonPLeft>
                                 <CommonH4>Additional Dog(s)</CommonH4>
                                 <br/>
                                 <PricesP>$30 per night</PricesP>
-                            </PricesTextLeft>
-                        </PricesTextSection>
+                            </CommonPLeft>
+                        </CommonPSection>
                         <PricesImg src={littlesBoarding} alt=''/> */}
-                        <PricesText>
+                        <CommonP>
                             Dogs under 40 lbs ..........$40/night
-                        </PricesText>
-                        <PricesText>
+                        </CommonP>
+                        <CommonP>
                             Dogs 40 lbs and over ..........$45/night
-                        </PricesText>
-                        <PricesText>
+                        </CommonP>
+                        <CommonP>
                             Additional Dog(s) ..........$35/night
-                        </PricesText>
+                        </CommonP>
                     </PricesSection>
                 </PricesDiv>
 
@@ -126,36 +127,36 @@ export default function Boarding(){
                     </HeaderSection>
                     <PricesSection>
                         {/* <PricesImg src={catBoarding} alt=''/>
-                        <PricesTextSection>
-                            <PricesTextLeft>
+                        <CommonPSection>
+                            <CommonPLeft>
                                 <CommonH4>Cat Boarding</CommonH4>
                                 <br/>
                                 <PricesP>$25 per night</PricesP>
-                            </PricesTextLeft>
-                            <PricesTextRight>
+                            </CommonPLeft>
+                            <CommonPRight>
                                 <CommonH4>Additional Cat(s)</CommonH4>
                                 <br/>
                                 <PricesP>$15 per night</PricesP>
-                            </PricesTextRight>
-                            <PricesTextLeft>
+                            </CommonPRight>
+                            <CommonPLeft>
                                 <CommonH4>Pocket Pets</CommonH4>
                                 <br/>
                                 <PricesPocketExP>Bunnies, Birds, Reptiles, etc. </PricesPocketExP>
                                 <PricesPocketInstructionP>* Please provide your own cage/carrier for your pocket pet</PricesPocketInstructionP>
                                 <br/>
                                 <PricesP>$20 per night</PricesP>
-                            </PricesTextLeft>
-                        </PricesTextSection>
+                            </CommonPLeft>
+                        </CommonPSection>
                         <PricesImg src={pocketPets} alt=''/> */}
-                        <PricesText>
+                        <CommonP>
                             Cat Boarding ..........$25/night
-                        </PricesText>
-                        <PricesText>
+                        </CommonP>
+                        <CommonP>
                             Additional Cat(s) ..........$15/night
-                        </PricesText>
-                        <PricesText>
+                        </CommonP>
+                        <CommonP>
                             Pocket Pets (Bunnies, Birds, Reptiles, etc.) ..........$20/night
-                        </PricesText>
+                        </CommonP>
                     </PricesSection>
                     {/* <PricesAsteriskDiv>
                         <PricesAsteriskP>

@@ -1,6 +1,18 @@
 import styled from "styled-components";
-import { CommonInfoSection } from "../styles/commonBDG"
+import { CommonH3, CommonInfoSection } from "../styles/commonBDG"
+import { CommonP } from "./common-styles";
 
+//Graffiti Banner Image:
+export const GraffitiDiv = styled.div`
+    margin: -20px 0 0;
+`
+
+export const GraffitiImg = styled.img`
+    width: 100%;
+    height: 600px;
+`
+
+//About Page Section
 export const AboutImg = styled.img`
 width: 90%;
 height: 400px;
@@ -14,6 +26,23 @@ flex-wrap: wrap;
 justify-content: center;
 text-align: justify;
 align-items: center;
+`
+
+export const QuoteHeader = styled(CommonH3)`
+margin: 10px 0;
+text-align: left;
+font-size: 2.5rem;
+`
+
+export const QuoteBody = styled.blockquote`
+font-size: 2rem;
+font-style: italic;
+margin: 10px 20px;
+`
+
+export const QuoteAuthor = styled(CommonP)`
+text-align: left;
+margin: 20px;
 `
 
 //Teams-Careers:

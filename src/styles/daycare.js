@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { PricesTextSection } from "./commonBDG";
+import { CommonPSection } from "./commonBDG";
 
 
-export const DcPricesTextSection = styled(PricesTextSection)`
+export const DcCommonPSection = styled(CommonPSection)`
 height: 200px;
 `
 

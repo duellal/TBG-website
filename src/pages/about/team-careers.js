@@ -19,17 +19,12 @@ export default function TeamCareers(){
             </CommonH1>
 
             <AboutInfoSection>
-                    <CommonH2>
-                        Meet the Owner!
-                    </CommonH2>
-
                     <TeamBioSection>
-                        <TeamImg loading="lazy" src={owner} alt="a white short-haired cat with a black face and blue eyes close up" />
-                        <TeamBioText>
+                        {/* <TeamBioText> */}
                             <p>
                                 Puppy kitty ipsum dolor sit good dog throw wet nose paws barky dragging tuxedo running nest cockatiel tongue. Harness slobbery birds pet supplies dragging paws cockatiel bird commands treats scratch left paw food chew stay grooming crate cage park paws. Water leash critters cage gimme five slobber. Bird Food kisses run fast wet nose purr slobbery run cage chew bedding food scratch leash dog house dinnertime roll over slobbery right paw. Cage Fido yawn chow swimming Rover bark Scooby snacks house train hamster. Food small animals slobbery smooshy running sit. Throw bedding parrot Scooby snacks biscuit bark Spike furry.
                             </p>
-                        </TeamBioText>
+                        {/* </TeamBioText> */}
                     </TeamBioSection>
             </AboutInfoSection>
 
