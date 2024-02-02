@@ -3,7 +3,7 @@ import React from "react";
 
 //Boarding Styles:
 import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP, HeaderSection } from "../styles/commonBDG";
+import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP, HeaderSection, CommonH3, PricesText } from "../styles/commonBDG";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 
 //Components: 
@@ -37,7 +37,7 @@ export default function Boarding(){
             <Banner allImages={boardingImages}/>
             <CommonStartDiv>
                 <CommonH1> 
-                    Dog Boarding
+                    Boarding at Our Facility
                 </CommonH1>
 
                 <CommonInfoSection>
@@ -50,7 +50,7 @@ export default function Boarding(){
                     breaks, meals, water play (weather permitting) and constant interaction with staff during their stay. All activities are included in the boarding rate.
                     </p>
 
-                    <ValuesSection>
+                    {/* <ValuesSection>
                         <ValuesText>
                             <ValuesP> 
                                 No matter what, we believe that all dogs should be treated equally. 
@@ -63,17 +63,21 @@ export default function Boarding(){
                                 {listValues}
                             </ValuesItems>
                         </ValuesText>                  
-                    </ValuesSection>
+                    </ValuesSection> */}
                 </CommonInfoSection>
 
                 <PricesDiv>
                     <HeaderSection>
                         <CommonH2>
-                            Dog Boarding Prices
+                            Dog Boarding
                         </CommonH2>
+                        <div style={{width: '100%', height: '20px'}}></div>
+                        <CommonH3>
+                            Rates
+                        </CommonH3>
                     </HeaderSection>
                     <PricesSection>
-                        <PricesImg src={bigsBoarding} alt=''/>
+                        {/* <PricesImg src={bigsBoarding} alt=''/>
                         <PricesTextSection>
                             <PricesTextLeft>
                                 <CommonH4>40lbs+</CommonH4>
@@ -91,18 +95,33 @@ export default function Boarding(){
                                 <PricesP>$30 per night</PricesP>
                             </PricesTextLeft>
                         </PricesTextSection>
-                        <PricesImg src={littlesBoarding} alt=''/>
+                        <PricesImg src={littlesBoarding} alt=''/> */}
+                        <PricesText>
+                            Dogs under 40 lbs - $40.00/night
+                        </PricesText>
+                        <PricesText>
+                            Dogs 40 lbs and over - $45.00/night
+                        </PricesText>
+                        <PricesText>
+                            Additional Dog(s) - $30.00/night
+                        </PricesText>
                     </PricesSection>
                 </PricesDiv>
 
                 <Requirements boarding='boarding'/>
 
                 <PricesDiv>
-                    <CommonH2 style={{marginTop: '60px'}}>
-                        Cat and Pocket Pet Boarding
-                    </CommonH2>
+                    <HeaderSection>
+                        <CommonH2>
+                            Other Pets
+                        </CommonH2>
+                        <div style={{width: '100%', height: '20px'}}></div>
+                        <CommonH3>
+                            Rates
+                        </CommonH3>
+                    </HeaderSection>
                     <PricesSection>
-                        <PricesImg src={catBoarding} alt=''/>
+                        {/* <PricesImg src={catBoarding} alt=''/>
                         <PricesTextSection>
                             <PricesTextLeft>
                                 <CommonH4>Cat Boarding</CommonH4>
@@ -123,13 +142,23 @@ export default function Boarding(){
                                 <PricesP>$20 per night</PricesP>
                             </PricesTextLeft>
                         </PricesTextSection>
-                        <PricesImg src={pocketPets} alt=''/>
+                        <PricesImg src={pocketPets} alt=''/> */}
+                        <PricesText>
+                            Cat Boarding - $25/night
+                        </PricesText>
+                        <PricesText>
+                            Additional Cat(s) - $15/night
+                        </PricesText>
+                        <PricesText>
+                            Pocket Pets (Bunnies, Birds, Reptiles, etc.) - $20/night
+                        </PricesText>
                     </PricesSection>
-                    <PricesAsteriskDiv>
+                    {/* <PricesAsteriskDiv>
                         <PricesAsteriskP>
                             * Please bring your cats and pocket pets in a carrier when entering the building.
                         </PricesAsteriskP>
-                    </PricesAsteriskDiv>
+                    </PricesAsteriskDiv> */}
+                    <Requirements pocket={'pocket'} />
                 </PricesDiv>
 
                 <AllFaqs className="all-faqs">
