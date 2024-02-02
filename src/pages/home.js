@@ -24,9 +24,9 @@ export default function Home(){
                 <InfoButton/>
             </CommonStartDiv>
 
-            <GalleryPlaceholderDiv>
+            {/* <GalleryPlaceholderDiv>
                 <GalleryPlaceholderImg src={graffiti}/>
-            </GalleryPlaceholderDiv>
+            </GalleryPlaceholderDiv> */}
         </>
     )
 }

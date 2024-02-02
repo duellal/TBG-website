@@ -29,6 +29,7 @@ import React from "react";
 //Forms Styles:
 import '../../styles/forms.css'
 import { FormPageRedBox } from "../../styles/formPage";
+import { UnderlineLink } from "../../styles/common-styles";
 
 //Import Form PDF:
 // import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -45,15 +46,15 @@ export default function Forms(){
             <div id="digital">
                 <FormPageRedBox>
                     <p> 
-                        We require all owners to fill out an intake form to insure we have your contact information and all of your pets information. 
+                        We require all owners to fill out a new client form to insure that we have your contact information and all of your pets information. 
                     </p>
                     <br/>
                     <p>
-                        You can contact us at {' '}
-                            <a href="mailto:thebiscuitgarden@gmail.com">
+                        You can contact us at{''}
+                            <UnderlineLink href="mailto:thebiscuitgarden@gmail.com">
                                 thebiscuitgarden@gmail.com
-                            </a>
-                        {' '}and we can email you a copy or you can come by and fill one out!
+                            </UnderlineLink>
+                        {''}and we can email you a copy or you can come by and fill one out!
                     </p>
 
                     {/* Need button to navigate to Intake Form Page once in router */}
