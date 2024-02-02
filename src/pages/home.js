@@ -11,9 +11,9 @@ import { CommonStartDiv } from '../styles/commonBDG'
 //Variables:
 import { homeImages } from "../constants/banner-pics";
 
-//Images:
-import graffiti from '../images/facility/graffiti-wall.jpeg'
-import { GalleryPlaceholderDiv, GalleryPlaceholderImg } from "../styles/home";
+// //Images:
+// import graffiti from '../images/facility/graffiti-wall.jpeg'
+// import { GalleryPlaceholderDiv, GalleryPlaceholderImg } from "../styles/home";
 
 
 export default function Home(){
