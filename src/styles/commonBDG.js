@@ -77,7 +77,7 @@ justify-content: center;
 `
 
 export const PricesSection = styled.div`
-padding-top: 3%;
+margin-top: 10px;
 display: inherit;
 flex-wrap: wrap;
 align-items: center;
@@ -89,7 +89,6 @@ width: 100%;
 display: inherit;
 flex-wrap: wrap;
 justify-content: center;
-margin-bottom: 10px;
 `
 
 export const PricesImg = styled.img`
@@ -119,18 +118,27 @@ justify-content: flex-end;
 text-align: end;
 `
 
+export const PricesText = styled.p`
+font-weight: normal;
+font-size: 2.2rem;
+text-transform: none;
+width: 100%;
+text-align: center;
+margin: 10px 0;
+`
+
 export const PricesP = styled.p`
 width: 100%
 `
 
 export const PricesAsteriskDiv = styled.div`
 width: 100%;
-margin-top: 15px;
+margin: 15px 0 50px;
 `
 
 export const PricesAsteriskP = styled.p`
 width: 100%;
-font-size: 1.6rem;
+font-size: 2rem;
 margin: 5px 0;
 text-align: center;
 `
@@ -141,14 +149,12 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 text-align: center;
-margin-top: 100px;
+margin: 50px 0;
 `
 
-export const RequirementH2 = styled.h2`
+export const RequirementH2 = styled(CommonH3)`
 width: 50%;
 margin-top: 20px;
-font-weight: 500;
-font-size: 2.5rem;
 `
 
 export const RequirementH3 = styled.h3`
