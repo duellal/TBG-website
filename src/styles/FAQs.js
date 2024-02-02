@@ -7,6 +7,8 @@ export const AllFaqs = styled.div`
     justify-content: center;
     margin-top: 30px;
     width: 80%;
+box-shadow: 0 0 20px 1px black;
+
 `
 
 export const FaqTitleDiv = styled.div`
