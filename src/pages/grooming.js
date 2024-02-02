@@ -68,10 +68,10 @@ export default function Grooming(){
                         </PricesTextSection>
                         <PricesImg src={grooming2} alt='' className="pic right"/> */}
                         <PricesText>
-                            Bath (FREE Nail Trim Included).......$25.00
+                            Bath (FREE Nail Trim Included) ..........$25
                         </PricesText>
                         <PricesText>
-                            Nail Trim.......$12.00
+                            Nail Trim ..........$12
                         </PricesText>
                     </PricesSection>
                     <PricesAsteriskDiv>
