@@ -16,8 +16,8 @@ import { CommonH1, CommonH2,
     //  ValuesItems, ValuesP, ValuesSection, ValuesText, 
      PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
 // import { DcPackageDiv, DcPackageP, DcCommonPSection, } from "../styles/daycare";
-import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
-import { CommonP } from "../styles/common-styles";
+import { FaqTitleDiv } from "../styles/FAQs";
+import { AllRedDropDowns, CommonP } from "../styles/common-styles";
 
 
 // //Images: 
@@ -173,7 +173,7 @@ export default function Daycare(){
 
                 {/* <Requirements daycare/> */}
 
-                <AllFaqs className="all-faqs">
+                <AllRedDropDowns>
                 {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
                     {
                         indvTitles.map((title, index) => {
@@ -190,7 +190,7 @@ export default function Daycare(){
                             return null
                         })
                     }
-                </AllFaqs>
+                </AllRedDropDowns>
             </CommonStartDiv>
         </>
     )

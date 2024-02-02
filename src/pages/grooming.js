@@ -17,8 +17,8 @@ import { CommonH1,
     // PricesP, HeaderSection, 
  } from "../styles/commonBDG";
 // import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
-import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
-import { CommonP } from "../styles/common-styles";
+import { FaqTitleDiv } from "../styles/FAQs";
+import { AllRedDropDowns, CommonP } from "../styles/common-styles";
 
 
 // //Images:
@@ -85,7 +85,7 @@ export default function Grooming(){
 
                 {/* <Requirements grooming='grooming'/> */}
 
-                <AllFaqs className="all-faqs">
+                <AllRedDropDowns>
                 {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
                     {
                         indvTitles.map((title, index) => {
@@ -102,7 +102,7 @@ export default function Grooming(){
                             return null
                         })
                     }
-                </AllFaqs>
+                </AllRedDropDowns>
             </CommonStartDiv>
         </>
     )

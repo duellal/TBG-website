@@ -31,6 +31,8 @@ export default function About(){
                         The Biscuit Garden is a small, family owned business based out of Wake County, NC.  With over 20+ years in the animal care industry, the staff take great pride in the relationships formed with their community, their clients and their four legged friends.
                     </CommonP>
 
+                    <TeamCareers/>
+
                     <QuoteHeader>
                         A note from the owner:
                     </QuoteHeader>
@@ -41,8 +43,6 @@ export default function About(){
                         Beth Ann Young
                     </QuoteAuthor>
                 </AboutInfoSection>
-
-                <TeamCareers/>
             </CommonStartDiv>
         </>
     )

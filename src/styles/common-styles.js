@@ -39,3 +39,12 @@ border: 1px solid ${bright_red};
 box-shadow: 0 0 30px 1px black;
 `
 
+export const AllRedDropDowns = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 30px;
+width: 80%;
+box-shadow: 0 0 20px 1px black;
+background: ${bright_red};
+`

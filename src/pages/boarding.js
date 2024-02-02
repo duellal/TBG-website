@@ -8,8 +8,8 @@ import {
     CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, 
     // PricesImg, CommonPRight, CommonPLeft, CommonPSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP
      HeaderSection, CommonH3 } from "../styles/commonBDG";
-import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
-import { CommonP } from "../styles/common-styles";
+import { FaqTitleDiv } from "../styles/FAQs";
+import { AllRedDropDowns, CommonP } from "../styles/common-styles";
 
 //Components: 
 import AccordianTitle from './faqs/components/accordian-titles';
@@ -166,7 +166,7 @@ export default function Boarding(){
                     <Requirements pocket={'pocket'} />
                 </PricesDiv>
 
-                <AllFaqs className="all-faqs">
+                <AllRedDropDowns>
                 {/* Gets different accordian titled FAQs with accordian content (?s and answers) */}
                     {
                         indvTitles.map((title, index) => {
@@ -183,7 +183,7 @@ export default function Boarding(){
                             return null
                         })
                     }
-                </AllFaqs>
+                </AllRedDropDowns>
             </CommonStartDiv>
         </>
     )
