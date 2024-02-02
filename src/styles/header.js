@@ -1,26 +1,37 @@
 import styled from "styled-components";
-import { devicesWidth } from "./constants/device-size";
+import { devicesHeight, devicesWidth } from "./constants/device-size";
 
-const { tablet, tabletXL, mobileXL, mobileS, laptopS, laptopXS } = devicesWidth
+const { xxl, xl } = devicesHeight
+const { tablet, tabletXL, mobileXL, mobileS, laptopS } = devicesWidth
 
 export const StyledHeader = styled.header`
     position: sticky;
     top: 0;
-    height: 330px;
+    height: 280px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
     z-index: 500;
-    
+
+    @media ${xxl} and ${tabletXL}{
+        height: ${props => props.open ? '250px' : '200px'}
+    }
+
+    @media ${xl}{
+        height: 240px;
+    }
+
     @media ${tablet}{
         justify-content: end;
         height: ${props => props.open ? '250px' : '200px'};
     }
 
     @media ${mobileXL}{
-        height: ${props => props.open ? '200px' : '165px'};
+        height: ${props => props.open ? '200px' : '100px'};
     }
+
+
 `
 export const LogoContainer = styled.div`
     width: 270px;
@@ -55,7 +66,7 @@ export const Navbar = styled.nav`
     margin: 100px 20px 100px 0;
     padding: 12px 0;
 
-    @media ${laptopXS}{
+    @media ${tabletXL}{
         display: none;
     }
 `
@@ -72,18 +83,14 @@ export const Nav = styled.ul`
 
 export const MobileNavBar = styled.nav`
     display: none;
-    
-    @media ${laptopXS}{
+
+    @media ${tabletXL}{
         display: block;
         align-self: center;
         position: absolute;
         top: 20%;
-        left: 78%;
         padding: 0;
         margin: 0;
-    }
-
-    @media ${tabletXL}{
         left: 75%;
     }
 
@@ -117,13 +124,15 @@ export const MobileNav = styled(Nav)`
 export const HamburgerDiv = styled.div`
     display: none;
     
-    @media ${laptopXS}{
+    @media ${tabletXL}{
        display: block;
        position: absolute;
        left: 93%;
     }
 
     @media ${tablet}{
+        display: block;
+        position: absolute;
         left: 90%;
     }
 

@@ -8,7 +8,7 @@ const heightSizes = {
     m: '780px',
     l: '860px',
     xl: '960px',
-    xxl: '1100px',
+    xxl: '1110px',
     xxxl: '1200px',
     xxxxl: '1400px',
 }
@@ -45,14 +45,14 @@ export const devicesWidth = {
 };
 
 export const devicesHeight = {
-    xxxs: `(min-height: ${heightSizes.xxxs})`,
-    xxs: `(min-height: ${heightSizes.xxs})`,
-    xs: `(min-height: ${heightSizes.xs})`,
-    s: `(min-height: ${heightSizes.s})`,
-    m: `(min-height: ${heightSizes.m})`,
-    l: `(min-height: ${heightSizes.l})`,
-    xl: `(min-height: ${heightSizes.xl})`,
-    xxl: `(min-height: ${heightSizes.xxl})`,
-    xxxl: `(min-height: ${heightSizes.xxxl})`,
-    xxxxl: `(min-height: ${heightSizes.xxxxl})`,
+    xxxs: `(max-height: ${heightSizes.xxxs})`,
+    xxs: `(max-height: ${heightSizes.xxs})`,
+    xs: `(max-height: ${heightSizes.xs})`,
+    s: `(max-height: ${heightSizes.s})`,
+    m: `(max-height: ${heightSizes.m})`,
+    l: `(max-height: ${heightSizes.l})`,
+    xl: `(max-height: ${heightSizes.xl})`,
+    xxl: `(max-height: ${heightSizes.xxl})`,
+    xxxl: `(max-height: ${heightSizes.xxxl})`,
+    xxxxl: `(max-height: ${heightSizes.xxxxl})`,
 }
