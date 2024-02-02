@@ -133,12 +133,12 @@ width: 100%
 
 export const PricesAsteriskDiv = styled.div`
 width: 100%;
-margin-top: 15px;
+margin: 15px 0 50px;
 `
 
 export const PricesAsteriskP = styled.p`
 width: 100%;
-font-size: 1.6rem;
+font-size: 2rem;
 margin: 5px 0;
 text-align: center;
 `
