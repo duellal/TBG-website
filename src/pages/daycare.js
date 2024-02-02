@@ -9,8 +9,8 @@ import Banner from "./general-components/banner-pic";
 
 //Daycare Styles:
 import { CommonH1, CommonH2, 
-    // CommonH3, CommonH4, 
-    CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv,
+    // CommonH3, 
+    CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv,
     //  PricesImg, PricesP, PricesTextLeft, PricesTextRight, 
      PricesSection, 
     //  ValuesItems, ValuesP, ValuesSection, ValuesText, 
@@ -23,7 +23,7 @@ import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 // import littlesDaycare1 from '../images/daycare/littlesDaycare1.jpeg'
 
 //Variables:
-import { daycareValues } from "../constants/board-daycare-values";
+// import { daycareValues } from "../constants/board-daycare-values";
 import { daycareImages } from "../constants/banner-pics";
 
 //FAQ Arrays:
@@ -41,7 +41,7 @@ export default function Daycare(){
             <Banner allImages={daycareImages} />
             <CommonStartDiv>
                 <CommonH1> 
-                    Daycare At Our Facility
+                    Doggie Daycare
                 </CommonH1>
 
                 <CommonInfoSection>
@@ -96,9 +96,9 @@ export default function Daycare(){
 
                     <PricesDiv>
                         <HeaderSection>
-                            <CommonH2>
+                            <CommonH4 style={{marginTop: '40px'}}>
                                 Packages (Full Day Only)
-                            </CommonH2>
+                            </CommonH4>
                             {/* <DcPackageDiv>
                                 <DcPackageP>
                                     Full Day Only
