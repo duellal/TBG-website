@@ -4,13 +4,19 @@ import React from "react";
 //Components:
 import AccordianTitle from "./faqs/components/accordian-titles";
 import Banner from "./general-components/banner-pic";
-import Requirements from "./general-components/requirements";
+// import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
-import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, PricesImg, PricesTextRight, PricesTextSection, PricesSection, PricesTextLeft, PricesAsteriskDiv, PricesAsteriskP, PricesP, HeaderSection, PricesText } from "../styles/commonBDG";
-import { 
-    // GroomingImg, 
-    GroomingPricesDiv } from "../styles/grooming";
+import { CommonH1, 
+    // CommonH2, CommonH4,
+    CommonInfoSection, CommonStartDiv, 
+    // PricesImg, PricesTextRight, PricesTextSection, 
+    PricesSection, 
+    // PricesTextLeft, 
+    PricesAsteriskDiv, PricesAsteriskP, 
+    // PricesP, HeaderSection, 
+    PricesText } from "../styles/commonBDG";
+// import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 
 // //Images:
