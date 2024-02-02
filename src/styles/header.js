@@ -9,7 +9,6 @@ export const StyledHeader = styled.header`
     top: 0;
     height: 280px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     background-color: #06aed5;
     z-index: 500;
@@ -23,7 +22,6 @@ export const StyledHeader = styled.header`
     }
 
     @media ${tablet}{
-        justify-content: end;
         height: ${props => props.open ? '250px' : '200px'};
     }
 
@@ -61,10 +59,8 @@ export const Logo = styled.img`
 
 export const Navbar = styled.nav`
     width: 100%;
-    align-self: flex-start;
     background-color: #06aed5;
-    margin: 100px 20px 100px 0;
-    padding: 12px 0;
+    margin: 0 20px 0 0;
 
     @media ${tabletXL}{
         display: none;
@@ -74,10 +70,9 @@ export const Navbar = styled.nav`
 export const Nav = styled.ul`
     display: flex;
     justify-content: space-around;
-    align-itmes: center;
     
     @media ${laptopS}{
-        margin-bottom: 100px;
+        // margin-bottom: 100px;
     }
 `
 
