@@ -2,8 +2,12 @@
 import React from "react";
 
 //Boarding Styles:
-import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
-import { ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP, HeaderSection, CommonH3, PricesText } from "../styles/commonBDG";
+// import { PricesPocketExP, PricesPocketInstructionP } from "../styles/boarding";
+import { 
+    // ValuesItems, ValuesSection, ValuesText, ValuesLi, ValuesP, 
+    CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, 
+    // PricesImg, PricesTextRight, PricesTextLeft, PricesTextSection, CommonH4, PricesP, PricesAsteriskDiv, PricesAsteriskP
+     HeaderSection, CommonH3, PricesText } from "../styles/commonBDG";
 import { AllFaqs, FaqTitleDiv } from "../styles/FAQs";
 
 //Components: 
@@ -11,14 +15,14 @@ import AccordianTitle from './faqs/components/accordian-titles';
 import Banner from "./general-components/banner-pic";
 import Requirements from "./general-components/requirements";
 
-//Images:
-import bigsBoarding from '../images/boarding/bigs-boarding.jpeg';
-import littlesBoarding from '../images/boarding/littles-boarding.jpeg'
-import pocketPets from '../images/boarding/pocket-pets.jpeg'
-import catBoarding from '../images/boarding/cat-boarding.jpeg'
+// //Images:
+// import bigsBoarding from '../images/boarding/bigs-boarding.jpeg';
+// import littlesBoarding from '../images/boarding/littles-boarding.jpeg'
+// import pocketPets from '../images/boarding/pocket-pets.jpeg'
+// import catBoarding from '../images/boarding/cat-boarding.jpeg'
 
 // Variables:
-import { boardingValues } from "../constants/board-daycare-values";
+// import { boardingValues } from "../constants/board-daycare-values";
 import { boardingImages } from "../constants/banner-pics";
 
 //FAQ Arrays: 
@@ -28,9 +32,9 @@ import {
 } from './faqs/faq-arrays'
 
 export default function Boarding(){
-    let listValues = boardingValues.map((statement) => {
-        return <ValuesLi>{statement}</ValuesLi>
-    })
+    // let listValues = boardingValues.map((statement) => {
+    //     return <ValuesLi>{statement}</ValuesLi>
+    // })
 
     return(
         <>
