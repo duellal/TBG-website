@@ -77,3 +77,8 @@ p{
     width: 100%;
 }
 `
+
+export const EmailButton = styled.button`
+display: flex;
+justify-self: center
+`

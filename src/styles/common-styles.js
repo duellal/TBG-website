@@ -13,6 +13,7 @@ export const Break10pxDiv = styled.div`
 `
 
 export const UnderlineLink = styled.a`
+text-color: inherit;
 
 &:hover{ 
 text-decoration: underline;

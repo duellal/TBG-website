@@ -1,7 +1,10 @@
+import { UnderlineLink } from "../../styles/common-styles"
+
 let indvTitles = [
     'Boarding FAQs',
     'Daycare FAQs',
-    'Grooming FAQs'
+    'Grooming FAQs',
+    'ready to join the team?'
 ]
 
 let boardingFaqs = [
@@ -81,9 +84,18 @@ let groomingFaqs = [
     },
 ]
 
+let joinTeamDropdown = [
+    {
+        answer: [
+            `Please send your resume to the thebiscuitgarden@gmail.com and tell us a little about yourself!`
+    ],
+    }
+]
+
 export {
     indvTitles,
     boardingFaqs,
     daycareFaqs,
-    groomingFaqs
+    groomingFaqs,
+   joinTeamDropdown,
 }

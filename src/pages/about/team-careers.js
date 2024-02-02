@@ -1,15 +1,21 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-//TeamCareers Styles:
-import { AboutInfoSection, TeamImg, TeamBioSection, TeamSection, TeamStartDiv, TeamBioText } from '../../styles/about'
-import { CommonH1, CommonH2 } from '../../styles/commonBDG'
+// Components:
+import AccordianTitle from "../faqs/components/accordian-titles";
 
-//Images:
-import owner from '../../images/about/owner.jpeg';
+
+// Styles:
+import { AboutInfoSection, TeamImg, TeamBioSection, TeamStartDiv, TeamBioText } from '../../styles/about'
+import { CommonH1, CommonH2 } from '../../styles/commonBDG'
+import { FaqTitleDiv } from "../../styles/FAQs";
+import { AllRedDropDowns, CommonP } from "../../styles/common-styles";
+
+// Images:
 import manager from '../../images/about/manager.jpeg';
-import team from '../../images/about/team.jpeg';
-import { AllRedDropDowns, CommonP, RedBoxWithShadow } from "../../styles/common-styles";
+
+// Variables
+import { indvTitles, joinTeamDropdown } from "../faqs/faq-arrays";
 
 export default function TeamCareers(){
 
@@ -48,17 +54,24 @@ export default function TeamCareers(){
             </AboutInfoSection>
 
             <AboutInfoSection>
-                <CommonH2>
-                    Ready to Join the Team?
-                </CommonH2>
-
-            <AllRedDropDowns>
-                <TeamSection>
-                    <p>
-                        Lamb in eggplant baler rain barrels manure hay rake. Gourds utters at welding equipment a oink oink haybine. Forage Harvester rakes peacocks, squeal garden woof. Haybine carrots soybeans, owls duck raising or, cheep in plows. Ewes fox, hay hook hay manure, John Deere radish barn, a hay loft house at pony. Haybine carrots soybeans, owls duc.
-                    </p>
-                </TeamSection>
-            </AllRedDropDowns>
+                <AllRedDropDowns>
+                {/* Gets title for joining the team with accordian content about how to apply*/}
+                    {
+                        indvTitles.map((title, index) => {
+                            if(title.includes('team')){
+                                return (
+                                    <FaqTitleDiv key={index} id={title}>
+                                        <AccordianTitle 
+                                            title={title} 
+                                            content={joinTeamDropdown} 
+                                        />
+                                    </FaqTitleDiv>
+                                )
+                            }
+                            return null
+                        })
+                    }
+                </AllRedDropDowns>
             </AboutInfoSection>
         </TeamStartDiv>
     )
