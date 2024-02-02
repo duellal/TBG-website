@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-//Components: 
+// Components: 
+import InfoButton from "../general-components/info-buttons.js/info-button";
 import TeamCareers from "./team-careers";
 
-//Images:
+// Images:
 import graffiti from '../../images/facility/graffiti-wall.jpeg'
 
-//Styles:
-import { CommonH1, CommonH2, CommonInfoSection, CommonStartDiv } from "../../styles/commonBDG";
-import { AboutInfoSection, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader } from "../../styles/about";
+// Styles:
+import { CommonH1, CommonH2, CommonStartDiv } from "../../styles/commonBDG";
+import { AboutInfoSection, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader, ValuesSection } from "../../styles/about";
 import { CommonP } from "../../styles/common-styles";
-import InfoButton from "../general-components/info-buttons.js/info-button";
+
+// Variables:
 import { values } from "../../constants/values";
 
 export default function About(){
@@ -28,9 +30,9 @@ export default function About(){
                     <CommonH2>
                         We base everything that we do around 4 simple values:
                     </CommonH2>
-                    <CommonInfoSection>
+                    <ValuesSection>
                         <InfoButton array={values} />
-                    </CommonInfoSection>
+                    </ValuesSection>
 
                     <TeamCareers/>
 

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 // Styling: 
-import { IndvInfoBtn, InsideBtnDiv, BtnIcon, BtnInfo, BtnTitle } from "../../../styles/info-button";
+import { IndvInfoBtn, InsideBtnDiv, BtnIcon, BtnInfo, BtnTitle, ValuesIndvInfoBtn } from "../../../styles/info-button";
 
 
 export default function IndvButton(props){
@@ -12,6 +12,31 @@ export default function IndvButton(props){
 
     let hoverHandler = () => {
         setHover(!hover)
+    }
+
+    if(icon.props.icon.iconName === 'paw'){
+        return (
+            <>
+                <ValuesIndvInfoBtn 
+                    id={title} 
+                    onClick={() => navigate(`/${title}`)}
+                    onMouseEnter={hoverHandler}
+                    onMouseLeave={hoverHandler}
+                >
+                    <InsideBtnDiv 
+                        key={title} 
+                        id={title}
+                        hover={hover}
+                    >
+                        <BtnTitle>{title}</BtnTitle>
+                        <BtnIcon>{icon}</BtnIcon>
+                        <BtnInfo hover={hover}>
+                            {info}
+                        </BtnInfo>
+                    </InsideBtnDiv>
+                </ValuesIndvInfoBtn>
+            </>
+        )
     }
 
     return (

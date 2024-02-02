@@ -4,8 +4,9 @@ import { bright_red } from "./constants/colors";
 export const InfoBtnDiv = styled.div`
 display: flex;
 justify-content: space-between;
+flex-wrap: wrap;
 width: 100%;
-// border: 1px solid blue;
+// border: 5px solid blue;
 `
 
 export const IndvInfoBtn = styled.button`
@@ -17,6 +18,13 @@ background-color: ${bright_red};
 cursor: pointer;
 border: 1px solid ${bright_red};
 box-shadow: 0 0 20px 1px black;
+`
+
+export const ValuesIndvInfoBtn = styled(IndvInfoBtn)`
+width: 45%;
+height: 35rem;
+margin: 25px;
+// border: 1px solid white;
 `
 
 export const BtnTitle = styled.h1`
@@ -34,6 +42,7 @@ margin: 10px 0;
 
 export const BtnInfo = styled.p`
 width: 100%;
+text-wrap: wrap;
 color: white;
 // border: 1px solid yellow;
 

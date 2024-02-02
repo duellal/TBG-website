@@ -20,12 +20,16 @@ margin-top: 5%;
 `
 
 export const AboutInfoSection = styled(CommonInfoSection)`
-width: 90%;
+width: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 text-align: justify;
 align-items: center;
+`
+
+export const ValuesSection = styled(AboutInfoSection)`
+width: 100%;
 `
 
 export const QuoteHeader = styled(CommonH3)`
