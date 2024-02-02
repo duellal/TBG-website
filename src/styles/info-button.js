@@ -4,8 +4,9 @@ import { bright_red } from "./constants/colors";
 export const InfoBtnDiv = styled.div`
 display: flex;
 justify-content: space-between;
+flex-wrap: wrap;
 width: 100%;
-// border: 1px solid blue;
+// border: 5px solid blue;
 `
 
 export const IndvInfoBtn = styled.button`
@@ -17,6 +18,14 @@ background-color: ${bright_red};
 cursor: pointer;
 border: 1px solid ${bright_red};
 box-shadow: 0 0 20px 1px black;
+`
+
+export const ValuesIndvInfoBtn = styled(IndvInfoBtn)`
+width: 45%;
+height: 30rem;
+margin: 2.5%;
+cursor: inherit;
+// border: 1px solid white;
 `
 
 export const BtnTitle = styled.h1`
@@ -34,6 +43,7 @@ margin: 10px 0;
 
 export const BtnInfo = styled.p`
 width: 100%;
+text-wrap: wrap;
 color: white;
 // border: 1px solid yellow;
 
@@ -82,18 +92,19 @@ display: inherit;
 justify-content: center;
 flex-wrap: wrap;
 width: 100%;
-transition: all ease-in-out;
 // border: 1px solid lime;
 
 @keyframes slidein {
     0% {
       margin-bottom: 10px;
       height: 80px;
+      align-content: none;
     }
 
     100% {
       margin-bottom: 20px;
       height: 140px;
+      align-content: center;
     }
   }
 
@@ -101,11 +112,13 @@ transition: all ease-in-out;
     0% {
       margin-bottom: 20px;
       height: 140px;
+      align-content: center;
     }
 
     100% {
       margin-bottom: 10px;
       height: 80px;
+      align-content: none;
     }
   }
 
@@ -116,11 +129,13 @@ ${props => {
     animationName: 'slidein',
     animationDuration: '1s',       
     height: '140px',
+    alignContent: 'center',
   } : {
     margin: '10px',      
     animationName: 'slideout',
     animationDuration: '1s',
     height: '80px',
+    alignContent: 'none',
   }  
 }}
 `

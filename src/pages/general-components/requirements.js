@@ -4,7 +4,6 @@ import React from "react";
 
 //Requirements Styles:
 import { 
-    PricesText,
     // RequireChecklistDivs, 
     // RequirementBtn,
      RequirementChecklistSection, 
@@ -13,7 +12,7 @@ import {
     RequirementSection, 
     //  RequirementsList, RequirementsP 
     } from "../../styles/commonBDG";
-// import { CommonH4 } from "../../styles/commonBDG";
+import { CommonP} from "../../styles/common-styles";
 
 export default function Requirements(props){
     let { pocket } = props;
@@ -153,13 +152,13 @@ export default function Requirements(props){
             <RequirementSection>
                 <RequirementH2> Requirements </RequirementH2>
                 <RequirementChecklistSection>
-                    <PricesText>
+                    <CommonP>
                     All cats over the age of 16 weeks must have current 
 Rabies and FVRCP vaccines
-                    </PricesText>
-                    <PricesText>
+                    </CommonP>
+                    <CommonP>
                     Please provide your own cage for your pocket pet’s boarding
-                    </PricesText>
+                    </CommonP>
                 </RequirementChecklistSection>
             </RequirementSection>
         )
@@ -178,11 +177,11 @@ Rabies and FVRCP vaccines
             </RequirementH2> */}
 
             <RequirementChecklistSection>
-                <PricesText>
+                <CommonP>
                 All dogs over the age of 16 weeks must have current
 Rabies, DHLPP(Distemper) and Bordetella vaccines
 
-                </PricesText>
+                </CommonP>
                 {/* <RequirementH3> Vaccinations for Your Pet </RequirementH3>
                 <RequireChecklistDivs>
                     <p>

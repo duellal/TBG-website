@@ -97,7 +97,7 @@ max-width: 25%;
 height: 300px;
 `
 
-export const PricesTextSection = styled.div`
+export const CommonPSection = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 50%;
@@ -105,7 +105,7 @@ padding: 15px 65px;
 height: 300px;
 `
 
-export const PricesTextLeft = styled.div`
+export const CommonPLeft = styled.div`
 display: flex;
 flex-wrap: wrap;
 align-content: space-between;
@@ -113,18 +113,9 @@ width: 100%;
 height: 60px;
 `
 
-export const PricesTextRight = styled(PricesTextLeft)`
+export const CommonPRight = styled(CommonPLeft)`
 justify-content: flex-end;
 text-align: end;
-`
-
-export const PricesText = styled.p`
-font-weight: normal;
-font-size: 2.2rem;
-text-transform: none;
-width: 100%;
-text-align: center;
-margin: 10px 0;
 `
 
 export const PricesP = styled.p`
