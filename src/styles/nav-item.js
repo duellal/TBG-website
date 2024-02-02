@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { devicesHeight, devicesWidth } from "./constants/device-size";
-// import { bright_red } from "./constants/colors";
 
-const { xxxxl, xxl, xl } = devicesHeight
+const { xxxxl, xxl } = devicesHeight
 const {laptopXS, mobileXL, tablet, tabletXL } = devicesWidth
 
 export const Item = styled.li`
