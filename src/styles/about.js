@@ -34,6 +34,7 @@ align-items: center;
 
 export const ValuesSection = styled(AboutInfoSection)`
 width: 100%;
+// border: 1px solid purple;
 `
 
 export const QuoteHeader = styled(CommonH3)`
