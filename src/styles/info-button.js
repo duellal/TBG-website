@@ -22,8 +22,9 @@ box-shadow: 0 0 20px 1px black;
 
 export const ValuesIndvInfoBtn = styled(IndvInfoBtn)`
 width: 45%;
-height: 35rem;
-margin: 25px;
+height: 30rem;
+margin: 30px;
+cursor: inherit;
 // border: 1px solid white;
 `
 
@@ -91,18 +92,19 @@ display: inherit;
 justify-content: center;
 flex-wrap: wrap;
 width: 100%;
-transition: all ease-in-out;
 // border: 1px solid lime;
 
 @keyframes slidein {
     0% {
       margin-bottom: 10px;
       height: 80px;
+      align-content: none;
     }
 
     100% {
       margin-bottom: 20px;
       height: 140px;
+      align-content: center;
     }
   }
 
@@ -110,11 +112,13 @@ transition: all ease-in-out;
     0% {
       margin-bottom: 20px;
       height: 140px;
+      align-content: center;
     }
 
     100% {
       margin-bottom: 10px;
       height: 80px;
+      align-content: none;
     }
   }
 
@@ -125,11 +129,13 @@ ${props => {
     animationName: 'slidein',
     animationDuration: '1s',       
     height: '140px',
+    alignContent: 'center',
   } : {
     margin: '10px',      
     animationName: 'slideout',
     animationDuration: '1s',
     height: '80px',
+    alignContent: 'none',
   }  
 }}
 `

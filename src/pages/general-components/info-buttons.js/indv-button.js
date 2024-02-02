@@ -19,7 +19,6 @@ export default function IndvButton(props){
             <>
                 <ValuesIndvInfoBtn 
                     id={title} 
-                    onClick={() => navigate(`/${title}`)}
                     onMouseEnter={hoverHandler}
                     onMouseLeave={hoverHandler}
                 >

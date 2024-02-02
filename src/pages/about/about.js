@@ -31,7 +31,9 @@ export default function About(){
                         We base everything that we do around 4 simple values:
                     </CommonH2>
                     <ValuesSection>
-                        <InfoButton array={values} />
+                        <InfoButton 
+                            array={values}
+                        />
                     </ValuesSection>
 
                     <TeamCareers/>
