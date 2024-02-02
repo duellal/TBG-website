@@ -33,21 +33,6 @@ export default function About(){
                     </p>
                 </AboutInfoSection>
 
-                <AboutImg src={stockFacility} alt='A black dog with tongue sticking out and wide eyes on a persons lap' />
-
-                <AboutInfoSection>
-                    <CommonH2>
-                        Our Facility 
-                    </CommonH2>
-                    <p>
-                        Rub face on everything inspect anything brought into the house hunt anything that moves hopped up on goofballs bag stretch destroy couch lick butt  intrigued by the shower, behind the couch attack feet give attitude  intently stare at the same spot leave dead animals as gifts  claw drapes flop over, stretch lick butt sweet beast under the bed hide when guests come over  rub face on everything leave dead animals as gifts  claw drapes flop over  stand in front of the computer screen  flop over inspect anything brought into the house.  destroy couch leave dead animals as gifts lick butt  rub face on everything give attitude hopped up on goofballs inspect anything brought into the house intently stare at the same spot,  stand in front of the computer screen  hide when guests come over make muffins bag stretch flop over  claw drapes why must they do that attack feet, behind the couch all of a sudden go crazy  intrigued by the shower sweet beast under the bed hunt anything that moves give attitude  stand in front of the computer screen . 
-                    </p>
-                    <br/>
-                    <p>
-                    Attack feet behind the couch destroy couch flop over give attitude hide when guests come over hopped up on goofballs, hunt anything that moves sweet beast under the bed  stand in front of the computer screen  all of a sudden go crazy intently stare at the same spot leave dead animals as gifts why must they do that, bag stretch lick butt  claw drapes  intrigued by the shower  rub face on everything.  rub face on everything  claw drapes make muffins intently stare at the same spot hunt anything that moves bag stretch all of a sudden go crazy give attitude why must they do that,  destroy couch inspect anything brought into the house sweet beast under the bed flop over hopped up on goofballs  stand in front of the computer screen , hide when guests come over leave dead animals as gifts attack feet  intrigued by the shower behind the couch lick butt inspect anything brought into the house.
-                    </p>
-                </AboutInfoSection>
-
                 <TeamCareers/>
             </CommonStartDiv>
         </>
