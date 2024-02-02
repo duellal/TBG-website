@@ -9,8 +9,8 @@ import TeamCareers from "./team-careers";
 import graffiti from '../../images/facility/graffiti-wall.jpeg'
 
 // Styles:
-import { CommonH1, CommonH2, CommonStartDiv } from "../../styles/commonBDG";
-import { AboutInfoSection, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader, ValuesSection } from "../../styles/about";
+import { CommonH1, CommonH2 } from "../../styles/commonBDG";
+import { AboutInfoSection, AboutStartDiv, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader, ValuesSection } from "../../styles/about";
 import { CommonP } from "../../styles/common-styles";
 
 // Variables:
@@ -22,7 +22,7 @@ export default function About(){
             <GraffitiDiv>
                 <GraffitiImg src={graffiti}/>
             </GraffitiDiv>
-            <CommonStartDiv>
+            <AboutStartDiv>
                 <CommonH1>
                     A Little About Us
                 </CommonH1>
@@ -54,7 +54,7 @@ export default function About(){
                         </QuoteAuthor>
                     </AboutInfoSection>
                 </AboutInfoSection>
-            </CommonStartDiv>
+            </AboutStartDiv>
         </>
     )
 }

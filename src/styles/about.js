@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CommonH3, CommonInfoSection } from "../styles/commonBDG"
+import { CommonH3, CommonInfoSection, CommonStartDiv } from "../styles/commonBDG"
 import { CommonP } from "./common-styles";
 
 //Graffiti Banner Image:
@@ -13,6 +13,9 @@ export const GraffitiImg = styled.img`
 `
 
 //About Page Section
+export const AboutStartDiv = styled(CommonStartDiv)`
+padding: 2.5% 12.5% 0;
+`
 export const AboutImg = styled.img`
 width: 90%;
 height: 400px;
@@ -26,6 +29,7 @@ flex-wrap: wrap;
 justify-content: center;
 text-align: justify;
 align-items: center;
+// border: 1px solid red;
 `
 
 export const ValuesSection = styled(AboutInfoSection)`
