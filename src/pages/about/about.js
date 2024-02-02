@@ -8,9 +8,11 @@ import TeamCareers from "./team-careers";
 import graffiti from '../../images/facility/graffiti-wall.jpeg'
 
 //Styles:
-import { CommonH1, CommonH2, CommonStartDiv } from "../../styles/commonBDG";
-import { AboutImg, AboutInfoSection, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader } from "../../styles/about";
+import { CommonH1, CommonH2, CommonInfoSection, CommonStartDiv } from "../../styles/commonBDG";
+import { AboutInfoSection, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader } from "../../styles/about";
 import { CommonP } from "../../styles/common-styles";
+import InfoButton from "../general-components/info-buttons.js/info-button";
+import { values } from "../../constants/values";
 
 export default function About(){
     return (
@@ -26,12 +28,15 @@ export default function About(){
                     <CommonH2>
                         We base everything that we do around 4 simple values:
                     </CommonH2>
-                    
+                    <CommonInfoSection>
+                        <InfoButton array={values} />
+                    </CommonInfoSection>
+
+                    <TeamCareers/>
+
                     <CommonP>
                         The Biscuit Garden is a small, family owned business based out of Wake County, NC.  With over 20+ years in the animal care industry, the staff take great pride in the relationships formed with their community, their clients and their four legged friends.
                     </CommonP>
-
-                    <TeamCareers/>
 
                     <QuoteHeader>
                         A note from the owner:
