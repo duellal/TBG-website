@@ -20,7 +20,7 @@ margin-top: 5%;
 `
 
 export const AboutInfoSection = styled(CommonInfoSection)`
-width: 100%;
+width: 90%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

@@ -22,7 +22,7 @@ export default function TeamCareers(){
     return(
         <TeamStartDiv>
             <CommonH1> 
-                Our Team
+                Meet the Team
             </CommonH1>
 
             <AboutInfoSection>

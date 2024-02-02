@@ -23,7 +23,7 @@ box-shadow: 0 0 20px 1px black;
 export const ValuesIndvInfoBtn = styled(IndvInfoBtn)`
 width: 45%;
 height: 30rem;
-margin: 30px;
+margin: 28px;
 cursor: inherit;
 // border: 1px solid white;
 `
