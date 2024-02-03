@@ -60,7 +60,7 @@ export default function Forms(){
                     </CommonP>
                     <CommonP>
                         You are more than welcome to complete them by hand and bring them in with you on your next visit, or you may email it to us at 
-                        {<UnderlineLink> thebiscuitgarden@gmail.com</UnderlineLink>}.
+                        {<UnderlineLink href="mailto:thebiscuitgarden@gmail.com"> thebiscuitgarden@gmail.com.</UnderlineLink>}
                     </CommonP>
                 </FormPageRedBox>
 
