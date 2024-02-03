@@ -13,6 +13,7 @@ export const AllFaqs = styled.div`
 export const FaqTitleDiv = styled.div`
     width: 100%;
     background-color: ${bright_red};
+    text-align: left;
 `
 
 export const FaqTitleH2 = styled.h2`
