@@ -29,7 +29,7 @@ margin: 2.5%;
 
 export const BtnTitle = styled.h1`
 width: 100%;
-font-size: 2rem;    
+font-size: 2.4rem;    
 color: white;
 // border: 1px solid black;
 `
