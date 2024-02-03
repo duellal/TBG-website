@@ -24,31 +24,32 @@
 
 /* eslint-disable react/prop-types */
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
 import '../../styles/forms.css'
 import { FormPageRedBox } from "../../styles/formPage";
 import { UnderlineLink } from "../../styles/common-styles";
+import { CommonH2, CommonInfoSection, CommonStartDiv } from '../../styles/commonBDG'
 
 //Import Form PDF:
 // import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     return (
-        <div id="forms">
-            {/* <h1> Forms  </h1> */}
-            <h2> new client form </h2>
+        <CommonStartDiv>
+            <CommonH2> new client form </CommonH2>
 
-
-            <div id="digital">
+            <CommonInfoSection>
                 <FormPageRedBox>
                     <p> 
                         We require all owners to fill out a new client form to insure that we have your contact information and all of your pets information. 
                     </p>
-                    <br/>
+                </FormPageRedBox>
+                <button className="new_owner_form" onClick={() => navigate('/forms/newowner')}> Fill Out the Form Online </button>
+                <FormPageRedBox>
                     <p>
                         You can contact us at{''}
                             <UnderlineLink href="mailto:thebiscuitgarden@gmail.com">
@@ -56,11 +57,9 @@ export default function Forms(){
                             </UnderlineLink>
                         {''}and we can email you a copy or you can come by and fill one out!
                     </p>
-
-                    {/* Need button to navigate to Intake Form Page once in router */}
-                    {/* <button className="intake" onClick={() => navigate('/forms/intake')}> Digital Intake Form </button> */}
+                    
                 </FormPageRedBox>
-            </div>
+            </CommonInfoSection>
 
             {/* <div id="pdf">
                 <h2> Having Trouble Completing the Form Digitally? </h2>
@@ -72,6 +71,6 @@ export default function Forms(){
                     <button className="intake" onClick={() => window.open(intakeForm)}> Intake Form </button>
                 </div>
             </div> */}
-        </div>
+        </CommonStartDiv>
     )
 }

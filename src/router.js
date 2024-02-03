@@ -8,7 +8,7 @@ import Boarding from './pages/boarding';
 import Credits from './pages/credits';
 import Err404 from './pages/err404';
 import Daycare from './pages/daycare';
-// import DigitalIntake from './pages/forms/intake-form';
+import DigitalIntake from './pages/forms/intake-form';
 import Forms from './pages/forms/formPage';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {path: 'boarding', element: <Boarding />},
             {path: 'daycare', element: <Daycare />},
             {path: 'forms', element: <Forms />},
-            // {path: '/forms/intake', element: <DigitalIntake />},
+            {path: '/forms/newowner', element: <DigitalIntake />},
             {path: 'grooming', element: <Grooming />},
             {path:'requirements', element: <Requirements />}
         ]
