@@ -59,7 +59,7 @@ export default function Forms(){
                         If the form does not work for you, please download a printable version by clicking the button below. 
                     </CommonP>
                     <CommonP>
-                        You are more than welcome to complete them by hand and bring them in with you on your next visit, or you may email it to us at 
+                        You are more than welcome to complete the form by hand and bring it in, or you may email it to us at 
                         {<UnderlineLink href="mailto:thebiscuitgarden@gmail.com"> thebiscuitgarden@gmail.com.</UnderlineLink>}
                     </CommonP>
                 </FormPageRedBox>
@@ -68,17 +68,6 @@ export default function Forms(){
                         New Owner Form PDF
                     </FormPagePdfBtn>
             </FormPageInfoSection>
-
-            {/* <div id="pdf">
-                <h2> Having Trouble Completing the Form Digitally? </h2>
-                <p>
-                    If any of our forms do not work for you, please download a printable version by clicking the buttons below. You are more than welcome to complete them by hand and bring them in with you on your next visit, or you may email it to us at thebiscuitgarden.com.
-                </p>
-
-                <div className="btns">
-                    <button className="intake" onClick={() => window.open(intakeForm)}> Intake Form </button>
-                </div>
-            </div> */}
         </CommonStartDiv>
     )
 }

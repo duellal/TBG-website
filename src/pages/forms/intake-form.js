@@ -23,7 +23,7 @@ import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeLink, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
+import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
 import { Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Form PDF:
@@ -40,6 +40,7 @@ import PetInfo from "./components/pet-info.js";
 import { formTemplate } from "./form-template.js";
 import AuthPickupSection from "./components/auth-pickup-section.js";
 import PetSection from "./components/pet-section.js";
+import { UnderlineLink } from "../../styles/common-styles.js";
 
 export default function DigitalIntake() {
     const form = useRef();
@@ -161,7 +162,7 @@ export default function DigitalIntake() {
             <IntakeCard>
                 <IntakeHeader id='intake-header'>
                     <h2>
-                        Intake Form
+                        New Client Form
                     </h2>
 
                     <IntakeDivider>
@@ -170,7 +171,7 @@ export default function DigitalIntake() {
 
 
                     <IntakeP>
-                         Before you schedule your first visit or appointment, please fill out the intake form below. 
+                         Before you schedule your first visit or appointment, please fill out the new client form below. 
                     </IntakeP>
 
                 </IntakeHeader>
@@ -260,16 +261,16 @@ export default function DigitalIntake() {
                 )}
             </IntakeCard>
 
-            {/* Intake Form PDF Section */}
+            {/* New Client Form PDF Section */}
             <IntakePDF>
                 <p>
-                    If you cannot fill out the digitial intake form, feel free to download and complete the pdf version.
+                    If you cannot fill out the digitial new client form, feel free to download and complete the pdf version.
                 </p>
                 <p>
-                    Once completed, you can either email it to us at <IntakeLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</IntakeLink> or you can bring it in.
+                    Once completed, you can either email it to us at <UnderlineLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</UnderlineLink> or you can bring it in.
                 </p>
                 <IntakeButton className="intake" onClick={() => window.open(intakeForm)}> 
-                    Intake Form 
+                    New Client Form 
                 </IntakeButton>
             </IntakePDF>
         </IntakeSection>
