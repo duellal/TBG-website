@@ -53,7 +53,7 @@ export default function TeamCareers(){
             </AboutInfoSection>
 
             <AboutInfoSection>
-                <AllRedDropDowns>
+                <AllRedDropDowns style={{width: '100%'}}>
                 {/* Gets title for joining the team with accordian content about how to apply*/}
                     {
                         indvTitles.map((title, index) => {

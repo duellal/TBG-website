@@ -2,7 +2,7 @@ let indvTitles = [
     'Boarding FAQs',
     'Daycare FAQs',
     'Grooming FAQs',
-    'ready to join the team?'
+    'Interested in being a part of The Biscuit Garden team?'
 ]
 
 let boardingFaqs = [
