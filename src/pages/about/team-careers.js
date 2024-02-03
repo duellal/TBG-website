@@ -8,13 +8,16 @@ import AccordianTitle from "../faqs/components/accordian-titles";
 import { AboutInfoSection, TeamImg, TeamBioSection, TeamStartDiv, TeamBioText } from '../../styles/about'
 import { CommonH1, CommonH2 } from '../../styles/commonBDG'
 import { FaqTitleDiv } from "../../styles/FAQs";
-import { AllRedDropDowns, CommonP } from "../../styles/common-styles";
+import { AllRedDropDowns } from "../../styles/common-styles";
 
 // Images:
 import manager from '../../images/about/manager.jpeg';
+import frontDeskPhone from '../../images/team/front-desk-phone.jpg'
+import frontDeskCheckin from '../../images/team/front-desk-checkin.jpg'
 
 // Variables
 import { indvTitles, joinTeamDropdown } from "../faqs/faq-arrays";
+
 
 export default function TeamCareers(){
 
@@ -27,11 +30,8 @@ export default function TeamCareers(){
             <AboutInfoSection>
                     <TeamBioSection>
                         {/* <TeamBioText> */}
-                            <CommonP>
-                                <b>
-                                    Pics here
-                                </b>
-                            </CommonP>
+                            <TeamImg src={frontDeskPhone} alt="" />
+                            <TeamImg src={frontDeskCheckin} alt="" />
                         {/* </TeamBioText> */}
                     </TeamBioSection>
             </AboutInfoSection>
