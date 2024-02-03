@@ -12,6 +12,11 @@ export const Break10pxDiv = styled.div`
     height: 10px;
 `
 
+export const CollageImg = styled.img`
+width: 100%;
+padding: 5%;
+`
+
 export const UnderlineLink = styled.a`
 text-color: inherit;
 
