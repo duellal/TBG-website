@@ -24,7 +24,6 @@ export const ValuesIndvInfoBtn = styled(IndvInfoBtn)`
 width: 45%;
 height: 30rem;
 margin: 2.5%;
-cursor: inherit;
 // border: 1px solid white;
 `
 

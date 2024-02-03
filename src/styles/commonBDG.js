@@ -33,7 +33,11 @@ justify-content: center;
 //Information Sections:
 export const CommonInfoSection = styled.div`
 text-align: center;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 margin: 40px 43px;
+// border: 1px solid blue;
 `
 
 //What we value section:

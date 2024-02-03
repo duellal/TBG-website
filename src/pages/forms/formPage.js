@@ -28,12 +28,12 @@ import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
 import '../../styles/forms.css'
-import { FormPageRedBox } from "../../styles/formPage";
-import { UnderlineLink } from "../../styles/common-styles";
-import { CommonH2, CommonInfoSection, CommonStartDiv } from '../../styles/commonBDG'
+import { FormPageInfoSection, FormPageRedBox, FormPageBtn, FormPagePdfBtn } from "../../styles/formPage";
+import { CommonP, UnderlineLink } from "../../styles/common-styles";
+import { CommonH2, CommonStartDiv } from '../../styles/commonBDG'
 
 //Import Form PDF:
-// import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
+import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
     let navigate = useNavigate();
@@ -42,24 +42,32 @@ export default function Forms(){
         <CommonStartDiv>
             <CommonH2> new client form </CommonH2>
 
-            <CommonInfoSection>
+            <FormPageInfoSection>
                 <FormPageRedBox>
                     <p> 
                         We require all owners to fill out a new client form to insure that we have your contact information and all of your pets information. 
                     </p>
                 </FormPageRedBox>
-                <button className="new_owner_form" onClick={() => navigate('/forms/newowner')}> Fill Out the Form Online </button>
+                <FormPageBtn onClick={() => navigate('/forms/newowner')}> Fill Out the Form Online </FormPageBtn>
+
+                <CommonH2 style={{marginBottom: '40px'}}> 
+                    Having Trouble Completing the Form Digitally? 
+                </CommonH2>
+
                 <FormPageRedBox>
-                    <p>
-                        You can contact us at{''}
-                            <UnderlineLink href="mailto:thebiscuitgarden@gmail.com">
-                                thebiscuitgarden@gmail.com
-                            </UnderlineLink>
-                        {''}and we can email you a copy or you can come by and fill one out!
-                    </p>
-                    
+                    <CommonP>
+                        If the form does not work for you, please download a printable version by clicking the button below. 
+                    </CommonP>
+                    <CommonP>
+                        You are more than welcome to complete them by hand and bring them in with you on your next visit, or you may email it to us at 
+                        {<UnderlineLink> thebiscuitgarden@gmail.com</UnderlineLink>}.
+                    </CommonP>
                 </FormPageRedBox>
-            </CommonInfoSection>
+
+                <FormPagePdfBtn onClick={() => window.open(intakeForm)}> 
+                        New Owner Form PDF
+                    </FormPagePdfBtn>
+            </FormPageInfoSection>
 
             {/* <div id="pdf">
                 <h2> Having Trouble Completing the Form Digitally? </h2>
