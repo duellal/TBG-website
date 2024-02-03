@@ -27,7 +27,7 @@ export default function IndvButton(props){
                         id={title}
                         hover={hover}
                     >
-                        <BtnTitle>{title}</BtnTitle>
+                        <BtnTitle style={{fontSize: '2.4rem'}}>{title}</BtnTitle>
                         <BtnIcon>{icon}</BtnIcon>
                         <BtnInfo hover={hover}>
                             {info}
