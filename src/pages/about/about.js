@@ -7,6 +7,7 @@ import TeamCareers from "./team-careers";
 
 // Images:
 import graffiti from '../../images/graffiti-wall.jpg'
+import graffiti2 from '../../images/grafitti-wall2.jpg'
 
 // Styles:
 import { CommonH1, CommonH2 } from "../../styles/commonBDG";
@@ -55,6 +56,9 @@ export default function About(){
                     </AboutInfoSection>
                 </AboutInfoSection>
             </AboutStartDiv>
+            <GraffitiDiv style={{marginBottom: '-20px'}}>
+                <GraffitiImg src={graffiti}/>
+            </GraffitiDiv>
         </>
     )
 }
