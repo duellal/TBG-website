@@ -18,6 +18,14 @@ import groomingBanner3 from '../images/grooming/grooming-slideshow-3.png'
 //Home:
 import stockDaycare from '../images/stock-minnie.jpeg'
 import stockBoard from '../images/stock-littlebit.jpeg'
+import test1 from '../images/pics/charlie-and-puppy.jpeg'
+import test2 from '../images/pics/black-dog-cocked-head.jpeg'
+import test3 from '../images/pics/daphne-and-another-outside.jpeg'
+import test4 from '../images/pics/employee-outside.jpeg'
+import test5 from '../images/pics/golden-w-black-dogs.jpeg'
+import test6 from '../images/pics/grey-dog-outside.jpeg'
+import test7 from '../images/pics/littles-aspen.jpeg'
+import test8 from '../images/pics/running-golden.jpeg'
 
 export const boardingImages = [
     {
@@ -81,6 +89,38 @@ export const groomingImages = [
 ]
 
 export const homeImages = [
+    {
+        image: test1,
+        alt: ''
+    },
+    {
+        image: test2,
+        alt: ""
+    },
+    {
+        image: test3,
+        alt: ""
+    },
+    {
+        image: test4,
+        alt: ''
+    },
+    {
+        image: test5,
+        alt: ''
+    },
+    {
+        image: test6,
+        alt: ""
+    },
+    {
+        image: test7,
+        alt: ""
+    },
+    {
+        image: test8,
+        alt: ''
+    },
     {
         image: daycareBanner3,
         alt: ''
