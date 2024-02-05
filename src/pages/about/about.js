@@ -21,7 +21,7 @@ export default function About(){
     return (
         <>
             <GraffitiDiv>
-                <GraffitiImg src={graffiti}/>
+                <GraffitiImg src={graffiti2}/>
             </GraffitiDiv>
             <AboutStartDiv>
                 <CommonH1>
