@@ -12,7 +12,7 @@ import daycareBanner3 from '../images/daycare/daycare-slideshow-3.png'
 import daycareBanner4 from '../images/daycare/daycare-slideshow-4.png'
 import daycareBanner5 from '../images/daycare/daycare-slideshow-5.png'
 //Grooming
-import groomingBanner1 from '../images/grooming/grooming-slideshow-1.png'
+import groomingBanner1 from '../images/grooming/grooming-white-tan-dog.jpg'
 import groomingBanner2 from '../images/grooming/grooming-slideshow-2.png'
 import groomingBanner3 from '../images/grooming/grooming-slideshow-3.png'
 //Home:
