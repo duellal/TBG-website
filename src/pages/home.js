@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-// Banner Images:
+// Images:
 import { homeImages } from "../constants/banner-pics";
+import collage from '../images/home-collage.jpg'
 
 // Components:
 import Banner from './general-components/banner-pic'
@@ -13,6 +14,7 @@ import { CommonStartDiv } from '../styles/commonBDG'
 
 //Variables:
 import { home_btns } from "../constants/home-page-btns";
+import { CollageImg } from "../styles/common-styles";
 
 
 export default function Home(){
@@ -22,6 +24,8 @@ export default function Home(){
             <CommonStartDiv>
                 <InfoButton array={home_btns}/>
             </CommonStartDiv>
+
+            <CollageImg src={collage} alt=""/>
         </>
     )
 }

@@ -18,13 +18,11 @@ import { CommonH1,
  } from "../styles/commonBDG";
 // import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
 import { FaqTitleDiv } from "../styles/FAQs";
-import { AllRedDropDowns, CommonP } from "../styles/common-styles";
+import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 
 
 // //Images:
-// import grooming1 from '../images/grooming/grooming-1.jpeg';
-// import grooming2 from '../images/grooming/grooming-2.jpeg';
-// import grooming3 from '../images/grooming/grooming-3.jpeg';
+import collage from '../images/grooming/grooming-collage-2.jpg'
 
 //Variables:
 import { groomingImages } from "../constants/banner-pics";
@@ -104,6 +102,8 @@ export default function Grooming(){
                     }
                 </AllRedDropDowns>
             </CommonStartDiv>
+
+            <CollageImg src={collage} alt=""/>
         </>
     )
 }
