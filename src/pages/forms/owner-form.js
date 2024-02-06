@@ -41,7 +41,7 @@ import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 import { formTemplate } from "./form-template.js";
 
 //Styles:
-import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/new-owner-form.js'
+import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/owner-form.js'
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { UnderlineLink } from "../../styles/common-styles.js";
 
@@ -62,7 +62,7 @@ export default function DigitalOwnerForm() {
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
 
-    //Next + Previous Button States:
+    //Next + Previous Buttons + Tab Index State:
     const [btnIndex, setBtnIndex] = useState(0)
 
     //Emergency Contact States:
@@ -234,12 +234,14 @@ export default function DigitalOwnerForm() {
                 </IntakeDivider>
 
                 <IntakeP>
-                     Before you schedule your first visit or appointment, please fill out the new client form below. 
+                    Before you schedule your first visit or appointment, please fill out the form below. 
                 </IntakeP>
-
             </IntakeHeader>
+
             <IntakeCard>
-                <OwnerFormTabs />
+                <OwnerFormTabs 
+                    tabIndex={btnIndex}
+                />
                 <IntakeForm 
                     ref={form}
                     autoComplete="on"

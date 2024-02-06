@@ -5,5 +5,5 @@ export let tabNamesArr = [
     'Pet Information',
     'Behavioral Information',
     'Health History',
-    'Waiver'
+    'Waiver',
 ]

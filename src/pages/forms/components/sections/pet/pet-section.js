@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/new-owner-form'
+import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
 
 //Components:
 import PetInfo from "./pet-info"
@@ -10,7 +10,8 @@ import NextPrevBtn from "../../next-section-btn"
 export default function PetSection(props){
         const { petBtn, setPetBtn, petKey,
                 setPetKey, storedPets, setStoredPets, 
-                petNum, setPetNum, btnIndex, setBtnIndex    
+                petNum, setPetNum, btnIndex, setBtnIndex,
+                setTabIndex    
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -44,6 +45,7 @@ export default function PetSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        setTabIndex={setTabIndex}
                     />
 
                     {
@@ -57,6 +59,7 @@ export default function PetSection(props){
                         next={true}
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        setTabIndex={setTabIndex}
                     />
                 </IntakeRow>
             </IntakeHDiv>

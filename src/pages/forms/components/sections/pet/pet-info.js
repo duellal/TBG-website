@@ -1,7 +1,7 @@
 import React from "react";
 
 //Intake Form Styles:
-import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/new-owner-form'
+import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../..//styles/contact";
 
 

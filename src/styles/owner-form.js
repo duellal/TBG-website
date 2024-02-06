@@ -40,7 +40,7 @@ export const IntakeCard = styled.div`
     margin: 30px;
     padding: 12px;
     background-color: #dedede;
-    width: 700px;
+    width: 900px;
 `
 
 export const IntakeForm = styled.form`

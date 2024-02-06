@@ -1,15 +1,13 @@
 import React from "react";
 
 //Styles:
-import { FormBtn } from "../../../styles/new-owner-form";
+import { FormBtn } from "../../../styles/owner-form";
 
 
 export default function NextPrevBtn(props){
     const { 
             next, btnIndex, setBtnIndex 
         } = props;
-
-        console.log(props)
 
     const SectionOnClick =  async (event) => {
         event.preventDefault()

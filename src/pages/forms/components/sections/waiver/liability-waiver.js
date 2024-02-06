@@ -11,7 +11,7 @@ import { FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow,
     //  IntakeSubmitInput,
       IntakeWaiverDiv, IntakeWaiverP, 
     // SignatureBtns, SignatureDiv 
-} from '../../../../../styles/new-owner-form.js'
+} from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 
 //Form PDF:
@@ -19,7 +19,7 @@ import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiv
 import waiverPDF from '../../../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
-    const { loading, btnIndex, setBtnIndex } = props
+    const { loading, btnIndex, setBtnIndex, setTabIndex } = props
     // let sigCanvas = useRef()
 
     // const saveSignature = async (event) => {
@@ -139,6 +139,7 @@ export default function LiabilityWaiver(props){
                     <NextPrevBtn 
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        setTabIndex={setTabIndex}
                     />
 
                     <FormBtn type="submit" value="Send">

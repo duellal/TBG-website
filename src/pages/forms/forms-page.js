@@ -28,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
 import '../../styles/forms.css'
-import { FormPageInfoSection, FormPageRedBox, FormPageBtn, FormPagePdfBtn } from "../../styles/formsPage";
+import { FormPageInfoSection, FormPageRedBox, FormPageBtn, FormPagePdfBtn } from "../../styles/forms-page";
 import { CommonP, UnderlineLink } from "../../styles/common-styles";
 import { CommonH2, CommonStartDiv } from '../../styles/commonBDG'
 

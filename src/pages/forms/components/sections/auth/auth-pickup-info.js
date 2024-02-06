@@ -1,7 +1,7 @@
 import React from "react";
 
 //Intake Form Styles:
-import { IntakeRow, PhoneInput } from '../../../../../styles/new-owner-form'
+import { IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
 
