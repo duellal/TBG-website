@@ -10,9 +10,7 @@ import NextPrevBtn from "../../next-section-btn"
 export default function PetSection(props){
         const { petBtn, setPetBtn, petKey,
                 setPetKey, storedPets, setStoredPets, 
-                petNum, setPetNum, petSection, setPetSection,
-                waiverSection, setWaiverSection, authSection,
-                setAuthSection        
+                petNum, setPetNum, btnIndex, setBtnIndex    
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -44,10 +42,8 @@ export default function PetSection(props){
 
                 <IntakeRow>
                     <NextPrevBtn
-                        currentSection={petSection}
-                        setCurrentSection={setPetSection}
-                        prevSection={authSection}
-                        setPrevSection={setAuthSection}
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
 
                     {
@@ -59,10 +55,8 @@ export default function PetSection(props){
 
                     <NextPrevBtn
                         next={true}
-                        currentSection={petSection}
-                        setCurrentSection={setPetSection}
-                        nextSection={waiverSection}
-                        setNextSection={setWaiverSection}
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
                 </IntakeRow>
             </IntakeHDiv>

@@ -59,14 +59,15 @@ export default function DigitalIntake() {
     const [authNum, setAuthNum] = useState(1)
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
-    const [authSection, setAuthSection] = useState(false)
+
+    //Next + Previous Button States:
+    const [btnIndex, setBtnIndex] = useState(0)
 
     //Emergency Contact States:
     const [emergencyKey, setEmergencyKey] = useState(2)
     const [emergencyBtn, setEmergencyBtn] = useState(true)
     const [emergencyNum, setEmergencyNum] = useState(1)
     const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
-    const [emergencySection, setEmergencySection] = useState(false)
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
@@ -77,17 +78,69 @@ export default function DigitalIntake() {
     const [ownerKey, setOwnerKey] = useState(2)
     const [ownerBtn, setOwnerBtn] = useState(true)
     const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1} formData={formData} changeInput={changeInput}/>])
-    const [ownerSection, setOwnerSection] = useState(true)
 
     //Pet Info States:
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
     const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])   
-    const [petSection, setPetSection] = useState(false)
 
-    //Waiver States: 
-    const [waiverSection, setWaiverSection] = useState(false)
+    //Render Components Array:
+    let renderComponents = [
+        <OwnerSection 
+            ownerBtn={ownerBtn}
+            setOwnerBtn={setOwnerBtn}
+            ownerKey={ownerKey}
+            setOwnerKey={setOwnerKey}
+            storedOwners={storedOwners}
+            setStoredOwners={setStoredOwners}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <EmergencySection
+            emergencyBtn={emergencyBtn}
+            setEmergencyBtn={setEmergencyBtn}
+            emergencyKey={emergencyKey}
+            setEmergencyKey={setEmergencyKey}
+            storedEmergencyContacts={storedEmergencyContacts}
+            setStoredEmergencyContacts={setStoredEmergencyContacts}
+            emergencyNum={emergencyNum}
+            setEmergencyNum={setEmergencyNum}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <AuthPickupSection 
+            authBtn={authBtn}
+            setAuthBtn={setAuthBtn}
+            authorizedKey={authorizedKey}
+            setAuthorizedKey={setAuthorizedKey}
+            storedAuthorized={storedAuthorized}
+            setStoredAuthorized={setStoredAuthorized}
+            authNum={authNum}
+            setAuthNum={setAuthNum}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <PetSection
+            petBtn={petBtn} 
+            setPetBtn={setPetBtn} 
+            petKey={petKey}
+            setPetKey={setPetKey} 
+            storedPets={storedPets}
+            setStoredPets={setStoredPets}
+            petNum={petNum}
+            setPetNum={setPetNum}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <LiabilityWaiver 
+            changeInput={changeInput}
+            loading={loading}
+            setLoading={setLoading}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />
+    ]
 
     //Form Submit:
     const submitHandler = async event => {
@@ -192,99 +245,8 @@ export default function DigitalIntake() {
                     name="intake_form"
                     id="intake_form"
                 >
-                    {/* Owners */}
                     {
-                        ownerSection ? 
-                        <OwnerSection 
-                        ownerBtn={ownerBtn}
-                        setOwnerBtn={setOwnerBtn}
-                        ownerKey={ownerKey}
-                        setOwnerKey={setOwnerKey}
-                        ownerSection={ownerSection}
-                        setOwnerSection={setOwnerSection}
-                        storedOwners={storedOwners}
-                        setStoredOwners={setStoredOwners}
-                        emergencySection={emergencySection}
-                        setEmergencySection={setEmergencySection}
-                        /> : null
-                    }
-                    {/* Emergency Contact */}
-
-                    {
-                        emergencySection ? 
-                        <EmergencySection
-                        emergencyBtn={emergencyBtn}
-                        setEmergencyBtn={setEmergencyBtn}
-                        emergencyKey={emergencyKey}
-                        setEmergencyKey={setEmergencyKey}
-                        storedEmergencyContacts={storedEmergencyContacts}
-                        setStoredEmergencyContacts={setStoredEmergencyContacts}
-                        emergencyNum={emergencyNum}
-                        setEmergencyNum={setEmergencyNum}
-                        storedOwners={storedOwners}
-                        setStoredOwners={setStoredOwners}
-                        emergencySection={emergencySection}
-                        setEmergencySection={setEmergencySection}
-                        authSection={authSection}
-                        setAuthSection={setAuthSection}
-                        /> : null 
-                    }
-
-                    {/* Authorized Pick Up */}
-                    {
-                        authSection ? 
-                        <AuthPickupSection 
-                        authBtn={authBtn}
-                        setAuthBtn={setAuthBtn}
-                        authorizedKey={authorizedKey}
-                        setAuthorizedKey={setAuthorizedKey}
-                        storedAuthorized={storedAuthorized}
-                        setStoredAuthorized={setStoredAuthorized}
-                        authNum={authNum}
-                        setAuthNum={setAuthNum}
-                        emergencySection={emergencySection}
-                        setEmergencySection={setEmergencySection}
-                        authSection={authSection}
-                        setAuthSection={setAuthSection}
-                        petSection={petSection}
-                        setPetSection={setPetSection}
-                        /> : null
-                    }
-
-                    {/* Pet Info */}
-                    {
-                        petSection ?
-                        <PetSection
-                        petBtn={petBtn} 
-                        setPetBtn={setPetBtn} 
-                        petKey={petKey}
-                        setPetKey={setPetKey} 
-                        storedPets={storedPets}
-                        setStoredPets={setStoredPets}
-                        petNum={petNum}
-                        setPetNum={setPetNum}
-                        authSection={authSection}
-                        setAuthSection={setAuthSection}
-                        petSection={petSection}
-                        setPetSection={setPetSection}
-                        waiverSection={waiverSection}
-                        setWaiverSection={setWaiverSection}
-                        /> : null
-                    }
-                    
-                    
-                    {/* Liability Waiver */}
-                    {
-                        waiverSection ?
-                        <LiabilityWaiver 
-                        changeInput={changeInput}
-                        petSection={petSection}
-                        setPetSection={setPetSection}
-                        waiverSection={waiverSection}
-                        setWaiverSection={setWaiverSection} 
-                        loading={loading}
-                        setLoading={setLoading}
-                        /> : null 
+                        renderComponents[btnIndex]
                     }
                 </IntakeForm>
 

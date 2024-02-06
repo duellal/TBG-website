@@ -10,9 +10,7 @@ import NextPrevBtn from "../../next-section-btn"
 export default function EmergencySection(props){
         const { emergencyBtn, setEmergencyBtn, emergencyKey, 
                 setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,
-                emergencyNum, setEmergencyNum, emergencySection,
-                setEmergencySection, ownerSection, setOwnerSection,
-                authSection, setAuthSection        
+                emergencyNum, setEmergencyNum, btnIndex, setBtnIndex   
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -48,10 +46,8 @@ export default function EmergencySection(props){
 
                 <IntakeRow>
                     <NextPrevBtn
-                        currentSection={emergencySection}
-                        setCurrentSection={setEmergencySection}
-                        prevSection={ownerSection}
-                        setPrevSection={setOwnerSection}
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
 
                     {
@@ -62,11 +58,9 @@ export default function EmergencySection(props){
                     }
 
                     <NextPrevBtn
-                        next={true}
-                        currentSection={emergencySection}
-                        setCurrentSection={setEmergencySection}
-                        nextSection={authSection}
-                        setNextSection={setAuthSection}
+                        next
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
                 </IntakeRow>
             </IntakeHDiv>

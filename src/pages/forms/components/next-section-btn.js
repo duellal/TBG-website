@@ -6,31 +6,35 @@ import { FormBtn } from "../../../styles/new-owner-form";
 
 export default function NextPrevBtn(props){
     const { 
-            next, currentSection, setCurrentSection, nextSection,
-            setNextSection, prevSection, setPrevSection 
+            next, btnIndex, setBtnIndex 
         } = props;
+
+        console.log(props)
 
     const SectionOnClick =  async (event) => {
         event.preventDefault()
+        let previous = event.target.name === 'previous'
 
-        if(prevSection && nextSection){
-            setPrevSection(!prevSection)
-            setCurrentSection(!currentSection)
-            setNextSection(!nextSection)
-        }
-        else if(prevSection && !nextSection){
-            setPrevSection(!prevSection)
-            setCurrentSection(!currentSection)
+        let previousSection = () => {
+            setBtnIndex(btnIndex - 1)
         }
 
-        setCurrentSection(!currentSection)
-        setNextSection(!nextSection)
+        let nextSection = () => {
+            setBtnIndex(btnIndex + 1)
+        }
+
+        if(previous){
+            return previousSection()
+        }
+        else{
+            return nextSection()
+        }
     }
 
     return (
         <>
-            <FormBtn onClick={event => SectionOnClick(event)}>
-                { next ? 'Next' : 'Previous'} Section
+            <FormBtn onClick={event => SectionOnClick(event)} name={ next ? 'next' : 'previous'}>
+                { next ? 'Next' : 'Previous' } Section
             </FormBtn>
         </>
     )

@@ -10,8 +10,7 @@ import NextPrevBtn from "../../next-section-btn"
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
                 setOwnerKey, storedOwners, setStoredOwners, 
-                ownerSection, setOwnerSection, emergencySection,
-                setEmergencySection        
+                btnIndex, setBtnIndex      
         } = props
 
         //Function to allow user to add 1 more owner:
@@ -49,11 +48,9 @@ export default function OwnerSection(props){
                             </FormBtn>
                         }
                         <NextPrevBtn 
-                            next={true}
-                            currentSection={ownerSection}
-                            setCurrentSection={setOwnerSection}   
-                            nextSection={emergencySection}
-                            setNextSection={setEmergencySection}                      
+                            next
+                            btnIndex={btnIndex}
+                            setBtnIndex={setBtnIndex}                     
                         />
                     </IntakeRow>  
                 </IntakeHDiv> 

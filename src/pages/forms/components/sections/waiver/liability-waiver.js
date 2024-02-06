@@ -19,7 +19,7 @@ import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiv
 import waiverPDF from '../../../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
-    const { loading, petSection, setPetSection, waiverSection, setWaiverSection } = props
+    const { loading, btnIndex, setBtnIndex } = props
     // let sigCanvas = useRef()
 
     // const saveSignature = async (event) => {
@@ -137,10 +137,8 @@ export default function LiabilityWaiver(props){
                 {/* Form Submit Button */}
                 <IntakeRow>
                     <NextPrevBtn 
-                        prevSection={petSection}
-                        setPrevSection={setPetSection}
-                        currentSection={waiverSection}
-                        setCurrentSection={setWaiverSection}
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
 
                     <FormBtn type="submit" value="Send">

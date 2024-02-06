@@ -12,9 +12,7 @@ export default function AuthPickupSection(props){
         const { authBtn,
                 setAuthBtn, authorizedKey, setAuthorizedKey,
                 storedAuthorized, setStoredAuthorized,
-                authNum, setAuthNum, authSection, setAuthSection,
-                petSection, setPetSection, emergencySection, 
-                setEmergencySection        
+                authNum, setAuthNum, btnIndex, setBtnIndex
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -61,11 +59,9 @@ export default function AuthPickupSection(props){
                 {storedAuthorized}    
 
                 <IntakeRow>
-                <NextPrevBtn
-                        currentSection={authSection}
-                        setCurrentSection={setAuthSection}
-                        prevSection={emergencySection}
-                        setPrevSection={setEmergencySection}
+                    <NextPrevBtn
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
                     
                     {
@@ -77,10 +73,8 @@ export default function AuthPickupSection(props){
 
                     <NextPrevBtn
                         next={true}
-                        currentSection={authSection}
-                        setCurrentSection={setAuthSection}
-                        nextSection={petSection}
-                        setNextSection={setPetSection}
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}
                     />
                 </IntakeRow>
         </IntakeHDiv>
