@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import SignatureCanvas from "react-signature-canvas"
+import React from "react";
+// import SignatureCanvas from "react-signature-canvas"
 
 //Liability Waiver Styles:
 import { IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, SignatureBtns, SignatureDiv } from '../../../styles/new-owner-form.js'
@@ -11,35 +11,35 @@ import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
     const { changeInput } = props
-    let sigCanvas = useRef()
+    // let sigCanvas = useRef()
 
-    const saveSignature = async (event) => {
-        event.preventDefault()
-        let isEmpty = await sigCanvas.current.isEmpty();
+    // const saveSignature = async (event) => {
+    //     event.preventDefault()
+    //     let isEmpty = await sigCanvas.current.isEmpty();
 
-        if(!isEmpty){
-            let signatureUrl = await sigCanvas.current.getTrimmedCanvas().toDataURL()
+    //     if(!isEmpty){
+    //         let signatureUrl = await sigCanvas.current.getTrimmedCanvas().toDataURL()
 
-            event.target.name = 'waiver_signature'
-            event.target.value = signatureUrl
-            await changeInput(event)
-        }else{
-            event.target.name = 'waiver_signature'
-            event.target.value = ''
-            changeInput(event)
-        }
-    }
+    //         event.target.name = 'waiver_signature'
+    //         event.target.value = signatureUrl
+    //         await changeInput(event)
+    //     }else{
+    //         event.target.name = 'waiver_signature'
+    //         event.target.value = ''
+    //         changeInput(event)
+    //     }
+    // }
 
     // Clearing Signature Pad:
-    const onClear = async (event) => {
-        event.preventDefault()
-        sigCanvas.current.clear()
+    // const onClear = async (event) => {
+    //     event.preventDefault()
+    //     sigCanvas.current.clear()
 
-        event.target.name = "waiver_signature"
-        event.target.value = ''
+    //     event.target.name = "waiver_signature"
+    //     event.target.value = ''
 
-        await changeInput(event)
-    }
+    //     await changeInput(event)
+    // }
 
     return (
         <>
@@ -80,7 +80,7 @@ export default function LiabilityWaiver(props){
                 </IntakeRow>
 
                 {/* Owner Signature */}
-                <IntakeRow>
+                {/* <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor="waiver-owner-signature">
                             *Owner's Signature
@@ -101,7 +101,7 @@ export default function LiabilityWaiver(props){
                         </SignatureBtns>
                         </SignatureDiv>
                     </FlexColDiv>
-                </IntakeRow>
+                </IntakeRow> */}
 
                 <IntakeRow>
                     <FlexColDiv>
