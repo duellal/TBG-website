@@ -1,8 +1,8 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/new-owner-form'
-import { FlexColDiv, Input } from "../../../styles/contact";
+import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/new-owner-form'
+import { FlexColDiv, Input } from "../../../../../styles/contact";
 
 export default function OwnerInfo(props){
     const { ownerKey } = props

@@ -1,15 +1,18 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
+import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/new-owner-form'
 
-//Child Component:
+//Components:
 import EmergencyInfo from "./emergency-info"
+import NextPrevBtn from "../../next-section-btn"
 
 export default function EmergencySection(props){
         const { emergencyBtn, setEmergencyBtn, emergencyKey, 
                 setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,
-                emergencyNum, setEmergencyNum        
+                emergencyNum, setEmergencyNum, emergencySection,
+                setEmergencySection, ownerSection, setOwnerSection,
+                authSection, setAuthSection        
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -44,11 +47,27 @@ export default function EmergencySection(props){
                 </IntakeCol> 
 
                 <IntakeRow>
-                    {emergencyBtn &&
-                        <FormBtn onClick={(event) => emergencyOnClick(event)}> 
-                        Add Emergency Contact 
-                        </FormBtn>
+                    <NextPrevBtn
+                        currentSection={emergencySection}
+                        setCurrentSection={setEmergencySection}
+                        prevSection={ownerSection}
+                        setPrevSection={setOwnerSection}
+                    />
+
+                    {
+                        emergencyBtn &&
+                            <FormBtn onClick={(event) => emergencyOnClick(event)}> 
+                                Add Emergency Contact 
+                            </FormBtn>
                     }
+
+                    <NextPrevBtn
+                        next={true}
+                        currentSection={emergencySection}
+                        setCurrentSection={setEmergencySection}
+                        nextSection={authSection}
+                        setNextSection={setAuthSection}
+                    />
                 </IntakeRow>
             </IntakeHDiv>
         )

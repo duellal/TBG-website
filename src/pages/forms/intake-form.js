@@ -22,25 +22,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
 
-//Intake Form Styles:
-import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/new-owner-form.js'
-import { ErrorLink, ErrorText } from "../../styles/contact";
+//Components:
+import OwnerSection from './components/sections/owner/owner-section.js'
+import OwnerInfo from './components/sections/owner/owner-info.js'
+import LiabilityWaiver from './components/sections/waiver/liability-waiver.js'
+import EmergencyInfo from "./components/sections/emergency/emergency-info.js";
+import EmergencySection from "./components/sections/emergency/emergency-section.js";
+import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
+import AuthorizedPickup from "./components/sections/auth/auth-pickup-info.js";
+import PetInfo from "./components/sections/pet/pet-info.js";
+import PetSection from "./components/sections/pet/pet-section.js";
 
 //Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
 
-//Children Components/Functions:
-import OwnerSection from './components/owner-section.js'
-import OwnerInfo from '../forms/components/owner-info.js'
-import LiabilityWaiver from './components/liability-waiver.js'
-import EmergencyInfo from "./components/emergency-info.js";
-import EmergencySection from "./components/emergency-section.js";
-import AuthorizedPickup from "./components/auth-pickup-info.js";
-import PetInfo from "./components/pet-info.js";
+//Form Template:
 import { formTemplate } from "./form-template.js";
-import AuthPickupSection from "./components/auth-pickup-section.js";
-import PetSection from "./components/pet-section.js";
+
+//Styles:
+import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/new-owner-form.js'
+import { ErrorLink, ErrorText } from "../../styles/contact";
 import { UnderlineLink } from "../../styles/common-styles.js";
+
 
 export default function DigitalIntake() {
     const form = useRef();

@@ -1,11 +1,11 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form.js'
+import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/new-owner-form.js'
 
-//Child Component:
+//Components:
 import OwnerInfo from './owner-info.js'
-import NextPrevBtn from "./next-section-btn.js"
+import NextPrevBtn from "../../next-section-btn"
 
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
@@ -49,6 +49,7 @@ export default function OwnerSection(props){
                             </FormBtn>
                         }
                         <NextPrevBtn 
+                            next={true}
                             currentSection={ownerSection}
                             setCurrentSection={setOwnerSection}   
                             nextSection={emergencySection}

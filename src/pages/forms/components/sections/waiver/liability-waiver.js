@@ -3,18 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 // import SignatureCanvas from "react-signature-canvas"
 
+//Components:
+import NextPrevBtn from "../../next-section-btn";
+
 //Liability Waiver Styles:
-import { FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeSubmitInput, IntakeWaiverDiv, IntakeWaiverP, 
+import { FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow,
+    //  IntakeSubmitInput,
+      IntakeWaiverDiv, IntakeWaiverP, 
     // SignatureBtns, SignatureDiv 
-} from '../../../styles/new-owner-form.js'
-import { Input, FlexColDiv, Rotate } from "../../../styles/contact";
+} from '../../../../../styles/new-owner-form.js'
+import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 
 //Form PDF:
-import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../waiver/waiver-text.js'
-import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
+import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../../../waiver/waiver-text.js'
+import waiverPDF from '../../../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
-    const { changeInput, loading, setLoading } = props
+    const { loading, petSection, setPetSection, waiverSection, setWaiverSection } = props
     // let sigCanvas = useRef()
 
     // const saveSignature = async (event) => {
@@ -131,12 +136,22 @@ export default function LiabilityWaiver(props){
 
                 {/* Form Submit Button */}
                 <IntakeRow>
-                    <IntakeSubmitInput type="submit" value="Send" />
+                    <NextPrevBtn 
+                        prevSection={petSection}
+                        setPrevSection={setPetSection}
+                        currentSection={waiverSection}
+                        setCurrentSection={setWaiverSection}
+                    />
+
+                    <FormBtn type="submit" value="Send">
+                        Send
+                    </FormBtn>
                         {
                             loading && <Rotate>
                             <FontAwesomeIcon icon={faSpinner} size="2xl" />
                             </Rotate>
                         }
+
                 </IntakeRow>
             </IntakeHDiv>
         </>

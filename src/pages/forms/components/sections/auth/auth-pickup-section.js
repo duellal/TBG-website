@@ -1,17 +1,20 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { AuthPickupH5, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
-import { FlexColDiv } from "../../../styles/contact";
+import { AuthPickupH5, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/new-owner-form'
+import { FlexColDiv } from "../../../../../styles/contact";
 
-//Child Component:
+//Components:
 import AuthorizedPickup from "./auth-pickup-info"
+import NextPrevBtn from "../../next-section-btn";
 
 export default function AuthPickupSection(props){
         const { authBtn,
                 setAuthBtn, authorizedKey, setAuthorizedKey,
                 storedAuthorized, setStoredAuthorized,
-                authNum, setAuthNum        
+                authNum, setAuthNum, authSection, setAuthSection,
+                petSection, setPetSection, emergencySection, 
+                setEmergencySection        
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -58,11 +61,27 @@ export default function AuthPickupSection(props){
                 {storedAuthorized}    
 
                 <IntakeRow>
-                    {authBtn &&
+                <NextPrevBtn
+                        currentSection={authSection}
+                        setCurrentSection={setAuthSection}
+                        prevSection={emergencySection}
+                        setPrevSection={setEmergencySection}
+                    />
+                    
+                    {
+                    authBtn &&
                         <FormBtn onClick={(event) => authorizedOnClick(event)}> 
                             Add Authorized Person
                         </FormBtn>
-                    }   
+                    }  
+
+                    <NextPrevBtn
+                        next={true}
+                        currentSection={authSection}
+                        setCurrentSection={setAuthSection}
+                        nextSection={petSection}
+                        setNextSection={setPetSection}
+                    />
                 </IntakeRow>
         </IntakeHDiv>
     )
