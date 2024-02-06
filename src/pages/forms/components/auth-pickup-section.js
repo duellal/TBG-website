@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { AuthPickupH5, IntakeButton, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/intake-form'
+import { AuthPickupH5, IntakeButton, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
 import { FlexColDiv } from "../../../styles/contact";
 
 //Child Component:

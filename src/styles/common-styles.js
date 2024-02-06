@@ -40,7 +40,6 @@ align-items: center;
 height: 20rem;
 width: 30rem;
 background-color: ${bright_red};
-cursor: pointer;
 border: 1px solid ${bright_red};
 box-shadow: 0 0 30px 1px black;
 `

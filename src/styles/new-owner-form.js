@@ -18,6 +18,7 @@ Intake Form
 
 import styled from "styled-components";
 import { PatternFormat } from "react-number-format";
+import { bright_red } from "./constants/colors";
 
 
 export const IntakeSection = styled.section`
@@ -99,6 +100,12 @@ export const IntakeHealthInput = styled(PatternFormat)`
 export const IntakeButton = styled.button`
     margin: 2% 0;
     padding: 5px 10px;
+    align-items: center;
+    background-color: ${bright_red};
+    cursor: pointer;
+    border: 1px solid ${bright_red};
+    box-shadow: 0 0 8px 1px black;
+    color: white;
 `
 
 export const IntakeLink = styled.a`

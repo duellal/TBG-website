@@ -23,7 +23,7 @@ import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/intake-form'
+import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/new-owner-form.js'
 import { Rotate, ErrorLink, ErrorText } from "../../styles/contact";
 
 //Form PDF:
