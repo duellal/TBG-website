@@ -28,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 
 //Forms Styles:
 import '../../styles/forms.css'
-import { FormPageInfoSection, FormPageRedBox, FormPageBtn, FormPagePdfBtn } from "../../styles/formPage";
+import { FormPageInfoSection, FormPageRedBox, FormPageBtn, FormPagePdfBtn } from "../../styles/formsPage";
 import { CommonP, UnderlineLink } from "../../styles/common-styles";
 import { CommonH2, CommonStartDiv } from '../../styles/commonBDG'
 
@@ -48,7 +48,7 @@ export default function Forms(){
                         We require all owners to fill out a new client form to insure that we have your contact information and all of your pets information. 
                     </p>
                 </FormPageRedBox>
-                <FormPageBtn onClick={() => navigate('/forms/newowner')}> Fill Out the Form Online </FormPageBtn>
+                <FormPageBtn onClick={() => navigate('/forms/new-owner')}> Fill Out the Form Online </FormPageBtn>
 
                 <CommonH2 style={{marginBottom: '40px'}}> 
                     Having Trouble Completing the Form Digitally? 

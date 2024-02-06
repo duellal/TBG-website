@@ -23,13 +23,14 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
 
 //Components:
-import OwnerSection from './components/sections/owner/owner-section.js'
-import OwnerInfo from './components/sections/owner/owner-info.js'
-import LiabilityWaiver from './components/sections/waiver/liability-waiver.js'
+import AuthorizedPickup from "./components/sections/auth/auth-pickup-info.js";
+import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
 import EmergencyInfo from "./components/sections/emergency/emergency-info.js";
 import EmergencySection from "./components/sections/emergency/emergency-section.js";
-import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
-import AuthorizedPickup from "./components/sections/auth/auth-pickup-info.js";
+import LiabilityWaiver from './components/sections/waiver/liability-waiver.js'
+import OwnerFormTabs from "./components/section-tabs/form-tabs.js";
+import OwnerInfo from './components/sections/owner/owner-info.js'
+import OwnerSection from './components/sections/owner/owner-section.js'
 import PetInfo from "./components/sections/pet/pet-info.js";
 import PetSection from "./components/sections/pet/pet-section.js";
 
@@ -41,11 +42,12 @@ import { formTemplate } from "./form-template.js";
 
 //Styles:
 import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/new-owner-form.js'
-import { ErrorLink, ErrorText } from "../../styles/contact";
+import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { UnderlineLink } from "../../styles/common-styles.js";
 
 
-export default function DigitalIntake() {
+
+export default function DigitalOwnerForm() {
     const form = useRef();
     
     //onChange function changeInput:
@@ -83,7 +85,7 @@ export default function DigitalIntake() {
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
-    const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])   
+    const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])
 
     //Render Components Array:
     let renderComponents = [
@@ -237,6 +239,7 @@ export default function DigitalIntake() {
 
             </IntakeHeader>
             <IntakeCard>
+                <OwnerFormTabs />
                 <IntakeForm 
                     ref={form}
                     autoComplete="on"

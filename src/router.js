@@ -8,8 +8,8 @@ import Boarding from './pages/boarding';
 import Credits from './pages/credits';
 import Err404 from './pages/err404';
 import Daycare from './pages/daycare';
-import DigitalIntake from './pages/forms/intake-form';
-import Forms from './pages/forms/formPage';
+import DigitalOwnerForm from './pages/forms/owner-form';
+import Forms from './pages/forms/formsPage';
 import Grooming from './pages/grooming';
 import Home from './pages/home';
 import Requirements from './pages/general-components/requirements';
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {path: 'boarding', element: <Boarding />},
             {path: 'daycare', element: <Daycare />},
             {path: 'forms', element: <Forms />},
-            {path: '/forms/newowner', element: <DigitalIntake />},
+            {path: '/forms/new-owner', element: <DigitalOwnerForm />},
             {path: 'grooming', element: <Grooming />},
             {path:'requirements', element: <Requirements />}
         ]
