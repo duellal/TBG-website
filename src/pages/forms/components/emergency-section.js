@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
+import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
 
 //Child Component:
 import EmergencyInfo from "./emergency-info"
@@ -45,9 +45,9 @@ export default function EmergencySection(props){
 
                 <IntakeRow>
                     {emergencyBtn &&
-                        <IntakeButton onClick={(event) => emergencyOnClick(event)}> 
+                        <FormBtn onClick={(event) => emergencyOnClick(event)}> 
                         Add Emergency Contact 
-                        </IntakeButton>
+                        </FormBtn>
                     }
                 </IntakeRow>
             </IntakeHDiv>

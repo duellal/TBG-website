@@ -97,7 +97,7 @@ export const IntakeHealthInput = styled(PatternFormat)`
     margin: 6px;
 `
 
-export const IntakeButton = styled.button`
+export const FormBtn = styled.button`
     margin: 2% 0;
     padding: 5px 10px;
     align-items: center;

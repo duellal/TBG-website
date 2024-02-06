@@ -1,18 +1,20 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 // import SignatureCanvas from "react-signature-canvas"
 
 //Liability Waiver Styles:
-import { IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, 
+import { FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeSubmitInput, IntakeWaiverDiv, IntakeWaiverP, 
     // SignatureBtns, SignatureDiv 
 } from '../../../styles/new-owner-form.js'
-import { Input, FlexColDiv } from "../../../styles/contact";
+import { Input, FlexColDiv, Rotate } from "../../../styles/contact";
 
 //Form PDF:
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../waiver/waiver-text.js'
 import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
-    // const { changeInput } = props
+    const { changeInput, loading, setLoading } = props
     // let sigCanvas = useRef()
 
     // const saveSignature = async (event) => {
@@ -122,9 +124,19 @@ export default function LiabilityWaiver(props){
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
-                    <IntakeButton onClick={() => window.open(waiverPDF)}>
+                    <FormBtn onClick={() => window.open(waiverPDF)}>
                         Download Waiver
-                    </IntakeButton>
+                    </FormBtn>
+                </IntakeRow>
+
+                {/* Form Submit Button */}
+                <IntakeRow>
+                    <IntakeSubmitInput type="submit" value="Send" />
+                        {
+                            loading && <Rotate>
+                            <FontAwesomeIcon icon={faSpinner} size="2xl" />
+                            </Rotate>
+                        }
                 </IntakeRow>
             </IntakeHDiv>
         </>

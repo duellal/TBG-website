@@ -1,14 +1,17 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { IntakeButton, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form.js'
+import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form.js'
 
 //Child Component:
 import OwnerInfo from './owner-info.js'
+import NextPrevBtn from "./next-section-btn.js"
 
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
-                setOwnerKey, storedOwners, setStoredOwners        
+                setOwnerKey, storedOwners, setStoredOwners, 
+                ownerSection, setOwnerSection, emergencySection,
+                setEmergencySection        
         } = props
 
         //Function to allow user to add 1 more owner:
@@ -41,10 +44,16 @@ export default function OwnerSection(props){
     
                     <IntakeRow>
                         {ownerBtn && 
-                            <IntakeButton onClick={(event) => ownerOnClick(event)}> 
+                            <FormBtn onClick={(event) => ownerOnClick(event)}> 
                                 Add Owner 
-                            </IntakeButton>
+                            </FormBtn>
                         }
+                        <NextPrevBtn 
+                            currentSection={ownerSection}
+                            setCurrentSection={setOwnerSection}   
+                            nextSection={emergencySection}
+                            setNextSection={setEmergencySection}                      
+                        />
                     </IntakeRow>  
                 </IntakeHDiv> 
             </div>

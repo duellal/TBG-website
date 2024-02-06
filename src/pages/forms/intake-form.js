@@ -19,12 +19,12 @@ Intake Form
 import React, { useRef, useState } from "react";
 // import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faPaw } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
 
 //Intake Form Styles:
-import { IntakeButton, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeRow, IntakeSection, IntakeSubmitInput } from '../../styles/new-owner-form.js'
-import { Rotate, ErrorLink, ErrorText } from "../../styles/contact";
+import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/new-owner-form.js'
+import { ErrorLink, ErrorText } from "../../styles/contact";
 
 //Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -56,12 +56,14 @@ export default function DigitalIntake() {
     const [authNum, setAuthNum] = useState(1)
     const [authorizedKey, setAuthorizedKey] = useState(2)
     const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
+    const [authSection, setAuthSection] = useState(false)
 
     //Emergency Contact States:
     const [emergencyKey, setEmergencyKey] = useState(2)
     const [emergencyBtn, setEmergencyBtn] = useState(true)
     const [emergencyNum, setEmergencyNum] = useState(1)
     const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
+    const [emergencySection, setEmergencySection] = useState(false)
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
@@ -72,12 +74,17 @@ export default function DigitalIntake() {
     const [ownerKey, setOwnerKey] = useState(2)
     const [ownerBtn, setOwnerBtn] = useState(true)
     const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1} formData={formData} changeInput={changeInput}/>])
+    const [ownerSection, setOwnerSection] = useState(true)
 
     //Pet Info States:
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
     const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])   
+    const [petSection, setPetSection] = useState(false)
+
+    //Waiver States: 
+    const [waiverSection, setWaiverSection] = useState(false)
 
     //Form Submit:
     const submitHandler = async event => {
@@ -183,17 +190,26 @@ export default function DigitalIntake() {
                     id="intake_form"
                 >
                     {/* Owners */}
-                    <OwnerSection 
+                    {
+                        ownerSection ? 
+                        <OwnerSection 
                         ownerBtn={ownerBtn}
                         setOwnerBtn={setOwnerBtn}
                         ownerKey={ownerKey}
                         setOwnerKey={setOwnerKey}
+                        ownerSection={ownerSection}
+                        setOwnerSection={setOwnerSection}
                         storedOwners={storedOwners}
                         setStoredOwners={setStoredOwners}
-                    />
-
+                        emergencySection={emergencySection}
+                        setEmergencySection={setEmergencySection}
+                        /> : null
+                    }
                     {/* Emergency Contact */}
-                    <EmergencySection
+
+                    {
+                        emergencySection ? 
+                        <EmergencySection
                         emergencyBtn={emergencyBtn}
                         setEmergencyBtn={setEmergencyBtn}
                         emergencyKey={emergencyKey}
@@ -202,10 +218,19 @@ export default function DigitalIntake() {
                         setStoredEmergencyContacts={setStoredEmergencyContacts}
                         emergencyNum={emergencyNum}
                         setEmergencyNum={setEmergencyNum}
-                    />
+                        storedOwners={storedOwners}
+                        setStoredOwners={setStoredOwners}
+                        emergencySection={emergencySection}
+                        setEmergencySection={setEmergencySection}
+                        authSection={authSection}
+                        setAuthSection={setAuthSection}
+                        /> : null 
+                    }
 
                     {/* Authorized Pick Up */}
-                    <AuthPickupSection 
+                    {
+                        authSection ? 
+                        <AuthPickupSection 
                         authBtn={authBtn}
                         setAuthBtn={setAuthBtn}
                         authorizedKey={authorizedKey}
@@ -214,10 +239,19 @@ export default function DigitalIntake() {
                         setStoredAuthorized={setStoredAuthorized}
                         authNum={authNum}
                         setAuthNum={setAuthNum}
-                    />
+                        emergencySection={emergencySection}
+                        setEmergencySection={setEmergencySection}
+                        authSection={authSection}
+                        setAuthSection={setAuthSection}
+                        petSection={petSection}
+                        setPetSection={setPetSection}
+                        /> : null
+                    }
 
                     {/* Pet Info */}
-                    <PetSection
+                    {
+                        petSection ?
+                        <PetSection
                         petBtn={petBtn} 
                         setPetBtn={setPetBtn} 
                         petKey={petKey}
@@ -226,20 +260,29 @@ export default function DigitalIntake() {
                         setStoredPets={setStoredPets}
                         petNum={petNum}
                         setPetNum={setPetNum}
-                    />
+                        authSection={authSection}
+                        setAuthSection={setAuthSection}
+                        petSection={petSection}
+                        setPetSection={setPetSection}
+                        waiverSection={waiverSection}
+                        setWaiverSection={setWaiverSection}
+                        /> : null
+                    }
+                    
                     
                     {/* Liability Waiver */}
-                    <LiabilityWaiver 
+                    {
+                        waiverSection ?
+                        <LiabilityWaiver 
                         changeInput={changeInput}
-                    />
-
-                    {/* Form Submit Button */}
-                    <IntakeRow>
-                        <IntakeSubmitInput type="submit" value="Send" />
-                            {loading && <Rotate>
-                                <FontAwesomeIcon icon={faSpinner} size="2xl" />
-                            </Rotate>}
-                    </IntakeRow>
+                        petSection={petSection}
+                        setPetSection={setPetSection}
+                        waiverSection={waiverSection}
+                        setWaiverSection={setWaiverSection} 
+                        loading={loading}
+                        setLoading={setLoading}
+                        /> : null 
+                    }
                 </IntakeForm>
 
                 {/* Form Error on Submit */}
@@ -267,9 +310,9 @@ export default function DigitalIntake() {
                 <p>
                     Once completed, you can either email it to us at <UnderlineLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</UnderlineLink> or you can bring it in.
                 </p>
-                <IntakeButton className="intake" onClick={() => window.open(intakeForm)}> 
+                <FormBtn className="intake" onClick={() => window.open(intakeForm)}> 
                     New Client Form 
-                </IntakeButton>
+                </FormBtn>
             </IntakePDF>
         </IntakeSection>
     )

@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { IntakeButton, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
+import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
 
 //Child Component:
 import PetInfo from "./pet-info"
@@ -41,9 +41,9 @@ export default function PetSection(props){
 
                 <IntakeRow>
                     {petBtn && 
-                        <IntakeButton onClick={(event) => petOnClick(event)}>
+                        <FormBtn onClick={(event) => petOnClick(event)}>
                         Add Pet
-                        </IntakeButton>
+                        </FormBtn>
                     }
                 </IntakeRow>
             </IntakeHDiv>

@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { AuthPickupH5, IntakeButton, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
+import { AuthPickupH5, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../styles/new-owner-form'
 import { FlexColDiv } from "../../../styles/contact";
 
 //Child Component:
@@ -59,9 +59,9 @@ export default function AuthPickupSection(props){
 
                 <IntakeRow>
                     {authBtn &&
-                        <IntakeButton onClick={(event) => authorizedOnClick(event)}> 
+                        <FormBtn onClick={(event) => authorizedOnClick(event)}> 
                             Add Authorized Person
-                        </IntakeButton>
+                        </FormBtn>
                     }   
                 </IntakeRow>
         </IntakeHDiv>
