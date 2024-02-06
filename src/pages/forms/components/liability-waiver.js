@@ -2,7 +2,9 @@ import React from "react";
 // import SignatureCanvas from "react-signature-canvas"
 
 //Liability Waiver Styles:
-import { IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, SignatureBtns, SignatureDiv } from '../../../styles/new-owner-form.js'
+import { IntakeButton, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, 
+    // SignatureBtns, SignatureDiv 
+} from '../../../styles/new-owner-form.js'
 import { Input, FlexColDiv } from "../../../styles/contact";
 
 //Form PDF:
@@ -10,7 +12,7 @@ import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiv
 import waiverPDF from '../waiver/TBG-Liability-Waiver-2024.pdf'
 
 export default function LiabilityWaiver(props){
-    const { changeInput } = props
+    // const { changeInput } = props
     // let sigCanvas = useRef()
 
     // const saveSignature = async (event) => {

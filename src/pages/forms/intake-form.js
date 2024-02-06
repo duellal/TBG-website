@@ -159,23 +159,21 @@ export default function DigitalIntake() {
 
     return (
         <IntakeSection id="digital-intake">
+            <IntakeHeader id='intake-header'>
+                <h2>
+                    New Client Form
+                </h2>
+
+                <IntakeDivider>
+                    <FontAwesomeIcon icon={faPaw} size="2xl" />
+                </IntakeDivider>
+
+                <IntakeP>
+                     Before you schedule your first visit or appointment, please fill out the new client form below. 
+                </IntakeP>
+
+            </IntakeHeader>
             <IntakeCard>
-                <IntakeHeader id='intake-header'>
-                    <h2>
-                        New Client Form
-                    </h2>
-
-                    <IntakeDivider>
-                        <FontAwesomeIcon icon={faPaw} size="2xl" />
-                    </IntakeDivider>
-
-
-                    <IntakeP>
-                         Before you schedule your first visit or appointment, please fill out the new client form below. 
-                    </IntakeP>
-
-                </IntakeHeader>
-
                 <IntakeForm 
                     ref={form}
                     autoComplete="on"
