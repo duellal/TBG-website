@@ -116,15 +116,6 @@ export default function LiabilityWaiver(props){
 
                 <IntakeRow>
                     <FlexColDiv>
-                        <IntakeLabel htmlFor={`pets_name`}>
-                            *Pet(s) Name(s)
-                        </IntakeLabel>
-                        <Input type="text" name="waiver_pets_name" required />
-                    </FlexColDiv>
-                </IntakeRow>
-
-                <IntakeRow>
-                    <FlexColDiv>
                     <p>
                         You can download the Liability Waiver below.
                     </p>
