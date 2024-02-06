@@ -13,25 +13,25 @@ export default function Banner(props){
     //3 seconds:
     const delay = 3000;
 
-    // //For the slideshow to automatically change:
-    // useEffect(() => {
-    //     resetTimeout();
-    //     timeoutRef.current = setTimeout(() => 
-    //         setIndex(prevIndex => 
-    //             prevIndex === allImages.length - 1 ? 0 : prevIndex + 1
-    //         ), delay
-    //     )
+    //For the slideshow to automatically change:
+    useEffect(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(() => 
+            setIndex(prevIndex => 
+                prevIndex === allImages.length - 1 ? 0 : prevIndex + 1
+            ), delay
+        )
 
-    //     return () => {
-    //         resetTimeout()
-    //     }
-    // }, [index, allImages])
+        return () => {
+            resetTimeout()
+        }
+    }, [index, allImages])
 
-    // let resetTimeout = () => {
-    //     if(timeoutRef.current){
-    //         clearTimeout(timeoutRef.current)
-    //     }
-    // }
+    let resetTimeout = () => {
+        if(timeoutRef.current){
+            clearTimeout(timeoutRef.current)
+        }
+    }
 
     return (
         <BannerDiv>
