@@ -125,10 +125,7 @@ export const IntakeH4 = styled.h4`
     font-size: 2rem;
     text-align: left;
 `
-export const IntakeH5 = styled.h4`
-    font-size: 1.8rem;
-    margin: 5px 0 20px 0;
-`
+
 
 export const IntakeHDiv = styled.div`
     width: 100%;
