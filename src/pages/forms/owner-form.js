@@ -43,7 +43,8 @@ import { formTemplate } from "./form-template.js";
 //Styles:
 import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/owner-form.js'
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
-import { UnderlineLink } from "../../styles/common-styles.js";
+import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
+import { darkGrey } from "../../styles/constants/colors.js";
 
 
 
@@ -230,7 +231,7 @@ export default function DigitalOwnerForm() {
                 </h2>
 
                 <IntakeDivider>
-                    <FontAwesomeIcon icon={faPaw} size="2xl" />
+                    <FontAwesomeIcon icon={faPaw} size="3x" color={darkGrey}/>
                 </IntakeDivider>
 
                 <IntakeP>
@@ -274,15 +275,17 @@ export default function DigitalOwnerForm() {
 
             {/* New Client Form PDF Section */}
             <IntakePDF>
-                <p>
-                    If you cannot fill out the digitial new client form, feel free to download and complete the pdf version.
-                </p>
-                <p>
-                    Once completed, you can either email it to us at <UnderlineLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</UnderlineLink> or you can bring it in.
-                </p>
+                <CommonP style={{margin: '30px 0 0'}}>
+                    If you cannot fill out the digitial form, feel free to download and complete the pdf version below.
+                </CommonP>
+                
                 <FormBtn className="intake" onClick={() => window.open(intakeForm)}> 
-                    New Client Form 
+                    New Client Form PDF
                 </FormBtn>
+
+                <CommonP style={{margin: '0 0 50px'}}>
+                    Once completed, you can either email it to us at <UnderlineLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</UnderlineLink> or you can bring it in.
+                </CommonP>
             </IntakePDF>
         </IntakeSection>
     )

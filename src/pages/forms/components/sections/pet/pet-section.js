@@ -4,8 +4,9 @@ import React from "react"
 import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
 
 //Components:
-import PetInfo from "./pet-info"
+import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
+import PetInfo from "./pet-info"
 
 export default function PetSection(props){
         const { petBtn, setPetBtn, petKey,
@@ -36,6 +37,8 @@ export default function PetSection(props){
                 <IntakeH3> 
                     Pet Information
                 </IntakeH3>
+
+                <AsteriskHeader/>
 
                 <IntakeCol>
                     {storedPets}

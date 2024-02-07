@@ -1,9 +1,10 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
 
 //Components:
+import AsteriskHeader from "../../asterisk-header"
 import EmergencyInfo from "./emergency-info"
 import NextPrevBtn from "../../next-section-btn"
 
@@ -36,9 +37,8 @@ export default function EmergencySection(props){
                 <IntakeH3> 
                     Emergency Contact Information
                 </IntakeH3>
-                <IntakeH5>
-                    In case we can't reach you
-                </IntakeH5>
+                
+                <AsteriskHeader/>
             
                 <IntakeCol>
                     {storedEmergencyContacts}

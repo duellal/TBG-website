@@ -1,11 +1,12 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form.js'
+import { FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form.js'
 
 //Components:
 import OwnerInfo from './owner-info.js'
 import NextPrevBtn from "../../next-section-btn"
+import AsteriskHeader from "../../asterisk-header.js"
 
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
@@ -27,15 +28,13 @@ export default function OwnerSection(props){
         }
     
         return(
-            <div id={`owner_section`}>
-                <IntakeHDiv>
+            <IntakeHDiv key={`owner_section${ownerKey}`} id={`owner_section${ownerKey}`}>
+                <IntakeDivider>
                     <IntakeH3> 
                         Owner Information 
                     </IntakeH3>
     
-                    <IntakeH5> 
-                        Required information will be starred (*)
-                    </IntakeH5>
+                    <AsteriskHeader/>
                         
                     <IntakeCol>
                         {storedOwners}
@@ -53,7 +52,7 @@ export default function OwnerSection(props){
                             setBtnIndex={setBtnIndex}                     
                         />
                     </IntakeRow>  
-                </IntakeHDiv> 
-            </div>
+                </IntakeDivider> 
+            </IntakeHDiv>
         )
 }

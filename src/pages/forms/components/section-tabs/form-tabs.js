@@ -25,7 +25,9 @@ export default function OwnerFormTabs(props){
                     size="2xl" 
                     colorState={colorState}
                 />
-                <FormTabP> 
+                <FormTabP
+                    colorState={colorState}
+                > 
                     { title } 
                 </FormTabP>
             </FormTabDiv>
@@ -46,7 +48,9 @@ export default function OwnerFormTabs(props){
                     size="2xl" 
                     colorState={colorState}
                 />
-                <FormTabP> 
+                <FormTabP
+                    colorState={colorState}
+                > 
                     { title } 
                 </FormTabP>
             </FormTabDiv>
@@ -68,7 +72,9 @@ export default function OwnerFormTabs(props){
                     size="2xl" 
                     colorState={colorState}
                 />
-                <FormTabP> 
+                <FormTabP
+                    colorState={colorState}
+                > 
                     { title } 
                 </FormTabP>
             </FormTabDiv>

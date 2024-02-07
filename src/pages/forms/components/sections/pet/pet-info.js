@@ -1,8 +1,9 @@
 import React from "react";
 
-//Intake Form Styles:
+//Styles:
 import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../..//styles/contact";
+import { FormAsterisk } from "../../../../../styles/forms";
 
 
 export default function PetInfo(props){
@@ -20,14 +21,14 @@ export default function PetInfo(props){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_name`}>
-                                *Name
+                                <FormAsterisk>*</FormAsterisk> Name
                             </IntakeLabel>
                             <Input type="text" name={`pet${petKey}_name`} required />
                     
                         </FlexColDiv>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_species`}>
-                                    *Species
+                                    <FormAsterisk>*</FormAsterisk> Species
                                 </IntakeLabel>
                                 <Input type="text" name={`pet${petKey}_species`} required />
                             </FlexColDiv>
@@ -36,7 +37,7 @@ export default function PetInfo(props){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_breed`}>
-                                *Breed
+                                <FormAsterisk>*</FormAsterisk> Breed
                             </IntakeLabel>
                             <Input type="text" name={`pet${petKey}_breed`} required />
                         </FlexColDiv>
@@ -52,7 +53,7 @@ export default function PetInfo(props){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_sex`}>
-                                *Sex
+                                <FormAsterisk>*</FormAsterisk> Sex
                             </IntakeLabel>
                             <IntakeLabelRow>
                                 <Input type='radio' name={`pet${petKey}_sex_female`} />
@@ -69,7 +70,7 @@ export default function PetInfo(props){
 
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_sterile`}>
-                                *Spayed or Neutered
+                                <FormAsterisk>*</FormAsterisk> Spayed or Neutered
                             </IntakeLabel>
                             <IntakeLabelRow>
                                 <Input type='radio' id={`pet${petKey}_sterile_yes`} name={`pet${petKey}_sterile`}/>
@@ -88,7 +89,7 @@ export default function PetInfo(props){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                                *Weight (lbs)
+                                <FormAsterisk>*</FormAsterisk> Weight (lbs)
                             </IntakeLabel>
                             <Input type="float" name={`pet${petKey}_weight`} required />
                         </FlexColDiv>
@@ -274,14 +275,14 @@ export default function PetInfo(props){
                     <IntakeRow>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`pet${petKey}_vet`}>
-                                *Vetinary Hospital
+                                <FormAsterisk>*</FormAsterisk> Vetinary Hospital
                             </IntakeLabel>
                             <Input type="text" name={`{pet${petKey}_vet`} required />
                         </FlexColDiv>
 
                         <FlexColDiv>
                             <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                *Vet Phone Number <br/> ex: (xxx) xxx-xxxx
+                                <FormAsterisk>*</FormAsterisk> Vet Phone Number <br/> ex: (xxx) xxx-xxxx
                             </IntakeHealthLabel>
 
                             <IntakeHealthInput 

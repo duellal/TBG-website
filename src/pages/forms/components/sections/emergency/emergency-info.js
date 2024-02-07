@@ -2,6 +2,7 @@ import React from "react";
 
 import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
+import { FormAsterisk } from "../../../../../styles/forms";
 
 export default function EmergencyInfo(props){
     const { emergencyKey } = props
@@ -16,7 +17,7 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        *Emergency Contact First + Last Name
+                        <FormAsterisk>*</FormAsterisk> Emergency Contact First + Last Name
                     </IntakeLabel>
                     <Input type="text" name={`emergency${emergencyKey}_name`} required />
                 </FlexColDiv>
@@ -24,7 +25,7 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        *Emergency Contact Phone Number <br/> ex: (###) ###-####
+                    <FormAsterisk>*</FormAsterisk> Emergency Contact Phone Number <br/> ex: (###) ###-####
                     </IntakeLabel>
                     <PhoneInput 
                         type="tel" 
@@ -37,7 +38,7 @@ export default function EmergencyInfo(props){
 
                 <FlexColDiv>
                     <IntakeLabel>
-                        *Relationship
+                    <FormAsterisk>*</FormAsterisk> Relationship
                     </IntakeLabel>
                     <Input type="text" name={`emergency${emergencyKey}_relation`} required />
                 </FlexColDiv>
@@ -46,7 +47,7 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        *Does this person have permission to make decisions regarding your pet(s)?
+                    <FormAsterisk>*</FormAsterisk> Does this person have permission to make decisions regarding your pet(s)?
                     </IntakeLabel>
                     
                     <IntakeLabelRow>
@@ -62,7 +63,7 @@ export default function EmergencyInfo(props){
                     </IntakeLabelRow>
 
                     <IntakeLabel id="yes-show">
-                        *Owner's intials (ex: HJ or HEJ) 
+                    <FormAsterisk>*</FormAsterisk> Owner's intials (ex: HJ or HEJ) 
                         <Input type="text" name={`emergency${emergencyKey}_initials`} pattern="^[A-Z]{2}$|^[A-Z]{3}$" required />
                     </IntakeLabel>
                 

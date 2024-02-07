@@ -51,4 +51,32 @@ export const FormTabP = styled.p`
 font-size: 16px;
 text-align: left;
 margin: 6px;
+
+${props => {
+    return props.colorState ? {
+        // color: bright_red, 
+        // fontWeight: 'bold',
+    } : null
+ }}
+`
+
+export const FormAsteriskH4 = styled.h4`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+font-size: 1.8rem;
+font-weight: normal;
+margin: 5px 0 20px 0;
+width: 100%;
+
+// border: 1px solid black;
+`
+
+export const FormAsterisk = styled.h4`
+color: ${bright_red};
+font-size: 1.8rem;
+font-weight: normal;
+width: 12px;
+
+// border: 1px solid red;
 `

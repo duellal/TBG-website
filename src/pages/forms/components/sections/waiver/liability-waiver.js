@@ -17,6 +17,8 @@ import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 //Form PDF:
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../../../waiver/waiver-text.js'
 import waiverPDF from '../../../waiver/TBG-Liability-Waiver-2024.pdf'
+import AsteriskHeader from "../../asterisk-header.js";
+import { FormAsterisk } from "../../../../../styles/forms.js";
 
 export default function LiabilityWaiver(props){
     const { loading, btnIndex, setBtnIndex, setTabIndex } = props
@@ -57,6 +59,8 @@ export default function LiabilityWaiver(props){
                     Liability Waiver
                 </IntakeH3>
 
+                <AsteriskHeader/>
+
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeWaiverDiv>
@@ -78,12 +82,12 @@ export default function LiabilityWaiver(props){
                         <IntakeH3>
                             {waiverAcknowledgeHeader}
                         </IntakeH3>
-                        <IntakeWaiverP>
+                        <IntakeWaiverP style={{margin: '0 0 10px'}}>
                             <Input 
                             type="checkbox" name="waiver_owner_acknowledgement" 
                             value={true}
                             required />
-                            {waiverAcknowledgeStatement}
+                            {waiverAcknowledgeStatement} 
                         </IntakeWaiverP>
                     </FlexColDiv>
                 </IntakeRow>
@@ -115,23 +119,10 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner_printed_name`}>
-                            *Owner's Printed Name
+                            <FormAsterisk>*</FormAsterisk> Owner's Printed Name
                         </IntakeLabel>
                         <Input type="text" name="waiver_owner_name" required />
                     </FlexColDiv>
-                </IntakeRow>
-
-                <IntakeRow>
-                    <FlexColDiv>
-                    <p>
-                        You can download the Liability Waiver below.
-                    </p>
-                    </FlexColDiv>
-                </IntakeRow>
-                <IntakeRow>
-                    <FormBtn onClick={() => window.open(waiverPDF)}>
-                        Download Waiver
-                    </FormBtn>
                 </IntakeRow>
 
                 {/* Form Submit Button */}

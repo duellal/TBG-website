@@ -5,6 +5,7 @@ import { AuthPickupH5, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../..
 import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
+import AsteriskHeader from "../../asterisk-header";
 import AuthorizedPickup from "./auth-pickup-info"
 import NextPrevBtn from "../../next-section-btn";
 
@@ -37,6 +38,8 @@ export default function AuthPickupSection(props){
                 <IntakeH3> 
                     Authorized People to Pickup Your Pets
                 </IntakeH3>
+
+                <AsteriskHeader/>
 
                 <IntakeRow>
                     <FlexColDiv>

@@ -18,7 +18,7 @@ Intake Form
 
 import styled from "styled-components";
 import { PatternFormat } from "react-number-format";
-import { bright_red } from "./constants/colors";
+import { bright_red, darkGrey } from "./constants/colors";
 
 
 export const IntakeSection = styled.section`
@@ -38,7 +38,7 @@ export const IntakeHeader = styled.div`
 
 export const IntakeCard = styled.div`
     margin: 30px;
-    padding: 12px;
+    padding: 12px 12px 0;
     background-color: #dedede;
     width: 900px;
 `
@@ -46,11 +46,7 @@ export const IntakeCard = styled.div`
 export const IntakeForm = styled.form`
     height: auto;
     margin: auto;
-    padding: 50px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    padding: 50px 50px 0;
 `
 
 export const IntakeDivider = styled.div`
@@ -98,7 +94,7 @@ export const IntakeHealthInput = styled(PatternFormat)`
 `
 
 export const FormBtn = styled.button`
-    margin: 2% 0;
+    margin: 40px 15px;
     padding: 5px 10px;
     align-items: center;
     background-color: ${bright_red};
@@ -117,6 +113,7 @@ export const IntakeLink = styled.a`
 
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
+    margin: 20px 0;
 `
 
 export const IntakeH4 = styled.h4`
@@ -133,13 +130,13 @@ export const AuthPickupH5 = styled.h4`
     margin: 5px 0 0 0;
 `
 export const IntakeHDiv = styled.div`
-    grid-template-columns: 1;
-    text-align: left;
-    grid-column-start: 1;
-    grid-column-end: 5;
+    width: 100%;
+    border-top: 1px solid ${darkGrey};
 `
 
 export const IntakeLabel = styled.label`
+display: flex;
+flex-wrap: wrap;
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
@@ -169,7 +166,7 @@ export const IntakeWaiverDiv = styled.div`
     grid-column-end: 5;
     align-items: center;
     padding: 20px;
-    height: 200px;
+    height: 530px;
     overflow-y: scroll;
     background-color: white;
     border: 1px solid black;
