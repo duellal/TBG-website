@@ -3,7 +3,7 @@ import React from "react"
 //Intake Form - Owner Styles:
 import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { FlexColDiv, Input } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms";
+import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 export default function OwnerInfo(props){
     const { ownerKey } = props
@@ -42,7 +42,11 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
-                        <FormAsterisk>*</FormAsterisk> Email <br/> ex: someemail@server.com
+                            <FormAsterisk>*</FormAsterisk> 
+                            Email 
+                            <FormExample>
+                                ex: someemail@server.com
+                            </FormExample>
                         </IntakeLabel>
                         <Input 
                             type="email" 
@@ -51,7 +55,11 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                        <FormAsterisk>*</FormAsterisk> Phone <br/> ex: (xxx) xxx-xxxx
+                            <FormAsterisk>*</FormAsterisk> 
+                            Phone 
+                            <FormExample>
+                                ex: (xxx) xxx-xxxx
+                            </FormExample>
                         </IntakeLabel>
                         <PhoneInput
                             type="tel" 

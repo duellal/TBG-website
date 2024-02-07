@@ -35,7 +35,7 @@ export default function PetInfoSection(props){
         return(
             <IntakeHDiv key={`PetInfoSection${petNum}`}>
                 <IntakeH3> 
-                    Pet Information
+                    Pet Preliminary Information
                 </IntakeH3>
 
                 <AsteriskHeader/>

@@ -84,6 +84,11 @@ export const IntakeHealthLabel = styled.label`
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    // border: 1px solid orange;
 `
 
 export const IntakeHealthInput = styled(PatternFormat)`
@@ -125,21 +130,21 @@ export const IntakeH5 = styled.h4`
     margin: 5px 0 20px 0;
 `
 
-export const AuthPickupH5 = styled.h4`
-    font-size: 1.8rem;
-    margin: 5px 0 0 0;
-`
 export const IntakeHDiv = styled.div`
     width: 100%;
     border-top: 1px solid ${darkGrey};
 `
 
 export const IntakeLabel = styled.label`
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+`
+
+export const AuthPickupLabel = styled(IntakeLabel)`
+    margin-left: 10px;
 `
 
 export const IntakeP = styled.p`

@@ -2,7 +2,7 @@ import React from "react";
 
 import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms";
+import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 export default function EmergencyInfo(props){
     const { emergencyKey } = props
@@ -25,7 +25,11 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                    <FormAsterisk>*</FormAsterisk> Emergency Contact Phone Number <br/> ex: (###) ###-####
+                        <FormAsterisk>*</FormAsterisk> 
+                        Emergency Contact Phone Number 
+                        <FormExample>
+                            ex: (xxx) xxx-xxxx
+                        </FormExample>
                     </IntakeLabel>
                     <PhoneInput 
                         type="tel" 

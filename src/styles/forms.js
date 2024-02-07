@@ -80,3 +80,10 @@ width: 12px;
 
 // border: 1px solid red;
 `
+
+export const FormExample = styled.p`
+font-size: inherit;
+text-align: left;
+margin: 0 20px;
+width: 100%;
+`

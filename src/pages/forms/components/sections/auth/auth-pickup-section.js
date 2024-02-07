@@ -1,19 +1,19 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { AuthPickupH5, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { AuthPickupLabel, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
 import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header";
 import AuthorizedPickup from "./auth-pickup-info"
 import NextPrevBtn from "../../next-section-btn";
+import { FormExample } from "../../../../../styles/forms";
 
 export default function AuthPickupSection(props){
-        const { authBtn,
-                setAuthBtn, authorizedKey, setAuthorizedKey,
-                storedAuthorized, setStoredAuthorized,
-                authNum, setAuthNum, btnIndex, setBtnIndex
+        const { authBtn, setAuthBtn, authorizedKey, 
+            setAuthorizedKey, storedAuthorized, setStoredAuthorized,
+            authNum, setAuthNum, btnIndex, setBtnIndex
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -43,19 +43,22 @@ export default function AuthPickupSection(props){
 
                 <IntakeRow>
                     <FlexColDiv>
-                        <AuthPickupH5>
+                        <AuthPickupLabel>
                             First + Last Name
-                        </AuthPickupH5>
+                        </AuthPickupLabel>
                     </FlexColDiv>
                     <FlexColDiv>
-                        <AuthPickupH5>
+                        <AuthPickupLabel>
                             Relationship
-                        </AuthPickupH5>
+                        </AuthPickupLabel>
                     </FlexColDiv>
                     <FlexColDiv>
-                        <AuthPickupH5>
-                            Phone Number <br/> ex: (###) ### - ####
-                        </AuthPickupH5>
+                        <AuthPickupLabel>
+                            Phone Number 
+                            <FormExample>
+                                ex: (xxx) xxx-xxxx
+                            </FormExample>
+                        </AuthPickupLabel>
                     </FlexColDiv>
                 </IntakeRow>
                         

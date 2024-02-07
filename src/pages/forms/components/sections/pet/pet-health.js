@@ -1,9 +1,9 @@
 import React from "react";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH4, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms";
+import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 
 export default function PetHealth(props){
@@ -18,9 +18,6 @@ export default function PetHealth(props){
                 {/* Vet History Section */}
                 <IntakeDivider>
                     <IntakeCol>
-                            <IntakeH5>
-                                Health Information
-                            </IntakeH5>
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_vet`}>
@@ -31,7 +28,12 @@ export default function PetHealth(props){
 
                             <FlexColDiv>
                                 <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                    <FormAsterisk>*</FormAsterisk> Vet Phone Number <br/> ex: (xxx) xxx-xxxx
+                                    <FormAsterisk>*</FormAsterisk>      
+                                     Vet Phone Number 
+                                    <br/>
+                                    <FormExample>
+                                        ex: (xxx) xxx-xxxx
+                                    </FormExample>
                                 </IntakeHealthLabel>
 
                                 <IntakeHealthInput 
