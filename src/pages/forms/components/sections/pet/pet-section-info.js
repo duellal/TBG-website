@@ -15,7 +15,7 @@ export default function PetInfoSection(props){
                 setTabIndex    
         } = props
 
-        //Function to allow user to add up to 3 emergency contacts:
+        //Function to allow user to add up to 5 pets:
         const petOnClick = async (event) => {
             event.preventDefault()
     

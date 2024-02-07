@@ -16,7 +16,6 @@ import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 
 //Form PDF:
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../../../waiver/waiver-text.js'
-import waiverPDF from '../../../waiver/TBG-Liability-Waiver-2024.pdf'
 import AsteriskHeader from "../../asterisk-header.js";
 import { FormAsterisk } from "../../../../../styles/forms.js";
 

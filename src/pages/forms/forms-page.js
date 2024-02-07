@@ -34,7 +34,6 @@ import { CommonH2, CommonStartDiv } from '../../styles/commonBDG'
 
 //Import Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
-import { bright_blue } from "../../styles/constants/colors";
 
 export default function Forms(){
     let navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 
 import { tabNamesArr } from "./tab-names"

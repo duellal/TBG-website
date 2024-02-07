@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeH5, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form.js'
+import { FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form.js'
 
 //Components:
 import OwnerInfo from './owner-info.js'
