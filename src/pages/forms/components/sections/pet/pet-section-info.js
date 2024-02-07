@@ -7,12 +7,14 @@ import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../..
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
 import PetInfo from "./pet-info"
+import PetBehavior from "./pet-behavior"
+import PetHealth from "./pet-health"
 
 export default function PetInfoSection(props){
-        const { petBtn, setPetBtn, petKey,
-                setPetKey, storedPetInfo, setStoredPetInfo, 
+        const { petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, 
                 petNum, setPetNum, btnIndex, setBtnIndex,
-                setTabIndex    
+                setTabIndex, setStoredPetBehavior, storedPetBehavior, 
+                setStoredPetHealth, storedPetHealth  
         } = props
 
         //Function to allow user to add up to 5 pets:
@@ -25,11 +27,13 @@ export default function PetInfoSection(props){
     
             await setPetNum(petNum + 1)
     
-            if(petNum === 4){
+            if(petNum === 5){
                 togglePetBtn()
             }
-            await setPetKey(petKey + 1)
-            await setStoredPetInfo([...storedPetInfo, <PetInfo petKey={petKey}/>])
+
+            await setStoredPetInfo([...storedPetInfo, <PetInfo petKey={petNum} />])
+            await setStoredPetBehavior([...storedPetBehavior, <PetBehavior petKey={petNum} />])
+            await setStoredPetHealth([...storedPetHealth, <PetHealth petKey={petNum} />])
         }
     
         return(
@@ -54,7 +58,7 @@ export default function PetInfoSection(props){
                     {
                         petBtn && 
                             <FormBtn onClick={(event) => petOnClick(event)}>
-                            Add Pet
+                                Add Pet
                             </FormBtn>
                     }
 

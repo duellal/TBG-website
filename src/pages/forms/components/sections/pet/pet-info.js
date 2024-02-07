@@ -8,6 +8,7 @@ import { FormAsterisk } from "../../../../../styles/forms";
 
 export default function PetInfo(props){
     const { petKey } = props
+    
     return(
         <div key={`pet${petKey}Info`} id={`pet${petKey}Info`}>
             <IntakeDivider>
@@ -15,7 +16,7 @@ export default function PetInfo(props){
                     Pet {petKey}
                 </IntakeH4>
                 
-                {/* Pet Info Section */}
+                {/* Priliminary Pet Info Section */}
                 <IntakeDivider>
                     <IntakeCol>
                         <IntakeRow>

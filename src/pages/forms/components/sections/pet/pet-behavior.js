@@ -8,6 +8,7 @@ import { FormAsterisk } from "../../../../../styles/forms";
 
 export default function PetBehavior(props){
     const { petKey } = props
+
     return(
         <div key={`pet${petKey}Behavior`} id={`pet${petKey}Behavior`}>
             <IntakeDivider>

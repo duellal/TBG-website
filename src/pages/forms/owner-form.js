@@ -31,8 +31,12 @@ import LiabilityWaiver from './components/sections/waiver/liability-waiver.js'
 import OwnerFormTabs from "./components/section-tabs/form-tabs.js";
 import OwnerInfo from './components/sections/owner/owner-info.js'
 import OwnerSection from './components/sections/owner/owner-section.js'
+import PetBehavior from "./components/sections/pet/pet-behavior.js";
+import PetBehaviorsSection from "./components/sections/pet/pet-section-behavior.js";
 import PetInfo from "./components/sections/pet/pet-info.js";
 import PetInfoSection from "./components/sections/pet/pet-section-info.js";
+import PetHealth from "./components/sections/pet/pet-health.js";
+import PetHealthSection from "./components/sections/pet/pet-section-health.js";
 
 //Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -45,10 +49,6 @@ import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, 
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
-import PetBehaviorsSection from "./components/sections/pet/pet-section-behavior.js";
-import PetHealthSection from "./components/sections/pet/pet-section-health.js";
-import PetBehavior from "./components/sections/pet/pet-behavior.js";
-import PetHealth from "./components/sections/pet/pet-health.js";
 
 
 
@@ -56,16 +56,16 @@ export default function DigitalOwnerForm() {
     const form = useRef();
     
     //onChange function changeInput:
-    function changeInput(event){
+    async function changeInput(event){
         let { name, value } = event.target
-        editFormData({ ...formData, [name]: value })
+        await editFormData({ ...formData, [name]: value })
      }
 
     //Authorized Pickup States:
     const [authBtn, setAuthBtn] = useState(true)
     const [authNum, setAuthNum] = useState(1)
     const [authorizedKey, setAuthorizedKey] = useState(2)
-    const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={1}/>])
+    const [storedAuthorized, setStoredAuthorized] = useState([<AuthorizedPickup authorizedKey={authNum}/>])
 
     //Next + Previous Buttons + Tab Index State:
     const [btnIndex, setBtnIndex] = useState(0)
@@ -74,7 +74,7 @@ export default function DigitalOwnerForm() {
     const [emergencyKey, setEmergencyKey] = useState(2)
     const [emergencyBtn, setEmergencyBtn] = useState(true)
     const [emergencyNum, setEmergencyNum] = useState(1)
-    const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={1}/>])
+    const [storedEmergencyContacts, setStoredEmergencyContacts] = useState([<EmergencyInfo emergencyKey={emergencyNum}/>])
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
@@ -87,12 +87,11 @@ export default function DigitalOwnerForm() {
     const [storedOwners, setStoredOwners] = useState([<OwnerInfo ownerKey={1} formData={formData} changeInput={changeInput}/>])
 
     //Pet Info States:
-    const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
-    const [petNum, setPetNum] = useState(1)
-    const [storedPetInfo, setStoredPetInfo] = useState([<PetInfo petKey={1}/>])
-    const [storedPetBehavior, setStoredPetBehavior] = useState([<PetBehavior petKey={1} />])
-    const [storedPetHealth, setStoredPetHealth] = useState([<PetHealth petKey={1} />])
+    const [petNum, setPetNum] = useState(2)
+    const [storedPetInfo, setStoredPetInfo] = useState([<PetInfo petKey={petNum - 1}/>])
+    const [storedPetBehavior, setStoredPetBehavior] = useState([<PetBehavior petKey={petNum - 1} />])
+    const [storedPetHealth, setStoredPetHealth] = useState([<PetHealth petKey={petNum - 1}/>])
 
     //Render Components Array:
     let renderComponents = [
@@ -133,38 +132,29 @@ export default function DigitalOwnerForm() {
         <PetInfoSection
             petBtn={petBtn} 
             setPetBtn={setPetBtn} 
-            petKey={petKey}
-            setPetKey={setPetKey} 
             storedPetInfo={storedPetInfo}
             setStoredPetInfo={setStoredPetInfo}
-            petNum={petNum}
-            setPetNum={setPetNum}
-            btnIndex={btnIndex}
-            setBtnIndex={setBtnIndex}
-        />,
-        <PetBehaviorsSection
-            petBtn={petBtn} 
-            setPetBtn={setPetBtn} 
-            petKey={petKey}
-            setPetKey={setPetKey} 
             storedPetBehavior={storedPetBehavior}
             setStoredPetBehavior={setStoredPetBehavior}
-            petNum={petNum}
-            setPetNum={setPetNum}
-            btnIndex={btnIndex}
-            setBtnIndex={setBtnIndex}
-        />,
-        <PetHealthSection
-            petBtn={petBtn} 
-            setPetBtn={setPetBtn} 
-            petKey={petKey}
-            setPetKey={setPetKey} 
             storedPetHealth={storedPetHealth}
             setStoredPetHealth={setStoredPetHealth}
             petNum={petNum}
             setPetNum={setPetNum}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
+            formData={formData}
+        />,
+        <PetBehaviorsSection
+            storedPetBehavior={storedPetBehavior}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+            storedPetInfo={storedPetInfo}
+        />,
+        <PetHealthSection
+            storedPetHealth={storedPetHealth}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+            storedPetInfo={storedPetInfo}
         />,
         <LiabilityWaiver 
             changeInput={changeInput}
