@@ -6,11 +6,11 @@ import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../..
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
-import PetInfo from "./pet-info"
+import PetHealth from "./pet-health"
 
-export default function PetSection(props){
+export default function PetHealthSection(props){
         const { petBtn, setPetBtn, petKey,
-                setPetKey, storedPets, setStoredPets, 
+                setPetKey, storedPetHealth, setStoredPetHealth, 
                 petNum, setPetNum, btnIndex, setBtnIndex,
                 setTabIndex    
         } = props
@@ -29,7 +29,7 @@ export default function PetSection(props){
                 togglePetBtn()
             }
             await setPetKey(petKey + 1)
-            await setStoredPets([...storedPets, <PetInfo petKey={petKey}/>])
+            await setStoredPetHealth([...storedPetHealth, <PetHealth petKey={petKey}/>])
         }
     
         return(
@@ -41,7 +41,7 @@ export default function PetSection(props){
                 <AsteriskHeader/>
 
                 <IntakeCol>
-                    {storedPets}
+                    {storedPetHealth}
                 </IntakeCol>
 
                 <IntakeRow>

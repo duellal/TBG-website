@@ -32,7 +32,7 @@ import OwnerFormTabs from "./components/section-tabs/form-tabs.js";
 import OwnerInfo from './components/sections/owner/owner-info.js'
 import OwnerSection from './components/sections/owner/owner-section.js'
 import PetInfo from "./components/sections/pet/pet-info.js";
-import PetSection from "./components/sections/pet/pet-section.js";
+import PetInfoSection from "./components/sections/pet/pet-section-info.js";
 
 //Form PDF:
 import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
@@ -45,6 +45,10 @@ import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, 
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
+import PetBehaviorsSection from "./components/sections/pet/pet-section-behavior.js";
+import PetHealthSection from "./components/sections/pet/pet-section-health.js";
+import PetBehavior from "./components/sections/pet/pet-behavior.js";
+import PetHealth from "./components/sections/pet/pet-health.js";
 
 
 
@@ -86,7 +90,9 @@ export default function DigitalOwnerForm() {
     const [petKey, setPetKey] = useState(2)
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(1)
-    const [storedPets, setStoredPets] = useState([<PetInfo petKey={1}/>])
+    const [storedPetInfo, setStoredPetInfo] = useState([<PetInfo petKey={1}/>])
+    const [storedPetBehavior, setStoredPetBehavior] = useState([<PetBehavior petKey={1} />])
+    const [storedPetHealth, setStoredPetHealth] = useState([<PetHealth petKey={1} />])
 
     //Render Components Array:
     let renderComponents = [
@@ -124,13 +130,37 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
         />,
-        <PetSection
+        <PetInfoSection
             petBtn={petBtn} 
             setPetBtn={setPetBtn} 
             petKey={petKey}
             setPetKey={setPetKey} 
-            storedPets={storedPets}
-            setStoredPets={setStoredPets}
+            storedPetInfo={storedPetInfo}
+            setStoredPetInfo={setStoredPetInfo}
+            petNum={petNum}
+            setPetNum={setPetNum}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <PetBehaviorsSection
+            petBtn={petBtn} 
+            setPetBtn={setPetBtn} 
+            petKey={petKey}
+            setPetKey={setPetKey} 
+            storedPetBehavior={storedPetBehavior}
+            setStoredPetBehavior={setStoredPetBehavior}
+            petNum={petNum}
+            setPetNum={setPetNum}
+            btnIndex={btnIndex}
+            setBtnIndex={setBtnIndex}
+        />,
+        <PetHealthSection
+            petBtn={petBtn} 
+            setPetBtn={setPetBtn} 
+            petKey={petKey}
+            setPetKey={setPetKey} 
+            storedPetHealth={storedPetHealth}
+            setStoredPetHealth={setStoredPetHealth}
             petNum={petNum}
             setPetNum={setPetNum}
             btnIndex={btnIndex}
