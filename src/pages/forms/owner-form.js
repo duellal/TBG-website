@@ -51,7 +51,6 @@ import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
 
 
-
 export default function DigitalOwnerForm() {
     const form = useRef();
     
@@ -59,6 +58,7 @@ export default function DigitalOwnerForm() {
     async function changeInput(event){
         let { name, value } = event.target
         await editFormData({ ...formData, [name]: value })
+        sessionStorage.setItem(name, value)
      }
 
     //Authorized Pickup States:
@@ -89,9 +89,9 @@ export default function DigitalOwnerForm() {
     //Pet Info States:
     const [petBtn, setPetBtn] = useState(true)
     const [petNum, setPetNum] = useState(2)
-    const [storedPetInfo, setStoredPetInfo] = useState([<PetInfo petKey={petNum - 1}/>])
-    const [storedPetBehavior, setStoredPetBehavior] = useState([<PetBehavior petKey={petNum - 1} />])
-    const [storedPetHealth, setStoredPetHealth] = useState([<PetHealth petKey={petNum - 1}/>])
+    const [storedPetInfo, setStoredPetInfo] = useState([<PetInfo petKey={petNum - 1} formData={formData} />])
+    const [storedPetBehavior, setStoredPetBehavior] = useState([<PetBehavior petKey={petNum - 1} formData={formData} />])
+    const [storedPetHealth, setStoredPetHealth] = useState([<PetHealth petKey={petNum - 1} formData={formData} />])
 
     //Render Components Array:
     let renderComponents = [
@@ -104,6 +104,7 @@ export default function DigitalOwnerForm() {
             setStoredOwners={setStoredOwners}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
+            formData={formData}
         />,
         <EmergencySection
             emergencyBtn={emergencyBtn}
@@ -116,6 +117,7 @@ export default function DigitalOwnerForm() {
             setEmergencyNum={setEmergencyNum}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
+            formData={formData}
         />,
         <AuthPickupSection 
             authBtn={authBtn}
@@ -128,6 +130,7 @@ export default function DigitalOwnerForm() {
             setAuthNum={setAuthNum}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
+            formData={formData}
         />,
         <PetInfoSection
             petBtn={petBtn} 
@@ -149,12 +152,14 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
             storedPetInfo={storedPetInfo}
+            formData={formData}
         />,
         <PetHealthSection
             storedPetHealth={storedPetHealth}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
             storedPetInfo={storedPetInfo}
+            formData={formData}
         />,
         <LiabilityWaiver 
             changeInput={changeInput}
@@ -162,6 +167,7 @@ export default function DigitalOwnerForm() {
             setLoading={setLoading}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
+            formData={formData}
         />
     ]
 
