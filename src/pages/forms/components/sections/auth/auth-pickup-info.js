@@ -20,7 +20,7 @@ export default function AuthorizedPickup(props){
 
     return (
         <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
-            <IntakeRow>
+            <IntakeRow auth>
                 <FlexColDiv>
                     <Input type="text" name={`auth${authorizedKey}_name`} />
                 </FlexColDiv>

@@ -62,7 +62,10 @@ export const MessageInput = styled.textarea`
 export const FlexColDiv = styled.div`
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
+
+    // border: 1px solid black;
 `
 
 export const SubmitInput = styled(Input)`

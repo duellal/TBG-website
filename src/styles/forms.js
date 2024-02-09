@@ -83,6 +83,14 @@ width: 12px;
 export const FormExample = styled.p`
 font-size: inherit;
 text-align: left;
-margin: 0 20px;
+margin: 0 15px;
 width: 100%;
+
+${props => {
+    if(props.props){
+        return {
+            'margin': '0px'
+        }
+    }
+}}
 `

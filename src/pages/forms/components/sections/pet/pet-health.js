@@ -1,5 +1,8 @@
 import React from "react";
 
+//Componenets:
+import RadioQuestion from "../../radio-questions";
+
 //Styles:
 import { IntakeCol, IntakeDivider, IntakeH4, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
@@ -30,13 +33,12 @@ export default function PetHealth(props){
                                 <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
                                     <FormAsterisk>*</FormAsterisk>      
                                      Vet Phone Number 
-                                    <br/>
+                                    
                                     <FormExample>
                                         ex: (xxx) xxx-xxxx
                                     </FormExample>
-                                </IntakeHealthLabel>
-
-                                <IntakeHealthInput 
+                                    
+                                    <IntakeHealthInput 
                                     type="tel" 
                                     name={`{pet${petKey}_vet_phone`} 
                                     placeholder="(___) ___-____"
@@ -44,96 +46,28 @@ export default function PetHealth(props){
                                     mask="_"  
                                     required
                                 />
+                                </IntakeHealthLabel>
                             </FlexColDiv>
                         </IntakeRow>
 
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_food_allergy`}>
-                                    Does your pet have any food allergies?
-                                </IntakeLabel>
-                                <IntakeRow>
-                                    <Input type="radio" id={`pet${petKey}_food_allergy_yes`} name={`pet${petKey}_food_allergy`} />
-                                    <IntakeLabel htmlFor={`pet${petKey}_food_allergy_yes`}>
-                                        Yes
-                                    </IntakeLabel>
+                        <RadioQuestion
+                            htmlFor={`pet${petKey}_food_allergy`}
+                            question={`Does your pet have any food allergies?`}
+                            options={['yes', 'no']}
+                        />
 
-                                    <Input type="radio" id={`pet${petKey}_food_allergy_no`} name={`pet${petKey}_food_allergy`} />
-                                    <IntakeLabel htmlFor={`pet${petKey}_food_allergy_no`}>
-                                        No
-                                    </IntakeLabel>
-                                </IntakeRow>
+                        <RadioQuestion
+                            htmlFor={`pet${petKey}_medical_condition`}
+                            question={`Does your pet have any medical conditions or disabilities that we should know about?`}
+                            example={`(ex: seizures, tumors, hot spots, etc)`}
+                            options={['yes', 'no']}
+                        />
 
-                                <IntakeRow>
-                                    <FlexColDiv>
-                                        <IntakeLabel htmlFor={`pet${petKey}_food_allergy_list`}>
-                                            If yes, please list them
-                                        </IntakeLabel>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_food_allergy_list`}/>
-                                    </FlexColDiv>
-                                </IntakeRow>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_medical_condition`}>
-                                    Does your pet have any medical conditions or disabilities that we should know about? 
-                                </IntakeLabel>
-                                <IntakeLabel htmlFor={`pet${petKey}_medical_condition_examples`}>
-                                    (ex: seizures, tumors, hot spots, etc)
-                                </IntakeLabel>
-                                <IntakeRow>
-                                    <Input type="radio" id={`pet${petKey}_medical_condition_yes`} name={`pet${petKey}_medical_condition`}/>
-                                    <IntakeLabel htmlFor={`pet${petKey}_medical_condition_yes`}>
-                                        Yes
-                                    </IntakeLabel>
-
-                                    <Input type="radio" id={`pet${petKey}_medical_condition_no`} name={`pet${petKey}_medical_condition`}/>
-                                    <IntakeLabel htmlFor={`pet${petKey}_medical_condition_no`}>
-                                        No
-                                    </IntakeLabel>
-                                </IntakeRow>
-
-                                <IntakeRow>
-                                    <FlexColDiv>
-                                        <IntakeLabel htmlFor={`pet${petKey}_medical_condition_list`}>
-                                            If yes, please list them
-                                        </IntakeLabel>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_medical_condition_list`}/>
-                                    </FlexColDiv>
-                                </IntakeRow>
-                            </FlexColDiv>
-                        </IntakeRow>
-
-                        <IntakeRow>
-                            <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_past_injury`}>
-                                    Does your pet have any past injuries that we should know about? 
-                                </IntakeLabel>
-
-                                <IntakeRow>
-                                    <Input type="radio" id={`pet${petKey}_medical_injury_yes`} namename={`pet${petKey}_medical_injury`}/>
-                                    <IntakeLabel htmlFor={`pet${petKey}_past_injury_yes`}>
-                                        Yes
-                                    </IntakeLabel>
-
-                                    <Input type="radio" id={`pet${petKey}_medical_injury_no`}/>
-                                    <IntakeLabel htmlFor={`pet${petKey}_past_injury_no`}>
-                                        No
-                                    </IntakeLabel>
-                                </IntakeRow>
-
-                                <IntakeRow>
-                                    <FlexColDiv>
-                                        <IntakeLabel htmlFor={`pet${petKey}_past_injury_list`}>
-                                            If yes, please list them
-                                        </IntakeLabel>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_past_injury_list`}/>
-                                    </FlexColDiv>
-                                </IntakeRow>
-                            </FlexColDiv>
-                        </IntakeRow>
+                        <RadioQuestion
+                            htmlFor={`pet${petKey}_past_injury`}
+                            question={`Does your pet have any past injuries that we should know about? `}
+                            options={['yes', 'no']}
+                        />
 
                         <IntakeRow>
                             <FlexColDiv>

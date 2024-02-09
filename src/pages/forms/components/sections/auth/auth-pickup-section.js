@@ -55,7 +55,7 @@ export default function AuthPickupSection(props){
                     <FlexColDiv>
                         <AuthPickupLabel>
                             Phone Number 
-                            <FormExample>
+                            <FormExample props={true}>
                                 ex: (xxx) xxx-xxxx
                             </FormExample>
                         </AuthPickupLabel>

@@ -1,9 +1,11 @@
 import React from "react";
 
+//Components:
+import RadioQuestion from "../../radio-questions";
+
 //Styles:
 import { IntakeCol, IntakeDivider, IntakeH4, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { FlexColDiv } from "../../../../../styles/contact";
-import RadioQuestion from "../../radio-questions";
 
 
 export default function PetBehavior(props){

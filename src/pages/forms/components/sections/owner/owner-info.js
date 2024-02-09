@@ -40,7 +40,7 @@ export default function OwnerInfo(props){
                                 name={`owner${ownerKey}_last_name`} 
                                 required
                                 onChange={changeInput}
-                                value={formData[`owner${ownerKey}_last_name`]}    
+                                // value={}    
                             />
                         </FlexColDiv>
                 </IntakeRow>

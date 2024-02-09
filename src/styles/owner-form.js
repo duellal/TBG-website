@@ -68,6 +68,15 @@ export const IntakeRow = styled.div`
     text-align: center;
     padding: 10px 20px;
     width: 100%;
+
+
+    ${props => {
+        if(props.auth){
+            return {
+                'padding': '0 20px'
+            }
+        }
+    }}
 `
 
 export const IntakeLabelRow = styled.div`
@@ -137,6 +146,8 @@ export const IntakeLabel = styled.label`
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+
+    // border: 1px solid orange;
 `
 
 export const AuthPickupLabel = styled(IntakeLabel)`
