@@ -32,13 +32,13 @@ export default function RadioQuestion(props){
 
         return(
             <>
+                <Input 
+                    type='radio' 
+                    value={answer}
+                    checked={selectedOption === answer}
+                    onChange={optionChange}
+                />
                 <IntakeLabel htmlFor={htmlFor}>
-                    <Input 
-                        type='radio' 
-                        value={answer}
-                        checked={selectedOption === answer}
-                        onChange={optionChange}
-                    />
                         {capitalizeWord(answer)}
                 </IntakeLabel>
             </>

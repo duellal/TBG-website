@@ -79,6 +79,7 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeH3>
+                            <FormAsterisk>*</FormAsterisk>
                             {waiverAcknowledgeHeader}
                         </IntakeH3>
                         <IntakeWaiverP style={{margin: '0 0 10px'}}>

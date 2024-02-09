@@ -73,9 +73,10 @@ width: 100%;
 
 export const FormAsterisk = styled.h4`
 color: ${bright_red};
-font-size: 1.8rem;
+font-size: inherit;
 font-weight: normal;
-width: 12px;
+margin: 0 4px;
+
 
 // border: 1px solid red;
 `

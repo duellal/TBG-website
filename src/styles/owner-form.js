@@ -127,6 +127,10 @@ export const IntakeLink = styled.a`
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
     margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const IntakeH4 = styled.h4`

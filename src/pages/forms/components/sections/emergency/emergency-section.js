@@ -1,13 +1,18 @@
 import React from "react"
 
-//Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
-
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import EmergencyInfo from "./emergency-info"
 import NextPrevBtn from "../../next-section-btn"
 
+//Intake Form - Owner Styles:
+import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+
+
+/**
+ * @component the core of the emergency contact section. Allows user to add up to 3 emergency contacts
+ * @param {*} props  emergencyBtn, setEmergencyBtn, emergencyKey, setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,emergencyNum, setEmergencyNum, btnIndex, setBtnIndex 
+ */
 export default function EmergencySection(props){
         const { emergencyBtn, setEmergencyBtn, emergencyKey, 
                 setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,

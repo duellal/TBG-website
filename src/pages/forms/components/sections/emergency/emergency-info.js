@@ -4,6 +4,10 @@ import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, Intak
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
+/**
+ * @component Emergency info section labels + inputs
+ * @param {*} props - emergencyKey
+ */
 export default function EmergencyInfo(props){
     const { emergencyKey } = props
     
@@ -55,22 +59,20 @@ export default function EmergencyInfo(props){
                     </IntakeLabel>
                     
                     <IntakeLabelRow>
-                        <Input type="radio" id={`emergency${emergencyKey}_permission_yes`} name={`emergency${emergencyKey}_permission`} value='yes' />
-                            <IntakeLabel>
-                                Yes
-                            </IntakeLabel>
-  
-                        <Input type="radio" name={`emergency${emergencyKey}_permission`} id={`emergency${emergencyKey}_permission_no`} value='no'/>
-                            <IntakeLabel>
-                                No
-                            </IntakeLabel>
+                        <IntakeRow>
+                            <Input type="radio" id={`emergency${emergencyKey}_permission_yes`} name={`emergency${emergencyKey}_permission`} value='yes' />
+                                <IntakeLabel>
+                                    Yes
+                                </IntakeLabel>
+    
+                            <Input type="radio" name={`emergency${emergencyKey}_permission`} id={`emergency${emergencyKey}_permission_no`} value='no'/>
+                                <IntakeLabel>
+                                    No
+                                </IntakeLabel>
+                        </IntakeRow>
+                        
                     </IntakeLabelRow>
 
-                    <IntakeLabel id="yes-show">
-                    <FormAsterisk>*</FormAsterisk> Owner's intials (ex: HJ or HEJ) 
-                        <Input type="text" name={`emergency${emergencyKey}_initials`} pattern="^[A-Z]{2}$|^[A-Z]{3}$" required />
-                    </IntakeLabel>
-                
                 </FlexColDiv>
             </IntakeRow>
         </IntakeHDiv>

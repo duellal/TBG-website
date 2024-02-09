@@ -1,25 +1,14 @@
 /* 
-    Put intake form where button to digital form goes
     Have a small box for intake form
         User puts in info + clicks next for the next section
         At the end will submit the form
 
     Intake Form:    
-        - Title: New Owner Form
-        - Blurb: Intake and medication forms will be filled out at time of checkout
-        - Buttons: make them stand out
-            - red or blue button
-            - on hover change gradient of color
-            - add shadow behind it
         - Make it like the Green beagle lodge with a sections + next -> submit
         - Intake Form PDF + digital:
             - Liability waiver: take out pets on
             - Emergency Contact: Take out initials
             - Required info: (Required) in red italics (digital only)
-    
-        LEAVE THESE TWO COMMENTS TO ASK BAY LATER ABOUT:
-        ** See if I can link form information to TBG Gingr's client form
-        ** Possibly just forward clients to the client portal to create an account + do forms there
 */
 
 /* eslint-disable react/prop-types */
@@ -40,6 +29,14 @@ export default function Forms(){
 
     return (
         <CommonStartDiv>
+            <FormPageInfoSection>
+                <FormPageRedBox>
+                    <p>
+                        Intake and medication forms will be filled out at time of checkin
+                    </p>
+                </FormPageRedBox>
+            </FormPageInfoSection>
+            
             <CommonH2> new client form </CommonH2>
 
             <FormPageInfoSection>
