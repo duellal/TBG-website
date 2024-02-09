@@ -14,7 +14,7 @@ export default function PetInfoSection(props){
         const { petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, 
                 petNum, setPetNum, btnIndex, setBtnIndex,
                 setTabIndex, setStoredPetBehavior, storedPetBehavior, 
-                setStoredPetHealth, storedPetHealth, formData  
+                setStoredPetHealth, storedPetHealth  
         } = props
 
         //Function to allow user to add up to 5 pets:
@@ -31,9 +31,9 @@ export default function PetInfoSection(props){
                 togglePetBtn()
             }
 
-            await setStoredPetInfo([...storedPetInfo, <PetInfo petKey={petNum} formData={formData} />])
-            await setStoredPetBehavior([...storedPetBehavior, <PetBehavior petKey={petNum} formData={formData} />])
-            await setStoredPetHealth([...storedPetHealth, <PetHealth petKey={petNum} formData={formData} />])
+            await setStoredPetInfo([...storedPetInfo, <PetInfo petKey={petNum} />])
+            await setStoredPetBehavior([...storedPetBehavior, <PetBehavior petKey={petNum} />])
+            await setStoredPetHealth([...storedPetHealth, <PetHealth petKey={petNum} />])
         }
     
         return(

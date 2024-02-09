@@ -11,7 +11,7 @@ import AsteriskHeader from "../../asterisk-header.js"
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
                 setOwnerKey, storedOwners, setStoredOwners, 
-                btnIndex, setBtnIndex      
+                btnIndex, setBtnIndex, changeInput, formData      
         } = props
 
         //Function to allow user to add 1 more owner:
@@ -24,7 +24,10 @@ export default function OwnerSection(props){
             
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
-            await setStoredOwners([...storedOwners, <OwnerInfo ownerKey={ownerKey} />])
+            await setStoredOwners([...storedOwners, <OwnerInfo 
+                ownerKey={ownerKey}             
+                formData={formData} 
+                changeInput={changeInput} />])
         }
     
         return(
