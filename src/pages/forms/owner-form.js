@@ -277,7 +277,8 @@ export default function DigitalOwnerForm() {
 
             <IntakeCard>
                 <OwnerFormTabs 
-                    tabIndex={btnIndex}
+                    btnIndex={btnIndex}
+                    setBtnIndex={setBtnIndex}
                 />
                 <IntakeForm 
                     ref={form}

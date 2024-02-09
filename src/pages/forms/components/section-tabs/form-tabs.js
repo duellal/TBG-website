@@ -5,13 +5,17 @@ import { tabNamesArr } from "./tab-names"
 import { FormTabDiv, FormTabIcon, FormTabP, FormTabSection } from "../../../../styles/forms";
 
 export default function OwnerFormTabs(props){
-    let { tabIndex } = props
+    let { btnIndex, setBtnIndex } = props
 
     let col = 1
     let row = 1
 
+    let TabClick = (index) => {
+        setBtnIndex(index)
+    }
+
     let tabNamesDivs = tabNamesArr.map((title, index) => {
-        let colorState = tabIndex === index
+        let colorState = btnIndex === index
 
         if(index < 3){
             let row1Div = <FormTabDiv 
@@ -19,6 +23,8 @@ export default function OwnerFormTabs(props){
                 id={`${title}${index}`} 
                 col={col}
                 row={row}
+                onClick={() => TabClick(index)}
+                tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 
@@ -42,6 +48,8 @@ export default function OwnerFormTabs(props){
                 id={`${title}${index}`} 
                 col={col}
                 row={row}
+                onClick={() => TabClick(index)}
+                tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 
@@ -66,6 +74,8 @@ export default function OwnerFormTabs(props){
                 id={`${title}${index}`} 
                 col={col}
                 row={row}
+                onClick={() => TabClick(index)}
+                tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 

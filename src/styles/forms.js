@@ -29,7 +29,6 @@ ${props => {
         'grid-column-end': col,
         'grid-row-start': row,
         'grid-row-end': row,
-        // 'border': `${col}px solid black`,
     }
     
 }}
@@ -54,8 +53,8 @@ margin: 6px;
 
 ${props => {
     return props.colorState ? {
-        // color: bright_red, 
-        // fontWeight: 'bold',
+        color: bright_red, 
+        fontWeight: 'bold',
     } : null
  }}
 `

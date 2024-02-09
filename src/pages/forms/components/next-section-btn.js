@@ -9,7 +9,7 @@ export default function NextPrevBtn(props){
             next, btnIndex, setBtnIndex 
         } = props;
 
-    const SectionOnClick =  async (event) => {
+    const SectionOnClick = (event) => {
         event.preventDefault()
         let previous = event.target.name === 'previous'
 
@@ -31,7 +31,7 @@ export default function NextPrevBtn(props){
 
     return (
         <>
-            <FormBtn onClick={event => SectionOnClick(event)} name={ next ? 'next' : 'previous'}>
+            <FormBtn onClick={SectionOnClick} name={ next ? 'next' : 'previous'}>
                 { next ? 'Next' : 'Previous' } Section
             </FormBtn>
         </>
