@@ -4,7 +4,10 @@ import React from "react";
 import { IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
-
+/**
+ * @component label + input for authorized pickup section
+ * @param {*} props authorizedKey
+ */
 export default function AuthorizedPickup(props){
     const { authorizedKey } = props
 

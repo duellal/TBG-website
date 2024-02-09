@@ -10,6 +10,10 @@ import AuthorizedPickup from "./auth-pickup-info"
 import NextPrevBtn from "../../next-section-btn";
 import { FormExample } from "../../../../../styles/forms";
 
+/**
+ * @component The core of the authorized pickup section. Allows user to add up to 5 authorized people.
+ * @param {*} props authBtn, setAuthBtn, authorizedKey, setAuthorizedKey, storedAuthorized, setStoredAuthorized, authNum, setAuthNum, btnIndex, setBtnIndex
+ */
 export default function AuthPickupSection(props){
         const { authBtn, setAuthBtn, authorizedKey, 
             setAuthorizedKey, storedAuthorized, setStoredAuthorized,

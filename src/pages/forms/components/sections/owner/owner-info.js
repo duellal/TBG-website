@@ -5,6 +5,10 @@ import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput
 import { FlexColDiv, Input } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
+/**
+ * @component owner info section labels + inputs
+ * @param {*} props - ownerKey, changeInput, formData
+ */
 export default function OwnerInfo(props){
     const { ownerKey, changeInput, formData } = props
 

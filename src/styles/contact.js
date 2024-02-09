@@ -1,6 +1,3 @@
-// get rid of contact form
-// commented it for now, BAY may change her mind in the future about it
-
 import styled, { keyframes } from "styled-components";
 
 export const ContactSection = styled.section`

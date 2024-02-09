@@ -1,9 +1,19 @@
 import React from "react";
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 
+//Array of tab/section names:
 import { tabNamesArr } from "./tab-names"
+
+//Styles:
 import { FormTabDiv, FormTabIcon, FormTabP, FormTabSection } from "../../../../styles/forms";
 
+/**
+ * @component returns tabs for the top of the form page. They change color when on the section + are clickable to each section
+ * @param {*} props btnIndex, setBtnIndex
+ * @param {state} btnIndex the current state of the button/tab index as an integer
+ * @param {setState} setBtnIndex sets the btnIndex
+ * @returns the form tab section
+ */
 export default function OwnerFormTabs(props){
     let { btnIndex, setBtnIndex } = props
 
