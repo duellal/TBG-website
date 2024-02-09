@@ -9,6 +9,10 @@ import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 
+/**
+ * @component Pet health section labels + inputs
+ * @param {*} props petKey
+ */
 export default function PetHealth(props){
     const { petKey } = props
     return(

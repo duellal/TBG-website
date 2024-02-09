@@ -6,6 +6,10 @@ import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk } from "../../../../../styles/forms";
 
 
+/**
+ * @component Initial pet information section labels + inputs
+ * @param {*} props petKey
+ */
 export default function PetInfo(props){
     const { petKey } = props
     

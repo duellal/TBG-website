@@ -7,6 +7,11 @@ import { IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../style
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
 
+
+/**
+ * @component The core of the pet behavior section.
+ * @param {*} props storedPetBehavior, btnIndex, setBtnIndex
+ */
 export default function PetBehaviorsSection(props){
         const { storedPetBehavior, btnIndex, setBtnIndex } = props
 

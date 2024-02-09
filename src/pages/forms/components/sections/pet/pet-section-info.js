@@ -10,6 +10,11 @@ import PetInfo from "./pet-info"
 import PetBehavior from "./pet-behavior"
 import PetHealth from "./pet-health"
 
+
+/**
+ * @component The core of the initial pet information section. Allows user to add up to 5 pets + adds the pets to the other 2 pet sections (behavior + health).
+ * @param {*} props petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, petNum, setPetNum, btnIndex, setBtnIndex, setTabIndex, setStoredPetBehavior, storedPetBehavior, setStoredPetHealth, storedPetHealth 
+ */
 export default function PetInfoSection(props){
         const { petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, 
                 petNum, setPetNum, btnIndex, setBtnIndex,

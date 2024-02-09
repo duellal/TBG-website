@@ -4,6 +4,10 @@ import React from "react";
 import { FormBtn } from "../../../styles/owner-form";
 
 
+/**
+ * @component Buttons for going to the previous + next sections
+ * @param {*} props next, btnIndex, setBtnIndex 
+ */
 export default function NextPrevBtn(props){
     const { 
             next, btnIndex, setBtnIndex 

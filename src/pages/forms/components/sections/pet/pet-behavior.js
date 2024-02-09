@@ -8,6 +8,10 @@ import { IntakeCol, IntakeDivider, IntakeH4, IntakeLabel, IntakeLabelRow, Intake
 import { FlexColDiv } from "../../../../../styles/contact";
 
 
+/**
+ * @component Pet Behavior section labels + inputs
+ * @param {*} props petKey
+ */
 export default function PetBehavior(props){
     const { petKey } = props
 

@@ -7,6 +7,11 @@ import { IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../style
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
 
+
+/**
+ * @component The core of the pet health section.
+ * @param {*} props storedPetHealth, btnIndex, setBtnIndex
+ */
 export default function PetHealthSection(props){
         const { storedPetHealth, btnIndex, setBtnIndex } = props
 

@@ -8,6 +8,11 @@ import OwnerInfo from './owner-info.js'
 import NextPrevBtn from "../../next-section-btn"
 import AsteriskHeader from "../../asterisk-header.js"
 
+
+/**
+ * @component The core of the owner information section. Allows user to add up to 2 owners.
+ * @param {*} props ownerBtn, setOwnerBtn, ownerKey, setOwnerKey, storedOwners, setStoredOwners, btnIndex, setBtnIndex, changeInput, formData 
+ */
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
                 setOwnerKey, storedOwners, setStoredOwners, 
