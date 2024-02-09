@@ -1,20 +1,22 @@
 import React, { useState } from "react"
 
 //Styles:
-import { IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from "../../../styles/owner-form"
+import { IntakeLabel, IntakeMessageInput, IntakeRow } from "../../../styles/owner-form"
 import { FlexColDiv, Input } from "../../../styles/contact"
 import { FormAsterisk } from "../../../styles/forms"
 
-
-export default function RadioQuestions(props){
-    /* 
-    ***
-    htmlFor: string
-    question: string
-    options: array of strings
-    ***
-    */
-    let { htmlFor, question, options } = props
+/** 
+    * The component renders the question + answers. If the user clicks "yes", there is a text input that appears for them to explain their answer more.
+    * @component
+    * @param {string} htmlFor string
+    * @param {string} question string
+    * @param {array} answers array of strings as given answers
+    * @returns {ReactNode}  a react element that renders the question with radio button answers, + a text input appears if "Yes" is selected
+*/
+export default function RadioQuestion(props){
+    let {
+        /** string */ 
+        htmlFor, question, options } = props
     let [selectedOption, setSelectedOption] = useState(null)
 
     let optionChange = (event) => {

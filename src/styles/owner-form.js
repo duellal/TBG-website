@@ -157,10 +157,11 @@ export const IntakeMessageInput = styled.textarea`
     width: 100%;
     font-size: 16px;
     padding: 10px;
-    height: 40px;
+    height: 80px;
     overflow-y: scroll;
     resize: none;
     scrollbar-gutter: stable both-edges;
+    margin-top: 6px;
 `
 
 export const IntakeWaiverDiv = styled.div`
