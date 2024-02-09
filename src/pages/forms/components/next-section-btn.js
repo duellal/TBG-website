@@ -16,6 +16,7 @@ export default function NextPrevBtn(props){
     const SectionOnClick = (event) => {
         event.preventDefault()
         let previous = event.target.name === 'previous'
+        let valid = document.forms['new_owner_form'].reportValidity()
 
         let previousSection = () => {
             setBtnIndex(btnIndex - 1)
@@ -24,7 +25,14 @@ export default function NextPrevBtn(props){
         let nextSection = () => {
             setBtnIndex(btnIndex + 1)
         }
-
+        /* 
+        Add back in when done with form:
+            for validity when clicking previous/next buttons 
+        */
+        // if(!valid){
+        //     return
+        // }
+        // else 
         if(previous){
             return previousSection()
         }

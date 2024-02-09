@@ -11,12 +11,12 @@ import AsteriskHeader from "../../asterisk-header.js"
 
 /**
  * @component The core of the owner information section. Allows user to add up to 2 owners.
- * @param {*} props ownerBtn, setOwnerBtn, ownerKey, setOwnerKey, storedOwners, setStoredOwners, btnIndex, setBtnIndex, changeInput, formData 
+ * @param {*} props ownerBtn, setOwnerBtn, ownerKey, setOwnerKey, storedOwners, setStoredOwners, btnIndex, setBtnIndex, formData 
  */
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
                 setOwnerKey, storedOwners, setStoredOwners, 
-                btnIndex, setBtnIndex, changeInput, formData      
+                btnIndex, setBtnIndex, formData, changeInput, editFormData   
         } = props
 
         //Function to allow user to add 1 more owner:
@@ -29,10 +29,14 @@ export default function OwnerSection(props){
             
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
-            await setStoredOwners([...storedOwners, <OwnerInfo 
-                ownerKey={ownerKey}             
-                formData={formData} 
-                changeInput={changeInput} />])
+            await setStoredOwners([...storedOwners, 
+                <OwnerInfo 
+                    ownerKey={ownerKey}             
+                    formData={formData} 
+                    changeInput={changeInput}
+                    editFormData={editFormData}
+                />
+            ])
         }
     
         return(
