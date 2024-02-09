@@ -62,12 +62,11 @@ export const IntakePDF = styled.div`
 export const IntakeRow = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
     grid-column-start: 1;
     grid-column-end: 5;
     align-items: flex-end;
     text-align: center;
-    margin: 10px 0;
+    padding: 10px 20px;
     width: 100%;
 `
 
@@ -155,6 +154,7 @@ export const IntakeCol = styled.div`
 `
 
 export const IntakeMessageInput = styled.textarea`
+    width: 100%;
     font-size: 16px;
     padding: 10px;
     height: 40px;

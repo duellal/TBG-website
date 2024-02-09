@@ -4,10 +4,13 @@ import React from "react";
 import { IntakeCol, IntakeDivider, IntakeH4, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk } from "../../../../../styles/forms";
+import RadioQuestions from "../../radio-questions";
 
 
 export default function PetBehavior(props){
     const { petKey } = props
+
+    console.log(document.getElementsByName(`pet${petKey}_destructive_yes`))
 
     return(
         <div key={`pet${petKey}Behavior`} id={`pet${petKey}Behavior`}>
@@ -19,14 +22,20 @@ export default function PetBehavior(props){
                 {/* Behavior Section */}
                 <IntakeDivider>
                     <IntakeCol>
-                        <IntakeRow>
+                        <RadioQuestions
+                            htmlFor={`pet${petKey}_destructive`}
+                            question={`Does your pet have any destructive habits when left alone?`}
+                            options={['yes', 'no']}
+                        />
+                        {/* <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_destructive`}>
                                 <FormAsterisk>*</FormAsterisk> Does your pet have any destructive habits when left alone?
                                 </IntakeLabel>
                                 <IntakeRow>
-                                    <Input type='radio' id={`{pet${petKey}_destructive_yes}`} name={`{pet${petKey}_destructive`} />
+                                    
                                         <IntakeLabel htmlFor={`{pet${petKey}_desstructive_yes}`}>
+                                        <Input type='radio' id={`{pet${petKey}_destructive_yes}`} name={`{pet${petKey}_destructive`} />
                                             Yes
                                         </IntakeLabel>
 
@@ -36,16 +45,15 @@ export default function PetBehavior(props){
                                         </IntakeLabel>
                                 </IntakeRow>
                                 
-                                <IntakeLabelRow>
-                                    <FlexColDiv>
-                                        <IntakeLabel htmlFor={`pet${petKey}_explain_destructive`}>
-                                        <FormAsterisk>*</FormAsterisk> If yes, please explain
-                                        </IntakeLabel>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_explain_destructive`}/>
-                                    </FlexColDiv>
-                                </IntakeLabelRow>
+                                { }
+                                { 
+                                     ?
+                                    <ExplainInputs htmlFor={`pet${petKey}_explain_destructive`} />
+                                    :
+                                    null
+                                }
                             </FlexColDiv>
-                        </IntakeRow>
+                        </IntakeRow> */}
 
                         <IntakeRow>
                             <FlexColDiv>

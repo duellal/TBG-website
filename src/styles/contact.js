@@ -47,6 +47,7 @@ export const Label = styled.label`
 export const Input = styled.input`
     font-size: 15px;
     margin: 6px;
+    }
 `
 
 export const MessageInput = styled.textarea`
