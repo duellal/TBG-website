@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { AuthPickupLabel, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
 import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
@@ -75,7 +75,7 @@ export default function AuthPickupSection(props){
                     })    
                 } 
 
-                <IntakeRow>
+                <ButtonRow>
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
@@ -93,7 +93,7 @@ export default function AuthPickupSection(props){
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
                     />
-                </IntakeRow>
+                </ButtonRow>
         </IntakeHDiv>
     )
 }

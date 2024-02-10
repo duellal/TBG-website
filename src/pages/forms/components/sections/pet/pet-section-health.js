@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { ButtonRow, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
@@ -35,7 +35,7 @@ export default function PetHealthSection(props){
                     }
                 </IntakeCol>
 
-                <IntakeRow>
+                <ButtonRow>
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
@@ -46,7 +46,7 @@ export default function PetHealthSection(props){
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
                     />
-                </IntakeRow>
+                </ButtonRow>
             </IntakeHDiv>
         )
 }

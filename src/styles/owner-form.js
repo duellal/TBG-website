@@ -79,6 +79,10 @@ export const IntakeRow = styled.div`
     }}
 `
 
+export const ButtonRow = styled(IntakeRow)`
+justify-content: center;
+`
+
 export const IntakeLabelRow = styled.div`
     display: flex;
     flex-direction: row;

@@ -6,7 +6,7 @@ import EmergencyInfo from "./emergency-info"
 import NextPrevBtn from "../../next-section-btn"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
 
 
 /**
@@ -57,7 +57,7 @@ export default function EmergencySection(props){
                     } 
                 </IntakeCol> 
 
-                <IntakeRow>
+                <ButtonRow>
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
@@ -75,7 +75,7 @@ export default function EmergencySection(props){
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
                     />
-                </IntakeRow>
+                </ButtonRow>
             </IntakeHDiv>
         )
 }

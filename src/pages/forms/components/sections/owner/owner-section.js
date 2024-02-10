@@ -1,7 +1,7 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form.js'
+import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form.js'
 
 //Components:
 import OwnerInfo from './owner-info.js'
@@ -20,7 +20,7 @@ export default function OwnerSection(props){
         } = props
 
         //Function to allow user to add 1 more owner:
-        const ownerOnClick = async (event) => {
+        const addOwner = async (event) => {
             event.preventDefault()
     
             let toggleOwnerBtn = () => {
@@ -30,6 +30,19 @@ export default function OwnerSection(props){
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
             await setOwnerCountArr([...ownerCountArr, {}])
+        }
+
+        const deleteSecOwner = async(event) => {
+            event.preventDefault()
+    
+            let toggleOwnerBtn = () => {
+                setOwnerBtn(!ownerBtn)
+            }
+            
+            toggleOwnerBtn();
+            await setOwnerKey(ownerKey - 1)
+            ownerCountArr.pop()
+            await setOwnerCountArr([...ownerCountArr])
         }
 
         return(
@@ -52,18 +65,24 @@ export default function OwnerSection(props){
                         } 
                     </IntakeCol>
     
-                    <IntakeRow>
+                    <ButtonRow>
                         {ownerBtn && 
-                            <FormBtn onClick={(event) => ownerOnClick(event)}> 
+                            <FormBtn onClick={(event) => addOwner(event)}> 
                                 Add Owner 
                             </FormBtn>
                         }
+                        {/* {
+                            !ownerBtn &&
+                            <FormBtn onClick={event => deleteSecOwner(event)}>
+                                Delete Second Owner
+                            </FormBtn>
+                        } */}
                         <NextPrevBtn 
                             next
                             btnIndex={btnIndex}
                             setBtnIndex={setBtnIndex}                     
                         />
-                    </IntakeRow>  
+                    </ButtonRow>  
                 </IntakeDivider> 
             </IntakeHDiv>
         )

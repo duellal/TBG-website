@@ -1,15 +1,12 @@
 import React from "react"
 
 //Intake Form - Owner Styles:
-import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
+import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
 import PetInfo from "./pet-info"
-import PetBehavior from "./pet-behavior"
-import PetHealth from "./pet-health"
-
 
 /**
  * @component The core of the initial pet information section. Allows user to add up to 5 pets + adds the pets to the other 2 pet sections (behavior + health).
@@ -56,7 +53,7 @@ export default function PetInfoSection(props){
                     }
                 </IntakeCol>
 
-                <IntakeRow>
+                <ButtonRow>
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
@@ -74,7 +71,7 @@ export default function PetInfoSection(props){
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
                     />
-                </IntakeRow>
+                </ButtonRow>
             </IntakeHDiv>
         )
 }

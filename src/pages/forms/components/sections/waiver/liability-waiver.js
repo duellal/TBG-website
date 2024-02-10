@@ -6,7 +6,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import NextPrevBtn from "../../next-section-btn";
 
 //Liability Waiver Styles:
-import { FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, 
+import { ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 
@@ -74,7 +74,7 @@ export default function LiabilityWaiver(props){
                 </IntakeRow>
 
                 {/* Form Submit Button */}
-                <IntakeRow>
+                <ButtonRow>
                     <NextPrevBtn 
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
@@ -90,7 +90,7 @@ export default function LiabilityWaiver(props){
                             </Rotate>
                         }
 
-                </IntakeRow>
+                </ButtonRow>
             </IntakeHDiv>
         </>
     )
