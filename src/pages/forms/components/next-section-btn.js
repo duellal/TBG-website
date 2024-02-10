@@ -17,7 +17,7 @@ export default function NextPrevBtn(props){
         event.preventDefault()
         let previous = event.target.name === 'previous'
         let valid = document.forms['new_owner_form'].reportValidity()
-
+        
         let previousSection = () => {
             setBtnIndex(btnIndex - 1)
         }
@@ -34,12 +34,18 @@ export default function NextPrevBtn(props){
         // }
         // else 
         if(previous){
-            return previousSection()
+            previousSection()
         }
         else{
-            return nextSection()
+            nextSection()
         }
+        return window.scrollTo({
+            top: 200,
+            behavior: "smooth"
+        })
     }
+
+
 
     return (
         <>

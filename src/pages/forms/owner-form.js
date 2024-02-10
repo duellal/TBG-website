@@ -239,7 +239,7 @@ export default function DigitalOwnerForm() {
                 </IntakeP>
             </IntakeHeader>
 
-            <IntakeCard>
+            <IntakeCard id="new-owner-form">
                 <OwnerFormTabs 
                     btnIndex={btnIndex}
                     setBtnIndex={setBtnIndex}
