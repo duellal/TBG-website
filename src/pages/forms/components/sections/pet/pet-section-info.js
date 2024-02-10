@@ -13,13 +13,11 @@ import PetHealth from "./pet-health"
 
 /**
  * @component The core of the initial pet information section. Allows user to add up to 5 pets + adds the pets to the other 2 pet sections (behavior + health).
- * @param {*} props petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, petNum, setPetNum, btnIndex, setBtnIndex, setTabIndex, setStoredPetBehavior, storedPetBehavior, setStoredPetHealth, storedPetHealth 
+ * @param {*} props petBtn, setPetBtn, countPets, setCountPets, petNum, setPetNum, btnIndex, setBtnIndex, formData
  */
 export default function PetInfoSection(props){
-        const { petBtn, setPetBtn, storedPetInfo, setStoredPetInfo, 
-                petNum, setPetNum, btnIndex, setBtnIndex,
-                setTabIndex, setStoredPetBehavior, storedPetBehavior, 
-                setStoredPetHealth, storedPetHealth  
+        const { petBtn, setPetBtn, countPets, setCountPets, 
+                petNum, setPetNum, btnIndex, setBtnIndex, formData
         } = props
 
         //Function to allow user to add up to 5 pets:
@@ -36,9 +34,7 @@ export default function PetInfoSection(props){
                 togglePetBtn()
             }
 
-            await setStoredPetInfo([...storedPetInfo, <PetInfo petKey={petNum} />])
-            await setStoredPetBehavior([...storedPetBehavior, <PetBehavior petKey={petNum} />])
-            await setStoredPetHealth([...storedPetHealth, <PetHealth petKey={petNum} />])
+            await setCountPets([...countPets, {}])
         }
     
         return(
@@ -50,14 +46,20 @@ export default function PetInfoSection(props){
                 <AsteriskHeader/>
 
                 <IntakeCol>
-                    {storedPetInfo}
+                    {
+                        countPets.map((__, index) => {
+                            return <PetInfo
+                                        petKey={index + 1}
+                                        formData={formData}
+                                    />
+                        })
+                    }
                 </IntakeCol>
 
                 <IntakeRow>
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        setTabIndex={setTabIndex}
                     />
 
                     {
@@ -71,7 +73,6 @@ export default function PetInfoSection(props){
                         next={true}
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        setTabIndex={setTabIndex}
                     />
                 </IntakeRow>
             </IntakeHDiv>

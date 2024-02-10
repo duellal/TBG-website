@@ -10,10 +10,10 @@ import { FlexColDiv } from "../../../../../styles/contact";
 
 /**
  * @component Pet Behavior section labels + inputs
- * @param {*} props petKey
+ * @param {*} props petKey, formData
  */
 export default function PetBehavior(props){
-    const { petKey } = props
+    const { petKey, formData } = props
 
     console.log(document.getElementsByName(`pet${petKey}_destructive_yes`))
 
@@ -21,7 +21,7 @@ export default function PetBehavior(props){
         <div key={`pet${petKey}Behavior`} id={`pet${petKey}Behavior`}>
             <IntakeDivider>
                 <IntakeH4>
-                    Pet {petKey}
+                    Pet {petKey} - {formData[`pet${petKey}_name`]}
                 </IntakeH4>
                 
                 {/* Behavior Section */}
@@ -31,30 +31,35 @@ export default function PetBehavior(props){
                             htmlFor={`pet${petKey}_destructive`}
                             question={`Does your pet have any destructive habits when left alone?`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
 
                         <RadioQuestion
                             htmlFor={`pet${petKey}_fence`}
                             question={'Has your pet ever jumped, climbed, or dug out of a fence?'}
                             options={['yes', 'no']}
+                            formData={formData}
                         /> 
 
                         <RadioQuestion
                             htmlFor={`pet${petKey}_guard`}
                             question={`Does your pet ever guard toys, food, water, or people?`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
                     
                         <RadioQuestion
                             htmlFor={`pet${petKey}_socialized`}
                             question={`Has your pet ever socialized in a group of 6 or more pets?`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
                     
                         <RadioQuestion
                             htmlFor={`pet${petKey}_kennel`}
                             question={`Does your pet have experience in a kennel environment?`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
 
                         <IntakeRow>
@@ -65,7 +70,11 @@ export default function PetBehavior(props){
                                 
                                 <IntakeLabelRow>
                                     <FlexColDiv>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_extra_behavior`}/>
+                                        <IntakeMessageInput 
+                                            type="text" 
+                                            name={`pet${petKey}_extra_behavior`}
+                                            value={formData[`pet${petKey}_extra_behavior`]}
+                                        />
                                     </FlexColDiv>
                                 </IntakeLabelRow>
                             </FlexColDiv>

@@ -6,14 +6,15 @@ import { IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../style
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
+import PetHealth from "./pet-health"
 
 
 /**
  * @component The core of the pet health section.
- * @param {*} props storedPetHealth, btnIndex, setBtnIndex
+ * @param {*} props countPets, btnIndex, setBtnIndex, formData
  */
 export default function PetHealthSection(props){
-        const { storedPetHealth, btnIndex, setBtnIndex } = props
+        const { countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
             <IntakeHDiv key={`petSection`}>
@@ -24,7 +25,14 @@ export default function PetHealthSection(props){
                 <AsteriskHeader/>
 
                 <IntakeCol>
-                    {storedPetHealth}
+                {
+                        countPets.map((__, index) => {
+                            return <PetHealth
+                                        petKey={index + 1}
+                                        formData={formData}
+                                    />
+                        })
+                    }
                 </IntakeCol>
 
                 <IntakeRow>

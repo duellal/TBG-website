@@ -12,10 +12,11 @@ import { FormAsterisk } from "../../../styles/forms"
     * @param {string} question string
     * @param {string} example optional string
     * @param {array} answers array of strings as given answers
+    * @param {object} formData the current formData object from state
     * @returns {ReactNode}  a react element that renders the question with radio button answers, + a text input appears if "Yes" is selected
 */
 export default function RadioQuestion(props){
-    let { htmlFor, question, example, options } = props
+    let { htmlFor, question, example, options, formData } = props
     let [selectedOption, setSelectedOption] = useState(null)
 
     let optionChange = (event) => {
@@ -55,6 +56,7 @@ export default function RadioQuestion(props){
                         <IntakeMessageInput 
                             type="text" 
                             name={htmlFor}
+                            value={formData[htmlFor]}
                         />
                     </IntakeLabel>
                 </FlexColDiv>

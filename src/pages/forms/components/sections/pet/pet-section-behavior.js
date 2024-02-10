@@ -6,14 +6,15 @@ import { IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../style
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import NextPrevBtn from "../../next-section-btn"
+import PetBehavior from "./pet-behavior"
 
 
 /**
  * @component The core of the pet behavior section.
- * @param {*} props storedPetBehavior, btnIndex, setBtnIndex
+ * @param {*} props countPets, btnIndex, setBtnIndex, formData
  */
 export default function PetBehaviorsSection(props){
-        const { storedPetBehavior, btnIndex, setBtnIndex } = props
+        const { countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
             <IntakeHDiv key={`petSection`}>
@@ -24,7 +25,14 @@ export default function PetBehaviorsSection(props){
                 <AsteriskHeader/>
 
                 <IntakeCol>
-                    {storedPetBehavior}
+                {
+                        countPets.map((__, index) => {
+                            return <PetBehavior
+                                        petKey={index + 1}
+                                        formData={formData}
+                                    />
+                        })
+                    }
                 </IntakeCol>
 
                 <IntakeRow>

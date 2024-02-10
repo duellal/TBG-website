@@ -12,12 +12,12 @@ import { FormExample } from "../../../../../styles/forms";
 
 /**
  * @component The core of the authorized pickup section. Allows user to add up to 5 authorized people.
- * @param {*} props authBtn, setAuthBtn, authorizedKey, setAuthorizedKey, storedAuthorized, setStoredAuthorized, authNum, setAuthNum, btnIndex, setBtnIndex
+ * @param {*} props authBtn, setAuthBtn, authorizedKey, setAuthorizedKey, countAuthorized, setCountAuthorized, authNum, setAuthNum, btnIndex, setBtnIndex, formData
  */
 export default function AuthPickupSection(props){
         const { authBtn, setAuthBtn, authorizedKey, 
-            setAuthorizedKey, storedAuthorized, setStoredAuthorized,
-            authNum, setAuthNum, btnIndex, setBtnIndex
+            setAuthorizedKey, countAuthorized, setCountAuthorized,
+            authNum, setAuthNum, btnIndex, setBtnIndex, formData
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -34,7 +34,7 @@ export default function AuthPickupSection(props){
                 toggleAuthBtn()
             }
             await setAuthorizedKey(authorizedKey + 1)
-            await setStoredAuthorized([...storedAuthorized, <AuthorizedPickup authorizedKey={authorizedKey} />])
+            await setCountAuthorized([...countAuthorized, {}])
         }
     
         return(
@@ -66,7 +66,14 @@ export default function AuthPickupSection(props){
                     </FlexColDiv>
                 </IntakeRow>
                         
-                {storedAuthorized}    
+                {
+                    countAuthorized.map((__, index) => {
+                        return <AuthorizedPickup 
+                                    authKey={index + 1} 
+                                    formData={formData}
+                                />
+                    })    
+                } 
 
                 <IntakeRow>
                     <NextPrevBtn

@@ -43,7 +43,7 @@ export default function NextPrevBtn(props){
 
     return (
         <>
-            <FormBtn onClick={SectionOnClick} name={ next ? 'next' : 'previous'}>
+            <FormBtn onClick={event => SectionOnClick(event)} name={ next ? 'next' : 'previous'}>
                 { next ? 'Next' : 'Previous' } Section
             </FormBtn>
         </>

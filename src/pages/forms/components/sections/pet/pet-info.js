@@ -8,10 +8,10 @@ import { FormAsterisk } from "../../../../../styles/forms";
 
 /**
  * @component Initial pet information section labels + inputs
- * @param {*} props petKey
+ * @param {*} props petKey, formData
  */
 export default function PetInfo(props){
-    const { petKey } = props
+    const { petKey, formData } = props
     
     return(
         <div key={`pet${petKey}Info`} id={`pet${petKey}Info`}>
@@ -32,6 +32,7 @@ export default function PetInfo(props){
                                     type="text" 
                                     name={`pet${petKey}_name`} 
                                     required
+                                    value={formData[`pet${petKey}_name`]}
                                 />
                         
                             </FlexColDiv>
@@ -43,6 +44,7 @@ export default function PetInfo(props){
                                         type="text" 
                                         name={`pet${petKey}_species`} 
                                         required 
+                                        value={formData[`pet${petKey}_species`]}
                                     />
                                 </FlexColDiv>
                         </IntakeRow>
@@ -54,7 +56,8 @@ export default function PetInfo(props){
                                 <Input 
                                     type="text" 
                                     name={`pet${petKey}_breed`} 
-                                    required                                 
+                                    required       
+                                    value={formData[`pet${petKey}_breed`]}
                                 />
                             </FlexColDiv>
 
@@ -65,6 +68,7 @@ export default function PetInfo(props){
                                 <Input 
                                     type="text" 
                                     name={`pet${petKey}_color`} 
+                                    value={formData[`pet${petKey}_color`]}
                                 />
                             </FlexColDiv>
                         </IntakeRow>
@@ -128,6 +132,7 @@ export default function PetInfo(props){
                                     type="float" 
                                     name={`pet${petKey}_weight`} 
                                     required 
+                                    value={formData[`pet${petKey}_weight`]}
                                 />
                             </FlexColDiv>
                             <FlexColDiv>
@@ -137,6 +142,7 @@ export default function PetInfo(props){
                                 <Input 
                                     type="date" 
                                     name={`pet${petKey}_dob`}
+                                    value={formData[`pet${petKey}_dob`]}
                                 />
                             </FlexColDiv>
                         </IntakeRow>

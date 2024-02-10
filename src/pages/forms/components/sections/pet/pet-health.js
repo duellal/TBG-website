@@ -11,15 +11,15 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 /**
  * @component Pet health section labels + inputs
- * @param {*} props petKey
+ * @param {*} props petKey, formData
  */
 export default function PetHealth(props){
-    const { petKey } = props
+    const { petKey, formData } = props
     return(
         <div key={`pet${petKey}Health`} id={`pet${petKey}Health`}>
             <IntakeDivider>
                 <IntakeH4>
-                    Pet {petKey}
+                    Pet {petKey} - {formData[`pet${petKey}_name`]}
                 </IntakeH4>
 
                 {/* Vet History Section */}
@@ -30,7 +30,12 @@ export default function PetHealth(props){
                                 <IntakeLabel htmlFor={`pet${petKey}_vet`}>
                                     <FormAsterisk>*</FormAsterisk> Vetinary Hospital
                                 </IntakeLabel>
-                                <Input type="text" name={`{pet${petKey}_vet`} required />
+                                <Input 
+                                    type="text" 
+                                    name={`{pet${petKey}_vet`} 
+                                    required 
+                                    value={formData[`{pet${petKey}_vet`]}
+                                />
                             </FlexColDiv>
 
                             <FlexColDiv>
@@ -49,6 +54,7 @@ export default function PetHealth(props){
                                     format="(###) ###-####" 
                                     mask="_"  
                                     required
+                                    value={formData[`{pet${petKey}_vet_phone`]}
                                 />
                                 </IntakeHealthLabel>
                             </FlexColDiv>
@@ -58,6 +64,7 @@ export default function PetHealth(props){
                             htmlFor={`pet${petKey}_food_allergy`}
                             question={`Does your pet have any food allergies?`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
 
                         <RadioQuestion
@@ -65,12 +72,14 @@ export default function PetHealth(props){
                             question={`Does your pet have any medical conditions or disabilities that we should know about?`}
                             example={`(ex: seizures, tumors, hot spots, etc)`}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
 
                         <RadioQuestion
                             htmlFor={`pet${petKey}_past_injury`}
                             question={`Does your pet have any past injuries that we should know about? `}
                             options={['yes', 'no']}
+                            formData={formData}
                         />
 
                         <IntakeRow>
@@ -81,7 +90,11 @@ export default function PetHealth(props){
                                 
                                 <IntakeRow>
                                     <FlexColDiv>
-                                        <IntakeMessageInput type="text" name={`pet${petKey}_extra_medical`}/>
+                                        <IntakeMessageInput 
+                                            type="text" 
+                                            name={`pet${petKey}_extra_medical`}
+                                            value={formData[`pet${petKey}_extra_medical`]}
+                                        />
                                     </FlexColDiv>
                                 </IntakeRow>
                             </FlexColDiv>

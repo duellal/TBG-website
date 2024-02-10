@@ -6,10 +6,10 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 /**
  * @component Emergency info section labels + inputs
- * @param {*} props - emergencyKey
+ * @param {*} props - emergencyKey, formData
  */
 export default function EmergencyInfo(props){
-    const { emergencyKey } = props
+    const { emergencyKey, formData } = props
     
     return(
         <IntakeHDiv key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
@@ -23,7 +23,12 @@ export default function EmergencyInfo(props){
                     <IntakeLabel>
                         <FormAsterisk>*</FormAsterisk> Emergency Contact First + Last Name
                     </IntakeLabel>
-                    <Input type="text" name={`emergency${emergencyKey}_name`} required />
+                    <Input 
+                        type="text" 
+                        name={`emergency${emergencyKey}_name`}
+                        required
+                        value={formData[`emergency${emergencyKey}_name`]}
+                    />
                 </FlexColDiv>
             </IntakeRow>
             <IntakeRow>
@@ -41,14 +46,21 @@ export default function EmergencyInfo(props){
                         placeholder="(___) ___-____"
                         format="(###) ###-####" 
                         mask="_"  
-                        required />
+                        required 
+                        value={formData[`emergency${emergencyKey}_phone`]}    
+                    />
                 </FlexColDiv>
 
                 <FlexColDiv>
                     <IntakeLabel>
                     <FormAsterisk>*</FormAsterisk> Relationship
                     </IntakeLabel>
-                    <Input type="text" name={`emergency${emergencyKey}_relation`} required />
+                    <Input 
+                        type="text" 
+                        name={`emergency${emergencyKey}_relation`} 
+                        required 
+                        value={formData[`emergency${emergencyKey}_relation`]}
+                    />
                 </FlexColDiv>
             </IntakeRow>
 

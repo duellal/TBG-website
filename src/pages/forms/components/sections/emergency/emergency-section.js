@@ -11,12 +11,13 @@ import { FormBtn, IntakeCol, IntakeH3, IntakeHDiv, IntakeRow } from '../../../..
 
 /**
  * @component the core of the emergency contact section. Allows user to add up to 3 emergency contacts
- * @param {*} props  emergencyBtn, setEmergencyBtn, emergencyKey, setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,emergencyNum, setEmergencyNum, btnIndex, setBtnIndex 
+ * @param {*} props  emergencyBtn, setEmergencyBtn, emergencyKey, setEmergencyKey, emergencyNum, setEmergencyNum, btnIndex, setBtnIndex, countEmergencyContacts, setCountEmergencyContacts, formData
  */
 export default function EmergencySection(props){
         const { emergencyBtn, setEmergencyBtn, emergencyKey, 
-                setEmergencyKey, storedEmergencyContacts, setStoredEmergencyContacts,
-                emergencyNum, setEmergencyNum, btnIndex, setBtnIndex   
+                setEmergencyKey,
+                emergencyNum, setEmergencyNum, btnIndex, setBtnIndex, 
+                countEmergencyContacts, setCountEmergencyContacts, formData
         } = props
 
         //Function to allow user to add up to 3 emergency contacts:
@@ -34,7 +35,7 @@ export default function EmergencySection(props){
             }
     
             await setEmergencyKey(emergencyKey + 1)
-            await setStoredEmergencyContacts([...storedEmergencyContacts, <EmergencyInfo emergencyKey={emergencyKey} />])
+            await setCountEmergencyContacts([...countEmergencyContacts, {}])
         }    
     
         return(
@@ -46,7 +47,14 @@ export default function EmergencySection(props){
                 <AsteriskHeader/>
             
                 <IntakeCol>
-                    {storedEmergencyContacts}
+                    {
+                        countEmergencyContacts.map((__, index) => {
+                            return <EmergencyInfo 
+                                        emergencyKey={index + 1} 
+                                        formData={formData}
+                                    />
+                        })    
+                    } 
                 </IntakeCol> 
 
                 <IntakeRow>

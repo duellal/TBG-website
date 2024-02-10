@@ -15,8 +15,8 @@ import AsteriskHeader from "../../asterisk-header.js"
  */
 export default function OwnerSection(props){
         const { ownerBtn, setOwnerBtn, ownerKey, 
-                setOwnerKey, storedOwners, setStoredOwners, 
-                btnIndex, setBtnIndex, formData, changeInput, editFormData   
+                setOwnerKey, ownerCountArr, setOwnerCountArr,
+                btnIndex, setBtnIndex, formData
         } = props
 
         //Function to allow user to add 1 more owner:
@@ -29,16 +29,9 @@ export default function OwnerSection(props){
             
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
-            await setStoredOwners([...storedOwners, 
-                <OwnerInfo 
-                    ownerKey={ownerKey}             
-                    formData={formData} 
-                    changeInput={changeInput}
-                    editFormData={editFormData}
-                />
-            ])
+            await setOwnerCountArr([...ownerCountArr, {}])
         }
-    
+
         return(
             <IntakeHDiv key={`owner_section${ownerKey}`} id={`owner_section${ownerKey}`}>
                 <IntakeDivider>
@@ -49,7 +42,14 @@ export default function OwnerSection(props){
                     <AsteriskHeader/>
                         
                     <IntakeCol>
-                        {storedOwners}
+                       {
+                            ownerCountArr.map((__, index) => {
+                                return <OwnerInfo 
+                                            ownerKey={index + 1} 
+                                            formData={formData}
+                                        />
+                            })    
+                        } 
                     </IntakeCol>
     
                     <IntakeRow>
