@@ -23,7 +23,7 @@ export const formTemplate = {
     pet1_breed: '',
     pet1_color: '',
     pet1_sex: '',
-    pet1_sterile: '',
+    pet1_altered: '',
     pet1_weight: null,
     pet1_dob: null,
     pet1_destructive: '',

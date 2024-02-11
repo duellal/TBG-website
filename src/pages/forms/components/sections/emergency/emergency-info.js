@@ -75,12 +75,26 @@ export default function EmergencyInfo(props){
                     
                     <IntakeLabelRow>
                         <IntakeRow>
-                            <Input type="radio" id={`emergency${emergencyKey}_permission_yes`} name={`emergency${emergencyKey}_permission`} value='yes' />
+                            <Input 
+                                type="radio" 
+                                id={`emergency${emergencyKey}_permission_yes`} 
+                                name={`emergency${emergencyKey}_permission`} 
+                                value='yes' 
+                                checked={formData[`emergency${emergencyKey}_permission`] === 'yes'}
+                                onChange={changeInput}
+                            />
                                 <IntakeLabel>
                                     Yes
                                 </IntakeLabel>
     
-                            <Input type="radio" name={`emergency${emergencyKey}_permission_no`} id={`emergency${emergencyKey}_permission`} value='no'/>
+                            <Input 
+                                type="radio"
+                                name={`emergency${emergencyKey}_permission`} 
+                                id={`emergency${emergencyKey}_permission_no`} 
+                                value='no'
+                                checked={formData[`emergency${emergencyKey}_permission`] === 'no'}
+                                onChange={changeInput}
+                            />
                                 <IntakeLabel>
                                     No
                                 </IntakeLabel>

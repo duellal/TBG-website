@@ -47,8 +47,17 @@ export default function DigitalOwnerForm() {
 
     //onChange function changeInput:
     function changeInput(event){
-        let { name, value } = event.target
-        editFormData({ ...formData, [name]: value})
+        let { type, name, value } = event.target
+
+        if(type === 'checkbox'){
+            if(value === "false"){
+                return editFormData({...formData, [name]: "true"})
+            }
+            
+            return editFormData({ ...formData, [name]: 'false'})
+        }
+
+        return editFormData({ ...formData, [name]: value})
      }
 
     //Pet Info States:

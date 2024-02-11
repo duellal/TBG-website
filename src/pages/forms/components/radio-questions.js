@@ -18,14 +18,9 @@ import { FormAsterisk } from "../../../styles/forms"
 */
 export default function RadioQuestion(props){
     let { changeInput, htmlFor, question, example, options, formData } = props
-    let [selectedOption, setSelectedOption] = useState(null)
-
-    let optionChange = (event) => {
-        setSelectedOption(event.target.value)
-    }
 
     //To get all options and capitalize the first letter of the word:
-    let optionMap = options.map(answer => {
+    let mapOptions = options.map(answer => {
         let capitalizeWord = (word) => {
             let firstLetter = word.toUpperCase().charAt(0)
             let remainingLetters = word.slice(1)
@@ -38,8 +33,9 @@ export default function RadioQuestion(props){
                     type='radio' 
                     name={htmlFor}
                     value={answer}
-                    checked={selectedOption === answer}
-                    onChange={optionChange}
+                    checked={formData[htmlFor] === answer}
+                    required
+                    onChange={changeInput}
                 />
 
                 <IntakeLabel htmlFor={htmlFor}>
@@ -61,6 +57,7 @@ export default function RadioQuestion(props){
                             name={`${htmlFor}_explain`}
                             value={formData[`${htmlFor}_explain`]}
                             onChange={changeInput}
+                            required
                         />
                     </IntakeLabel>
                 </FlexColDiv>
@@ -83,11 +80,11 @@ export default function RadioQuestion(props){
                 </IntakeLabel>
                 <IntakeRow>
                     {
-                        optionMap
+                        mapOptions
                     }
                 </IntakeRow>
                     { 
-                        selectedOption === 'yes' ?
+                        formData[htmlFor] === 'yes' ?
                         explainInput()
                         : 
                         removeExplain(`${htmlFor}_explain`)

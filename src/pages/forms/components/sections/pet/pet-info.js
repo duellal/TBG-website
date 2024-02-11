@@ -86,6 +86,9 @@ export default function PetInfo(props){
                                     <Input 
                                         type='radio' 
                                         name={`pet${petKey}_sex`} 
+                                        value='female' 
+                                        checked={formData[`pet${petKey}_sex`] === 'female'}
+                                        onChange={changeInput}
                                     />
                                     <IntakeLabel>
                                         Female
@@ -94,6 +97,9 @@ export default function PetInfo(props){
                                     <Input 
                                         type="radio" 
                                         name={`pet${petKey}_sex`}
+                                        value='male'
+                                        checked={formData[`pet${petKey}_sex`] === 'male'}
+                                        onChange={changeInput}
                                     />
                                     <IntakeLabel>
                                         Male
@@ -102,14 +108,17 @@ export default function PetInfo(props){
                             </FlexColDiv>
 
                             <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_sterile`}>
+                                <IntakeLabel htmlFor={`pet${petKey}_altered`}>
                                     <FormAsterisk>*</FormAsterisk> Spayed or Neutered
                                 </IntakeLabel>
                                 <IntakeLabelRow>
                                     <Input 
                                         type='radio' 
-                                        id={`pet${petKey}_sterile`} 
-                                        name={`pet${petKey}_sterile`}
+                                        id={`pet${petKey}_altered`} 
+                                        name={`pet${petKey}_altered`}
+                                        value='yes' 
+                                        checked={formData[`pet${petKey}_altered`] === 'yes'}
+                                        onChange={changeInput}
                                     />
                                     <IntakeLabel>
                                         Yes
@@ -117,8 +126,11 @@ export default function PetInfo(props){
                             
                                     <Input
                                         type="radio" 
-                                        id={`pet${petKey}_sterile`} 
-                                        name={`pet${petKey}_sterile`} 
+                                        id={`pet${petKey}_altered`} 
+                                        name={`pet${petKey}_altered`} 
+                                        value='no' 
+                                        checked={formData[`pet${petKey}_altered`] === 'no'}
+                                        onChange={changeInput}
                                     />
                                     <IntakeLabel>
                                         No

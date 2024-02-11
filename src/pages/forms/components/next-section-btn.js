@@ -29,10 +29,10 @@ export default function NextPrevBtn(props){
         Add back in when done with form:
             for validity when clicking previous/next buttons 
         */
-        // if(!valid){
-        //     return
-        // }
-        // else 
+        if(!valid && !previous){
+            return
+        }
+        else 
         if(previous){
             previousSection()
         }

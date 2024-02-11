@@ -32,7 +32,7 @@ export default function PetBehavior(props){
                             question={`Does your pet have any destructive habits when left alone?`}
                             options={['yes', 'no']}
                             formData={formData}
-                            onChange={changeInput}
+                            changeInput={changeInput}
                         />
 
                         <RadioQuestion
@@ -40,7 +40,7 @@ export default function PetBehavior(props){
                             question={'Has your pet ever jumped, climbed, or dug out of a fence?'}
                             options={['yes', 'no']}
                             formData={formData}
-                            onChange={changeInput}
+                            changeInput={changeInput}
                         /> 
 
                         <RadioQuestion
@@ -48,7 +48,7 @@ export default function PetBehavior(props){
                             question={`Does your pet ever guard toys, food, water, or people?`}
                             options={['yes', 'no']}
                             formData={formData}
-                            onChange={changeInput}
+                            changeInput={changeInput}
                         />
                     
                         <RadioQuestion
@@ -56,7 +56,7 @@ export default function PetBehavior(props){
                             question={`Has your pet ever socialized in a group of 6 or more pets?`}
                             options={['yes', 'no']}
                             formData={formData}
-                            onChange={changeInput}
+                            changeInput={changeInput}
                         />
                     
                         <RadioQuestion
@@ -64,7 +64,7 @@ export default function PetBehavior(props){
                             question={`Does your pet have experience in a kennel environment?`}
                             options={['yes', 'no']}
                             formData={formData}
-                            onChange={changeInput}
+                            changeInput={changeInput}
                         />
 
                         <IntakeRow>

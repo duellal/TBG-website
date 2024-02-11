@@ -23,6 +23,19 @@ import { FormAsterisk } from "../../../../../styles/forms.js";
 export default function LiabilityWaiver(props){
     const { changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData } = props
 
+    console.log(formData)
+
+    let toggleChecked = (key) => {
+    console.log(formData)
+
+        if(formData[key] === "true"){
+            return formData[key] = "false"
+        }
+
+        return formData[key] = 'true'
+    }
+
+
     return (
         <>
             <IntakeHDiv>
@@ -56,8 +69,9 @@ export default function LiabilityWaiver(props){
                         </IntakeH3>
                         <IntakeWaiverP style={{margin: '0 0 10px'}}>
                             <Input 
-                                type="checkbox" name="waiver_owner_acknowledgement" 
-                                value={formData[`waiver_owner_acknowledgement`]}
+                                type="checkbox" 
+                                name="waiver_owner_acknowledgement" 
+                                value={formData["waiver_owner_acknowledgement"]}
                                 onChange={changeInput}
                                 required 
                             />
