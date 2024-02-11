@@ -13,7 +13,7 @@ export default function OwnerInfo(props){
     const { changeInput, ownerKey, formData} = props
 
     return(
-        <IntakeHDiv key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
+        <IntakeHDiv key={`owner${ownerKey}`}>
             <IntakeDivider>
                     <IntakeH5>
                         {ownerKey === 1 ? 'Primary' : 'Secondary'} Owner

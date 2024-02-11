@@ -16,7 +16,7 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 export default function PetHealth(props){
     const { changeInput, petKey, formData } = props
     return(
-        <div key={`pet${petKey}Health`} id={`pet${petKey}Health`}>
+        <div key={`pet${petKey}_health`}>
             <IntakeDivider>
                 <IntakeH5>
                     Pet {petKey} - {formData[`pet${petKey}_name`]}
@@ -63,6 +63,7 @@ export default function PetHealth(props){
                         </IntakeRow>
 
                         <RadioQuestion
+                            key={`pet${petKey}_food_allergy`}
                             htmlFor={`pet${petKey}_food_allergy`}
                             question={`Does your pet have any food allergies?`}
                             options={['yes', 'no']}
@@ -71,6 +72,7 @@ export default function PetHealth(props){
                         />
 
                         <RadioQuestion
+                            key={`pet${petKey}_medical_condition`}
                             htmlFor={`pet${petKey}_medical_condition`}
                             question={`Does your pet have any medical conditions or disabilities that we should know about?`}
                             example={`(ex: seizures, tumors, hot spots, etc)`}
@@ -80,6 +82,7 @@ export default function PetHealth(props){
                         />
 
                         <RadioQuestion
+                            key={`pet${petKey}_past_injury`}
                             htmlFor={`pet${petKey}_past_injury`}
                             question={`Does your pet have any past injuries that we should know about? `}
                             options={['yes', 'no']}

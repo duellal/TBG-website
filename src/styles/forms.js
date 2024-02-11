@@ -75,7 +75,7 @@ width: 100%;
 // border: 1px solid black;
 `
 
-export const FormAsterisk = styled.h4`
+export const FormAsterisk = styled.label`
 color: ${bright_red};
 font-size: inherit;
 font-weight: normal;
@@ -85,7 +85,7 @@ margin: 0 4px;
 // border: 1px solid red;
 `
 
-export const FormExample = styled.p`
+export const FormExample = styled.label`
 font-size: inherit;
 text-align: left;
 margin: 0 15px;

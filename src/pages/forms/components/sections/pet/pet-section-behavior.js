@@ -17,7 +17,7 @@ export default function PetBehaviorsSection(props){
         const { changeInput, countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
-            <IntakeHDiv key={`petSection`}>
+            <IntakeHDiv key={`pet_behavior_section`}>
                 <IntakeH3> 
                     Pet Behavior Information
                 </IntakeH3>
@@ -28,6 +28,7 @@ export default function PetBehaviorsSection(props){
                 {
                         countPets.map((__, index) => {
                             return <PetBehavior
+                                        key={index + 1}
                                         petKey={index + 1}
                                         formData={formData}
                                         changeInput={changeInput}

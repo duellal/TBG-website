@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 //Styles:
 import { IntakeLabel, IntakeMessageInput, IntakeRow } from "../../../styles/owner-form"
@@ -28,7 +28,7 @@ export default function RadioQuestion(props){
         }
 
         return(
-            <>
+            <div key={`radio_question_${htmlFor}_${answer}`}>
                 <Input 
                     type='radio' 
                     name={htmlFor}
@@ -38,17 +38,19 @@ export default function RadioQuestion(props){
                     onChange={changeInput}
                 />
 
-                <IntakeLabel htmlFor={htmlFor}>
+                <IntakeLabel 
+                    htmlFor={htmlFor}
+                >
                     {capitalizeWord(answer)}
                 </IntakeLabel>
-            </>
+            </div>
         )
     }) 
 
     //Text input box only shows if "Yes" is selected:
     let explainInput = () => {
         return (
-            <IntakeRow>
+            <IntakeRow key={`${htmlFor}_explain`}>
                 <FlexColDiv>
                     <IntakeLabel htmlFor={`${htmlFor}_explain`}>
                         <FormAsterisk>*</FormAsterisk> Please explain
@@ -72,7 +74,7 @@ export default function RadioQuestion(props){
 
 
     return(
-        <IntakeRow>
+        <IntakeRow key={`radio_${htmlFor}`}>
             <FlexColDiv>
                 <IntakeLabel htmlFor={htmlFor}>
                     <FormAsterisk>*</FormAsterisk> 

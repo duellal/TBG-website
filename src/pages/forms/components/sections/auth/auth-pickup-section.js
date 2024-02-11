@@ -20,11 +20,11 @@ export default function AuthPickupSection(props){
         //Authorized Pickup States:
         const [authBtn, setAuthBtn] = useState(true)
         const [authNum, setAuthNum] = useState(1)
-        const [authorizedKey, setAuthorizedKey] = useState(2)
-        const [countAuthorized, setCountAuthorized] = useState([{}])
+        const [authKey, setAuthKey] = useState(2)
+        const [countAuth, setCountAuth] = useState([{}])
 
         //Function to allow user to add up to 3 emergency contacts:
-        const authorizedOnClick = async (event) => {
+        const authOnClick = async (event) => {
             event.preventDefault()
     
             let toggleAuthBtn = () => {
@@ -36,8 +36,8 @@ export default function AuthPickupSection(props){
             if(authNum === 4){
                 toggleAuthBtn()
             }
-            await setAuthorizedKey(authorizedKey + 1)
-            await setCountAuthorized([...countAuthorized, {}])
+            await setAuthKey(authKey + 1)
+            await setCountAuth([...countAuth, {}])
         }
     
         return(
@@ -70,8 +70,9 @@ export default function AuthPickupSection(props){
                 </IntakeRow>
                         
                 {
-                    countAuthorized.map((__, index) => {
+                    countAuth.map((__, index) => {
                         return <AuthorizedPickup 
+                                    key={authKey}
                                     authKey={index + 1} 
                                     formData={formData}
                                     changeInput={changeInput}
@@ -87,7 +88,7 @@ export default function AuthPickupSection(props){
                     
                     {
                     authBtn &&
-                        <FormBtn onClick={(event) => authorizedOnClick(event)}> 
+                        <FormBtn onClick={(event) => authOnClick(event)}> 
                             Add Authorized Person
                         </FormBtn>
                     }  

@@ -37,7 +37,7 @@ export default function PetInfoSection(props){
         }
     
         return(
-            <IntakeHDiv key={`PetInfoSection${petNum}`}>
+            <IntakeHDiv key={`pet_info_section`}>
                 <IntakeH3> 
                     Pet Preliminary Information
                 </IntakeH3>
@@ -48,6 +48,7 @@ export default function PetInfoSection(props){
                     {
                         countPets.map((__, index) => {
                             return <PetInfo
+                                        key={index + 1}
                                         petKey={index + 1}
                                         formData={formData}
                                         changeInput={changeInput}

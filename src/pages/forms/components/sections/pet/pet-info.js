@@ -14,7 +14,7 @@ export default function PetInfo(props){
     const { changeInput, petKey, formData } = props
     
     return(
-        <div key={`pet${petKey}Info`} id={`pet${petKey}Info`}>
+        <div key={`pet${petKey}_info`}>
             <IntakeDivider>
                 <IntakeH5>
                     Pet {petKey}

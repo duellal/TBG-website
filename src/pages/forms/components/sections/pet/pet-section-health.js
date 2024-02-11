@@ -17,7 +17,7 @@ export default function PetHealthSection(props){
         const { changeInput, countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
-            <IntakeHDiv key={`petSection`}>
+            <IntakeHDiv key={`pet_health_section`}>
                 <IntakeH3> 
                     Pet Health Information
                 </IntakeH3>
@@ -28,6 +28,7 @@ export default function PetHealthSection(props){
                 {
                         countPets.map((__, index) => {
                             return <PetHealth
+                                        key={index + 1}
                                         petKey={index + 1}
                                         formData={formData}
                                         changeInput={changeInput}

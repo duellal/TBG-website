@@ -35,7 +35,7 @@ export default function OwnerSection(props){
         }
 
         return(
-            <IntakeHDiv key={`owner_section${ownerKey}`} id={`owner_section${ownerKey}`}>
+            <IntakeHDiv key={`owner_section${ownerKey}`}>
                 <IntakeDivider>
                     <IntakeH3> 
                         Owner Information 
@@ -47,6 +47,7 @@ export default function OwnerSection(props){
                        {
                             ownerCountArr.map((__, index) => {
                                 return <OwnerInfo 
+                                            key={ownerKey}
                                             ownerKey={index + 1} 
                                             formData={formData}
                                             changeInput={changeInput}

@@ -41,7 +41,7 @@ export default function EmergencySection(props){
         }    
     
         return(
-            <IntakeHDiv id={`emergency_section`}>
+            <IntakeHDiv key={`emergency_section`}>
                 <IntakeH3> 
                     Emergency Contact Information
                 </IntakeH3>
@@ -52,6 +52,7 @@ export default function EmergencySection(props){
                     {
                         countEmergencyContacts.map((__, index) => {
                             return <EmergencyInfo 
+                                        key={emergencyKey}
                                         emergencyKey={index + 1} 
                                         formData={formData}
                                         changeInput={changeInput}

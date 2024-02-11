@@ -24,14 +24,15 @@ export default function OwnerFormTabs(props){
         let valid = document.forms['new_owner_form'].reportValidity()
 
         if(index > btnIndex && !valid){
-            return 
+            // return 
         }
 
         setBtnIndex(index)
     }
 
     let tabNamesDivs = tabNamesArr.map((title, index) => {
-        let colorstate = (btnIndex === index).toString()
+        let colorState = btnIndex === index
+        colorState.toString()
 
         if(index < 3){
             let row1Div = <FormTabDiv 
@@ -45,10 +46,10 @@ export default function OwnerFormTabs(props){
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 />
                 <FormTabP
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 > 
                     { title } 
                 </FormTabP>
@@ -70,10 +71,10 @@ export default function OwnerFormTabs(props){
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 />
                 <FormTabP
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 > 
                     { title } 
                 </FormTabP>
@@ -96,10 +97,10 @@ export default function OwnerFormTabs(props){
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 />
                 <FormTabP
-                    $colorstate={colorstate}
+                    $colorstate={colorState}
                 > 
                     { title } 
                 </FormTabP>

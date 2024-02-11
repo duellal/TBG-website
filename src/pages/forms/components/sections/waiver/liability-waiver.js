@@ -6,7 +6,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import NextPrevBtn from "../../next-section-btn";
 
 //Liability Waiver Styles:
-import { ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, 
+import { ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 
@@ -23,22 +23,9 @@ import { FormAsterisk } from "../../../../../styles/forms.js";
 export default function LiabilityWaiver(props){
     const { changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData } = props
 
-    console.log(formData)
-
-    let toggleChecked = (key) => {
-    console.log(formData)
-
-        if(formData[key] === "true"){
-            return formData[key] = "false"
-        }
-
-        return formData[key] = 'true'
-    }
-
-
     return (
         <>
-            <IntakeHDiv>
+            <IntakeHDiv key={`waiver-section`}>
                 <IntakeH3>
                     Liability Waiver
                 </IntakeH3>
@@ -48,9 +35,9 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeWaiverDiv>
-                            <IntakeH3>
+                            <WaiverH5>
                                 {waiverHeader}
-                            </IntakeH3>
+                            </WaiverH5>
                             <IntakeWaiverP>
                                 {waiverP1}
                             </IntakeWaiverP>
@@ -63,10 +50,10 @@ export default function LiabilityWaiver(props){
 
                 <IntakeRow>
                     <FlexColDiv>
-                        <IntakeH3>
+                        <WaiverH5>
                             <FormAsterisk>*</FormAsterisk>
                             {waiverAcknowledgeHeader}
-                        </IntakeH3>
+                        </WaiverH5>
                         <IntakeWaiverP style={{margin: '0 0 10px'}}>
                             <Input 
                                 type="checkbox" 

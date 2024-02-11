@@ -119,14 +119,18 @@ export const IntakeH3 = styled.h3`
     justify-content: center;
 `
 
-// export const IntakeH4 = styled.h4`
-//     font-size: 2rem;
-//     text-align: left;
-// `
-
 export const IntakeH5 = styled.h5`
     font-size: 2rem;
     text-align: left;
+`
+
+export const WaiverH5 = styled.h5`
+    font-size: 2.4rem;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const IntakeHDiv = styled.div`
@@ -183,27 +187,6 @@ export const IntakeWaiverDiv = styled.div`
 export const IntakeWaiverP = styled.p`
     font-size: 16px;
     margin-top: 20px;
-`
-export const SignatureDiv = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: white;
-`
-export const SignatureBtns = styled.button`
-    margin-top: 20px;
-    background-color: white;
-    border: none;
-`
-
-export const CanvasDiv = styled.div`
-    border-bottom: 1px solid black
-`
-
-export const Controller = styled(CanvasDiv)`
 `
 
 // Used for below submit styling:

@@ -12,7 +12,7 @@ export default function EmergencyInfo(props){
     const { changeInput, emergencyKey, formData } = props
     
     return(
-        <IntakeHDiv key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
+        <IntakeHDiv key={`emergency${emergencyKey}`}>
             <IntakeDivider>
                     <IntakeH5>
                         Emergency Contact {emergencyKey}

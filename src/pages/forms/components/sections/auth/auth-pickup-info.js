@@ -22,7 +22,7 @@ export default function AuthorizedPickup(props){
     }
 
     return (
-        <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
+        <div key={`auth${authorizedKey}`}>
             <IntakeRow>
                 <FlexColDiv>
                     <Input 
