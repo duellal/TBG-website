@@ -32,7 +32,7 @@ export default function PetHealth(props){
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
-                                    name={`{pet${petKey}_vet`} 
+                                    name={`pet${petKey}_vet`} 
                                     required 
                                     value={formData[`{pet${petKey}_vet`]}
                                 />
@@ -49,7 +49,7 @@ export default function PetHealth(props){
                                     
                                     <IntakeHealthInput 
                                     type="tel" 
-                                    name={`{pet${petKey}_vet_phone`} 
+                                    name={`pet${petKey}_vet_phone`} 
                                     placeholder="(___) ___-____"
                                     format="(###) ###-####" 
                                     mask="_"  

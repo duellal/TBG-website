@@ -151,6 +151,7 @@ export default function DigitalOwnerForm() {
         setLoading(false)
         //clears errors if there were any previously
         setError(null)
+        console.log(`Form Data at End of Form:`, formData)
 
         // let buttonTag = form.current.getElementsByTagName('button')
         // Array.from(buttonTag).forEach(element => {

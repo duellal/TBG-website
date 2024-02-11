@@ -35,12 +35,14 @@ export default function RadioQuestion(props){
             <>
                 <Input 
                     type='radio' 
+                    name={htmlFor}
                     value={answer}
                     checked={selectedOption === answer}
                     onChange={optionChange}
                 />
+
                 <IntakeLabel htmlFor={htmlFor}>
-                        {capitalizeWord(answer)}
+                    {capitalizeWord(answer)}
                 </IntakeLabel>
             </>
         )
@@ -51,17 +53,22 @@ export default function RadioQuestion(props){
         return (
             <IntakeRow>
                 <FlexColDiv>
-                    <IntakeLabel htmlFor={htmlFor}>
+                    <IntakeLabel htmlFor={`${htmlFor}_explain`}>
                         <FormAsterisk>*</FormAsterisk> Please explain
                         <IntakeMessageInput 
                             type="text" 
-                            name={htmlFor}
-                            value={formData[htmlFor]}
+                            name={`${htmlFor}_explain`}
+                            value={formData[`${htmlFor}_explain`]}
                         />
                     </IntakeLabel>
                 </FlexColDiv>
             </IntakeRow>
         )
+    }
+
+    //Removes the key/value from the formData object:
+    let removeExplain = (remove) => {
+        delete formData[remove]
     }
 
 
@@ -80,7 +87,8 @@ export default function RadioQuestion(props){
                     { 
                         selectedOption === 'yes' ?
                         explainInput()
-                        : null
+                        : 
+                        removeExplain(`${htmlFor}_explain`)
                     }
             </FlexColDiv>
         </IntakeRow>
