@@ -4,7 +4,7 @@ import React from "react";
 import RadioQuestion from "../../radio-questions";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH4, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
@@ -18,9 +18,9 @@ export default function PetHealth(props){
     return(
         <div key={`pet${petKey}Health`} id={`pet${petKey}Health`}>
             <IntakeDivider>
-                <IntakeH4>
+                <IntakeH5>
                     Pet {petKey} - {formData[`pet${petKey}_name`]}
-                </IntakeH4>
+                </IntakeH5>
 
                 {/* Vet History Section */}
                 <IntakeDivider>

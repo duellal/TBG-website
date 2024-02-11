@@ -31,24 +31,24 @@ export default function OwnerFormTabs(props){
     }
 
     let tabNamesDivs = tabNamesArr.map((title, index) => {
-        let colorState = btnIndex === index
+        let colorstate = (btnIndex === index).toString()
 
         if(index < 3){
             let row1Div = <FormTabDiv 
                 key={`${title}${index}`} 
                 id={`${title}${index}`} 
-                col={col}
-                row={row}
+                $col={col}
+                $row={row}
                 onClick={() => TabClick(index)}
                 tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 />
                 <FormTabP
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 > 
                     { title } 
                 </FormTabP>
@@ -62,18 +62,18 @@ export default function OwnerFormTabs(props){
             let row1Div = <FormTabDiv 
                 key={`${title}${index}`} 
                 id={`${title}${index}`} 
-                col={col}
-                row={row}
+                $col={col}
+                $row={row}
                 onClick={() => TabClick(index)}
                 tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 />
                 <FormTabP
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 > 
                     { title } 
                 </FormTabP>
@@ -88,18 +88,18 @@ export default function OwnerFormTabs(props){
             let row3Div = <FormTabDiv 
                 key={`${title}${index}`} 
                 id={`${title}${index}`} 
-                col={col}
-                row={row}
+                $col={col}
+                $row={row}
                 onClick={() => TabClick(index)}
                 tabIndex={0}
             >
                 <FormTabIcon 
                     icon={faPaw} 
                     size="2xl" 
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 />
                 <FormTabP
-                    colorState={colorState}
+                    $colorstate={colorstate}
                 > 
                     { title } 
                 </FormTabP>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
+import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
@@ -14,9 +14,9 @@ export default function EmergencyInfo(props){
     return(
         <IntakeHDiv key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
             <IntakeDivider>
-                    <IntakeH4>
+                    <IntakeH5>
                         Emergency Contact {emergencyKey}
-                    </IntakeH4>
+                    </IntakeH5>
             </IntakeDivider>
             <IntakeRow>
                 <FlexColDiv>

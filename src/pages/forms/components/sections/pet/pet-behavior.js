@@ -4,7 +4,7 @@ import React from "react";
 import RadioQuestion from "../../radio-questions";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH4, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { FlexColDiv } from "../../../../../styles/contact";
 
 
@@ -20,9 +20,9 @@ export default function PetBehavior(props){
     return(
         <div key={`pet${petKey}Behavior`} id={`pet${petKey}Behavior`}>
             <IntakeDivider>
-                <IntakeH4>
+                <IntakeH5>
                     Pet {petKey} - {formData[`pet${petKey}_name`]}
-                </IntakeH4>
+                </IntakeH5>
                 
                 {/* Behavior Section */}
                 <IntakeDivider>

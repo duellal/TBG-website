@@ -1,7 +1,7 @@
 import React from "react"
 
 // Styles:
-import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
+import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { FlexColDiv, Input } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
@@ -15,11 +15,11 @@ export default function OwnerInfo(props){
     return(
         <IntakeHDiv key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
             <IntakeDivider>
-                    <IntakeH4>
+                    <IntakeH5>
                         {ownerKey === 1 ? 'Primary' : 'Secondary'} Owner
                         <br/>
                         Owner {ownerKey}
-                    </IntakeH4>
+                    </IntakeH5>
             </IntakeDivider>
             
                 <IntakeRow>

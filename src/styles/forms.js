@@ -20,15 +20,16 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 width: auto;
+cursor: pointer;
 
 ${props => {
-    let { col, row } = props;
+    let { $col, $row } = props;
 
     return {
-        'grid-column-start': col,
-        'grid-column-end': col,
-        'grid-row-start': row,
-        'grid-row-end': row,
+        'grid-column-start': $col,
+        'grid-column-end': $col,
+        'grid-row-start': $row,
+        'grid-row-end': $row,
     }
     
 }}
@@ -37,8 +38,10 @@ ${props => {
 `
 
 export const FormTabIcon = styled(FontAwesomeIcon)`
+cursor: pointer; 
+
 ${props => {
-    return props.colorState ? {
+    return props.$colorstate ? {
         color: bright_red
     } : {
         color: darkGrey
@@ -47,12 +50,13 @@ ${props => {
 `
 
 export const FormTabP = styled.p`
+cursor: pointer; 
 font-size: 16px;
 text-align: left;
 margin: 6px;
 
 ${props => {
-    return props.colorState ? {
+    return props.$colorstate ? {
         color: bright_red, 
         fontWeight: 'bold',
     } : null

@@ -1,7 +1,7 @@
 import React from "react";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH4, IntakeLabel, IntakeLabelRow, IntakeRow } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk } from "../../../../../styles/forms";
 
@@ -16,9 +16,9 @@ export default function PetInfo(props){
     return(
         <div key={`pet${petKey}Info`} id={`pet${petKey}Info`}>
             <IntakeDivider>
-                <IntakeH4>
+                <IntakeH5>
                     Pet {petKey}
-                </IntakeH4>
+                </IntakeH5>
                 
                 {/* Priliminary Pet Info Section */}
                 <IntakeDivider>
