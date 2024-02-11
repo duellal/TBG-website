@@ -21,6 +21,12 @@ export default function OwnerFormTabs(props){
     let row = 1
 
     let TabClick = (index) => {
+        let valid = document.forms['new_owner_form'].reportValidity()
+
+        if(index > btnIndex && !valid){
+            return 
+        }
+
         setBtnIndex(index)
     }
 

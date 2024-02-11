@@ -49,6 +49,7 @@ export default function DigitalOwnerForm() {
     function changeInput(event){
         let { type, name, value } = event.target
 
+        //To have true/false on the formData from the checkbox
         if(type === 'checkbox'){
             if(value === "false"){
                 return editFormData({...formData, [name]: "true"})
@@ -220,7 +221,6 @@ export default function DigitalOwnerForm() {
                     ref={form}
                     autoComplete="on"
                     onSubmit={submitHandler} 
-                    // onChange={changeInput} 
                     name="new_owner_form"
                     id="new_owner_form"
                 >
