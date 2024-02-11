@@ -11,10 +11,10 @@ import PetHealth from "./pet-health"
 
 /**
  * @component The core of the pet health section.
- * @param {*} props countPets, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, countPets, btnIndex, setBtnIndex, formData
  */
 export default function PetHealthSection(props){
-        const { countPets, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
             <IntakeHDiv key={`petSection`}>
@@ -30,6 +30,7 @@ export default function PetHealthSection(props){
                             return <PetHealth
                                         petKey={index + 1}
                                         formData={formData}
+                                        changeInput={changeInput}
                                     />
                         })
                     }

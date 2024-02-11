@@ -18,10 +18,10 @@ import { FormAsterisk } from "../../../../../styles/forms.js";
 
 /**
  * @component The liability waiver section with labels + inputs
- * @param {*} props loading, btnIndex, setBtnIndex, setTabIndex
+ * @param {*} props changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData
  */
 export default function LiabilityWaiver(props){
-    const { loading, btnIndex, setBtnIndex, setTabIndex } = props
+    const { changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData } = props
 
     return (
         <>
@@ -56,9 +56,11 @@ export default function LiabilityWaiver(props){
                         </IntakeH3>
                         <IntakeWaiverP style={{margin: '0 0 10px'}}>
                             <Input 
-                            type="checkbox" name="waiver_owner_acknowledgement" 
-                            value={true}
-                            required />
+                                type="checkbox" name="waiver_owner_acknowledgement" 
+                                value={formData[`waiver_owner_acknowledgement`]}
+                                onChange={changeInput}
+                                required 
+                            />
                             {waiverAcknowledgeStatement} 
                         </IntakeWaiverP>
                     </FlexColDiv>
@@ -69,7 +71,13 @@ export default function LiabilityWaiver(props){
                         <IntakeLabel htmlFor={`owner_printed_name`}>
                             <FormAsterisk>*</FormAsterisk> Owner's Printed Name
                         </IntakeLabel>
-                        <Input type="text" name="waiver_owner_name" required />
+                        <Input 
+                            type="text"      
+                            name="waiver_owner_name" 
+                            value={formData[`waiver_owner_name`]}
+                            onChange={changeInput}
+                            required 
+                        />
                     </FlexColDiv>
                 </IntakeRow>
 

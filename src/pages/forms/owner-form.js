@@ -42,101 +42,63 @@ export default function DigitalOwnerForm() {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
+    //Next + Previous Buttons + Tab Index State:
+    const [btnIndex, setBtnIndex] = useState(0)
+
     //onChange function changeInput:
     function changeInput(event){
         let { name, value } = event.target
         editFormData({ ...formData, [name]: value})
      }
 
-    //Authorized Pickup States:
-    const [authBtn, setAuthBtn] = useState(true)
-    const [authNum, setAuthNum] = useState(1)
-    const [authorizedKey, setAuthorizedKey] = useState(2)
-    const [countAuthorized, setCountAuthorized] = useState([{}])
-
-    //Next + Previous Buttons + Tab Index State:
-    const [btnIndex, setBtnIndex] = useState(0)
-
-    //Emergency Contact States:
-    const [emergencyKey, setEmergencyKey] = useState(2)
-    const [emergencyBtn, setEmergencyBtn] = useState(true)
-    const [emergencyNum, setEmergencyNum] = useState(1)
-    const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
-
-    //Owner Info States:
-    const [ownerKey, setOwnerKey] = useState(1)
-    const [ownerBtn, setOwnerBtn] = useState(true)
-    const [ownerCountArr, setOwnerCountArr] = useState([{}])
-
     //Pet Info States:
-    const [petBtn, setPetBtn] = useState(true)
-    const [petNum, setPetNum] = useState(2)
     const [countPets, setCountPets] = useState([{}])
 
     
     //Render Components Array:
     let renderComponents = [
         <OwnerSection 
-            ownerBtn={ownerBtn}
-            setOwnerBtn={setOwnerBtn}
-            ownerKey={ownerKey}
-            setOwnerKey={setOwnerKey}
-            ownerCountArr={ownerCountArr}
-            setOwnerCountArr={setOwnerCountArr}
             btnIndex={btnIndex}
-            setBtnIndex={setBtnIndex}
+            changeInput={changeInput}
             formData={formData} 
+            setBtnIndex={setBtnIndex}
         />,
         <EmergencySection
-            emergencyBtn={emergencyBtn}
-            setEmergencyBtn={setEmergencyBtn}
-            emergencyKey={emergencyKey}
-            setEmergencyKey={setEmergencyKey}
-            emergencyNum={emergencyNum}
-            setEmergencyNum={setEmergencyNum}
             btnIndex={btnIndex}
-            setBtnIndex={setBtnIndex}
+            changeInput={changeInput}
             formData={formData} 
-            countEmergencyContacts={countEmergencyContacts}
-            setCountEmergencyContacts={setCountEmergencyContacts}
+            setBtnIndex={setBtnIndex}
         />,
         <AuthPickupSection 
-            authBtn={authBtn}
-            setAuthBtn={setAuthBtn}
-            authorizedKey={authorizedKey}
-            setAuthorizedKey={setAuthorizedKey}
-            authNum={authNum}
-            setAuthNum={setAuthNum}
             btnIndex={btnIndex}
+            changeInput={changeInput}
+            formData={formData} 
             setBtnIndex={setBtnIndex}
-            formData={formData}  
-            countAuthorized={countAuthorized}
-            setCountAuthorized={setCountAuthorized}
         />,
         <PetInfoSection
-            petBtn={petBtn} 
-            setPetBtn={setPetBtn} 
+            btnIndex={btnIndex}
+            changeInput={changeInput}
+            formData={formData} 
+            setBtnIndex={setBtnIndex}
             countPets={countPets}
             setCountPets={setCountPets}
-            petNum={petNum}
-            setPetNum={setPetNum}
-            btnIndex={btnIndex}
-            setBtnIndex={setBtnIndex}     
-            formData={formData}
         />,
         <PetBehaviorsSection
+            changeInput={changeInput}
             countPets={countPets}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
             formData={formData} 
         />,
         <PetHealthSection
+            changeInput={changeInput}
             countPets={countPets}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}  
             formData={formData}     
         />,
         <LiabilityWaiver 
+            changeInput={changeInput}
             loading={loading}
             setLoading={setLoading}
             btnIndex={btnIndex}
@@ -249,7 +211,7 @@ export default function DigitalOwnerForm() {
                     ref={form}
                     autoComplete="on"
                     onSubmit={submitHandler} 
-                    onChange={changeInput} 
+                    // onChange={changeInput} 
                     name="new_owner_form"
                     id="new_owner_form"
                 >

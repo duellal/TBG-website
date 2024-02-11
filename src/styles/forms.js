@@ -88,7 +88,7 @@ margin: 0 15px;
 width: 100%;
 
 ${props => {
-    if(props.props){
+    if(props.$auth){
         return {
             'margin': '0px'
         }

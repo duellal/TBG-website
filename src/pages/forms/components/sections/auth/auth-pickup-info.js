@@ -6,10 +6,10 @@ import { Input, FlexColDiv } from "../../../../../styles/contact";
 
 /**
  * @component label + input for authorized pickup section
- * @param {*} props authorizedKey, formData
+ * @param {*} props changeInput, authorizedKey, formData
  */
 export default function AuthorizedPickup(props){
-    const { authorizedKey, formData } = props
+    const { changeInput, authorizedKey, formData } = props
 
     const requiredBool = () => {
         let authName = document.getElementsByName(`auth${authorizedKey}_name`)
@@ -23,12 +23,13 @@ export default function AuthorizedPickup(props){
 
     return (
         <div key={`auth${authorizedKey}`} id={`auth${authorizedKey}`}>
-            <IntakeRow auth>
+            <IntakeRow>
                 <FlexColDiv>
                     <Input 
                         type="text" 
                         name={`auth${authorizedKey}_name`} 
                         value={formData[`auth${authorizedKey}_name`]}
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
                 <FlexColDiv>
@@ -36,6 +37,7 @@ export default function AuthorizedPickup(props){
                         type="text" 
                         name={`auth${authorizedKey}_relation`} 
                         value={formData[`auth${authorizedKey}_relation`]}
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
                 <FlexColDiv>
@@ -45,8 +47,9 @@ export default function AuthorizedPickup(props){
                         placeholder="(___) ___-____"
                         format="(###) ###-####" 
                         mask="_" 
-                        required={requiredBool}
+                        required={requiredBool()}
                         value={formData[`auth${authorizedKey}_phone`]}    
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
             </IntakeRow>

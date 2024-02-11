@@ -11,10 +11,10 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 /**
  * @component Pet health section labels + inputs
- * @param {*} props petKey, formData
+ * @param {*} props changeInput, petKey, formData
  */
 export default function PetHealth(props){
-    const { petKey, formData } = props
+    const { changeInput, petKey, formData } = props
     return(
         <div key={`pet${petKey}Health`} id={`pet${petKey}Health`}>
             <IntakeDivider>
@@ -35,6 +35,7 @@ export default function PetHealth(props){
                                     name={`pet${petKey}_vet`} 
                                     required 
                                     value={formData[`{pet${petKey}_vet`]}
+                                    onChange={changeInput}
                                 />
                             </FlexColDiv>
 
@@ -55,6 +56,7 @@ export default function PetHealth(props){
                                     mask="_"  
                                     required
                                     value={formData[`{pet${petKey}_vet_phone`]}
+                                    onChange={changeInput}
                                 />
                                 </IntakeHealthLabel>
                             </FlexColDiv>
@@ -65,6 +67,7 @@ export default function PetHealth(props){
                             question={`Does your pet have any food allergies?`}
                             options={['yes', 'no']}
                             formData={formData}
+                            changeInput={changeInput}
                         />
 
                         <RadioQuestion
@@ -73,6 +76,7 @@ export default function PetHealth(props){
                             example={`(ex: seizures, tumors, hot spots, etc)`}
                             options={['yes', 'no']}
                             formData={formData}
+                            changeInput={changeInput}
                         />
 
                         <RadioQuestion
@@ -80,6 +84,7 @@ export default function PetHealth(props){
                             question={`Does your pet have any past injuries that we should know about? `}
                             options={['yes', 'no']}
                             formData={formData}
+                            changeInput={changeInput}
                         />
 
                         <IntakeRow>
@@ -94,6 +99,7 @@ export default function PetHealth(props){
                                             type="text" 
                                             name={`pet${petKey}_extra_medical`}
                                             value={formData[`pet${petKey}_extra_medical`]}
+                                            onChange={changeInput}
                                         />
                                     </FlexColDiv>
                                 </IntakeRow>

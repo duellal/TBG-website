@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form.js'
@@ -11,13 +11,15 @@ import AsteriskHeader from "../../asterisk-header.js"
 
 /**
  * @component The core of the owner information section. Allows user to add up to 2 owners.
- * @param {*} props ownerBtn, setOwnerBtn, ownerKey, setOwnerKey, storedOwners, setStoredOwners, btnIndex, setBtnIndex, formData 
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData 
  */
 export default function OwnerSection(props){
-        const { ownerBtn, setOwnerBtn, ownerKey, 
-                setOwnerKey, ownerCountArr, setOwnerCountArr,
-                btnIndex, setBtnIndex, formData
-        } = props
+        const { changeInput, btnIndex, setBtnIndex, formData } = props
+
+        //Owner Info States:
+        const [ownerKey, setOwnerKey] = useState(1)
+        const [ownerBtn, setOwnerBtn] = useState(true)
+        const [ownerCountArr, setOwnerCountArr] = useState([{}])
 
         //Function to allow user to add 1 more owner:
         const addOwner = async (event) => {
@@ -30,19 +32,6 @@ export default function OwnerSection(props){
             toggleOwnerBtn();
             await setOwnerKey(ownerKey + 1)
             await setOwnerCountArr([...ownerCountArr, {}])
-        }
-
-        const deleteSecOwner = async(event) => {
-            event.preventDefault()
-    
-            let toggleOwnerBtn = () => {
-                setOwnerBtn(!ownerBtn)
-            }
-            
-            toggleOwnerBtn();
-            await setOwnerKey(ownerKey - 1)
-            ownerCountArr.pop()
-            await setOwnerCountArr([...ownerCountArr])
         }
 
         return(
@@ -60,23 +49,19 @@ export default function OwnerSection(props){
                                 return <OwnerInfo 
                                             ownerKey={index + 1} 
                                             formData={formData}
+                                            changeInput={changeInput}
                                         />
                             })    
                         } 
                     </IntakeCol>
     
                     <ButtonRow>
-                        {ownerBtn && 
-                            <FormBtn onClick={(event) => addOwner(event)}> 
-                                Add Owner 
-                            </FormBtn>
+                        {
+                            ownerBtn && 
+                                <FormBtn onClick={(event) => addOwner(event)}> 
+                                    Add Owner 
+                                </FormBtn>
                         }
-                        {/* {
-                            !ownerBtn &&
-                            <FormBtn onClick={event => deleteSecOwner(event)}>
-                                Delete Second Owner
-                            </FormBtn>
-                        } */}
                         <NextPrevBtn 
                             next
                             btnIndex={btnIndex}

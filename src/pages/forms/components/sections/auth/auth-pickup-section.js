@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 //Intake Form - Owner Styles:
 import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
@@ -12,13 +12,16 @@ import { FormExample } from "../../../../../styles/forms";
 
 /**
  * @component The core of the authorized pickup section. Allows user to add up to 5 authorized people.
- * @param {*} props authBtn, setAuthBtn, authorizedKey, setAuthorizedKey, countAuthorized, setCountAuthorized, authNum, setAuthNum, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData
  */
 export default function AuthPickupSection(props){
-        const { authBtn, setAuthBtn, authorizedKey, 
-            setAuthorizedKey, countAuthorized, setCountAuthorized,
-            authNum, setAuthNum, btnIndex, setBtnIndex, formData
-        } = props
+        const { changeInput, btnIndex, setBtnIndex, formData } = props
+
+        //Authorized Pickup States:
+        const [authBtn, setAuthBtn] = useState(true)
+        const [authNum, setAuthNum] = useState(1)
+        const [authorizedKey, setAuthorizedKey] = useState(2)
+        const [countAuthorized, setCountAuthorized] = useState([{}])
 
         //Function to allow user to add up to 3 emergency contacts:
         const authorizedOnClick = async (event) => {
@@ -59,7 +62,7 @@ export default function AuthPickupSection(props){
                     <FlexColDiv>
                         <AuthPickupLabel>
                             Phone Number 
-                            <FormExample props={true}>
+                            <FormExample $auth='true'>
                                 ex: (xxx) xxx-xxxx
                             </FormExample>
                         </AuthPickupLabel>
@@ -71,6 +74,7 @@ export default function AuthPickupSection(props){
                         return <AuthorizedPickup 
                                     authKey={index + 1} 
                                     formData={formData}
+                                    changeInput={changeInput}
                                 />
                     })    
                 } 

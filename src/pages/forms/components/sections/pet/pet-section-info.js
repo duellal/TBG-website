@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
@@ -10,12 +10,14 @@ import PetInfo from "./pet-info"
 
 /**
  * @component The core of the initial pet information section. Allows user to add up to 5 pets + adds the pets to the other 2 pet sections (behavior + health).
- * @param {*} props petBtn, setPetBtn, countPets, setCountPets, petNum, setPetNum, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData
  */
 export default function PetInfoSection(props){
-        const { petBtn, setPetBtn, countPets, setCountPets, 
-                petNum, setPetNum, btnIndex, setBtnIndex, formData
-        } = props
+        const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData } = props
+
+        //Pet Info States:
+        const [petBtn, setPetBtn] = useState(true)
+        const [petNum, setPetNum] = useState(2)
 
         //Function to allow user to add up to 5 pets:
         const petOnClick = async (event) => {
@@ -48,6 +50,7 @@ export default function PetInfoSection(props){
                             return <PetInfo
                                         petKey={index + 1}
                                         formData={formData}
+                                        changeInput={changeInput}
                                     />
                         })
                     }

@@ -6,10 +6,10 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
 /**
  * @component Emergency info section labels + inputs
- * @param {*} props - emergencyKey, formData
+ * @param {*} props - changeInput, emergencyKey, formData
  */
 export default function EmergencyInfo(props){
-    const { emergencyKey, formData } = props
+    const { changeInput, emergencyKey, formData } = props
     
     return(
         <IntakeHDiv key={`emergency${emergencyKey}`} id={`emergency${emergencyKey}`}>
@@ -28,6 +28,7 @@ export default function EmergencyInfo(props){
                         name={`emergency${emergencyKey}_name`}
                         required
                         value={formData[`emergency${emergencyKey}_name`]}
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
             </IntakeRow>
@@ -47,7 +48,8 @@ export default function EmergencyInfo(props){
                         format="(###) ###-####" 
                         mask="_"  
                         required 
-                        value={formData[`emergency${emergencyKey}_phone`]}    
+                        value={formData[`emergency${emergencyKey}_phone`]}  
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
 
@@ -60,6 +62,7 @@ export default function EmergencyInfo(props){
                         name={`emergency${emergencyKey}_relation`} 
                         required 
                         value={formData[`emergency${emergencyKey}_relation`]}
+                        onChange={changeInput}
                     />
                 </FlexColDiv>
             </IntakeRow>
@@ -77,16 +80,15 @@ export default function EmergencyInfo(props){
                                     Yes
                                 </IntakeLabel>
     
-                            <Input type="radio" name={`emergency${emergencyKey}_permission`} id={`emergency${emergencyKey}_permission_no`} value='no'/>
+                            <Input type="radio" name={`emergency${emergencyKey}_permission_no`} id={`emergency${emergencyKey}_permission`} value='no'/>
                                 <IntakeLabel>
                                     No
                                 </IntakeLabel>
                         </IntakeRow>
-                        
                     </IntakeLabelRow>
-
                 </FlexColDiv>
             </IntakeRow>
+
         </IntakeHDiv>
     )
 }

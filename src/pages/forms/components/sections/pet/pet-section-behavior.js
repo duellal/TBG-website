@@ -11,10 +11,10 @@ import PetBehavior from "./pet-behavior"
 
 /**
  * @component The core of the pet behavior section.
- * @param {*} props countPets, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, countPets, btnIndex, setBtnIndex, formData
  */
 export default function PetBehaviorsSection(props){
-        const { countPets, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, countPets, btnIndex, setBtnIndex, formData } = props
 
         return(
             <IntakeHDiv key={`petSection`}>
@@ -30,6 +30,7 @@ export default function PetBehaviorsSection(props){
                             return <PetBehavior
                                         petKey={index + 1}
                                         formData={formData}
+                                        changeInput={changeInput}
                                     />
                         })
                     }

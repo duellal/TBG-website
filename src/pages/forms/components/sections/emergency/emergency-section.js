@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
@@ -11,15 +11,17 @@ import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../..
 
 /**
  * @component the core of the emergency contact section. Allows user to add up to 3 emergency contacts
- * @param {*} props  emergencyBtn, setEmergencyBtn, emergencyKey, setEmergencyKey, emergencyNum, setEmergencyNum, btnIndex, setBtnIndex, countEmergencyContacts, setCountEmergencyContacts, formData
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData
  */
 export default function EmergencySection(props){
-        const { emergencyBtn, setEmergencyBtn, emergencyKey, 
-                setEmergencyKey,
-                emergencyNum, setEmergencyNum, btnIndex, setBtnIndex, 
-                countEmergencyContacts, setCountEmergencyContacts, formData
-        } = props
+        const { changeInput, btnIndex, setBtnIndex, formData } = props
 
+        //Emergency Contact States:
+        const [emergencyKey, setEmergencyKey] = useState(2)
+        const [emergencyBtn, setEmergencyBtn] = useState(true)
+        const [emergencyNum, setEmergencyNum] = useState(1)
+        const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
+            
         //Function to allow user to add up to 3 emergency contacts:
         const emergencyOnClick = async (event) => {
             event.preventDefault()
@@ -52,6 +54,7 @@ export default function EmergencySection(props){
                             return <EmergencyInfo 
                                         emergencyKey={index + 1} 
                                         formData={formData}
+                                        changeInput={changeInput}
                                     />
                         })    
                     } 
