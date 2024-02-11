@@ -72,6 +72,7 @@ export default function LiabilityWaiver(props){
                                 type="checkbox" 
                                 name="waiver_owner_acknowledgement" 
                                 value={formData["waiver_owner_acknowledgement"]}
+                                checked={formData['waiver_owner_acknowledgement'] === "true"}
                                 onChange={changeInput}
                                 required 
                             />
