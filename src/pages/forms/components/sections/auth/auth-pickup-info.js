@@ -14,7 +14,7 @@ export default function AuthorizedPickup(props){
     const requiredBool = () => {
         let authName = document.getElementsByName(`auth${authorizedKey}_name`)
 
-        if(authName){
+        if(authName.length > 0){
             return true
         }
 

@@ -22,7 +22,7 @@ import { CommonP, UnderlineLink } from "../../styles/common-styles";
 import { CommonH2, CommonStartDiv } from '../../styles/commonBDG'
 
 //Import Form PDF:
-import intakeForm from './waiver/TBG-Intake-Form-2024.pdf'
+import intakeForm from './TBG-Intake-Form-2024.pdf'
 
 export default function Forms(){
     let navigate = useNavigate();

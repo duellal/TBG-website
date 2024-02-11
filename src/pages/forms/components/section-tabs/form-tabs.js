@@ -24,7 +24,7 @@ export default function OwnerFormTabs(props){
         let valid = document.forms['new_owner_form'].reportValidity()
 
         if(index > btnIndex && !valid){
-            // return 
+            return 
         }
 
         setBtnIndex(index)

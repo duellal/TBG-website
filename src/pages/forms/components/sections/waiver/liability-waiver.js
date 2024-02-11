@@ -3,17 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 //Components:
+import AsteriskHeader from "../../asterisk-header.js";
 import NextPrevBtn from "../../next-section-btn";
 
 //Liability Waiver Styles:
 import { ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
-
-//Form PDF:
-import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from '../../../waiver/waiver-text.js'
-import AsteriskHeader from "../../asterisk-header.js";
 import { FormAsterisk } from "../../../../../styles/forms.js";
+
+//Waiver Info:
+import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
+
 
 
 /**

@@ -9,7 +9,7 @@ export const formTemplate = {
     owner1_address2: '',
     owner1_city: '',
     owner1_state: '',
-    owner1_zip: '',
+    owner1_zipcode: '',
     emergency1_name: '',
     emergency1_phone: '',
     emergency1_relation: '',
