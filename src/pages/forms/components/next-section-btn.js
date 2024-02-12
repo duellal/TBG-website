@@ -1,16 +1,19 @@
 import React from "react";
 
+//Functions:
+import findSection from "./btn-findSectionFunc";
+
 //Styles:
 import { FormBtn } from "../../../styles/owner-form";
 
 
 /**
  * @component Buttons for going to the previous + next sections
- * @param {*} props next, btnIndex, setBtnIndex 
+ * @param {*} props next, btnIndex, setBtnIndex, formHTML, setFormHTML, sectionId, sectionHTML
  */
 export default function NextPrevBtn(props){
     const { 
-            next, btnIndex, setBtnIndex 
+            next, btnIndex, setBtnIndex, formHTML, setFormHTML, sectionId, sectionHTML
         } = props;
 
     const SectionOnClick = (event) => {
@@ -18,33 +21,32 @@ export default function NextPrevBtn(props){
         let previous = event.target.name === 'previous'
         let valid = document.forms['new_owner_form'].reportValidity()
         
+        
         let previousSection = () => {
+            findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
             setBtnIndex(btnIndex - 1)
         }
 
         let nextSection = () => {
+            findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
             setBtnIndex(btnIndex + 1)
         }
-        /* 
-        Add back in when done with form:
-            for validity when clicking previous/next buttons 
-        */
+
         if(!valid && !previous){
             return
         }
-        else 
-        if(previous){
+        else if(previous){
             previousSection()
         }
         else{
             nextSection()
         }
+
         return window.scrollTo({
             top: 200,
             behavior: "smooth"
         })
     }
-
 
 
     return (

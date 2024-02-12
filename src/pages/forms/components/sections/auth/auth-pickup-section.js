@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 //Intake Form - Owner Styles:
 import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
@@ -12,16 +12,23 @@ import { FormExample } from "../../../../../styles/forms";
 
 /**
  * @component The core of the authorized pickup section. Allows user to add up to 5 authorized people.
- * @param {*} props changeInput, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function AuthPickupSection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML  } = props
+        let authRef = useRef(null)
+        let sectionId = 'auth_section'
+        let [sectionHTML, setSectionHTML] = useState()
 
         //Authorized Pickup States:
         const [authBtn, setAuthBtn] = useState(true)
         const [authNum, setAuthNum] = useState(1)
         const [authKey, setAuthKey] = useState(2)
         const [countAuth, setCountAuth] = useState([{}])
+
+        useEffect(() => {
+            setSectionHTML(authRef.current.outerHTML)
+        }, [sectionHTML])
 
         //Function to allow user to add up to 3 emergency contacts:
         const authOnClick = async (event) => {
@@ -41,7 +48,11 @@ export default function AuthPickupSection(props){
         }
     
         return(
-            <IntakeHDiv>
+            <IntakeHDiv 
+                key={sectionId} 
+                id={sectionId} 
+                ref={authRef}
+            >
                 <IntakeH3> 
                     Authorized People to Pickup Your Pets
                 </IntakeH3>
@@ -72,7 +83,7 @@ export default function AuthPickupSection(props){
                 {
                     countAuth.map((__, index) => {
                         return <AuthorizedPickup 
-                                    key={authKey}
+                                    key={index + 1}
                                     authKey={index + 1} 
                                     formData={formData}
                                     changeInput={changeInput}
@@ -84,6 +95,10 @@ export default function AuthPickupSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
                     
                     {
@@ -94,9 +109,13 @@ export default function AuthPickupSection(props){
                     }  
 
                     <NextPrevBtn
-                        next={true}
+                        next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
         </IntakeHDiv>

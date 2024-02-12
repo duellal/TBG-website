@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
@@ -11,16 +11,23 @@ import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../..
 
 /**
  * @component the core of the emergency contact section. Allows user to add up to 3 emergency contacts
- * @param {*} props changeInput, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function EmergencySection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
+        let emergencyRef = useRef(null)
+        let sectionId = `emergency_section`
+        let [sectionHTML, setSectionHTML] = useState()
 
         //Emergency Contact States:
         const [emergencyKey, setEmergencyKey] = useState(2)
         const [emergencyBtn, setEmergencyBtn] = useState(true)
         const [emergencyNum, setEmergencyNum] = useState(1)
         const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
+
+        useEffect(() => {
+            setSectionHTML(emergencyRef.current.outerHTML)
+        }, [sectionHTML])
             
         //Function to allow user to add up to 3 emergency contacts:
         const emergencyOnClick = async (event) => {
@@ -41,7 +48,11 @@ export default function EmergencySection(props){
         }    
     
         return(
-            <IntakeHDiv key={`emergency_section`}>
+            <IntakeHDiv 
+                key={sectionId} 
+                id={sectionId}
+                ref={emergencyRef}
+            >
                 <IntakeH3> 
                     Emergency Contact Information
                 </IntakeH3>
@@ -65,6 +76,10 @@ export default function EmergencySection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
 
                     {
@@ -78,6 +93,10 @@ export default function EmergencySection(props){
                         next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
             </IntakeHDiv>

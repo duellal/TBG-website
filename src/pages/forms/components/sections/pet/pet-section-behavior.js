@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
@@ -11,13 +11,24 @@ import PetBehavior from "./pet-behavior"
 
 /**
  * @component The core of the pet behavior section.
- * @param {*} props changeInput, countPets, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, countPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function PetBehaviorsSection(props){
-        const { changeInput, countPets, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, countPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
+        let petBehavRef = useRef(null)
+        let sectionId = 'pet_behavior_section'
+        let [sectionHTML, setSectionHTML] = useState()
+
+        useEffect(() => {
+            setSectionHTML(petBehavRef.current.outerHTML)
+        }, [sectionHTML])
 
         return(
-            <IntakeHDiv key={`pet_behavior_section`}>
+            <IntakeHDiv 
+                key={sectionId} 
+                id={sectionId}
+                ref={petBehavRef}
+            >
                 <IntakeH3> 
                     Pet Behavior Information
                 </IntakeH3>
@@ -41,12 +52,20 @@ export default function PetBehaviorsSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
 
                     <NextPrevBtn
-                        next={true}
+                        next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
             </IntakeHDiv>

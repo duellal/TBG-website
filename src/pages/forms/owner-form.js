@@ -1,15 +1,8 @@
-/* 
-Intake Form: 
-
-Make it like the Green beagle lodge with a sections + next -> submit
-Intake Form 
-*/
-
 import React, { useRef, useState } from "react";
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaw } from '@fortawesome/free-solid-svg-icons'
-// import jsPDF from "jspdf";
+import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import jsPDF from "jspdf";
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -27,11 +20,16 @@ import intakeForm from './TBG-Intake-Form-2024.pdf'
 //Form Template:
 import { formTemplate } from "./form-template.js";
 
+//Functions:
+import findSection from "./components/btn-findSectionFunc.js";
+
 //Styles:
-import { FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/owner-form.js'
+import { ButtonRow, FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/owner-form.js'
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
+import NextPrevBtn from "./components/next-section-btn.js";
+import { Rotate } from "hamburger-react";
 
 
 export default function DigitalOwnerForm() {
@@ -39,6 +37,8 @@ export default function DigitalOwnerForm() {
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
+    const [formHTML, setFormHTML] = useState([])
+    let [sendFormHTML, setSendFormHTML] = useState('')
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -64,7 +64,6 @@ export default function DigitalOwnerForm() {
     //Pet Info States:
     const [countPets, setCountPets] = useState([{}])
 
-    // console.log(`Form Data Owner-form.js:`, formData)
 
     //Render Components Array:
     let renderComponents = [
@@ -73,18 +72,25 @@ export default function DigitalOwnerForm() {
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
         />,
         <EmergencySection
             btnIndex={btnIndex}
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
         />,
         <AuthPickupSection 
             btnIndex={btnIndex}
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
+            form={form}
         />,
         <PetInfoSection
             btnIndex={btnIndex}
@@ -93,6 +99,8 @@ export default function DigitalOwnerForm() {
             setBtnIndex={setBtnIndex}
             countPets={countPets}
             setCountPets={setCountPets}
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
         />,
         <PetBehaviorsSection
             changeInput={changeInput}
@@ -100,13 +108,17 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
             formData={formData} 
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
         />,
         <PetHealthSection
             changeInput={changeInput}
             countPets={countPets}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}  
-            formData={formData}     
+            formData={formData}  
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}   
         />,
         <LiabilityWaiver 
             changeInput={changeInput}
@@ -114,17 +126,29 @@ export default function DigitalOwnerForm() {
             setLoading={setLoading}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}   
-            formData={formData}       
+            formData={formData}     
+            formHTML={formHTML}
+            setFormHTML={setFormHTML}
         />
     ]
 
+    // console.log(`Owner Form, formHTML:`, formHTML)
+
     //Form Submit:
-    const submitHandler = async event => {
+    const submitHandler = event => {
         event.preventDefault();
         setLoading(false)
         //clears errors if there were any previously
         setError(null)
+
         console.log(`Form Data at End of Form:`, formData)
+        console.log(`Form HTML?`, formHTML)
+
+        formHTML.map(section => 
+            setSendFormHTML(...sendFormHTML + `${section}`)
+        )
+
+        console.log(`Send Form HTML?`, sendFormHTML)
 
         // let buttonTag = form.current.getElementsByTagName('button')
         // Array.from(buttonTag).forEach(element => {
@@ -133,69 +157,63 @@ export default function DigitalOwnerForm() {
         //     }
         // });
 
-        // let pdf = new jsPDF({
-        //     orientation: 'p',
-        //     unit: 'px',
-        //     format: 'letter',
-        //     hotfixes: ["px_scaling"],
-        //    })
+        let pdf = new jsPDF({
+            orientation: 'p',
+            unit: 'px',
+            format: 'letter',
+            hotfixes: ["px_scaling"],
+           })
         
-        // let margin = [20, 50]
+        let margin = [20, 50]
 
-        // const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s_intake_form`
+        const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s_intake_form`
 
-        // pdf.setDocumentProperties({
-        //     title: pdfName
-        // })
+        pdf.setDocumentProperties({
+            title: pdfName
+        })
 
-        // return pdf.html(form.current, {
-        //     margin,
-        //     autoPaging: "text",
-        //     filename: pdfName,
-        //     callback: (doc) => {
-        //         const pdfUrl = doc.output('bloburl')
+        return pdf.html(sendFormHTML, {
+            margin,
+            autoPaging: "text",
+            filename: pdfName,
+            callback: (doc) => {
+                const pdfUrl = doc.output('bloburl')
 
-        //         window.open(pdfUrl)
-        //         // console.log(form.current.removeChild('button'))
-        //         let params = {
-        //             intake_form: `${pdfUrl}`,
-        //             owner1_first_name: formData.owner1_first_name,
-        //             owner1_last_name: formData.owner1_last_name,
-        //             owner1_email: formData.owner1_email,
-        //             intake_html: form.current
-        //         }
+                window.open(pdfUrl)
+
+                let params = {
+                    intake_form_pdf: `${pdfUrl}`,
+                    owner1_first_name: formData.owner1_first_name,
+                    owner1_last_name: formData.owner1_last_name,
+                    owner1_email: formData.owner1_email,
+                    intake_html: sendFormHTML,
+                    // formData: formData
+                }
         
-                // const data = {
-                //     service_id: process.env.REACT_APP_SERVICE_ID_INTAKE,
-                //     template_id: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                //     user_id: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-                //     template_params: formData
-                // };
+                const data = {
+                    serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
+                    templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                    templateParams: params,
+                    // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+                };
             
-                // emailjs.send(process.env.REACT_APP_SERVICE_ID_INTAKE,
-                //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                //     params,
-                //     process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-                // await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json',
-                //         'Accept': 'application/json',
-                //     },
-                //     body: JSON.stringify(data)
-                // })
-                //     .then((res) => {
-                //         //resets the form after the email is sent 
-                //         form.current.reset()
-                //         setLoading(false)
-                //     }).catch((error) => {
-                //         setError(error.text)
-                //     }).finally(() => {
-                //         //resets the form after the email is sent 
-                //         form.current.reset()
-                //         setLoading(false)
-                //     })
+                return emailjs.send(process.env.REACT_APP_SERVICE_ID_INTAKE,
+                process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                params)
+                    .then((res) => {
+                        //resets the form after the email is sent 
+                        form.current.reset()
+                        setLoading(false)
+                    }).catch((error) => {
+                        setError(error.text)
+                    }).finally(() => {
+                        //resets the form after the email is sent 
+                        form.current.reset()
+                        setLoading(false)
+                    })
             }
+        })
+    }
 
     return (
         <IntakeSection id="digital-intake">
@@ -224,9 +242,29 @@ export default function DigitalOwnerForm() {
                     onSubmit={submitHandler} 
                     name="new_owner_form"
                     id="new_owner_form"
+                    spellCheck={true}
                 >
                     {
                         renderComponents[btnIndex]
+                    }
+
+                    {
+                        btnIndex === 6 ? 
+                            <ButtonRow>
+                                <FormBtn 
+                                    type="submit" 
+                                    value="Send"
+                                >
+                                    Send
+                                </FormBtn>
+                                    {
+                                        loading && <Rotate>
+                                        <FontAwesomeIcon icon={faSpinner} size="2xl" />
+                                        </Rotate>
+                                    }
+
+                            </ButtonRow>
+                            : null
                     }
                 </IntakeForm>
 

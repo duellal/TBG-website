@@ -53,8 +53,8 @@ export default function PetBehavior(props){
                         />
                     
                         <RadioQuestion
-                            key={`pet${petKey}_socialized`}
-                            htmlFor={`pet${petKey}_socialized`}
+                            key={`pet${petKey}_social`}
+                            htmlFor={`pet${petKey}_social`}
                             question={`Has your pet ever socialized in a group of 6 or more pets?`}
                             options={['yes', 'no']}
                             formData={formData}

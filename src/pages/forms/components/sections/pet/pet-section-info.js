@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
@@ -10,14 +10,22 @@ import PetInfo from "./pet-info"
 
 /**
  * @component The core of the initial pet information section. Allows user to add up to 5 pets + adds the pets to the other 2 pet sections (behavior + health).
- * @param {*} props changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData
+ * @param {*} props changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function PetInfoSection(props){
-        const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData } = props
+        const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
+        let petInfoRef = useRef(null)
+        let sectionId = 'pet_info_section'
+        let [sectionHTML, setSectionHTML] = useState()
 
         //Pet Info States:
         const [petBtn, setPetBtn] = useState(true)
         const [petNum, setPetNum] = useState(2)
+
+        useEffect(() => {
+            setSectionHTML(petInfoRef.current.outerHTML)
+        }, [sectionHTML])
+
 
         //Function to allow user to add up to 5 pets:
         const petOnClick = async (event) => {
@@ -37,7 +45,11 @@ export default function PetInfoSection(props){
         }
     
         return(
-            <IntakeHDiv key={`pet_info_section`}>
+            <IntakeHDiv 
+                key={sectionId} 
+                id={sectionId} 
+                ref={petInfoRef}
+            >
                 <IntakeH3> 
                     Pet Preliminary Information
                 </IntakeH3>
@@ -61,6 +73,10 @@ export default function PetInfoSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
 
                     {
@@ -71,9 +87,13 @@ export default function PetInfoSection(props){
                     }
 
                     <NextPrevBtn
-                        next={true}
+                        next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML} 
+                        sectionId={sectionId}
+                        sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
             </IntakeHDiv>

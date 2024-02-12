@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header.js";
-import NextPrevBtn from "../../next-section-btn";
+import NextPrevBtn from "../../next-section-btn.js";
 
 //Liability Waiver Styles:
-import { ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
+import { ButtonRow, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
 import { FormAsterisk } from "../../../../../styles/forms.js";
@@ -16,17 +16,28 @@ import { FormAsterisk } from "../../../../../styles/forms.js";
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
 
 
-
 /**
  * @component The liability waiver section with labels + inputs
- * @param {*} props changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData
+ * @param {*} props changeInput, formData, btnIndex, setBtnIndex, loading, formHTML, setFormHTML
  */
 export default function LiabilityWaiver(props){
-    const { changeInput, loading, btnIndex, setBtnIndex, setTabIndex, formData } = props
+    const { changeInput, formData, btnIndex, setBtnIndex, loading, formHTML, setFormHTML } = props
+
+    let waiverRef = useRef()
+    let sectionId = `waiver_section`
+    let [sectionHTML, setSectionHTML] = useState()
+
+    useEffect(() => {
+        setSectionHTML(waiverRef.current.outerHTML)
+    }, [sectionHTML])
 
     return (
         <>
-            <IntakeHDiv key={`waiver-section`}>
+            <IntakeHDiv 
+                key={sectionId}
+                id={sectionId}
+                ref={waiverRef}
+            >
                 <IntakeH3>
                     Liability Waiver
                 </IntakeH3>
@@ -83,26 +94,18 @@ export default function LiabilityWaiver(props){
                         />
                     </FlexColDiv>
                 </IntakeRow>
-
-                {/* Form Submit Button */}
-                <ButtonRow>
-                    <NextPrevBtn 
-                        btnIndex={btnIndex}
-                        setBtnIndex={setBtnIndex}
-                        setTabIndex={setTabIndex}
-                    />
-
-                    <FormBtn type="submit" value="Send">
-                        Send
-                    </FormBtn>
-                        {
-                            loading && <Rotate>
-                            <FontAwesomeIcon icon={faSpinner} size="2xl" />
-                            </Rotate>
-                        }
-
-                </ButtonRow>
             </IntakeHDiv>
+
+            <ButtonRow>
+                <NextPrevBtn
+                    btnIndex={btnIndex}
+                    setBtnIndex={setBtnIndex}
+                    formHTML={formHTML}
+                    setFormHTML={setFormHTML} 
+                    sectionId={sectionId}
+                    sectionHTML={sectionHTML}
+                />
+            </ButtonRow>
         </>
     )
 }
