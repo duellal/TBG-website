@@ -48,57 +48,59 @@ export default function EmergencySection(props){
         }    
     
         return(
-            <IntakeHDiv 
-                key={sectionId} 
-                id={sectionId}
-                ref={emergencyRef}
-            >
-                <IntakeH3> 
-                    Emergency Contact Information
-                </IntakeH3>
+            <>
+                <IntakeHDiv 
+                    key={sectionId} 
+                    id={sectionId}
+                    ref={emergencyRef}
+                >
+                    <IntakeH3> 
+                        Emergency Contact Information
+                    </IntakeH3>
+                    
+                    <AsteriskHeader/>
                 
-                <AsteriskHeader/>
-            
-                <IntakeCol>
-                    {
-                        countEmergencyContacts.map((__, index) => {
-                            return <EmergencyInfo 
-                                        key={emergencyKey}
-                                        emergencyKey={index + 1} 
-                                        formData={formData}
-                                        changeInput={changeInput}
-                                    />
-                        })    
-                    } 
-                </IntakeCol> 
+                    <IntakeCol>
+                        {
+                            countEmergencyContacts.map((__, index) => {
+                                return <EmergencyInfo 
+                                            key={emergencyKey}
+                                            emergencyKey={index + 1} 
+                                            formData={formData}
+                                            changeInput={changeInput}
+                                        />
+                            })    
+                        } 
+                    </IntakeCol> 
+                </IntakeHDiv>
 
                 <ButtonRow>
-                    <NextPrevBtn
-                        btnIndex={btnIndex}
-                        setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
-                        sectionId={sectionId}
-                        sectionHTML={sectionHTML}
-                    />
+                        <NextPrevBtn
+                            btnIndex={btnIndex}
+                            setBtnIndex={setBtnIndex}
+                            formHTML={formHTML}
+                            setFormHTML={setFormHTML} 
+                            sectionId={sectionId}
+                            sectionHTML={sectionHTML}
+                        />
 
-                    {
-                        emergencyBtn &&
-                            <FormBtn onClick={(event) => emergencyOnClick(event)}> 
-                                Add Emergency Contact 
-                            </FormBtn>
-                    }
+                        {
+                            emergencyBtn &&
+                                <FormBtn onClick={(event) => emergencyOnClick(event)}> 
+                                    Add Emergency Contact 
+                                </FormBtn>
+                        }
 
-                    <NextPrevBtn
-                        next
-                        btnIndex={btnIndex}
-                        setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
-                        sectionId={sectionId}
-                        sectionHTML={sectionHTML}
-                    />
+                        <NextPrevBtn
+                            next
+                            btnIndex={btnIndex}
+                            setBtnIndex={setBtnIndex}
+                            formHTML={formHTML}
+                            setFormHTML={setFormHTML} 
+                            sectionId={sectionId}
+                            sectionHTML={sectionHTML}
+                        />
                 </ButtonRow>
-            </IntakeHDiv>
+            </>
         )
 }

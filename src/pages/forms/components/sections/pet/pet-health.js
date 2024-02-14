@@ -4,7 +4,7 @@ import React from "react";
 import RadioQuestion from "../../radio-questions";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH5, IntakeHealthInput, IntakeHealthLabel, IntakeLabel, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeMessageInput, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
@@ -35,31 +35,31 @@ export default function PetHealth(props){
                                     type="text" 
                                     name={`pet${petKey}_vet`} 
                                     required 
-                                    value={formData[`{pet${petKey}_vet`]}
+                                    value={formData[`pet${petKey}_vet`]}
                                     onChange={changeInput}
                                 />
                             </FlexColDiv>
 
                             <FlexColDiv>
-                                <IntakeHealthLabel htmlFor={`pet${petKey}_vet_phone`}>
+                                <IntakeLabel htmlFor={`pet${petKey}_vet_phone`}>
                                     <FormAsterisk>*</FormAsterisk>      
                                      Vet Phone Number 
                                     
                                     <FormExample>
                                         ex: (xxx) xxx-xxxx
                                     </FormExample>
+                                </IntakeLabel>
                                     
-                                    <IntakeHealthInput 
+                                <PhoneInput 
                                     type="tel" 
                                     name={`pet${petKey}_vet_phone`} 
                                     placeholder="(___) ___-____"
                                     format="(###) ###-####" 
                                     mask="_"  
                                     required
-                                    value={formData[`{pet${petKey}_vet_phone`]}
+                                    value={formData[`pet${petKey}_vet_phone`]}
                                     onChange={changeInput}
                                 />
-                                </IntakeHealthLabel>
                             </FlexColDiv>
                         </IntakeRow>
 

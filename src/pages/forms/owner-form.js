@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
-import emailjs from '@emailjs/browser'
+import emailjs, { sendForm } from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -24,11 +25,10 @@ import { formTemplate } from "./form-template.js";
 import findSection from "./components/btn-findSectionFunc.js";
 
 //Styles:
-import { ButtonRow, FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection } from '../../styles/owner-form.js'
+import { ButtonRow, FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection, SendBtn } from '../../styles/owner-form.js'
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
-import NextPrevBtn from "./components/next-section-btn.js";
 import { Rotate } from "hamburger-react";
 
 
@@ -38,7 +38,7 @@ export default function DigitalOwnerForm() {
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
     const [formHTML, setFormHTML] = useState([])
-    let [sendFormHTML, setSendFormHTML] = useState('')
+    let [sendFormHTML, setSendFormHTML] = useState('<div><h1>New Client Form</h1>')
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -64,8 +64,7 @@ export default function DigitalOwnerForm() {
     //Pet Info States:
     const [countPets, setCountPets] = useState([{}])
 
-
-    //Render Components Array:
+    //Components Array for Rendering on a particular btnIndex:
     let renderComponents = [
         <OwnerSection 
             btnIndex={btnIndex}
@@ -132,87 +131,123 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-    // console.log(`Owner Form, formHTML:`, formHTML)
+    console.log(`FormHTML?`, formHTML)
 
     //Form Submit:
-    const submitHandler = event => {
+    const submitHandler = async event => {
         event.preventDefault();
         setLoading(false)
         //clears errors if there were any previously
         setError(null)
 
-        console.log(`Form Data at End of Form:`, formData)
-        console.log(`Form HTML?`, formHTML)
 
-        formHTML.map(section => 
-            setSendFormHTML(...sendFormHTML + `${section}`)
-        )
-
+        console.log(`SubmitHandler FormHTML?`, formHTML)
+        console.log(`HTML size in KB:`, sendFormHTML.length/1024)
         console.log(`Send Form HTML?`, sendFormHTML)
 
-        // let buttonTag = form.current.getElementsByTagName('button')
-        // Array.from(buttonTag).forEach(element => {
-        //     if(element.parentNode){
-        //         element.parentNode.removeChild(element)
-        //     }
-        // });
-
         let pdf = new jsPDF({
-            orientation: 'p',
-            unit: 'px',
-            format: 'letter',
-            hotfixes: ["px_scaling"],
-           })
-        
+                orientation: 'p',
+                unit: 'px',
+                format: 'letter',
+                hotfixes: ["px_scaling"],
+               })
+            
         let margin = [20, 50]
-
+    
         const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s_intake_form`
-
+    
         pdf.setDocumentProperties({
             title: pdfName
         })
+        
+       
+       
+    //    formHTML.map(section => {
+    //     console.log(section)
+    //         let pdfForm = html2canvas(section)
+    //             .then(canvas => {
+    //                 console.log(`canvas:`, canvas)
+    //                 const formImg = canvas.toDataURL('image/png')
 
-        return pdf.html(sendFormHTML, {
+    //                 console.log(`formImg:`, formImg)
+
+    //                 pdf.addImage(formImg, 'JPEG', 0, 0,
+    //                 //  {
+    //                 //     // autoComplete: 'text',
+    //                 //     callback: (doc) => {
+    //                 //         let pdfUrl = doc.output('bloburl')
+        
+    //                 //         console.log(pdfUrl)
+        
+    //                 //         return window.open(pdfUrl)
+    //                 //     }
+    //                 // }
+    //                 )
+    //             })
+
+        //     return pdfForm
+        // })
+
+        pdf.html(sendFormHTML, {
             margin,
             autoPaging: "text",
             filename: pdfName,
             callback: (doc) => {
-                const pdfUrl = doc.output('bloburl')
+                let pdfUrl = doc.output('bloburl')
 
-                window.open(pdfUrl)
+                console.log(pdfUrl)
 
-                let params = {
-                    intake_form_pdf: `${pdfUrl}`,
-                    owner1_first_name: formData.owner1_first_name,
-                    owner1_last_name: formData.owner1_last_name,
-                    owner1_email: formData.owner1_email,
-                    intake_html: sendFormHTML,
-                    // formData: formData
-                }
+                return window.open(pdfUrl)
+
+                // let params = {
+                //     form_pdf: pdfUrl,
+                //     owner1_first_name: formData.owner1_first_name,
+                //     owner1_last_name: formData.owner1_last_name,
+                //     owner1_email: formData.owner1_email,
+                //     html: sendFormHTML,
+                //     // formData: formData
+                // }
         
-                const data = {
-                    serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
-                    templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                    templateParams: params,
-                    // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-                };
+                // const data = {
+                //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
+                //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                //     templateParams: params,
+                //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+                // };
             
-                return emailjs.send(process.env.REACT_APP_SERVICE_ID_INTAKE,
-                process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                params)
-                    .then((res) => {
-                        //resets the form after the email is sent 
-                        form.current.reset()
-                        setLoading(false)
-                    }).catch((error) => {
-                        setError(error.text)
-                    }).finally(() => {
-                        //resets the form after the email is sent 
-                        form.current.reset()
-                        setLoading(false)
-                    })
+                // return emailjs.send(
+                //     process.env.REACT_APP_SERVICE_ID_INTAKE,
+                //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+                //     params, 
+                //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
+                //     )
+                //     .then((res) => {
+                //         //resets the form after the email is sent 
+                //         form.current.reset()
+                //         setLoading(false)
+                //     }).catch((error) => {
+                //         setError(error.text)
+                //     }).finally(() => {
+                //         //resets the form after the email is sent 
+                //         form.current.reset()
+                //         setLoading(false)
+                //     })
             }
         })
+    }
+
+    let sendBtnHandleClick = async () => {
+        //Converts array to string
+            //Make the formHTML a string instead of an array after pdf works
+        formHTML.map((section, i) => {
+            if(typeof section !== 'string'){
+                return setSendFormHTML(html => {return html + section})
+            }
+                
+            return setSendFormHTML(html => {return html + section})
+        })
+
+        return await findSection(document.getElementById('waiver_section').outerHTML.concat('</div>'), formHTML, setFormHTML, btnIndex, 'waiver_section')
     }
 
     return (
@@ -247,28 +282,7 @@ export default function DigitalOwnerForm() {
                     {
                         renderComponents[btnIndex]
                     }
-
-                    {
-                        btnIndex === 6 ? 
-                            <ButtonRow>
-                                <FormBtn 
-                                    type="submit" 
-                                    value="Send"
-                                >
-                                    Send
-                                </FormBtn>
-                                    {
-                                        loading && <Rotate>
-                                        <FontAwesomeIcon icon={faSpinner} size="2xl" />
-                                        </Rotate>
-                                    }
-
-                            </ButtonRow>
-                            : null
-                    }
-                </IntakeForm>
-
-                {/* Form Error on Submit */}
+            {/* Form Error on Submit */}
                 {error && (
                     <div>
                         <ErrorText>
@@ -283,6 +297,26 @@ export default function DigitalOwnerForm() {
                         </ErrorText>
                     </div>
                 )}
+                    {
+                        btnIndex === 6 ? 
+                            <ButtonRow>
+                                <SendBtn 
+                                    type="submit" 
+                                    value="Send"
+                                    onClick={async () => await sendBtnHandleClick()}
+                                >
+                                    Send
+                                </SendBtn>
+                                    {
+                                        loading && <Rotate>
+                                        <FontAwesomeIcon icon={faSpinner} size="2xl" />
+                                        </Rotate>
+                                    }
+
+                            </ButtonRow>
+                            : null
+                    }
+                </IntakeForm>
             </IntakeCard>
 
             {/* New Client Form PDF Section */}

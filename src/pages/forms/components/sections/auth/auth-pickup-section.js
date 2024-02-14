@@ -48,76 +48,78 @@ export default function AuthPickupSection(props){
         }
     
         return(
-            <IntakeHDiv 
-                key={sectionId} 
-                id={sectionId} 
-                ref={authRef}
-            >
-                <IntakeH3> 
-                    Authorized People to Pickup Your Pets
-                </IntakeH3>
+           <>
+                <IntakeHDiv 
+                    key={sectionId} 
+                    id={sectionId} 
+                    ref={authRef}
+                >
+                    <IntakeH3> 
+                        Authorized People to Pickup Your Pets
+                    </IntakeH3>
 
-                <AsteriskHeader/>
+                    <AsteriskHeader/>
 
-                <IntakeRow>
-                    <FlexColDiv>
-                        <AuthPickupLabel>
-                            First + Last Name
-                        </AuthPickupLabel>
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <AuthPickupLabel>
-                            Relationship
-                        </AuthPickupLabel>
-                    </FlexColDiv>
-                    <FlexColDiv>
-                        <AuthPickupLabel>
-                            Phone Number 
-                            <FormExample $auth='true'>
-                                ex: (xxx) xxx-xxxx
-                            </FormExample>
-                        </AuthPickupLabel>
-                    </FlexColDiv>
-                </IntakeRow>
+                    <IntakeRow>
+                        <FlexColDiv>
+                            <AuthPickupLabel>
+                                First + Last Name
+                            </AuthPickupLabel>
+                        </FlexColDiv>
+                        <FlexColDiv>
+                            <AuthPickupLabel>
+                                Relationship
+                            </AuthPickupLabel>
+                        </FlexColDiv>
+                        <FlexColDiv>
+                            <AuthPickupLabel>
+                                Phone Number 
+                                <FormExample $auth='true'>
+                                    ex: (xxx) xxx-xxxx
+                                </FormExample>
+                            </AuthPickupLabel>
+                        </FlexColDiv>
+                    </IntakeRow>
+                            
+                    {
+                        countAuth.map((__, index) => {
+                            return <AuthorizedPickup 
+                                        key={index + 1}
+                                        authKey={index + 1} 
+                                        formData={formData}
+                                        changeInput={changeInput}
+                                    />
+                        })    
+                    } 
+            </IntakeHDiv>
+
+            <ButtonRow>
+                <NextPrevBtn
+                    btnIndex={btnIndex}
+                    setBtnIndex={setBtnIndex}
+                    formHTML={formHTML}
+                    setFormHTML={setFormHTML} 
+                    sectionId={sectionId}
+                    sectionHTML={sectionHTML}
+                />
                         
                 {
-                    countAuth.map((__, index) => {
-                        return <AuthorizedPickup 
-                                    key={index + 1}
-                                    authKey={index + 1} 
-                                    formData={formData}
-                                    changeInput={changeInput}
-                                />
-                    })    
-                } 
-
-                <ButtonRow>
-                    <NextPrevBtn
-                        btnIndex={btnIndex}
-                        setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
-                        sectionId={sectionId}
-                        sectionHTML={sectionHTML}
-                    />
-                    
-                    {
                     authBtn &&
                         <FormBtn onClick={(event) => authOnClick(event)}> 
-                            Add Authorized Person
+                             Add Authorized Person
                         </FormBtn>
-                    }  
+                }  
 
-                    <NextPrevBtn
-                        next
-                        btnIndex={btnIndex}
-                        setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
-                        sectionId={sectionId}
-                        sectionHTML={sectionHTML}
-                    />
-                </ButtonRow>
-        </IntakeHDiv>
+                <NextPrevBtn
+                    next
+                    btnIndex={btnIndex}
+                    setBtnIndex={setBtnIndex}
+                    formHTML={formHTML}
+                    setFormHTML={setFormHTML} 
+                    sectionId={sectionId}
+                    sectionHTML={sectionHTML}
+                />
+            </ButtonRow>
+        </>
     )
 }

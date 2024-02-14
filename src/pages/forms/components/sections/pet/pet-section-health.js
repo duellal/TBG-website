@@ -24,29 +24,31 @@ export default function PetHealthSection(props){
         }, [sectionHTML])
 
         return(
-            <IntakeHDiv 
-                key={sectionId} 
-                id={sectionId}
-                ref={petHealthRef}
-            >
-                <IntakeH3> 
-                    Pet Health Information
-                </IntakeH3>
+            <>
+                <IntakeHDiv 
+                    key={sectionId} 
+                    id={sectionId}
+                    ref={petHealthRef}
+                >
+                    <IntakeH3> 
+                        Pet Health Information
+                    </IntakeH3>
 
-                <AsteriskHeader/>
+                    <AsteriskHeader/>
 
-                <IntakeCol>
-                {
-                        countPets.map((__, index) => {
-                            return <PetHealth
-                                        key={index + 1}
-                                        petKey={index + 1}
-                                        formData={formData}
-                                        changeInput={changeInput}   
-                                    />
-                        })
-                    }
-                </IntakeCol>
+                    <IntakeCol>
+                    {
+                            countPets.map((__, index) => {
+                                return <PetHealth
+                                            key={index + 1}
+                                            petKey={index + 1}
+                                            formData={formData}
+                                            changeInput={changeInput}   
+                                        />
+                            })
+                        }
+                    </IntakeCol>
+                </IntakeHDiv>
 
                 <ButtonRow>
                     <NextPrevBtn
@@ -68,6 +70,6 @@ export default function PetHealthSection(props){
                         sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
-            </IntakeHDiv>
+            </>
         )
 }

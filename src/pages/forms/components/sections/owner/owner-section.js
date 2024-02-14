@@ -42,49 +42,51 @@ export default function OwnerSection(props){
         }
 
         return (
-            <IntakeHDiv 
-                key={sectionId} 
-                id={sectionId}
-                ref={ownerRef}
-            >
-                <IntakeDivider>
-                    <IntakeH3> 
-                        Owner Information 
-                    </IntakeH3>
-    
-                    <AsteriskHeader/>
-                        
-                    <IntakeCol>
-                       {
-                            ownerCountArr.map((__, index) => {
-                                return <OwnerInfo 
-                                            key={index + 1}
-                                            ownerKey={index + 1} 
-                                            formData={formData}
-                                            changeInput={changeInput}
-                                        />
-                            })    
-                        } 
-                    </IntakeCol>
-    
-                    <ButtonRow>
+            <>
+                <IntakeHDiv 
+                    key={sectionId} 
+                    id={sectionId}
+                    ref={ownerRef}
+                >
+                    <IntakeDivider>
+                        <IntakeH3> 
+                            Owner Information 
+                        </IntakeH3>
+        
+                        <AsteriskHeader/>
+                            
+                        <IntakeCol>
                         {
-                            ownerBtn && 
-                                <FormBtn onClick={(event) => addOwner(event)}> 
-                                    Add Owner 
-                                </FormBtn>
-                        }
-                        <NextPrevBtn 
-                            next
-                            btnIndex={btnIndex}
-                            setBtnIndex={setBtnIndex}     
-                            formHTML={formHTML}
-                            setFormHTML={setFormHTML}   
-                            sectionId={sectionId}             
-                            sectionHTML={sectionHTML}
-                        />
-                    </ButtonRow>  
-                </IntakeDivider> 
-            </IntakeHDiv>
+                                ownerCountArr.map((__, index) => {
+                                    return <OwnerInfo 
+                                                key={index + 1}
+                                                ownerKey={index + 1} 
+                                                formData={formData}
+                                                changeInput={changeInput}
+                                            />
+                                })    
+                            } 
+                        </IntakeCol> 
+                    </IntakeDivider> 
+                </IntakeHDiv>
+
+                <ButtonRow>
+                    {
+                        ownerBtn && 
+                            <FormBtn onClick={(event) => addOwner(event)}> 
+                                Add Owner 
+                            </FormBtn>
+                    }
+                    <NextPrevBtn 
+                        next
+                        btnIndex={btnIndex}
+                        setBtnIndex={setBtnIndex}     
+                        formHTML={formHTML}
+                        setFormHTML={setFormHTML}   
+                        sectionId={sectionId}             
+                        sectionHTML={sectionHTML}
+                    />
+                </ButtonRow> 
+            </>
         )
 }

@@ -35,20 +35,20 @@ export default function PetInfo(props){
                                     value={formData[`pet${petKey}_name`]}
                                     onChange={changeInput}
                                 />
-                        
                             </FlexColDiv>
-                                <FlexColDiv>
-                                    <IntakeLabel htmlFor={`pet${petKey}_species`}>
-                                        <FormAsterisk>*</FormAsterisk> Species
-                                    </IntakeLabel>
-                                    <Input 
-                                        type="text" 
-                                        name={`pet${petKey}_species`} 
-                                        required 
-                                        value={formData[`pet${petKey}_species`]}
-                                        onChange={changeInput}
-                                    />
-                                </FlexColDiv>
+
+                            <FlexColDiv>
+                                <IntakeLabel htmlFor={`pet${petKey}_species`}>
+                                    <FormAsterisk>*</FormAsterisk> Species
+                                </IntakeLabel>
+                                <Input 
+                                    type="text" 
+                                    name={`pet${petKey}_species`} 
+                                    required 
+                                    value={formData[`pet${petKey}_species`]}
+                                    onChange={changeInput}
+                                />
+                            </FlexColDiv>
                         </IntakeRow>
                         <IntakeRow>
                             <FlexColDiv>

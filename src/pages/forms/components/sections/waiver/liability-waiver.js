@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header.js";
@@ -9,7 +7,7 @@ import NextPrevBtn from "../../next-section-btn.js";
 //Liability Waiver Styles:
 import { ButtonRow, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
-import { Input, FlexColDiv, Rotate } from "../../../../../styles/contact";
+import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk } from "../../../../../styles/forms.js";
 
 //Waiver Info:
@@ -21,14 +19,14 @@ import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiv
  * @param {*} props changeInput, formData, btnIndex, setBtnIndex, loading, formHTML, setFormHTML
  */
 export default function LiabilityWaiver(props){
-    const { changeInput, formData, btnIndex, setBtnIndex, loading, formHTML, setFormHTML } = props
+    const { changeInput, formData, btnIndex, setBtnIndex, formHTML, setFormHTML } = props
 
     let waiverRef = useRef()
     let sectionId = `waiver_section`
     let [sectionHTML, setSectionHTML] = useState()
 
     useEffect(() => {
-        setSectionHTML(waiverRef.current.outerHTML)
+        setSectionHTML(waiverRef.current.outerHTML.outerHTML)
     }, [sectionHTML])
 
     return (

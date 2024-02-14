@@ -7,7 +7,7 @@ import Website from './Website';
 function RootPage() {
   return (
     <>
-      <RouterProvider router={router}>
+      <RouterProvider router={router} id="root">
         <Website />
       </RouterProvider>
     </>

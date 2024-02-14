@@ -85,13 +85,6 @@ export const IntakeHealthLabel = styled.label`
     // border: 1px solid orange;
 `
 
-export const IntakeHealthInput = styled(PatternFormat)`
-    font-size: 15px;
-    text-align: left;
-    width: 70%;
-    margin: 6px;
-`
-
 export const FormBtn = styled.button`
     margin: 40px 15px;
     padding: 5px 10px;
@@ -101,6 +94,10 @@ export const FormBtn = styled.button`
     border: 1px solid ${bright_red};
     box-shadow: 0 0 8px 1px black;
     color: white;
+`
+
+export const SendBtn = styled(FormBtn)`
+// margin-top: 0;
 `
 
 export const IntakeLink = styled.a`
