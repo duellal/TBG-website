@@ -2,8 +2,11 @@ import React from "react"
 
 // Styles:
 import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
-import { FlexColDiv, Input } from "../../../../../styles/contact";
+import { FlexColDiv, Input, OptionInput, SelectInput } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+
+//Variables:
+import { ownerReferral } from "./owner-referArr";
 
 /**
  * @component owner info section labels + inputs

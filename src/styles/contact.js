@@ -47,6 +47,16 @@ export const Input = styled.input`
     }
 `
 
+export const SelectInput = styled.select`
+font-size: 15px;
+margin: 6px 6px 6px 12px;
+`
+
+export const OptionInput = styled.option`
+font-family: Georgia, Times, "Times New Roman";
+font-size: 15px;
+`
+
 export const MessageInput = styled.textarea`
     font-size: 15px;
     padding: 10px;

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs, { sendForm } from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import ReactPDF, { usePDF } from '@react-pdf/renderer';
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -17,6 +17,7 @@ import PetHealthSection from "./components/sections/pet/pet-section-health.js";
 
 //Form PDF:
 import intakeForm from './TBG-Intake-Form-2024.pdf'
+import PdfDoc from "./components/make-pdf/new-owner-pdf.js";
 
 //Form Template:
 import { formTemplate } from "./form-template.js";
@@ -38,7 +39,8 @@ export default function DigitalOwnerForm() {
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
     const [formHTML, setFormHTML] = useState([])
-    let [sendFormHTML, setSendFormHTML] = useState('<div><h1>New Client Form</h1>')
+    const [sendFormHTML, setSendFormHTML] = useState('<div><h1>New Client Form</h1>')
+    const [pdfInstance, updatePdfInstance] = usePDF({document: <PdfDoc/>})
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -48,6 +50,7 @@ export default function DigitalOwnerForm() {
     //onChange function changeInput:
     function changeInput(event){
         let { type, name, value } = event.target
+        console.log(`name: value`, `${name}: ${value}`, type)
 
         //To have true/false on the formData from the checkbox
         if(type === 'checkbox'){
@@ -63,6 +66,12 @@ export default function DigitalOwnerForm() {
 
     //Pet Info States:
     const [countPets, setCountPets] = useState([{}])
+
+    // useEffect(()=> {
+    //     const ReactPdf = async () => {
+    //         const module = await import()
+    //     }
+    // }, [])
 
     //Components Array for Rendering on a particular btnIndex:
     let renderComponents = [
@@ -131,7 +140,8 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-    console.log(`FormHTML?`, formHTML)
+    // console.log(`FormHTML?`, formHTML)
+    console.log(formData)
 
     //Form Submit:
     const submitHandler = async event => {
@@ -140,10 +150,9 @@ export default function DigitalOwnerForm() {
         //clears errors if there were any previously
         setError(null)
 
-
-        console.log(`SubmitHandler FormHTML?`, formHTML)
-        console.log(`HTML size in KB:`, sendFormHTML.length/1024)
-        console.log(`Send Form HTML?`, sendFormHTML)
+        console.log(`SubmitHandler FormHTML?`, await formHTML)
+        // console.log(`HTML size in KB:`, sendFormHTML.length/1024)
+        // console.log(`Send Form HTML?`, sendFormHTML)
 
         let pdf = new jsPDF({
                 orientation: 'p',
@@ -152,7 +161,7 @@ export default function DigitalOwnerForm() {
                 hotfixes: ["px_scaling"],
                })
             
-        let margin = [20, 50]
+        // let margin = [20, 50]
     
         const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s_intake_form`
     
@@ -161,93 +170,90 @@ export default function DigitalOwnerForm() {
         })
         
        
-       
-    //    formHTML.map(section => {
-    //     console.log(section)
-    //         let pdfForm = html2canvas(section)
-    //             .then(canvas => {
-    //                 console.log(`canvas:`, canvas)
-    //                 const formImg = canvas.toDataURL('image/png')
-
-    //                 console.log(`formImg:`, formImg)
-
-    //                 pdf.addImage(formImg, 'JPEG', 0, 0,
-    //                 //  {
-    //                 //     // autoComplete: 'text',
-    //                 //     callback: (doc) => {
-    //                 //         let pdfUrl = doc.output('bloburl')
-        
-    //                 //         console.log(pdfUrl)
-        
-    //                 //         return window.open(pdfUrl)
-    //                 //     }
-    //                 // }
-    //                 )
-    //             })
-
-        //     return pdfForm
-        // })
-
-        pdf.html(sendFormHTML, {
-            margin,
-            autoPaging: "text",
-            filename: pdfName,
-            callback: (doc) => {
-                let pdfUrl = doc.output('bloburl')
-
-                console.log(pdfUrl)
-
-                return window.open(pdfUrl)
-
-                // let params = {
-                //     form_pdf: pdfUrl,
-                //     owner1_first_name: formData.owner1_first_name,
-                //     owner1_last_name: formData.owner1_last_name,
-                //     owner1_email: formData.owner1_email,
-                //     html: sendFormHTML,
-                //     // formData: formData
-                // }
-        
-                // const data = {
-                //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
-                //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                //     templateParams: params,
-                //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-                // };
-            
-                // return emailjs.send(
-                //     process.env.REACT_APP_SERVICE_ID_INTAKE,
-                //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-                //     params, 
-                //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
-                //     )
-                //     .then((res) => {
-                //         //resets the form after the email is sent 
-                //         form.current.reset()
-                //         setLoading(false)
-                //     }).catch((error) => {
-                //         setError(error.text)
-                //     }).finally(() => {
-                //         //resets the form after the email is sent 
-                //         form.current.reset()
-                //         setLoading(false)
-                //     })
+        formHTML.map((elem, index) => {
+            if(index > 0){
+                pdf.insertPage({insetPage: index - 1})
             }
+            
+            pdf.addImage({
+                imageData: elem.imgData, 
+                format: 'JPEG', 
+                x: 0, 
+                y: 0, 
+                alias: `${elem.sectionId}_${index}`,
+            })
+
+            return elem
         })
+        console.log(pdfInstance.url)
+
+        return (
+            window.open(pdfInstance.url)
+        )
+        // console.log(pdf)
+
+        // pdf.html(sendFormHTML, {
+        //     margin,
+        //     autoPaging: "text",
+        //     filename: pdfName,
+        //     callback: (doc) => {
+        //         let pdfUrl = doc.output('bloburl')
+
+        //         console.log(pdfUrl)
+
+        //         return window.open(pdfUrl)
+
+        //         // let params = {
+        //         //     form_pdf: pdfUrl,
+        //         //     owner1_first_name: formData.owner1_first_name,
+        //         //     owner1_last_name: formData.owner1_last_name,
+        //         //     owner1_email: formData.owner1_email,
+        //         //     html: sendFormHTML,
+        //         //     // formData: formData
+        //         // }
+        
+        //         // const data = {
+        //         //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
+        //         //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+        //         //     templateParams: params,
+        //         //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+        //         // };
+            
+        //         // return emailjs.send(
+        //         //     process.env.REACT_APP_SERVICE_ID_INTAKE,
+        //         //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+        //         //     params, 
+        //         //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
+        //         //     )
+        //         //     .then((res) => {
+        //         //         //resets the form after the email is sent 
+        //         //         form.current.reset()
+        //         //         setLoading(false)
+        //         //     }).catch((error) => {
+        //         //         setError(error.text)
+        //         //     }).finally(() => {
+        //         //         //resets the form after the email is sent 
+        //         //         form.current.reset()
+        //         //         setLoading(false)
+        //         //     })
+        //     }
+        // })
     }
 
-    let sendBtnHandleClick = async () => {
+    let sendBtnHandleClick = () => {
+        return findSection(document.getElementById('waiver_section').outerHTML, formHTML, setFormHTML, btnIndex, 'waiver_section')
         //Converts array to string
             //Make the formHTML a string instead of an array after pdf works
-        formHTML.map((section, i) => {
-            if(typeof section !== 'string'){
-                return setSendFormHTML(html => {return html + section})
-            }
-                
-            return setSendFormHTML(html => {return html + section})
-        })
+        // formHTML.map((section, i) => {
 
-        return await findSection(document.getElementById('waiver_section').outerHTML.concat('</div>'), formHTML, setFormHTML, btnIndex, 'waiver_section')
+        //     if(typeof section !== 'string'){
+        //         return setSendFormHTML(html => {return html + section.html})
+        //     }
+                
+        //     return setSendFormHTML(html => {return html + section.html})
+        // })
+
+        // return await findSection(document.getElementById('waiver_section').outerHTML.concat('</div>'), formHTML, setFormHTML, btnIndex, 'waiver_section')
     }
 
     return (

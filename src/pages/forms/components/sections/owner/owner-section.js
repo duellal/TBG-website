@@ -1,12 +1,17 @@
 import React, { useEffect, useRef, useState } from "react"
 
-//Intake Form - Owner Styles:
-import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form.js'
-
 //Components:
 import OwnerInfo from './owner-info.js'
 import NextPrevBtn from "../../next-section-btn.js"
+
+//Intake Form - Owner Styles:
+import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../../../styles/owner-form.js'
 import AsteriskHeader from "../../asterisk-header.js"
+import { FlexColDiv, OptionInput, SelectInput } from "../../../../../styles/contact.js"
+import { FormAsterisk } from "../../../../../styles/forms.js"
+
+//Variables:
+import { ownerReferral } from "./owner-referArr.js"
 
 
 /**
@@ -69,6 +74,36 @@ export default function OwnerSection(props){
                         </IntakeCol> 
                     </IntakeDivider> 
                 </IntakeHDiv>
+
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeLabel>
+                            <FormAsterisk>*</FormAsterisk> How did you hear about us?
+                        </IntakeLabel>
+                        <SelectInput
+                            value={formData['referred_by']}
+                            name="referred_by"
+                            onChange={changeInput}
+                            required
+                        >
+                            <OptionInput 
+                                value=''
+                            >
+                                Select an option
+                            </OptionInput>
+                            {
+                                ownerReferral.map((item, index) =>
+                                    <OptionInput 
+                                        key={`referral_${index}`} 
+                                        value={item}
+                                    >
+                                        {item}
+                                    </OptionInput> 
+                                )
+                            }
+                        </SelectInput>
+                    </FlexColDiv>
+                </IntakeRow>
 
                 <ButtonRow>
                     {
