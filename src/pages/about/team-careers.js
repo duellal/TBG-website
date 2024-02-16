@@ -44,7 +44,7 @@ export default function TeamCareers(){
                     <TeamBioSection>
                         <TeamBioText>
                             <p>
-                                Raising or, cheep in plows. In the straw rain barrels. Apples ducks straw, quail a ostriches donkey, hay hook cucumbers. Prairie dogs raccoons robins rats. Blue berries pigeons buzz and bean prairie dogs nails at est. Ewes mushrooms zucchini in forage Harvester at sheep with tractor. Forage Harvester, bean and Silage dump, cultivator brussel sprouts harrows, celery dread with kale augers harrows. bull bowels cat chicken cow, calf donkey duck. Veterinarian at Seeder eggs with watermelon ostriches. Forag.
+                                Starting as a kennel technician back in 2019, I’ve been able to see and be a part of the development and growth of The Biscuit Garden. This is truly such a fun and rewarding business to manage and I truly appreciate the connections we make with our clients on a daily basis, both human and pet! I love being a part of this team and not only creating days of fun and excitement for the pets we see every day, but also being a place they are comfortable and content to stay at while their best human friends are away.
                             </p>
                         </TeamBioText>
 
