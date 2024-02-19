@@ -13,7 +13,7 @@ Font.register({family: "Roboto", fonts: [
 export const styles = StyleSheet.create({
     page: {
         display: 'flex',
-        paddingTop: 20,
+        paddingTop: '40px',
         paddingBottom: 65,
         paddingHorizontal: 35,
         fontFamily: 'Roboto',
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     header_logo: {
-        marginBottom: '20px',
+        margin: '-20px 0 20px',
         justifyContent: 'center',
         // border: '1px solid black'
     },
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
         fontSize: '14px', 
     },
     behave_title: {
-        fontSize: '15px',
+        fontSize: '16px',
         fontWeight: 'bold'
     },
     page_number: {
