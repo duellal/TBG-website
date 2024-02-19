@@ -24,12 +24,12 @@ export default function EmergencySection(props){
         const [emergencyBtn, setEmergencyBtn] = useState(true)
         const [emergencyNum, setEmergencyNum] = useState(1)
 
-        useEffect(() => {
-            setSectionHTML({
-                innerHTML: emergencyRef.current, 
-                outerHTML: emergencyRef.current.outerHTML
-            })
-        }, [])
+        // useEffect(() => {
+        //     setSectionHTML({
+        //         innerHTML: emergencyRef.current, 
+        //         outerHTML: emergencyRef.current.outerHTML
+        //     })
+        // }, [])
             
         //Function to allow user to add up to 3 emergency contacts:
         const emergencyOnClick = async (event) => {

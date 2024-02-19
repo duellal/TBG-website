@@ -70,7 +70,7 @@ export default function PetHealth(props){
                             key={`pet${petKey}_food_allergy`}
                             htmlFor={`pet${petKey}_food_allergy`}
                             question={healthQs[0]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />
@@ -80,7 +80,7 @@ export default function PetHealth(props){
                             htmlFor={`pet${petKey}_medical_condition`}
                             question={healthQs[1]}
                             example={healthQs[2]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />
@@ -89,7 +89,7 @@ export default function PetHealth(props){
                             key={`pet${petKey}_past_injury`}
                             htmlFor={`pet${petKey}_past_injury`}
                             question={healthQs[3]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />

@@ -19,12 +19,12 @@ export default function PetBehaviorsSection(props){
         let sectionId = 'pet_behavior_section'
         let [sectionHTML, setSectionHTML] = useState()
 
-        useEffect(() => {
-            setSectionHTML({
-                innerHTML: petBehavRef.current, 
-                outerHTML: petBehavRef.current.outerHTML
-            })
-        }, [])
+        // useEffect(() => {
+        //     setSectionHTML({
+        //         innerHTML: petBehavRef.current, 
+        //         outerHTML: petBehavRef.current.outerHTML
+        //     })
+        // }, [])
 
         return(
             <>

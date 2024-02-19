@@ -32,7 +32,7 @@ export default function PetBehavior(props){
                             key={`pet${petKey}_destructive`}
                             htmlFor={`pet${petKey}_destructive`}
                             question={behaviorQs[0]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />
@@ -41,7 +41,7 @@ export default function PetBehavior(props){
                             key={`pet${petKey}_fence`}
                             htmlFor={`pet${petKey}_fence`}
                             question={behaviorQs[1]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         /> 
@@ -50,7 +50,7 @@ export default function PetBehavior(props){
                             key={`pet${petKey}_guard`}
                             htmlFor={`pet${petKey}_guard`}
                             question={behaviorQs[2]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />
@@ -59,7 +59,7 @@ export default function PetBehavior(props){
                             key={`pet${petKey}_social`}
                             htmlFor={`pet${petKey}_social`}
                             question={behaviorQs[3]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />
@@ -68,7 +68,7 @@ export default function PetBehavior(props){
                             key={`pet${petKey}_kennel`}
                             htmlFor={`pet${petKey}_kennel`}
                             question={behaviorQs[4]}
-                            options={['yes', 'no']}
+                            options={['Yes', 'No']}
                             formData={formData}
                             changeInput={changeInput}
                         />

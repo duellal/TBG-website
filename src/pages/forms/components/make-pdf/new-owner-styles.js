@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     section_title: {
         fontWeight: 'bold',
         fontSize: '18px',
+        marginTop: '10px'
     },
     view_row: {
         flexDirection: "row",
@@ -75,9 +76,10 @@ export const styles = StyleSheet.create({
     section_info: {
         fontSize: '14px', 
     },
-    behave_title: {
+    pet_sub_section: {
         fontSize: '16px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: '15px'
     },
     pet_ans: {
         marginLeft: '25px'

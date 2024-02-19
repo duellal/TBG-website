@@ -1,8 +1,13 @@
 import React from "react";
 
-import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeLabelRow, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
+//Components:
+import RadioQuestion from "../../radio-questions";
+
+//Styles:
+import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+
 
 /**
  * @component Emergency info section labels + inputs
@@ -69,37 +74,14 @@ export default function EmergencyInfo(props){
 
             <IntakeRow>
                 <FlexColDiv>
-                    <IntakeLabel>
-                    <FormAsterisk>*</FormAsterisk> Does this person have permission to make decisions regarding your pet(s)?
-                    </IntakeLabel>
-                    
-                    <IntakeLabelRow>
-                        <IntakeRow>
-                            <Input 
-                                type="radio" 
-                                id={`emergency${emergencyKey}_permission_yes`} 
-                                name={`emergency${emergencyKey}_permission`} 
-                                value='yes' 
-                                checked={formData[`emergency${emergencyKey}_permission`] === 'yes'}
-                                onChange={changeInput}
-                            />
-                                <IntakeLabel>
-                                    Yes
-                                </IntakeLabel>
-    
-                            <Input 
-                                type="radio"
-                                name={`emergency${emergencyKey}_permission`} 
-                                id={`emergency${emergencyKey}_permission_no`} 
-                                value='no'
-                                checked={formData[`emergency${emergencyKey}_permission`] === 'no'}
-                                onChange={changeInput}
-                            />
-                                <IntakeLabel>
-                                    No
-                                </IntakeLabel>
-                        </IntakeRow>
-                    </IntakeLabelRow>
+                    <RadioQuestion
+                        key={`emergency${emergencyKey}_permission`}
+                        htmlFor={`emergency${emergencyKey}_permission`}
+                        question={`Does this person have permission to make decisions regarding your pet(s)?`}
+                        options={['Yes', 'No']}
+                        formData={formData}
+                        changeInput={changeInput}
+                    />
                 </FlexColDiv>
             </IntakeRow>
 

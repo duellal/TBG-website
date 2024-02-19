@@ -78,7 +78,10 @@ export default function RadioQuestion(props){
             <FlexColDiv>
                 <IntakeLabel htmlFor={htmlFor}>
                     <FormAsterisk>*</FormAsterisk> 
-                    {question} <br/> {example}
+                    {question}  {example ?
+                                    <>
+                                        <br/> example
+                                    </> : null}
                 </IntakeLabel>
                 <IntakeRow>
                     {
@@ -86,7 +89,10 @@ export default function RadioQuestion(props){
                     }
                 </IntakeRow>
                     { 
-                        formData[htmlFor] === 'yes' ?
+                        formData[htmlFor] === 'Yes' && 
+                        htmlFor.includes('pet') && 
+                        !htmlFor.includes('altered') 
+                        ?
                         explainInput()
                         : 
                         removeExplain(`${htmlFor}_explain`)

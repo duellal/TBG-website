@@ -86,7 +86,7 @@ export default function PetInfo(props){
                                     <Input 
                                         type='radio' 
                                         name={`pet${petKey}_sex`} 
-                                        value='female' 
+                                        value='Female' 
                                         checked={formData[`pet${petKey}_sex`] === 'female'}
                                         onChange={changeInput}
                                     />
@@ -97,7 +97,7 @@ export default function PetInfo(props){
                                     <Input 
                                         type="radio" 
                                         name={`pet${petKey}_sex`}
-                                        value='male'
+                                        value='Male'
                                         checked={formData[`pet${petKey}_sex`] === 'male'}
                                         onChange={changeInput}
                                     />
@@ -116,7 +116,7 @@ export default function PetInfo(props){
                                         type='radio' 
                                         id={`pet${petKey}_altered`} 
                                         name={`pet${petKey}_altered`}
-                                        value='yes' 
+                                        value='Yes' 
                                         checked={formData[`pet${petKey}_altered`] === 'yes'}
                                         onChange={changeInput}
                                     />
@@ -128,7 +128,7 @@ export default function PetInfo(props){
                                         type="radio" 
                                         id={`pet${petKey}_altered`} 
                                         name={`pet${petKey}_altered`} 
-                                        value='no' 
+                                        value='No' 
                                         checked={formData[`pet${petKey}_altered`] === 'no'}
                                         onChange={changeInput}
                                     />

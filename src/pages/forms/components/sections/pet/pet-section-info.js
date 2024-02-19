@@ -22,12 +22,12 @@ export default function PetInfoSection(props){
         const [petBtn, setPetBtn] = useState(true)
         const [petNum, setPetNum] = useState(2)
 
-        useEffect(() => {
-            setSectionHTML({
-                innerHTML: petInfoRef.current, 
-                outerHTML: petInfoRef.current.outerHTML
-            })
-        }, [])
+        // useEffect(() => {
+        //     setSectionHTML({
+        //         innerHTML: petInfoRef.current, 
+        //         outerHTML: petInfoRef.current.outerHTML
+        //     })
+        // }, [])
 
 
         //Function to allow user to add up to 5 pets:

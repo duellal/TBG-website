@@ -11,6 +11,7 @@ import { styles } from "./new-owner-styles";
 import { behaviorQs } from "../sections/pet/pet-questions";
 import { healthQs } from "../sections/pet/pet-questions";
 
+//Functions for the PDF sections that are iterable:
 const ownerSect = (formData, ownerCount) => 
 ownerCount.map((__, index) => 
     <View 
@@ -230,7 +231,7 @@ countPets.map((__, index) =>
                     Weight
                 </Text>
                 <Text style={styles.section_info}>
-                    {formData[`pet${index + 1}_weight`]}
+                    {`${formData[`pet${index + 1}_weight`]} lbs`}
                 </Text>
             </View>
 
@@ -245,7 +246,7 @@ countPets.map((__, index) =>
         </View>
 
         {/* Behavior Section */}
-        <View style={[styles.view_row, styles.behave_title]}>
+        <View style={[styles.view_row, styles.pet_sub_section]}>
             <Text>
                 Behavioral Information
             </Text>
@@ -253,7 +254,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`1) ${behaviorQs[0]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -261,9 +262,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_destructive`] === 'yes' ?
+                    formData[`pet${index + 1}_destructive`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -277,7 +278,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`2) ${behaviorQs[1]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -285,9 +286,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_fence`] === 'yes' ?
+                    formData[`pet${index + 1}_fence`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -301,7 +302,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`3) ${behaviorQs[2]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -309,9 +310,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_guard`] === 'yes' ?
+                    formData[`pet${index + 1}_guard`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -325,7 +326,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`4) ${behaviorQs[3]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -333,9 +334,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_social`] === 'yes' ?
+                    formData[`pet${index + 1}_social`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -349,7 +350,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`5) ${behaviorQs[4]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -357,9 +358,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_kennel`] === 'yes' ?
+                    formData[`pet${index + 1}_kennel`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -373,7 +374,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`6) ${behaviorQs[5]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -387,7 +388,7 @@ countPets.map((__, index) =>
         </View>
 
         {/* Health Section */}
-        <View style={[styles.view_row, styles.behave_title]}>
+        <View style={[styles.view_row, styles.pet_sub_section]}>
             <Text>
                 Health Information
             </Text>
@@ -396,6 +397,26 @@ countPets.map((__, index) =>
         <View style={styles.view_row}>
             <View style={styles.view_col}>
                 <Text style={[styles.section_info, styles.info_title]}>
+                    Vetinary Hospital
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_vet`]}
+                </Text>
+            </View>
+
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    Vet Phone Number
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_vet_phone`]}
+                </Text>
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info]}>
                     {`1) ${healthQs[0]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -403,9 +424,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_food_allergy`] === 'yes' ?
+                    formData[`pet${index + 1}_food_allergy`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -419,7 +440,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`2) ${healthQs[1]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -427,9 +448,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_medical_condition`] === 'yes' ?
+                    formData[`pet${index + 1}_medical_condition`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -443,7 +464,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`3) ${healthQs[3]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -451,9 +472,9 @@ countPets.map((__, index) =>
                 </Text>
 
                 {
-                    formData[`pet${index + 1}_past_injury`] === 'yes' ?
+                    formData[`pet${index + 1}_past_injury`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -467,7 +488,7 @@ countPets.map((__, index) =>
 
         <View style={styles.view_row}>
             <View style={styles.view_col}>
-                <Text style={[styles.section_info, styles.info_title]}>
+                <Text style={[styles.section_info]}>
                     {`4) ${healthQs[4]}`}
                 </Text>
                 <Text style={[styles.section_info, styles.pet_ans]}>
@@ -482,14 +503,18 @@ countPets.map((__, index) =>
     </View>
 )
 
+//PDF Doc
 export default function PdfDoc(props){
     const { formData, ownerCount, emergencyCount, authCount, countPets } = props
 
     let pdfTitle = `${formData[`owner1_first_name`]} ${formData[`owner1_last_name`]}'s New Owner Form`
 
+    let today = new Date()
+
     return (
         <Document title={pdfTitle}>
             <Page size='A4' style={styles.page}>
+                {/* Header - Logo + Title of Form */}
                 <View style={styles.header_logo}>
                     <Image src={logo} style={styles.logo}/>
                     <View style={styles.header_view}>
@@ -499,6 +524,7 @@ export default function PdfDoc(props){
                     </View>
                 </View>
 
+                {/* Referral */}
                 <View style={[styles.view_row, styles.section]}>
                     <View style={styles.view_col}>
                         <Text style={[styles.section_info, styles.info_title]}>
@@ -510,7 +536,8 @@ export default function PdfDoc(props){
                     </View>
                 </View>
                 
-                <View style={styles.section}>
+                {/* Owner(s) */}
+                <View>
                     <Text style={styles.section_title}>
                         Owner(s) Information 
                     </Text>
@@ -520,6 +547,7 @@ export default function PdfDoc(props){
                     }
                 </View>
 
+                 {/* Emergency Contact(s) */}
                 <View style={styles.section}>
                     <Text style={styles.section_title}>
                         Emergency Contact(s)
@@ -530,6 +558,8 @@ export default function PdfDoc(props){
                     }
                 </View>
 
+                {/* Authorized Pickup */}
+                    {/* Only shows if there is at least 1 */}
                 {  
                     formData['auth1_name'] ?
                     <View style={styles.section}>
@@ -545,6 +575,7 @@ export default function PdfDoc(props){
                     : null
                 }
 
+                {/* Pet(s) */}
                 <View style={styles.section}>
                     <Text style={styles.section_title}>
                         Pet(s) Information 
@@ -553,6 +584,48 @@ export default function PdfDoc(props){
                     {
                         countPets ? petSect(formData, countPets) : null
                     }
+                </View>
+
+                {/* Waiver */}
+                <View style={styles.section}>
+                    <Text style={styles.section_title}>
+                        Liability Waiver
+                    </Text>
+
+                    <View style={[styles.view_row]}>
+                        <View style={styles.view_col}>
+                            <Text style={[styles.section_info, styles.info_title]}>
+                                Agreed to terms?
+                            </Text>
+                            <Text style={[styles.section_info]}>
+                                {
+                                    formData[`waiver_owner_acknowledgement`] === 'true'
+                                    ? 'Yes' : 'No'
+                                }
+                            </Text>
+                        </View>
+                    </View>
+
+                    <View style={[styles.view_row]}>
+                        <View style={[styles.view_col]}>
+                            <Text style={[styles.section_info, styles.info_title]}>
+                                Owner Printed Name
+                            </Text>
+                            <Text style={[styles.section_info]}>
+                                {formData[`waiver_owner_name`]}
+                            </Text>
+                        </View>
+                        <View style={[styles.view_col]}>
+                            <Text style={[styles.section_info, styles.info_title]}>
+                                Date
+                            </Text>
+                            <Text style={[styles.section_info]}>
+                            {
+                                `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
+                            }
+                        </Text>
+                        </View>
+                    </View>
                 </View>
                     
                 {/* <Text 
