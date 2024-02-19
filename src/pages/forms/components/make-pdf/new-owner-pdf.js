@@ -244,6 +244,7 @@ countPets.map((__, index) =>
             </View>
         </View>
 
+        {/* Behavior Section */}
         <View style={[styles.view_row, styles.behave_title]}>
             <Text>
                 Behavioral Information
@@ -255,8 +256,226 @@ countPets.map((__, index) =>
                 <Text style={[styles.section_info, styles.info_title]}>
                     {`1) ${behaviorQs[0]}`}
                 </Text>
-                <Text style={styles.section_info}>
+                <Text style={[styles.section_info, styles.pet_ans]}>
                     {formData[`pet${index + 1}_destructive`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_destructive`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_destructive_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`2) ${behaviorQs[1]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_fence`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_fence`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_fence_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`3) ${behaviorQs[2]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_guard`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_guard`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_guard_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`4) ${behaviorQs[3]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_social`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_social`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_social_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`5) ${behaviorQs[4]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_kennel`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_kennel`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_kennel_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`6) ${behaviorQs[5]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {
+                        formData[`pet${index + 1}_extra_behavior`] ?
+                        formData[`pet${index + 1}_extra_behavior`]
+                        : 'N/A'
+                    }
+                </Text>
+            </View>
+        </View>
+
+        {/* Health Section */}
+        <View style={[styles.view_row, styles.behave_title]}>
+            <Text>
+                Health Information
+            </Text>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`1) ${healthQs[0]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_food_allergy`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_food_allergy`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_food_allergy_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`2) ${healthQs[1]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_medical_condition`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_medical_condition`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_medical_condition_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`3) ${healthQs[3]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {formData[`pet${index + 1}_past_injury`]}
+                </Text>
+
+                {
+                    formData[`pet${index + 1}_past_injury`] === 'yes' ?
+                    <>
+                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px', fontWeight: 'bold'}]}>
+                        Please Explain
+                    </Text>
+                    <Text style={[styles.section_info, styles.pet_ans]}>
+                        {formData[`pet${index + 1}_past_injury_explain`]}
+                    </Text>
+                    </>
+                    : null
+                }
+            </View>
+        </View>
+
+        <View style={styles.view_row}>
+            <View style={styles.view_col}>
+                <Text style={[styles.section_info, styles.info_title]}>
+                    {`4) ${healthQs[4]}`}
+                </Text>
+                <Text style={[styles.section_info, styles.pet_ans]}>
+                    {
+                        formData[`pet${index + 1}_extra_medical`] ?
+                        formData[`pet${index + 1}_extra_medical`] 
+                        : 'N/A'
+                    }
                 </Text>
             </View>
         </View>

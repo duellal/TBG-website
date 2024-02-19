@@ -79,6 +79,9 @@ export const styles = StyleSheet.create({
         fontSize: '16px',
         fontWeight: 'bold'
     },
+    pet_ans: {
+        marginLeft: '25px'
+    },
     page_number: {
         position: 'absolute',
         fontSize: 12,
