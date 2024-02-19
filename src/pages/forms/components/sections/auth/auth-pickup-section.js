@@ -15,8 +15,8 @@ import { FormExample } from "../../../../../styles/forms";
  * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function AuthPickupSection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML  } = props
-        let authRef = useRef(null)
+        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML, countAuth, setCountAuth } = props
+        let authRef = useRef()
         let sectionId = 'auth_section'
         let [sectionHTML, setSectionHTML] = useState()
 
@@ -24,11 +24,13 @@ export default function AuthPickupSection(props){
         const [authBtn, setAuthBtn] = useState(true)
         const [authNum, setAuthNum] = useState(1)
         const [authKey, setAuthKey] = useState(2)
-        const [countAuth, setCountAuth] = useState([{}])
 
         useEffect(() => {
-            setSectionHTML(authRef.current.outerHTML)
-        }, [sectionHTML])
+            setSectionHTML({
+                innerHTML: authRef.current, 
+                outerHTML: authRef.current.outerHTML
+            })
+        }, [])
 
         //Function to allow user to add up to 3 emergency contacts:
         const authOnClick = async (event) => {

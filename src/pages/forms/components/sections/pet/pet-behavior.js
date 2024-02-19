@@ -7,6 +7,9 @@ import RadioQuestion from "../../radio-questions";
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow } from '../../../../../styles/owner-form'
 import { FlexColDiv } from "../../../../../styles/contact";
 
+//Varaibles:
+import { behaviorQs } from "./pet-questions";
+
 
 /**
  * @component Pet Behavior section labels + inputs
@@ -28,7 +31,7 @@ export default function PetBehavior(props){
                         <RadioQuestion
                             key={`pet${petKey}_destructive`}
                             htmlFor={`pet${petKey}_destructive`}
-                            question={`Does your pet have any destructive habits when left alone?`}
+                            question={behaviorQs[0]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -37,7 +40,7 @@ export default function PetBehavior(props){
                         <RadioQuestion
                             key={`pet${petKey}_fence`}
                             htmlFor={`pet${petKey}_fence`}
-                            question={'Has your pet ever jumped, climbed, or dug out of a fence?'}
+                            question={behaviorQs[1]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -46,7 +49,7 @@ export default function PetBehavior(props){
                         <RadioQuestion
                             key={`pet${petKey}_guard`}
                             htmlFor={`pet${petKey}_guard`}
-                            question={`Does your pet ever guard toys, food, water, or people?`}
+                            question={behaviorQs[2]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -55,7 +58,7 @@ export default function PetBehavior(props){
                         <RadioQuestion
                             key={`pet${petKey}_social`}
                             htmlFor={`pet${petKey}_social`}
-                            question={`Has your pet ever socialized in a group of 6 or more pets?`}
+                            question={behaviorQs[3]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -64,7 +67,7 @@ export default function PetBehavior(props){
                         <RadioQuestion
                             key={`pet${petKey}_kennel`}
                             htmlFor={`pet${petKey}_kennel`}
-                            question={`Does your pet have experience in a kennel environment?`}
+                            question={behaviorQs[4]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}

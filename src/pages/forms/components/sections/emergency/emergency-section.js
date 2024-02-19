@@ -14,8 +14,8 @@ import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../..
  * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function EmergencySection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
-        let emergencyRef = useRef(null)
+        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML, countEmergencyContacts, setCountEmergencyContacts } = props
+        let emergencyRef = useRef()
         let sectionId = `emergency_section`
         let [sectionHTML, setSectionHTML] = useState()
 
@@ -23,11 +23,13 @@ export default function EmergencySection(props){
         const [emergencyKey, setEmergencyKey] = useState(2)
         const [emergencyBtn, setEmergencyBtn] = useState(true)
         const [emergencyNum, setEmergencyNum] = useState(1)
-        const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
 
         useEffect(() => {
-            setSectionHTML(emergencyRef.current.outerHTML)
-        }, [sectionHTML])
+            setSectionHTML({
+                innerHTML: emergencyRef.current, 
+                outerHTML: emergencyRef.current.outerHTML
+            })
+        }, [])
             
         //Function to allow user to add up to 3 emergency contacts:
         const emergencyOnClick = async (event) => {

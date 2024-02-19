@@ -19,7 +19,7 @@ import { ownerReferral } from "./owner-referArr.js"
  * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function OwnerSection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
+        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML, ownerCountArr, setOwnerCountArr } = props
         let ownerRef = useRef()
         let sectionId = `owner_section`
         let [sectionHTML, setSectionHTML] = useState()
@@ -27,14 +27,16 @@ export default function OwnerSection(props){
         //Owner Info States:
         const [ownerKey, setOwnerKey] = useState(1)
         const [ownerBtn, setOwnerBtn] = useState(true)
-        const [ownerCountArr, setOwnerCountArr] = useState([{}])
 
-        useEffect(() => {
-            setSectionHTML(ownerRef.current.outerHTML)
-        }, [sectionHTML])
+        // useEffect(() => {
+        //     setSectionHTML({
+        //         innerHTML: ownerRef.current, 
+        //         outerHTML: ownerRef.current.outerHTML
+        //     })
+        // }, [])
 
         //Function to allow user to add 1 more owner:
-        const addOwner = async (event) => {
+        const addOwner = (event) => {
             event.preventDefault()
     
             let toggleOwnerBtn = () => {
@@ -42,8 +44,8 @@ export default function OwnerSection(props){
             }
             
             toggleOwnerBtn();
-            await setOwnerKey(ownerKey + 1)
-            await setOwnerCountArr([...ownerCountArr, {}])
+            setOwnerKey(ownerKey + 1)
+            setOwnerCountArr([...ownerCountArr, {}])
         }
 
         return (
@@ -68,6 +70,8 @@ export default function OwnerSection(props){
                                                 ownerKey={index + 1} 
                                                 formData={formData}
                                                 changeInput={changeInput}
+                                                ownerRef={ownerRef}
+                                                setSectionHTML={setSectionHTML}
                                             />
                                 })    
                             } 
@@ -83,7 +87,7 @@ export default function OwnerSection(props){
                         <SelectInput
                             value={formData['referred_by']}
                             name="referred_by"
-                            onChange={changeInput}
+                            onChange={event => changeInput(event, ownerRef, sectionHTML, setSectionHTML)}
                             required
                         >
                             <OptionInput 

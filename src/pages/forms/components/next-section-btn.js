@@ -20,15 +20,17 @@ export default function NextPrevBtn(props){
         event.preventDefault()
         let previous = event.target.name === 'previous'
         let valid = document.forms['new_owner_form'].reportValidity()
-        
-        
-        let previousSection = () => {
-            findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
+
+        console.log(`sectionHTML:`, sectionHTML)
+        console.log(`FormHTML:`, formHTML)
+
+        let previousSection = async () => {
+            await findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
             setBtnIndex(btnIndex - 1)
         }
 
-        let nextSection = () => {
-            findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
+        let nextSection = async () => {
+            await findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
             setBtnIndex(btnIndex + 1)
         }
 
@@ -42,10 +44,10 @@ export default function NextPrevBtn(props){
             nextSection()
         }
 
-        return window.scrollTo({
-            top: 200,
-            behavior: "smooth"
-        })
+        // return window.scrollTo({
+        //     top: 200,
+        //     behavior: "smooth"
+        // })
     }
 
 

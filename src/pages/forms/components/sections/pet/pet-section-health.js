@@ -15,13 +15,16 @@ import PetHealth from "./pet-health"
  */
 export default function PetHealthSection(props){
         const { changeInput, countPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
-        let petHealthRef = useRef(null)
+        let petHealthRef = useRef()
         let sectionId = 'pet_health_section'
         let [sectionHTML, setSectionHTML] = useState()
 
         useEffect(() => {
-            setSectionHTML(petHealthRef.current.outerHTML)
-        }, [sectionHTML])
+            setSectionHTML({
+                innerHTML: petHealthRef.current, 
+                outerHTML: petHealthRef.current.outerHTML
+            })
+        }, [])
 
         return(
             <>

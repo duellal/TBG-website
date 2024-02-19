@@ -14,7 +14,7 @@ import PetInfo from "./pet-info"
  */
 export default function PetInfoSection(props){
         const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
-        let petInfoRef = useRef(null)
+        let petInfoRef = useRef()
         let sectionId = 'pet_info_section'
         let [sectionHTML, setSectionHTML] = useState()
 
@@ -23,8 +23,11 @@ export default function PetInfoSection(props){
         const [petNum, setPetNum] = useState(2)
 
         useEffect(() => {
-            setSectionHTML(petInfoRef.current.outerHTML)
-        }, [sectionHTML])
+            setSectionHTML({
+                innerHTML: petInfoRef.current, 
+                outerHTML: petInfoRef.current.outerHTML
+            })
+        }, [])
 
 
         //Function to allow user to add up to 5 pets:

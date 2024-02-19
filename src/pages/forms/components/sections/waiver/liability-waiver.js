@@ -26,8 +26,11 @@ export default function LiabilityWaiver(props){
     let [sectionHTML, setSectionHTML] = useState()
 
     useEffect(() => {
-        setSectionHTML(waiverRef.current.outerHTML.outerHTML)
-    }, [sectionHTML])
+        setSectionHTML({
+            innerHTML: waiverRef.current, 
+            outerHTML: waiverRef.current.outerHTML
+        })
+    }, [])
 
     return (
         <>

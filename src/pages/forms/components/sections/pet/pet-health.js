@@ -8,6 +8,9 @@ import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeMessageInput, In
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
+//Variables:
+import { healthQs } from "./pet-questions";
+
 
 /**
  * @component Pet health section labels + inputs
@@ -66,7 +69,7 @@ export default function PetHealth(props){
                         <RadioQuestion
                             key={`pet${petKey}_food_allergy`}
                             htmlFor={`pet${petKey}_food_allergy`}
-                            question={`Does your pet have any food allergies?`}
+                            question={healthQs[0]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -75,8 +78,8 @@ export default function PetHealth(props){
                         <RadioQuestion
                             key={`pet${petKey}_medical_condition`}
                             htmlFor={`pet${petKey}_medical_condition`}
-                            question={`Does your pet have any medical conditions or disabilities that we should know about?`}
-                            example={`(ex: seizures, tumors, hot spots, etc)`}
+                            question={healthQs[1]}
+                            example={healthQs[2]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
@@ -85,7 +88,7 @@ export default function PetHealth(props){
                         <RadioQuestion
                             key={`pet${petKey}_past_injury`}
                             htmlFor={`pet${petKey}_past_injury`}
-                            question={`Does your pet have any past injuries that we should know about? `}
+                            question={healthQs[3]}
                             options={['yes', 'no']}
                             formData={formData}
                             changeInput={changeInput}
