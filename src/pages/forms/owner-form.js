@@ -120,7 +120,6 @@ export default function DigitalOwnerForm() {
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
-            form={form}
             countAuth={countAuth}
             setCountAuth={setCountAuth}
         />,

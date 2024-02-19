@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 
 //Intake Form - Owner Styles:
 import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
@@ -16,7 +16,6 @@ import { FormExample } from "../../../../../styles/forms";
  */
 export default function AuthPickupSection(props){
         const { changeInput, btnIndex, setBtnIndex, formData, countAuth, setCountAuth } = props
-        let authRef = useRef()
         let sectionId = 'auth_section'
 
         //Authorized Pickup States:
@@ -47,7 +46,6 @@ export default function AuthPickupSection(props){
                 <IntakeHDiv 
                     key={sectionId} 
                     id={sectionId} 
-                    ref={authRef}
                 >
                     <IntakeH3> 
                         Authorized People to Pickup Your Pets

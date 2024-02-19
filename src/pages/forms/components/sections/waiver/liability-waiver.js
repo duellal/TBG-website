@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header.js";
@@ -16,28 +16,17 @@ import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiv
 
 /**
  * @component The liability waiver section with labels + inputs
- * @param {*} props changeInput, formData, btnIndex, setBtnIndex, loading, formHTML, setFormHTML
+ * @param {*} props changeInput, formData, btnIndex, setBtnIndex
  */
 export default function LiabilityWaiver(props){
-    const { changeInput, formData, btnIndex, setBtnIndex, formHTML, setFormHTML } = props
-
-    let waiverRef = useRef()
+    const { changeInput, formData, btnIndex, setBtnIndex } = props
     let sectionId = `waiver_section`
-    let [sectionHTML, setSectionHTML] = useState()
-
-    // useEffect(() => {
-    //     setSectionHTML({
-    //         innerHTML: waiverRef.current, 
-    //         outerHTML: waiverRef.current.outerHTML
-    //     })
-    // }, [])
 
     return (
         <>
             <IntakeHDiv 
                 key={sectionId}
                 id={sectionId}
-                ref={waiverRef}
             >
                 <IntakeH3>
                     Liability Waiver
@@ -100,11 +89,8 @@ export default function LiabilityWaiver(props){
             <ButtonRow>
                 <NextPrevBtn
                     btnIndex={btnIndex}
-                    setBtnIndex={setBtnIndex}
-                    formHTML={formHTML}
-                    setFormHTML={setFormHTML} 
+                    setBtnIndex={setBtnIndex} 
                     sectionId={sectionId}
-                    sectionHTML={sectionHTML}
                 />
             </ButtonRow>
         </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useState } from "react"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'
@@ -14,7 +14,6 @@ import PetInfo from "./pet-info"
  */
 export default function PetInfoSection(props){
         const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData } = props
-        let petInfoRef = useRef()
         let sectionId = 'pet_info_section'
 
         //Pet Info States:
@@ -29,7 +28,7 @@ export default function PetInfoSection(props){
                 setPetBtn(!petBtn)
             }
     
-            await setPetNum(petNum + 1)
+            setPetNum(petNum + 1)
     
             if(petNum === 5){
                 togglePetBtn()
@@ -43,7 +42,6 @@ export default function PetInfoSection(props){
                 <IntakeHDiv 
                     key={sectionId} 
                     id={sectionId} 
-                    ref={petInfoRef}
                 >
                     <IntakeH3> 
                         Pet Preliminary Information
@@ -69,10 +67,7 @@ export default function PetInfoSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        // formHTML={formHTML}
-                        // setFormHTML={setFormHTML} 
                         sectionId={sectionId}
-                        // sectionHTML={sectionHTML}
                     />
 
                     {
@@ -86,10 +81,7 @@ export default function PetInfoSection(props){
                         next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        // formHTML={formHTML}
-                        // setFormHTML={setFormHTML} 
                         sectionId={sectionId}
-                        // sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
             </>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 
 //Components:
 import OwnerInfo from './owner-info.js'
@@ -20,7 +20,6 @@ import { ownerReferral } from "./owner-referArr.js"
  */
 export default function OwnerSection(props){
         const { changeInput, btnIndex, setBtnIndex, formData, ownerCountArr, setOwnerCountArr } = props
-        let ownerRef = useRef()
         let sectionId = `owner_section`
         
         //Owner Info States:
@@ -45,7 +44,6 @@ export default function OwnerSection(props){
                 <IntakeHDiv 
                     key={sectionId} 
                     id={sectionId}
-                    ref={ownerRef}
                 >
                     <IntakeDivider>
                         <IntakeH3> 
