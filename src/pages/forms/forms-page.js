@@ -1,16 +1,3 @@
-/* 
-    Have a small box for intake form
-        User puts in info + clicks next for the next section
-        At the end will submit the form
-
-    Intake Form:    
-        - Make it like the Green beagle lodge with a sections + next -> submit
-        - Intake Form PDF + digital:
-            - Liability waiver: take out pets on
-            - Emergency Contact: Take out initials
-            - Required info: (Required) in red italics (digital only)
-*/
-
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";

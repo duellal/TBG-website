@@ -87,7 +87,7 @@ export default function PetInfo(props){
                                         type='radio' 
                                         name={`pet${petKey}_sex`} 
                                         value='Female' 
-                                        checked={formData[`pet${petKey}_sex`] === 'female'}
+                                        checked={formData[`pet${petKey}_sex`] === 'Female'}
                                         onChange={changeInput}
                                     />
                                     <IntakeLabel>
@@ -98,7 +98,7 @@ export default function PetInfo(props){
                                         type="radio" 
                                         name={`pet${petKey}_sex`}
                                         value='Male'
-                                        checked={formData[`pet${petKey}_sex`] === 'male'}
+                                        checked={formData[`pet${petKey}_sex`] === 'Male'}
                                         onChange={changeInput}
                                     />
                                     <IntakeLabel>
@@ -117,7 +117,7 @@ export default function PetInfo(props){
                                         id={`pet${petKey}_altered`} 
                                         name={`pet${petKey}_altered`}
                                         value='Yes' 
-                                        checked={formData[`pet${petKey}_altered`] === 'yes'}
+                                        checked={formData[`pet${petKey}_altered`] === 'Yes'}
                                         onChange={changeInput}
                                     />
                                     <IntakeLabel>
@@ -129,7 +129,7 @@ export default function PetInfo(props){
                                         id={`pet${petKey}_altered`} 
                                         name={`pet${petKey}_altered`} 
                                         value='No' 
-                                        checked={formData[`pet${petKey}_altered`] === 'no'}
+                                        checked={formData[`pet${petKey}_altered`] === 'No'}
                                         onChange={changeInput}
                                     />
                                     <IntakeLabel>
@@ -161,6 +161,7 @@ export default function PetInfo(props){
                                     name={`pet${petKey}_dob`}
                                     value={formData[`pet${petKey}_dob`]}
                                     onChange={changeInput}
+                                    pattern="\d{2}-\d{2}-\d{4}"
                                 />
                             </FlexColDiv>
                         </IntakeRow>

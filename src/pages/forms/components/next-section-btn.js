@@ -9,11 +9,11 @@ import { FormBtn } from "../../../styles/owner-form";
 
 /**
  * @component Buttons for going to the previous + next sections
- * @param {*} props next, btnIndex, setBtnIndex, formHTML, setFormHTML, sectionId, sectionHTML
+ * @param {*} props next, btnIndex, setBtnIndex
  */
 export default function NextPrevBtn(props){
     const { 
-            next, btnIndex, setBtnIndex, formHTML, setFormHTML, sectionId, sectionHTML
+            next, btnIndex, setBtnIndex
         } = props;
 
     const SectionOnClick = (event) => {
@@ -21,16 +21,13 @@ export default function NextPrevBtn(props){
         let previous = event.target.name === 'previous'
         let valid = document.forms['new_owner_form'].reportValidity()
 
-        console.log(`sectionHTML:`, sectionHTML)
-        console.log(`FormHTML:`, formHTML)
-
         let previousSection = async () => {
-            await findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
+            // await findSection(btnIndex, sectionId)
             setBtnIndex(btnIndex - 1)
         }
 
         let nextSection = async () => {
-            await findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
+            // await findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId)
             setBtnIndex(btnIndex + 1)
         }
 
@@ -44,10 +41,10 @@ export default function NextPrevBtn(props){
             nextSection()
         }
 
-        // return window.scrollTo({
-        //     top: 200,
-        //     behavior: "smooth"
-        // })
+        return window.scrollTo({
+            top: 200,
+            behavior: "smooth"
+        })
     }
 
 

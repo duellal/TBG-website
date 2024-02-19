@@ -53,7 +53,7 @@ export const formTemplate = {
     pet2_sex: 'Female',
     pet2_altered: 'Yes',
     pet2_weight: '68',
-    pet2_dob: '11/28/2018',
+    pet2_dob: '11-28-2019',
     pet2_destructive: 'No',
     pet2_destructive_explain: '',
     pet2_fence: 'No',

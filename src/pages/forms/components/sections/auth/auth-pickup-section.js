@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 
 //Intake Form - Owner Styles:
 import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } from '../../../../../styles/owner-form'
@@ -12,25 +12,17 @@ import { FormExample } from "../../../../../styles/forms";
 
 /**
  * @component The core of the authorized pickup section. Allows user to add up to 5 authorized people.
- * @param {*} props changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
+ * @param {*} props changeInput, btnIndex, setBtnIndex, formData, countAuth, setCountAuth
  */
 export default function AuthPickupSection(props){
-        const { changeInput, btnIndex, setBtnIndex, formData, formHTML, setFormHTML, countAuth, setCountAuth } = props
+        const { changeInput, btnIndex, setBtnIndex, formData, countAuth, setCountAuth } = props
         let authRef = useRef()
         let sectionId = 'auth_section'
-        let [sectionHTML, setSectionHTML] = useState()
 
         //Authorized Pickup States:
         const [authBtn, setAuthBtn] = useState(true)
         const [authNum, setAuthNum] = useState(1)
         const [authKey, setAuthKey] = useState(2)
-
-        useEffect(() => {
-            setSectionHTML({
-                innerHTML: authRef.current, 
-                outerHTML: authRef.current.outerHTML
-            })
-        }, [])
 
         //Function to allow user to add up to 3 emergency contacts:
         const authOnClick = async (event) => {
@@ -45,7 +37,8 @@ export default function AuthPickupSection(props){
             if(authNum === 4){
                 toggleAuthBtn()
             }
-            await setAuthKey(authKey + 1)
+            
+            setAuthKey(authKey + 1)
             await setCountAuth([...countAuth, {}])
         }
     
@@ -99,10 +92,7 @@ export default function AuthPickupSection(props){
                 <NextPrevBtn
                     btnIndex={btnIndex}
                     setBtnIndex={setBtnIndex}
-                    formHTML={formHTML}
-                    setFormHTML={setFormHTML} 
                     sectionId={sectionId}
-                    sectionHTML={sectionHTML}
                 />
                         
                 {
@@ -116,10 +106,7 @@ export default function AuthPickupSection(props){
                     next
                     btnIndex={btnIndex}
                     setBtnIndex={setBtnIndex}
-                    formHTML={formHTML}
-                    setFormHTML={setFormHTML} 
                     sectionId={sectionId}
-                    sectionHTML={sectionHTML}
                 />
             </ButtonRow>
         </>

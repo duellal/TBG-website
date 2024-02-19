@@ -19,12 +19,12 @@ export default function PetHealthSection(props){
         let sectionId = 'pet_health_section'
         let [sectionHTML, setSectionHTML] = useState()
 
-        useEffect(() => {
-            setSectionHTML({
-                innerHTML: petHealthRef.current, 
-                outerHTML: petHealthRef.current.outerHTML
-            })
-        }, [])
+        // useEffect(() => {
+        //     setSectionHTML({
+        //         innerHTML: petHealthRef.current, 
+        //         outerHTML: petHealthRef.current.outerHTML
+        //     })
+        // }, [])
 
         return(
             <>

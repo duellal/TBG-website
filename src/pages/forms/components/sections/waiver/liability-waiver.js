@@ -25,12 +25,12 @@ export default function LiabilityWaiver(props){
     let sectionId = `waiver_section`
     let [sectionHTML, setSectionHTML] = useState()
 
-    useEffect(() => {
-        setSectionHTML({
-            innerHTML: waiverRef.current, 
-            outerHTML: waiverRef.current.outerHTML
-        })
-    }, [])
+    // useEffect(() => {
+    //     setSectionHTML({
+    //         innerHTML: waiverRef.current, 
+    //         outerHTML: waiverRef.current.outerHTML
+    //     })
+    // }, [])
 
     return (
         <>

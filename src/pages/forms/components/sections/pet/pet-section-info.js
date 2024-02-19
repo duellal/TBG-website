@@ -13,22 +13,13 @@ import PetInfo from "./pet-info"
  * @param {*} props changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML
  */
 export default function PetInfoSection(props){
-        const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData, formHTML, setFormHTML } = props
+        const { changeInput, countPets, setCountPets, btnIndex, setBtnIndex, formData } = props
         let petInfoRef = useRef()
         let sectionId = 'pet_info_section'
-        let [sectionHTML, setSectionHTML] = useState()
 
         //Pet Info States:
         const [petBtn, setPetBtn] = useState(true)
         const [petNum, setPetNum] = useState(2)
-
-        // useEffect(() => {
-        //     setSectionHTML({
-        //         innerHTML: petInfoRef.current, 
-        //         outerHTML: petInfoRef.current.outerHTML
-        //     })
-        // }, [])
-
 
         //Function to allow user to add up to 5 pets:
         const petOnClick = async (event) => {
@@ -78,10 +69,10 @@ export default function PetInfoSection(props){
                     <NextPrevBtn
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
+                        // formHTML={formHTML}
+                        // setFormHTML={setFormHTML} 
                         sectionId={sectionId}
-                        sectionHTML={sectionHTML}
+                        // sectionHTML={sectionHTML}
                     />
 
                     {
@@ -95,10 +86,10 @@ export default function PetInfoSection(props){
                         next
                         btnIndex={btnIndex}
                         setBtnIndex={setBtnIndex}
-                        formHTML={formHTML}
-                        setFormHTML={setFormHTML} 
+                        // formHTML={formHTML}
+                        // setFormHTML={setFormHTML} 
                         sectionId={sectionId}
-                        sectionHTML={sectionHTML}
+                        // sectionHTML={sectionHTML}
                     />
                 </ButtonRow>
             </>

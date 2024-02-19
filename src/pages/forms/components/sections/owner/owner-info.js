@@ -11,7 +11,7 @@ import { FormAsterisk, FormExample } from "../../../../../styles/forms";
  * @param {*} props - changeInput, ownerKey, formData
  */
 export default function OwnerInfo(props){
-    const { changeInput, ownerKey, formData, ownerRef, setSectionHTML } = props
+    const { changeInput, ownerKey, formData } = props
 
     return(
         <IntakeHDiv key={`owner${ownerKey}`}>
@@ -33,7 +33,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_first_name`}
                             required 
                             value={formData[`owner${ownerKey}_first_name`]}
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                         <FlexColDiv>
@@ -45,7 +45,7 @@ export default function OwnerInfo(props){
                                 name={`owner${ownerKey}_last_name`} 
                                 required
                                 value={formData[`owner${ownerKey}_last_name`]}    
-                                onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                                onChange={event => changeInput(event)}
                             />
                         </FlexColDiv>
                 </IntakeRow>
@@ -63,7 +63,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_email`} 
                             required 
                             value={formData[`owner${ownerKey}_email`]}
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -82,7 +82,7 @@ export default function OwnerInfo(props){
                             mask="_" 
                             required
                             value={formData[`owner${ownerKey}_phone`]}        
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                 </IntakeRow>
@@ -96,7 +96,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_address1`} 
                             required 
                             value={formData[`owner${ownerKey}_address1`]}
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                 </IntakeRow>
@@ -109,7 +109,7 @@ export default function OwnerInfo(props){
                             type='address' 
                             name={`owner${ownerKey}_address2`}
                             value={formData[`owner${ownerKey}_address2`]}
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                 </IntakeRow>
@@ -123,7 +123,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_city`} 
                             required 
                             value={formData[`owner${ownerKey}_city`]}
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                        />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -135,7 +135,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_state`} 
                             required 
                             value={formData[`owner${ownerKey}_state`]}  
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                     <FlexColDiv>
@@ -147,7 +147,7 @@ export default function OwnerInfo(props){
                             name={`owner${ownerKey}_zipcode`} 
                             required 
                             value={formData[`owner${ownerKey}_zipcode`]}    
-                            onChange={event => changeInput(event, ownerRef, setSectionHTML)}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                 </IntakeRow>

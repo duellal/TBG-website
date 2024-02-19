@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import emailjs, { sendForm } from '@emailjs/browser'
+// import emailjs, { sendForm } from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import jsPDF from "jspdf";
-import ReactPDF, { PDFViewer, usePDF } from '@react-pdf/renderer';
+// import jsPDF from "jspdf";
+import { PDFViewer, usePDF } from '@react-pdf/renderer';
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -22,9 +22,6 @@ import PdfDoc from "./components/make-pdf/new-owner-pdf.js";
 //Form Template:
 import { formTemplate } from "./form-template.js";
 
-//Functions:
-import findSection from "./components/btn-findSectionFunc.js";
-
 //Styles:
 import { ButtonRow, FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection, SendBtn } from '../../styles/owner-form.js'
 import { ErrorLink, ErrorText } from "../../styles/contact.js";
@@ -38,22 +35,40 @@ export default function DigitalOwnerForm() {
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
-    const [formHTML, setFormHTML] = useState([])
-    // const [sendFormHTML, setSendFormHTML] = useState('<div><h1>New Client Form</h1>')
-    const [pdfInstance, updatePdfInstance] = usePDF({document: <PdfDoc formData={formData} formHTML={formHTML}/>})
     const [url, editUrl] = useState()
-
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
     const [viewer, updateViewer] = useState(false)
 
+    //Component States:
+    const [countPets, setCountPets] = useState([{}])
+    const [ownerCountArr, setOwnerCountArr] = useState([{}])
+    const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
+    const [countAuth, setCountAuth] = useState([{}])
+
     //Next + Previous Buttons + Tab Index State:
     const [btnIndex, setBtnIndex] = useState(0)
 
+    //PDF States:
+    const [pdfInstance, updatePdfInstance] = usePDF({document: 
+        <PdfDoc 
+            formData={formData} 
+            ownerCount={ownerCountArr}
+            emergencyCount={countEmergencyContacts}
+            authCount={countAuth}
+            countPets={countPets}
+        />})
+
     useEffect(() => {
         if(pdfInstance.blob){
-            console.log(pdfInstance.url)
-            updatePdfInstance(<PdfDoc formData={formData} formHTML={formHTML}/>)
+            updatePdfInstance(
+                <PdfDoc 
+                    formData={formData} 
+                    ownerCount={ownerCountArr}
+                    emergencyCount={countEmergencyContacts}
+                    authCount={countAuth}
+                    countPets={countPets}
+                />)
 
             editUrl(
                 URL.createObjectURL(
@@ -63,10 +78,10 @@ export default function DigitalOwnerForm() {
                 )
             )
         }
-    }, [pdfInstance, updatePdfInstance, formData, formHTML])
+    }, [pdfInstance, updatePdfInstance, formData, ownerCountArr, countEmergencyContacts, countAuth, countPets])
 
     //onChange function changeInput:
-    async function changeInput(event, ref, setSectionHTML){
+    async function changeInput(event){
         let { type, name, value } = event.target
         // console.log(`${name}: ${value}`)
 
@@ -79,18 +94,8 @@ export default function DigitalOwnerForm() {
             return editFormData({ ...formData, [name]: 'false'})
         }
 
-        await setSectionHTML({
-            innerHTML: ref.current,
-            outerHTML: ref.current.outerHTML
-        })
         editFormData({ ...formData, [name]: value})
      }
-
-    //Component States:
-    const [countPets, setCountPets] = useState([{}])
-    const [ownerCountArr, setOwnerCountArr] = useState([{}])
-    const [countEmergencyContacts, setCountEmergencyContacts] = useState([{}])
-    const [countAuth, setCountAuth] = useState([{}])
 
     //Components Array for Rendering on a particular btnIndex:
     let renderComponents = [
@@ -99,8 +104,6 @@ export default function DigitalOwnerForm() {
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
             ownerCountArr={ownerCountArr}
             setOwnerCountArr={setOwnerCountArr}
         />,
@@ -109,8 +112,6 @@ export default function DigitalOwnerForm() {
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
             countEmergencyContacts={countEmergencyContacts}
             setCountEmergencyContacts={setCountEmergencyContacts}
         />,
@@ -119,8 +120,6 @@ export default function DigitalOwnerForm() {
             changeInput={changeInput}
             formData={formData} 
             setBtnIndex={setBtnIndex}
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
             form={form}
             countAuth={countAuth}
             setCountAuth={setCountAuth}
@@ -132,8 +131,6 @@ export default function DigitalOwnerForm() {
             setBtnIndex={setBtnIndex}
             countPets={countPets}
             setCountPets={setCountPets}
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
         />,
         <PetBehaviorsSection
             changeInput={changeInput}
@@ -141,17 +138,13 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}
             formData={formData} 
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
         />,
         <PetHealthSection
             changeInput={changeInput}
             countPets={countPets}
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}  
-            formData={formData}  
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}   
+            formData={formData}     
         />,
         <LiabilityWaiver 
             changeInput={changeInput}
@@ -160,8 +153,6 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}   
             formData={formData}     
-            formHTML={formHTML}
-            setFormHTML={setFormHTML}
         />
     ]
 
@@ -172,9 +163,17 @@ export default function DigitalOwnerForm() {
         //clears errors if there were any previously
         setError(null)
 
-        updatePdfInstance(<PdfDoc formData={formData} formHTML={formHTML}/>)
+        updatePdfInstance(
+                <PdfDoc 
+                    formData={formData} 
+                    ownerCount={ownerCountArr}
+                    emergencyCount={countEmergencyContacts}
+                    authCount={countAuth}
+                    countPets={countPets}
+                />
+            )
 
-        console.log(`SubmitHandler FormHTML?`, formHTML)
+        // console.log(`SubmitHandler FormHTML?`, formHTML)
         // console.log(`HTML size in KB:`, sendFormHTML.length/1024)
         // console.log(`Send Form HTML?`, sendFormHTML)
 
@@ -270,7 +269,7 @@ export default function DigitalOwnerForm() {
     }
 
     let sendBtnHandleClick = () => {
-        return findSection(document.getElementById('waiver_section'), formHTML, setFormHTML, btnIndex, 'waiver_section')
+        // return findSection(document.getElementById('waiver_section'), formHTML, setFormHTML, btnIndex, 'waiver_section')
         //Converts array to string
             //Make the formHTML a string instead of an array after pdf works
         // formHTML.map((section, i) => {
@@ -301,18 +300,6 @@ export default function DigitalOwnerForm() {
                 </IntakeP>
             </IntakeHeader>
 
-<PDFViewer style={{width: '100%', height: '800px'}} title={'someName'}>
-    <PdfDoc 
-        formData={formData} 
-        formHTML={formHTML} 
-        ownerCount={ownerCountArr}
-        emergencyCount={countEmergencyContacts}
-        authCount={countAuth}
-        countPets={countPets}
-    />
-</PDFViewer>
-            
-
             <IntakeCard id="new-owner-form">
                 <OwnerFormTabs 
                     btnIndex={btnIndex}
@@ -321,7 +308,7 @@ export default function DigitalOwnerForm() {
                 <IntakeForm 
                     ref={form}
                     autoComplete="on"
-                    onSubmit={submitHandler} 
+                    onSubmit={submitHandler}
                     name="new_owner_form"
                     id="new_owner_form"
                     spellCheck={true}
@@ -368,12 +355,16 @@ export default function DigitalOwnerForm() {
 
             {
                 viewer ? 
-                    <PDFViewer style={{width: '100%', height: '400px'}} title={'someNAme'}>
-                        <PdfDoc formData={formData} formHTML={formHTML} />
-                    </PDFViewer>
-                : <PDFViewer style={{width: '100%', height: '400px'}}>
-                <PdfDoc formData={formData} formHTML={formHTML} />
-            </PDFViewer>
+                <PDFViewer style={{width: '100%', height: '800px'}} title={'someName'}>
+                    <PdfDoc 
+                        formData={formData} 
+                        ownerCount={ownerCountArr}
+                        emergencyCount={countEmergencyContacts}
+                        authCount={countAuth}
+                        countPets={countPets}
+                    />
+                </PDFViewer>
+                    : null 
             }
 
             {/* New Client Form PDF Section */}
