@@ -17,8 +17,6 @@ export default function OwnerInfo(props){
         <IntakeHDiv key={`owner${ownerKey}`}>
             <IntakeDivider>
                     <IntakeH5>
-                        {ownerKey === 1 ? 'Primary' : 'Secondary'} Owner
-                        <br/>
                         Owner {ownerKey}
                     </IntakeH5>
             </IntakeDivider>

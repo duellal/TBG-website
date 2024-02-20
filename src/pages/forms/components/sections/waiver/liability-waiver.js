@@ -92,6 +92,13 @@ export default function LiabilityWaiver(props){
                     setBtnIndex={setBtnIndex} 
                     sectionId={sectionId}
                 />
+
+                <NextPrevBtn
+                    next
+                    btnIndex={btnIndex}
+                    setBtnIndex={setBtnIndex} 
+                    sectionId={sectionId}
+                />
             </ButtonRow>
         </>
     )

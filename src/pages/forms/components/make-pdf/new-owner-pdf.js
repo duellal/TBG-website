@@ -264,7 +264,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_destructive`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -288,7 +288,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_fence`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -312,7 +312,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_guard`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -336,7 +336,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_social`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -360,7 +360,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_kennel`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -426,7 +426,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_food_allergy`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -450,7 +450,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_medical_condition`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -474,7 +474,7 @@ countPets.map((__, index) =>
                 {
                     formData[`pet${index + 1}_past_injury`] === 'Yes' ?
                     <>
-                    <Text style={[styles.section_info, styles.pet_ans, {marginTop: '10px'}]}>
+                    <Text style={[styles.section_info, {margin: '10px 0 0 15px'}]}>
                         Please Explain
                     </Text>
                     <Text style={[styles.section_info, styles.pet_ans]}>
@@ -507,7 +507,7 @@ countPets.map((__, index) =>
 export default function PdfDoc(props){
     const { formData, ownerCount, emergencyCount, authCount, countPets } = props
 
-    let pdfTitle = `${formData[`owner1_first_name`]} ${formData[`owner1_last_name`]}'s New Owner Form`
+    let pdfTitle = `${formData[`owner1_first_name`].toLowerCase()}-${formData[`owner1_last_name`].toLowerCase()}-new-owner-form`
 
     let today = new Date()
 

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 // import jsPDF from "jspdf";
-import { PDFViewer, usePDF } from '@react-pdf/renderer';
+import { BlobProvider, PDFDownloadLink, PDFViewer, renderToStream, renderToString, usePDF } from '@react-pdf/renderer';
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -28,6 +28,8 @@ import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
 import { Rotate } from "hamburger-react";
+import ReviewForm from "./components/sections/review/review-form.js";
+import { styles } from "./components/make-pdf/new-owner-styles.js";
 
 
 export default function DigitalOwnerForm() {
@@ -49,41 +51,33 @@ export default function DigitalOwnerForm() {
     //Next + Previous Buttons + Tab Index State:
     const [btnIndex, setBtnIndex] = useState(0)
 
-    //PDF States:
-    const [pdfInstance, updatePdfInstance] = usePDF({document: 
-        <PdfDoc 
-            formData={formData} 
-            ownerCount={ownerCountArr}
-            emergencyCount={countEmergencyContacts}
-            authCount={countAuth}
-            countPets={countPets}
-        />})
+    //PDF States + Variables:
+    let pdfName = `${formData[`owner1_first_name`].toLowerCase()}-${formData[`owner1_last_name`].toLowerCase()}-new-owner-form`
+    let pdfDoc = useState(
+                    <PdfDoc 
+                        formData={formData} 
+                        ownerCount={ownerCountArr}
+                        emergencyCount={countEmergencyContacts}
+                        authCount={countAuth}
+                        countPets={countPets}
+                        pdfName={pdfName}
+                    />
+                )
+    const [pdfInstance, updatePdfInstance] = usePDF({document: pdfDoc})
 
     useEffect(() => {
         if(pdfInstance.blob){
-            updatePdfInstance(
-                <PdfDoc 
-                    formData={formData} 
-                    ownerCount={ownerCountArr}
-                    emergencyCount={countEmergencyContacts}
-                    authCount={countAuth}
-                    countPets={countPets}
-                />)
+            updatePdfInstance(pdfDoc)
 
             editUrl(
-                URL.createObjectURL(
-                    new File([pdfInstance.blob], 'filename', {
-                        type: pdfInstance.blob.type
-                    })
-                )
+                pdfInstance.url
             )
         }
-    }, [pdfInstance, updatePdfInstance, formData, ownerCountArr, countEmergencyContacts, countAuth, countPets])
+    }, [pdfInstance, updatePdfInstance, pdfDoc])
 
     //onChange function changeInput:
     async function changeInput(event){
         let { type, name, value } = event.target
-        // console.log(`${name}: ${value}`)
 
         //To have true/false on the formData from the checkbox
         if(type === 'checkbox'){
@@ -152,8 +146,17 @@ export default function DigitalOwnerForm() {
             btnIndex={btnIndex}
             setBtnIndex={setBtnIndex}   
             formData={formData}     
+        />,
+        <ReviewForm 
+            formData={formData} 
+            ownerCount={ownerCountArr}
+            emergencyCount={countEmergencyContacts}
+            authCount={countAuth}
+            countPets={countPets}
+            pdfName={pdfName}
         />
     ]
+
 
     //Form Submit:
     const submitHandler = async event => {
@@ -162,125 +165,46 @@ export default function DigitalOwnerForm() {
         //clears errors if there were any previously
         setError(null)
 
-        updatePdfInstance(
-                <PdfDoc 
-                    formData={formData} 
-                    ownerCount={ownerCountArr}
-                    emergencyCount={countEmergencyContacts}
-                    authCount={countAuth}
-                    countPets={countPets}
-                />
-            )
+        updatePdfInstance(pdfDoc)
 
-        // console.log(`SubmitHandler FormHTML?`, formHTML)
-        // console.log(`HTML size in KB:`, sendFormHTML.length/1024)
-        // console.log(`Send Form HTML?`, sendFormHTML)
+        window.open(url)
+    
+        let params = {
+            form_pdf: url,
+            owner1_first_name: formData.owner1_first_name,
+            owner1_last_name: formData.owner1_last_name,
+            owner1_email: formData.owner1_email,
 
-        // let pdf = new jsPDF({
-        //         orientation: 'p',
-        //         unit: 'px',
-        //         format: 'letter',
-        //         hotfixes: ["px_scaling"],
-        //        })
-            
-        // let margin = [20, 50]
-    
-        const pdfName = `${formData.owner1_first_name}_${formData.owner1_last_name}'s New Owner Form`
-    
-        // pdf.setDocumentProperties({
-        //     title: pdfName
-        // })
+        }
         
-       
-        // formHTML.map((elem, index) => {
-        //     if(index > 0){
-        //         pdf.insertPage({insetPage: index - 1})
-        //     }
+        const data = {
+            serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
+            templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+            templateParams: params,
+            // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+        };
             
-        //     pdf.addImage({
-        //         imageData: elem.imgData, 
-        //         format: 'JPEG', 
-        //         x: 0, 
-        //         y: 0, 
-        //         alias: `${elem.sectionId}_${index}`,
+        // return emailjs.send(
+        //     process.env.REACT_APP_SERVICE_ID_INTAKE,
+        //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+        //     params, 
+        //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
+        // )
+        //     .then((res) => {
+        //         //resets the form after the email is sent 
+        //         form.current.reset()
+        //         setLoading(false)
+        //     }).catch((error) => {
+        //         setError(error.text)
+        //     }).finally(() => {
+        //         //resets the form after the email is sent 
+        //         form.current.reset()
+        //         setLoading(false)
         //     })
-
-        //     return elem
-        // })
-
-        // updatePdfInstance({
-        //     document: PdfDoc,
-        //     // title: pdfName
-        // })
-
-        updateViewer(!viewer)
-        return (
-            window.open(url)
-        )
-        // console.log(pdf)
-
-        // pdf.html(sendFormHTML, {
-        //     margin,
-        //     autoPaging: "text",
-        //     filename: pdfName,
-        //     callback: (doc) => {
-        //         let pdfUrl = doc.output('bloburl')
-
-        //         console.log(pdfUrl)
-
-        //         return window.open(pdfUrl)
-
-        //         // let params = {
-        //         //     form_pdf: pdfUrl,
-        //         //     owner1_first_name: formData.owner1_first_name,
-        //         //     owner1_last_name: formData.owner1_last_name,
-        //         //     owner1_email: formData.owner1_email,
-        //         //     html: sendFormHTML,
-        //         //     // formData: formData
-        //         // }
-        
-        //         // const data = {
-        //         //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
-        //         //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-        //         //     templateParams: params,
-        //         //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-        //         // };
-            
-        //         // return emailjs.send(
-        //         //     process.env.REACT_APP_SERVICE_ID_INTAKE,
-        //         //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-        //         //     params, 
-        //         //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
-        //         //     )
-        //         //     .then((res) => {
-        //         //         //resets the form after the email is sent 
-        //         //         form.current.reset()
-        //         //         setLoading(false)
-        //         //     }).catch((error) => {
-        //         //         setError(error.text)
-        //         //     }).finally(() => {
-        //         //         //resets the form after the email is sent 
-        //         //         form.current.reset()
-        //         //         setLoading(false)
-        //         //     })
-        //     }
-        // })
     }
 
     let sendBtnHandleClick = () => {
-        // return findSection(document.getElementById('waiver_section'), formHTML, setFormHTML, btnIndex, 'waiver_section')
-        //Converts array to string
-            //Make the formHTML a string instead of an array after pdf works
-        // formHTML.map((section, i) => {
-
-        //     if(typeof section !== 'string'){
-        //         return setSendFormHTML(html => {return html + section.html})
-        //     }
-                
-        //     return setSendFormHTML(html => {return html + section.html})
-        // })
-
-        // return await findSection(document.getElementById('waiver_section').concat('</div>'), formHTML, setFormHTML, btnIndex, 'waiver_section')
+        return
     }
 
     return (
@@ -325,18 +249,27 @@ export default function DigitalOwnerForm() {
                                 Please try submitting the form again.
                                 </ErrorText>
                         <ErrorText> 
-                            If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or 
+                            If the problem perissts, kindly reach out to us directly at (919) 355 - 2820 or {''}
                             <ErrorLink className="e-address" href="mailto:thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</ErrorLink>.
                         </ErrorText>
                     </div>
                 )}
                     {
-                        btnIndex === 6 ? 
+                        btnIndex === 7 ? 
                             <ButtonRow>
+                                    <PDFDownloadLink 
+                                        fileName={`${pdfName}.pdf`} 
+                                        document={pdfDoc}
+                                        style={styles.download}
+                                    >
+                                    {(blob, url, loading, err) => 
+                                        loading ? '' : 'Download Form'
+                                    }
+                                    </PDFDownloadLink>
                                 <SendBtn 
                                     type="submit" 
                                     value="Send"
-                                    onClick={async () => await sendBtnHandleClick()}
+                                    onClick={() => sendBtnHandleClick()}
                                 >
                                     Send
                                 </SendBtn>
@@ -355,13 +288,7 @@ export default function DigitalOwnerForm() {
             {
                 viewer ? 
                 <PDFViewer style={{width: '100%', height: '800px'}} title={'someName'}>
-                    <PdfDoc 
-                        formData={formData} 
-                        ownerCount={ownerCountArr}
-                        emergencyCount={countEmergencyContacts}
-                        authCount={countAuth}
-                        countPets={countPets}
-                    />
+                    {pdfDoc}
                 </PDFViewer>
                     : null 
             }
@@ -377,7 +304,11 @@ export default function DigitalOwnerForm() {
                 </FormBtn>
 
                 <CommonP style={{margin: '0 0 50px'}}>
-                    Once completed, you can either email it to us at <UnderlineLink href="thebiscuitgarden@gmail.com">thebiscuitgarden@gmail.com</UnderlineLink> or you can bring it in.
+                    Once completed, you can either email it to us at {''}
+                        <UnderlineLink href="thebiscuitgarden@gmail.com">
+                            thebiscuitgarden@gmail.com
+                        </UnderlineLink> 
+                    {''} or you can bring it in.
                 </CommonP>
             </IntakePDF>
         </IntakeSection>

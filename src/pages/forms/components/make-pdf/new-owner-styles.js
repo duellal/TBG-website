@@ -1,7 +1,11 @@
 import { Font, StyleSheet } from '@react-pdf/renderer'
+
 //Fonts:
 import RegRoboto from './Roboto/Roboto-Regular.ttf'
 import BoldRoboto from './Roboto/Roboto-Bold.ttf'
+
+//Variables:
+import { bright_red } from '../../../../styles/constants/colors'
 
 //Register Fonts:
 Font.register({family: "Roboto", fonts: [
@@ -93,4 +97,15 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'grey',
     },
+    download: {
+        fontSize: '1.8rem',
+        margin: '40px 15px',
+        padding: '5px 10px',
+        alignItems: 'center',
+        backgroundColor: bright_red,
+        cursor: `pointer`,
+        border: `1px solid ${bright_red}`,
+        boxShadow: '0 0 8px 1px black',
+        color: `white`,
+    }
 })

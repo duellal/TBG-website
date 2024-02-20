@@ -6,4 +6,5 @@ export let tabNamesArr = [
     'Behavioral Information',
     'Health History',
     'Waiver',
+    'Review'
 ]
