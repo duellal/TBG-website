@@ -1,6 +1,3 @@
-// get rid of contact form
-// commented it for now, BAY may change her mind in the future about it
-
 import styled, { keyframes } from "styled-components";
 
 export const ContactSection = styled.section`
@@ -46,7 +43,18 @@ export const Label = styled.label`
 
 export const Input = styled.input`
     font-size: 15px;
-    margin: 6px;
+    margin: 6px 6px 6px 12px;
+    }
+`
+
+export const SelectInput = styled.select`
+font-size: 15px;
+margin: 6px 6px 6px 12px;
+`
+
+export const OptionInput = styled.option`
+font-family: Georgia, Times, "Times New Roman";
+font-size: 15px;
 `
 
 export const MessageInput = styled.textarea`
@@ -61,7 +69,10 @@ export const MessageInput = styled.textarea`
 export const FlexColDiv = styled.div`
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
+
+    // border: 1px solid black;
 `
 
 export const SubmitInput = styled(Input)`

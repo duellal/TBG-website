@@ -1,54 +1,76 @@
 import React from "react"
 
-//Intake Form - Owner Styles:
-import { IntakeDivider, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../styles/intake-form'
-import { FlexColDiv, Input } from "../../../styles/contact";
+// Styles:
+import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
+import { FlexColDiv, Input } from "../../../../../styles/contact";
+import { FormAsterisk, FormExample } from "../../../../../styles/forms";
 
+
+/**
+ * @component owner info section labels + inputs
+ * @param {*} props - changeInput, ownerKey, formData
+ */
 export default function OwnerInfo(props){
-    const { ownerKey } = props
+    const { changeInput, ownerKey, formData } = props
 
     return(
-        <IntakeHDiv key={`owner${ownerKey}`} id={`owner${ownerKey}`}>
+        <IntakeHDiv key={`owner${ownerKey}`}>
             <IntakeDivider>
-                    <IntakeH4>
+                    <IntakeH5>
                         Owner {ownerKey}
-                    </IntakeH4>
+                    </IntakeH5>
             </IntakeDivider>
             
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
-                            *First Name
+                            <FormAsterisk>*</FormAsterisk> First Name
                         </IntakeLabel>
                         <Input 
                             type="text" 
                             name={`owner${ownerKey}_first_name`}
                             required 
+                            value={formData[`owner${ownerKey}_first_name`]}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
-                                *Last Name
+                            <FormAsterisk>*</FormAsterisk> Last Name
                             </IntakeLabel>
                             <Input 
                                 type="text" 
                                 name={`owner${ownerKey}_last_name`} 
-                                required />
+                                required
+                                value={formData[`owner${ownerKey}_last_name`]}    
+                                onChange={event => changeInput(event)}
+                            />
                         </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
-                            *Email <br/> ex: someemail@server.com
+                            <FormAsterisk>*</FormAsterisk> 
+                            Email 
+                            <FormExample>
+                                ex: someemail@server.com
+                            </FormExample>
                         </IntakeLabel>
                         <Input 
                             type="email" 
                             name={`owner${ownerKey}_email`} 
-                            required />
+                            required 
+                            value={formData[`owner${ownerKey}_email`]}
+                            onChange={event => changeInput(event)}
+                        />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                            *Phone <br/> ex: (xxx) xxx-xxxx
+                            <FormAsterisk>*</FormAsterisk> 
+                            Phone 
+                            <FormExample>
+                                ex: (xxx) xxx-xxxx
+                            </FormExample>
                         </IntakeLabel>
                         <PhoneInput
                             type="tel" 
@@ -56,18 +78,24 @@ export default function OwnerInfo(props){
                             placeholder="(___) ___-____"
                             format="(###) ###-####" 
                             mask="_" 
-                            required />
+                            required
+                            value={formData[`owner${ownerKey}_phone`]}        
+                            onChange={event => changeInput(event)}
+                        />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                            *Address
+                        <FormAsterisk>*</FormAsterisk> Address
                         </IntakeLabel>
                         <Input 
                             type='address' 
                             name={`owner${ownerKey}_address1`} 
-                            required />
+                            required 
+                            value={formData[`owner${ownerKey}_address1`]}
+                            onChange={event => changeInput(event)}
+                        />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
@@ -78,36 +106,47 @@ export default function OwnerInfo(props){
                         <Input 
                             type='address' 
                             name={`owner${ownerKey}_address2`}
+                            value={formData[`owner${ownerKey}_address2`]}
+                            onChange={event => changeInput(event)}
                         />
                     </FlexColDiv>
                 </IntakeRow>
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                            *City
+                        <FormAsterisk>*</FormAsterisk> City
                         </IntakeLabel>
                         <Input 
                             type="city" 
                             name={`owner${ownerKey}_city`} 
-                            required />
+                            required 
+                            value={formData[`owner${ownerKey}_city`]}
+                            onChange={event => changeInput(event)}
+                       />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
-                            *State
+                        <FormAsterisk>*</FormAsterisk> State
                         </IntakeLabel>
                         <Input 
                             type="state" 
                             name={`owner${ownerKey}_state`} 
-                            required />
+                            required 
+                            value={formData[`owner${ownerKey}_state`]}  
+                            onChange={event => changeInput(event)}
+                        />
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
-                            *Zip Code
+                        <FormAsterisk>*</FormAsterisk> Zip Code
                         </IntakeLabel>
                         <Input 
                             type="zipcode" 
                             name={`owner${ownerKey}_zipcode`} 
-                            required />
+                            required 
+                            value={formData[`owner${ownerKey}_zipcode`]}    
+                            onChange={event => changeInput(event)}
+                        />
                     </FlexColDiv>
                 </IntakeRow>
         </IntakeHDiv>

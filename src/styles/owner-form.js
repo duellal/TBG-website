@@ -1,23 +1,6 @@
-/* Title: New Owner Form 
-Blurb: Intake forms and medication forms will be filled out at time of checkin
-
-Buttons on intake form: make them stand out
-    - red or blue button
-    - on hover change gradient of color
-    - add shadow behind it
-
-Intake Form: 
-Title and blurb outside of the form box (own div)
-Make it like the Green beagle lodge with a sections + next -> submit
-Intake Form 
-    - take out pets on liability waiver
-    -Emergency Contact: Take out initials
-    - Required info: (Required) in red italics
-
-*/
-
 import styled from "styled-components";
 import { PatternFormat } from "react-number-format";
+import { bright_red, darkGrey } from "./constants/colors";
 
 
 export const IntakeSection = styled.section`
@@ -37,19 +20,15 @@ export const IntakeHeader = styled.div`
 
 export const IntakeCard = styled.div`
     margin: 30px;
-    padding: 12px;
+    padding: 12px 12px 0;
     background-color: #dedede;
-    width: 700px;
+    width: 900px;
 `
 
 export const IntakeForm = styled.form`
     height: auto;
     margin: auto;
-    padding: 50px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    padding: 50px 50px 0;
 `
 
 export const IntakeDivider = styled.div`
@@ -65,13 +44,25 @@ export const IntakePDF = styled.div`
 export const IntakeRow = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
     grid-column-start: 1;
     grid-column-end: 5;
     align-items: flex-end;
     text-align: center;
-    margin: 10px 0;
+    padding: 10px 20px;
     width: 100%;
+
+
+    ${props => {
+        if(props.auth){
+            return {
+                'padding': '0 20px'
+            }
+        }
+    }}
+`
+
+export const ButtonRow = styled(IntakeRow)`
+justify-content: center;
 `
 
 export const IntakeLabelRow = styled.div`
@@ -87,18 +78,26 @@ export const IntakeHealthLabel = styled.label`
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    // border: 1px solid orange;
 `
 
-export const IntakeHealthInput = styled(PatternFormat)`
-    font-size: 15px;
-    text-align: left;
-    width: 70%;
-    margin: 6px;
-`
-
-export const IntakeButton = styled.button`
-    margin: 2% 0;
+export const FormBtn = styled.button`
+    margin: 40px 15px;
     padding: 5px 10px;
+    align-items: center;
+    background-color: ${bright_red};
+    cursor: pointer;
+    border: 1px solid ${bright_red};
+    box-shadow: 0 0 8px 1px black;
+    color: white;
+`
+
+export const SendBtn = styled(FormBtn)`
+// margin-top: 0;
 `
 
 export const IntakeLink = styled.a`
@@ -110,32 +109,44 @@ export const IntakeLink = styled.a`
 
 export const IntakeH3 = styled.h3`
     font-size: 2.4rem;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
-export const IntakeH4 = styled.h4`
+export const IntakeH5 = styled.h5`
     font-size: 2rem;
     text-align: left;
 `
-export const IntakeH5 = styled.h4`
-    font-size: 1.8rem;
-    margin: 5px 0 20px 0;
+
+export const WaiverH5 = styled.h5`
+    font-size: 2.4rem;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
-export const AuthPickupH5 = styled.h4`
-    font-size: 1.8rem;
-    margin: 5px 0 0 0;
-`
 export const IntakeHDiv = styled.div`
-    grid-template-columns: 1;
-    text-align: left;
-    grid-column-start: 1;
-    grid-column-end: 5;
+    width: 100%;
+    border-top: 1px solid ${darkGrey};
 `
 
 export const IntakeLabel = styled.label`
+    display: flex;
+    flex-wrap: wrap;
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+
+    // border: 1px solid orange;
+`
+
+export const AuthPickupLabel = styled(IntakeLabel)`
+    margin-left: 10px;
 `
 
 export const IntakeP = styled.p`
@@ -149,12 +160,14 @@ export const IntakeCol = styled.div`
 `
 
 export const IntakeMessageInput = styled.textarea`
+    width: 100%;
     font-size: 16px;
     padding: 10px;
-    height: 40px;
+    height: 80px;
     overflow-y: scroll;
     resize: none;
     scrollbar-gutter: stable both-edges;
+    margin-top: 6px;
 `
 
 export const IntakeWaiverDiv = styled.div`
@@ -162,7 +175,7 @@ export const IntakeWaiverDiv = styled.div`
     grid-column-end: 5;
     align-items: center;
     padding: 20px;
-    height: 200px;
+    height: 530px;
     overflow-y: scroll;
     background-color: white;
     border: 1px solid black;
@@ -171,27 +184,6 @@ export const IntakeWaiverDiv = styled.div`
 export const IntakeWaiverP = styled.p`
     font-size: 16px;
     margin-top: 20px;
-`
-export const SignatureDiv = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: white;
-`
-export const SignatureBtns = styled.button`
-    margin-top: 20px;
-    background-color: white;
-    border: none;
-`
-
-export const CanvasDiv = styled.div`
-    border-bottom: 1px solid black
-`
-
-export const Controller = styled(CanvasDiv)`
 `
 
 // Used for below submit styling:

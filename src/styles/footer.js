@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { grey } from "./constants/colors";
 import { devicesWidth } from "./constants/device-size";
 
 const { laptopL, laptop, laptopS, laptopXS, mobileL, mobileXL, tablet, tabletL, tabletXL } = devicesWidth
@@ -11,7 +12,7 @@ export const FooterStyle = styled.footer`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: rgb(221, 219, 219);
+    background-color: ${grey};
 
     p, a, .nav-item {
         font-size: 2.2rem;
