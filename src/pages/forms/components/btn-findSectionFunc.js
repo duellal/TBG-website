@@ -1,4 +1,4 @@
-import GetImg from "./make-pdf/get-component-img"
+// import GetImg from "./make-pdf/get-component-img"
 
 export default async function findSection(sectionHTML, formHTML, setFormHTML, btnIndex, sectionId){
     //Fail safe in case there is no html:

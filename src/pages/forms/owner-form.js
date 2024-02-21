@@ -156,7 +156,7 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-// console.log(url)
+console.log(url)
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
@@ -209,9 +209,9 @@ export default function DigitalOwnerForm() {
         //     })
     }
 
-    let sendBtnHandleClick = () => {
-        return
-    }
+    // let sendBtnHandleClick = () => {
+    //     return
+    // }
 
     return (
         <IntakeSection id="digital-intake">
