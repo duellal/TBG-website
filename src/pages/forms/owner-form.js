@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 // import emailjs, { sendForm } from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-// import jsPDF from "jspdf";
-import { BlobProvider, PDFDownloadLink, PDFViewer, renderToStream, renderToString, usePDF } from '@react-pdf/renderer';
+import { PDFDownloadLink, usePDF } from '@react-pdf/renderer';
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -40,7 +39,6 @@ export default function DigitalOwnerForm() {
     const [url, editUrl] = useState()
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [viewer, updateViewer] = useState(false)
 
     //Component States:
     const [countPets, setCountPets] = useState([{}])
@@ -65,6 +63,7 @@ export default function DigitalOwnerForm() {
                 )
     const [pdfInstance, updatePdfInstance] = usePDF({document: pdfDoc})
 
+    //Setting + getting the url for the pdf:
     useEffect(() => {
         if(pdfInstance.blob){
             updatePdfInstance(pdfDoc)
@@ -157,7 +156,7 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-
+// console.log(url)
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
@@ -167,27 +166,34 @@ export default function DigitalOwnerForm() {
 
         updatePdfInstance(pdfDoc)
 
-        window.open(url)
+        // let downloadLink = <PDFDownloadLink 
+        //                         fileName={`${pdfName}.pdf`} 
+        //                         document={pdfDoc}
+        //                         style={styles.download}
+        //                     >
+        //                         {() => 
+        //                             'Download Form'
+        //                         }
+        //                     </PDFDownloadLink>
     
-        let params = {
-            form_pdf: url,
-            owner1_first_name: formData.owner1_first_name,
-            owner1_last_name: formData.owner1_last_name,
-            owner1_email: formData.owner1_email,
-
-        }
+        // let params = {
+        //     pdf_link: downloadLink,
+        //     owner1_first_name: formData.owner1_first_name,
+        //     owner1_last_name: formData.owner1_last_name,
+        //     owner1_email: formData.owner1_email
+        // }
         
-        const data = {
-            serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
-            templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-            templateParams: params,
-            // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-        };
+        // const data = {
+        //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
+        //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
+        //     templateParams: params,
+        //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+        // };
             
         // return emailjs.send(
         //     process.env.REACT_APP_SERVICE_ID_INTAKE,
         //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-        //     params, 
+        //     await params, 
         //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
         // )
         //     .then((res) => {
@@ -254,6 +260,7 @@ export default function DigitalOwnerForm() {
                         </ErrorText>
                     </div>
                 )}
+                {/* Only shows send (submit) + download buttons if on the last tab index */}
                     {
                         btnIndex === 7 ? 
                             <ButtonRow>
@@ -262,14 +269,14 @@ export default function DigitalOwnerForm() {
                                         document={pdfDoc}
                                         style={styles.download}
                                     >
-                                    {(blob, url, loading, err) => 
-                                        loading ? '' : 'Download Form'
-                                    }
+                                        {() => 
+                                            'Download Form'
+                                        }
                                     </PDFDownloadLink>
                                 <SendBtn 
                                     type="submit" 
                                     value="Send"
-                                    onClick={() => sendBtnHandleClick()}
+                                    // onClick={() => sendBtnHandleClick()}
                                 >
                                     Send
                                 </SendBtn>
@@ -285,15 +292,7 @@ export default function DigitalOwnerForm() {
                 </IntakeForm>
             </IntakeCard>
 
-            {
-                viewer ? 
-                <PDFViewer style={{width: '100%', height: '800px'}} title={'someName'}>
-                    {pdfDoc}
-                </PDFViewer>
-                    : null 
-            }
-
-            {/* New Client Form PDF Section */}
+            {/* New Client Form PDF Section - Can download PDF version of the digital new owner form */}
             <IntakePDF>
                 <CommonP style={{margin: '30px 0 0'}}>
                     If you cannot fill out the digitial form, feel free to download and complete the pdf version below.
