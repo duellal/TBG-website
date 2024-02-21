@@ -147,6 +147,7 @@ export default function DigitalOwnerForm() {
             formData={formData}     
         />,
         <ReviewForm 
+            pdfDoc={pdfDoc}
             formData={formData} 
             ownerCount={ownerCountArr}
             emergencyCount={countEmergencyContacts}
@@ -156,7 +157,7 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-console.log(url)
+// console.log(url)
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
@@ -266,11 +267,20 @@ console.log(url)
                             <ButtonRow>
                                     <PDFDownloadLink 
                                         fileName={`${pdfName}.pdf`} 
-                                        document={pdfDoc}
+                                        document={<PdfDoc 
+                                            formData={formData} 
+                                            ownerCount={ownerCountArr}
+                                            emergencyCount={countEmergencyContacts}
+                                            authCount={countAuth}
+                                            countPets={countPets}
+                                            pdfName={pdfName}
+                                        />}
                                         style={styles.download}
                                     >
-                                        {() => 
-                                            'Download Form'
+                                        {({ blob, url, loading, error }) => {
+                                            
+                                            return loading ? 'Loading PDF' : 'Download Form'
+                                            }
                                         }
                                     </PDFDownloadLink>
                                 <SendBtn 
