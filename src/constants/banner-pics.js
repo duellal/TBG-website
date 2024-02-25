@@ -41,10 +41,6 @@ export const boardingImages = [
         alt: ''
     },
     {
-        image: boardingBanner4,
-        alt: ''
-    }, 
-    {
         image: boardingBanner5,
         alt: ''
     },
