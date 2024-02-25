@@ -164,7 +164,7 @@ export default function Footer(){
                             <NavItem onClick={() => navigate('/forms')}>
                                     Forms
                             </NavItem>
-                            <NavItem onClick={() => navigate('/sitemap')}>
+                            <NavItem onClick={() => navigate('/credits')}>
                                     Credits
                             </NavItem>
                         </Nav>
