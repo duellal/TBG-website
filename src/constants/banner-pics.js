@@ -2,7 +2,6 @@
 import boardingBanner1 from '../images/boarding/boarding-slide-show-1.png'
 import boardingBanner2 from '../images/boarding/boarding-slide-show-2.png'
 import boardingBanner3 from '../images/boarding/boarding-slide-show-3.png'
-import boardingBanner4 from '../images/boarding/boarding-slide-show-4.png'
 import boardingBanner5 from '../images/boarding/boarding-slide-show-5.png'
 import boardingBanner6 from '../images/boarding/boarding-slide-show-6.png'
 //Daycare
