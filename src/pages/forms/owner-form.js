@@ -36,7 +36,7 @@ export default function DigitalOwnerForm() {
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
-    const [url, editUrl] = useState()
+    // const [url, editUrl] = useState()
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -68,9 +68,9 @@ export default function DigitalOwnerForm() {
         if(pdfInstance.blob){
             updatePdfInstance(pdfDoc)
 
-            editUrl(
-                pdfInstance.url
-            )
+            // editUrl(
+            //     pdfInstance.url
+            // )
         }
     }, [pdfInstance, updatePdfInstance, pdfDoc])
 
