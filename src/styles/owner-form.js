@@ -150,7 +150,7 @@ export const AuthPickupLabel = styled(IntakeLabel)`
 `
 
 export const IntakeP = styled.p`
-    width: 500px;
+    width: 900px;
 `
 
 export const IntakeCol = styled.div`
