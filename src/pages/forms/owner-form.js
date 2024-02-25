@@ -228,6 +228,12 @@ export default function DigitalOwnerForm() {
                 <IntakeP>
                     Before you schedule your first visit or appointment, please fill out the form below. 
                 </IntakeP>
+                
+                <IntakeDivider/>
+                
+                <IntakeP>
+                    Please note that you will need to use the buttons at the bottom of the page to go back or forward on the form. The back button on your web browser will go to previous page.
+                </IntakeP>
             </IntakeHeader>
 
             <IntakeCard id="new-owner-form">
