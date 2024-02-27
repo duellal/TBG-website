@@ -2,11 +2,11 @@
 import React from "react";
 
 // Images:
-import { homeImages } from "../constants/banner-pics";
+import { homeImages } from "./general-components/slideshow/banner-pics";
 import collage from '../images/home-collage.jpg'
 
 // Components:
-import Banner from './general-components/banner-pic'
+import Banner from './general-components/slideshow/banner-slideshow'
 import InfoButton from "./general-components/info-buttons.js/info-button";
 
 // Styles:

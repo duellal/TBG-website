@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 //Styling
-import { BannerDiv, BannerDots, BannerIdvDot, BannerImg, BannerSlider } from "../../styles/banner";
+import { BannerDiv, BannerDots, BannerIdvDot, BannerImg, BannerSlider } from "../../../styles/banner";
 
 export default function Banner(props){
     //images need to be an array of images

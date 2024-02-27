@@ -3,7 +3,7 @@ import React from "react";
 
 //Components:
 import AccordianTitle from "./faqs/components/accordian-titles";
-import Banner from "./general-components/banner-pic";
+import Banner from "./general-components/slideshow/banner-slideshow";
 
 //Daycare Styles:
 import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv, PricesSection, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
@@ -14,7 +14,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import collage from '../images/collage-daycare.jpg'
 
 //Variables:
-import { daycareImages } from "../constants/banner-pics";
+import { daycareImages } from "./general-components/slideshow/banner-pics";
 
 //FAQ Arrays:
 import { daycareFaqs, indvTitles } from "./faqs/faq-arrays";

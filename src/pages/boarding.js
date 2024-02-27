@@ -8,11 +8,11 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 
 //Components: 
 import AccordianTitle from './faqs/components/accordian-titles';
-import Banner from "./general-components/banner-pic";
+import Banner from "./general-components/slideshow/banner-slideshow";
 import Requirements from "./general-components/requirements";
 
 //Images:
-import { boardingImages } from "../constants/banner-pics";
+import { boardingImages } from "./general-components/slideshow/banner-pics";
 import collage from '../images/collage-boarding.jpg'
 
 //FAQ Arrays: 

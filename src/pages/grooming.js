@@ -3,7 +3,7 @@ import React from "react";
 
 //Components:
 import AccordianTitle from "./faqs/components/accordian-titles";
-import Banner from "./general-components/banner-pic";
+import Banner from "./general-components/slideshow/banner-slideshow";
 // import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
@@ -25,7 +25,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import collage from '../images/grooming/grooming-collage-2.jpg'
 
 //Variables:
-import { groomingImages } from "../constants/banner-pics";
+import { groomingImages } from "./general-components/slideshow/banner-pics";
 
 //FAQ Arrays:
 import { groomingFaqs, indvTitles } from "./faqs/faq-arrays";
