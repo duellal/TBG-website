@@ -12,8 +12,8 @@ import { AllRedDropDowns } from "../../styles/common-styles";
 
 // Images:
 import manager from '../../images/about/manager.jpeg';
-import frontDeskPhone from '../../images/team/front-desk-phone.jpg'
-import frontDeskCheckin from '../../images/team/front-desk-checkin.jpg'
+import frontDeskPhone from '../../images/about/team/front-desk-phone.jpg'
+import frontDeskCheckin from '../../images/about/team/front-desk-checkin.jpg'
 
 // Variables
 import { indvTitles, joinTeamDropdown } from "../faqs/faq-arrays";
