@@ -15,7 +15,7 @@ import { AboutInfoSection, AboutStartDiv, GraffitiDiv, GraffitiImg, QuoteAuthor,
 import { CommonP } from "../../styles/common-styles";
 
 // Variables:
-import { values } from "../../constants/values";
+import { values } from "./values_array";
 
 export default function About(){
     return (
