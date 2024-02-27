@@ -16,7 +16,7 @@ import PetHealthSection from "./components/sections/pet/pet-section-health.js";
 
 //Form PDF:
 import intakeForm from './TBG-Intake-Form-2024.pdf'
-import PdfDoc from "./components/make-pdf/new-owner-pdf.js";
+import PdfDoc from "./components/create-pdf/new-owner-pdf.js";
 
 //Form Template:
 import { formTemplate } from "./form-template.js";
@@ -28,7 +28,7 @@ import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
 import { Rotate } from "hamburger-react";
 import ReviewForm from "./components/sections/review/review-form.js";
-import { styles } from "./components/make-pdf/new-owner-styles.js";
+import { styles } from "./components/create-pdf/new-owner-styles.js";
 
 
 export default function DigitalOwnerForm() {

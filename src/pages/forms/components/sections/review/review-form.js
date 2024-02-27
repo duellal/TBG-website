@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PDFViewer } from "@react-pdf/renderer";
 
 //Components: 
-import PdfDoc from "../../make-pdf/new-owner-pdf";
+import PdfDoc from "../../create-pdf/new-owner-pdf";
 
 
 export default function ReviewForm(props){
