@@ -11,7 +11,7 @@ import Daycare from './pages/daycare';
 import DigitalOwnerForm from './pages/forms/owner-form';
 import Forms from './pages/forms/forms-page';
 import Grooming from './pages/grooming';
-import Home from './pages/home';
+import Home from './pages/home/home';
 import Requirements from './pages/general-components/requirements';
 
 const router = createBrowserRouter([
