@@ -14,7 +14,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import collage from '../images/collage-daycare.jpg'
 
 //Variables:
-import { daycareImages } from "./general-components/slideshow/banner-pics";
+import { daycareImages } from "./general-components/slideshow/banner-pics-arr";
 
 //FAQ Arrays:
 import { daycareFaqs, indvTitles } from "./faqs/faq-arrays";

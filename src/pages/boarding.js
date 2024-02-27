@@ -12,7 +12,7 @@ import Banner from "./general-components/slideshow/banner-slideshow";
 import Requirements from "./general-components/requirements";
 
 //Images:
-import { boardingImages } from "./general-components/slideshow/banner-pics";
+import { boardingImages } from "./general-components/slideshow/banner-pics-arr";
 import collage from '../images/collage-boarding.jpg'
 
 //FAQ Arrays: 

@@ -2,7 +2,7 @@
 import React from "react";
 
 // Images:
-import { homeImages } from "./general-components/slideshow/banner-pics";
+import { homeImages } from "./general-components/slideshow/banner-pics-arr";
 import collage from '../images/home-collage.jpg'
 
 // Components:

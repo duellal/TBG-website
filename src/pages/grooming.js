@@ -25,7 +25,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import collage from '../images/grooming/grooming-collage-2.jpg'
 
 //Variables:
-import { groomingImages } from "./general-components/slideshow/banner-pics";
+import { groomingImages } from "./general-components/slideshow/banner-pics-arr";
 
 //FAQ Arrays:
 import { groomingFaqs, indvTitles } from "./faqs/faq-arrays";
