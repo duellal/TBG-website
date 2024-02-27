@@ -141,6 +141,7 @@ export const IntakeLabel = styled.label`
     font-size: 16px;
     text-align: left;
     margin: 0 6px;
+    align-items: center;
 
     // border: 1px solid orange;
 `
@@ -162,12 +163,13 @@ export const IntakeCol = styled.div`
 export const IntakeMessageInput = styled.textarea`
     width: 100%;
     font-size: 16px;
-    padding: 10px;
+    // padding: 10px;
     height: 80px;
     overflow-y: scroll;
     resize: none;
     scrollbar-gutter: stable both-edges;
     margin-top: 6px;
+    font-family: Georgia, Times, "Times New Roman";
 `
 
 export const IntakeWaiverDiv = styled.div`
@@ -205,6 +207,8 @@ export const IntakeSubmitInput = styled(Input)`
 `
 
 export const PhoneInput = styled(PatternFormat)`
-    font-size: 15px;
-    margin: 6px;
+    align-items: center;
+    font-size: 16px;
+    margin: 6px 10px 6px 12px;
+    padding: 5px;
 `

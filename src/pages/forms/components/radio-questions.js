@@ -29,18 +29,20 @@ export default function RadioQuestion(props){
 
         return(
             <div key={`radio_question_${htmlFor}_${answer}`}>
-                <Input 
-                    type='radio' 
-                    name={htmlFor}
-                    value={answer}
-                    checked={formData[htmlFor] === answer}
-                    required
-                    onChange={changeInput}
-                />
-
                 <IntakeLabel 
                     htmlFor={htmlFor}
+                    for={`${htmlFor}_${answer}`}
                 >
+                    <Input 
+                        id={`${htmlFor}_${answer}`}
+                        type='radio' 
+                        name={htmlFor}
+                        value={answer}
+                        checked={formData[htmlFor] === answer}
+                        required
+                        onChange={changeInput}
+                    />
+
                     {capitalizeWord(answer)}
                 </IntakeLabel>
             </div>
