@@ -24,7 +24,7 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_first_name`}>
-                            <FormAsterisk>*</FormAsterisk> First Name
+                            First Name
                         </IntakeLabel>
                         <Input 
                             type="text" 
@@ -36,7 +36,7 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                         <FlexColDiv>
                             <IntakeLabel htmlFor={`owner${ownerKey}_last_name`}>
-                            <FormAsterisk>*</FormAsterisk> Last Name
+                            Last Name
                             </IntakeLabel>
                             <Input 
                                 type="text" 
@@ -50,7 +50,7 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_email`}>
-                            <FormAsterisk>*</FormAsterisk> 
+                            
                             Email 
                             <FormExample>
                                 ex: someemail@server.com
@@ -66,7 +66,7 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner${ownerKey}_phone`}>
-                            <FormAsterisk>*</FormAsterisk> 
+                            
                             Phone 
                             <FormExample>
                                 ex: (xxx) xxx-xxxx
@@ -87,7 +87,7 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> Address
+                        Address
                         </IntakeLabel>
                         <Input 
                             type='address' 
@@ -101,7 +101,7 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                            Apartment/Suite #
+                            Apartment/Suite # - Not Required
                         </IntakeLabel>
                         <Input 
                             type='address' 
@@ -114,7 +114,7 @@ export default function OwnerInfo(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> City
+                        City
                         </IntakeLabel>
                         <Input 
                             type="city" 
@@ -126,7 +126,7 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> State
+                        State
                         </IntakeLabel>
                         <Input 
                             type="state" 
@@ -138,7 +138,7 @@ export default function OwnerInfo(props){
                     </FlexColDiv>
                     <FlexColDiv>
                         <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> Zip Code
+                        Zip Code
                         </IntakeLabel>
                         <Input 
                             type="zipcode" 

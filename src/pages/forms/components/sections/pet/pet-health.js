@@ -32,7 +32,7 @@ export default function PetHealth(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_vet`}>
-                                    <FormAsterisk>*</FormAsterisk> Vetinary Hospital
+                                    Vetinary Hospital
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -44,8 +44,7 @@ export default function PetHealth(props){
                             </FlexColDiv>
 
                             <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                    <FormAsterisk>*</FormAsterisk>      
+                                <IntakeLabel htmlFor={`pet${petKey}_vet_phone`}>     
                                      Vet Phone Number 
                                     
                                     <FormExample>
@@ -97,7 +96,7 @@ export default function PetHealth(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_extra_medical`}>
-                                    Is there anything else we should know about your pet's health or medical history?
+                                    Is there anything else we should know about your pet's health or medical history? - Not Required
                                 </IntakeLabel>
                                 
                                 <IntakeRow>

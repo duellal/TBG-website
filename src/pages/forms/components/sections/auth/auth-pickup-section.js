@@ -33,7 +33,7 @@ export default function AuthPickupSection(props){
     
             setAuthNum(authNum + 1)
     
-            if(authNum === 4){
+            if(authNum === 3){
                 toggleAuthBtn()
             }
             
@@ -50,8 +50,6 @@ export default function AuthPickupSection(props){
                     <IntakeH3> 
                         Authorized People to Pickup Your Pets
                     </IntakeH3>
-
-                    <AsteriskHeader/>
 
                     <IntakeRow>
                         <FlexColDiv>

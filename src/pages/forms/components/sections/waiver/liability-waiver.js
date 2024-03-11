@@ -53,7 +53,6 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <WaiverH5>
-                            <FormAsterisk>*</FormAsterisk>
                             {waiverAcknowledgeHeader}
                         </WaiverH5>
                         <IntakeWaiverP style={{margin: '0 0 10px'}}>
@@ -73,7 +72,7 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner_printed_name`}>
-                            <FormAsterisk>*</FormAsterisk> Owner's Printed Name
+                            Owner's Printed Name
                         </IntakeLabel>
                         <Input 
                             type="text"      

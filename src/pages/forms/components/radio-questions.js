@@ -53,7 +53,7 @@ export default function RadioQuestion(props){
             <IntakeRow key={`${htmlFor}_explain`}>
                 <FlexColDiv>
                     <IntakeLabel htmlFor={`${htmlFor}_explain`}>
-                        <FormAsterisk>*</FormAsterisk> Please explain
+                        Please explain
                         <IntakeMessageInput 
                             type="text" 
                             name={`${htmlFor}_explain`}
@@ -77,7 +77,6 @@ export default function RadioQuestion(props){
         <IntakeRow key={`radio_${htmlFor}`}>
             <FlexColDiv>
                 <IntakeLabel htmlFor={htmlFor}>
-                    <FormAsterisk>*</FormAsterisk> 
                     {question}  {example ?
                                     <>
                                         <br/> example

@@ -26,7 +26,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_name`}>
-                                    <FormAsterisk>*</FormAsterisk> Name
+                                    Name
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -39,7 +39,7 @@ export default function PetInfo(props){
 
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_species`}>
-                                    <FormAsterisk>*</FormAsterisk> Species
+                                    Species
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -53,7 +53,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_breed`}>
-                                    <FormAsterisk>*</FormAsterisk> Breed
+                                    Breed
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -80,7 +80,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_sex`}>
-                                    <FormAsterisk>*</FormAsterisk> Sex
+                                    Sex
                                 </IntakeLabel>
                                 <IntakeLabelRow>
                                     <Input 
@@ -109,7 +109,7 @@ export default function PetInfo(props){
 
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_altered`}>
-                                    <FormAsterisk>*</FormAsterisk> Spayed or Neutered
+                                    Spayed or Neutered
                                 </IntakeLabel>
                                 <IntakeLabelRow>
                                     <Input 
@@ -142,7 +142,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                                    <FormAsterisk>*</FormAsterisk> Weight (lbs)
+                                    Weight (lbs)
                                 </IntakeLabel>
                                 <Input 
                                     type="float" 

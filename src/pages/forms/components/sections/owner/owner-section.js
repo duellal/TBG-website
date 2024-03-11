@@ -70,7 +70,7 @@ export default function OwnerSection(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                            <FormAsterisk>*</FormAsterisk> How did you hear about us?
+                            How did you hear about us?
                         </IntakeLabel>
                         <SelectInput
                             value={formData['referred_by']}
