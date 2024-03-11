@@ -71,7 +71,6 @@ export const FlexColDiv = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-
     // border: 1px solid black;
 `
 

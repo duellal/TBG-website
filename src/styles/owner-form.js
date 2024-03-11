@@ -50,7 +50,7 @@ export const IntakeRow = styled.div`
     text-align: center;
     padding: 10px 20px;
     width: 100%;
-
+    align-items: flex-start;
 
     ${props => {
         if(props.auth){
@@ -59,6 +59,10 @@ export const IntakeRow = styled.div`
             }
         }
     }}
+`
+
+export const SpeciesRow = styled(IntakeRow)`
+padding: 10px 0;
 `
 
 export const ButtonRow = styled(IntakeRow)`
@@ -168,6 +172,15 @@ export const IntakeMessageInput = styled.textarea`
     resize: none;
     scrollbar-gutter: stable both-edges;
     margin-top: 6px;
+`
+
+export const SpeciesTextInput = styled(IntakeMessageInput)`
+height: 20px;
+margin: 6px 0px 0px 6px;
+`
+
+export const SpeciesLabel = styled(IntakeLabel)`
+margin: 0;
 `
 
 export const IntakeWaiverDiv = styled.div`
