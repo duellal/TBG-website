@@ -24,11 +24,20 @@ export default function Header() {
     let location = useLocation();
     let path = location.pathname;
 
-    let url = async (urlOption) => {
+    let url = async (props) => {
+        const { title, urlOption } = props
         setOpen(false)
 
-        if(urlOption === path){
-            return window.scrollTo({top: 0,
+        if(title === 'About'){
+            await navigate(urlOption)
+            window.scrollTo({
+                behavior: 'smooth',
+                top: 2150
+            })
+        }
+        else if(urlOption === path){
+            return window.scrollTo({
+                top: 0,
                 left: 0,
                 behavior: "smooth"})
         }
@@ -46,7 +55,7 @@ export default function Header() {
             <Navbar>
                 <Nav>
                     {Object.keys(options).map((key, index) => {
-                        return <NavItem navigateToUrl={url} key={index} url={options[key].url} title={key} />
+                        return <NavItem navigateToUrl={url} key={index} url={{title: key, urlOption: options[key].url}} title={key} />
                     })}
                 </Nav>
             </Navbar>
