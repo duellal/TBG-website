@@ -33,7 +33,7 @@ export default function TeamCareers(){
                     <TeamBioSection>
                         <TeamBioText>
                             <p>
-                                Starting as a kennel technician back in 2019, I’ve been able to see and be a part of the development and growth of The Biscuit Garden. This is truly such a fun and rewarding business to manage and I truly appreciate the connections we make with our clients on a daily basis, both human and pet! I love being a part of this team and not only creating days of fun and excitement for the pets we see every day, but also being a place they are comfortable and content to stay at while their best human friends are away.
+                                Starting as a kennel technician back in 2019, I’ve been able to see and be a part of the development and growth of The Biscuit Garden. This is truly such a fun and rewarding business to manage and I truly appreciate the connections we make with our clients on a daily basis, both human and pet! I love being a part of this team and not only creating days of fun and excitement for the pets we see every day, but also being a place they are comfortable and content to stay while their best human friends are away.
                             </p>
                         </TeamBioText>
 
