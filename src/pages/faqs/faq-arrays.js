@@ -38,8 +38,14 @@ let boardingFaqs = [
         question: `What is your Cancellation Policy for boarding?`,
         answer: [
             `NON-HOLIDAY Cancellation Policy - Cancellations made 48 hours or more prior to the reservation are allowed with no penalty.  Any cancellation made within 48 hours of the reservation, including no shows, will be charged the full amount of the reservation.`,
-            `HOLIDAY Cancellation Policy - Cancellations made 7 days or more prior to the reservation are allowed with no penalty.  Any cancellation made within 7 days and before 48 hours of the reservation will be charged 50% of the total reservation.  Any cancellations within 48 hours of the reservation, including no shows, will charged the amount of the total reservation.`,
+            `HOLIDAY Cancellation Policy - Cancellations made 7 days or more prior to the reservation are allowed with no penalty.  Any cancellation made within 7 days and before 48 hours of the reservation will be charged 50% of the total reservation.  Any cancellations within 48 hours of the reservation, including no shows, will be charged the amount of the total reservation.`,
             `Holiday dates include: Easter week, Thanksgiving week, Christmas - New Years week, and Memorial Day Weekend - Labor Day Weekend ( this includes the entirety of summer)`
+        ]
+    },
+    {
+        question: ` Does my pet need to be evaluated prior to their boarding reservation?`,
+        answer: [
+            `We do require that your pet attend a half or full day of daycare prior to their first boarding reservation. This will allow your pet the opportunity to be introduced to our facility and staff before their stay.`
         ]
     },
 ]
@@ -59,6 +65,12 @@ let daycareFaqs = [
     {
         question: `Can I add a Spa day to my pet’s Daycare day?`,
         answer: [`You sure can! We can add a nail trim and/or a bath to your pet’s day. Please let us know at time of drop off what service you would like added and what time you would like to pick them up so we can maximize their play time and have them ready for pick up.`]
+    },
+    {
+        question: ` Does my pet need to be evaluated prior to attending daycare?`,
+        answer: [
+            `Your pet will be evaluated on their first day of daycare and you will receive a report card at the end of the day to let you know how they did!`
+        ]
     },
 ]
 
