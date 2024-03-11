@@ -2,7 +2,7 @@
 import React from "react";
 
 // Images:
-import homeBannerPic from '../../images/pics/golden-w-black-dogs.jpeg'
+import homeBannerPic from '../../images/home/home-banner-pic.jpeg'
 import collage from '../../images/home-collage.jpg'
 
 // Components:
