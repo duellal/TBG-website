@@ -3,29 +3,20 @@ import React from "react";
 
 //Components:
 import AccordianTitle from "./faqs/components/accordian-titles";
-import Banner from "./general-components/slideshow/banner-slideshow";
-// import Requirements from "./general-components/requirements";
 
 //Grooming Styles:
 import { CommonH1, 
-    // CommonH2, CommonH4,
     CommonInfoSection, CommonStartDiv, 
-    // PricesImg, CommonPRight, CommonPSection, 
     PricesSection, 
-    // CommonPLeft, 
     PricesAsteriskDiv, PricesAsteriskP, 
-    // PricesP, HeaderSection, 
  } from "../styles/commonBDG";
-// import { GroomingImg, GroomingPricesDiv } from "../styles/grooming";
 import { FaqTitleDiv } from "../styles/FAQs";
 import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
-
+import { BannerDiv, BannerImg } from "../styles/banner";
 
 // //Images:
 import collage from '../images/grooming/grooming-collage-2.jpg'
-
-//Variables:
-import { groomingImages } from "./general-components/slideshow/banner-pics-arr";
+import groomingBanner1 from '../images/grooming/grooming-white-tan-dog.jpg'
 
 //FAQ Arrays:
 import { groomingFaqs, indvTitles } from "./faqs/faq-arrays";
@@ -33,7 +24,11 @@ import { groomingFaqs, indvTitles } from "./faqs/faq-arrays";
 export default function Grooming(){
     return(
         <>
-            <Banner allImages={groomingImages} />
+            <BannerDiv>
+                <BannerImg
+                    src={groomingBanner1}
+                />
+            </BannerDiv>
             <CommonStartDiv>
                 <CommonH1> 
                     Grooming

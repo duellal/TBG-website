@@ -3,18 +3,16 @@ import React from "react";
 
 //Components:
 import AccordianTitle from "./faqs/components/accordian-titles";
-import Banner from "./general-components/slideshow/banner-slideshow";
 
 //Daycare Styles:
 import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv, PricesSection, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
 import { FaqTitleDiv } from "../styles/FAQs";
 import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
+import { BannerDiv, BannerImg } from "../styles/banner";
 
 //Images: 
+import daycareBanner4 from '../images/daycare/daycare-slideshow-4.png'
 import collage from '../images/collage-daycare.jpg'
-
-//Variables:
-import { daycareImages } from "./general-components/slideshow/banner-pics-arr";
 
 //FAQ Arrays:
 import { daycareFaqs, indvTitles } from "./faqs/faq-arrays";
@@ -24,7 +22,11 @@ import { daycareFaqs, indvTitles } from "./faqs/faq-arrays";
 export default function Daycare(){
     return(
         <>
-            <Banner allImages={daycareImages} />
+            <BannerDiv>
+                <BannerImg
+                    src={daycareBanner4}
+                />
+            </BannerDiv>
             <CommonStartDiv>
                 <CommonH1> 
                     Doggie Daycare

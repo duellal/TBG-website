@@ -2,25 +2,29 @@
 import React from "react";
 
 // Images:
-import { homeImages } from "../general-components/slideshow/banner-pics-arr";
+import homeBannerPic from '../../images/pics/golden-w-black-dogs.jpeg'
 import collage from '../../images/home-collage.jpg'
 
 // Components:
-import Banner from '../general-components/slideshow/banner-slideshow'
 import InfoButton from "../general-components/info-buttons.js/info-button";
 
 // Styles:
 import { CommonStartDiv } from '../../styles/commonBDG'
+import { BannerDiv, BannerImg } from "../../styles/banner";
+import { CollageImg } from "../../styles/common-styles";
 
 //Variables:
 import { home_btns } from "./home-page-btns";
-import { CollageImg } from "../../styles/common-styles";
 
 
 export default function Home(){
     return (
         <>
-            <Banner allImages={homeImages}/>
+            <BannerDiv>
+                <BannerImg
+                    src={homeBannerPic}
+                />
+            </BannerDiv>
             <CommonStartDiv>
                 <InfoButton array={home_btns}/>
             </CommonStartDiv>

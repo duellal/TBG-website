@@ -5,13 +5,14 @@ import React from "react";
 import { CommonH1, CommonH2, CommonStartDiv, CommonInfoSection, PricesDiv, PricesSection, HeaderSection, CommonH3 } from "../styles/commonBDG";
 import { FaqTitleDiv } from "../styles/FAQs";
 import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
+import { BannerDiv, BannerImg } from "../styles/banner";
 
 //Components: 
 import AccordianTitle from './faqs/components/accordian-titles';
-import Banner from "./general-components/slideshow/banner-slideshow";
 import Requirements from "./general-components/requirements";
 
 //Images:
+import boardingBanner5 from '../images/boarding/boarding-slide-show-5.png'
 import { boardingImages } from "./general-components/slideshow/banner-pics-arr";
 import collage from '../images/collage-boarding.jpg'
 
@@ -21,10 +22,16 @@ import {
     boardingFaqs,
 } from './faqs/faq-arrays'
 
+
 export default function Boarding(){
+    console.log('boarding img?', boardingImages[4].image)
     return(
         <>
-            <Banner allImages={boardingImages}/>
+            <BannerDiv>
+                <BannerImg
+                    src={boardingBanner5}
+                />
+            </BannerDiv>
             <CommonStartDiv>
                 <CommonH1> 
                     Boarding at Our Facility
