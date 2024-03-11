@@ -20,9 +20,6 @@ import { values } from "./values-arr";
 export default function About(){
     return (
         <>
-            <GraffitiDiv>
-                <GraffitiImg src={graffiti2}/>
-            </GraffitiDiv>
             <AboutStartDiv>
                 <CommonH1>
                     A Little About Us
@@ -57,7 +54,7 @@ export default function About(){
                 </AboutInfoSection>
             </AboutStartDiv>
             <GraffitiDiv style={{marginBottom: '-20px'}}>
-                <GraffitiImg src={graffiti}/>
+                <GraffitiImg src={graffiti2}/>
             </GraffitiDiv>
         </>
     )

@@ -15,6 +15,7 @@ import { CollageImg } from "../../styles/common-styles";
 
 //Variables:
 import { home_btns } from "./home-page-btns";
+import About from "../about/about";
 
 
 export default function Home(){
@@ -30,6 +31,8 @@ export default function Home(){
             </CommonStartDiv>
 
             <CollageImg src={collage} alt=""/>
+
+            <About />
         </>
     )
 }

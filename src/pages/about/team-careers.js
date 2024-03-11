@@ -6,14 +6,13 @@ import AccordianTitle from "../faqs/components/accordian-titles";
 
 // Styles:
 import { AboutInfoSection, TeamImg, TeamBioSection, TeamStartDiv, TeamBioText } from '../../styles/about'
-import { CommonH1, CommonH2 } from '../../styles/commonBDG'
+import { CommonH2 } from '../../styles/commonBDG'
 import { FaqTitleDiv } from "../../styles/FAQs";
-import { AllRedDropDowns } from "../../styles/common-styles";
+import { AllRedDropDowns, CollageImg } from "../../styles/common-styles";
 
 // Images:
-import manager from '../../images/about/manager.jpeg';
-import frontDeskPhone from '../../images/about/team/front-desk-phone.jpg'
-import frontDeskCheckin from '../../images/about/team/front-desk-checkin.jpg'
+import manager from '../../images/about/manager.jpg';
+import teamCollage from '../../images/about/team/team-collage.jpg'
 
 // Variables
 import { indvTitles, joinTeamDropdown } from "../faqs/faq-arrays";
@@ -23,19 +22,9 @@ export default function TeamCareers(){
 
     return(
         <TeamStartDiv>
-            <CommonH1> 
-                Meet the Team
-            </CommonH1>
-
-            <AboutInfoSection>
-                    <TeamBioSection>
-                        {/* <TeamBioText> */}
-                            <TeamImg src={frontDeskPhone} alt="" />
-                            <TeamImg src={frontDeskCheckin} alt="" />
-                        {/* </TeamBioText> */}
-                    </TeamBioSection>
-            </AboutInfoSection>
-
+            <CollageImg
+                src={teamCollage}
+            />
             <AboutInfoSection>
                     <CommonH2>
                         Meet the Manager!
