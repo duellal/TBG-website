@@ -15,7 +15,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import { BannerDiv, BannerImg } from "../styles/banner";
 
 // //Images:
-import collage from '../images/grooming/grooming-collage-2.jpg'
+import collage from '../images/grooming/grooming-collage.jpg'
 import groomingBanner1 from '../images/grooming/grooming-white-tan-dog.jpg'
 
 //FAQ Arrays:
@@ -50,7 +50,7 @@ export default function Grooming(){
                 </PricesSection>
                 <PricesAsteriskDiv>
                     <PricesAsteriskP style={{fontSize: '2.2rem'}}>
-                        Extra Large dogs, Difficult dogs or Super Fluffy dogs may incur an additional fee
+                        * Extra Large dogs, Difficult dogs or Super Fluffy dogs may incur an additional fee
                     </PricesAsteriskP>
                 </PricesAsteriskDiv>
 
