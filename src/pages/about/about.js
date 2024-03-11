@@ -20,7 +20,7 @@ import { values } from "./values-arr";
 export default function About(){
     return (
         <>
-            <AboutStartDiv id="about">
+            <AboutStartDiv>
                 <CommonH1>
                     A Little About Us
                 </CommonH1>
