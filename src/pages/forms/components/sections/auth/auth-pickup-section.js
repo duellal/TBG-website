@@ -5,7 +5,6 @@ import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } 
 import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
-import AsteriskHeader from "../../asterisk-header";
 import AuthorizedPickup from "./auth-pickup-info"
 import NextPrevBtn from "../../next-section-btn";
 import { FormExample } from "../../../../../styles/forms";

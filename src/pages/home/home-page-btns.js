@@ -1,10 +1,6 @@
 //Font Awesome: 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBaseball,
-    // faBowlFood, faCarSide, faDog, faBone, faPaw, faSchoolFlag,
-    //  faScissors, faShieldDog, faShop, 
-    faHouse,
-     faShower} from '@fortawesome/free-solid-svg-icons'
+import {  faBaseball, faHouse, faShower} from '@fortawesome/free-solid-svg-icons'
 
 export let home_btns = [
     {

@@ -6,7 +6,6 @@ import InfoButton from "../general-components/info-buttons.js/info-button";
 import TeamCareers from "./team-careers";
 
 // Images:
-import graffiti from '../../images/graffiti-wall.jpg'
 import graffiti2 from '../../images/grafitti-wall2.jpg'
 
 // Styles:

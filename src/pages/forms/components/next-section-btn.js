@@ -1,8 +1,5 @@
 import React from "react";
 
-//Functions:
-// import findSection from "./btn-findSectionFunc";
-
 //Styles:
 import { FormBtn } from "../../../styles/owner-form";
 

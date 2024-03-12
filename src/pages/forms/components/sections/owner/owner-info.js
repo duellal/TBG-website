@@ -3,7 +3,7 @@ import React from "react"
 // Styles:
 import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { FlexColDiv, Input } from "../../../../../styles/contact";
-import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+import { FormExample } from "../../../../../styles/forms";
 
 
 /**

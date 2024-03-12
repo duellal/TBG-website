@@ -3,7 +3,6 @@ import React from "react"
 //Styles:
 import { IntakeLabel, IntakeMessageInput, IntakeRow } from "../../../styles/owner-form"
 import { FlexColDiv, Input } from "../../../styles/contact"
-import { FormAsterisk } from "../../../styles/forms"
 
 /** 
     * The component renders the question + answers. If the user clicks "yes", there is a text input that appears for them to explain their answer more.

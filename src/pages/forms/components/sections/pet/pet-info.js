@@ -1,9 +1,8 @@
 import React from "react";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeMessageInput, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv, SelectInput, OptionInput } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms";
 import { speciesOptions } from "./species-options";
 
 

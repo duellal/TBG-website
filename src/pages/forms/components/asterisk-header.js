@@ -1,5 +1,5 @@
 import React from "react";
-import { FormAsterisk, FormAsteriskH4 } from "../../../styles/forms";
+import { FormAsteriskH4 } from "../../../styles/forms";
 
 /**
  * @component Form sections required information header below the section title

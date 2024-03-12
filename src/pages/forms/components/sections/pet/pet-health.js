@@ -6,7 +6,7 @@ import RadioQuestion from "../../radio-questions";
 //Styles:
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeMessageInput, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+import { FormExample } from "../../../../../styles/forms";
 
 //Variables:
 import { healthQs } from "./pet-questions";
