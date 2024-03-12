@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header.js";
 import NextPrevBtn from "../../next-section-btn.js";
 
 //Liability Waiver Styles:
-import { ButtonRow, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
+import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
 //Waiver Info:
-import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
-
+import { cancellationAcknowledgeStatement, liabilityAcknowledgeStatement, waiverHeader, liabilityP1, liabilityP2, waiverAcknowledgeHeader, cancelP1, cancelP2 } from './waiver-text.js'
 
 /**
  * @component The liability waiver section with labels + inputs
@@ -28,11 +27,15 @@ export default function LiabilityWaiver(props){
                 id={sectionId}
             >
                 <IntakeH3>
-                    Liability Waiver
+                    Waivers
                 </IntakeH3>
 
                 <AsteriskHeader/>
 
+                <IntakeH4>
+                    Liability Waiver
+                </IntakeH4>
+                
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeWaiverDiv>
@@ -40,10 +43,10 @@ export default function LiabilityWaiver(props){
                                 {waiverHeader}
                             </WaiverH5>
                             <IntakeWaiverP>
-                                {waiverP1}
+                                {liabilityP1}
                             </IntakeWaiverP>
                             <IntakeWaiverP>
-                                {waiverP2}
+                                {liabilityP2}
                             </IntakeWaiverP>
                         </IntakeWaiverDiv>
                     </FlexColDiv>
@@ -54,16 +57,56 @@ export default function LiabilityWaiver(props){
                         <WaiverH5>
                             {waiverAcknowledgeHeader}
                         </WaiverH5>
-                        <IntakeWaiverP style={{margin: '0 0 10px'}}>
+                        <IntakeWaiverP style={{margin: '0px'}}>
                             <Input 
                                 type="checkbox" 
-                                name="waiver_owner_acknowledgement" 
-                                value={formData["waiver_owner_acknowledgement"]}
-                                checked={formData['waiver_owner_acknowledgement'] === "true"}
+                                name="liability_waiver_owner_acknowledgement" 
+                                value={formData["liability_waiver_owner_acknowledgement"]}
+                                checked={formData['liability_waiver_owner_acknowledgement'] === "true"}
                                 onChange={changeInput}
                                 required 
                             />
-                            {waiverAcknowledgeStatement} 
+                            {liabilityAcknowledgeStatement} 
+                        </IntakeWaiverP>
+                    </FlexColDiv>
+                </IntakeRow>
+
+                <IntakeH4>
+                    Cancellation Policy
+                </IntakeH4>
+                
+                <IntakeRow>
+                    <FlexColDiv>
+                        <IntakeWaiverDiv>
+                            <WaiverH5>
+                                {waiverHeader}
+                            </WaiverH5>
+                            <IntakeWaiverP>
+                                {cancelP1}
+                            </IntakeWaiverP>
+                            <IntakeWaiverP>
+                                {cancelP2}
+                            </IntakeWaiverP>
+                        </IntakeWaiverDiv>
+                    </FlexColDiv>
+                </IntakeRow>
+
+                <IntakeRow>
+                    <FlexColDiv>
+                        <WaiverH5>
+                            {waiverAcknowledgeHeader}
+                        </WaiverH5>
+                        
+                        <IntakeWaiverP style={{margin: '0 0 20px'}}>
+                            <Input 
+                                type="checkbox" 
+                                name="cancel_waiver_owner_acknowledgement" 
+                                value={formData["cancel_waiver_owner_acknowledgement"]}
+                                checked={formData['cancel_waiver_owner_acknowledgement'] === "true"}
+                                onChange={changeInput}
+                                required 
+                            />
+                            {cancellationAcknowledgeStatement} 
                         </IntakeWaiverP>
                     </FlexColDiv>
                 </IntakeRow>

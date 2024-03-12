@@ -2,7 +2,7 @@
 import React from "react";
 
 // Components:
-import AccordianTitle from "../faqs/components/accordian-titles";
+import AccordianTitle from "../general-components/accordian-divs/accordian-titles"
 
 // Styles:
 import { AboutInfoSection, TeamImg, TeamBioSection, TeamStartDiv, TeamBioText } from '../../styles/about'

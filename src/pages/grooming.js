@@ -2,7 +2,7 @@
 import React from "react";
 
 //Components:
-import AccordianTitle from "./faqs/components/accordian-titles";
+import AccordianTitle from "./general-components/accordian-divs/accordian-titles";
 
 //Grooming Styles:
 import { CommonH1, 
