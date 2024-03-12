@@ -8,7 +8,6 @@ import NextPrevBtn from "../../next-section-btn.js";
 import { ButtonRow, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms.js";
 
 //Waiver Info:
 import { waiverAcknowledgeHeader, waiverAcknowledgeStatement, waiverHeader, waiverP1, waiverP2 } from './waiver-text.js'
@@ -72,14 +71,15 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel htmlFor={`owner_printed_name`}>
-                            Owner's Printed Name
+                            Owner's Signature - Please Type First and Last Name
                         </IntakeLabel>
                         <Input 
                             type="text"      
                             name="waiver_owner_name" 
                             value={formData[`waiver_owner_name`]}
                             onChange={changeInput}
-                            required 
+                            format="first last"
+                            required
                         />
                     </FlexColDiv>
                 </IntakeRow>
@@ -97,6 +97,7 @@ export default function LiabilityWaiver(props){
                     btnIndex={btnIndex}
                     setBtnIndex={setBtnIndex} 
                     sectionId={sectionId}
+                    formData={formData}
                 />
             </ButtonRow>
         </>

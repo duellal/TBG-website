@@ -9,13 +9,14 @@ import { FormBtn } from "../../../styles/owner-form";
 
 /**
  * @component Buttons for going to the previous + next sections
- * @param {*} props next, btnIndex, setBtnIndex
+ * @param {*} props next, btnIndex, setBtnIndex, sectionId, formData
  */
 export default function NextPrevBtn(props){
     const { 
-            next, btnIndex, setBtnIndex
+            next, btnIndex, setBtnIndex, sectionId, formData
         } = props;
 
+    //To go through the sections of the form
     const SectionOnClick = (event) => {
         event.preventDefault()
         let previous = event.target.name === 'previous'
@@ -36,6 +37,16 @@ export default function NextPrevBtn(props){
         }
         else if(previous){
             previousSection()
+        }
+        else if(sectionId.includes('waiver')){
+            const name = formData[`waiver_owner_name`]
+            const validName = name.trim().split(' ').length > 1
+            
+            if(!validName){
+                return
+            }
+
+            nextSection()
         }
         else{
             nextSection()

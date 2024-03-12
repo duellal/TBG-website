@@ -99,8 +99,7 @@ export default function PetInfo(props){
                                         </SpeciesRow>
                                         :
                                         null
-                                    }
-                                    
+                                    }   
                             </FlexColDiv>
                         </IntakeRow>
 
