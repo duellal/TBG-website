@@ -28,7 +28,8 @@ export default function Header() {
         setOpen(false)
 
         if(urlOption === path){
-            return window.scrollTo({top: 0,
+            return window.scrollTo({
+                top: 0,
                 left: 0,
                 behavior: "smooth"})
         }

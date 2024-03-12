@@ -46,6 +46,7 @@ export const formTemplate = {
     pet1_past_injury: '',
     pet1_past_inury_explain: '',
     pet1_extra_medical: '',
-    waiver_owner_acknowledgement: '',
+    liability_waiver_owner_acknowledgement: '',
+    cancel_waiver_owner_acknowledgement: '',
     waiver_owner_name: '',
 }

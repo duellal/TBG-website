@@ -16,15 +16,9 @@ export default function Forms(){
 
     return (
         <CommonStartDiv>
-            <FormPageInfoSection>
-                <FormPageRedBox>
-                    <p>
-                        Intake and medication forms will be filled out at time of checkin
-                    </p>
-                </FormPageRedBox>
-            </FormPageInfoSection>
-            
-            <CommonH2> new client form </CommonH2>
+            <CommonH2> 
+                new client form 
+            </CommonH2>
 
             <FormPageInfoSection>
                 <FormPageRedBox>
@@ -32,7 +26,9 @@ export default function Forms(){
                         We require all owners to fill out a new client form to insure that we have your contact information and all of your pets information. 
                     </p>
                 </FormPageRedBox>
-                <FormPageBtn onClick={() => navigate('/forms/new-owner')}> Fill Out the Form Online </FormPageBtn>
+                <FormPageBtn onClick={() => navigate('/forms/new-owner')}> 
+                    Click HERE to fill out the New Client Form
+                </FormPageBtn>
 
                 <CommonH2 style={{marginBottom: '40px'}}> 
                     Having Trouble Completing the Form Digitally? 

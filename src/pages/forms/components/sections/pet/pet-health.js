@@ -6,7 +6,7 @@ import RadioQuestion from "../../radio-questions";
 //Styles:
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeMessageInput, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+import { FormExample } from "../../../../../styles/forms";
 
 //Variables:
 import { healthQs } from "./pet-questions";
@@ -32,7 +32,7 @@ export default function PetHealth(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_vet`}>
-                                    <FormAsterisk>*</FormAsterisk> Vetinary Hospital
+                                    Vetinary Hospital
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -44,8 +44,7 @@ export default function PetHealth(props){
                             </FlexColDiv>
 
                             <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_vet_phone`}>
-                                    <FormAsterisk>*</FormAsterisk>      
+                                <IntakeLabel htmlFor={`pet${petKey}_vet_phone`}>     
                                      Vet Phone Number 
                                     
                                     <FormExample>
@@ -97,7 +96,7 @@ export default function PetHealth(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_extra_medical`}>
-                                    Is there anything else we should know about your pet's health or medical history?
+                                    Is there anything else we should know about your pet's health or medical history? - Not Required
                                 </IntakeLabel>
                                 
                                 <IntakeRow>

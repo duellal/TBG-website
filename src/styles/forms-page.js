@@ -20,15 +20,14 @@ p, a {
 `
 
 export const FormPageBtn = styled.button`
-width: 32%;
-margin: 60px 0;
+width: 100%;
+padding: 2%;
+margin: 60px 10px;
 font-size: 3rem;
-padding: 10px 0;
 background: ${bright_blue};
 border: ${bright_blue};
 color: white;
 cursor: pointer;
-// box-shadow: 0 0 30px 1px black;
 `
 
 export const FormPagePdfBtn = styled(FormPageBtn)`

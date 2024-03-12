@@ -5,7 +5,6 @@ import { AuthPickupLabel, ButtonRow, FormBtn, IntakeH3, IntakeHDiv, IntakeRow } 
 import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
-import AsteriskHeader from "../../asterisk-header";
 import AuthorizedPickup from "./auth-pickup-info"
 import NextPrevBtn from "../../next-section-btn";
 import { FormExample } from "../../../../../styles/forms";
@@ -33,7 +32,7 @@ export default function AuthPickupSection(props){
     
             setAuthNum(authNum + 1)
     
-            if(authNum === 4){
+            if(authNum === 3){
                 toggleAuthBtn()
             }
             
@@ -50,8 +49,6 @@ export default function AuthPickupSection(props){
                     <IntakeH3> 
                         Authorized People to Pickup Your Pets
                     </IntakeH3>
-
-                    <AsteriskHeader/>
 
                     <IntakeRow>
                         <FlexColDiv>

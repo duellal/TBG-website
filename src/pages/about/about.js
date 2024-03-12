@@ -6,7 +6,6 @@ import InfoButton from "../general-components/info-buttons.js/info-button";
 import TeamCareers from "./team-careers";
 
 // Images:
-import graffiti from '../../images/graffiti-wall.jpg'
 import graffiti2 from '../../images/grafitti-wall2.jpg'
 
 // Styles:
@@ -20,9 +19,6 @@ import { values } from "./values-arr";
 export default function About(){
     return (
         <>
-            <GraffitiDiv>
-                <GraffitiImg src={graffiti2}/>
-            </GraffitiDiv>
             <AboutStartDiv>
                 <CommonH1>
                     A Little About Us
@@ -57,7 +53,7 @@ export default function About(){
                 </AboutInfoSection>
             </AboutStartDiv>
             <GraffitiDiv style={{marginBottom: '-20px'}}>
-                <GraffitiImg src={graffiti}/>
+                <GraffitiImg src={graffiti2}/>
             </GraffitiDiv>
         </>
     )

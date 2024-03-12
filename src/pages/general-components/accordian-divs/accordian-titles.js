@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import AccordianQuestions from "./accordian-questions";
+import AccordianTitles from "./accordian-questions";
 import { FaqExpand, FaqTitleH2 } from "../../../styles/FAQs";
 
 export default function AccordianTitle({title, content}){
@@ -15,9 +15,13 @@ export default function AccordianTitle({title, content}){
             {isActive && 
                 <div className="title-content"> 
                     {
-                        content.map(({question, answer}) => (
-                            <AccordianQuestions question={question} answer={answer} />
-                        ))
+                        content.map(({title, info}) => {
+                            return <AccordianTitles 
+                                    title={title} 
+                                    info={info}
+                                />
+                            }
+                        )
                     }
                 </div>
             }

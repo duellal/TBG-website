@@ -69,7 +69,6 @@ margin: 0;
 export const TeamImg = styled(AboutImg)`
 width: 40%;
 height: auto;
-margin: 0;
 `
 
 export const TeamBioText = styled.div`

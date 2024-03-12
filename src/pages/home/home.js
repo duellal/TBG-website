@@ -2,7 +2,7 @@
 import React from "react";
 
 // Images:
-import homeBannerPic from '../../images/pics/golden-w-black-dogs.jpeg'
+import homeBannerPic from '../../images/home/home-banner-pic.jpeg'
 import collage from '../../images/home-collage.jpg'
 
 // Components:
@@ -15,6 +15,7 @@ import { CollageImg } from "../../styles/common-styles";
 
 //Variables:
 import { home_btns } from "./home-page-btns";
+import About from "../about/about";
 
 
 export default function Home(){
@@ -30,6 +31,8 @@ export default function Home(){
             </CommonStartDiv>
 
             <CollageImg src={collage} alt=""/>
+
+            <About />
         </>
     )
 }

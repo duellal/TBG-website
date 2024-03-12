@@ -1,9 +1,9 @@
 import React from "react";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow } from '../../../../../styles/owner-form'
-import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk } from "../../../../../styles/forms";
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
+import { Input, FlexColDiv, SelectInput, OptionInput } from "../../../../../styles/contact";
+import { speciesOptions } from "./species-options";
 
 
 /**
@@ -26,7 +26,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_name`}>
-                                    <FormAsterisk>*</FormAsterisk> Name
+                                    Name
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -39,21 +39,73 @@ export default function PetInfo(props){
 
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_species`}>
-                                    <FormAsterisk>*</FormAsterisk> Species
+                                    Species
                                 </IntakeLabel>
-                                <Input 
-                                    type="text" 
-                                    name={`pet${petKey}_species`} 
-                                    required 
-                                    value={formData[`pet${petKey}_species`]}
-                                    onChange={changeInput}
-                                />
+                                {/* <IntakeRow key={`${htmlFor}_explain`}>
+                                        <FlexColDiv>
+                                            <IntakeLabel htmlFor={`${htmlFor}_explain`}>
+                                                Please explain
+                                                <IntakeMessageInput 
+                                                    type="text" 
+                                                    name={`${htmlFor}_explain`}
+                                                    value={formData[`${htmlFor}_explain`]}
+                                                    onChange={changeInput}
+                                                    required
+                                                />
+                                            </IntakeLabel>
+                                        </FlexColDiv>
+                                    </IntakeRow> */}
+                                    <SelectInput
+                                        type="text" 
+                                        name={`pet${petKey}_species`} 
+                                        required 
+                                        value={formData[`pet${petKey}_species`]}
+                                        onChange={changeInput}
+                                    >
+                                        <OptionInput
+                                                value=''
+                                            >
+                                                Select an option
+                                            </OptionInput>
+                                            {
+                                                speciesOptions.map((item, index) =>
+                                                    <OptionInput 
+                                                        key={`referral_${index}`} 
+                                                        value={item}
+                                                    >
+                                                        {item}
+                                                    </OptionInput> 
+                                                )
+                                            }
+                                    </SelectInput>
+                                    {
+                                        formData[`pet${petKey}_species`].toLowerCase().includes('other') ?
+                                        <SpeciesRow>
+                                        {/* <IntakeRow> */}
+                                            <FlexColDiv>
+                                                <IntakeLabel>
+                                                    Please Type Species
+                                                    <SpeciesTextInput
+                                                        type="text" 
+                                                        name={`pet${petKey}_species_explain`}
+                                                        value={formData[`pet${petKey}_species_explain`]}
+                                                        onChange={changeInput}
+                                                        required
+                                                    />
+                                                </IntakeLabel>
+                                            </FlexColDiv>
+                                        {/* // </IntakeRow> */}
+                                        </SpeciesRow>
+                                        :
+                                        null
+                                    }   
                             </FlexColDiv>
                         </IntakeRow>
+
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_breed`}>
-                                    <FormAsterisk>*</FormAsterisk> Breed
+                                    Breed
                                 </IntakeLabel>
                                 <Input 
                                     type="text" 
@@ -73,6 +125,7 @@ export default function PetInfo(props){
                                     name={`pet${petKey}_color`} 
                                     value={formData[`pet${petKey}_color`]}
                                     onChange={changeInput}
+                                    required
                                 />
                             </FlexColDiv>
                         </IntakeRow>
@@ -80,7 +133,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_sex`}>
-                                    <FormAsterisk>*</FormAsterisk> Sex
+                                    Sex
                                 </IntakeLabel>
                                 <IntakeLabelRow>
                                     <Input 
@@ -109,7 +162,7 @@ export default function PetInfo(props){
 
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_altered`}>
-                                    <FormAsterisk>*</FormAsterisk> Spayed or Neutered
+                                    Spayed or Neutered
                                 </IntakeLabel>
                                 <IntakeLabelRow>
                                     <Input 
@@ -142,7 +195,7 @@ export default function PetInfo(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_weight`}>
-                                    <FormAsterisk>*</FormAsterisk> Weight (lbs)
+                                    Weight (lbs)
                                 </IntakeLabel>
                                 <Input 
                                     type="float" 

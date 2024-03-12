@@ -2,7 +2,7 @@
 import React from "react";
 
 //Components:
-import AccordianTitle from "./faqs/components/accordian-titles";
+import AccordianTitle from "./general-components/accordian-divs/accordian-titles";
 
 //Daycare Styles:
 import { CommonH1, CommonH2, CommonH4, CommonInfoSection, CommonStartDiv, HeaderSection, PricesDiv, PricesSection, PricesAsteriskDiv, PricesAsteriskP } from "../styles/commonBDG";
@@ -12,7 +12,7 @@ import { BannerDiv, BannerImg } from "../styles/banner";
 
 //Images: 
 import daycareBanner4 from '../images/daycare/daycare-slideshow-4.png'
-import collage from '../images/collage-daycare.jpg'
+import collage from '../images/daycare/daycare-collage.jpg'
 
 //FAQ Arrays:
 import { daycareFaqs, indvTitles } from "./faqs/faq-arrays";

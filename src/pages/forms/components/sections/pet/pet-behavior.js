@@ -76,7 +76,7 @@ export default function PetBehavior(props){
                         <IntakeRow>
                             <FlexColDiv>
                                 <IntakeLabel htmlFor={`pet${petKey}_extra_info`}>
-                                    Is there anything else we should know about your pet's behavior?
+                                    Is there anything else we should know about your pet's behavior? - Not Required
                                 </IntakeLabel>
                                 
                                 <IntakeLabelRow>

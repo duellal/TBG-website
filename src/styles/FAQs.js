@@ -27,7 +27,7 @@ export const FaqExpand = styled.div`
     padding: 2%;
 `
 
-export const FaqQuestionDiv = styled.div`
+export const AccordianTitleDiv = styled.div`
     display: flex;
     flex-wrap: flex;
     justify-content: space-between;
@@ -35,12 +35,12 @@ export const FaqQuestionDiv = styled.div`
     background-color: ${muted_bright_red};
 `
 
-export const FaqQuestionH3 = styled.h3`
+export const AccordianTitleH3 = styled.h3`
     color: white;
     text-align: left;
 `
 
-export const FaqAnswer = styled.p`
+export const AccordianAnswer = styled.p`
     padding: 2%;
     // text-align: left; 
     text-align: justify;

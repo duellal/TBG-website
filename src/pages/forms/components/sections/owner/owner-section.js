@@ -8,7 +8,6 @@ import NextPrevBtn from "../../next-section-btn.js"
 import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../../../styles/owner-form.js'
 import AsteriskHeader from "../../asterisk-header.js"
 import { FlexColDiv, OptionInput, SelectInput } from "../../../../../styles/contact.js"
-import { FormAsterisk } from "../../../../../styles/forms.js"
 
 //Variables:
 import { ownerReferral } from "./owner-referArr.js"
@@ -70,7 +69,7 @@ export default function OwnerSection(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeLabel>
-                            <FormAsterisk>*</FormAsterisk> How did you hear about us?
+                            How did you hear about us?
                         </IntakeLabel>
                         <SelectInput
                             value={formData['referred_by']}

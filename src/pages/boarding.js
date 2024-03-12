@@ -8,7 +8,7 @@ import { AllRedDropDowns, CollageImg, CommonP } from "../styles/common-styles";
 import { BannerDiv, BannerImg } from "../styles/banner";
 
 //Components: 
-import AccordianTitle from './faqs/components/accordian-titles';
+import AccordianTitle from "./general-components/accordian-divs/accordian-titles";
 import Requirements from "./general-components/requirements";
 
 //Images:

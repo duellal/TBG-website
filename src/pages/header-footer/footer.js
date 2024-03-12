@@ -85,8 +85,8 @@ export default function Footer(){
                 </FooterFirstCol>
 
                 <FooterSecondCol>
-                        <FooterTitle>
-                            Contact Us!
+                        <FooterTitle style={{fontSize: '3rem'}}>
+                            Contact Us
                         </FooterTitle>
                         <DivContactSection>
                             <DivContactIconSection>

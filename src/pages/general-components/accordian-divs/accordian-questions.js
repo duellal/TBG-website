@@ -2,17 +2,16 @@
 import React, { useState } from "react";
 
 // Styles
-import { FaqAnswer, FaqQuestionDiv, FaqQuestionH3 } from "../../../styles/FAQs";
+import { AccordianAnswer, AccordianTitleDiv, AccordianTitleH3 } from "../../../styles/FAQs";
 import { UnderlineLink } from "../../../styles/common-styles";
 
 
-export default function AccordianQuestions(props){
-    let { answer, question } = props
+export default function AccordianTitles({title, info}){
     const [isActive, setIsActive] = useState(false);
 
-    let checkParagraphs = (answer) => {
-        return answer.map((ans, index) => {
-            //Inserting  a link into the answer:
+    let checkParagraphs = (info) => {
+        return info.map((ans, index) => {
+            //Inserting  a link into the info:
             if(ans.includes('.com')){
                 let link
                 let linkIndex
@@ -37,13 +36,13 @@ export default function AccordianQuestions(props){
 
                 return (
                     <>
-                        <FaqAnswer key={`${ans}_${index}`}>
+                        <AccordianAnswer key={`${ans}_${index}`}>
                             {part2.join(' ')}
                             {' '}
                             {link}
                             {' '}
                             {part1.join(' ')}
-                        </FaqAnswer>
+                        </AccordianAnswer>
                     </>
                 )
             }
@@ -51,35 +50,42 @@ export default function AccordianQuestions(props){
             //Returns answer without link:
             return (
                 <>
-                    <FaqAnswer key={`${ans}_${index}`}>
+                    <AccordianAnswer key={`${ans}_${index}`}>
                         {ans}
-                    </FaqAnswer>
+                    </AccordianAnswer>
                 </>
             )
         })
     }
     
 
-    let checkQuestion = (question, answer) => {
-        if(!question){
+    let checkQuestion = (title, info) => {
+        if(!title){
             return (
-                <FaqAnswer className="answer"> {checkParagraphs(answer)} </FaqAnswer>
+                <AccordianAnswer className="info"> 
+                    {checkParagraphs(info)} 
+                </AccordianAnswer>
             )
         }
 
         return( 
-            <FaqQuestionDiv className="question" onClick={() => setIsActive(!isActive)}>
-                <FaqQuestionH3> {question} </FaqQuestionH3>
-                <FaqQuestionH3> {isActive ? '-' : '+'} </FaqQuestionH3>
-            </FaqQuestionDiv>
+            <AccordianTitleDiv className="title" onClick={() => setIsActive(!isActive)}>
+                <AccordianTitleH3> {title} </AccordianTitleH3>
+                <AccordianTitleH3> {isActive ? '-' : '+'} </AccordianTitleH3>
+            </AccordianTitleDiv>
             )
     }
 
     return(
-        <div id="accordian-question">
-            {checkQuestion(question, answer)}
+        <div id="accordian-title">
+            {checkQuestion(title, info)}
             
-            {isActive && <FaqAnswer> {checkParagraphs(answer)} </FaqAnswer>}
+            {
+                isActive && 
+                <AccordianAnswer> 
+                    {checkParagraphs(info)} 
+                </AccordianAnswer>
+            }
         </div>
     )
 }

@@ -6,7 +6,7 @@ import RadioQuestion from "../../radio-questions";
 //Styles:
 import { IntakeDivider, IntakeH5, IntakeHDiv, IntakeLabel, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
-import { FormAsterisk, FormExample } from "../../../../../styles/forms";
+import { FormExample } from "../../../../../styles/forms";
 
 
 /**
@@ -26,7 +26,7 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> Emergency Contact First + Last Name
+                        Emergency Contact First + Last Name
                     </IntakeLabel>
                     <Input 
                         type="text" 
@@ -40,7 +40,6 @@ export default function EmergencyInfo(props){
             <IntakeRow>
                 <FlexColDiv>
                     <IntakeLabel>
-                        <FormAsterisk>*</FormAsterisk> 
                         Emergency Contact Phone Number 
                         <FormExample>
                             ex: (xxx) xxx-xxxx
@@ -60,7 +59,7 @@ export default function EmergencyInfo(props){
 
                 <FlexColDiv>
                     <IntakeLabel>
-                    <FormAsterisk>*</FormAsterisk> Relationship
+                    Relationship
                     </IntakeLabel>
                     <Input 
                         type="text" 

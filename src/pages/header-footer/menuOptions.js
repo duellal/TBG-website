@@ -4,5 +4,4 @@ export const options = {
     Daycare: { url: '/daycare' }, 
     Grooming: { url: '/grooming' }, 
     Forms: { url: '/forms' },
-    About: { url: '/about' }, 
 }
