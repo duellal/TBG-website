@@ -15,8 +15,6 @@ const liabilityAcknowledgeStatement = `I have read and agreed to the Waiver Agre
 //Cancellation Waiver:
 const cancellationAcknowledgeStatement = `I have read and agreed to the Cancellation Agreement above.`
 
-const cancellationInitialStatement = 'Please Initial'
-
 const cancelP1 = 'In an effort to minimize last minute cancellations and no shows, we are implementing new cancellation policies. Below, you will find a list of our cancellation policies for all of our services. Please initial beside each one and sign and date at the bottom.'
 
 const cancelP2 = 'Grooming Cancellation Policy'
@@ -39,6 +37,7 @@ const cancelP10 = 'Modifications to Reservation'
 
 const cancelP11 = 'We now require payment for Boarding Services at time of check in.  We recommend booking the minimum nights needed and extending the reservation with us through phone/email if travel issues occur.  Overbooking boarding dates will result in any amount left over from the initial payment to be credited to the account for future reservations.  NO REFUNDS WILL BE ISSUED.'
 
+
 export {
     cancelP1, 
     cancelP2, 
@@ -52,7 +51,6 @@ export {
     cancelP10,
     cancelP11,
     cancellationAcknowledgeStatement,
-    cancellationInitialStatement,
     liabilityAcknowledgeStatement,
     liabilityP1,
     liabilityP2,

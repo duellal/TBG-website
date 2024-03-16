@@ -1,7 +1,7 @@
 import React from "react";
 
 //Componenets:
-import RadioQuestion from "../../radio-questions";
+import RadioQuestion from "../../radio-explainations";
 
 //Styles:
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeMessageInput, IntakeRow, PhoneInput } from '../../../../../styles/owner-form'

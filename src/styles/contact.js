@@ -42,7 +42,8 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
-    font-size: 15px;
+    font-family: 'Georgia, Times, "Times New Roman"'
+    font-size: 16px;
     margin: 6px 6px 6px 12px;
     }
 `

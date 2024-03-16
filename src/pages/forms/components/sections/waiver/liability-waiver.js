@@ -5,12 +5,12 @@ import AsteriskHeader from "../../asterisk-header.js";
 import NextPrevBtn from "../../next-section-btn.js";
 
 //Liability Waiver Styles:
-import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakePolicyP, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, PolicyBoldUnderline, WaiverH5, 
+import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakePolicyP, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, PolicyBoldUnderline, PolicyInitialsInput, PolicyRow, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
 //Waiver Info:
-import { cancellationAcknowledgeStatement, liabilityAcknowledgeStatement, waiverHeader, liabilityP1, liabilityP2, waiverAcknowledgeHeader, cancelP1, cancelP2, cancelP3, cancelP4, cancelP5, cancelP6, cancelP7, cancelP8, cancelP9, cancelP10, cancelP11, } from './waiver-text.js'
+import { cancellationAcknowledgeStatement, liabilityAcknowledgeStatement, liabilityP1, liabilityP2, waiverAcknowledgeHeader, cancelP1, cancelP2, cancelP3, cancelP4, cancelP5, cancelP6, cancelP7, cancelP8, cancelP9, cancelP10, cancelP11, } from './waiver-text.js'
 
 /**
  * @component The liability waiver section with labels + inputs
@@ -78,33 +78,51 @@ export default function LiabilityWaiver(props){
                             <IntakePolicyP>
                                 {cancelP1}
                             </IntakePolicyP>
+
+                            {/* Grooming */}
                             <IntakePolicyP>
-                                <PolicyBoldUnderline>
-                                    {cancelP2} 
-                                </PolicyBoldUnderline>
+                                <PolicyRow>
+                                    <PolicyInitialsInput 
+                                        type="text"
+                                        name="grooming_policy_initials"
+                                        htmlFor="grooming_policy_initials"
+                                        value={formData['grooming_policy_initials']}
+                                        onChange={changeInput}
+                                        format=""
+                                        required
+                                    />
+                                    <PolicyBoldUnderline>
+                                        {cancelP2} 
+                                    </PolicyBoldUnderline>
+                                </PolicyRow>
                                 {cancelP3}
                             </IntakePolicyP>
+
+                            {/* Daycare */}
                             <IntakePolicyP>
                                 <PolicyBoldUnderline>
                                     {cancelP4}
                                 </PolicyBoldUnderline>
                                 {cancelP5}
-                                <PolicyBoldUnderline>
-                                    
-                                </PolicyBoldUnderline>
                             </IntakePolicyP>
+
+                            {/* Boarding */}
                             <IntakePolicyP>
                                 <PolicyBoldUnderline>
                                     {cancelP6}
                                 </PolicyBoldUnderline>
                                 {cancelP7}
                             </IntakePolicyP>
+
                             <IntakePolicyP>
                                 {cancelP8}
                             </IntakePolicyP>
+
                             <IntakePolicyP>
                                 {cancelP9}
                             </IntakePolicyP>
+
+                            {/* Modifications to Reservations */}
                             <IntakePolicyP>
                                 <PolicyBoldUnderline>
                                     {cancelP10}
@@ -146,6 +164,19 @@ export default function LiabilityWaiver(props){
                             value={formData[`waiver_owner_name`]}
                             onChange={changeInput}
                             format="first last"
+                            required
+                        />
+                    </FlexColDiv>
+
+                    <FlexColDiv style={{width: '30%'}}>
+                        <IntakeLabel htmlFor={`waiver_date`}>
+                            Date
+                        </IntakeLabel>
+                        <Input
+                            type="date"
+                            name="waiver_date"
+                            value={formData['waiver_date']}
+                            onChange={changeInput}
                             required
                         />
                     </FlexColDiv>

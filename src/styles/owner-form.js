@@ -176,6 +176,7 @@ export const IntakeCol = styled.div`
 
 export const IntakeMessageInput = styled.textarea`
     width: 100%;
+    font-family: 'Georgia, Times, "Times New Roman"';
     font-size: 16px;
     padding: 10px;
     height: 80px;
@@ -217,13 +218,29 @@ text-align: justify;
 export const PolicyBoldUnderline = styled(IntakePolicyP)`
 text-decoration: underline;
 font-weight: bold;
+// border: 1px solid purple;
+`
+
+export const PolicyRow = styled.div`
+display: flex;
+align-items: flex-end;
+// border: 1px solid orange;
 `
 
 // Used for below submit styling:
 const Input = styled.input`
-    font-size: 15px;
+    font-size: 16px;
     margin: 6px;
 `
+
+export const PolicyInitialsInput = styled(Input)`
+border: none;
+border-bottom: 1px solid black;
+width: 50px;
+`
+// const InitialsInput = styled(Input)`
+
+// `
 
 export const IntakeSubmitInput = styled(Input)`
     padding: 5px 10px;
