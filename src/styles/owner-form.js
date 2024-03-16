@@ -138,7 +138,7 @@ export const IntakeH5 = styled.h5`
 
 export const WaiverH5 = styled.h5`
     font-size: 2.4rem;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -199,7 +199,7 @@ export const IntakeWaiverDiv = styled.div`
     grid-column-end: 5;
     align-items: center;
     padding: 20px;
-    height: 530px;
+    height: 490px;
     overflow-y: scroll;
     background-color: white;
     border: 1px solid black;

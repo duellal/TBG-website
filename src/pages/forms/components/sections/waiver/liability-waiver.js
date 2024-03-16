@@ -39,9 +39,6 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeWaiverDiv>
-                            <WaiverH5>
-                                {waiverHeader}
-                            </WaiverH5>
                             <IntakePolicyP>
                                 {liabilityP1}
                             </IntakePolicyP>
@@ -78,9 +75,6 @@ export default function LiabilityWaiver(props){
                 <IntakeRow>
                     <FlexColDiv>
                         <IntakeWaiverDiv>
-                            <WaiverH5>
-                                {waiverHeader}
-                            </WaiverH5>
                             <IntakePolicyP>
                                 {cancelP1}
                             </IntakePolicyP>
