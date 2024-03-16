@@ -10,7 +10,7 @@ import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, Inta
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
 //Waiver Info:
-import { cancellationAcknowledgeStatement, liabilityAcknowledgeStatement, waiverHeader, liabilityP1, liabilityP2, waiverAcknowledgeHeader, cancelP1, cancelP2 } from './waiver-text.js'
+import { cancellationAcknowledgeStatement, liabilityAcknowledgeStatement, waiverHeader, liabilityP1, liabilityP2, waiverAcknowledgeHeader, cancelP1, cancelP2, cancelP3, cancelP4, cancelP5, cancelP6, cancelP7, cancelP8, cancelP9, cancelP10, cancelP11, } from './waiver-text.js'
 
 /**
  * @component The liability waiver section with labels + inputs
