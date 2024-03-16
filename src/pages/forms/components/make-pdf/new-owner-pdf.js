@@ -586,47 +586,76 @@ export default function PdfDoc(props){
                     }
                 </View>
 
-                {/* Waiver */}
+                {/* Liability Waiver */}
                 <View style={styles.section}>
                     <Text style={styles.section_title}>
-                        Liability Waiver
+                        Waivers
                     </Text>
 
-                    <View style={[styles.view_row]}>
-                        <View style={styles.view_col}>
-                            <Text style={[styles.section_info, styles.info_title]}>
-                                Agreed to terms?
-                            </Text>
-                            <Text style={[styles.section_info]}>
-                                {
-                                    formData[`waiver_owner_acknowledgement`] === 'true'
-                                    ? 'Yes' : 'No'
-                                }
-                            </Text>
+                    <View style={[styles.section]}>
+                        <Text style={styles.title_in_section}>
+                            Liability Waiver
+                        </Text>
+
+                        <View style={[styles.view_row]}>
+                            <View style={styles.view_col}>
+                                <Text style={[styles.section_info, styles.info_title]}>
+                                    Agreed to terms?
+                                </Text>
+                                <Text style={[styles.section_info]}>
+                                    {
+                                        formData[`waiver_owner_acknowledgement`] === 'true'
+                                        ? 'Yes' : 'No'
+                                    }
+                                </Text>
+                            </View>
                         </View>
                     </View>
 
-                    <View style={[styles.view_row]}>
-                        <View style={[styles.view_col]}>
-                            <Text style={[styles.section_info, styles.info_title]}>
-                                Owner Printed Name
-                            </Text>
-                            <Text style={[styles.section_info]}>
-                                {formData[`waiver_owner_name`]}
-                            </Text>
-                        </View>
-                        <View style={[styles.view_col]}>
-                            <Text style={[styles.section_info, styles.info_title]}>
-                                Date
-                            </Text>
-                            <Text style={[styles.section_info]}>
-                            {
-                                `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
-                            }
+                    {/* Cancellation Policy */}
+                    <View style={styles.section}>
+                        <Text style={styles.title_in_section}>
+                            Cancellation Policy
                         </Text>
+
+                        <View style={[styles.view_row]}>
+                            <View style={styles.view_col}>
+                                <Text style={[styles.section_info, styles.info_title]}>
+                                    Agreed to terms?
+                                </Text>
+                                <Text style={[styles.section_info]}>
+                                    {
+                                        formData[`cancel_waiver_owner_acknowledgement`] === 'true'
+                                        ? 'Yes' : 'No'
+                                    }
+                                </Text>
+                            </View>
+                        </View>
+
+                        <View style={[styles.view_row]}>
+                            <View style={[styles.view_col]}>
+                                <Text style={[styles.section_info, styles.info_title]}>
+                                    Owner Printed Name
+                                </Text>
+                                <Text style={[styles.section_info]}>
+                                    {formData[`waiver_owner_name`]}
+                                </Text>
+                            </View>
+                            <View style={[styles.view_col]}>
+                                <Text style={[styles.section_info, styles.info_title]}>
+                                    Date
+                                </Text>
+                                <Text style={[styles.section_info]}>
+                                {
+                                    `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
+                                }
+                            </Text>
+                            </View>
                         </View>
                     </View>
                 </View>
+
+                
                     
                 {/* <Text 
                     style={styles.pageNumber} 

@@ -31,18 +31,15 @@ export const styles = StyleSheet.create({
     header_logo: {
         margin: '-20px 0 20px',
         justifyContent: 'center',
-        // border: '1px solid black'
     },
     header_view: {
         justifyContent: 'center',
         width: '100%',
-        // border: '1px solid purple'
     },
     logo: {
         width: "15%",
         marginLeft: 'auto',
         marginRight: 'auto',
-        // border: '1px solid orange',
     },
     section: {
         marginBottom: '10px'
@@ -50,6 +47,11 @@ export const styles = StyleSheet.create({
     section_title: {
         fontWeight: 'bold',
         fontSize: '18px',
+        marginTop: '10px'
+    },
+    title_in_section: {
+        fontWeight: 'bold',
+        fontSize: '16px',
         marginTop: '10px'
     },
     view_row: {

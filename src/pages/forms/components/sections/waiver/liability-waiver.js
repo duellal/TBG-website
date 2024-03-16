@@ -200,19 +200,16 @@ export default function LiabilityWaiver(props){
                             required
                         />
                     </FlexColDiv>
-
+{/* 
                     <FlexColDiv style={{width: '30%'}}>
                         <IntakeLabel htmlFor={`waiver_date`}>
                             Date
                         </IntakeLabel>
-                        <Input
-                            type="date"
-                            name="waiver_date"
-                            value={formData['waiver_date']}
-                            onChange={changeInput}
-                            required
-                        />
-                    </FlexColDiv>
+                        <div>{
+                                `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
+                            }
+                            </div>
+                    </FlexColDiv> */}
                 </IntakeRow>
             </IntakeHDiv>
 

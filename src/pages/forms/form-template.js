@@ -74,7 +74,7 @@ export const formTemplate = {
     pet2_past_injury: 'No',
     pet2_past_inury_explain: '',
     pet2_extra_medical: 'She does have a sensitive stomach and does best on dry food with salmon that is for sensitive stomachs; though she loves all food!',
-    waiver_owner_acknowledgement: 'true',
+    waiver_owner_acknowledgement: '',
     waiver_owner_name: 'Alex Duell',
 }
 
