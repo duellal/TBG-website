@@ -1,6 +1,4 @@
 //General Waiver Strings:
-const waiverHeader = `The Biscuit Garden`
-
 const waiverAcknowledgeHeader = `Acknowledgement of Information`
 
 
@@ -55,5 +53,4 @@ export {
     liabilityP1,
     liabilityP2,
     waiverAcknowledgeHeader,
-    waiverHeader
 }

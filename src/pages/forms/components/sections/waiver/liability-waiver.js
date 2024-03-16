@@ -86,7 +86,7 @@ export default function LiabilityWaiver(props){
                                         type="text"
                                         name="grooming_policy_initials"
                                         htmlFor="grooming_policy_initials"
-                                        value={formData['grooming_policy_initials'].toUpperCase()}
+                                        value={formData['grooming_policy_initials']?.toUpperCase()}
                                         onChange={changeInput}
                                         format=""
                                         required
@@ -100,17 +100,39 @@ export default function LiabilityWaiver(props){
 
                             {/* Daycare */}
                             <IntakePolicyP>
-                                <PolicyBoldUnderline>
-                                    {cancelP4}
-                                </PolicyBoldUnderline>
+                                <PolicyRow>
+                                        <PolicyInitialsInput 
+                                            type="text"
+                                            name="daycare_policy_initials"
+                                            htmlFor="daycare_policy_initials"
+                                            value={formData['daycare_policy_initials']?.toUpperCase()}
+                                            onChange={changeInput}
+                                            format=""
+                                            required
+                                        />
+                                    <PolicyBoldUnderline>
+                                        {cancelP4}
+                                    </PolicyBoldUnderline>
+                                </PolicyRow>
                                 {cancelP5}
                             </IntakePolicyP>
 
                             {/* Boarding */}
                             <IntakePolicyP>
-                                <PolicyBoldUnderline>
-                                    {cancelP6}
-                                </PolicyBoldUnderline>
+                                <PolicyRow>
+                                    <PolicyInitialsInput 
+                                        type="text"
+                                        name="boarding_policy_initials"
+                                        htmlFor="boarding_policy_initials"
+                                        value={formData['boarding_policy_initials']?.toUpperCase()}
+                                        onChange={changeInput}
+                                        format=""
+                                        required
+                                    />
+                                    <PolicyBoldUnderline>
+                                        {cancelP6}
+                                    </PolicyBoldUnderline>
+                                </PolicyRow>
                                 {cancelP7}
                             </IntakePolicyP>
 
@@ -124,9 +146,20 @@ export default function LiabilityWaiver(props){
 
                             {/* Modifications to Reservations */}
                             <IntakePolicyP>
-                                <PolicyBoldUnderline>
-                                    {cancelP10}
-                                </PolicyBoldUnderline>
+                                <PolicyRow>
+                                    <PolicyInitialsInput 
+                                        type="text"
+                                        name="mod_reservation_policy_initials"
+                                        htmlFor="mod_reservation_policy_initials"
+                                        value={formData['mod_reservation_policy_initials']?.toUpperCase()}
+                                        onChange={changeInput}
+                                        format=""
+                                        required
+                                    />
+                                    <PolicyBoldUnderline>
+                                        {cancelP10}
+                                    </PolicyBoldUnderline>
+                                </PolicyRow>
                                     {cancelP11}
                             </IntakePolicyP>
                         </IntakeWaiverDiv>
