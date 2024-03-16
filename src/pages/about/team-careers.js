@@ -27,7 +27,7 @@ export default function TeamCareers(){
             />
             <AboutInfoSection>
                     <CommonH2>
-                        Meet the Manager!
+                        Meet the Manager
                     </CommonH2>
 
                     <TeamBioSection>

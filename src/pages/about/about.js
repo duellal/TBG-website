@@ -9,7 +9,7 @@ import TeamCareers from "./team-careers";
 import graffiti2 from '../../images/grafitti-wall2.jpg'
 
 // Styles:
-import { CommonH1, CommonH2 } from "../../styles/commonBDG";
+import { CommonH2 } from "../../styles/commonBDG";
 import { AboutInfoSection, AboutStartDiv, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader, ValuesSection } from "../../styles/about";
 import { CommonP } from "../../styles/common-styles";
 
@@ -20,9 +20,6 @@ export default function About(){
     return (
         <>
             <AboutStartDiv>
-                <CommonH1>
-                    A Little About Us
-                </CommonH1>
                 <AboutInfoSection>
                     <CommonH2>
                         We base everything that we do around 4 simple values:
