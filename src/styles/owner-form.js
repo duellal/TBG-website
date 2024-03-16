@@ -210,6 +210,15 @@ export const IntakeWaiverP = styled.p`
     margin-top: 20px;
 `
 
+export const IntakePolicyP = styled(IntakeWaiverP)`
+text-align: justify;
+`
+
+export const PolicyBoldUnderline = styled(IntakePolicyP)`
+text-decoration: underline;
+font-weight: bold;
+`
+
 // Used for below submit styling:
 const Input = styled.input`
     font-size: 15px;

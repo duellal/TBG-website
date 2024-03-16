@@ -21,11 +21,11 @@ const cancelP1 = 'In an effort to minimize last minute cancellations and no show
 
 const cancelP2 = 'Grooming Cancellation Policy'
 
-const cancelP3 = ' - Failure to cancel or reschedule a grooming appointment prior to the appointment will result in the full amount charged to the credit card on file. Cancellations or rescheduling must be made no later 9 AM the morning of the appointment.'
+const cancelP3 = 'Failure to cancel or reschedule a grooming appointment prior to the appointment will result in the full amount charged to the credit card on file. Cancellations or rescheduling must be made no later 9 AM the morning of the appointment.'
 
 const cancelP4 = 'Daycare Cancellation Policy'
 
-const cancelP5 = ' - Failure to cancel or reschedule a daycare reservation will result in a charge to the credit card on file for either a full day or a half day, depending on the reservation made. Clients with packages will forfeit 1 day of their package.  This applies to all daycare reservations including “Standing Reservations”. Cancellations or rescheduling must be made no later than 9 AM the morning of the reservation.'
+const cancelP5 = 'Failure to cancel or reschedule a daycare reservation will result in a charge to the credit card on file for either a full day or a half day, depending on the reservation made. Clients with packages will forfeit 1 day of their package.  This applies to all daycare reservations including “Standing Reservations”. Cancellations or rescheduling must be made no later than 9 AM the morning of the reservation.'
 
 const cancelP6 = 'Boarding Cancellation Policy'
 
@@ -37,7 +37,7 @@ const cancelP9 = 'Holiday Dates Include - Easter week, Thanksgiving week, Christ
 
 const cancelP10 = 'Modifications to Reservation'
 
-const cancelP11 = ' - We now require payment for Boarding Services at time of check in.  We recommend booking the minimum nights needed and extending the reservation with us through phone/email if travel issues occur.  Overbooking boarding dates will result in any amount left over from the initial payment to be credited to the account for future reservations.  NO REFUNDS WILL BE ISSUED.'
+const cancelP11 = 'We now require payment for Boarding Services at time of check in.  We recommend booking the minimum nights needed and extending the reservation with us through phone/email if travel issues occur.  Overbooking boarding dates will result in any amount left over from the initial payment to be credited to the account for future reservations.  NO REFUNDS WILL BE ISSUED.'
 
 export {
     cancelP1, 

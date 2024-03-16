@@ -5,7 +5,7 @@ import AsteriskHeader from "../../asterisk-header.js";
 import NextPrevBtn from "../../next-section-btn.js";
 
 //Liability Waiver Styles:
-import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, WaiverH5, 
+import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakePolicyP, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, PolicyBoldUnderline, WaiverH5, 
 } from '../../../../../styles/owner-form.js'
 import { Input, FlexColDiv } from "../../../../../styles/contact";
 
@@ -42,12 +42,12 @@ export default function LiabilityWaiver(props){
                             <WaiverH5>
                                 {waiverHeader}
                             </WaiverH5>
-                            <IntakeWaiverP>
+                            <IntakePolicyP>
                                 {liabilityP1}
-                            </IntakeWaiverP>
-                            <IntakeWaiverP>
+                            </IntakePolicyP>
+                            <IntakePolicyP>
                                 {liabilityP2}
-                            </IntakeWaiverP>
+                            </IntakePolicyP>
                         </IntakeWaiverDiv>
                     </FlexColDiv>
                 </IntakeRow>
@@ -81,12 +81,42 @@ export default function LiabilityWaiver(props){
                             <WaiverH5>
                                 {waiverHeader}
                             </WaiverH5>
-                            <IntakeWaiverP>
+                            <IntakePolicyP>
                                 {cancelP1}
-                            </IntakeWaiverP>
-                            <IntakeWaiverP>
-                                {cancelP2}
-                            </IntakeWaiverP>
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                <PolicyBoldUnderline>
+                                    {cancelP2} 
+                                </PolicyBoldUnderline>
+                                {cancelP3}
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                <PolicyBoldUnderline>
+                                    {cancelP4}
+                                </PolicyBoldUnderline>
+                                {cancelP5}
+                                <PolicyBoldUnderline>
+                                    
+                                </PolicyBoldUnderline>
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                <PolicyBoldUnderline>
+                                    {cancelP6}
+                                </PolicyBoldUnderline>
+                                {cancelP7}
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                {cancelP8}
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                {cancelP9}
+                            </IntakePolicyP>
+                            <IntakePolicyP>
+                                <PolicyBoldUnderline>
+                                    {cancelP10}
+                                </PolicyBoldUnderline>
+                                    {cancelP11}
+                            </IntakePolicyP>
                         </IntakeWaiverDiv>
                     </FlexColDiv>
                 </IntakeRow>
