@@ -86,11 +86,6 @@ export default function DigitalOwnerForm() {
             
             return editFormData({ ...formData, [name]: 'false'})
         }
-        
-        //NEED TOFINISH: Creating a function to capitalize intials
-        if(name.includes('initials')){
-        
-        }
 
         editFormData({ ...formData, [name]: value})
      }

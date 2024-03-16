@@ -86,7 +86,7 @@ export default function LiabilityWaiver(props){
                                         type="text"
                                         name="grooming_policy_initials"
                                         htmlFor="grooming_policy_initials"
-                                        value={formData['grooming_policy_initials']}
+                                        value={formData['grooming_policy_initials'].toUpperCase()}
                                         onChange={changeInput}
                                         format=""
                                         required
