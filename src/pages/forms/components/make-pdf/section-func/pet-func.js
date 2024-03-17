@@ -28,6 +28,7 @@ export default function petSect(formData, countPets){
                     </Text>
                 </View>
                             
+                {/* Need to change logic for drop down options */}
                 <View style={styles.view_col}>
                     <Text style={[styles.section_info, styles.bold]}>
                         Species
@@ -122,7 +123,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_destructive_explain`]}
                         </Text>
                         </>
@@ -146,7 +147,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_fence_explain`]}
                         </Text>
                         </>
@@ -170,7 +171,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_guard_explain`]}
                         </Text>
                         </>
@@ -194,7 +195,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_social_explain`]}
                         </Text>
                         </>
@@ -218,7 +219,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_kennel_explain`]}
                         </Text>
                         </>
@@ -249,12 +250,12 @@ export default function petSect(formData, countPets){
                 </Text>
             </View>
 
-            <View style={styles.view_row}>
+            <View style={[styles.view_row, {paddingLeft: '15px'}]}>
                 <View style={styles.view_col}>
                     <Text style={[styles.section_info, styles.bold]}>
                         Vetinary Hospital
                     </Text>
-                    <Text style={[styles.section_info, styles.pet_ans]}>
+                    <Text style={[styles.section_info]}>
                         {formData[`pet${index + 1}_vet`]}
                     </Text>
                 </View>
@@ -263,7 +264,7 @@ export default function petSect(formData, countPets){
                     <Text style={[styles.section_info, styles.bold]}>
                         Vet Phone Number
                     </Text>
-                    <Text style={[styles.section_info, styles.pet_ans]}>
+                    <Text style={[styles.section_info]}>
                         {formData[`pet${index + 1}_vet_phone`]}
                     </Text>
                 </View>
@@ -284,7 +285,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_food_allergy_explain`]}
                         </Text>
                         </>
@@ -308,7 +309,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_medical_condition_explain`]}
                         </Text>
                         </>
@@ -332,7 +333,7 @@ export default function petSect(formData, countPets){
                         <Text style={[styles.section_info, styles.explain_text]}>
                             Please Explain
                         </Text>
-                        <Text style={[styles.section_info, styles.pet_ans]}>
+                        <Text style={[styles.section_info, styles.pet_ans_explain]}>
                             {formData[`pet${index + 1}_past_injury_explain`]}
                         </Text>
                         </>

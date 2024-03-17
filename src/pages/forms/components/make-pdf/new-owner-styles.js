@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
         marginRight: 'auto',
     },
     section: {
-        marginBottom: '5px'
+        marginBottom: '3px'
     },
     section_title: {
         fontWeight: 'bold',
@@ -73,29 +73,33 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     numbered_title: {
-        fontSize: '12px',
+        fontSize: '14px',
         marginTop: '10px',
         fontWeight: 'bold'
     },
     num_section: {
-        margin: '0 10px'
+        margin: '-5px 10px'
     },
     off_color: {
         backgroundColor: '#F0F0F0'
     },
     section_info: {
         fontSize: '12px', 
+        marginTop: '2px',
     },
     explain_text: {
-        margin: '5px 0 0 10px'
+        margin: '5px 0 0 25px'
     },
     sub_section: {
-        fontSize: '13px',
+        fontSize: '12px',
         fontWeight: 'bold',
-        marginTop: '10px'
+        margin: '10px 0 -5px 0'
     },
     pet_ans: {
         marginLeft: '25px'
+    },
+    pet_ans_explain: {
+        marginLeft: '30px'
     },
     page_number: {
         position: 'absolute',
