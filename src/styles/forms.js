@@ -68,7 +68,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 font-size: 1.8rem;
-font-weight: normal;
+font-weight: bold;
 margin: 5px 0 20px 0;
 width: 100%;
 color: ${bright_red}};
