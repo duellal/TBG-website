@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 //Components:
 import OwnerInfo from './owner-info.js'
-import NextPrevBtn from "../../next-section-btn.js"
+import NextPrevBtn from "../../buttons/next-section-btn"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../../../styles/owner-form.js'

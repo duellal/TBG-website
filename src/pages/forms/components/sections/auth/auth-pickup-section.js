@@ -6,7 +6,7 @@ import { FlexColDiv } from "../../../../../styles/contact";
 
 //Components:
 import AuthorizedPickup from "./auth-pickup-info"
-import NextPrevBtn from "../../next-section-btn";
+import NextPrevBtn from "../../buttons/next-section-btn";
 import { FormExample } from "../../../../../styles/forms";
 
 /**

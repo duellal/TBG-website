@@ -3,7 +3,7 @@ import React, { useState } from "react"
 //Components:
 import AsteriskHeader from "../../asterisk-header"
 import EmergencyInfo from "./emergency-info"
-import NextPrevBtn from "../../next-section-btn"
+import NextPrevBtn from "../../buttons/next-section-btn"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../styles/owner-form'

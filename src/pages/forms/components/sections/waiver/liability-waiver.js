@@ -2,7 +2,7 @@ import React from "react";
 
 //Components:
 import AsteriskHeader from "../../asterisk-header.js";
-import NextPrevBtn from "../../next-section-btn.js";
+import NextPrevBtn from "../../buttons/next-section-btn";
 
 //Liability Waiver Styles:
 import { ButtonRow, IntakeH3, IntakeH4, IntakeHDiv, IntakeLabel, IntakePolicyP, IntakeRow, IntakeWaiverDiv, IntakeWaiverP, PolicyBoldUnderline, PolicyInitialsInput, PolicyRow, WaiverH5, 

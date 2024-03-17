@@ -5,7 +5,7 @@ import { ButtonRow, FormBtn, IntakeCol, IntakeH3, IntakeHDiv } from '../../../..
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
-import NextPrevBtn from "../../next-section-btn"
+import NextPrevBtn from "../../buttons/next-section-btn"
 import PetInfo from "./pet-info"
 
 /**

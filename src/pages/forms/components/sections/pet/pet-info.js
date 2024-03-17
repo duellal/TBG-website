@@ -1,10 +1,10 @@
 import React from "react";
 
 //Styles:
-import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
+import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv, SelectInput, OptionInput } from "../../../../../styles/contact";
 import { speciesOptions } from "./species-options";
-import RadioQuestion from "../../radio-explainations";
+import RadioQuestion from "../radio-explainations";
 import { petInfoQs } from "./pet-questions";
 
 

@@ -5,7 +5,7 @@ import { ButtonRow, IntakeCol, IntakeH3, IntakeHDiv } from '../../../../../style
 
 //Components:
 import AsteriskHeader from "../../asterisk-header"
-import NextPrevBtn from "../../next-section-btn"
+import NextPrevBtn from "../../buttons/next-section-btn"
 import PetBehavior from "./pet-behavior"
 
 
