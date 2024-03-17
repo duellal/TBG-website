@@ -133,7 +133,7 @@ export default function PdfDoc(props){
                                 </Text>
 
                                 <View style={styles.view_row}>
-                                    <View style={styles.view_col}>
+                                    <View style={styles.terms_col}>
                                         <Text style={[styles.section_info, styles.bold]}>
                                             Agreed to terms?
                                         </Text>
@@ -145,20 +145,26 @@ export default function PdfDoc(props){
                                         </Text>
                                     </View>
 
-                                    <View style={styles.view_col}>
+                                    <View style={styles.initials_col}>
                                         <Text style={[styles.section_info, styles.bold]}>
-                                                Grooming Initials
-                                            </Text>
-                                            <Text style={styles.section_info}>
-                                                {formData['grooming_policy_initials'] 
-                                                ? formData['grooming_policy_initials'] 
-                                                : 'N/A'}
-                                            </Text>
+                                                Initials:
+                                        </Text>
                                     </View>
 
                                     <View style={styles.view_col}>
                                         <Text style={[styles.section_info, styles.bold]}>
-                                            Daycare Initials
+                                            Grooming
+                                        </Text>
+                                        <Text style={styles.section_info}>
+                                            {formData['grooming_policy_initials'] 
+                                            ? formData['grooming_policy_initials'] 
+                                            : 'N/A'}
+                                        </Text>
+                                    </View>
+
+                                    <View style={styles.view_col}>
+                                        <Text style={[styles.section_info, styles.bold]}>
+                                            Daycare
                                         </Text>
                                         <Text style={styles.section_info}>
                                             {formData['daycare_policy_initials'] ? formData['daycare_policy_initials'] : 'N/A'}
@@ -167,7 +173,7 @@ export default function PdfDoc(props){
 
                                     <View style={styles.view_col}>
                                         <Text style={[styles.section_info, styles.bold]}>
-                                            Boarding Initials
+                                            Boarding
                                         </Text>
                                         <Text style={styles.section_info}>
                                             {
@@ -180,7 +186,7 @@ export default function PdfDoc(props){
 
                                     <View style={styles.view_col}>
                                         <Text style={[styles.section_info, styles.bold]}>
-                                            Modification Initials
+                                            Modification
                                         </Text>
                                         <Text style={styles.section_info}>
                                             {
@@ -199,7 +205,7 @@ export default function PdfDoc(props){
                     <View style={styles.view_row}>
                         <View style={styles.view_col}>
                             <Text style={[styles.section_info, styles.bold]}>
-                                Owner Printed Name
+                                Owner Digital Signature
                             </Text>
                             <Text style={[styles.section_info]}>
                                 {formData[`waiver_owner_name`]}

@@ -59,6 +59,16 @@ export const styles = StyleSheet.create({
         flex: 1, 
         margin: '0 2.5px'
     },
+    initials_col: {
+        flexDirection: 'column',
+        flex: 0.65,
+        alignContent: 'center',
+    },
+    terms_col: {
+        flexDirection: "column", 
+        flex: 1.25, 
+        margin: '0 2.5px'
+    },
     bold: {
         fontWeight: 'bold',
     },
