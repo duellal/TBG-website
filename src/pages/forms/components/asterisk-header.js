@@ -7,7 +7,7 @@ import { FormAsteriskH4 } from "../../../styles/forms";
 export default function AsteriskHeader(){
     return (
         <FormAsteriskH4> 
-            All Fields are Required
+            All Fields Required
         </FormAsteriskH4>
     )
 }

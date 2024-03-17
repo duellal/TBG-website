@@ -71,6 +71,7 @@ font-size: 1.8rem;
 font-weight: normal;
 margin: 5px 0 20px 0;
 width: 100%;
+color: ${bright_red}};
 
 // border: 1px solid black;
 `
