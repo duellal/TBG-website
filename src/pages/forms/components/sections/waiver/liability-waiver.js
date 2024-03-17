@@ -57,9 +57,9 @@ export default function LiabilityWaiver(props){
                         <IntakeWaiverP style={{margin: '0px'}}>
                             <Input 
                                 type="checkbox" 
-                                name="liability_waiver_owner_acknowledgement" 
-                                value={formData["liability_waiver_owner_acknowledgement"]}
-                                checked={formData['liability_waiver_owner_acknowledgement'] === "true"}
+                                name="liability_owner_acknowledgement" 
+                                value={formData["liability_owner_acknowledgement"]}
+                                checked={formData['liability_owner_acknowledgement'] === "true"}
                                 onChange={changeInput}
                                 required 
                             />
@@ -149,9 +149,9 @@ export default function LiabilityWaiver(props){
                                 <PolicyRow>
                                     <PolicyInitialsInput 
                                         type="text"
-                                        name="mod_reservation_policy_initials"
-                                        htmlFor="mod_reservation_policy_initials"
-                                        value={formData['mod_reservation_policy_initials']?.toUpperCase()}
+                                        name="change_reservation_policy_initials"
+                                        htmlFor="change_reservation_policy_initials"
+                                        value={formData['change_reservation_policy_initials']?.toUpperCase()}
                                         onChange={changeInput}
                                         format=""
                                         required
@@ -175,9 +175,9 @@ export default function LiabilityWaiver(props){
                         <IntakeWaiverP style={{margin: '0 0 20px'}}>
                             <Input 
                                 type="checkbox" 
-                                name="cancel_waiver_owner_acknowledgement" 
-                                value={formData["cancel_waiver_owner_acknowledgement"]}
-                                checked={formData['cancel_waiver_owner_acknowledgement'] === "true"}
+                                name="cancel_owner_acknowledgement" 
+                                value={formData["cancel_owner_acknowledgement"]}
+                                checked={formData['cancel_owner_acknowledgement'] === "true"}
                                 onChange={changeInput}
                                 required 
                             />

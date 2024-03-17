@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     header: {
         textAlign: 'center',
         margin: '10px 0 0',
-        fontSize: '24px',
+        fontSize: '20px',
         fontWeight: 'bold',
     },
     header_logo: {
@@ -42,34 +42,28 @@ export const styles = StyleSheet.create({
         marginRight: 'auto',
     },
     section: {
-        marginBottom: '10px'
+        marginBottom: '5px'
     },
     section_title: {
         fontWeight: 'bold',
-        fontSize: '18px',
-        marginTop: '10px'
-    },
-    title_in_section: {
-        fontWeight: 'bold',
-        fontSize: '16px',
-        marginTop: '10px'
+        fontSize: '14px',
+        marginTop: '10px',
     },
     view_row: {
         flexDirection: "row",
         width: '100%',
-        margin: '5px 0'
-        // border: '1px solid red',
+        margin: '5px 0',
     },
     view_col: {
         flexDirection: "column", 
         flex: 1, 
         margin: '0 2.5px'
     },
-    info_title: {
+    bold: {
         fontWeight: 'bold',
     },
     numbered_title: {
-        fontSize: '16px',
+        fontSize: '12px',
         marginTop: '10px',
         fontWeight: 'bold'
     },
@@ -80,19 +74,22 @@ export const styles = StyleSheet.create({
         backgroundColor: '#F0F0F0'
     },
     section_info: {
-        fontSize: '14px', 
+        fontSize: '12px', 
     },
-    pet_sub_section: {
-        fontSize: '16px',
+    explain_text: {
+        margin: '5px 0 0 10px'
+    },
+    sub_section: {
+        fontSize: '13px',
         fontWeight: 'bold',
-        marginTop: '15px'
+        marginTop: '10px'
     },
     pet_ans: {
         marginLeft: '25px'
     },
     page_number: {
         position: 'absolute',
-        fontSize: 12,
+        fontSize: '12',
         bottom: 30,
         left: 0,
         right: 0,

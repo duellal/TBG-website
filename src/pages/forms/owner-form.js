@@ -87,6 +87,10 @@ export default function DigitalOwnerForm() {
             return editFormData({ ...formData, [name]: 'false'})
         }
 
+        if(name.includes('initials')){
+            value = value.toUpperCase()
+        }
+
         editFormData({ ...formData, [name]: value})
      }
 
