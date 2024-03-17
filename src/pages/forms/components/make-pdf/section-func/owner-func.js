@@ -51,10 +51,10 @@ export default function ownerSect(formData, ownerCount){
                 <Text style={styles.section_info}>
                     {formData[`owner${index + 1}_address1`]}
                 </Text>
-                <Text style={styles.section_info}>
+                <Text style={[styles.section_info, {marginTop: '0'}]}>
                     {formData[`owner${index + 1}_address2`]}
                 </Text>
-                <Text style={styles.section_info}>
+                <Text style={[styles.section_info, {marginTop: '0'}]}>
                     {`${formData[`owner${index + 1}_city`]}, ${formData[`owner${index + 1}_state`]} ${formData[`owner${index + 1}_zipcode`]}`}
                 </Text>
             </View>
