@@ -4,6 +4,8 @@ import React from "react";
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeLabelRow, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv, SelectInput, OptionInput } from "../../../../../styles/contact";
 import { speciesOptions } from "./species-options";
+import RadioQuestion from "../../radio-explainations";
+import { petInfoQs } from "./pet-questions";
 
 
 /**
@@ -41,20 +43,6 @@ export default function PetInfo(props){
                                 <IntakeLabel htmlFor={`pet${petKey}_species`}>
                                     Species
                                 </IntakeLabel>
-                                {/* <IntakeRow key={`${htmlFor}_explain`}>
-                                        <FlexColDiv>
-                                            <IntakeLabel htmlFor={`${htmlFor}_explain`}>
-                                                Please explain
-                                                <IntakeMessageInput 
-                                                    type="text" 
-                                                    name={`${htmlFor}_explain`}
-                                                    value={formData[`${htmlFor}_explain`]}
-                                                    onChange={changeInput}
-                                                    required
-                                                />
-                                            </IntakeLabel>
-                                        </FlexColDiv>
-                                    </IntakeRow> */}
                                     <SelectInput
                                         type="text" 
                                         name={`pet${petKey}_species`} 
@@ -132,63 +120,25 @@ export default function PetInfo(props){
 
                         <IntakeRow>
                             <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_sex`}>
-                                    Sex
-                                </IntakeLabel>
-                                <IntakeLabelRow>
-                                    <Input 
-                                        type='radio' 
-                                        name={`pet${petKey}_sex`} 
-                                        value='Female' 
-                                        checked={formData[`pet${petKey}_sex`] === 'Female'}
-                                        onChange={changeInput}
-                                    />
-                                    <IntakeLabel>
-                                        Female
-                                    </IntakeLabel>
-                            
-                                    <Input 
-                                        type="radio" 
-                                        name={`pet${petKey}_sex`}
-                                        value='Male'
-                                        checked={formData[`pet${petKey}_sex`] === 'Male'}
-                                        onChange={changeInput}
-                                    />
-                                    <IntakeLabel>
-                                        Male
-                                    </IntakeLabel>
-                                </IntakeLabelRow>
+                                <RadioQuestion 
+                                    key={`pet${petKey}_sex`}
+                                    htmlFor={`pet${petKey}_sex`}
+                                    question={petInfoQs[0]}
+                                    options={['female', 'male']}
+                                    formData={formData}
+                                    changeInput={changeInput}
+                                />
                             </FlexColDiv>
 
                             <FlexColDiv>
-                                <IntakeLabel htmlFor={`pet${petKey}_altered`}>
-                                    Spayed or Neutered
-                                </IntakeLabel>
-                                <IntakeLabelRow>
-                                    <Input 
-                                        type='radio' 
-                                        id={`pet${petKey}_altered`} 
-                                        name={`pet${petKey}_altered`}
-                                        value='Yes' 
-                                        checked={formData[`pet${petKey}_altered`] === 'Yes'}
-                                        onChange={changeInput}
-                                    />
-                                    <IntakeLabel>
-                                        Yes
-                                    </IntakeLabel>
-                            
-                                    <Input
-                                        type="radio" 
-                                        id={`pet${petKey}_altered`} 
-                                        name={`pet${petKey}_altered`} 
-                                        value='No' 
-                                        checked={formData[`pet${petKey}_altered`] === 'No'}
-                                        onChange={changeInput}
-                                    />
-                                    <IntakeLabel>
-                                        No
-                                    </IntakeLabel>
-                                </IntakeLabelRow>
+                                <RadioQuestion 
+                                    key={`pet${petKey}_altered`}
+                                    htmlFor={`pet${petKey}_altered`}
+                                    question={petInfoQs[1]}
+                                    options={['yes', 'no']}
+                                    formData={formData}
+                                    changeInput={changeInput}
+                                />
                             </FlexColDiv>
                         </IntakeRow>
 

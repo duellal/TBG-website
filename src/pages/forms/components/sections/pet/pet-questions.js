@@ -14,3 +14,8 @@ export const healthQs = [
     'Does your pet have any past injuries that we should know about?',
     'Is there anything else we should know about your pet’s health or medical history?'
 ]
+
+export const petInfoQs = [
+    'Sex',
+    'Spayed or Neutered'
+]

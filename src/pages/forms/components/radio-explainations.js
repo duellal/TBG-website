@@ -14,7 +14,7 @@ import { FlexColDiv, Input } from "../../../styles/contact"
     * @param {object} formData the current formData object from state
     * @param {function} changeInput function from owner_form component to change the key/value pair of the targeted form input
     * @returns {ReactNode}  a react element that renders the question with radio button answers, + a text input appears if "Yes" is selected
-*/
+**/
 export default function RadioQuestion(props){
     let { changeInput, htmlFor, question, example, options, formData } = props
 
@@ -27,18 +27,20 @@ export default function RadioQuestion(props){
         }
 
         return(
-            <div key={`radio_question_${htmlFor}_${answer}`}>
+            <div key={`radio_question_${htmlFor}_${answer}`} style={{display: 'flex'}}>
                 <Input 
                     type='radio' 
+                    id={`${htmlFor}_${answer}`}
                     name={htmlFor}
-                    value={answer}
-                    checked={formData[htmlFor] === answer}
+                    value={capitalizeWord(answer)}
+                    checked={formData[htmlFor] === capitalizeWord(answer)}
                     required
                     onChange={changeInput}
                 />
 
                 <IntakeLabel 
                     htmlFor={htmlFor}
+                    for={`${htmlFor}_${answer}`}
                 >
                     {capitalizeWord(answer)}
                 </IntakeLabel>
