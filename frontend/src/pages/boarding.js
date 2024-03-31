@@ -13,7 +13,6 @@ import Requirements from "./general-components/requirements";
 
 //Images:
 import boardingBanner5 from '../images/boarding/boarding-slide-show-5.png'
-import { boardingImages } from "./general-components/slideshow/banner-pics-arr";
 import collage from '../images/collage-boarding.jpg'
 
 //FAQ Arrays: 

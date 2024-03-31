@@ -10,8 +10,7 @@ import graffiti2 from '../../images/grafitti-wall2.jpg'
 
 // Styles:
 import { CommonH2 } from "../../styles/commonBDG";
-import { AboutInfoSection, AboutStartDiv, GraffitiDiv, GraffitiImg, QuoteAuthor, QuoteBody, QuoteHeader, ValuesSection } from "../../styles/about";
-import { CommonP } from "../../styles/common-styles";
+import { AboutInfoSection, AboutStartDiv, GraffitiDiv, GraffitiImg,ValuesSection } from "../../styles/about";
 
 // Variables:
 import { values } from "./values-arr";
