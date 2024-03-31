@@ -23,7 +23,7 @@ font-size: 2.2rem;
 
 //Start of the Page:
 export const CommonStartDiv = styled.div`
-padding: 2.5% 12.5% 5%;
+padding: 2.5% 12.5% 0%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

@@ -14,7 +14,7 @@ export const Break10pxDiv = styled.div`
 
 export const CollageImg = styled.img`
 width: 100%;
-padding: 5%;
+padding: 5% 17.5%;
 `
 
 export const UnderlineLink = styled.a`

@@ -24,6 +24,7 @@ export default function TeamCareers(){
         <TeamStartDiv>
             <CollageImg
                 src={teamCollage}
+                style={{padding: '0'}}
             />
             <AboutInfoSection>
                     <CommonH2>

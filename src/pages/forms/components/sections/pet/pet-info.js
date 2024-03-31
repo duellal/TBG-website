@@ -15,7 +15,6 @@ import { petInfoQs } from "./pet-questions";
 export default function PetInfo(props){
     const { changeInput, petKey, formData } = props
     
-    console.log( formData)
     return(
         <div key={`pet${petKey}_info`}>
             <IntakeDivider>

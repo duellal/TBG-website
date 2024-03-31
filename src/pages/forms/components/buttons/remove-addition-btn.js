@@ -32,8 +32,6 @@ export default function RemoveAddSection(props){
         event.preventDefault();
         setKey(key - 1);
 
-        console.log(`type of count:`, typeof count);
-
         if (typeof count === 'number') {
             setCount(count - 1);
         }

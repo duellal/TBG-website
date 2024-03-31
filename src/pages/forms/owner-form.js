@@ -169,7 +169,8 @@ export default function DigitalOwnerForm() {
             />
         ).toBlob()
  
-        return await emailForm({ pdfBlob, pdfName, formData })
+        await emailForm({ pdfBlob, pdfName, formData })
+        return window.location.reload()
     }
 
     return (

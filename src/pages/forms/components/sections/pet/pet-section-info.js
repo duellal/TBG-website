@@ -21,8 +21,6 @@ export default function PetInfoSection(props){
         const [petBtn, setPetBtn] = useState(true)
         const [petNum, setPetNum] = useState(2)
 
-        console.log(`petNum:`, typeof petNum)
-
         //Function to allow user to add up to 5 pets:
         const petOnClick = async (event) => {
             event.preventDefault()

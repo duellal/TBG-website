@@ -14,7 +14,7 @@ export const GraffitiImg = styled.img`
 
 //About Page Section
 export const AboutStartDiv = styled(CommonStartDiv)`
-padding: 2.5% 12.5% 0;
+padding: 0% 12.5%;
 `
 export const AboutImg = styled.img`
 width: 90%;
@@ -29,6 +29,7 @@ flex-wrap: wrap;
 justify-content: center;
 text-align: justify;
 align-items: center;
+padding-top: 5%;
 // border: 1px solid red;
 `
 

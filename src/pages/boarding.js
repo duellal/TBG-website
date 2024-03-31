@@ -24,7 +24,6 @@ import {
 
 
 export default function Boarding(){
-    console.log('boarding img?', boardingImages[4].image)
     return(
         <>
             <BannerDiv>
