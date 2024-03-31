@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 
 //Components:
+import NextPrevBtn from "../../buttons/next-section-btn.js"
 import OwnerInfo from './owner-info.js'
-import NextPrevBtn from "../../buttons/next-section-btn"
+// import RemoveAddSection from "../../buttons/remove-addition-btn.js"
 
 //Intake Form - Owner Styles:
 import { ButtonRow, FormBtn, IntakeCol, IntakeDivider, IntakeH3, IntakeHDiv, IntakeLabel, IntakeRow } from '../../../../../styles/owner-form.js'
@@ -24,7 +25,7 @@ export default function OwnerSection(props){
         //Owner Info States:
         const [ownerKey, setOwnerKey] = useState(1)
         const [ownerBtn, setOwnerBtn] = useState(true)
-
+        
         //Function to allow user to add 1 more owner:
         const addOwner = (event) => {
             event.preventDefault()
@@ -97,12 +98,26 @@ export default function OwnerSection(props){
                 </IntakeRow>
 
                 <ButtonRow>
+                {/* AFTER MVP: uncomment out to add in a remove additional owner */}
+                    {/* {
+                        ownerKey > 1 && 
+                        <RemoveAddSection 
+                            sectionId={sectionId}
+                            ownerKey={ownerKey}
+                            setOwnerKey={setOwnerKey}
+                            formData={formData}
+                            setOwnerCountArr={setOwnerCountArr}
+                            ownerCountArr={ownerCountArr}
+                        />
+                    } */}
+
                     {
-                        ownerBtn && 
-                            <FormBtn onClick={(event) => addOwner(event)}> 
+                        ownerKey === 1 && 
+                            <FormBtn onClick={event => addOwner(event)}> 
                                 Add Owner 
                             </FormBtn>
                     }
+    
                     <NextPrevBtn 
                         next
                         btnIndex={btnIndex}

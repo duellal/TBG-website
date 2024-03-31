@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-// import emailjs, { sendForm } from '@emailjs/browser'
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { PDFDownloadLink, usePDF } from '@react-pdf/renderer';
+import { PDFDownloadLink, pdf } from '@react-pdf/renderer';
 
 //Components:
 import AuthPickupSection from "./components/sections/auth/auth-pickup-section.js";
@@ -17,9 +16,13 @@ import PetHealthSection from "./components/sections/pet/pet-section-health.js";
 //Form PDF:
 import intakeForm from './TBG-Intake-Form-2024.pdf'
 import PdfDoc from "./components/make-pdf/new-owner-pdf.js";
+import ReviewForm from "./components/sections/review/review-form.js";
 
 //Form Template:
 import { formTemplate } from "./form-template.js";
+
+//Functions: 
+import emailForm from "./send-form-email-func.js";
 
 //Styles:
 import { ButtonRow, FormBtn, IntakeCard, IntakeDivider, IntakeForm, IntakeHeader, IntakeP, IntakePDF, IntakeSection, SendBtn } from '../../styles/owner-form.js'
@@ -27,7 +30,6 @@ import { ErrorLink, ErrorText } from "../../styles/contact.js";
 import { CommonP, UnderlineLink } from "../../styles/common-styles.js";
 import { darkGrey } from "../../styles/constants/colors.js";
 import { Rotate } from "hamburger-react";
-import ReviewForm from "./components/sections/review/review-form.js";
 import { styles } from "./components/make-pdf/new-owner-styles.js";
 
 
@@ -36,7 +38,6 @@ export default function DigitalOwnerForm() {
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
-    // const [url, editUrl] = useState()
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -50,29 +51,17 @@ export default function DigitalOwnerForm() {
     const [btnIndex, setBtnIndex] = useState(0)
 
     //PDF States + Variables:
-    let pdfName = `${formData[`owner1_first_name`].toLowerCase()}-${formData[`owner1_last_name`].toLowerCase()}-new-owner-form`
-    let pdfDoc = useState(
-                    <PdfDoc 
-                        formData={formData} 
-                        ownerCount={ownerCountArr}
-                        emergencyCount={countEmergencyContacts}
-                        authCount={countAuth}
-                        countPets={countPets}
-                        pdfName={pdfName}
-                    />
-                )
-    const [pdfInstance, updatePdfInstance] = usePDF({document: pdfDoc})
-
-    //Setting + getting the url for the pdf:
-    useEffect(() => {
-        if(pdfInstance.blob){
-            updatePdfInstance(pdfDoc)
-
-            // editUrl(
-            //     pdfInstance.url
-            // )
-        }
-    }, [pdfInstance, updatePdfInstance, pdfDoc])
+    const pdfName = `${formData[`owner1_first_name`]?.toLowerCase()}-${formData[`owner1_last_name`]?.toLowerCase()}'s-new-owner-form`
+    const pdfDoc = useState(
+        <PdfDoc 
+            formData={formData} 
+            ownerCount={ownerCountArr}
+            emergencyCount={countEmergencyContacts}
+            authCount={countAuth}
+            countPets={countPets}
+            pdfName={pdfName}
+        />
+    )
 
     //onChange function changeInput:
     async function changeInput(event){
@@ -161,68 +150,33 @@ export default function DigitalOwnerForm() {
         />
     ]
 
-// console.log(url)
     //Form Submit:
     const submitHandler = async event => {
         event.preventDefault();
         setLoading(false)
         //clears errors if there were any previously
         setError(null)
+        //Makes sure that form PDF is updated
 
-        updatePdfInstance(pdfDoc)
-
-        // let downloadLink = <PDFDownloadLink 
-        //                         fileName={`${pdfName}.pdf`} 
-        //                         document={pdfDoc}
-        //                         style={styles.download}
-        //                     >
-        //                         {() => 
-        //                             'Download Form'
-        //                         }
-        //                     </PDFDownloadLink>
-    
-        // let params = {
-        //     pdf_link: downloadLink,
-        //     owner1_first_name: formData.owner1_first_name,
-        //     owner1_last_name: formData.owner1_last_name,
-        //     owner1_email: formData.owner1_email
-        // }
-        
-        // const data = {
-        //     serviceID: process.env.REACT_APP_SERVICE_ID_INTAKE,
-        //     templateID: process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-        //     templateParams: params,
-        //     // publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-        // };
-            
-        // return emailjs.send(
-        //     process.env.REACT_APP_SERVICE_ID_INTAKE,
-        //     process.env.REACT_APP_TEMPLATE_ID_INTAKE,
-        //     await params, 
-        //     process.env.REACT_APP_EMAIL_PUBLIC_KEY
-        // )
-        //     .then((res) => {
-        //         //resets the form after the email is sent 
-        //         form.current.reset()
-        //         setLoading(false)
-        //     }).catch((error) => {
-        //         setError(error.text)
-        //     }).finally(() => {
-        //         //resets the form after the email is sent 
-        //         form.current.reset()
-        //         setLoading(false)
-        //     })
+        let pdfBlob = await pdf(
+            <PdfDoc 
+                formData={formData} 
+                ownerCount={ownerCountArr}
+                emergencyCount={countEmergencyContacts}
+                authCount={countAuth}
+                countPets={countPets}
+                pdfName={pdfName}
+            />
+        ).toBlob()
+ 
+        return await emailForm({ pdfBlob, pdfName, formData })
     }
-
-    // let sendBtnHandleClick = () => {
-    //     return
-    // }
 
     return (
         <IntakeSection id="digital-intake">
             <IntakeHeader id='intake-header'>
                 <h2>
-                    New Client Form
+                    New Owner Form
                 </h2>
 
                 <IntakeDivider>
@@ -276,19 +230,18 @@ export default function DigitalOwnerForm() {
                         btnIndex === 7 ? 
                             <ButtonRow>
                                     <PDFDownloadLink 
-                                        fileName={`${pdfName}.pdf`} 
-                                        document={<PdfDoc 
-                                            formData={formData} 
-                                            ownerCount={ownerCountArr}
-                                            emergencyCount={countEmergencyContacts}
-                                            authCount={countAuth}
-                                            countPets={countPets}
-                                            pdfName={pdfName}
+                                            fileName={`${pdfName}.pdf`} 
+                                            document={<PdfDoc 
+                                                formData={formData} 
+                                                ownerCount={ownerCountArr}
+                                                emergencyCount={countEmergencyContacts}
+                                                authCount={countAuth}
+                                                countPets={countPets}
+                                                pdfName={pdfName}
                                         />}
                                         style={styles.download}
                                     >
                                         {({ blob, url, loading, error }) => {
-                                            
                                             return loading ? 'Loading PDF' : 'Download Form'
                                             }
                                         }
@@ -296,7 +249,6 @@ export default function DigitalOwnerForm() {
                                 <SendBtn 
                                     type="submit" 
                                     value="Send"
-                                    // onClick={() => sendBtnHandleClick()}
                                 >
                                     Send
                                 </SendBtn>

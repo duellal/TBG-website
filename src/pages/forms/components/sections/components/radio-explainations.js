@@ -1,8 +1,12 @@
 import React from "react"
 
+//Functions:
+import capitalizeWord from "../../../../general-components/capitalize-word"
+
 //Styles:
-import { IntakeLabel, IntakeMessageInput, IntakeRow } from "../../../../styles/owner-form"
-import { FlexColDiv, Input } from "../../../../styles/contact"
+import { IntakeLabel, IntakeMessageInput, IntakeRow } from "../../../../../styles/owner-form"
+import { FlexColDiv, Input } from "../../../../../styles/contact"
+import removeSection from "./remove-section"
 
 /** 
     * The component renders the question + answers. If the user clicks "yes", there is a text input that appears for them to explain their answer more.
@@ -20,11 +24,7 @@ export default function RadioQuestion(props){
 
     //To get all options and capitalize the first letter of the word:
     let mapOptions = options.map(answer => {
-        let capitalizeWord = (word) => {
-            let firstLetter = word.toUpperCase().charAt(0)
-            let remainingLetters = word.slice(1)
-            return firstLetter + remainingLetters
-        }
+        capitalizeWord(answer)
 
         return(
             <div key={`radio_question_${htmlFor}_${answer}`} style={{display: 'flex'}}>
@@ -68,11 +68,6 @@ export default function RadioQuestion(props){
         )
     }
 
-    //Removes the key/value from the formData object:
-    let removeExplain = (remove) => {
-        delete formData[remove]
-    }
-
 
     return(
         <IntakeRow key={`radio_${htmlFor}`}>
@@ -95,7 +90,7 @@ export default function RadioQuestion(props){
                         ?
                         explainInput()
                         : 
-                        removeExplain(`${htmlFor}_explain`)
+                        removeSection({formData, section: `${htmlFor}_explain`})
                     }
             </FlexColDiv>
         </IntakeRow>

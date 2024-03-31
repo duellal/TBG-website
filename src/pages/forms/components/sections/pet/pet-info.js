@@ -4,7 +4,7 @@ import React from "react";
 import { IntakeCol, IntakeDivider, IntakeH5, IntakeLabel, IntakeRow, SpeciesRow, SpeciesTextInput } from '../../../../../styles/owner-form'
 import { Input, FlexColDiv, SelectInput, OptionInput } from "../../../../../styles/contact";
 import { speciesOptions } from "./species-options";
-import RadioQuestion from "../radio-explainations";
+import RadioQuestion from "../components/radio-explainations";
 import { petInfoQs } from "./pet-questions";
 
 
@@ -15,6 +15,7 @@ import { petInfoQs } from "./pet-questions";
 export default function PetInfo(props){
     const { changeInput, petKey, formData } = props
     
+    console.log( formData)
     return(
         <div key={`pet${petKey}_info`}>
             <IntakeDivider>
@@ -67,7 +68,7 @@ export default function PetInfo(props){
                                             }
                                     </SelectInput>
                                     {
-                                        formData[`pet${petKey}_species`].toLowerCase().includes('other') ?
+                                        formData[`pet${petKey}_species`]?.includes('Other') ?
                                         <SpeciesRow>
                                         {/* <IntakeRow> */}
                                             <FlexColDiv>

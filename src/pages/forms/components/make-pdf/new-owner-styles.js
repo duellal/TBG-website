@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     num_section: {
-        margin: '-5px 10px'
+        padding: '-5px 10px'
     },
     off_color: {
         backgroundColor: '#F0F0F0'

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CommonH3, CommonInfoSection, CommonStartDiv } from "../styles/commonBDG"
+import { CommonH3, CommonInfoSection, CommonStartDiv } from "./commonBDG"
 import { CommonP } from "./common-styles";
 
 //Graffiti Banner Image:

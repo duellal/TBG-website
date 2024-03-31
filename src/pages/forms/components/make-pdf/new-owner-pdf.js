@@ -16,14 +16,12 @@ import { styles } from "./new-owner-styles";
 
 //PDF Doc
 export default function PdfDoc(props){
-    const { formData, ownerCount, emergencyCount, authCount, countPets } = props
-
-    let pdfTitle = `${formData[`owner1_first_name`].toLowerCase()}-${formData[`owner1_last_name`].toLowerCase()}-new-owner-form`
+    const { formData, ownerCount, emergencyCount, authCount, countPets, pdfName } = props
 
     let today = new Date()
 
     return (
-        <Document title={pdfTitle}>
+        <Document title={pdfName}>
             <Page size='A4' style={styles.page}>
                 {/* Header - Logo + Title of Form */}
                 <View style={styles.header_logo}>
