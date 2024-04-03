@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { PDFDownloadLink, pdf } from '@react-pdf/renderer';
@@ -35,6 +36,7 @@ import { styles } from "./components/make-pdf/new-owner-styles.js";
 
 export default function DigitalOwnerForm() {
     const form = useRef();
+    const navigate = useNavigate();
 
     //Form States:
     const [formData, editFormData] = useState(formTemplate)
@@ -170,7 +172,7 @@ export default function DigitalOwnerForm() {
         ).toBlob()
  
         await emailForm({ pdfBlob, pdfName, formData })
-        return window.location.reload()
+        return navigate('/forms')
     }
 
     return (
